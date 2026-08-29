@@ -220,6 +220,7 @@ footer{
   display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
   font-family:var(--f-mono); font-size:12px; letter-spacing:.05em; color:var(--text-faint);
 }
+footer nav{display:flex; gap:22px; flex-wrap:wrap}
 footer a{text-decoration:none}
 footer a:hover{color:var(--accent)}
 
@@ -263,6 +264,7 @@ footer a:hover{color:var(--accent)}
       <a href="#taste">Have a taste</a>
       <a href="#day">Your day</a>
       <a href="#how">How it works</a>
+      <a href="/help/">Help</a>
       <a class="btn btn-primary" href="#get">Get Dailies</a>
     </div>
   </div>
@@ -374,7 +376,7 @@ footer a:hover{color:var(--accent)}
         <details><summary>Can I change what I get?</summary>
           <p>Anytime. Swap what you're into whenever you like, and pick how often you hear from us.</p></details>
         <details><summary>Where can I get it?</summary>
-          <p>Dailies is an iPhone app. Scan the code on this page, or open mydailies.app on your phone.</p></details>
+          <p>Dailies is an app for iPhone and iPad. Scan the code on this page, or open mydailies.app on your phone.</p></details>
       </div>
     </div>
   </section>
@@ -392,7 +394,13 @@ footer a:hover{color:var(--accent)}
     </div>
     <div class="wrap"><footer>
       <span>&copy; 2026 Dailies</span>
-      <span><a href="https://mydailies.app">mydailies.app</a></span>
+      <nav>
+        <a href="/help/">Help</a>
+        <a href="/terms/">Terms</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/cookies/">Cookies</a>
+        <a href="#" data-cookie-settings>Cookie settings</a>
+      </nav>
     </footer></div>
   </section>
 </main>
@@ -494,5 +502,6 @@ footer a:hover{color:var(--accent)}
 })();
 </script>
 <script src="/analytics.js"></script>
+<script src="/consent.js"></script>
 </body>
 </html>
