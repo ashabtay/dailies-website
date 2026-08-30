@@ -21,8 +21,9 @@
 :root{
   --ground:#191c1d; --ground-deep:#101314; --panel:#202523;
   --rule:rgba(240,230,210,.13); --rule-soft:rgba(240,230,210,.07);
-  --text:#f0e6d2; --text-dim:#aeaa9c; --text-faint:#7d8176;
+  --text:#f0e6d2; --text-dim:#aeaa9c; --text-faint:#888c81;
   --accent:#9db081; --accent-dim:#7d8f63; --hill:#4f5d3c; --hill-deep:#3b462d;
+  --cite:#bab9a6;
   --card-shadow:0 24px 60px rgba(0,0,0,.45);
   --chip:rgba(240,230,210,.05); --chip-on:rgba(157,176,129,.14);
   --max:1100px;
@@ -35,8 +36,9 @@
   :root:not([data-theme="dark"]){
     --ground:#f3ecdc; --ground-deep:#e9e0cb; --panel:#fbf7ec;
     --rule:rgba(27,31,28,.16); --rule-soft:rgba(27,31,28,.08);
-    --text:#1b1f1c; --text-dim:#525749; --text-faint:#797e6f;
+    --text:#1b1f1c; --text-dim:#525749; --text-faint:#5f6457;
     --accent:#47552f; --accent-dim:#5d6e45; --hill:#7b8b61; --hill-deep:#66754e;
+    --cite:#fff;
     --card-shadow:0 20px 50px rgba(52,56,40,.16);
     --chip:rgba(27,31,28,.045); --chip-on:rgba(71,85,47,.12);
   }
@@ -44,8 +46,9 @@
 :root[data-theme="light"]{
   --ground:#f3ecdc; --ground-deep:#e9e0cb; --panel:#fbf7ec;
   --rule:rgba(27,31,28,.16); --rule-soft:rgba(27,31,28,.08);
-  --text:#1b1f1c; --text-dim:#525749; --text-faint:#797e6f;
+  --text:#1b1f1c; --text-dim:#525749; --text-faint:#5f6457;
   --accent:#47552f; --accent-dim:#5d6e45; --hill:#7b8b61; --hill-deep:#66754e;
+  --cite:#fff;
   --card-shadow:0 20px 50px rgba(52,56,40,.16);
   --chip:rgba(27,31,28,.045); --chip-on:rgba(71,85,47,.12);
 }
@@ -174,7 +177,9 @@ section[id]{scroll-margin-top:84px}
   font-family:var(--f-display); font-optical-sizing:auto; font-style:italic; font-weight:400;
   font-size:clamp(26px,3.5vw,44px); line-height:1.18; letter-spacing:-.014em; max-width:17ch; position:relative; z-index:2;
 }
-.pull cite{display:block; margin-top:22px; font:400 12px/1.4 var(--f-mono); letter-spacing:.14em; text-transform:uppercase; font-style:normal; opacity:.6}
+/* Attribution is 12px, so it needs 4.5:1 — an opacity fade can't reach that on the
+   light hill (cream tops out at 4.12:1 there), hence a per-theme colour instead. */
+.pull cite{display:block; margin-top:22px; font:400 12px/1.4 var(--f-mono); letter-spacing:.14em; text-transform:uppercase; font-style:normal; color:var(--cite)}
 .pull-mark{position:absolute; right:-2%; top:-16%; font-family:var(--f-display); font-size:min(42vw,400px); line-height:1; opacity:.09; z-index:1; user-select:none; pointer-events:none}
 
 /* ============ MOMENTS + FEATURES ============ */

@@ -12,7 +12,7 @@
 :root{
   --ground:#191c1d; --ground-deep:#101314; --panel:#202523;
   --rule:rgba(240,230,210,.13); --rule-soft:rgba(240,230,210,.07);
-  --text:#f0e6d2; --text-dim:#aeaa9c; --text-faint:#7d8176;
+  --text:#f0e6d2; --text-dim:#aeaa9c; --text-faint:#888c81;
   --accent:#9db081; --accent-dim:#7d8f63; --hill:#4f5d3c; --hill-deep:#3b462d;
   --chip:rgba(240,230,210,.05); --chip-on:rgba(157,176,129,.14);
   --max:1100px;
@@ -25,7 +25,7 @@
   :root:not([data-theme="dark"]){
     --ground:#f3ecdc; --ground-deep:#e9e0cb; --panel:#fbf7ec;
     --rule:rgba(27,31,28,.16); --rule-soft:rgba(27,31,28,.08);
-    --text:#1b1f1c; --text-dim:#525749; --text-faint:#797e6f;
+    --text:#1b1f1c; --text-dim:#525749; --text-faint:#5f6457;
     --accent:#47552f; --accent-dim:#5d6e45; --hill:#7b8b61; --hill-deep:#66754e;
     --chip:rgba(27,31,28,.045); --chip-on:rgba(71,85,47,.12);
   }
@@ -33,7 +33,7 @@
 :root[data-theme="light"]{
   --ground:#f3ecdc; --ground-deep:#e9e0cb; --panel:#fbf7ec;
   --rule:rgba(27,31,28,.16); --rule-soft:rgba(27,31,28,.08);
-  --text:#1b1f1c; --text-dim:#525749; --text-faint:#797e6f;
+  --text:#1b1f1c; --text-dim:#525749; --text-faint:#5f6457;
   --accent:#47552f; --accent-dim:#5d6e45; --hill:#7b8b61; --hill-deep:#66754e;
   --chip:rgba(27,31,28,.045); --chip-on:rgba(71,85,47,.12);
 }
