@@ -37,7 +37,7 @@
     <div class="wrap">
       <div class="eyebrow">Help</div>
       <h1>How can we help?</h1>
-      <p class="lede">Everything worth knowing about Dailies, in one place. If your quotes stopped arriving, start with <a href="#notifications" style="color:var(--accent)">Notifications</a> — that fixes it nine times out of ten.</p>
+      <p class="lede">Everything worth knowing about Dailies, in one place. If your quotes stopped arriving, start with <a href="#notifications" style="color:var(--accent)">Notifications</a> — that is nearly always where the answer is.</p>
       <div class="help-search">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         <input type="search" id="q" placeholder="Search help — try &ldquo;widget&rdquo; or &ldquo;too many&rdquo;" aria-label="Search help">
@@ -50,7 +50,8 @@
       <div class="toc-label">Topics</div>
       <a href="#start">Getting started</a>
       <a href="#notifications">Notifications</a>
-      <a href="#widget">Home Screen widget</a>
+      <a href="#widget">Widgets</a>
+      <a href="#quotes">Saving &amp; your own quotes</a>
       <a href="#looks">Making it yours</a>
       <a href="#privacy">Privacy &amp; data</a>
       <a href="#premium">Premium &amp; billing</a>
@@ -63,12 +64,12 @@
         <a class="card" href="#notifications">
           <div class="card-icon">🔔</div>
           <h3>Nothing is arriving</h3>
-          <p>The three settings that stop quotes reaching your lock screen.</p>
+          <p>The settings that stop quotes reaching your Lock Screen.</p>
         </a>
         <a class="card" href="#widget">
           <div class="card-icon">▦</div>
           <h3>Add the widget</h3>
-          <p>Put a quote on your Home Screen in four taps.</p>
+          <p>Put a quote on your Home Screen and Lock Screen.</p>
         </a>
         <a class="card" href="#looks">
           <div class="card-icon">✦</div>
@@ -82,7 +83,7 @@
         <div class="faq">
           <details open><summary>What happens when I first open Dailies?</summary>
             <div class="details-body">
-              <p>A short 3-minute setup that allows Dailies to personalize the quotes to you, and then you are done.</p>
+              <p>A short setup that lets Dailies personalize the quotes to you, and then you are done. You pick the topics you want to hear about, how often you want to hear from us, and the look you want your quotes to sit in.</p>
             </div></details>
 
           <details><summary>Do I need an account?</summary>
@@ -102,19 +103,19 @@
         <div class="faq">
           <details open><summary>My quotes have stopped arriving</summary>
             <div class="details-body">
-              <p>Almost always one of these three, in this order:</p>
+              <p>Almost always one of these, in this order:</p>
               <ol>
                 <li><strong>Permission.</strong> Go to <strong>iOS Settings → Dailies → Notifications</strong> and check <em>Allow Notifications</em> is on, with <em>Lock Screen</em> ticked.</li>
                 <li><strong>A Focus mode.</strong> Sleep, Work and Do Not Disturb silence apps that are not on their allow-list. Add Dailies to the Focus you use, or check Settings → Focus.</li>
                 <li><strong>Your delivery hours.</strong> Open <strong>Personalize → Daily dose</strong> and look at the window you set. If it runs 9am–5pm and you are checking at 8am, nothing is due yet.</li>
               </ol>
-              <p>One more, easily missed: <strong>Low Power Mode</strong> makes iOS deprioritise background work, which can delay delivery.</p>
+              <p>One more, easily missed: <strong>Low Power Mode</strong> makes iOS deprioritize background work, which can delay delivery.</p>
               <p>If all of that looks right, open the app once. Opening it prompts Dailies to rebuild its schedule.</p>
             </div></details>
 
           <details><summary>How many can I get a day?</summary>
             <div class="details-body">
-              <p>Between <strong>one and twelve</strong>. Set it in <strong>Personalize → Daily dose</strong>, along with the earliest and latest hour you want to hear from the app. Dailies spreads them evenly through that window rather than bunching them together.</p>
+              <p>As few or as many as you like. Set it in <strong>Personalize → Daily dose</strong>, along with the earliest and latest hour you want to hear from the app. Dailies spreads them evenly through that window rather than bunching them together.</p>
             </div></details>
 
           <details><summary>It is too much / not enough</summary>
@@ -131,9 +132,9 @@
       </section>
 
       <section id="widget">
-        <h2>The Home Screen widget</h2>
+        <h2>Widgets</h2>
         <div class="faq">
-          <details open><summary>How do I add it?</summary>
+          <details open><summary>How do I add the Home Screen widget?</summary>
             <div class="details-body">
               <ol>
                 <li>Touch and hold an empty part of your Home Screen until the icons jiggle.</li>
@@ -145,12 +146,25 @@
               <p>There is an animated walkthrough of exactly this inside the app, under <strong>Personalize → Home screen widget</strong>.</p>
             </div></details>
 
+          <details><summary>How do I add the Lock Screen widget?</summary>
+            <div class="details-body">
+              <ol>
+                <li>Touch and hold your Lock Screen.</li>
+                <li>Tap <strong>Customize</strong>, then tap <strong>Lock Screen</strong>.</li>
+                <li>Tap the empty box under the time.</li>
+                <li>Pick <strong>Dailies</strong> from the list.</li>
+                <li>Tap <strong>Done</strong>.</li>
+              </ol>
+              <p>iOS gives a Lock Screen widget one small box and draws it in a single tone, so Dailies puts a short quote there rather than a long one. Tap it to open the app on that quote.</p>
+              <p>You can set it up from inside the app too, under <strong>Personalize → Lock screen widget</strong>.</p>
+            </div></details>
+
           <details><summary>How often does the widget change?</summary>
             <div class="details-body">
               <p>You choose the cadence in <strong>Personalize → Home screen widget</strong>: hourly, every four hours, every eight hours, or once a day.</p>
             </div></details>
 
-          <details><summary>The widget is stuck on one quote</summary>
+          <details><summary>My widget is stuck on the same quote</summary>
             <div class="details-body">
               <p>Usually iOS conserving battery. Try, in order:</p>
               <ul>
@@ -162,14 +176,41 @@
         </div>
       </section>
 
+      <section id="quotes">
+        <h2>Saving and your own quotes</h2>
+        <div class="faq">
+          <details open><summary>How do I save a quote I like?</summary>
+            <div class="details-body">
+              <p>Tap the heart on any quote. Everything you heart is kept together under <strong>Liked quotes</strong>, and you can make your feed play them back to you rather than serving new ones.</p>
+            </div></details>
+
+          <details><summary>Can I write my own quotes?</summary>
+            <div class="details-body">
+              <p>Yes. Write your own lines under <strong>My quotes</strong> and Dailies serves them back to you alongside the rest &mdash; in notifications, in the feed and on the widgets. A line somebody said to you, something from a book, or a note to yourself for the days it is needed.</p>
+              <p>Follow <strong>My quotes</strong> on the Topics screen and your feed can be made of your own lines alone.</p>
+            </div></details>
+
+          <details><summary>What happens to them if I get a new phone?</summary>
+            <div class="details-body">
+              <p>They come with you. The quotes you write and the quotes you heart are mirrored to <strong>your own iCloud account</strong>, so installing Dailies on a new iPhone brings them back &mdash; there is no account to sign in to and nothing to restore by hand.</p>
+              <p>This needs iCloud turned on for your device. Nothing else is synced &mdash; your name, your topics and your chosen look are quick to set again, and a custom background photo stays in your photo library rather than eating your iCloud storage.</p>
+            </div></details>
+
+          <details><summary>Are my own quotes private?</summary>
+            <div class="details-body">
+              <p>Yes. They live on your device and in your own iCloud account, which only you can read. We never see them, and they are never sent to us or to anybody else.</p>
+            </div></details>
+        </div>
+      </section>
+
       <section id="looks">
         <h2>Making it yours</h2>
         <div class="faq">
           <details open><summary>What can I change?</summary>
             <div class="details-body">
               <ul>
-                <li><strong>Backgrounds</strong> — a large set of photographs, a range of gradients, your own photo, or a solid colour you mix yourself.</li>
-                <li><strong>Typeface</strong> — a couple of dozen faces, and you set the text size.</li>
+                <li><strong>Backgrounds</strong> — a large set of photographs, a range of gradients, your own photo, or a solid color you mix yourself.</li>
+                <li><strong>Typeface</strong> — a wide range of faces, and you set the text size.</li>
                 <li><strong>Effects</strong> — drifting dust, falling snow, mist, fireflies, meteors, lens flare, embers and more.</li>
               </ul>
               <p>All of it lives under <strong>Theme</strong>.</p>
@@ -177,7 +218,7 @@
 
           <details><summary>Can I use my own photo?</summary>
             <div class="details-body">
-              <p>Yes — pick one from your library and it sits behind your quotes. This is a <strong>Dailies Premium</strong> feature, as is mixing your own solid colour.</p>
+              <p>Yes — pick one from your library and it sits behind your quotes. This is a <strong>Dailies Premium</strong> feature, as is mixing your own solid color.</p>
             </div></details>
 
           <details><summary>Does the app follow my phone's dark mode?</summary>
@@ -192,7 +233,8 @@
         <div class="faq">
           <details open><summary>What does Dailies know about me?</summary>
             <div class="details-body">
-              <p>Your name, your goals and needs, your reminder settings, your favourites and your chosen background.</p>
+              <p>The name you asked to be called, the topics you follow, your reminder settings, the quotes you hearted, the quotes you wrote yourself, and the look you chose.</p>
+              <p>Your own quotes and your hearted quotes are also mirrored to <strong>your own iCloud account</strong> so that they survive a new phone. Nothing else leaves the device except the anonymous usage measurements described in the policy.</p>
               <p>See the <a href="/privacy/">Privacy Policy</a> for more details.</p>
             </div></details>
 
@@ -209,7 +251,8 @@
         <div class="faq">
           <details open><summary>What do I get with Dailies Premium?</summary>
             <div class="details-body">
-              <p>Every background, every typeface and every ambient effect in the app, plus the two things you make yourself: <strong>your own photos</strong> and <strong>your own colour</strong> behind your quotes. It also removes the small Dailies wordmark from pictures you export.</p>
+              <p><strong>The whole topic library.</strong> A free install follows a handful of topics; Premium opens every one of them, across every section, so your feed can be made of exactly what you want to hear.</p>
+              <p>It also opens <strong>every background, typeface and ambient effect</strong> in the app, plus the two things you make yourself: <strong>your own photos</strong> and <strong>your own color</strong> behind your quotes. And it removes the small Dailies wordmark from pictures you export.</p>
             </div></details>
 
           <details><summary>What does it cost, and is there a trial?</summary>
@@ -261,6 +304,7 @@
     <nav>
       <a href="/">Home</a>
       <a href="/help/">Help</a>
+      <a href="/compare/">Compare</a>
       <a href="/terms/">Terms</a>
       <a href="/privacy/">Privacy</a>
       <a href="/cookies/">Cookies</a>

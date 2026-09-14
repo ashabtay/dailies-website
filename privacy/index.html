@@ -74,7 +74,7 @@
         <div class="callout">
           <div class="callout-label">The distinction that matters</div>
           <p><strong>Some of it stays on your phone.</strong> The name you asked to be called, any photo you chose as a background, and anything you type are written to private storage on your own device. There is no account and no server holding them.</p>
-          <p><strong>Most of how you have set the app up is also sent to analytics.</strong> Which goals and needs you picked, your reminder frequency and hours, your chosen background, typeface and effect, and the identifier of any quote you heart are recorded against a random install identifier, so we can see how the app is actually used. The website is measured too, and carries advertising pixels once you allow them.</p>
+          <p><strong>Most of how you have set the app up is also sent to analytics.</strong> Which topics you follow, your reminder frequency and hours, your chosen background, typeface and effect, and the identifier of any quote you heart are recorded against a random install identifier, so we can see how the app is actually used. The website is measured too, and carries advertising pixels once you allow them.</p>
         </div>
         <ul>
           <li><strong>No account.</strong> You never make one, so there is no email address or password on file.</li>
@@ -107,15 +107,22 @@
           <table>
             <tr><th>What</th><th>Why it is kept</th><th>Also sent to analytics?</th></tr>
             <tr><td><strong>The name you asked to be called</strong><br>Optional — you can skip it</td><td>So the app can address you by name</td><td><strong>No</strong> — only how many characters long it is</td></tr>
-            <tr><td><strong>Your goals</strong><br>Career, Fitness, Parenting and so on</td><td>To sort the quote library into an order that suits you</td><td><strong>Yes</strong></td></tr>
-            <tr><td><strong>Your needs</strong><br>Stay motivated, Find calm, Laugh…</td><td>Same — it decides which quotes come first</td><td><strong>Yes</strong></td></tr>
+            <tr><td><strong>The topics you follow</strong><br>Calm, Confidence, Humor, Work, Faith and so on</td><td>To decide which quotes you are sent, and in what order</td><td><strong>Yes</strong></td></tr>
             <tr><td><strong>Reminder settings</strong><br>How many a day, between which hours</td><td>To schedule your notifications</td><td><strong>Yes</strong></td></tr>
-            <tr><td><strong>Quotes you have hearted</strong></td><td>To fill your Loved quotes list and bring favourites back around</td><td><strong>Yes</strong> — the quote's identifier, not its text</td></tr>
+            <tr><td><strong>Quotes you have hearted</strong></td><td>To fill your Liked quotes list and bring favorites back around</td><td><strong>Yes</strong> — the quote's identifier, not its text</td></tr>
             <tr><td><strong>Appearance choices</strong><br>Background, typeface, effect</td><td>So the app looks the way you left it</td><td><strong>Yes</strong></td></tr>
+            <tr><td><strong>Quotes you have written yourself</strong></td><td>So Dailies can serve your own lines back to you</td><td><strong>No</strong> — only how many you have written, never the text</td></tr>
             <tr><td><strong>A photo you choose as a background</strong></td><td>A copy is placed in the app's private folder to draw behind your quotes</td><td><strong>No</strong></td></tr>
           </table>
         </div>
-        <p>Some of these are also written to a <strong>shared app group container</strong>. That is still private storage on your phone; it exists only so the Home Screen widget can read the same quote and settings the app is using.</p>
+        <h3>Your own quotes and hearted quotes go to your iCloud account</h3>
+        <p>Two things are mirrored off the device: <strong>the quotes you write yourself</strong>, and <strong>which quotes you have hearted</strong>. They are copied into <strong>your own iCloud account</strong> using Apple's CloudKit, so that a lost or replaced phone does not destroy the only copy of something you wrote.</p>
+        <div class="callout">
+          <div class="callout-label">To be clear about whose account that is</div>
+          <p>It is yours, not ours. The data sits in your personal iCloud storage under your Apple Account, governed by <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. We cannot read it, we are not sent a copy, and it is never used for analytics or advertising. Turn iCloud off for Dailies in <strong>Settings &rarr; your name &rarr; iCloud</strong> and the app keeps working from the copy on your device.</p>
+        </div>
+        <p>Nothing else is mirrored. Your name, the topics you follow and your chosen look stay on the device, and a background photo you picked stays in your own photo library rather than being copied into your iCloud storage.</p>
+        <p>Some of these are also written to a <strong>shared app group container</strong>. That is still private storage on your phone; it exists only so the Home Screen and Lock Screen widgets can read the same quote and settings the app is using.</p>
       </section>
 
       <section id="app-analytics">
@@ -248,7 +255,7 @@
         <div class="table-scroll">
           <table>
             <tr><th>You want to…</th><th>How</th></tr>
-            <tr><td><strong>See everything the app holds</strong></td><td>Open it. Profile and Personalize hold your answers, Loved quotes your favourites, Daily dose your reminders. That is the complete set.</td></tr>
+            <tr><td><strong>See everything the app holds</strong></td><td>Open it. Profile and Personalize hold your answers, Liked quotes your hearted ones, My quotes your own writing, Daily dose your reminders. That is the complete set.</td></tr>
             <tr><td><strong>Correct or change it</strong></td><td>Edit it on those screens. Nothing is versioned or archived elsewhere.</td></tr>
             <tr><td><strong>Delete it</strong></td><td>Delete the app. iOS destroys the sandbox, so everything held on the device goes with it, permanently. Analytics already collected is held separately — see below.</td></tr>
           </table>
@@ -282,8 +289,8 @@
 
       <section id="security">
         <h2>14. Security</h2>
-        <p>There is no account, no password and no server of our own, so there is no login to compromise and no database of ours to breach. What reduces the risk here is how little is collected and how few places it goes, rather than any claim to perfect defences.</p>
-        <p>Everything that does leave your phone goes over encrypted connections to established providers, and is held in their infrastructure under their own security programmes. On your phone, your settings, your name and any photo you chose sit inside the iOS application sandbox, protected by your device passcode and Apple's file encryption.</p>
+        <p>There is no account, no password and no server of our own, so there is no login to compromise and no database of ours to breach. What reduces the risk here is how little is collected and how few places it goes, rather than any claim to perfect defenses.</p>
+        <p>Everything that does leave your phone goes over encrypted connections to established providers, and is held in their infrastructure under their own security programs. On your phone, your settings, your name and any photo you chose sit inside the iOS application sandbox, protected by your device passcode and Apple's file encryption.</p>
         <p>No system is perfect and we cannot promise absolute security. Practically, the most useful things you can do are the ordinary ones: use a passcode, keep iOS up to date, and be careful who you hand an unlocked phone to.</p>
       </section>
 
@@ -315,6 +322,7 @@
     <nav>
       <a href="/">Home</a>
       <a href="/help/">Help</a>
+      <a href="/compare/">Compare</a>
       <a href="/terms/">Terms</a>
       <a href="/privacy/">Privacy</a>
       <a href="/cookies/">Cookies</a>
