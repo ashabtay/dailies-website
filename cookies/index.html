@@ -87,7 +87,7 @@
             <tr><th>Category</th><th>What it does</th><th>Needs consent?</th></tr>
             <tr><td><strong>Strictly necessary</strong></td><td>Remembers your cookie choice. Nothing else.</td><td>No — exempt in law, and it is the record of your own decision</td></tr>
             <tr><td><strong>Analytics</strong></td><td>PostHog. Which pages are read, how people move through the site.</td><td><strong>Yes</strong> — off until you allow it</td></tr>
-            <tr><td><strong>Advertising</strong></td><td>Google and Meta pixels. Which advert led to a download.</td><td><strong>Yes</strong> — off until you allow it</td></tr>
+            <tr><td><strong>Advertising</strong></td><td>Google, Meta and TikTok pixels. Which advert led to a download.</td><td><strong>Yes</strong> — off until you allow it</td></tr>
           </table>
         </div>
         <p>The rule behind this is the <strong>Privacy and Electronic Communications Regulations</strong> (PECR) in the UK, and the ePrivacy rules in the EU: anything stored on your device that is not strictly necessary needs your consent first. Analytics and advertising are both squarely in that category, which is why neither loads until you say so.</p>
@@ -120,10 +120,10 @@
       </section>
 
       <section id="marketing">
-        <h2>5. Advertising — Google and Meta</h2>
-        <h3>CURRENTLY BOTH META AND GOOGLE PIXELS ARE NOT BEING USED.</h3>
+        <h2>5. Advertising — Google, Meta and TikTok</h2>
+        <h3>CURRENTLY NONE OF THE META, GOOGLE OR TIKTOK PIXELS ARE BEING USED.</h3>
         <p>Set only if you allow the Advertising category. These exist to answer one question: which advert actually brought somebody to Dailies.</p>
-        <p>They are, however, the genuinely tracking sort. Both Google and Meta can connect your visit here to the profile they already hold about you, and use it to target advertising elsewhere.</p>
+        <p>They are, however, the genuinely tracking sort. Google, Meta and TikTok can each connect your visit here to the profile they already hold about you, and use it to target advertising elsewhere.</p>
 
         <h3>Meta (Facebook and Instagram)</h3>
         <div class="table-scroll">
@@ -147,6 +147,17 @@
         </div>
         <p>Google's own account: <a href="https://policies.google.com/technologies/cookies" rel="noopener">Google cookie policy</a>. Your ad settings: <a href="https://myadcenter.google.com" rel="noopener">myadcenter.google.com</a>.</p>
         <p><span class="fill">[CONFIRM which Google tag you are using — a Google Ads conversion tag (AW-…) sets _gcl_au, a GA4 property (G-…) sets _ga. If you use only one, delete the other row.]</span></p>
+
+        <h3>TikTok</h3>
+        <div class="table-scroll">
+          <table>
+            <tr><th>Name</th><th>Party</th><th>Purpose</th><th>Lasts</th></tr>
+            <tr><td><code>_ttp</code></td><td>First-party</td><td>Identifies this browser to TikTok so a visit can be matched to an ad</td><td>13 months</td></tr>
+            <tr><td><code>_tt_enable_cookie</code></td><td>First-party</td><td>Records that the TikTok pixel is allowed to set the one above</td><td>13 months</td></tr>
+            <tr><td><code>ttwid</code></td><td><strong>Third-party</strong> (tiktok.com)</td><td>Ad delivery and measurement across sites</td><td>1 year</td></tr>
+          </table>
+        </div>
+        <p>TikTok's own account: <a href="https://www.tiktok.com/legal/page/global/tiktok-cookies-policy/en" rel="noopener">TikTok Cookies Policy</a>. Your ad settings: <a href="https://www.tiktok.com/setting/ads" rel="noopener">tiktok.com/setting/ads</a>.</p>
       </section>
 
       <section id="transfers">
@@ -158,6 +169,7 @@
             <tr><td><strong>PostHog</strong></td><td>Analytics processor, acting on our instructions</td><td>EU (Frankfurt) on the host configured here</td><td>Data stays in the EU; Standard Contractual Clauses where it does not</td></tr>
             <tr><td><strong>Meta</strong></td><td>Independent controller for its own advertising purposes</td><td>United States and elsewhere</td><td>EU–US Data Privacy Framework and Standard Contractual Clauses</td></tr>
             <tr><td><strong>Google</strong></td><td>Independent controller for its own advertising purposes</td><td>United States and elsewhere</td><td>EU–US Data Privacy Framework and Standard Contractual Clauses</td></tr>
+            <tr><td><strong>TikTok</strong></td><td>Independent controller for its own advertising purposes</td><td>Ireland and Norway for European visitors, and the United States, Singapore and elsewhere</td><td>Standard Contractual Clauses</td></tr>
             <tr><td><strong>GitHub Pages</strong></td><td>Serves the website pages; keeps standard server logs</td><td>United States</td><td>Standard Contractual Clauses</td></tr>
           </table>
         </div>

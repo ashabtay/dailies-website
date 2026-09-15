@@ -96,6 +96,11 @@
       location: a.getAttribute('data-download') || 'unknown',
       href: a.getAttribute('href') || ''
     });
+    // The same press is the conversion the ad platforms are buying. It goes to
+    // consent.js, which owns every tag and reports it to whichever pixels the
+    // visitor allowed. The two counts sit on separate consent switches and will
+    // not agree with each other; that is the switches working, not a bug.
+    if (window.dailiesTags) window.dailiesTags.downloadClicked();
   }
 
   /* ------------------------------------------------------------ the picker */

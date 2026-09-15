@@ -196,7 +196,7 @@ the structured data and the page disagree.
 
 `consent.js` is loaded by every page and is the **only** place a tracking tag is
 allowed to live. Nothing that measures loads itself: the PostHog snippet and the
-Google and Meta pixels all sit inside that file behind a stored decision, so
+Google, Meta and TikTok pixels all sit inside that file behind a stored decision, so
 "no non-essential cookie is set until you agree" is enforced by code rather than
 promised by the policy.
 
@@ -207,7 +207,8 @@ var CONFIG = {
   posthogKey:  '',                         // phc_...
   posthogHost: 'https://eu.i.posthog.com', // EU host keeps data in the EU
   googleId:    '',                         // AW-... (Ads) or G-... (GA4)
-  metaPixelId: ''                          // 16-digit pixel id
+  metaPixelId: '',                         // 16-digit pixel id
+  tiktokPixelId: ''                        // 20-character id from TikTok Events Manager
 };
 ```
 
@@ -223,9 +224,17 @@ restores normal behavior. The one thing that beats it is a visitor explicitly
 ticking a category in the settings panel while being told the signal is on —
 that is stored as `override: true`.
 
-Two switches are offered, Analytics (PostHog) and Advertising (Google + Meta).
+Two switches are offered, Analytics (PostHog) and Advertising (Google, Meta and
+TikTok).
 "Strictly necessary" covers only the consent record itself, which is kept in
 local storage as `dailies_consent`, not as a cookie.
+
+**The download CTA is also a conversion.** `analytics.js` sends PostHog's
+`download_clicked`, then calls `window.dailiesTags.downloadClicked()`, which
+lives in `consent.js` and reports a `Download` event to whichever advertising
+pixels the visitor allowed. The two sit on separate consent switches and will
+never agree on a number; that is the switches working. Ad-platform events
+belong in `consent.js` with the tags, never in `analytics.js`.
 
 A `Cookie settings` link in every footer reopens the panel — that is the
 withdrawal route the policy promises, so do not remove it. Any element with a
