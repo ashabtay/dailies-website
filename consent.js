@@ -2,14 +2,16 @@
    Cookie consent + tag loading for mydailies.app
 
    Loaded by every page. Nothing that tracks is allowed to load itself: the
-   Google and Meta pixels and the PostHog snippet all live inside this file,
-   behind a stored decision, so that "no non-essential cookie is set until you
-   agree" is enforced by the code rather than promised by the policy.
+   Google, Meta and TikTok pixels and the PostHog snippet all live inside this
+   file, behind a stored decision, so that "no non-essential cookie is set
+   until you agree" is enforced by the code rather than promised by the
+   policy.
 
    Two categories the visitor can decide on:
 
      analytics  - PostHog. How the site is used, in aggregate.
-     marketing  - Google + Meta pixels. Which ad brought someone here.
+     marketing  - Google, Meta and TikTok pixels. Which ad brought someone
+                  here.
 
    Necessary is not offered as a choice because there is nothing in it: the
    site has no login and no basket, and the only thing stored is the consent
@@ -28,7 +30,8 @@
     posthogKey:  'phc_m4yo9P5TgvkQTvfy6rM5WnU3Kar7L7fjb5PJB9yKoLq9',                        // e.g. 'phc_xxxxxxxxxxxxxxxxxxxx'
     posthogHost: 'https://eu.i.posthog.com', // EU host keeps data in the EU
     googleId:    '',                        // e.g. 'AW-123456789' or 'G-XXXXXXX'
-    metaPixelId: ''                         // e.g. '1234567890123456'
+    metaPixelId: '',                        // e.g. '1234567890123456'
+    tiktokPixelId: ''                       // e.g. 'CQ1A2B3C4D5E6F7G8H9I' (20 chars)
   };
 
   var STORE = 'dailies_consent';
@@ -168,6 +171,53 @@
       window.fbq('init', CONFIG.metaPixelId);
       window.fbq('track', 'PageView');
     }
+
+    if (CONFIG.tiktokPixelId) {
+      !function (w, d, t) {
+        w.TiktokAnalyticsObject = t;
+        var ttq = w[t] = w[t] || [];
+        ttq.methods = ['page', 'track', 'identify', 'instances', 'debug', 'on', 'off',
+          'once', 'ready', 'alias', 'group', 'enableCookie', 'disableCookie',
+          'holdConsent', 'revokeConsent', 'grantConsent'];
+        ttq.setAndDefer = function (e, n) {
+          e[n] = function () { e.push([n].concat(Array.prototype.slice.call(arguments, 0))); };
+        };
+        for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+        ttq.instance = function (e) {
+          var n = ttq._i[e] || [];
+          for (var o = 0; o < ttq.methods.length; o++) ttq.setAndDefer(n, ttq.methods[o]);
+          return n;
+        };
+        ttq.load = function (e, n) {
+          var r = 'https://analytics.tiktok.com/i18n/pixel/events.js';
+          ttq._i = ttq._i || {}; ttq._i[e] = []; ttq._i[e]._u = r;
+          ttq._t = ttq._t || {}; ttq._t[e] = +new Date();
+          ttq._o = ttq._o || {}; ttq._o[e] = n || {};
+          var s = d.createElement('script');
+          s.type = 'text/javascript'; s.async = !0;
+          s.src = r + '?sdkid=' + e + '&lib=' + t;
+          var a = d.getElementsByTagName('script')[0];
+          a.parentNode.insertBefore(s, a);
+        };
+        ttq.load(CONFIG.tiktokPixelId);
+        ttq.page();
+      }(window, document, 'ttq');
+    }
+  }
+
+  /* ------------------------------------------------------- the conversion */
+  /* The one thing this site does that an ad platform is buying: somebody
+     presses "Download for iPhone" and leaves for the App Store. It is reported
+     from here rather than from analytics.js because every tag lives in this
+     file, and because a pixel that was never loaded should be a no-op rather
+     than a consent check sitting somewhere else. PostHog's own
+     `download_clicked` measures the same press on the other switch, and stays
+     where the site's events live. */
+
+  function downloadClicked() {
+    if (window.ttq) {
+      try { window.ttq.track('Download'); } catch (e) {}
+    }
   }
 
   function apply(state) {
@@ -290,7 +340,7 @@
           '<div class="cc-opt">' +
             '<input type="checkbox" id="cc-mkt"' + (cur.marketing ? ' checked' : '') + '>' +
             '<div><label for="cc-mkt">Advertising</label>' +
-            '<span>Google and Meta pixels. Measures which advert led to a download, and lets those platforms show you ads.</span></div>' +
+            '<span>Google, Meta and TikTok pixels. Measures which advert led to a download, and lets those platforms show you ads.</span></div>' +
           '</div>' +
         '</div>' +
         '<div class="cc-row">' +
@@ -367,5 +417,11 @@
     signal: SIGNAL,
     get: read,
     open: function () { open(true); }
+  };
+
+  // What analytics.js calls when the CTA is pressed. Absent from nothing: the
+  // file is on every page, and each tag inside it checks itself.
+  window.dailiesTags = {
+    downloadClicked: downloadClicked
   };
 })();
