@@ -1,0 +1,58 @@
+{
+  "/": {
+    "lastmod": "2026-09-21",
+    "sig": "dad80ac0d5dc6d051c3f36566a696ce49d1f932bc45958da5d8a7f5543624413"
+  },
+  "/about/": {
+    "lastmod": "2026-09-21",
+    "sig": "727fbb385f607660fb68a29ac4beb9a4c0c0d3f10771be099d8f5e4cab273b98"
+  },
+  "/compare/": {
+    "lastmod": "2026-09-21",
+    "sig": "92a42d4b2bc9648165048fc63f7b6c63ac7e97a4cb84a88768c7058f15932fe3"
+  },
+  "/compare/dailies-vs-i-am/": {
+    "lastmod": "2026-09-21",
+    "sig": "1a6ac9e4e63950314d70db2be5ba0040b3e992c2a0250e3611bb435c4e3122da"
+  },
+  "/compare/dailies-vs-motivate/": {
+    "lastmod": "2026-09-21",
+    "sig": "903451f83f8a0b09c92dc57d19788de298f932713d2eb67df2787bc4652460f1"
+  },
+  "/compare/dailies-vs-motivation/": {
+    "lastmod": "2026-09-21",
+    "sig": "1edaa468a33465aeaca743520409a7afae74a40ab3e1a66a5e0adec371f40266"
+  },
+  "/compare/dailies-vs-thinkup/": {
+    "lastmod": "2026-09-21",
+    "sig": "c48998d10a18810b658a1ab07467ea85a6efda3fc79de7736249c6de2e7c2538"
+  },
+  "/cookies/": {
+    "lastmod": "2026-09-21",
+    "sig": "5fe29f9874ce0e3d3632b34d67a2e2bb4a089d7c5720c83cb9f9cea88c9ffa5c"
+  },
+  "/guides/": {
+    "lastmod": "2026-09-21",
+    "sig": "024fb614b5d61841ca215a0c42f22091e1f464d1dcfcb15ce462629f4302acbf"
+  },
+  "/guides/add-a-widget-to-your-home-screen/": {
+    "lastmod": "2026-09-21",
+    "sig": "740ea00af8774d33884ec51c7ccbc6aa01fe78621f6439d9cf0e6f7b0273629c"
+  },
+  "/guides/quotes-on-your-iphone-lock-screen/": {
+    "lastmod": "2026-09-21",
+    "sig": "4bf56b4d9591c0db19b1b1b760d856f6fe188071f2cfbc0c3186470ea5d3fdba"
+  },
+  "/help/": {
+    "lastmod": "2026-09-21",
+    "sig": "6db91a7c6159d9f25b0f54e312787a4d39176f8aad3a65eabe1557013f0c7c18"
+  },
+  "/privacy/": {
+    "lastmod": "2026-09-21",
+    "sig": "7c9b88112307c1dcabd2ee92a48c1920a549cfb91dea46db2919fdc8d5476a4a"
+  },
+  "/terms/": {
+    "lastmod": "2026-09-21",
+    "sig": "1d5e94e5e2b1b8bfcbb200f2becc605380836a1178369a81025b1d407a54d34a"
+  }
+}
