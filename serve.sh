@@ -30,6 +30,9 @@ echo "  /terms      terms of use"
 echo "  /privacy    privacy policy"
 echo "  /cookies    cookie policy"
 echo "  /compare    comparison pages"
+echo "  /guides     how-to guides"
+echo "  /about      about page"
+echo "  /anything   the custom 404"
 echo
 echo "Edit a file, reload the browser. Ctrl-C to stop."
 
@@ -48,6 +51,26 @@ class NoCache(http.server.SimpleHTTPRequestHandler):
     def log_message(self, fmt, *args):
         # One tidy line per request; the default prints the date on every line.
         sys.stderr.write("  %s\n" % (fmt % args))
+
+    def send_error(self, code, message=None, explain=None):
+        # GitHub Pages serves /404.html for any path it cannot find, and so do
+        # Netlify, Vercel and Cloudflare Pages. Without this, a missing path
+        # here renders Python's own grey error page instead, and /404.html is
+        # the one page on the site you could never see the way a visitor does.
+        if code == 404:
+            try:
+                body = open('404.html', 'rb').read()
+            except OSError:
+                pass
+            else:
+                self.send_response(404)
+                self.send_header('Content-Type', 'text/html; charset=utf-8')
+                self.send_header('Content-Length', str(len(body)))
+                self.end_headers()
+                if self.command != 'HEAD':
+                    self.wfile.write(body)
+                return
+        super().send_error(code, message, explain)
 
 # Threaded, like `python3 -m http.server` itself: a single-threaded server
 # handles one connection at a time, and a browser that holds an idle keep-alive

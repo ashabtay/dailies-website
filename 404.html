@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Dailies</title>
+<meta name="description" content="That page is not here. The help center, the guides and the comparison pages are, and they are linked from this one.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Page not found — Dailies">
+<meta property="og:description" content="That page is not here. Here is where everything else lives.">
+<meta property="og:image" content="https://mydailies.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dailies - daily motivation, straight to your Lock Screen">
+<meta property="og:site_name" content="Dailies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/#taste">Have a taste</a>
+      <a href="/#how">How it works</a>
+      <a href="/help/">Help</a>
+      <a class="btn btn-primary" href="/#get">Get Dailies</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">404</div>
+      <h1>There is nothing at this address.</h1>
+      <p class="lede">Either the link was wrong, or the page moved and something still points at where it used to be. Both are fixable, and the second one is ours to fix &mdash; <a href="mailto:help@mydailies.app" style="color:var(--accent)">tell us where you came from</a> and it gets sorted.</p>
+      <p class="doc-meta"><span id="what"></span></p>
+    </div>
+  </header>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">Everything else</div>
+      <a href="/">Home</a>
+      <a href="/help/">Help center</a>
+      <a href="/guides/">Guides</a>
+      <a href="/compare/">Comparisons</a>
+      <a href="/about/">About</a>
+      <a href="/terms/">Terms of Use</a>
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/cookies/">Cookie Policy</a>
+    </aside>
+
+    <div class="prose">
+
+      <div class="cards">
+        <a class="card" href="/help/">
+          <div class="card-icon">&#9873;</div>
+          <h3>Help center</h3>
+          <p>Setup, notifications that stopped arriving, the widget, premium and billing. With a search box over all of it.</p>
+        </a>
+        <a class="card" href="/guides/">
+          <div class="card-icon">&#9788;</div>
+          <h3>Guides</h3>
+          <p>Getting a quote onto your Lock Screen, and adding the widget to your Home Screen.</p>
+        </a>
+        <a class="card" href="/compare/">
+          <div class="card-icon">&#9733;</div>
+          <h3>Compared</h3>
+          <p>Dailies next to the other quote and affirmation apps on iPhone. Every rival figure dated and sourced.</p>
+        </a>
+      </div>
+
+      <section id="common">
+        <h2>Looking for one of these?</h2>
+        <p>These are the pages people most often arrive at a dead link hunting for:</p>
+        <ul>
+          <li><strong>Quotes have stopped arriving:</strong> <a href="/help/#notifications">the notifications section of the help page</a> &mdash; it is a Focus mode more often than anything else.</li>
+          <li><strong>Adding the widget:</strong> <a href="/guides/add-a-widget-to-your-home-screen/">Home Screen</a> or <a href="/guides/quotes-on-your-iphone-lock-screen/">Lock Screen</a>.</li>
+          <li><strong>Canceling, refunds, the trial:</strong> <a href="/help/#premium">premium and billing</a>.</li>
+          <li><strong>What the app knows about you:</strong> <a href="/privacy/">the Privacy Policy</a>, or the short version under <a href="/help/#privacy">privacy on the help page</a>.</li>
+          <li><strong>A human:</strong> <a href="mailto:help@mydailies.app">help@mydailies.app</a>, read by <a href="/about/">the person who makes the app</a>.</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <section class="strip">
+    <div class="wrap strip-in">
+      <h2>Start tomorrow with something good.</h2>
+      <p class="lede">Set it up once. Dailies takes it from there.</p>
+      <a class="btn btn-primary" href="/#get">Download for iPhone</a>
+    </div>
+  </section>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/help/">Help</a>
+      <a href="/guides/">Guides</a>
+      <a href="/compare/">Compare</a>
+      <a href="/about/">About</a>
+      <a href="/terms/">Terms</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/cookies/">Cookies</a>
+      <a href="#" data-cookie-settings>Cookie settings</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script>
+/* The host serves this file for any missing path without changing the URL, so
+   the address bar still holds whatever was asked for. Printing it back is the
+   one piece of information this page has that the visitor does not - and it is
+   what makes a bug report useful. textContent, never innerHTML: the path is
+   attacker-controlled. */
+(function(){
+  var el = document.getElementById('what');
+  if (el) el.textContent = 'Asked for: ' + location.pathname;
+})();
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

@@ -8,6 +8,10 @@ The website for the Dailies app — https://mydailies.app
 | --- | --- | --- |
 | `/` | `index.html` | The landing page |
 | `/help` | `help/index.html` | Help center, with a client-side search over the entries |
+| `/guides` | `guides/index.html` | Guides hub, linking the how-to articles below |
+| `/guides/quotes-on-your-iphone-lock-screen` | `guides/quotes-on-your-iphone-lock-screen/index.html` | How to put quotes on your iPhone Lock Screen |
+| `/guides/add-a-widget-to-your-home-screen` | `guides/add-a-widget-to-your-home-screen/index.html` | How to add a widget to your Home Screen |
+| `/about` | `about/index.html` | Who makes Dailies, the editorial rules, and the contact route |
 | `/terms` | `terms/index.html` | Terms of Use |
 | `/privacy` | `privacy/index.html` | Privacy Policy |
 | `/cookies` | `cookies/index.html` | Cookie Policy |
@@ -16,6 +20,7 @@ The website for the Dailies app — https://mydailies.app
 | `/compare/dailies-vs-i-am` | `compare/dailies-vs-i-am/index.html` | Dailies vs I am (Monkey Taps) |
 | `/compare/dailies-vs-thinkup` | `compare/dailies-vs-thinkup/index.html` | Dailies vs ThinkUp (Precise Wellness) |
 | `/compare/dailies-vs-motivate` | `compare/dailies-vs-motivate/index.html` | Dailies vs Motivate (Brave New Logic) |
+| any missing path | `404.html` | The custom 404 |
 
 `/terms` and `/privacy` are not optional paths: the app links to them from the
 legal line on the first onboarding screen (`lib/app_config.dart` in the `dailies`
@@ -34,6 +39,11 @@ assets instead of each inlining a copy:
 
 - `doc.css` — all their styling, including the design tokens
 - `icon.png` — the app icon in the nav, extracted from the data URI in `index.html`
+
+One more asset is shared by every page including the landing page:
+
+- `og.png` — the 1200×630 card link previews show. See
+  [The share image](#the-share-image).
 
 **The token block at the top of `doc.css` is duplicated from `index.html`.**
 Change a color in one and change it in the other, or the landing page and the
@@ -74,6 +84,9 @@ templating. Edit the file, reload the browser, done.
 | Cookie Policy | `cookies/index.html` |
 | Help center | `help/index.html` |
 | A comparison article | `compare/dailies-vs-<app>/index.html` |
+| A how-to guide | `guides/<slug>/index.html` |
+| About page | `about/index.html` |
+| The 404 page | `404.html` |
 | Landing page | `index.html` |
 | Shared styling for all of them | `doc.css` |
 
@@ -91,7 +104,12 @@ landing page's nav.** Its links point at landing-page anchors (`/#taste`,
 update every other page's nav to match, or they link to anchors that no longer
 exist. Nothing checks this.
 
-`sitemap.xml` is hand-maintained too: add a page, add a `<url>` entry.
+`sitemap.xml` is **generated** — do not hand-edit it. Add a page to `PAGES` in
+`tools/sitemap.py` and run it. See [The sitemap](#the-sitemap).
+
+**Every page's footer is hand-copied too**, and it now carries nine links.
+Adding a top-level page means adding it to the footer of all of them, the same
+way the nav works.
 
 ### The document pages
 
@@ -164,6 +182,42 @@ anywhere inside an existing `<div class="faq">`:
 - The three cards at the top are hand-picked shortcuts, not generated. They are
   the `<div class="cards">` block; each is an `<a class="card" href="#id">`.
 
+## The guides
+
+`/guides` and its articles answer how-to queries — *how to put quotes on your
+iPhone Lock Screen*, *how to add a widget to your Home Screen*. The material was
+already on the help page, and that is the point: **a `<details>` inside a help
+accordion is not a page and cannot rank.** A guide is the same answer given room
+to be complete, at a URL of its own, with the troubleshooting attached.
+
+They are built out of the same blocks as the comparison articles, so there is
+nothing new to learn to edit one. Four things to keep true:
+
+1. **The guide is the long version, the help entry stays the short one.** Do not
+   delete the help entry when you write a guide. Link the two: the help entries
+   for the Home Screen and Lock Screen widgets each end with a line pointing at
+   the matching guide, and the guides point back at `/help` for everything they
+   do not cover.
+2. **No number about Dailies**, the same as everywhere else — see
+   [House rules for the copy](#house-rules-for-the-copy). The guides get close to
+   this rule twice and stay the right side of it: the widget sizes are named
+   (`medium` and `large`) rather than counted, and the minimum iOS version is
+   written as "every iPhone that can run Dailies can show a Lock Screen widget"
+   rather than as a version number, because the version number moves when the
+   app raises its deployment target and the sentence never does.
+3. **Each guide carries a `HowTo` and a `FAQPage` JSON-LD block** at the bottom
+   of the file. The `HowTo` steps must match the numbered `<ol>` in the body and
+   the `FAQPage` must match the visible `<details>` list, or the structured data
+   and the page disagree. Edit one, edit the other.
+4. **Steps get a date, like competitor figures do.** The `.doc-meta` line says
+   when they were last checked against a real phone. iOS moves the buttons every
+   few releases — the `+` in the Home Screen editor became `Edit → Add Widget` —
+   so re-walk them when a major version ships and move the date when you do.
+
+Adding a guide: copy the closest existing one, then add it to the cards and the
+sidebar on `guides/index.html`, to `PAGES` in `tools/sitemap.py`, and to the
+help entry it is the long version of.
+
 ## The comparison pages
 
 `/compare` and its four articles are SEO pages: somebody searching *dailies vs
@@ -201,9 +255,84 @@ line in the header (`.doc-meta`) and in the Sources section when you do. If a
 rival ships something that removes a difference the article leans on — a Lock
 Screen widget, say — change the article rather than leaving it to age.
 
-Each article carries a `FAQPage` JSON-LD block at the bottom of the file. If you
-edit a question or answer in the visible `<details>` list, edit it there too, or
-the structured data and the page disagree.
+Each article carries two JSON-LD blocks at the bottom of the file: an `Article`
+and a `FAQPage`. If you edit a question or answer in the visible `<details>`
+list, edit the `FAQPage` too, or the structured data and the page disagree.
+
+**Every article is signed.** The first `.doc-meta` span is a byline linking to
+`/about`, sitting in front of the dated sourcing line. Comparison content is
+judged on whether somebody stands behind it, and an unsigned page arguing that
+its rivals are worse is the weakest version of that argument. The same name is
+in the `Article` block's `author`, and it is the same name already on the
+[Terms of Use](terms/index.html) and the [Privacy Policy](privacy/index.html) —
+so the byline discloses nothing the legal pages did not already say. Keep the
+three in step.
+
+## The share image
+
+`og.png` is the 1200×630 card Slack, iMessage, X and LinkedIn render when
+somebody pastes a link. Every page points at the same one.
+
+It used to be `icon.png`, which is 256×256 — small enough that every one of
+those services fell back to the tiny-thumbnail layout instead of the wide card.
+The size is the whole reason the file exists; 1200×630 is what they all want.
+
+It is generated rather than drawn:
+
+```bash
+python3 tools/make-og.py
+```
+
+The script needs Pillow. It fetches Fraunces, Figtree and Courier Prime from the
+Google Fonts repo into `~/.cache/dailies-og-fonts` on first run, so no font file
+is checked in. **Its colors are the same tokens `doc.css` declares, and its
+ridge is a transcription of the contour curve `index.html` draws live on its
+hero canvas.** Change a token in the CSS and change it in the script too, the
+same way `doc.css` and `index.html` have to stay in step — otherwise the card
+slowly stops looking like the site it is advertising.
+
+Three `<meta>` tags go with it on every page and are not optional: `og:image`
+needs `og:image:width` and `og:image:height` for the card to lay out before the
+image has loaded, and `twitter:card` must be `summary_large_image` or X renders
+the small square regardless of what size the image actually is.
+
+## The sitemap
+
+`sitemap.xml` is generated. **Do not hand-edit it**, and do not add a `<url>`
+entry by hand — add the page to `PAGES` in `tools/sitemap.py` and run:
+
+```bash
+python3 tools/sitemap.py
+```
+
+The point of the script is the `<lastmod>` dates. Every entry used to carry the
+date of the deploy, which is the one thing `<lastmod>` must not be: a date that
+advances whether or not anything changed tells a crawler nothing, and a crawler
+that learns the dates are noise stops reading them — which costs you the field's
+only real use, getting a genuinely updated page re-read quickly.
+
+So the script never looks at the clock to decide. For each page it hashes the
+page's **content** — the file with its `<head>` and its HTML comments stripped
+and whitespace flattened — and compares that against the hash it recorded last
+run in `tools/sitemap-state.json`:
+
+| What you changed | What happens to that page's `<lastmod>` |
+| --- | --- |
+| The words, the links, the JSON-LD | Moves to today |
+| `<head>`: a meta tag, the og image, the stylesheet link | Held |
+| `doc.css`, or the indentation of a file | Held |
+| Nothing — you just redeployed | Held |
+
+`tools/sitemap-state.json` is the record of those hashes and dates and **is
+committed**. Delete it and every date reseeds from git, losing the history the
+whole mechanism exists to keep.
+
+A page listed in `PAGES` for the first time is seeded from git — the date of the
+last commit that touched its file — rather than from today, so adding a page to
+the script does not stamp it with the day you happened to add it.
+
+`404.html` is deliberately not in `PAGES`. It is not a destination, and it is
+`noindex`.
 
 ## Analytics, pixels and consent
 
@@ -270,7 +399,7 @@ page's "Can I switch the usage measurements off?" entry too.
 Find them all — **run this from the root of this repo, not the app repo**:
 
 ```bash
-cd ~/Develop/dailies-website && grep -rno 'class="fill"[^>]*>\[[^]]*\]' terms privacy cookies compare | sed 's/class="fill"[^>]*>//'
+cd ~/Develop/dailies-website && grep -rno 'class="fill"[^>]*>\[[^]]*\]' terms privacy cookies compare guides about 404.html | sed 's/class="fill"[^>]*>//'
 ```
 
 Delete the `<span>` wrapper as you fill each one in. The page is not ready to
@@ -293,6 +422,20 @@ being opened the wrong way.
 
 Leave the server running while you edit. Save the file, reload the browser —
 there is no build step and no watcher to restart.
+
+`serve.sh` serves `404.html` for any path it cannot find, with a real 404
+status, because that is what GitHub Pages, Netlify, Vercel and Cloudflare Pages
+all do. Without it the 404 page would be the one page on the site you could
+never see the way a visitor does — you would get Python's grey error page
+instead. Open any made-up path to check it:
+
+```bash
+open http://localhost:8000/no-such-page
+```
+
+Note that `python3 -m http.server` on its own does **not** do this, so the
+`.claude/launch.json` preview server shows the stock error page. Use `serve.sh`
+when the 404 is what you are working on.
 
 ## The landing page's quote picker
 
