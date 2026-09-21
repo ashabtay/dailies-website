@@ -2,9 +2,10 @@
    Shared styles for the document pages — /terms, /privacy, /cookies, /help.
 
    index.html is one self-contained file because everything in it is inlined
-   photography. These pages carry no imagery, so they share this sheet instead
-   of each keeping its own copy of the tokens: four duplicates would drift the
-   first time a colour changed. The token block below is the same one index.html
+   photography. These pages carry little of their own (the compare pages link a
+   handful of screenshots from /img), so they share this sheet instead of each
+   keeping its own copy of the tokens: duplicates would drift the first time a
+   colour changed. The token block below is the same one index.html
    declares, and must stay in step with it.
    ========================================================================= */
 
@@ -172,6 +173,28 @@ td strong{color:var(--text)}
 .prose a.card,.prose a.card:hover{text-decoration:none}
 .card .card-icon{font-size:21px; line-height:1; margin-bottom:4px}
 .card p{color:var(--text-dim); font-size:14.5px; margin:0}
+
+/* ============ SCREENSHOT ============
+   A single phone capture beside the paragraph it illustrates on a wide
+   screen, above it on a narrow one. height:auto is load-bearing: the width
+   and height attributes on the <img> become presentational hints, and
+   height:900px would otherwise beat the ratio and stretch the shot. */
+.shots{display:grid; grid-template-columns:minmax(0,186px); gap:9px; margin:0 0 20px}
+.shots figure{margin:0; display:flex; flex-direction:column; gap:9px; min-width:0}
+.shots img{
+  width:100%; height:auto; aspect-ratio:414/900; border-radius:15px;
+  border:1px solid var(--rule-soft); background:var(--ground-deep);
+}
+.shots figcaption{font-size:13.5px; line-height:1.45; color:var(--text-faint); text-wrap:pretty}
+
+.shot-aside{display:grid; grid-template-columns:186px minmax(0,1fr); gap:clamp(18px,2.4vw,30px); align-items:start; margin-bottom:20px}
+.shot-aside .shots{margin:0}
+.shot-aside .shot-body > p:last-child{margin-bottom:0}
+
+@media (max-width:620px){
+  .shot-aside{grid-template-columns:1fr; gap:16px}
+  .shots{grid-template-columns:minmax(0,58%)}
+}
 
 /* ============ FAQ / DETAILS ============ */
 .faq{max-width:72ch}
