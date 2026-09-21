@@ -29,6 +29,7 @@ echo "  /help       help centre"
 echo "  /terms      terms of use"
 echo "  /privacy    privacy policy"
 echo "  /cookies    cookie policy"
+echo "  /compare    comparison pages"
 echo
 echo "Edit a file, reload the browser. Ctrl-C to stop."
 

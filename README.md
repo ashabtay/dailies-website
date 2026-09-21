@@ -85,6 +85,14 @@ Everything a reader sees lives between `<div class="prose">` and its closing
 `</div>`. Above that is the page head and the nav; below it is the footer. You
 should rarely need to touch either.
 
+**The nav on every document and comparison page is a hand-copied version of the
+landing page's nav.** Its links point at landing-page anchors (`/#taste`,
+`/#how`, `/#get`). Add, remove or rename a section on the landing page and
+update every other page's nav to match, or they link to anchors that no longer
+exist. Nothing checks this.
+
+`sitemap.xml` is hand-maintained too: add a page, add a `<url>` entry.
+
 ### The document pages
 
 Each numbered section is one `<section>` block:
@@ -179,9 +187,14 @@ taste:
    large free slice" against a competitor's dated, sourced figure, and that
    asymmetry is deliberate: their number is checked, ours would not stay true.
 
-**The price of Dailies Premium is still a `<span class="fill">` placeholder on
-all four pages.** Set the price in App Store Connect, then fill it in — see
-[Unfilled placeholders](#unfilled-placeholders), which greps `compare` too.
+**The articles state no price for Dailies Premium**, and no trial length. They
+send the reader to the purchase screen instead. That is rule 1 applied to the one
+number most tempting to write down: App Store prices are tested and change, and
+the page would be the last place anyone remembered to update.
+
+The articles also never recommend Dailies for a child or a teenager, whatever
+its App Store age rating says. The Terms of Use ask that users be adults, and a
+comparison page that contradicts the terms is worse than one row shorter.
 
 Re-check the competitor figures roughly every six months, and update the date
 line in the header (`.doc-meta`) and in the Sources section when you do. If a
@@ -242,14 +255,17 @@ withdrawal route the policy promises, so do not remove it. Any element with a
 
 ## Unfilled placeholders
 
-The legal pages contain placeholders — trading address, jurisdiction, age limit,
-analytics retention and so on — marked up as `<span class="fill">`. They render
-as bright yellow highlights so that anything still unfilled is impossible to
-miss on a published page.
+Anything on a legal page that still needs a decision is marked up as
+`<span class="fill">`. It renders as a bright yellow highlight so that an
+unfilled blank is impossible to miss on a published page. None remain at the
+time of writing; the grep below is how to be sure before publishing.
 
-Two of them are not text to fill in but **work to do**: the privacy policy
-describes an in-app Analytics opt-out switch, and assumes ad attribution ships
-in the app. Both must be true before the policy is accurate.
+Two things the privacy policy says about the app are checked against the app
+repo rather than filled in here, and both must stay true: analytics can be
+switched off under **Profile → Additional Info → Share usage analytics**, and
+the app shows no App Tracking Transparency prompt and does no ad attribution.
+If either changes, sections 3 and 4 of the policy change with it, and the help
+page's "Can I switch the usage measurements off?" entry too.
 
 Find them all — **run this from the root of this repo, not the app repo**:
 
