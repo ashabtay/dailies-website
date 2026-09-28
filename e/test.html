@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Envelope tests</title>
+<!--
+  Checks for the pure functions in /envelope.js. Open /e/test.html over
+  ./serve.sh; every line should read "ok". Also runnable headless:
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+      --dump-dom http://localhost:8000/e/test.html | grep -E 'SUMMARY|FAIL'
+-->
+<style>
+  body{font:14px/1.5 ui-monospace,Menlo,monospace; background:#191c1d; color:#f0e6d2; margin:24px}
+  .ok{color:#9db081} .fail{color:#e0806a; font-weight:700}
+  #summary{font-size:16px; margin-bottom:16px}
+</style>
+</head>
+<body>
+<div id="summary">running</div>
+<ol id="out"></ol>
+<script src="/envelope.js"></script>
+<script>
+(function () {
+  var E = window.DailiesEnvelope;
+  var out = document.getElementById('out');
+  var pass = 0, fail = 0;
+
+  function show(ok, name, detail) {
+    var li = document.createElement('li');
+    li.className = ok ? 'ok' : 'fail';
+    li.textContent = (ok ? 'ok   ' : 'FAIL ') + name + (ok || detail === undefined ? '' : '  -> ' + detail);
+    out.appendChild(li);
+    ok ? pass++ : fail++;
+    (ok ? console.log : console.error)((ok ? 'ok   ' : 'FAIL ') + name);
+  }
+  function eq(name, got, want) {
+    var g = JSON.stringify(got), w = JSON.stringify(want);
+    show(g === w, name, 'got ' + g + ', want ' + w);
+  }
+  // Encodes an arbitrary JS value the way the app does: JSON, UTF-8, base64url, no padding.
+  function raw(v) {
+    var bytes = new TextEncoder().encode(typeof v === 'string' ? v : JSON.stringify(v));
+    var bin = '';
+    bytes.forEach(function (b) { bin += String.fromCharCode(b); });
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+
+  var good = {
+    v: 1, to: 'Dana', from: 'Amit', t: 'You are doing better than you think, Dana.',
+    a: null, q: 'd3b6119c-cf07-42a8-9a65-d3d073ee6a2a', o: false,
+    p: 'You are doing better than you think, {name}.', n: 3, w: 'hard', l: 'en'
+  };
+
+  // ---- round trips
+  eq('round trip, ascii', E.decode(E.encode(good)), good);
+  var intl = { v: 1, to: 'דנה', from: 'José', t: 'דנה, tú puedes.\nLine two — café 🌿', a: 'José Martí', q: null, o: true };
+  eq('round trip, Hebrew and accented names, emoji, newline', E.decode(E.encode(intl)), intl);
+  eq('encode is base64url without padding', /^[A-Za-z0-9_-]+$/.test(E.encode(intl)), true);
+  eq('decode accepts a leading #', E.decode('#' + E.encode(good)).to, 'Dana');
+  eq('decode tolerates stray padding', E.decode(E.encode(good) + '==').from, 'Amit');
+  eq('names are trimmed', E.decode(raw(Object.assign({}, good, { to: '  Dana  ' }))).to, 'Dana');
+  eq('older link without the prototype fields', E.decode(raw({ v: 1, to: 'A', from: 'B', t: 'Hi', a: null, q: null, o: false })),
+    { v: 1, to: 'A', from: 'B', t: 'Hi', a: null, q: null, o: false });
+  eq('unknown keys are ignored', E.decode(raw(Object.assign({ zz: 9 }, good))).zz, undefined);
+  eq('unknown open-when key is ignored, not fatal', E.decode(raw(Object.assign({}, good, { w: 'monday' }))).w, undefined);
+  eq('unknown language is ignored, not fatal', E.decode(raw(Object.assign({}, good, { l: 'fr' }))).l, undefined);
+  eq('40-character name is fine', E.decode(raw(Object.assign({}, good, { to: 'x'.repeat(40) }))).to.length, 40);
+  eq('600-character text is fine', E.decode(raw(Object.assign({}, good, { t: 'y'.repeat(600) }))).t.length, 600);
+
+  // ---- every invalid reason
+  function reason(frag) { return E.decode(frag).error; }
+  eq('empty: nothing after #', reason(''), 'empty');
+  eq('empty: only #', reason('#'), 'empty');
+  eq('decode: not base64url', reason('not*base64!'), 'decode');
+  eq('decode: impossible length', reason('abcde'), 'decode');
+  eq('decode: not JSON', reason(raw('hello there')), 'decode');
+  eq('decode: invalid UTF-8', reason(btoa('\xff\xfe\xfd').replace(/\//g, '_').replace(/\+/g, '-').replace(/=+$/, '')), 'decode');
+  eq('decode: truncated link', reason(E.encode(good).slice(0, 40)), 'decode');
+  eq('version: v 2', reason(raw(Object.assign({}, good, { v: 2 }))), 'version');
+  eq('version: v missing', reason(raw({ to: 'A', from: 'B', t: 'x' })), 'version');
+  eq('version: v as string', reason(raw(Object.assign({}, good, { v: '1' }))), 'version');
+  eq('field: JSON array', reason(raw([1, 2])), 'field');
+  eq('field: to missing', reason(raw(Object.assign({}, good, { to: undefined }))), 'field');
+  eq('field: to blank', reason(raw(Object.assign({}, good, { to: '   ' }))), 'field');
+  eq('field: to 41 characters', reason(raw(Object.assign({}, good, { to: 'x'.repeat(41) }))), 'field');
+  eq('field: from not a string', reason(raw(Object.assign({}, good, { from: 7 }))), 'field');
+  eq('field: name with a newline', reason(raw(Object.assign({}, good, { from: 'A\nB' }))), 'field');
+  eq('field: t empty', reason(raw(Object.assign({}, good, { t: '' }))), 'field');
+  eq('field: t 601 characters', reason(raw(Object.assign({}, good, { t: 'y'.repeat(601) }))), 'field');
+  eq('field: a is a number', reason(raw(Object.assign({}, good, { a: 5 }))), 'field');
+  eq('field: q not a uuid', reason(raw(Object.assign({}, good, { q: 'abc' }))), 'field');
+  eq('field: o not boolean', reason(raw(Object.assign({}, good, { o: 'yes' }))), 'field');
+  eq('field: p not a string', reason(raw(Object.assign({}, good, { p: 3 }))), 'field');
+  eq('field: n zero', reason(raw(Object.assign({}, good, { n: 0 }))), 'field');
+  eq('field: n fractional', reason(raw(Object.assign({}, good, { n: 2.5 }))), 'field');
+  eq('field: l not a string', reason(raw(Object.assign({}, good, { l: 1 }))), 'field');
+
+  // ---- text size steps (px on a 402px card)
+  eq('textSize 1', E.textSize(1), 33);
+  eq('textSize 80', E.textSize(80), 33);
+  eq('textSize 81', E.textSize(81), 27);
+  eq('textSize 160', E.textSize(160), 27);
+  eq('textSize 161', E.textSize(161), 22);
+  eq('textSize 260', E.textSize(260), 22);
+  eq('textSize 261', E.textSize(261), 18);
+  eq('textSize 600', E.textSize(600), 18);
+
+  // ---- ordinals
+  eq('ordinal 1 en', E.ordinal(1, 'en'), 'first');
+  eq('ordinal 3 en', E.ordinal(3, 'en'), 'third');
+  eq('ordinal 10 en', E.ordinal(10, 'en'), 'tenth');
+  eq('ordinal 11 en', E.ordinal(11, 'en'), 'No. 11');
+  eq('ordinal 14 en', E.ordinal(14, 'en'), 'No. 14');
+  eq('ordinal 1 es', E.ordinal(1, 'es'), 'primer');
+  eq('ordinal 3 es', E.ordinal(3, 'es'), 'tercer');
+  eq('ordinal 10 es', E.ordinal(10, 'es'), 'décimo');
+  eq('ordinal 14 es', E.ordinal(14, 'es'), 'N.º 14');
+
+  // ---- personalize
+  eq('personalize, name at the end', E.personalize('You are not behind, {name}.', 'Dana'), 'You are not behind, Dana.');
+  eq('personalize, name first', E.personalize('{name}, you are early, not late.', 'José'), 'José, you are early, not late.');
+  eq('personalize, Hebrew name', E.personalize('You are allowed to rest, {name}.', 'דנה'), 'You are allowed to rest, דנה.');
+  eq('personalize, no token leaves the line alone', E.personalize('A line with no name.', 'Dana'), 'A line with no name.');
+  eq('personalize, a name that looks like a pattern', E.personalize('Hi {name}.', '$& $1'), 'Hi $& $1.');
+
+  // ---- the house lines
+  eq('house lines: fourteen', E.LINES.length, 14);
+  eq('house lines: every template carries {name} in both languages',
+    E.LINES.every(function (l) { return l[1].indexOf('{name}') !== -1 && l[2].indexOf('{name}') !== -1; }), true);
+  eq('house lines: ids are uuids',
+    E.LINES.every(function (l) { return /^[0-9a-f-]{36}$/.test(l[0]); }), true);
+  var noDash = true;
+  ['en', 'es'].forEach(function (lang) {
+    var S = E.STRINGS[lang];
+    JSON.stringify(S).replace(/\\u2014|—|!/g, function () { noDash = false; });
+  });
+  eq('copy has no em-dash and no exclamation mark', noDash, true);
+
+  var s = document.getElementById('summary');
+  s.textContent = 'SUMMARY ' + pass + ' passed, ' + fail + ' failed';
+  s.className = fail ? 'fail' : 'ok';
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>An envelope for you</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Someone sealed a quote for you. Open it, it takes a second.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="An envelope for you">
+<meta property="og:description" content="Someone sealed a quote for you. Open it, it takes a second.">
+<meta property="og:url" content="https://mydailies.app/e/">
+<meta property="og:image" content="https://mydailies.app/e/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A sealed envelope with a wax seal, addressed For you">
+<meta property="og:site_name" content="Dailies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="preload" as="image" href="/e/house.jpg">
+<!--
+  The envelope page. Everything a visitor sees is built by /envelope.js from
+  the link's #fragment, which never reaches a server. Styles live here rather
+  than in doc.css because nothing else on the site uses them.
+
+  The page is dark in both themes on purpose: an envelope on a night ground is
+  the whole picture, and the share card (/e/og.png) is drawn the same way.
+  The token block is the dark half of the one in index.html and doc.css.
+-->
+<style>
+:root{
+  --ground:#191c1d; --ground-deep:#101314; --panel:#202523;
+  --rule:rgba(240,230,210,.13); --rule-soft:rgba(240,230,210,.07);
+  --text:#f0e6d2; --text-dim:#aeaa9c; --text-faint:#888c81;
+  --accent:#9db081; --accent-dim:#7d8f63; --hill:#4f5d3c; --hill-deep:#3b462d;
+  --chip:rgba(240,230,210,.05); --chip-on:rgba(157,176,129,.14);
+  --f-display:Fraunces,Georgia,"Times New Roman",serif;
+  --f-body:Figtree,ui-sans-serif,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"Courier Prime",ui-monospace,"SFMono-Regular",Menlo,monospace;
+
+  /* the envelope */
+  --paper:#FBF5EA; --paper-2:#F5ECDC; --paper-3:#F8F0E2;
+  --flap:#EFE3CC; --inside:#DCCAA9;
+  --wax:#C67139; --ink:#2C3550; --ink-brown:rgba(74,54,38,.62);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html.sheet-open{overflow:hidden}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--f-body); font-size:16.5px; line-height:1.55; -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(120% 70% at 50% 38%, #22282a 0%, var(--ground) 58%, var(--ground-deep) 100%);
+  background-attachment:fixed; min-height:100vh;
+}
+a{color:inherit}
+img{display:block; max-width:100%}
+button{font:inherit; color:inherit}
+[hidden]{display:none !important}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:6px}
+h1,h2,p{margin:0}
+.nm{unicode-bidi:isolate}
+
+.page{min-height:100vh; min-height:100svh; display:flex; flex-direction:column; padding:0 16px; padding-top:env(safe-area-inset-top)}
+
+.top{display:flex; justify-content:center; padding:12px 0 2px}
+.brand{display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:600; font-size:14.5px; letter-spacing:-.01em; color:var(--text-dim); transition:color .2s}
+.brand:hover{color:var(--text)}
+.brand img{width:22px; height:22px; border-radius:6px}
+
+.stage{flex:1; display:grid; place-items:center; padding:8px 0 14px}
+.stage > section{grid-area:1/1; width:100%}
+
+.eyebrow{
+  font-family:var(--f-mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; justify-content:center; gap:12px;
+}
+.eyebrow::before,.eyebrow::after{content:""; width:22px; height:1px; background:var(--accent-dim)}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  font-family:var(--f-body); font-size:15.5px; font-weight:600; text-decoration:none; text-align:center;
+  padding:14px 24px; border-radius:999px; border:1px solid transparent; cursor:pointer;
+  transition:transform .18s, background .2s, border-color .2s, opacity .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--text); color:var(--ground)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-primary:disabled{opacity:.35; cursor:not-allowed; transform:none}
+.btn-ghost{background:transparent; color:var(--text); border-color:var(--rule)}
+.btn-ghost:hover{border-color:var(--accent-dim)}
+.btn-big{width:100%; min-height:54px; font-size:16.5px}
+.textlink{
+  background:none; border:0; padding:8px 4px; cursor:pointer; font-size:15px; font-weight:500;
+  color:var(--text-dim); text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px;
+}
+.textlink:hover{color:var(--text)}
+.get-note{font-size:14px; color:var(--text-dim); text-align:center; max-width:34ch; margin:4px auto 0; text-wrap:balance}
+
+/* ================================================================ ENVELOPE */
+.env{
+  position:relative; width:100%; aspect-ratio:1.45; container-type:inline-size;
+  border-radius:6px; -webkit-tap-highlight-color:transparent; user-select:none; -webkit-user-select:none;
+}
+.env-back{
+  position:absolute; inset:0; z-index:1; border-radius:6px;
+  background:linear-gradient(180deg,#C9B593 0%,#D8C6A5 30%,#E4D4B7 70%);
+  box-shadow:0 30px 60px -18px rgba(0,0,0,.7), 0 10px 22px rgba(0,0,0,.28);
+}
+.env-flap{position:absolute; inset:0; z-index:5; transform-origin:50% 0; pointer-events:none;
+  filter:drop-shadow(0 1.5px 1.2px rgba(96,66,36,.28)) drop-shadow(0 5px 7px rgba(96,66,36,.12))}
+.flap-out,.flap-in{position:absolute; inset:0; clip-path:polygon(0 0,100% 0,100% .5%,53.5% 56%,50% 58.5%,46.5% 56%,0 .5%); border-radius:6px 6px 0 0}
+.flap-out{background:linear-gradient(176deg,#F4EAD7 0%,#EFE3CC 45%,#E9DBC0 100%)}
+.flap-in{background:linear-gradient(0deg,#E6D6B8 0%,#D9C6A3 100%); opacity:0}
+.env-inside{position:absolute; inset:0; z-index:3; clip-path:inset(-400% 0 0 0)}
+.letter{position:absolute; left:10%; width:80%; top:6%}
+.letter .qc{box-shadow:0 -1px 8px rgba(40,30,20,.18)}
+.env-pocket{position:absolute; inset:0; z-index:4; pointer-events:none; border-radius:6px; overflow:hidden}
+.pocket-svg{position:absolute; inset:0; width:100%; height:100%; display:block; filter:drop-shadow(0 -1px 1.5px rgba(80,55,30,.22))}
+.p-left{fill:#F3E9D7}
+.p-right{fill:#F6EEDF}
+.p-bottom{fill:url(#gBottom)}
+.p-line{fill:none; stroke:rgba(112,82,52,.2); stroke-width:1; vector-effect:non-scaling-stroke}
+.p-line.soft{stroke:rgba(112,82,52,.1)}
+
+.env-note{
+  position:absolute; left:8%; right:8%; bottom:8.5%; margin:0; text-align:center;
+  font-family:var(--f-display); font-style:italic; font-weight:400; font-optical-sizing:auto;
+  font-size:5.6cqw; line-height:1.2; color:var(--ink); opacity:.88;
+  transform:rotate(-2.2deg); letter-spacing:.005em; text-wrap:balance;
+}
+.env-for{
+  position:absolute; left:8%; right:8%; bottom:10%; margin:0; text-align:center;
+  font-family:var(--f-display); font-style:italic; font-size:8cqw; line-height:1.1; color:var(--ink);
+  transform:rotate(-1.6deg); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.env-for.placeholder .nm{opacity:.35}
+.postmark{position:absolute; right:3.5%; top:47%; width:30%; color:var(--ink-brown); transform:rotate(-11deg); mix-blend-mode:multiply}
+.postmark svg{display:block; width:100%; height:auto; overflow:visible}
+.postmark .pm-wave{fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round}
+.postmark .pm-ring{fill:none; stroke:currentColor; stroke-width:2.2}
+.postmark .pm-ring2{fill:none; stroke:currentColor; stroke-width:.8}
+.postmark text{fill:currentColor; font-family:var(--f-mono)}
+.postmark .pm-top{font-size:6.6px; letter-spacing:1.4px}
+.postmark .pm-n{font-size:11px; font-weight:700; letter-spacing:0}
+
+/* ------------------------------------------------------------------ seal */
+.seal{
+  position:absolute; left:50%; top:54%; width:23%; aspect-ratio:1; z-index:6;
+  transform:translate(-50%,-50%); padding:0; border:0; background:none; cursor:pointer;
+  container-type:inline-size; -webkit-tap-highlight-color:transparent; touch-action:none;
+  border-radius:50%;
+}
+.seal-body{position:absolute; inset:0; transition:transform .25s cubic-bezier(.3,1.6,.5,1);
+  filter:drop-shadow(0 1.5px 1px rgba(70,25,5,.45)) drop-shadow(0 5px 8px rgba(40,15,0,.3))}
+.seal.holding .seal-body{transform:scale(.93); transition:transform .6s ease-out}
+.seal-half{position:absolute; inset:0}
+.seal-half.l{clip-path:polygon(-20% -20%,53% -20%,53% 2%,46% 17%,55% 31%,45% 47%,54% 63%,47% 79%,52% 98%,52% 120%,-20% 120%)}
+.seal-half.r{clip-path:polygon(53% -20%,120% -20%,120% 120%,52% 120%,52% 98%,47% 79%,54% 63%,45% 47%,55% 31%,46% 17%,53% 2%)}
+.wax{position:absolute; inset:0; border-radius:49% 51% 46% 54% / 53% 46% 54% 47%;
+  background:radial-gradient(circle at 34% 28%,#E9A471 0%,#D17D45 22%,var(--wax) 44%,#A9582A 78%,#8A431E 100%);
+  box-shadow:inset 0 -3px 5px rgba(90,30,5,.45), inset 0 2px 3px rgba(255,214,176,.45)}
+.wax::before{content:""; position:absolute; inset:-5% -3% -4% -6%; z-index:-1; border-radius:55% 45% 52% 48% / 44% 56% 46% 54%;
+  background:radial-gradient(circle at 40% 30%,#C8733B,#9A4C22 80%)}
+.ring{position:absolute; inset:15%; border-radius:50%;
+  box-shadow:inset 1.2px 1.6px 1.8px rgba(92,34,8,.6), inset -1px -1.2px 1.4px rgba(255,208,168,.4), 0 .8px 0 rgba(255,208,168,.28), 0 -.6px 0 rgba(92,34,8,.3)}
+.glyph{position:absolute; inset:0; display:grid; place-items:center; font-family:var(--f-display); font-weight:500;
+  font-size:66cqw; line-height:1; color:#B45F2E; padding-top:32cqw;
+  text-shadow:0 -1px 0 rgba(88,30,6,.6), 0 1.2px 0 rgba(255,206,164,.5)}
+.seal-ring{position:absolute; inset:-17%; width:134%; height:134%; transform:rotate(-90deg); pointer-events:none; opacity:0; transition:opacity .2s}
+.seal.holding .seal-ring{opacity:1}
+.seal-ring circle{fill:none; stroke-width:3.2}
+.ring-track{stroke:rgba(251,245,234,.18)}
+.ring-arc{stroke:#FBF5EA; stroke-dasharray:100; stroke-dashoffset:100; stroke-linecap:round}
+
+/* ================================================================ SEALED */
+.sealed{display:flex; flex-direction:column; align-items:center; text-align:center}
+.sealed .eyebrow{margin-bottom:clamp(26px,5svh,44px)}
+.env-stage{position:relative; width:min(100%,400px)}
+.env-float{position:relative}
+.env-stage.idle .env-float{animation:float 6.5s ease-in-out infinite}
+.env-ground{position:absolute; left:10%; right:10%; bottom:-14%; height:14%; border-radius:50%;
+  background:radial-gradient(closest-side,rgba(0,0,0,.5),transparent); filter:blur(4px); pointer-events:none}
+.env-stage.idle .env-ground{animation:ground 6.5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-.7deg)} 50%{transform:translateY(-7px) rotate(.5deg)}}
+@keyframes ground{0%,100%{transform:scale(1); opacity:1} 50%{transform:scale(.94); opacity:.8}}
+#env{cursor:pointer}
+#env:focus-visible{outline-offset:10px}
+.sealed .env:hover .seal-body{transform:scale(1.03)}
+.for{margin-top:clamp(34px,6svh,54px); font-family:var(--f-display); font-optical-sizing:auto; font-weight:400;
+  font-size:clamp(38px,11vw,54px); line-height:1.05; letter-spacing:-.02em; max-width:100%; overflow-wrap:anywhere}
+.for .nm{font-style:italic}
+.by{margin-top:10px; font-size:15.5px; color:var(--text-dim)}
+.open-row{margin-top:clamp(24px,4.5svh,38px); width:min(100%,320px); display:flex; flex-direction:column; align-items:center; gap:12px}
+.note{font-size:13.5px; color:var(--text-faint)}
+
+/* ================================================================ OPENED */
+.opened{
+  display:grid; grid-template-columns:minmax(0,1fr); grid-template-areas:"head" "card" "actions";
+  justify-items:center; row-gap:18px; margin-inline:auto;
+}
+.stage > .opened{width:min(100%,402px)}
+.o-head{grid-area:head; text-align:center; display:flex; flex-direction:column; align-items:center; gap:9px}
+.thread{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent)}
+.picked{font-family:var(--f-display); font-optical-sizing:auto; font-weight:400; font-size:clamp(22px,6vw,27px); line-height:1.18; letter-spacing:-.012em; text-wrap:balance}
+.o-card{grid-area:card; width:min(100%,402px,calc((100svh - 420px) * .8)); min-width:min(100%,250px)}
+.o-actions{grid-area:actions; width:100%; display:flex; flex-direction:column; align-items:center; gap:10px}
+.o-actions .textlink{padding:4px}
+.report{margin-top:6px; font-size:13px; color:var(--text-faint); text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px}
+.report:hover{color:var(--text-dim)}
+.opened.arriving .o-head,.opened.arriving .o-actions{opacity:0}
+.opened.arrived .o-head{animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
+.opened.arrived .o-actions{animation:rise .55s .12s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
+.sealed.gone{visibility:hidden; pointer-events:none}
+
+@media (min-width:860px){
+  .stage > .opened{width:min(100%,860px)}
+  .opened{
+    justify-content:center; grid-template-columns:minmax(0,402px) minmax(0,360px); column-gap:60px; row-gap:26px;
+    grid-template-areas:"card head" "card actions"; align-items:center;
+  }
+  .o-card{width:min(402px,calc((100svh - 150px) * .8))}
+  .o-head{align-self:end; text-align:left; align-items:flex-start}
+  .picked{font-size:31px}
+  .o-actions{align-self:start; align-items:stretch}
+  .o-actions .textlink,.o-actions .report{align-self:flex-start}
+  .o-actions .get-note{text-align:left; margin:0}
+}
+
+/* ------------------------------------------------------------ the card */
+.qc{
+  position:relative; margin:0; width:100%; aspect-ratio:4/5; overflow:hidden; isolation:isolate;
+  border-radius:5.2% / 4.16%; background:#3a3a33; container-type:inline-size; color:#F6EFE1;
+  box-shadow:0 30px 70px -20px rgba(0,0,0,.75), 0 10px 24px rgba(0,0,0,.3);
+}
+.qc-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 34%}
+.qc-scrim{position:absolute; inset:0; background:linear-gradient(180deg,rgba(10,12,10,0) 20%,rgba(10,12,10,.22) 44%,rgba(10,12,10,.66) 72%,rgba(10,12,10,.86) 100%)}
+/* Longer lines climb into the bright sky, so the scrim climbs with them. */
+.qc[data-fs="22"] .qc-scrim{background:linear-gradient(180deg,rgba(10,12,10,.05) 8%,rgba(10,12,10,.42) 34%,rgba(10,12,10,.74) 60%,rgba(10,12,10,.88) 100%)}
+.qc[data-fs="18"] .qc-scrim{background:linear-gradient(180deg,rgba(10,12,10,.18) 0%,rgba(10,12,10,.6) 22%,rgba(10,12,10,.8) 50%,rgba(10,12,10,.9) 100%)}
+.qc-body{position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:0 8cqw 6.4cqw}
+.qc-text{
+  margin:0; font-family:var(--f-display); font-optical-sizing:auto; font-weight:400;
+  font-size:calc(var(--fs,27) * 100cqw / 402); line-height:1.22; letter-spacing:-.012em;
+  white-space:pre-line; text-wrap:pretty; overflow-wrap:break-word; text-shadow:0 1px 20px rgba(0,0,0,.5);
+}
+.qc-by{margin-top:3.6cqw; font-family:var(--f-mono); font-size:calc(13.5 * 100cqw / 402); letter-spacing:.04em; color:rgba(246,239,225,.8)}
+.qc-foot{margin-top:6.4cqw; display:flex}
+.qc-mark{display:inline-flex; align-items:center; gap:1.8cqw; padding:1.5cqw 3.2cqw 1.5cqw 1.6cqw; border-radius:99px;
+  background:rgba(246,239,225,.14); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  font:600 calc(12.5 * 100cqw / 402)/1 var(--f-body); letter-spacing:-.005em; color:#F6EFE1}
+.qc-mark img{width:5.2cqw; height:5.2cqw; border-radius:1.4cqw}
+.qc.land{aspect-ratio:4/3; border-radius:5.5% / 7.3%}
+.qc.land .qc-img{object-position:50% 62%}
+.qc.land .qc-body{padding:0 6.5cqw 5.5cqw}
+.qc.land .qc-text{font-size:calc(var(--fs,27) * 100cqw / 402 * .86); display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden}
+.qc.land .qc-foot{margin-top:4cqw}
+
+/* =============================================================== INVALID */
+.invalid{display:flex; flex-direction:column; align-items:center; text-align:center}
+.torn-stage{width:min(78%,300px); margin:18px 0 44px; transform:rotate(-4deg)}
+.env.torn .env-back{background:linear-gradient(180deg,#bfae8e,#d8c8aa)}
+.env.torn .env-pocket{overflow:visible; clip-path:polygon(0 11%,6% 15%,11% 12%,17% 20%,24% 17%,30% 26%,37% 22%,44% 31%,50% 27%,57% 36%,63% 31%,70% 39%,77% 33%,84% 41%,91% 36%,100% 44%,100% 100%,0 100%)}
+.torn-flap{position:absolute; left:-4%; top:-27%; width:62%; height:46%; z-index:5;
+  background:linear-gradient(170deg,#F2E7D2,#E3D3B5); transform:rotate(-17deg); transform-origin:100% 100%;
+  clip-path:polygon(0 100%,4% 70%,12% 76%,20% 52%,31% 60%,42% 28%,52% 38%,64% 8%,72% 22%,82% 14%,100% 100%);
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
+.invalid h1{font-family:var(--f-display); font-optical-sizing:auto; font-weight:400; font-size:clamp(27px,7.4vw,36px); line-height:1.12; letter-spacing:-.015em; max-width:17ch; text-wrap:balance}
+.invalid p.sub{margin-top:14px; color:var(--text-dim); max-width:34ch; text-wrap:balance}
+.invalid .btn{margin-top:30px; min-width:220px}
+
+/* ================================================================ FOOTER */
+.foot{display:flex; justify-content:center; gap:22px; padding:10px 0 calc(18px + env(safe-area-inset-bottom));
+  font-family:var(--f-mono); font-size:11.5px; letter-spacing:.05em; color:var(--text-faint)}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--accent)}
+
+/* ================================================================= SHEET */
+.scrim{position:fixed; inset:0; z-index:80; background:rgba(5,7,6,.6); -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px); opacity:0; transition:opacity .3s}
+.scrim.on{opacity:1}
+.sheet{
+  position:fixed; z-index:81; left:50%; bottom:0; width:min(100%,480px); max-height:94vh; max-height:94svh; overflow-y:auto;
+  overscroll-behavior:contain; background:var(--panel); border:1px solid var(--rule-soft); border-bottom:0;
+  border-radius:26px 26px 0 0; padding:8px 20px calc(22px + env(safe-area-inset-bottom));
+  box-shadow:0 -24px 70px rgba(0,0,0,.55); transform:translate(-50%,100%); transition:transform .4s cubic-bezier(.2,.8,.2,1);
+}
+.sheet.on{transform:translate(-50%,0)}
+@media (min-width:720px){
+  .sheet{bottom:auto; top:50%; border-radius:26px; border-bottom:1px solid var(--rule-soft); padding-bottom:24px;
+    transform:translate(-50%,-46%); opacity:0; transition:transform .38s cubic-bezier(.2,.8,.2,1), opacity .25s}
+  .sheet.on{transform:translate(-50%,-50%); opacity:1}
+  .grab{display:none}
+}
+.grab{width:38px; height:5px; border-radius:3px; background:var(--rule); margin:2px auto 8px}
+.sheet-head{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:6px 0 4px}
+.sheet-head h2{font-family:var(--f-display); font-optical-sizing:auto; font-weight:400; font-size:24px; letter-spacing:-.012em}
+.x{width:38px; height:38px; border-radius:50%; border:1px solid var(--rule-soft); background:var(--chip); display:grid; place-items:center; cursor:pointer; color:var(--text-dim); flex:none}
+.x:hover{color:var(--text)}
+
+.mini-stage{position:relative; width:min(72%,250px); margin:4px auto 0; padding-top:46%; transition:padding-top .5s cubic-bezier(.4,0,.2,1)}
+.mini-stage:has(.is-sealed){padding-top:6%; transition-delay:.35s}
+.mini .letter{top:7%; left:9%; width:82%; transform:translateY(-90%); transition:transform .5s cubic-bezier(.3,.7,.2,1) .34s}
+.mini .env-flap{transform:perspective(700px) rotateX(180deg); z-index:2; transition:transform .45s cubic-bezier(.45,0,.3,1), z-index 0s linear .22s}
+.mini .flap-in{opacity:1; transition:opacity 0s linear .22s}
+.mini .seal{opacity:0; width:19%; top:50%; pointer-events:none; cursor:default}
+.mini .env-note{bottom:6%; font-size:4.8cqw}
+.mini .env-for.with-note{bottom:18%; font-size:6.6cqw}
+.mini .env-back{box-shadow:0 18px 34px -12px rgba(0,0,0,.6)}
+.mini.is-sealed .letter{transform:none; transition:transform .42s cubic-bezier(.5,0,.4,1)}
+.mini.is-sealed .env-flap{transform:perspective(700px) rotateX(0deg); z-index:5; transition:transform .5s cubic-bezier(.3,0,.2,1) .3s, z-index 0s linear .55s}
+.mini.is-sealed .flap-in{opacity:0; transition:opacity 0s linear .55s}
+.mini.is-sealed .seal{opacity:1}
+.line-row{display:flex; justify-content:center; margin:14px 0 4px}
+.change{display:inline-flex; align-items:center; gap:8px; background:var(--chip); border:1px solid var(--rule); color:var(--text-dim);
+  font-family:var(--f-mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; padding:9px 15px; border-radius:999px; cursor:pointer; transition:color .2s,border-color .2s}
+.change:hover{color:var(--accent); border-color:var(--accent-dim)}
+.change svg{width:14px; height:14px}
+
+.fields{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px}
+.field{display:flex; flex-direction:column; gap:6px; min-width:0}
+.field-label{font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-faint)}
+.field input,.static{
+  width:100%; font:500 16px/1.2 var(--f-body); color:var(--text); background:var(--ground-deep);
+  border:1px solid var(--rule); border-radius:13px; padding:13px 14px; min-height:48px; outline:none; transition:border-color .2s;
+}
+.field input:focus{border-color:var(--accent-dim)}
+.field input::placeholder{color:var(--text-faint)}
+.static{background:transparent; border-style:dashed; color:var(--text-dim); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.when{margin-top:16px}
+.wchips{display:flex; flex-wrap:wrap; gap:7px; margin-top:8px}
+.wchip{font:500 14px/1 var(--f-body); padding:10px 13px; border-radius:999px; cursor:pointer; background:var(--chip); color:var(--text-dim); border:1px solid var(--rule-soft); transition:background .2s,color .2s,border-color .2s}
+.wchip:hover{color:var(--text)}
+.wchip[aria-pressed="true"]{background:var(--chip-on); color:var(--text); border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+.seal-row{display:flex; align-items:center; gap:18px; margin-top:22px}
+.seal.big{position:relative; left:auto; top:auto; transform:none; width:66px; flex:none; opacity:.55; transition:opacity .25s}
+.seal.big.ready{opacity:1}
+.seal.big:disabled{cursor:not-allowed}
+.seal.big.ready .seal-body{animation:nudge 3.2s ease-in-out infinite}
+.seal.big.holding .seal-body,.seal.big.held .seal-body{animation:none}
+@keyframes nudge{0%,86%,100%{transform:none} 90%{transform:rotate(-7deg) scale(1.03)} 95%{transform:rotate(5deg) scale(1.03)}}
+.seal-cta{flex:1; display:flex; flex-direction:column; gap:7px; min-width:0}
+.hint{font-size:13px; color:var(--text-faint); text-align:center}
+
+.sheet[data-step="compose"] .dest{display:none}
+.sheet[data-step="sealed"] .compose{display:none}
+.dest{margin-top:18px}
+.dest-title{text-align:center; font-family:var(--f-display); font-size:20px; letter-spacing:-.01em}
+.dest-grid{display:flex; gap:8px; margin-top:16px}
+.dest-grid > *{flex:1 1 0; min-width:0}
+.dbtn{display:flex; flex-direction:column; align-items:center; gap:8px; padding:14px 4px 12px; white-space:nowrap; border-radius:16px; cursor:pointer;
+  background:var(--chip); border:1px solid var(--rule-soft); color:var(--text); text-decoration:none; font-size:13.5px; font-weight:500;
+  transition:border-color .2s, background .2s, transform .15s; -webkit-tap-highlight-color:transparent}
+.dbtn:hover{border-color:var(--rule); background:rgba(240,230,210,.08)}
+.dbtn:active{transform:scale(.97)}
+.dbtn svg{width:24px; height:24px; color:var(--accent)}
+.edit-row{display:flex; justify-content:center; margin-top:8px}
+.sent{margin-top:18px; padding:18px; border-radius:18px; background:var(--ground-deep); border:1px solid var(--rule-soft); text-align:center}
+.sent-mark{display:inline-flex; align-items:center; gap:8px; font-family:var(--f-mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent)}
+.sent-mark svg{width:16px; height:16px}
+.nudge{margin-top:10px; font-family:var(--f-display); font-size:18px; line-height:1.3; letter-spacing:-.008em; text-wrap:balance}
+.sent-row{display:flex; gap:9px; margin-top:16px}
+.sent-row .btn{flex:1}
+
+.nojs{max-width:30ch; margin:30vh auto 0; text-align:center; color:var(--text-dim)}
+
+@media (max-width:370px){
+  .fields{grid-template-columns:1fr}
+  .seal.big{width:56px}
+}
+@media (max-height:700px){
+  .sealed .eyebrow{margin-bottom:20px}
+  .env-stage{width:min(100%,330px)}
+  .for{margin-top:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important; transition:none !important}
+}
+</style>
+</head>
+<body data-consent="deferred" data-analytics="private">
+
+<!-- Shared SVG paint for the envelopes. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gBottom" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDF9F1"/>
+      <stop offset="1" stop-color="#F7EEDF"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="page" id="envelope-page" data-state="loading">
+  <header class="top"><a class="brand" href="/"><img src="/icon.png" alt=""><span>Dailies</span></a></header>
+
+  <main class="stage">
+
+    <!-- ============================================ sealed -->
+    <section class="sealed" id="sealed" hidden>
+      <p class="eyebrow sealed-copy" data-s="label"></p>
+      <div class="env-stage idle">
+        <div class="env-ground"></div>
+        <div class="env-float">
+          <div class="env" id="env">
+            <div class="env-back"></div>
+            <div class="env-flap"><div class="flap-out"></div><div class="flap-in"></div></div>
+            <div class="env-inside">
+              <div class="letter">
+                <figure class="qc" id="letterCard" aria-hidden="true">
+                  <img class="qc-img" src="/e/house.jpg" alt="" decoding="async">
+                  <div class="qc-scrim"></div>
+                  <div class="qc-body">
+                    <p class="qc-text" dir="auto"></p>
+                    <p class="qc-by" dir="auto" hidden></p>
+                    <div class="qc-foot"><span class="qc-mark"><img src="/icon.png" alt="">Dailies</span></div>
+                  </div>
+                </figure>
+              </div>
+            </div>
+            <div class="env-pocket">
+              <svg class="pocket-svg" viewBox="0 0 145 100" preserveAspectRatio="none" aria-hidden="true">
+                <path class="p-left" d="M0 0 L72.5 50 L0 100 Z"/>
+                <path class="p-right" d="M145 0 L72.5 50 L145 100 Z"/>
+                <path class="p-bottom" d="M0 100 L65 49 Q72.5 44 80 49 L145 100 Z"/>
+                <path class="p-line" d="M0 100 L65 49 Q72.5 44 80 49 L145 100"/>
+                <path class="p-line soft" d="M0 0 L72.5 50 L145 0"/>
+              </svg>
+              <div class="postmark" hidden>
+                <svg viewBox="0 0 130 64" aria-hidden="true">
+                  <defs><path id="pmArcA" d="M71.5 32 a22.5 22.5 0 0 1 45 0"/></defs>
+                  <path class="pm-wave" d="M-2 20 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0"/>
+                  <path class="pm-wave" d="M-2 32 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0"/>
+                  <path class="pm-wave" d="M-2 44 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0"/>
+                  <circle class="pm-ring" cx="94" cy="32" r="30"/>
+                  <circle class="pm-ring2" cx="94" cy="32" r="20"/>
+                  <text class="pm-top"><textPath href="#pmArcA" startOffset="50%" text-anchor="middle">DAILIES</textPath></text>
+                  <text class="pm-n" x="94" y="36.5" text-anchor="middle"></text>
+                </svg>
+              </div>
+              <p class="env-note" dir="auto" hidden></p>
+            </div>
+            <button class="seal" id="seal" type="button">
+              <svg class="seal-ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-track" cx="60" cy="60" r="56" pathLength="100"/><circle class="ring-arc" cx="60" cy="60" r="56" pathLength="100"/></svg>
+              <span class="seal-body" aria-hidden="true">
+                <span class="seal-half l"><span class="wax"></span><span class="ring"></span><span class="glyph">&#8220;</span></span>
+                <span class="seal-half r"><span class="wax"></span><span class="ring"></span><span class="glyph">&#8220;</span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <h1 class="for sealed-copy" id="forName" dir="auto"></h1>
+      <p class="by sealed-copy" id="sealedBy"></p>
+      <div class="open-row sealed-copy">
+        <button class="btn btn-primary btn-big" id="openBtn" type="button" data-s="openIt"></button>
+        <p class="note" data-s="openNote"></p>
+      </div>
+    </section>
+
+    <!-- ============================================ opened -->
+    <section class="opened" id="opened" hidden>
+      <div class="o-head">
+        <p class="thread" id="thread" hidden></p>
+        <h1 class="picked" id="picked"></h1>
+      </div>
+      <div class="o-card">
+        <figure class="qc" id="card">
+          <img class="qc-img" src="/e/house.jpg" alt="" decoding="async">
+          <div class="qc-scrim"></div>
+          <div class="qc-body">
+            <blockquote class="qc-text" dir="auto"></blockquote>
+            <figcaption class="qc-by" dir="auto" hidden></figcaption>
+            <div class="qc-foot"><span class="qc-mark"><img src="/icon.png" alt="">Dailies</span></div>
+          </div>
+        </figure>
+      </div>
+      <div class="o-actions">
+        <button class="btn btn-primary btn-big" id="sendBack" type="button"><span id="sendBackLabel"></span></button>
+        <button class="btn btn-ghost btn-big" id="passOn" type="button" data-s="passOn"></button>
+        <a class="textlink" data-get-app target="_blank" rel="noopener" data-s="getApp"></a>
+        <p class="get-note" hidden data-s="getNote"></p>
+        <a class="report" id="report" data-s="report"></a>
+      </div>
+    </section>
+
+    <!-- ============================================ invalid -->
+    <section class="invalid" id="invalid" hidden>
+      <div class="torn-stage" aria-hidden="true">
+        <div class="env torn">
+          <div class="env-back"></div>
+          <div class="torn-flap"></div>
+          <div class="env-pocket">
+            <svg class="pocket-svg" viewBox="0 0 145 100" preserveAspectRatio="none">
+              <path class="p-left" d="M0 0 L72.5 50 L0 100 Z"/>
+              <path class="p-right" d="M145 0 L72.5 50 L145 100 Z"/>
+              <path class="p-bottom" d="M0 100 L65 49 Q72.5 44 80 49 L145 100 Z"/>
+              <path class="p-line" d="M0 100 L65 49 Q72.5 44 80 49 L145 100"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <h1 data-s="badTitle"></h1>
+      <p class="sub" data-s="badBody"></p>
+      <a class="btn btn-primary btn-big" data-get-app target="_blank" rel="noopener" data-s="getApp"></a>
+      <p class="get-note" hidden data-s="getNote"></p>
+    </section>
+
+    <noscript><p class="nojs">This envelope needs JavaScript to open.</p></noscript>
+  </main>
+
+  <footer class="foot">
+    <a href="/privacy/" data-s="privacy"></a>
+    <a href="#" data-cookie-settings data-s="cookies"></a>
+  </footer>
+</div>
+
+<!-- ============================================ composer -->
+<div class="scrim" id="scrim" hidden></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" data-step="compose" hidden>
+  <div class="grab"></div>
+  <header class="sheet-head">
+    <h2 id="sheetTitle"></h2>
+    <button class="x" id="sheetClose" type="button" data-s-aria="close">
+      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </header>
+
+  <div class="mini-stage">
+    <div class="env mini is-open" id="miniEnv" aria-hidden="true">
+      <div class="env-back"></div>
+      <div class="env-flap"><div class="flap-out"></div><div class="flap-in"></div></div>
+      <div class="env-inside">
+        <div class="letter">
+          <figure class="qc land" id="miniCard">
+            <img class="qc-img" src="/e/house.jpg" alt="" decoding="async">
+            <div class="qc-scrim"></div>
+            <div class="qc-body">
+              <p class="qc-text" dir="auto"></p>
+              <p class="qc-by" dir="auto" hidden></p>
+            </div>
+          </figure>
+        </div>
+      </div>
+      <div class="env-pocket">
+        <svg class="pocket-svg" viewBox="0 0 145 100" preserveAspectRatio="none">
+          <path class="p-left" d="M0 0 L72.5 50 L0 100 Z"/>
+          <path class="p-right" d="M145 0 L72.5 50 L145 100 Z"/>
+          <path class="p-bottom" d="M0 100 L65 49 Q72.5 44 80 49 L145 100 Z"/>
+          <path class="p-line" d="M0 100 L65 49 Q72.5 44 80 49 L145 100"/>
+          <path class="p-line soft" d="M0 0 L72.5 50 L145 0"/>
+        </svg>
+        <div class="postmark" hidden>
+          <svg viewBox="0 0 130 64">
+            <defs><path id="pmArcB" d="M71.5 32 a22.5 22.5 0 0 1 45 0"/></defs>
+            <path class="pm-wave" d="M-2 20 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0"/>
+            <path class="pm-wave" d="M-2 32 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0"/>
+            <path class="pm-wave" d="M-2 44 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0"/>
+            <circle class="pm-ring" cx="94" cy="32" r="30"/>
+            <circle class="pm-ring2" cx="94" cy="32" r="20"/>
+            <text class="pm-top"><textPath href="#pmArcB" startOffset="50%" text-anchor="middle">DAILIES</textPath></text>
+            <text class="pm-n" x="94" y="36.5" text-anchor="middle"></text>
+          </svg>
+        </div>
+        <p class="env-for" dir="auto"></p>
+        <p class="env-note" dir="auto" hidden></p>
+      </div>
+      <span class="seal">
+        <span class="seal-body">
+          <span class="seal-half l"><span class="wax"></span><span class="ring"></span><span class="glyph">&#8220;</span></span>
+          <span class="seal-half r"><span class="wax"></span><span class="ring"></span><span class="glyph">&#8220;</span></span>
+        </span>
+      </span>
+    </div>
+  </div>
+
+  <div class="compose">
+    <div class="line-row">
+      <button class="change" id="changeLine" type="button">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 6.5A5.6 5.6 0 0 0 3 5M2.5 9.5A5.6 5.6 0 0 0 13 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3 1.8V5h3.2M13 14.2V11H9.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-s="changeLine"></span>
+      </button>
+    </div>
+    <div class="fields">
+      <label class="field">
+        <span class="field-label" data-s="toLabel"></span>
+        <input id="toInput" type="text" maxlength="40" autocomplete="off" autocapitalize="words" spellcheck="false" dir="auto" data-s-placeholder="theirName">
+        <span class="static" id="toStatic" dir="auto" hidden></span>
+      </label>
+      <label class="field">
+        <span class="field-label" data-s="yourName"></span>
+        <input id="fromInput" type="text" maxlength="40" autocomplete="given-name" autocapitalize="words" spellcheck="false" dir="auto">
+      </label>
+    </div>
+    <div class="when">
+      <span class="field-label" data-s="whenLabel"></span>
+      <div class="wchips" id="whenChips"></div>
+    </div>
+    <div class="seal-row">
+      <button class="seal big" id="bigSeal" type="button" data-s-aria="sealIt">
+        <svg class="seal-ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-track" cx="60" cy="60" r="56" pathLength="100"/><circle class="ring-arc" cx="60" cy="60" r="56" pathLength="100"/></svg>
+        <span class="seal-body" aria-hidden="true">
+          <span class="seal-half l"><span class="wax"></span><span class="ring"></span><span class="glyph">&#8220;</span></span>
+          <span class="seal-half r"><span class="wax"></span><span class="ring"></span><span class="glyph">&#8220;</span></span>
+        </span>
+      </button>
+      <div class="seal-cta">
+        <button class="btn btn-primary btn-big" id="sealBtn" type="button" data-s="sealIt"></button>
+        <p class="hint" id="sealHint"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dest">
+    <p class="dest-title" data-s="sealedTitle"></p>
+    <div class="dest-grid">
+      <button class="dbtn" id="shareBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3M7.5 7.5 12 3l4.5 4.5"/><path d="M8 11H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-2"/></svg>
+        <span data-s="share"></span>
+      </button>
+      <a class="dbtn" id="waBtn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.5-4.2A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.6c0 3.3 2.9 6.4 6.3 6.4l.9-1.6-1.9-1-.9.8a4.6 4.6 0 0 1-2.8-2.8l.8-.9-1-1.9L9 8.6z" stroke-width="1.2"/></svg>
+        <span data-s="whatsapp"></span>
+      </a>
+      <a class="dbtn" id="smsBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4c4.97 0 9 3.13 9 7s-4.03 7-9 7c-.9 0-1.8-.1-2.6-.3L5 20l1.1-3.6C4.2 15.1 3 13.2 3 11c0-3.87 4.03-7 9-7z"/></svg>
+        <span data-s="messages"></span>
+      </a>
+      <button class="dbtn" id="copyBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+        <span class="lbl"></span>
+      </button>
+    </div>
+    <div class="edit-row"><button class="textlink" id="editBtn" type="button" data-s="edit"></button></div>
+    <div class="sent" id="sentBlock" hidden>
+      <p class="sent-mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span data-s="sent"></span></p>
+      <p class="nudge" data-s="nudge"></p>
+      <div class="sent-row">
+        <a class="btn btn-primary" data-get-app target="_blank" rel="noopener" data-s="getApp"></a>
+        <button class="btn btn-ghost" id="doneBtn" type="button" data-s="done"></button>
+      </div>
+      <p class="get-note" hidden data-s="getNote"></p>
+    </div>
+  </div>
+</section>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+<script src="/envelope.js"></script>
+</body>
+</html>

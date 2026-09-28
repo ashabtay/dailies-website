@@ -59,6 +59,34 @@
 
   var SIGNAL = privacySignal();
 
+  /* ------------------------------------------------------- page switches */
+  /* Two opt-in attributes on <body>, used by the envelope page (/e/) and by
+     nothing else. A page without them behaves exactly as it always has.
+
+     data-consent="deferred"  - hold the banner back until the page fires
+       `dailies:consent-ready` on document. A decision already stored still
+       applies at once; only the question waits. The envelope page asks after
+       the envelope is open, so the first thing a stranger's friend sees is
+       the envelope, not a cookie dialog.
+
+     data-analytics="private" - the page keeps personal words in its URL
+       fragment (an envelope link carries two names and a quote). PostHog is
+       started without autocapture, heatmaps or performance capture, and with
+       the fragment cut off every URL it sends. The ad pixels, which report
+       the full page URL themselves, are not loaded on such a page at all. */
+  var BODY = document.body;
+  var DEFERRED = !!(BODY && BODY.getAttribute('data-consent') === 'deferred');
+  var PRIVATE = !!(BODY && BODY.getAttribute('data-analytics') === 'private');
+
+  function stripFragments(obj) {
+    if (!obj || typeof obj !== 'object') return;
+    for (var k in obj) {
+      if (typeof obj[k] === 'string' && obj[k].indexOf('#') !== -1 && /^https?:/i.test(obj[k])) {
+        obj[k] = obj[k].replace(/#.*$/, '');
+      }
+    }
+  }
+
   /* ---------------------------------------------------------------- state */
 
   function read() {
@@ -113,7 +141,7 @@
       }, e.__SV = 1);
     }(document, window.posthog || []);
 
-    window.posthog.init(CONFIG.posthogKey, {
+    var options = {
       api_host: CONFIG.posthogHost,
       persistence: 'localStorage+cookie',
       // The policy says approximate location only, and that no recording of
@@ -128,7 +156,27 @@
       // static multi-page site, so one pageview per load is all the automatic
       // capture would have sent anyway.
       capture_pageview: false
-    });
+    };
+    if (PRIVATE) {
+      // PostHog's own switch: drops the #fragment from every URL it records,
+      // including the first-visit URL it keeps in its cookie. before_send
+      // below is a second net for anything that option does not reach.
+      options.disable_capture_url_hashes = true;
+      options.autocapture = false;          // would record button text, and the names are in it
+      options.rageclick = false;
+      options.capture_dead_clicks = false;
+      options.enable_heatmaps = false;      // keyed by the full URL
+      options.capture_performance = false;  // resource timings name the page URL
+      options.before_send = function (ev) {
+        if (ev) {
+          stripFragments(ev.properties);
+          stripFragments(ev.$set);
+          stripFragments(ev.$set_once);
+        }
+        return ev;
+      };
+    }
+    window.posthog.init(CONFIG.posthogKey, options);
 
     // Which platform, on every event this site sends. The app reports to this
     // same PostHog project — the free plan allows one — so without this the
@@ -147,6 +195,7 @@
   function loadMarketing() {
     if (loaded.marketing) return;
     loaded.marketing = true;
+    if (PRIVATE) return; // see data-analytics="private" above
 
     if (CONFIG.googleId) {
       var gs = document.createElement('script');
@@ -409,8 +458,22 @@
       e.preventDefault();
       open(true);
     });
-    if (!saved) open(false);
+    if (!saved && !DEFERRED) open(false);
   });
+
+  // The deferred page says when. Listened for at once rather than inside
+  // ready(), so an early event is not missed; open() itself waits for the DOM.
+  if (DEFERRED) {
+    document.addEventListener('dailies:consent-ready', function onReady() {
+      document.removeEventListener('dailies:consent-ready', onReady);
+      ready(function () {
+        // Answered meanwhile through a Cookie settings link, or the panel is
+        // already up: nothing left to ask.
+        if (saved || read() || el) return;
+        open(false);
+      });
+    });
+  }
 
   // Small public surface, so a page can check state without reading storage.
   window.dailiesConsent = {

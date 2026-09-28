@@ -32,6 +32,7 @@ echo "  /cookies    cookie policy"
 echo "  /compare    comparison pages"
 echo "  /guides     how-to guides"
 echo "  /about      about page"
+echo "  /e/#...     envelope page (needs a link payload; /e/test.html runs its tests)"
 echo "  /anything   the custom 404"
 echo
 echo "Edit a file, reload the browser. Ctrl-C to stop."
