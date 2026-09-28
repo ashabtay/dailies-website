@@ -697,19 +697,63 @@
 
   var PAYLOAD_RE = /^[A-Za-z0-9_-]+$/;
 
+  /* On iPhone and iPad the app gets the first chance. dailies:// makes
+     Safari ask "Open in Dailies?" when the app is installed, and show an
+     "address is invalid" alert when it is not. Both leave the page visible
+     behind them, so visibility alone cannot tell a prompt from a miss: while
+     either is up the page loses focus, and that is what this watches.
+
+       blur                    a prompt is up: hold the fallback
+       pagehide / hidden       the app took over: stand down for good
+       focus, still visible    Cancel, or the alert dismissed: after ~600ms
+                               open the web composer
+       nothing at all          the plain 1.2s timer opens it
+
+     Only one attempt runs at a time, and none while the composer is open. */
+
+  var handoff = null;
+
+  function endHandoff() {
+    if (!handoff) return;
+    clearTimeout(handoff.timer);
+    clearTimeout(handoff.refocus);
+    window.removeEventListener('blur', onHandoffBlur);
+    window.removeEventListener('focus', onHandoffFocus);
+    window.removeEventListener('pagehide', endHandoff);
+    document.removeEventListener('visibilitychange', onHandoffVisibility);
+    handoff = null;
+  }
+  function handoffFallback() {
+    if (!handoff || document.visibilityState !== 'visible') return;
+    endHandoff();
+    openComposer('back');
+  }
+  function onHandoffBlur() {
+    if (!handoff) return;
+    handoff.blurred = true;
+    clearTimeout(handoff.timer);
+    clearTimeout(handoff.refocus);
+  }
+  function onHandoffFocus() {
+    if (!handoff || !handoff.blurred) return;
+    clearTimeout(handoff.refocus);
+    handoff.refocus = setTimeout(handoffFallback, 600);
+  }
+  function onHandoffVisibility() {
+    if (document.visibilityState === 'hidden') endHandoff();
+  }
+
   $('#sendBack').addEventListener('click', function () {
+    if (handoff || sheetIsOpen()) return;
     cta('send_back');
     if (PLATFORM === 'ios' && PAYLOAD_RE.test(RAW)) {
       // The app decodes `e` itself, records the envelope it received and
-      // opens its own composer with the reply prefilled. If nothing takes the
-      // link - no app installed - the page is still here a moment later and
-      // the web composer does the job instead.
-      var fallback = setTimeout(function () {
-        if (document.visibilityState === 'visible') openComposer('back');
-      }, 1200);
-      document.addEventListener('visibilitychange', function onVis() {
-        if (document.visibilityState === 'hidden') { clearTimeout(fallback); document.removeEventListener('visibilitychange', onVis); }
-      });
+      // opens its own composer with the reply prefilled.
+      handoff = { blurred: false, refocus: 0, timer: setTimeout(handoffFallback, 1200) };
+      window.addEventListener('blur', onHandoffBlur);
+      window.addEventListener('focus', onHandoffFocus);
+      window.addEventListener('pagehide', endHandoff);
+      document.addEventListener('visibilitychange', onHandoffVisibility);
       location.href = 'dailies://envelope?v=1&e=' + RAW;
       return;
     }
