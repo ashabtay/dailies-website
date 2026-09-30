@@ -30,10 +30,11 @@
    ---------------------------------------------------------------------------
    Registered in consent.js rather than here, because it has to be in place
    before the first `$pageview` goes out. Every event from this site carries
-   `platform: 'web'` and every event from the app carries `ios`. They report to
-   one PostHog project — the free plan allows exactly one — so that property is
-   the only thing holding the two streams apart. See docs/analytics.md in the
-   app repo.
+   `platform: 'web'` and every event from the app carries `ios`. The site and
+   the app report to separate PostHog projects — nothing links a visitor here
+   to the person they become in the app, so one project bought no funnel — and
+   the property is kept so either stream still names itself if the two are
+   ever put side by side. See docs/analytics.md in the app repo.
 
    ---------------------------------------------------------------------------
    What is deliberately not sent

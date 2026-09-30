@@ -118,11 +118,11 @@
         <div class="table-scroll">
           <table>
             <tr><th>Name</th><th>Party</th><th>Purpose</th><th>Lasts</th></tr>
-            <tr><td><code>ph_phc_m4yo9P5TgvkQTvfy6rM5WnU3Kar7L7fjb5PJB9yKoLq9_posthog</code><br><span style="color:var(--text-faint)">The long middle section is the project's public key, so the name is stable.</span></td><td>First-party</td><td>A random identifier so repeat visits from the same browser count as one person rather than several, plus basic session state</td><td>12 months</td></tr>
+            <tr><td><code>ph_phc_qy5EH82DNeGBwiQKuvWiULJ4CgvvByDZzLC7zTc9gqGa_posthog</code><br><span style="color:var(--text-faint)">The long middle section is the project's public key, so the name is stable.</span></td><td>First-party</td><td>A random identifier so repeat visits from the same browser count as one person rather than several, plus basic session state</td><td>12 months</td></tr>
           </table>
         </div>
         <p>Alongside the identifier, PostHog receives the page you viewed, the page that sent you, your approximate location derived from your IP address, and your browser, device type and screen size. It does not receive your name or email, because the site never asks for either.</p>
-        <p>The same PostHog project also receives events from the Dailies app. The two are held apart by a property recording which platform an event came from.</p>
+        <p>The website has its own PostHog project, separate from the one the Dailies app reports to, and the two sets of data are kept apart.</p>
       </section>
 
       <section id="marketing">
