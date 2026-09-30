@@ -27,7 +27,7 @@
   'use strict';
 
   var CONFIG = {
-    posthogKey:  'phc_m4yo9P5TgvkQTvfy6rM5WnU3Kar7L7fjb5PJB9yKoLq9',                        // e.g. 'phc_xxxxxxxxxxxxxxxxxxxx'
+    posthogKey:  'phc_qy5EH82DNeGBwiQKuvWiULJ4CgvvByDZzLC7zTc9gqGa',                        // e.g. 'phc_xxxxxxxxxxxxxxxxxxxx'
     posthogHost: 'https://eu.i.posthog.com', // EU host keeps data in the EU
     googleId:    '',                        // e.g. 'AW-123456789' or 'G-XXXXXXX'
     metaPixelId: '',                        // e.g. '1234567890123456'
@@ -130,10 +130,10 @@
       capture_pageview: false
     });
 
-    // Which platform, on every event this site sends. The app reports to this
-    // same PostHog project — the free plan allows one — so without this the
-    // website's pageviews and the app's events are one undifferentiated
-    // stream and neither can be asked about alone. The app registers the
+    // Which platform, on every event this site sends. The site has its own
+    // PostHog project, separate from the app's, so this no longer holds two
+    // streams apart. It stays so that the events still say where they came
+    // from if they are ever exported next to the app's, which registers the
     // matching `ios` in lib/services/analytics_service.dart.
     window.posthog.register({ platform: 'web' });
 
