@@ -379,6 +379,27 @@
     if (focusFirst) focusFirst.focus();
   }
 
+  /* --------------------------------------------------- the old project */
+  /* Until September 2026 the site reported to the PostHog project it shared
+     with the app. Anyone who allowed analytics then still carries that
+     project's identifier, in a cookie and in local storage, named after its
+     key. Nothing reads it any more and the cookies page no longer lists it,
+     so it goes on every load, whatever the visitor chose: removing a cookie
+     needs no consent. PostHog sets it on the parent domain, so both the
+     host-only and the domain-wide copy are expired. Safe to delete this
+     block once a year has passed and the cookie has expired on its own. */
+  (function forgetOldProject() {
+    var name = 'ph_phc_m4yo9P5TgvkQTvfy6rM5WnU3Kar7L7fjb5PJB9yKoLq9_posthog';
+    try { localStorage.removeItem(name); } catch (e) {}
+    if (document.cookie.indexOf(name + '=') === -1) return;
+    var gone = name + '=; Max-Age=0; path=/; SameSite=Lax';
+    document.cookie = gone;
+    var parts = location.hostname.split('.');
+    for (var i = parts.length - 2; i >= 0; i--) {
+      document.cookie = gone + '; domain=.' + parts.slice(i).join('.');
+    }
+  })();
+
   /* ------------------------------------------------------------------ boot */
 
   var saved = read();
