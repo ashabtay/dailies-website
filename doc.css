@@ -1,5 +1,5 @@
 /* ============================================================================
-   Shared styles for the document pages — /terms, /privacy, /cookies, /help.
+   Shared styles for the document pages, /terms, /privacy, /cookies, /help.
 
    index.html is one self-contained file because everything in it is inlined
    photography. These pages carry little of their own (the compare pages link a
@@ -118,6 +118,12 @@ p{margin:0}
 .prose a{color:var(--accent); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px}
 .prose ul{color:var(--text-dim); font-size:16px; margin:0 0 14px; padding-left:20px; display:flex; flex-direction:column; gap:8px}
 .prose li::marker{color:var(--accent-dim)}
+.prose ol{color:var(--text-dim); font-size:16px; margin:0 0 14px; padding-left:22px; display:flex; flex-direction:column; gap:8px}
+/* A quote in a blog post: the line in the display face, who wrote it underneath. */
+.prose blockquote{margin:22px 0; padding:2px 0 2px 20px; border-left:2px solid var(--accent-dim)}
+.prose blockquote p{font-family:var(--f-display); font-size:clamp(19px,1.7vw,21px); line-height:1.42; color:var(--text); margin-bottom:7px}
+.prose blockquote cite{display:block; font-style:normal; font-size:14px; color:var(--text-faint)}
+.prose blockquote cite a{color:inherit}
 .prose li > strong:first-child{color:var(--text)}
 
 /* A number that carries the section's point, pulled out of the paragraph. */
@@ -232,17 +238,74 @@ footer nav{display:flex; gap:22px; flex-wrap:wrap}
 footer a{text-decoration:none}
 footer a:hover{color:var(--accent)}
 
+/* ============ APP STORE BADGE ============ */
+/* Apple's official badge artwork (img/app-store-badge.svg, from Apple's
+   marketing tools), unmodified. Apple asks for at least 40px of height. */
+.store-badge{display:inline-block; line-height:0; border-radius:9px; transition:transform .18s, box-shadow .18s}
+.store-badge:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.store-badge img{height:52px; width:auto}
+
+/* ============ BLOG ============ */
+.post-hero{margin:clamp(26px,3vw,40px) 0 0; border-radius:22px; overflow:hidden; background:var(--panel); aspect-ratio:21/9}
+.post-hero img{width:100%; height:100%; object-fit:cover}
+.post-hero.wide{aspect-ratio:3/1}
+.post-hero.wide img{object-position:50% 70%}
+
+/* A quote set over a photograph, the way the app shows one. */
+.prose .qfig{position:relative; margin:30px 0; max-width:400px; aspect-ratio:4/5; border-radius:22px; overflow:hidden;
+  display:flex; align-items:flex-end; background:#2a2a26; box-shadow:0 22px 54px rgba(0,0,0,.28)}
+.qfig img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.qfig::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(12,14,12,.05) 30%,rgba(12,14,12,.8) 100%)}
+.prose .qfig blockquote{position:relative; z-index:2; margin:0; padding:0 28px 28px; border:0}
+.prose .qfig blockquote p{color:#f4ecdc; font-size:clamp(22px,2.3vw,27px); line-height:1.28; text-shadow:0 1px 16px rgba(0,0,0,.5)}
+.prose .qfig blockquote cite{color:rgba(244,236,220,.82)}
+
+.blog-hub{padding:clamp(40px,5vw,64px) 0 clamp(64px,7vw,96px)}
+.blog-hub section + section{margin-top:clamp(52px,6vw,80px)}
+.hub-head{display:flex; flex-direction:column; gap:10px; max-width:62ch; margin-bottom:26px}
+.hub-head p{color:var(--text-dim); font-size:16px}
+.post-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,2.2vw,28px)}
+.post-card{
+  display:flex; flex-direction:column; text-decoration:none; border-radius:20px; overflow:hidden;
+  background:var(--panel); border:1px solid var(--rule-soft); transition:transform .2s, border-color .2s, box-shadow .2s;
+}
+.post-card:hover{transform:translateY(-3px); border-color:color-mix(in srgb,var(--accent) 40%,transparent); box-shadow:0 18px 40px rgba(0,0,0,.18)}
+.post-card-img{aspect-ratio:16/9; overflow:hidden; background:var(--ground-deep)}
+.post-card-img img{width:100%; height:100%; object-fit:cover; transition:transform .5s}
+.post-card:hover .post-card-img img{transform:scale(1.04)}
+.post-card-body{display:flex; flex-direction:column; gap:8px; padding:18px 20px 22px}
+.post-card-kicker{display:flex; align-items:center; gap:8px; font-family:var(--f-mono); font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--accent)}
+.post-card h3{font-family:var(--f-display); font-weight:400; font-size:21px; line-height:1.2; letter-spacing:-.01em}
+.post-card p{color:var(--text-dim); font-size:14.5px; line-height:1.5}
+.ico{width:20px; height:20px; flex:none}
+.post-card.feature{grid-column:1/-1; display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+.post-card.feature .post-card-img{aspect-ratio:auto; min-height:300px}
+.post-card.feature .post-card-body{justify-content:center; padding:clamp(24px,3.4vw,44px); gap:12px}
+.post-card.feature h3{font-size:clamp(26px,2.6vw,34px)}
+.post-card.feature p{font-size:16px}
+.hub-app{max-width:72ch; padding-top:28px; border-top:1px solid var(--rule-soft)}
+.hub-app p{color:var(--text-dim); font-size:15.5px}
+.hub-app a{color:var(--accent)}
+
 /* ============ RESPONSIVE ============ */
 @media (max-width:900px){
   .doc{grid-template-columns:1fr; gap:34px}
   /* Sticky is wrong once the list sits above the text rather than beside it. */
   .toc{position:static; flex-direction:row; flex-wrap:wrap; gap:8px 18px}
   .toc-label{width:100%; margin-bottom:0}
-  .nav-links a:not(.btn){display:none}
+  /* The blog link stays on small screens; the rest fold away. */
+  .nav-links{gap:18px}
+  .nav-links a:not(.btn):not([href="/blog/"]){display:none}
+  .post-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .post-card.feature{grid-template-columns:1fr}
+  .post-card.feature .post-card-img{aspect-ratio:16/9; min-height:0}
 }
 @media (max-width:560px){
   body{font-size:16.5px}
   .wrap{width:min(100% - 32px,var(--max))}
+  .post-grid{grid-template-columns:1fr}
+  .post-hero{aspect-ratio:16/10; border-radius:16px}
+  .prose .qfig{max-width:none}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none !important; transition:none !important}
