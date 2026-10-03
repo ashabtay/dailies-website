@@ -20,6 +20,7 @@ The website for the Dailies app — https://mydailies.app
 | `/compare/dailies-vs-i-am` | `compare/dailies-vs-i-am/index.html` | Dailies vs I am (Monkey Taps) |
 | `/compare/dailies-vs-thinkup` | `compare/dailies-vs-thinkup/index.html` | Dailies vs ThinkUp (Precise Wellness) |
 | `/compare/dailies-vs-motivate` | `compare/dailies-vs-motivate/index.html` | Dailies vs Motivate (Brave New Logic) |
+| `/e/#<payload>` | `e/index.html` | The receiving end of an envelope sent from the app. `noindex`, not in the sitemap - see [The envelope page](#the-envelope-page) |
 | any missing path | `404.html` | The custom 404 |
 
 `/terms` and `/privacy` are not optional paths: the app links to them from the
@@ -381,6 +382,51 @@ belong in `consent.js` with the tags, never in `analytics.js`.
 A `Cookie settings` link in every footer reopens the panel — that is the
 withdrawal route the policy promises, so do not remove it. Any element with a
 `data-cookie-settings` attribute does the same thing.
+
+## The envelope page
+
+`/e/` is where a friend opens a quote somebody sealed for them in the app. The
+link is `https://mydailies.app/e/#<payload>`: JSON, UTF-8, base64url with the
+padding stripped, all of it in the `#fragment`, which a browser never sends to
+a server. The fields and the validation rules are listed at the top of
+`envelope.js`; the app builds the same payload.
+
+| File | What it is |
+| --- | --- |
+| `e/index.html` | The page and its styles. Every state (sealed, opened, invalid, the reply composer) is in the markup, filled in by script |
+| `envelope.js` | Decoding, validation, the opening animation, the composer and the link it builds. `APP_URL` at the top is where every Get Dailies goes: swap it for the App Store URL on release day |
+| `e/house.jpg` | The quote card's photograph, a 900px copy of `assets/backgrounds/mtn_peak_dawn.jpg` from the app repo |
+| `e/og.png` | The 1200×630 link preview, "For you" on a sealed envelope. Rendered from `tools/envelope-og.html`; the command is in that file |
+| `e/test.html` | Checks for the pure functions (decode, encode, validate, text size, ordinals, personalize). Open it over `./serve.sh`; every line should say ok |
+
+Four things to keep true:
+
+1. **Names and quote text go in with `textContent` only**, on an element with
+   `dir="auto"`, never through `innerHTML`. Every word on the page past the
+   chrome came from a link somebody else wrote.
+2. **The fragment never leaves the phone.** The body carries
+   `data-analytics="private"`, which makes `consent.js` start PostHog with
+   `disable_capture_url_hashes`, no autocapture, no heatmaps and no
+   performance capture, and skip the ad pixels on this page altogether (they
+   report the full URL). The four `envelope_*` events in `analytics.js` accept
+   a fixed list of keys and never a name or a line of text.
+3. **The cookie banner waits.** The body carries `data-consent="deferred"`, so
+   `consent.js` asks nothing until `envelope.js` fires `dailies:consent-ready`,
+   a moment after the envelope is open (or after the torn-envelope message on
+   a broken link). A stored decision still applies at once. For a first visit
+   the view and open events are held in memory and sent only if the visitor
+   then allows analytics.
+4. **Send one back** tries `dailies://envelope?v=1&e=<payload>` on iPhone and
+   iPad first; if the page is still in front 1.2 seconds later, the app is not
+   there and the web composer opens instead. Everywhere else the composer
+   opens directly. It offers the house lines in `LINES` at the top of
+   `envelope.js`; they are corpus quotes, and a line withdrawn from the corpus
+   has to come out of that list too.
+
+A debug switch, `?auto=opened` (or `compose`, `pass`, `1`), skips the tap and
+opens straight to that state; with it the cookie banner never appears, so
+nothing loads. Use it for screenshots:
+`http://localhost:8000/e/?auto=opened#<payload>`.
 
 ## Unfilled placeholders
 

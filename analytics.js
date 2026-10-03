@@ -230,6 +230,62 @@
 
   ready(watchHelpSearch);
 
+  /* -------------------------------------------------------- the envelope */
+  /* /e/, where a friend opens a quote somebody sealed for them in the app.
+     envelope.js reports four moments through dailiesAnalytics.envelope();
+     the names live here, with every other event on the site.
+
+       envelope_viewed   the sealed envelope was shown
+       envelope_opened   ...and opened; `ms_to_open` is how long they looked first
+       envelope_cta      a button on it: `action` is send_back, pass_on,
+                         get_app, report, web_sealed or web_sent (with
+                         `destination`: share, whatsapp, messages or copy)
+       envelope_invalid  the link did not decode; `reason` is empty, decode,
+                         version or field
+
+     An envelope carries two names and a quote. None of them is ever sent:
+     only the keys below get through, and a string value has to look like a
+     slug or an id, so a name or a line of text cannot ride along by mistake.
+     The page's URL fragment, which holds them, is cut off every URL PostHog
+     records - see data-analytics="private" in consent.js.
+
+     The banner on /e/ is only asked once the envelope is open, so for a first
+     visit the view and the opening happen before anybody has said yes. They
+     are held here in memory, never stored, and sent only if the visitor then
+     allows analytics - dropped with the page otherwise. */
+
+  var ENVELOPE_EVENTS = {
+    viewed: 'envelope_viewed',
+    opened: 'envelope_opened',
+    cta: 'envelope_cta',
+    invalid: 'envelope_invalid'
+  };
+  var ENVELOPE_KEYS = ['own', 'has_author', 'text_length', 'quote_id', 'thread_n', 'open_when',
+    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason'];
+  var SAFE_STRING = /^[a-z0-9_-]{1,64}$/i;
+  var held = [];
+
+  function envelope(kind, props) {
+    var event = ENVELOPE_EVENTS[kind];
+    if (!event) return;
+    var clean = {};
+    ENVELOPE_KEYS.forEach(function (k) {
+      if (!props || !(k in props)) return;
+      var v = props[k];
+      if (v === null || typeof v === 'boolean' || (typeof v === 'number' && isFinite(v))) clean[k] = v;
+      else if (typeof v === 'string' && SAFE_STRING.test(v)) clean[k] = v;
+    });
+    if (window.posthog && window.posthog.capture) track(event, clean);
+    else if (held.length < 20) held.push([event, clean]);
+  }
+
+  function releaseHeld(state) {
+    var list = held;
+    held = [];
+    if (!state || !state.analytics) return;
+    list.forEach(function (e) { track(e[0], e[1]); });
+  }
+
   /* ---------------------------------------------------------------- public */
   /* consent.js calls this the moment a decision is saved. It only ever
      arrives when analytics was allowed — a refusal loads no PostHog for it to
@@ -240,12 +296,14 @@
 
   window.dailiesAnalytics = {
     track: track,
+    envelope: envelope,
     consentDecided: function (state, choice) {
       track('consent_decided', {
         choice: choice,
         analytics: !!(state && state.analytics),
         marketing: !!(state && state.marketing)
       });
+      releaseHeld(state);
     }
   };
 })();
