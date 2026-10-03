@@ -31,7 +31,7 @@
    Registered in consent.js rather than here, because it has to be in place
    before the first `$pageview` goes out. Every event from this site carries
    `platform: 'web'` and every event from the app carries `ios`. The site and
-   the app report to separate PostHog projects, nothing links a visitor here
+   the app report to separate PostHog projects. Nothing links a visitor here
    to the person they become in the app, so one project bought no funnel, and
    the property is kept so either stream still names itself if the two are
    ever put side by side. See docs/analytics.md in the app repo.
@@ -40,7 +40,7 @@
    What is deliberately not sent
    ---------------------------------------------------------------------------
    Text the visitor typed. `help_searched` carries how many results the search
-   found and how long the term was, never the term itself, the privacy policy
+   found and how long the term was, never the term itself; the privacy policy
    describes the site as recording "which pages are read, and where people give
    up", and a search box is the one control here that could capture something
    somebody wrote. Widening that is a policy edit first and a code edit second.
@@ -64,8 +64,8 @@
 
   /* A visible label reduced to a stable-ish slug, the same way Analytics.slug
      does it in the app: "Do I have to open the app?" becomes
-     `do_i_have_to_open_the_app`. Second best, and for the same reason, the
-     event renames itself if the copy is rewritten, so anything whose chart
+     `do_i_have_to_open_the_app`. Second best, and for the same reason (the
+     event renames itself if the copy is rewritten), so anything whose chart
      really matters should get an explicit data- attribute instead. */
   function slug(text) {
     var s = (text || '')
@@ -108,7 +108,7 @@
   /* ------------------------------------------------------------ the picker */
   /* index.html's taste picker: chips across the top, "Another one" underneath.
      Read off the DOM rather than wired into the picker's own code, so the two
-     stay independent, the picker does not know it is measured.
+     stay independent: the picker does not know it is measured.
 
      A chip that is already pressed cycles to the next quote instead of
      selecting, which is the picker's own behaviour; `action` tells the two
@@ -136,8 +136,8 @@
   /* --------------------------------------------------------------- the FAQ */
   /* Bound to a click on the summary, never to the `toggle` event, and that is
      load-bearing rather than a style choice. The help page opens and closes
-     accordions itself, the search box filters by opening every match, and a
-     #hash link opens the section it lands on, and `toggle` cannot tell those
+     accordions itself (the search box filters by opening every match, and a
+     #hash link opens the section it lands on), and `toggle` cannot tell those
      apart from a visitor deciding to read something. One search would send a
      dozen `faq_opened` events per keystroke.
 
@@ -157,7 +157,7 @@
 
   /* ------------------------------------------------------------ help search */
   /* What people cannot find is the most useful thing a help page can tell you,
-     and `results: 0` is the whole signal, a term that found nothing is a gap
+     and `results: 0` is the whole signal: a term that found nothing is a gap
      in the page. Sent on a pause in typing rather than per keystroke, so
      "notifications" is one event and not fourteen.
 
@@ -191,7 +191,7 @@
 
      Registered on the **capture** phase, which is not a detail. The picker
      binds its own handler to each chip, and that handler sets `aria-pressed`
-     the moment the chip is clicked, so a bubbling listener arrives to find
+     the moment the chip is clicked; so a bubbling listener arrives to find
      every chip already pressed and reports a first-time selection as a repeat.
      Capturing runs before the element's own handler, while the DOM still says
      what it said when the visitor decided to click. The same holds for
@@ -232,8 +232,8 @@
 
   /* ---------------------------------------------------------------- public */
   /* consent.js calls this the moment a decision is saved. It only ever
-     arrives when analytics was allowed, a refusal loads no PostHog for it to
-     reach, so read the result as "of the people who said yes to something,
+     arrives when analytics was allowed (a refusal loads no PostHog for it to
+     reach), so read the result as "of the people who said yes to something,
      how many also said yes to ads", never as an accept rate. The share of
      visitors who refuse outright is not knowable, by design, and no amount of
      instrumenting will make it so. */
