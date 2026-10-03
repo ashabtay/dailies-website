@@ -1,58 +1,102 @@
 {
   "/": {
-    "lastmod": "2026-09-21",
-    "sig": "dad80ac0d5dc6d051c3f36566a696ce49d1f932bc45958da5d8a7f5543624413"
+    "lastmod": "2026-10-03",
+    "sig": "3980ba6c79f39016f521b5d0a2327024ace8a6180e3da4166bdda0e3f3521615"
   },
   "/about/": {
-    "lastmod": "2026-09-21",
-    "sig": "727fbb385f607660fb68a29ac4beb9a4c0c0d3f10771be099d8f5e4cab273b98"
+    "lastmod": "2026-10-03",
+    "sig": "cea64a9406ebd7d7b33d4a294762e36545892569114bf53fa367b99f29a9a951"
+  },
+  "/blog/": {
+    "lastmod": "2026-10-03",
+    "sig": "71be41509a9b4b58e1c55904bbd18825ce3adb10d04422236e8cc8db367122e6"
+  },
+  "/blog/discipline-and-consistency-quotes/": {
+    "lastmod": "2026-10-03",
+    "sig": "670949ff917d0a9db55430f8df206f2e4586ae662f92c122f0f23817c3e9ce59"
+  },
+  "/blog/how-to-motivate-yourself/": {
+    "lastmod": "2026-10-03",
+    "sig": "a504f80fc30f476056764174106afdba8ed28dce0831d0e05b0e8307ff37f489"
+  },
+  "/blog/how-to-stay-motivated/": {
+    "lastmod": "2026-10-03",
+    "sig": "6c05a070455974578d8502e10376897a44fc9b262b3459b536af4f444a9a2451"
+  },
+  "/blog/how-to-stop-procrastinating/": {
+    "lastmod": "2026-10-03",
+    "sig": "86dab4d12ce4553b9490991182793accbd2979f40f2ab1644e77e13f6ec1e4d4"
+  },
+  "/blog/morning-motivation-quotes/": {
+    "lastmod": "2026-10-03",
+    "sig": "aac503f99058ebd23bf28519e60d9dde5c920705ee26c99c04b3409786803049"
+  },
+  "/blog/motivation-vs-discipline/": {
+    "lastmod": "2026-10-03",
+    "sig": "a187f45ea8fdb400da494c3d0724eef42612c79bb5c2a67196b8b782a809be56"
+  },
+  "/blog/motivational-quotes-for-hard-times/": {
+    "lastmod": "2026-10-03",
+    "sig": "4f52a00886ac739e896c0af11a6d3d5a284969f0380955c91d502725f4741b49"
+  },
+  "/blog/quotes-about-starting-over/": {
+    "lastmod": "2026-10-03",
+    "sig": "251730bb74f57cda7ee0fb2700c0ed6e7f8d699896832d479221160c7df1482c"
+  },
+  "/blog/quotes-for-self-doubt/": {
+    "lastmod": "2026-10-03",
+    "sig": "b6f0f80582778d51e5b28dbc9153af73b6a896e093bcfe94d3f8dad075f04b43"
+  },
+  "/blog/quotes-for-when-you-feel-stuck/": {
+    "lastmod": "2026-10-03",
+    "sig": "2c29658da8d4b0b0d9d94efa9d1f632134ab99bbd5f3e1b77d61c12fdd2f3b5b"
   },
   "/compare/": {
-    "lastmod": "2026-09-21",
-    "sig": "4373826084f0287382e46c47ec1a069cf5160c5d2f93940e310d75a3cdc0a8c0"
+    "lastmod": "2026-10-03",
+    "sig": "cfb6e1a70b7dd1ca4972c820de5219fd8607a87cd6063ef0bbf90cb4e165492a"
   },
   "/compare/dailies-vs-i-am/": {
-    "lastmod": "2026-09-21",
-    "sig": "ecce433e025863a0919cd37cb2a8c0b2fbaf112582c45400e96dcc5507fb4d76"
+    "lastmod": "2026-10-03",
+    "sig": "110b842af05d918460bb88f17319eb220d9d62fc3d82eace540169b21acccfe7"
   },
   "/compare/dailies-vs-motivate/": {
-    "lastmod": "2026-09-21",
-    "sig": "9f5730f0bbe415072bb9cbba7c16931142e1da686532e11f47ac624591de7daf"
+    "lastmod": "2026-10-03",
+    "sig": "6f486f0cfcf97d873c3013fc2b74819e10866a0fcb4f063e46b6141c6846d9fe"
   },
   "/compare/dailies-vs-motivation/": {
-    "lastmod": "2026-09-21",
-    "sig": "180b12249b93994a64b4a38b8d9851a0a03f6225165114b0bd681c92bc2858bb"
+    "lastmod": "2026-10-03",
+    "sig": "0ed2f8ed7d35d988eb030da66584882127d0423f391616506fa740c267b7dd52"
   },
   "/compare/dailies-vs-thinkup/": {
-    "lastmod": "2026-09-21",
-    "sig": "7f7c0db4687b139f55239e4584dbf7f7a5e410a3bfdd6b427def28c96ad35a2c"
+    "lastmod": "2026-10-03",
+    "sig": "398a4b3b4fb2b77eb552dd3ef21e3aec9fe8d97f1af9eeba914b6d875a45cb99"
   },
   "/cookies/": {
-    "lastmod": "2026-09-21",
-    "sig": "5fe29f9874ce0e3d3632b34d67a2e2bb4a089d7c5720c83cb9f9cea88c9ffa5c"
+    "lastmod": "2026-10-03",
+    "sig": "544401f56d125a29f862029d0058b5cdd42f4f4a7b824328528ec26501166193"
   },
   "/guides/": {
-    "lastmod": "2026-09-21",
-    "sig": "024fb614b5d61841ca215a0c42f22091e1f464d1dcfcb15ce462629f4302acbf"
+    "lastmod": "2026-10-03",
+    "sig": "507c2df5bb7f66f3ac7e6db74c8a418afbacbaf55d89dbd6d3a1597d6cba11f6"
   },
   "/guides/add-a-widget-to-your-home-screen/": {
-    "lastmod": "2026-09-21",
-    "sig": "740ea00af8774d33884ec51c7ccbc6aa01fe78621f6439d9cf0e6f7b0273629c"
+    "lastmod": "2026-10-03",
+    "sig": "c0a88c308111f4ce3f8baa14e323154e2eccab7f337d7a643de0ac25cf6e035a"
   },
   "/guides/quotes-on-your-iphone-lock-screen/": {
-    "lastmod": "2026-09-21",
-    "sig": "4bf56b4d9591c0db19b1b1b760d856f6fe188071f2cfbc0c3186470ea5d3fdba"
+    "lastmod": "2026-10-03",
+    "sig": "26bec2fd6ac55c0e54ceba796ed268ea2602787f446dba733cba77db8e130d48"
   },
   "/help/": {
-    "lastmod": "2026-09-21",
-    "sig": "6db91a7c6159d9f25b0f54e312787a4d39176f8aad3a65eabe1557013f0c7c18"
+    "lastmod": "2026-10-03",
+    "sig": "2ea5cbf3867a5bf0399c9a05daefeedb967c9b29aebc9dab39e2c829b899fce9"
   },
   "/privacy/": {
-    "lastmod": "2026-09-21",
-    "sig": "7c9b88112307c1dcabd2ee92a48c1920a549cfb91dea46db2919fdc8d5476a4a"
+    "lastmod": "2026-10-03",
+    "sig": "b43e4dc5a50b4e6f191d722977fe50e465526ee8779eced22688ed4be214d0db"
   },
   "/terms/": {
-    "lastmod": "2026-09-21",
-    "sig": "1d5e94e5e2b1b8bfcbb200f2becc605380836a1178369a81025b1d407a54d34a"
+    "lastmod": "2026-10-03",
+    "sig": "af7c6f05ddd92a0c9bf71e6ac3e214404767c0696b943a88e6c7ad7b6e46570b"
   }
 }

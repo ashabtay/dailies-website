@@ -11,6 +11,8 @@ The website for the Dailies app — https://mydailies.app
 | `/guides` | `guides/index.html` | Guides hub, linking the how-to articles below |
 | `/guides/quotes-on-your-iphone-lock-screen` | `guides/quotes-on-your-iphone-lock-screen/index.html` | How to put quotes on your iPhone Lock Screen |
 | `/guides/add-a-widget-to-your-home-screen` | `guides/add-a-widget-to-your-home-screen/index.html` | How to add a widget to your Home Screen |
+| `/blog` | `blog/index.html` | Blog hub, linking the ten posts below |
+| `/blog/<slug>` | `blog/<slug>/index.html` | Motivation posts: four explainers and six quote collections. See [The blog](#the-blog) |
 | `/about` | `about/index.html` | Who makes Dailies, the editorial rules, and the contact route |
 | `/terms` | `terms/index.html` | Terms of Use |
 | `/privacy` | `privacy/index.html` | Privacy Policy |
@@ -30,9 +32,13 @@ Netlify, Vercel and Cloudflare Pages alike — do not flatten them to `terms.htm
 
 ## How the files are organized
 
-`index.html` is a single self-contained file: its styles, scripts, app icon, QR
-code and quote-card photography are all inlined, so it has no build step and no
-local assets.
+`index.html` is a single file with no build step: its styles, scripts, app icon,
+QR code and hero quote-card photography are inlined. Below the hero it links a
+few shared files: the photographs in `img/home/` (the pull quote's background
+and the three "How it works" steps), the blog thumbnails in `img/blog/` for its
+"From the blog" section, and the App Store badge in `img/app-store-badge.svg`.
+The home photographs are crops of the app's own backgrounds, the same source as
+the blog's (see [The blog](#the-blog)).
 
 The document and comparison pages carry no photography, so they share two small
 assets instead of each inlining a copy:
@@ -85,6 +91,7 @@ templating. Edit the file, reload the browser, done.
 | Help center | `help/index.html` |
 | A comparison article | `compare/dailies-vs-<app>/index.html` |
 | A how-to guide | `guides/<slug>/index.html` |
+| A blog post | `blog/<slug>/index.html` |
 | About page | `about/index.html` |
 | The 404 page | `404.html` |
 | Landing page | `index.html` |
@@ -99,15 +106,29 @@ Everything a reader sees lives between `<div class="prose">` and its closing
 should rarely need to touch either.
 
 **The nav on every document and comparison page is a hand-copied version of the
-landing page's nav.** Its links point at landing-page anchors (`/#taste`,
-`/#how`, `/#get`). Add, remove or rename a section on the landing page and
-update every other page's nav to match, or they link to anchors that no longer
-exist. Nothing checks this.
+landing page's nav.** It carries Blog, Help and the Get Dailies pill (which
+points at `/#get`). Change the landing page's nav and change every other page's
+to match. Nothing checks this.
+
+On small screens the landing page keeps only the Blog link (the App Store badge
+in the hero is the way in), and the brand stacks the icon over the name, after
+motivation.app's mobile header. The document pages keep Blog and the pill.
+
+**Every download button is Apple's official App Store badge**
+(`img/app-store-badge.svg`, the black US/UK artwork from Apple's marketing tools
+at toolbox.marketingtools.apple.com), wrapped in `<a class="store-badge">` and
+sized by height only. Apple's rules: do not redraw, recolor or crop it, and keep
+it at least 40px tall. Each link keeps its own `ct=` campaign token and
+`data-download` location.
+
+**No dashes as punctuation, anywhere on the site.** No em dash, no en dash, no
+spaced hyphen standing in for one, in body text, titles, meta tags or JSON-LD.
+Title separators are " | Dailies" or a colon.
 
 `sitemap.xml` is **generated** — do not hand-edit it. Add a page to `PAGES` in
 `tools/sitemap.py` and run it. See [The sitemap](#the-sitemap).
 
-**Every page's footer is hand-copied too**, and it now carries nine links.
+**Every page's footer is hand-copied too**, and it now carries ten links.
 Adding a top-level page means adding it to the footer of all of them, the same
 way the nav works.
 
@@ -217,6 +238,78 @@ nothing new to learn to edit one. Four things to keep true:
 Adding a guide: copy the closest existing one, then add it to the cards and the
 sidebar on `guides/index.html`, to `PAGES` in `tools/sitemap.py`, and to the
 help entry it is the long version of.
+
+## The blog
+
+`/blog` is SEO content aimed at the searches people make when they want
+motivation rather than an app: *how to motivate yourself*, *how to stop
+procrastinating*, *motivation vs discipline*, *quotes for when you feel stuck*,
+*morning motivation quotes*. It has two kinds of post, in two card groups on the
+hub:
+
+- **Motivation 101**: explainers that lean on named, checkable research
+  (Gollwitzer, Lally, Amabile, Milkman, Pychyl and so on). Say who found it and
+  where; do not invent a percentage or a study.
+- **Quote collections**: quotes grouped by the feeling, each followed by the
+  occasional line of commentary.
+
+Rules on top of the house rules:
+
+1. **Every quote comes from `assets/quotes.db` in the `dailies` repo, word for
+   word, credited to the author the database gives.** That is what makes the
+   rights question already answered. Every James Clear line links to
+   jamesclear.com, because his grant asks for a link back. Check the lot from the
+   root of this repo:
+
+   ```bash
+   python3 - <<'PY'
+   import re,glob,html,sqlite3
+   db=sqlite3.connect('../dailies/assets/quotes.db')
+   ok={r[0] for r in db.execute("select text from quotes where text is not null")}
+   for f in sorted(glob.glob('blog/*/index.html')):
+       for t in re.findall(r'<blockquote><p>(.*?)</p>',open(f,encoding='utf-8').read()):
+           if html.unescape(t) not in ok: print('NOT IN DB', f, t)
+   PY
+   ```
+
+2. **No dashes as punctuation.** No em dash, no en dash, and no spaced hyphen
+   standing in for one. Commas, full stops, colons and brackets do the job, and the
+   posts read less like a template for it.
+3. **The two posts that touch on low mood** (how to motivate yourself, and the
+   hard-times quotes) say when it is more than a slump and give the 988 line.
+   Keep that paragraph whatever else changes.
+4. Each post carries `BlogPosting`, `FAQPage` and `BreadcrumbList` JSON-LD, and the
+   `FAQPage` must match the visible `<details>` list, the same as the guides.
+
+Quote blocks are styled by `.prose blockquote` in `doc.css`:
+
+```html
+<blockquote><p>The quote, exactly as the database has it.</p><cite>Author, <em>Source</em></cite></blockquote>
+```
+
+Each post turns one of its quotes into a photo quote card:
+
+```html
+<figure class="qfig"><img src="/img/blog/<slug>-quote.jpg" width="720" height="900" alt="" loading="lazy"><blockquote>...</blockquote></figure>
+```
+
+**The images.** Every photograph on the blog is one of the app's own
+backgrounds (`assets/backgrounds` in the `dailies` repo, all Unsplash, credited
+in that repo's `BACKGROUND_CREDITS.md`), cropped into `img/blog/`. Each post has
+four files: `<slug>.jpg` (1080x608, the hero under the title), `<slug>-thumb.jpg`
+(640x360, its card on the hub), `<slug>-og.jpg` (1200x630, its share image) and
+`<slug>-quote.jpg` (720x900, its photo quote card). The hub's own set is
+`blog.jpg`, `blog-thumb.jpg` and `blog-og.jpg`. Give every hero real `alt` text;
+the quote card's photo is decoration and keeps `alt=""`, because the quote over
+it is real text.
+
+The hub's card icons are inline SVG line drawings (`.ico`), one per post,
+stroked in `currentColor` so they follow the theme.
+
+Adding a post: copy the closest existing one, add a card on `blog/index.html` and
+a `blogPost` entry in its `Blog` JSON-LD, add it to `PAGES` in
+`tools/sitemap.py`, and link it from the "Keep reading" list of two or three
+related posts.
 
 ## The comparison pages
 
@@ -488,6 +581,7 @@ in App Store Connect first; a new `ct` value simply appears. The values in use:
 |---------------|-----------------------------------------|
 | `web-home`    | both buttons on the home page           |
 | `web-qr`      | both QR codes on the home page          |
+| `web-blog`    | `/blog/` and every post                 |
 | `web-guides`  | `/guides/` and every guide              |
 | `web-compare` | `/compare/` and every comparison        |
 | `web-about`   | `/about/`                               |
