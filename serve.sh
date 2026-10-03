@@ -4,8 +4,8 @@
 # Two reasons this is a script and not just `python3 -m http.server`:
 #
 #  1. The pages must be opened over http, not by double-clicking the file.
-#     Every asset is referenced from the site root, /doc.css, /icon.png,
-#     /consent.js, because that is what they resolve to once deployed at
+#     Every asset is referenced from the site root (/doc.css, /icon.png,
+#     /consent.js), because that is what they resolve to once deployed at
 #     mydailies.app. Under file:// there is no root, so /doc.css resolves to
 #     file:///doc.css, which does not exist, and the page renders unstyled.
 #
@@ -25,7 +25,7 @@ sleep 0.3
 
 echo "Dailies site  →  http://localhost:$PORT   (caching disabled)"
 echo "  /           landing page"
-echo "  /help       help centre"
+echo "  /help       help center"
 echo "  /terms      terms of use"
 echo "  /privacy    privacy policy"
 echo "  /cookies    cookie policy"

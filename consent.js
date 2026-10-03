@@ -40,7 +40,7 @@
 
   /* --------------------------------------------------------------- signals */
 
-  /* A browser-level opt-out. Global Privacy Control is a real legal signal , 
+  /* A browser-level opt-out. Global Privacy Control is a real legal signal: 
      California treats it as a valid opt-out a business must honour, and it is
      a clear expression of objection anywhere else. Do Not Track has no legal
      force and Safari dropped it, but a visitor who switched it on has said the
@@ -71,12 +71,12 @@
       return v;
     } catch (e) {
       // Private browsing, or storage disabled. Treat as "not asked yet" and
-      // simply do not track, never fall through to loading the tags.
+      // simply do not track; never fall through to loading the tags.
       return null;
     }
   }
 
-  /* [override] marks a choice made *while* a browser signal was active, the
+  /* [override] marks a choice made *while* a browser signal was active; the
      visitor was told it was on and switched something on anyway. Only that
      beats the signal on the next load; an ordinary stored decision does not,
      because it may predate the signal being turned on. */
@@ -121,7 +121,7 @@
       disable_session_recording: true,
       // Off so that the pageview can be sent by hand below, *after* the
       // platform super property is registered. Left on, PostHog sends it from
-      // inside init(), before any register() call can reach it, and the
+      // inside init() (before any register() call can reach it), and the
       // single most important event on this site would be the one event
       // without `platform` on it, missing from exactly the charts that
       // property exists to make possible. Nothing is given up: this is a
@@ -224,7 +224,7 @@
     if (!state) return;
     if (state.analytics) loadAnalytics();
     if (state.marketing) loadMarketing();
-    // Nothing is "unloaded" on withdrawal, a script already in the page cannot
+    // Nothing is "unloaded" on withdrawal: a script already in the page cannot
     // be recalled. Withdrawing stops it firing again from the next page load,
     // and the panel says so rather than implying otherwise.
     if (window.posthog && window.posthog.set_config && !state.analytics) {
@@ -370,7 +370,7 @@
       apply(state);
       // After apply(), so that on an acceptance PostHog is already loading and
       // the event has somewhere to land. On a refusal it goes nowhere at all,
-      // which is the point, see the note on consentDecided in analytics.js.
+      // which is the point (see the note on consentDecided in analytics.js).
       if (window.dailiesAnalytics) window.dailiesAnalytics.consentDecided(state, act);
     });
 
