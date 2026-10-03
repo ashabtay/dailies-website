@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
 <title>Dailies - Daily Motivation on Your Lock Screen</title>
 <meta name="description" content="Dailies sends short motivational quotes to your iPhone Lock Screen and Home Screen widget. Pick your topics and your hours, then get on with your day.">
 <meta property="og:type" content="website">
@@ -114,10 +115,10 @@ p{margin:0}
 .hero-copy{display:flex; flex-direction:column; gap:24px; align-items:flex-start}
 h1 em{font-style:italic; color:var(--accent)}
 .cta-row{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
-.qr{display:flex; align-items:center; gap:12px}
+.qr{display:flex; align-items:center; gap:14px}
 /* Fixed light ground in both themes - a QR needs dark-on-light to scan. */
-.qr-chip{width:72px; height:72px; padding:8px; border-radius:12px; background:#f4ecdc; flex:none}
-.qr-chip img{width:100%; height:100%}
+.qr-chip{width:120px; height:120px; padding:8px; border-radius:14px; background:#f4ecdc; flex:none}
+.qr-chip img{display:block; width:100%; height:100%}
 .qr-note{font-size:12.5px; line-height:1.35; color:var(--text-faint); max-width:15ch}
 
 .deck{position:relative; height:clamp(320px,33vw,410px)}
@@ -264,6 +265,8 @@ footer a:hover{color:var(--accent)}
   body{font-size:16.5px}
   .wrap{width:min(100% - 32px,var(--max))}
   .moments,.steps{grid-template-columns:1fr}
+  /* A phone cannot scan its own screen; the button is the way in there. */
+  .qr{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none !important; transition:none !important}
@@ -294,10 +297,10 @@ footer a:hover{color:var(--accent)}
         <h1>Daily motivation,<br>straight to your <em>Lock Screen.</em></h1>
         <p class="lede">Some days you need a push. Some days you need a laugh, better focus or permission to be kinder to yourself.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://mydailies.app" data-download="hero">Download for iPhone</a>
+          <a class="btn btn-primary" href="https://apps.apple.com/app/id6804210416" data-download="hero">Download for iPhone</a>
           <div class="qr">
-            <div class="qr-chip"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6AQMAAACyIsh+AAAABlBMVEXw+P8ZHB2AMhTAAAAAAXRSTlMAQObYZgAAATJJREFUeNrtmcERwzAIBJm4AJfk1lWSCvAMseGQlFcM/h4PoiR+7aA7wKKIU7TtqiI7Th7tI3+CDyC02cfFT44bJ5ie8S9BPSd519+NTrVvOkniRFB5klds6oVJku9IHh0kXSxJsqqTdkKiThZIrt49E707TXKJQ8N7GkGVdNKEUcNsLtuxhBtPUCnHMdsOxcS9NgMiycTtNrP21CGbcWJN5hzH+vHZlBtd/42gcjXZZdHJnxvPLihNcjVrb9SHdhJUrp9sXpNIGHmok/l+cq1J/0qdrDjO8GkJ2/E6taaSoPIzzvTuNRFUZe6eOOdCg6Dyu6AYdDDt8HZXpsW5RnPvhk6yJl+RtHVvH+05QeVJ2sgo/gpiTJCsyYpO2tyIkWeshgiq4t22UOuxs3SmBPXwgS9ReZpTDV4ZzAAAAABJRU5ErkJggg==" alt="QR code linking to mydailies.app"></div>
-            <p class="qr-note">Scan to open mydailies.app on your phone</p>
+            <div class="qr-chip"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMyAzMyIgY2xhc3M9InNlZ25vIiBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPjxwYXRoIGZpbGw9IiNmNGVjZGMiIGQ9Ik0wIDBoMzN2MzNoLTMzeiIvPjxwYXRoIGNsYXNzPSJxcmxpbmUiIHN0cm9rZT0iIzE5MWMxZCIgZD0iTTIgMi41aDdtMiAwaDJtMiAwaDFtMiAwaDFtMSAwaDFtMSAwaDFtMSAwaDdtLTI5IDFoMW01IDBoMW0xIDBoNW0xIDBoMW0yIDBoMW0yIDBoMW0xIDBoMW01IDBoMW0tMjkgMWgxbTEgMGgzbTEgMGgxbTEgMGg1bTIgMGgxbTQgMGgxbTEgMGgxbTEgMGgzbTEgMGgxbS0yOSAxaDFtMSAwaDNtMSAwaDFtMSAwaDFtMSAwaDFtMiAwaDJtMiAwaDFtMSAwaDJtMSAwaDFtMSAwaDNtMSAwaDFtLTI5IDFoMW0xIDBoM20xIDBoMW0zIDBoMW0zIDBoMW0zIDBoM20xIDBoMW0xIDBoM20xIDBoMW0tMjkgMWgxbTUgMGgxbTIgMGgxbTYgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTUgMGgxbS0yOSAxaDdtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDdtLTIxIDFoNG0yIDBoMW00IDBoMm0tMjEgMWgxbTUgMGgxbTEgMGg2bTEgMGgzbTEgMGgxbTEgMGgybTIgMGgzbS0yNyAxaDFtMSAwaDFtMSAwaDFtMiAwaDRtMyAwaDJtMiAwaDFtNCAwaDFtMSAwaDJtLTI3IDFoMW0xIDBoMW0xIDBoMm02IDBoM20yIDBoMW0xIDBoMW0xIDBoMm0tMjQgMWgzbTIgMGgxbTEgMGgxbTEgMGgxbTEgMGgybTIgMGgxbTIgMGgybTIgMGgxbTEgMGgybS0yNiAxaDFtMiAwaDFtMSAwaDJtNCAwaDVtMyAwaDJtMSAwaDFtNSAwaDFtLTI4IDFoMW0yIDBoMm0zIDBoM20zIDBoMW0zIDBoMm0xIDBoM20yIDBoMm0tMjkgMWgxbTMgMGgxbTEgMGgxbTEgMGgxbTMgMGgxbTIgMGgxbTIgMGgxbTIgMGgxbTIgMGgzbS0yMyAxaDJtMiAwaDFtMiAwaDJtMSAwaDFtMyAwaDJtMSAwaDJtMSAwaDFtMSAwaDFtMSAwaDFtLTI4IDFoMW0xIDBoMW0xIDBoNG0xIDBoMW00IDBoNW0zIDBoMW0xIDBoMm0tMjcgMWgxbTEgMGgxbTIgMGgxbTEgMGgxbTEgMGgxbTIgMGgybTEgMGgxbTEgMGgzbTEgMGg0bTEgMGgzbS0yOSAxaDVtMSAwaDJtMSAwaDJtMSAwaDFtMiAwaDJtMiAwaDFtMSAwaDVtMiAwaDFtLTI5IDFoMW02IDBoMm0yIDBoMW0xIDBoMW02IDBoMW0zIDBoMW0tMjUgMWgxbTEgMGgybTIgMGgxbTEgMGgxbTEgMGgybTIgMGg0bTIgMGg1bTEgMGgzbS0yMSAxaDFtMSAwaDNtMSAwaDVtMSAwaDFtMyAwaDJtLTI2IDFoN20yIDBoM20zIDBoMW0yIDBoM20xIDBoMW0xIDBoM20tMjcgMWgxbTUgMGgxbTIgMGgzbTIgMGgxbTQgMGgybTMgMGgxbTIgMGgybS0yOSAxaDFtMSAwaDNtMSAwaDFtMiAwaDFtMiAwaDNtNCAwaDdtMiAwaDFtLTI5IDFoMW0xIDBoM20xIDBoMW00IDBoMm0xIDBoMm0yIDBoMW0yIDBoMW0xIDBoMW0xIDBoMm0xIDBoMW0tMjkgMWgxbTEgMGgzbTEgMGgxbTQgMGgybTIgMGgxbTMgMGgybTEgMGg2bS0yOCAxaDFtNSAwaDFtMiAwaDFtMSAwaDFtMiAwaDJtMiAwaDFtMyAwaDVtMSAwaDFtLTI5IDFoN20xIDBoMW0xIDBoM20xIDBoNm0xIDBoMW0yIDBoMW0xIDBoMSIvPjwvc3ZnPg==" alt="QR code linking to Dailies on the App Store"></div>
+            <p class="qr-note">Scan with your iPhone camera to get Dailies</p>
           </div>
         </div>
       </div>
@@ -373,7 +376,7 @@ footer a:hover{color:var(--accent)}
         <details><summary>Is Dailies free?</summary>
           <p>Yes, there is a free version with a set of topics, backgrounds and typefaces to choose from. Dailies Premium is an optional annual subscription that opens the whole library &mdash; every topic, your Liked quotes and My quotes as feeds of their own, every background, every typeface and effect, your own photos and colors behind your quotes, and no wordmark on the pictures you share.</p></details>
         <details><summary>Which devices does Dailies work on?</summary>
-          <p>iPhone and iPad, in portrait or landscape. There is no Android version. Scan the code on this page, or open mydailies.app on your phone.</p></details>
+          <p>iPhone and iPad, in portrait or landscape. There is no Android version. Scan the code on this page, or search for Dailies on the App Store.</p></details>
       </div>
     </div>
   </section>
@@ -383,10 +386,10 @@ footer a:hover{color:var(--accent)}
     <div class="wrap final-in">
       <h2>Start tomorrow with something good.</h2>
       <p class="lede">Set it up once. Dailies takes it from there.</p>
-      <a class="btn btn-primary" href="https://mydailies.app" data-download="final">Download for iPhone</a>
+      <a class="btn btn-primary" href="https://apps.apple.com/app/id6804210416" data-download="final">Download for iPhone</a>
       <div class="qr">
-        <div class="qr-chip"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6AQMAAACyIsh+AAAABlBMVEXw+P8ZHB2AMhTAAAAAAXRSTlMAQObYZgAAATJJREFUeNrtmcERwzAIBJm4AJfk1lWSCvAMseGQlFcM/h4PoiR+7aA7wKKIU7TtqiI7Th7tI3+CDyC02cfFT44bJ5ie8S9BPSd519+NTrVvOkniRFB5klds6oVJku9IHh0kXSxJsqqTdkKiThZIrt49E707TXKJQ8N7GkGVdNKEUcNsLtuxhBtPUCnHMdsOxcS9NgMiycTtNrP21CGbcWJN5hzH+vHZlBtd/42gcjXZZdHJnxvPLihNcjVrb9SHdhJUrp9sXpNIGHmok/l+cq1J/0qdrDjO8GkJ2/E6taaSoPIzzvTuNRFUZe6eOOdCg6Dyu6AYdDDt8HZXpsW5RnPvhk6yJl+RtHVvH+05QeVJ2sgo/gpiTJCsyYpO2tyIkWeshgiq4t22UOuxs3SmBPXwgS9ReZpTDV4ZzAAAAABJRU5ErkJggg==" alt="QR code linking to mydailies.app"></div>
-        <p class="qr-note">Scan with your phone camera</p>
+        <div class="qr-chip"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMyAzMyIgY2xhc3M9InNlZ25vIiBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPjxwYXRoIGZpbGw9IiNmNGVjZGMiIGQ9Ik0wIDBoMzN2MzNoLTMzeiIvPjxwYXRoIGNsYXNzPSJxcmxpbmUiIHN0cm9rZT0iIzE5MWMxZCIgZD0iTTIgMi41aDdtMiAwaDJtMiAwaDFtMiAwaDFtMSAwaDFtMSAwaDFtMSAwaDdtLTI5IDFoMW01IDBoMW0xIDBoNW0xIDBoMW0yIDBoMW0yIDBoMW0xIDBoMW01IDBoMW0tMjkgMWgxbTEgMGgzbTEgMGgxbTEgMGg1bTIgMGgxbTQgMGgxbTEgMGgxbTEgMGgzbTEgMGgxbS0yOSAxaDFtMSAwaDNtMSAwaDFtMSAwaDFtMSAwaDFtMiAwaDJtMiAwaDFtMSAwaDJtMSAwaDFtMSAwaDNtMSAwaDFtLTI5IDFoMW0xIDBoM20xIDBoMW0zIDBoMW0zIDBoMW0zIDBoM20xIDBoMW0xIDBoM20xIDBoMW0tMjkgMWgxbTUgMGgxbTIgMGgxbTYgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTUgMGgxbS0yOSAxaDdtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDdtLTIxIDFoNG0yIDBoMW00IDBoMm0tMjEgMWgxbTUgMGgxbTEgMGg2bTEgMGgzbTEgMGgxbTEgMGgybTIgMGgzbS0yNyAxaDFtMSAwaDFtMSAwaDFtMiAwaDRtMyAwaDJtMiAwaDFtNCAwaDFtMSAwaDJtLTI3IDFoMW0xIDBoMW0xIDBoMm02IDBoM20yIDBoMW0xIDBoMW0xIDBoMm0tMjQgMWgzbTIgMGgxbTEgMGgxbTEgMGgxbTEgMGgybTIgMGgxbTIgMGgybTIgMGgxbTEgMGgybS0yNiAxaDFtMiAwaDFtMSAwaDJtNCAwaDVtMyAwaDJtMSAwaDFtNSAwaDFtLTI4IDFoMW0yIDBoMm0zIDBoM20zIDBoMW0zIDBoMm0xIDBoM20yIDBoMm0tMjkgMWgxbTMgMGgxbTEgMGgxbTEgMGgxbTMgMGgxbTIgMGgxbTIgMGgxbTIgMGgxbTIgMGgzbS0yMyAxaDJtMiAwaDFtMiAwaDJtMSAwaDFtMyAwaDJtMSAwaDJtMSAwaDFtMSAwaDFtMSAwaDFtLTI4IDFoMW0xIDBoMW0xIDBoNG0xIDBoMW00IDBoNW0zIDBoMW0xIDBoMm0tMjcgMWgxbTEgMGgxbTIgMGgxbTEgMGgxbTEgMGgxbTIgMGgybTEgMGgxbTEgMGgzbTEgMGg0bTEgMGgzbS0yOSAxaDVtMSAwaDJtMSAwaDJtMSAwaDFtMiAwaDJtMiAwaDFtMSAwaDVtMiAwaDFtLTI5IDFoMW02IDBoMm0yIDBoMW0xIDBoMW02IDBoMW0zIDBoMW0tMjUgMWgxbTEgMGgybTIgMGgxbTEgMGgxbTEgMGgybTIgMGg0bTIgMGg1bTEgMGgzbS0yMSAxaDFtMSAwaDNtMSAwaDVtMSAwaDFtMyAwaDJtLTI2IDFoN20yIDBoM20zIDBoMW0yIDBoM20xIDBoMW0xIDBoM20tMjcgMWgxbTUgMGgxbTIgMGgzbTIgMGgxbTQgMGgybTMgMGgxbTIgMGgybS0yOSAxaDFtMSAwaDNtMSAwaDFtMiAwaDFtMiAwaDNtNCAwaDdtMiAwaDFtLTI5IDFoMW0xIDBoM20xIDBoMW00IDBoMm0xIDBoMm0yIDBoMW0yIDBoMW0xIDBoMW0xIDBoMm0xIDBoMW0tMjkgMWgxbTEgMGgzbTEgMGgxbTQgMGgybTIgMGgxbTMgMGgybTEgMGg2bS0yOCAxaDFtNSAwaDFtMiAwaDFtMSAwaDFtMiAwaDJtMiAwaDFtMyAwaDVtMSAwaDFtLTI5IDFoN20xIDBoMW0xIDBoM20xIDBoNm0xIDBoMW0yIDBoMW0xIDBoMSIvPjwvc3ZnPg==" alt="QR code linking to Dailies on the App Store"></div>
+        <p class="qr-note">Scan with your iPhone camera to open the App Store</p>
       </div>
     </div>
     <div class="wrap"><footer>

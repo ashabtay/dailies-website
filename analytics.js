@@ -88,9 +88,10 @@
      the question the page layout actually raises: does anybody reach the one
      at the bottom, or is the hero doing all the work.
 
-     `href` rides along because the button does not point at the App Store yet
-     — it points back at this site — so the day that changes, the data says
-     when. */
+     `href` rides along so that if the buttons ever point somewhere other than
+     the App Store listing, the data says when. The buttons on the document
+     pages all report `location: page`; the page itself is already on the
+     event's URL. */
 
   function onDownload(a) {
     track('download_clicked', {

@@ -471,5 +471,25 @@ for st in json.loads(s[k:k+i+1]):
 EOF
 ```
 
-The download buttons still point at mydailies.app — swap them for the App Store
-URL (`kAppStoreUrl` in `lib/app_config.dart`) once the app is listed.
+Every "Download for iPhone" button and both QR codes on the home page point at
+`https://apps.apple.com/app/id6804210416`, the same URL as `kAppStoreUrl` in the
+app's `lib/app_config.dart`. It carries no storefront, so Apple sends each visitor
+to their own country's store. The QR is an inline SVG made with
+[segno](https://pypi.org/project/segno/), error level M, two-module border, in the
+chip's colors:
+
+```sh
+python3 -c "import segno; segno.make('https://apps.apple.com/app/id6804210416', error='m', micro=False).save('qr.svg', dark='#191c1d', light='#f4ecdc', border=2, xmldecl=False, omitsize=True)"
+```
+
+**Every page carries Apple's Smart App Banner**, right under the viewport tag —
+copy it into any new page:
+
+```html
+<meta name="apple-itunes-app" content="app-id=6804210416">
+```
+
+Only Safari on iPhone and iPad draws it, and Apple fills in the icon, name,
+rating and View/Open button from the listing, so there is nothing to style.
+Taps on it go straight to Apple and never reach `analytics.js`; App Store
+Connect counts the downloads they lead to as web referrals.
