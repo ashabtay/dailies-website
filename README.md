@@ -472,14 +472,39 @@ EOF
 ```
 
 Every "Download for iPhone" button and both QR codes on the home page point at
-`https://apps.apple.com/app/id6804210416`, the same URL as `kAppStoreUrl` in the
-app's `lib/app_config.dart`. It carries no storefront, so Apple sends each visitor
-to their own country's store. The QR is an inline SVG made with
+`https://apps.apple.com/app/id6804210416` (the same app as `kAppStoreUrl` in the
+app's `lib/app_config.dart`) with an App Store Connect campaign tag on the end:
+
+```
+https://apps.apple.com/app/id6804210416?pt=129347926&ct=web-guides&mt=8
+```
+
+`pt` is our provider ID and never changes. `ct` says which part of the site sent
+the download, and shows up as its own row under Analytics → Acquisition →
+Campaigns once Apple has enough downloads to report it. Nothing has to be set up
+in App Store Connect first; a new `ct` value simply appears. The values in use:
+
+| `ct`          | Where                                   |
+|---------------|-----------------------------------------|
+| `web-home`    | both buttons on the home page           |
+| `web-qr`      | both QR codes on the home page          |
+| `web-guides`  | `/guides/` and every guide              |
+| `web-compare` | `/compare/` and every comparison        |
+| `web-about`   | `/about/`                               |
+| `web-404`     | the 404 page                            |
+
+A new page in an existing section reuses that section's value; a new section
+gets a new `web-` value and a row in this table. In the HTML the `&`s are
+written `&amp;`. Off-site links (TikTok bio and so on) should get their own `ct`,
+without the `web-` prefix.
+
+The link carries no storefront, so Apple sends each visitor to their own
+country's store. The QR is an inline SVG made with
 [segno](https://pypi.org/project/segno/), error level M, two-module border, in the
-chip's colors:
+chip's colors, with `shape-rendering="crispEdges"` added to the `<svg>` tag:
 
 ```sh
-python3 -c "import segno; segno.make('https://apps.apple.com/app/id6804210416', error='m', micro=False).save('qr.svg', dark='#191c1d', light='#f4ecdc', border=2, xmldecl=False, omitsize=True)"
+python3 -c "import segno; segno.make('https://apps.apple.com/app/id6804210416?pt=129347926&ct=web-qr&mt=8', error='m', micro=False).save('qr.svg', dark='#191c1d', light='#f4ecdc', border=2, xmldecl=False, omitsize=True)"
 ```
 
 **Every page carries Apple's Smart App Banner**, right under the viewport tag —
