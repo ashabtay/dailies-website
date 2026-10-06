@@ -45,7 +45,7 @@
       <h1>Privacy Policy</h1>
       <p class="lede">Some of what you tell Dailies stays on your phone. Most of how you have set it up is also sent to analytics. This sets out which is which, who sees it, and what you can switch off.</p>
       <div class="doc-meta">
-        <span>Last updated 3 October 2026</span>
+        <span>Last updated 6 October 2026</span>
         <span>Applies to the Dailies app and mydailies.app</span>
       </div>
     </div>
@@ -80,12 +80,12 @@
         <div class="callout">
           <div class="callout-label">The distinction that matters</div>
           <p><strong>Some of it stays on your phone.</strong> The name you asked to be called, any photo you chose as a background, and anything you type are written to private storage on your own device. There is no account and no server holding them.</p>
-          <p><strong>Most of how you have set the app up is also sent to analytics.</strong> Which topics you follow, your reminder frequency and hours, your chosen background, typeface and effect, and the identifier of any quote you heart are recorded against a random install identifier, so we can see how the app is actually used. The website is measured too, and carries advertising pixels once you allow them.</p>
+          <p><strong>Most of how you have set the app up is also sent to analytics.</strong> Which topics you follow, your reminder frequency and hours, your chosen background, typeface and effect, and the identifier of any quote you heart are recorded against a random install identifier, so we can see how the app is actually used. The website is measured too, and carries advertising pixels once you allow them. The app also tells Meta that an install, a free trial or a subscription happened, so we can see which Facebook or Instagram ads work; it attaches an advertising identifier to that only if you allow Apple's tracking prompt.</p>
         </div>
         <ul>
           <li><strong>No account.</strong> You never make one, so there is no email address or password on file.</li>
           <li><strong>Your name and your photos stay on the device.</strong> Only the <em>length</em> of your name is ever sent, to tell a real answer from a keyboard mash.</li>
-          <li><strong>You can switch the app's analytics off</strong> (one switch under Profile → Additional Info), and the website asks before it measures anything. The app itself does no advertising tracking and shows no tracking prompt.</li>
+          <li><strong>You can switch the app's analytics off</strong> (one switch under Profile → Additional Info), and the website asks before it measures anything. The same switch stops what goes to Meta. Apple's tracking prompt, shown once during setup, decides only whether an advertising identifier goes with it.</li>
         </ul>
       </section>
 
@@ -152,8 +152,18 @@
 
       <section id="tracking">
         <h2>4. Tracking and advertising</h2>
-        <p><strong>The app does not track you across other companies' apps and websites, and does not ask to.</strong> It shows no App Tracking Transparency prompt, reads no advertising identifier, and contains no advertising or attribution software from Meta, Google, TikTok or anyone else. Nothing in the app connects your install to an advert.</p>
-        <p>The one place advertising measurement exists is this website, and only behind the cookie banner (see section 5). If the app ever gains ad attribution, iOS will ask you first with Apple's tracking prompt, and this policy will say so before that version reaches you.</p>
+        <p><strong>The app contains Meta's measurement software</strong> (the Facebook SDK), so that when a Facebook or Instagram ad leads to an install we can tell which one. The app shows no ads.</p>
+        <h3>What Meta receives</h3>
+        <ul>
+          <li><strong>That the app was installed and opened</strong>, with the technical context in section 3 (device model, iOS version, app version, language, and an approximate location derived from your IP address).</li>
+          <li><strong>That a free trial started, or a subscription was bought</strong>, and which plan. Not the price, and not a restored purchase.</li>
+          <li><strong>Your device's advertising identifier, only if you allowed Apple's tracking prompt.</strong> With it, Meta can connect the install to the ad you tapped and to your Meta account. Without it, Meta is told the install happened but may use that only in aggregate, under Apple's rules.</li>
+        </ul>
+        <p>Nothing else from the app goes to Meta: not which screens you use, which quotes you read or heart, your topics, your name, your photos, or anything you type.</p>
+        <h3>When it starts, and how to switch it off</h3>
+        <p>The same rule as analytics: nothing is sent until you press <strong>Get started</strong> under the line that points to this policy. On the next screen iOS shows <strong>Apple's tracking prompt</strong>; choosing <strong>Ask App Not to Track</strong> keeps the advertising identifier out of everything the app sends, and you can change that answer at any time in iOS Settings → Privacy &amp; Security → Tracking.</p>
+        <p>To stop the app sending anything to Meta, turn off <strong>Share usage analytics</strong> under <strong>Profile → Additional Info</strong>. It is one switch for both PostHog and Meta; from that moment nothing more is sent to either.</p>
+        <p>The website carries advertising measurement too, and only behind the cookie banner (see section 5).</p>
       </section>
 
       <section id="website">
@@ -173,7 +183,7 @@
           <table>
             <tr><th>Who</th><th>What for</th><th>Their role</th></tr>
             <tr><td><strong>PostHog</strong></td><td>App and website analytics</td><td><strong>Processor</strong>: acts only on our instructions, under a data processing agreement</td></tr>
-            <tr><td><strong>Meta</strong></td><td>Ad measurement and targeting, on the website only</td><td><strong>Independent controller</strong>: also uses the data for its own purposes under its own policy</td></tr>
+            <tr><td><strong>Meta</strong></td><td>Ad measurement and targeting on the website; in the app, which ads lead to installs and trials (section 4)</td><td><strong>Independent controller</strong>: also uses the data for its own purposes under its own policy</td></tr>
             <tr><td><strong>Google</strong></td><td>Ad measurement and targeting, on the website only</td><td><strong>Independent controller</strong>: same</td></tr>
             <tr><td><strong>TikTok</strong></td><td>Ad measurement and targeting, on the website only</td><td><strong>Independent controller</strong>: same</td></tr>
             <tr><td><strong>Apple</strong></td><td>Distribution, payments, aggregate App Analytics</td><td><strong>Independent controller</strong> (see section 10)</td></tr>
@@ -193,6 +203,8 @@
             <tr><td>Website analytics</td><td><strong>Consent</strong>: the banner. Withdraw it from Cookie settings and processing stops.</td></tr>
             <tr><td>App analytics</td><td><strong>Legitimate interests</strong>: understanding how the app is used well enough to improve it. It does not begin until you have been shown this policy and pressed past the first screen, and what is recorded is set out in sections 2 and 3: the shape of your settings, not the content of your quotes, your name or your photos. You may object at any time (see <a href="#rights">Your rights</a>).</td></tr>
             <tr><td>Advertising pixels on the website</td><td><strong>Consent</strong>: the banner. Withdraw it from Cookie settings and the pixels stop loading.</td></tr>
+            <tr><td>Telling Meta about installs and trials from the app</td><td><strong>Legitimate interests</strong>: knowing which ads work, so the money spent on them is not wasted. It begins only after you have been shown this policy and pressed past the first screen, and the <strong>Share usage analytics</strong> switch stops it. You may object at any time (see <a href="#rights">Your rights</a>).</td></tr>
+            <tr><td>Attaching your advertising identifier to that</td><td><strong>Consent</strong>: Apple's tracking prompt. Decline it, or withdraw it in iOS Settings, and the identifier is never attached.</td></tr>
             <tr><td>Answering your support email</td><td><strong>Legitimate interests</strong>: you wrote to us and want a reply.</td></tr>
             <tr><td>Keeping records of purchases</td><td><strong>Legal obligation</strong>: tax and accounting rules.</td></tr>
           </table>
