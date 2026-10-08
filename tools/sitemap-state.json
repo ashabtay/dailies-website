@@ -76,24 +76,36 @@
     "sig": "5bbd0fe2695122cbbb9c342acc2049213d5b4d8581d5f7f08b22dccfd7dfb777"
   },
   "/guides/": {
-    "lastmod": "2026-10-03",
-    "sig": "abaf8c8e3384f3ccf84cb2863c577ba1f98e0e19b496b8ff9c725899efaddb22"
+    "lastmod": "2026-10-08",
+    "sig": "03cd14c2819796e838a796ea714e8b94e1e8848418704b61a068c10f64c0308b"
   },
   "/guides/add-a-widget-to-your-home-screen/": {
-    "lastmod": "2026-10-03",
-    "sig": "101e1eb27819b747ea72f7c75a158513f793e79995388d798c06859807254b8b"
+    "lastmod": "2026-10-08",
+    "sig": "5038dbc0ba77bb388475c59a6b12e69a6c9ba4c34a86c76fa4a8a7af5ecc0189"
+  },
+  "/guides/bible-verse-on-iphone-lock-screen/": {
+    "lastmod": "2026-10-08",
+    "sig": "831e5d345dabcf5c7e9ccf8101fd7cb1d5c17520ae7ae17b1f98077f9f990fbe"
+  },
+  "/guides/focus-lock-screen-iphone/": {
+    "lastmod": "2026-10-08",
+    "sig": "87bb6cb03aacea3e611d4dab7bd766fc6feb8e94c1fd3d827a46967cc64ccd1e"
+  },
+  "/guides/iphone-widget-not-updating/": {
+    "lastmod": "2026-10-08",
+    "sig": "bbe54d3ac2f1fc2a213637483218d7f52634ec70f08f662661ed5e0c5640f68a"
   },
   "/guides/quotes-on-your-iphone-lock-screen/": {
-    "lastmod": "2026-10-03",
-    "sig": "17c69a9326e69bc1377eb75e3298396d538f3734960ed9458bf71d3cf4aeed6c"
+    "lastmod": "2026-10-08",
+    "sig": "5325e4b5317039822fc059ce1e8bc27c2ea1a0e6d5cb993df123459ff908b3b8"
   },
   "/help/": {
-    "lastmod": "2026-10-03",
-    "sig": "2ea5cbf3867a5bf0399c9a05daefeedb967c9b29aebc9dab39e2c829b899fce9"
+    "lastmod": "2026-10-08",
+    "sig": "7b96a3c16783d2b31a095d1b94c53f4262f9f5cf6fd4186a6355f64ddb331b91"
   },
   "/privacy/": {
-    "lastmod": "2026-10-03",
-    "sig": "239ad3fd3e38cb457bf643a8a314f7e4b712560d169bf65a92c276eeddb0dcbe"
+    "lastmod": "2026-10-08",
+    "sig": "c71c7c0e9de78fb79c9b74450c2b344a4160ace4f02182e1ca1580583ee6e515"
   },
   "/terms/": {
     "lastmod": "2026-10-03",

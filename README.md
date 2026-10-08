@@ -11,6 +11,9 @@ The website for the Dailies app — https://mydailies.app
 | `/guides` | `guides/index.html` | Guides hub, linking the how-to articles below |
 | `/guides/quotes-on-your-iphone-lock-screen` | `guides/quotes-on-your-iphone-lock-screen/index.html` | How to put quotes on your iPhone Lock Screen |
 | `/guides/add-a-widget-to-your-home-screen` | `guides/add-a-widget-to-your-home-screen/index.html` | How to add a widget to your Home Screen |
+| `/guides/bible-verse-on-iphone-lock-screen` | `guides/bible-verse-on-iphone-lock-screen/index.html` | How to put a Bible verse on your iPhone Lock Screen |
+| `/guides/focus-lock-screen-iphone` | `guides/focus-lock-screen-iphone/index.html` | How to link a Lock Screen to a Focus on iPhone |
+| `/guides/iphone-widget-not-updating` | `guides/iphone-widget-not-updating/index.html` | Why an iPhone widget stops updating, and the fixes |
 | `/blog` | `blog/index.html` | Blog hub, linking the ten posts below |
 | `/blog/<slug>` | `blog/<slug>/index.html` | Motivation posts: four explainers and six quote collections. See [The blog](#the-blog) |
 | `/about` | `about/index.html` | Who makes Dailies, the editorial rules, and the contact route |
