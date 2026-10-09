@@ -238,9 +238,19 @@ nothing new to learn to edit one. Four things to keep true:
    few releases — the `+` in the Home Screen editor became `Edit → Add Widget` —
    so re-walk them when a major version ships and move the date when you do.
 
-Adding a guide: copy the closest existing one, then add it to the cards and the
-sidebar on `guides/index.html`, to `PAGES` in `tools/sitemap.py`, and to the
-help entry it is the long version of.
+**The images.** Like the blog, every guide opens on one of the app's own
+backgrounds, cropped into `img/guides/`: `<slug>.jpg` (1080x608, the hero),
+`<slug>-thumb.jpg` (640x360, its card on the hub) and `<slug>-og.jpg` (1200x630,
+its share image), plus `guides.jpg`/`guides-thumb.jpg`/`guides-og.jpg` for the hub.
+The `shot-*.jpg` files are real app screens at 414x900, scaled from the App Store
+raw captures in the `dailies` repo (`appstore/screenshots/raw-captures/iphone-6.9`),
+and sit in `.shots` blocks (`.shots.pair` puts two side by side). Re-export them
+when those captures are re-shot. The hub's card icons are inline SVG line drawings,
+the same `.ico` style as the blog hub.
+
+Adding a guide: copy the closest existing one, give it a hero, thumb and og image,
+then add its card to `guides/index.html`, to `PAGES` in `tools/sitemap.py`, and to
+the help entry it is the long version of.
 
 ## The blog
 

@@ -192,6 +192,8 @@ td strong{color:var(--text)}
   border:1px solid var(--rule-soft); background:var(--ground-deep);
 }
 .shots figcaption{font-size:13.5px; line-height:1.45; color:var(--text-faint); text-wrap:pretty}
+/* Two captures side by side: a step and its result. */
+.shots.pair{grid-template-columns:repeat(2,minmax(0,186px)); gap:18px}
 
 .shot-aside{display:grid; grid-template-columns:186px minmax(0,1fr); gap:clamp(18px,2.4vw,30px); align-items:start; margin-bottom:20px}
 .shot-aside .shots{margin:0}
@@ -293,9 +295,9 @@ footer a:hover{color:var(--accent)}
   /* Sticky is wrong once the list sits above the text rather than beside it. */
   .toc{position:static; flex-direction:row; flex-wrap:wrap; gap:8px 18px}
   .toc-label{width:100%; margin-bottom:0}
-  /* The blog link stays on small screens; the rest fold away. */
+  /* The blog and guides links stay on small screens; the rest fold away. */
   .nav-links{gap:18px}
-  .nav-links a:not(.btn):not([href="/blog/"]){display:none}
+  .nav-links a:not(.btn):not([href="/blog/"]):not([href="/guides/"]){display:none}
   .post-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .post-card.feature{grid-template-columns:1fr}
   .post-card.feature .post-card-img{aspect-ratio:16/9; min-height:0}
