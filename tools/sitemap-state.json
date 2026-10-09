@@ -1,11 +1,11 @@
 {
   "/": {
-    "lastmod": "2026-10-03",
-    "sig": "62e6c45e6ce1dee94f623e79d35933911d3e18fd6ab87b2d801d597a43598ce8"
+    "lastmod": "2026-10-09",
+    "sig": "048e4348b872d08f57d3da48841ed3f0739b0f783d7017a71f1cdc93ca6e4fa8"
   },
   "/about/": {
-    "lastmod": "2026-10-03",
-    "sig": "2d83287f6822b9aa439ff85c19ac450386dcc89fe9a4189120535510399f8f3a"
+    "lastmod": "2026-10-09",
+    "sig": "526d599e2bfd9ce635d1add0526dab22dc57a62cd08e0a0767e38fac01d6317c"
   },
   "/blog/": {
     "lastmod": "2026-10-03",
@@ -52,24 +52,24 @@
     "sig": "f789bfc6ec095de3257927cc0da4318ebf0abff18de5b982cfa92b28ddb38e6e"
   },
   "/compare/": {
-    "lastmod": "2026-10-03",
-    "sig": "37e52e7d60a4ca2e22f68e51dee6a2cbcbe086aa0a5f68324d9ecc3ac0f40f4c"
+    "lastmod": "2026-10-09",
+    "sig": "8c0c9030234e15bc81abddf8c56209afc75d2cccc30fafe1d03729f5abad1444"
   },
   "/compare/dailies-vs-i-am/": {
-    "lastmod": "2026-10-03",
-    "sig": "110b842af05d918460bb88f17319eb220d9d62fc3d82eace540169b21acccfe7"
+    "lastmod": "2026-10-09",
+    "sig": "b4dea7a4e1b6d5b9856576a7ea16df3f69085842ea196bd5cfc8cc77abf4bd1c"
   },
   "/compare/dailies-vs-motivate/": {
-    "lastmod": "2026-10-03",
-    "sig": "6f486f0cfcf97d873c3013fc2b74819e10866a0fcb4f063e46b6141c6846d9fe"
+    "lastmod": "2026-10-09",
+    "sig": "0b5edaee54e27ff2ebd5bb0330a9c1b09b6357195bc32a57ec22ffd5732dc5ac"
   },
   "/compare/dailies-vs-motivation/": {
-    "lastmod": "2026-10-03",
-    "sig": "0ed2f8ed7d35d988eb030da66584882127d0423f391616506fa740c267b7dd52"
+    "lastmod": "2026-10-09",
+    "sig": "4c6a770a84d8eb7a565b58f0f0848d766348b81b3cfe545f66b27c63f0325e51"
   },
   "/compare/dailies-vs-thinkup/": {
-    "lastmod": "2026-10-03",
-    "sig": "398a4b3b4fb2b77eb552dd3ef21e3aec9fe8d97f1af9eeba914b6d875a45cb99"
+    "lastmod": "2026-10-09",
+    "sig": "11590628815bb4008931fd617717a513223db2add419c94d51c1a958fdca0ec0"
   },
   "/cookies/": {
     "lastmod": "2026-10-03",
@@ -100,12 +100,12 @@
     "sig": "5325e4b5317039822fc059ce1e8bc27c2ea1a0e6d5cb993df123459ff908b3b8"
   },
   "/help/": {
-    "lastmod": "2026-10-08",
-    "sig": "7b96a3c16783d2b31a095d1b94c53f4262f9f5cf6fd4186a6355f64ddb331b91"
+    "lastmod": "2026-10-09",
+    "sig": "a74a97aa26b6e19b4a8f6715aeeb0e37acd5470f714db927d9b07da6bbab7ce7"
   },
   "/privacy/": {
-    "lastmod": "2026-10-08",
-    "sig": "c71c7c0e9de78fb79c9b74450c2b344a4160ace4f02182e1ca1580583ee6e515"
+    "lastmod": "2026-10-09",
+    "sig": "a2a1e0fd5ceacefae742c2e1aecbad7ee8b9d7ca48f3884e75327d2696b8e0b6"
   },
   "/terms/": {
     "lastmod": "2026-10-03",
