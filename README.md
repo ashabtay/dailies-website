@@ -11,6 +11,9 @@ The website for the Dailies app — https://mydailies.app
 | `/guides` | `guides/index.html` | Guides hub, linking the how-to articles below |
 | `/guides/quotes-on-your-iphone-lock-screen` | `guides/quotes-on-your-iphone-lock-screen/index.html` | How to put quotes on your iPhone Lock Screen |
 | `/guides/add-a-widget-to-your-home-screen` | `guides/add-a-widget-to-your-home-screen/index.html` | How to add a widget to your Home Screen |
+| `/guides/bible-verse-on-iphone-lock-screen` | `guides/bible-verse-on-iphone-lock-screen/index.html` | How to put a Bible verse on your iPhone Lock Screen |
+| `/guides/focus-lock-screen-iphone` | `guides/focus-lock-screen-iphone/index.html` | How to link a Lock Screen to a Focus on iPhone |
+| `/guides/iphone-widget-not-updating` | `guides/iphone-widget-not-updating/index.html` | Why an iPhone widget stops updating, and the fixes |
 | `/blog` | `blog/index.html` | Blog hub, linking the ten posts below |
 | `/blog/<slug>` | `blog/<slug>/index.html` | Motivation posts: four explainers and six quote collections. See [The blog](#the-blog) |
 | `/about` | `about/index.html` | Who makes Dailies, the editorial rules, and the contact route |
@@ -235,9 +238,45 @@ nothing new to learn to edit one. Four things to keep true:
    few releases — the `+` in the Home Screen editor became `Edit → Add Widget` —
    so re-walk them when a major version ships and move the date when you do.
 
-Adding a guide: copy the closest existing one, then add it to the cards and the
-sidebar on `guides/index.html`, to `PAGES` in `tools/sitemap.py`, and to the
-help entry it is the long version of.
+**The images.** The guides use real photographs, not the app's backgrounds:
+each opens on an Unsplash photo (free for commercial use under the Unsplash
+License, no attribution required, credited below anyway), cropped into
+`img/guides/` as `<slug>.jpg` (1080x608, the hero), `<slug>-thumb.jpg`
+(640x360, its card on the hub) and `<slug>-og.jpg` (1200x630, its share image);
+`guides.jpg` and friends are the hub's. Check a photo is not Unsplash+ before
+using it: the download link 403s for those.
+
+The `zoom-*.jpg` files are real app screens from the Shots 17 Pro Max simulator,
+cropped to the part that matters (the widget, the notification, the setup
+choice) and shown at column width in a `.shot-zoom` figure so the words can be
+read. They were shot on a black wallpaper and the photo behind them keyed in
+with `appstore/screenshots/wallpaper.py` in the `dailies` repo. **Every screen
+carries its own line and its own wallpaper, and no line or photo appears twice
+across the guides**; the Bible guide shows verses only. Keep it that way when
+adding one.
+
+| File | Line on screen | Wallpaper (Unsplash) |
+| --- | --- | --- |
+| `zoom-bible-lock` | Be still, and know that I am God. (Psalm 46:10) | hU93H0oT2Ok, Miguel Alcântara |
+| `zoom-bible-home` | They are new every morning... (Lamentations 3:23) | ESEnXckWlLY, Dewang Gupta |
+| `zoom-bible-notification` | The LORD is my shepherd... (Psalm 23:1) | mPnxwQBtUZE, Casey Horner |
+| `zoom-bible-categories` | Setup, with Faith chosen | none |
+| `zoom-lock-widget`, `zoom-lock-notification` | Victor Hugo; William James | VTt9uOBQb6M, Simona Peneva |
+| `zoom-home-widget` | Samuel Johnson | AdIJ9S-kbrc, David Gavi |
+| `zoom-focus-lock` | Lao Tzu | DuiPYwz3CBA, Ivana Cajina |
+| `zoom-update-widget` | Kahlil Gibran | tjA9rmcop2c, Joey Genovese |
+
+Heroes: hub UD-TfIuU-pA (Vitaly Gariev), Lock Screen _8S9nEmCZK0 (Oliur), Home
+Screen 4gtMwj9uxwc (Amanz), Bible Iz6x7yHMkQA (Sixteen Miles Out), Focus
+DCCwdPccREs (Irwan), widget not updating cQ38vs4NFP4 (VD Photography). The Bible
+guide's verse card is the app's own `sky_cloud_line` background.
+
+The hub's card icons are inline SVG line drawings, the same `.ico` style as the
+blog hub.
+
+Adding a guide: copy the closest existing one, give it a hero, thumb and og image,
+then add its card to `guides/index.html`, to `PAGES` in `tools/sitemap.py`, and to
+the help entry it is the long version of.
 
 ## The blog
 

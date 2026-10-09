@@ -1,102 +1,114 @@
 {
   "/": {
-    "lastmod": "2026-10-03",
-    "sig": "62e6c45e6ce1dee94f623e79d35933911d3e18fd6ab87b2d801d597a43598ce8"
+    "lastmod": "2026-10-09",
+    "sig": "0e4307899ffbb6523a4c3e2819556961a0c36b90d0ab707213373e87c65e9f77"
   },
   "/about/": {
-    "lastmod": "2026-10-03",
-    "sig": "2d83287f6822b9aa439ff85c19ac450386dcc89fe9a4189120535510399f8f3a"
+    "lastmod": "2026-10-09",
+    "sig": "f3b39d74352eafdc54c9a394781772575b0c46e8ca47e0afccd28f86b15b6278"
   },
   "/blog/": {
-    "lastmod": "2026-10-03",
-    "sig": "0ddb3863a91615fa901b0d5ba2040189da908010bee73e4510bcaecbf5ff78a4"
+    "lastmod": "2026-10-09",
+    "sig": "38a9100d4e2d65bfef978b8177439fd99f7d2f074391ec53eb58fee7e0fc83c1"
   },
   "/blog/discipline-and-consistency-quotes/": {
-    "lastmod": "2026-10-03",
-    "sig": "b21432dacec7598ee6a0919a6da12d6a262e70c4208b742bc8ecfb65e0ddfc42"
+    "lastmod": "2026-10-09",
+    "sig": "caed1d6595fa645036d1ce83a4d5b02d463c8b92c509a110e899d2cb145bd684"
   },
   "/blog/how-to-motivate-yourself/": {
-    "lastmod": "2026-10-03",
-    "sig": "2255681c6c4af922a6dd7b423be22c62a8e19582f80e8f14912c20c1b1696f10"
+    "lastmod": "2026-10-09",
+    "sig": "b019820874a5dca14a5c090397fe4aaf134609d1434f151f623e2d7dbdd1557b"
   },
   "/blog/how-to-stay-motivated/": {
-    "lastmod": "2026-10-03",
-    "sig": "45eb0ff58b7a863a53358e5188d7b8d38f1cb5c1f690d0c4e4f6a75f579eda77"
+    "lastmod": "2026-10-09",
+    "sig": "5d9b9a431f44de4387183044cd5196733ffda545a582f738ad879f9fee9ec0ac"
   },
   "/blog/how-to-stop-procrastinating/": {
-    "lastmod": "2026-10-03",
-    "sig": "d25cc343d0071ebb016b64d978973cb6bc0752af5f7a580d4e0b94d51cf4a18e"
+    "lastmod": "2026-10-09",
+    "sig": "6c42c9aae3f9759e0d7ba382a48dc8a09b0f3c2839c4002fd588fc8e18a0176f"
   },
   "/blog/morning-motivation-quotes/": {
-    "lastmod": "2026-10-03",
-    "sig": "248f8729a8c3e4886a0af0fdc32e91c6b935c75f6acaf7cc7a8eb2e4e9d88312"
+    "lastmod": "2026-10-09",
+    "sig": "afe7ab809739ab6cc11b611379c84561213db29b8e9bfe6e5816111e52f00d9c"
   },
   "/blog/motivation-vs-discipline/": {
-    "lastmod": "2026-10-03",
-    "sig": "bf2d19865c7ff06a5a3bdfd44f0377a5a9652b74664bbc1a7121d509dae25cf6"
+    "lastmod": "2026-10-09",
+    "sig": "882a2e0a1aabc74e9ae52f2479053c94882512869f1aaffbc786be9f978101f7"
   },
   "/blog/motivational-quotes-for-hard-times/": {
-    "lastmod": "2026-10-03",
-    "sig": "cf49595fc514ac9076188ef00bac46f0ef1ca6fa6a7a0d2c2c1ced1d027a6b32"
+    "lastmod": "2026-10-09",
+    "sig": "349a45a6df2f679c4ea6714a055574d6028739e4d820c8a4b4330a69138acf9a"
   },
   "/blog/quotes-about-starting-over/": {
-    "lastmod": "2026-10-03",
-    "sig": "e1911575f86d3eef4086a6c282169e6e690d3894fd8bd64f6ca48467b58fa2bf"
+    "lastmod": "2026-10-09",
+    "sig": "06bc801758be532d3fa843929beae612ce5f96cdfe43fc9a5e3ce41e44b2f563"
   },
   "/blog/quotes-for-self-doubt/": {
-    "lastmod": "2026-10-03",
-    "sig": "f21cc8925c39f3e92323868d7b544bcdddfad88b30a898dc288db0b52451d42d"
+    "lastmod": "2026-10-09",
+    "sig": "838a6740b71208e3639316796625066da340609b0e2bd84a68d4b356d637f1e1"
   },
   "/blog/quotes-for-when-you-feel-stuck/": {
-    "lastmod": "2026-10-03",
-    "sig": "f789bfc6ec095de3257927cc0da4318ebf0abff18de5b982cfa92b28ddb38e6e"
+    "lastmod": "2026-10-09",
+    "sig": "903ed92b7ffb65241cf8dd9da106fdd6dd632bc09c18a30e2bc90df5980dad49"
   },
   "/compare/": {
-    "lastmod": "2026-10-03",
-    "sig": "37e52e7d60a4ca2e22f68e51dee6a2cbcbe086aa0a5f68324d9ecc3ac0f40f4c"
+    "lastmod": "2026-10-09",
+    "sig": "862c105541ce6af2169c3f6072418b9bf48d264623d0ad223f0d8ad1c2eb4f84"
   },
   "/compare/dailies-vs-i-am/": {
-    "lastmod": "2026-10-03",
-    "sig": "110b842af05d918460bb88f17319eb220d9d62fc3d82eace540169b21acccfe7"
+    "lastmod": "2026-10-09",
+    "sig": "6cd5946d890c73fd0f00eaf56ebb0f6a08f50a93d8ed23b87515041999951b89"
   },
   "/compare/dailies-vs-motivate/": {
-    "lastmod": "2026-10-03",
-    "sig": "6f486f0cfcf97d873c3013fc2b74819e10866a0fcb4f063e46b6141c6846d9fe"
+    "lastmod": "2026-10-09",
+    "sig": "8fe95e2e35016afefc3a2712f43156888658fc121cd708b8a8de76cd668845c4"
   },
   "/compare/dailies-vs-motivation/": {
-    "lastmod": "2026-10-03",
-    "sig": "0ed2f8ed7d35d988eb030da66584882127d0423f391616506fa740c267b7dd52"
+    "lastmod": "2026-10-09",
+    "sig": "ceca83bec39839564de6db98c0338b920dd41a142ded4bc3c749794f14fe2f28"
   },
   "/compare/dailies-vs-thinkup/": {
-    "lastmod": "2026-10-03",
-    "sig": "398a4b3b4fb2b77eb552dd3ef21e3aec9fe8d97f1af9eeba914b6d875a45cb99"
+    "lastmod": "2026-10-09",
+    "sig": "666228087adcd61fd661e9fc218120bae660cc47341907fe93c386c940ceb8c0"
   },
   "/cookies/": {
-    "lastmod": "2026-10-03",
-    "sig": "5bbd0fe2695122cbbb9c342acc2049213d5b4d8581d5f7f08b22dccfd7dfb777"
+    "lastmod": "2026-10-09",
+    "sig": "6fa601109505c48a8d2a08f852aae749c5967914e87c706e3ec93e7739788c53"
   },
   "/guides/": {
-    "lastmod": "2026-10-03",
-    "sig": "abaf8c8e3384f3ccf84cb2863c577ba1f98e0e19b496b8ff9c725899efaddb22"
+    "lastmod": "2026-10-09",
+    "sig": "13d03ccccf994a5d81c691f0b94a3edfbf4c195f552b3017f1ff4ff6a470251b"
   },
   "/guides/add-a-widget-to-your-home-screen/": {
-    "lastmod": "2026-10-03",
-    "sig": "101e1eb27819b747ea72f7c75a158513f793e79995388d798c06859807254b8b"
+    "lastmod": "2026-10-09",
+    "sig": "343b1e1c9a31e683cb7332925e2f5630c901e58f39cfb2d0207c33be4e2bd613"
+  },
+  "/guides/bible-verse-on-iphone-lock-screen/": {
+    "lastmod": "2026-10-09",
+    "sig": "db2e2f271f0ada27d787c1def0b75830fce965df4dbd8daf6fbef93167e76fe8"
+  },
+  "/guides/focus-lock-screen-iphone/": {
+    "lastmod": "2026-10-09",
+    "sig": "5387275be092e6a7b103b5dbd72de99da89e1a2365b213b7f4c0b74aa5c58dda"
+  },
+  "/guides/iphone-widget-not-updating/": {
+    "lastmod": "2026-10-09",
+    "sig": "7a8b0757daeb0ed4b626cb5dab3c5d9cc6e94e316975a9e9e434c3bed1271d16"
   },
   "/guides/quotes-on-your-iphone-lock-screen/": {
-    "lastmod": "2026-10-03",
-    "sig": "17c69a9326e69bc1377eb75e3298396d538f3734960ed9458bf71d3cf4aeed6c"
+    "lastmod": "2026-10-09",
+    "sig": "f7e80a0a51eee265196224a9763611bd237a496b54423f35246da0ff582ac9d7"
   },
   "/help/": {
-    "lastmod": "2026-10-03",
-    "sig": "2ea5cbf3867a5bf0399c9a05daefeedb967c9b29aebc9dab39e2c829b899fce9"
+    "lastmod": "2026-10-09",
+    "sig": "b6f164f09f32a446c5217dae5d030086a550900b52e46cf381a5cfbd7029d7ff"
   },
   "/privacy/": {
-    "lastmod": "2026-10-03",
-    "sig": "239ad3fd3e38cb457bf643a8a314f7e4b712560d169bf65a92c276eeddb0dcbe"
+    "lastmod": "2026-10-09",
+    "sig": "ed2969d9b1c818a326471348884e8e31e46d6eed37cb59e76d7018f6616884b4"
   },
   "/terms/": {
-    "lastmod": "2026-10-03",
-    "sig": "af7c6f05ddd92a0c9bf71e6ac3e214404767c0696b943a88e6c7ad7b6e46570b"
+    "lastmod": "2026-10-09",
+    "sig": "b4863ec6d6e5ba1117c69b22a912867edddafde75d00b4ee67e47a176925df39"
   }
 }

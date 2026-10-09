@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
+<title>iPhone widget not updating? Why it happens and how to fix it | Dailies</title>
+<meta name="description" content="Why iPhone widgets get stuck on old information, and the fixes in the order worth trying them: Low Power Mode, opening the app, Background App Refresh and more.">
+<link rel="canonical" href="https://mydailies.app/guides/iphone-widget-not-updating/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iPhone widget not updating? Why it happens and how to fix it">
+<meta property="og:description" content="iOS decides when a widget refreshes, not the app. What that means, and the fixes in the order worth trying them.">
+<meta property="og:url" content="https://mydailies.app/guides/iphone-widget-not-updating/">
+<meta property="og:image" content="https://mydailies.app/img/guides/iphone-widget-not-updating-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A mug of coffee and an iPhone on a dark table by a window">
+<meta property="og:site_name" content="Dailies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/blog/">Blog</a>
+      <a href="/guides/">Guides</a>
+      <a href="/help/">Help</a>
+      <a class="btn btn-primary" href="/#get">Get Dailies</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">Guide</div>
+      <h1>iPhone widget not updating? Why it happens and how to fix it</h1>
+      <p class="lede">A widget is not a little app running on your Home Screen. It is a picture the app hands to iOS, and iOS decides when to ask for a new one. Most stuck widgets are iOS saving battery, a few are settings, and only a handful are a real fault. Here is how to tell which, and what to do about each.</p>
+      <p class="doc-meta"><span>By <a href="/about/">Amit Shabtay</a>, who makes Dailies</span> <span>Steps written on 8 October 2026</span></p>
+    </div>
+  </header>
+
+  <div class="wrap"><figure class="post-hero"><img src="/img/guides/iphone-widget-not-updating.jpg" width="1080" height="608" alt="A mug of coffee and an iPhone on a dark table by a window" fetchpriority="high"></figure></div>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">On this page</div>
+      <a href="#why">Why widgets fall behind</a>
+      <a href="#fixes">The fixes, in order</a>
+      <a href="#symptoms">Matching the symptom</a>
+      <a href="#dailies">The Dailies widget</a>
+      <a href="#faq">Questions</a>
+    </aside>
+
+    <div class="prose">
+
+      <section id="why">
+        <h2>Why widgets fall behind</h2>
+        <p>When you add a widget, the app gives iOS a schedule: show this now, show that at three o'clock, ask me again after that. iOS keeps the schedule and draws each entry when its time comes. What it rations is how often the app may write a <em>new</em> schedule, because that means waking the app in the background, and waking apps costs battery.</p>
+        <p>Apple's developer documentation describes this as a daily budget. A widget you look at often gets more refreshes than one you never see, and Apple's own guidance puts a frequently viewed widget at roughly a few dozen refreshes a day, or one every quarter of an hour to an hour. A widget you rarely look at gets fewer.</p>
+        <div class="callout">
+          <div class="callout-label">What this means in practice</div>
+          <p>A widget that is a few minutes behind is working as designed. A widget that is hours or days behind usually has one of a short list of causes, and the fixes below cover them in the order they are most likely.</p>
+        </div>
+      </section>
+
+      <section id="fixes">
+        <h2>The fixes, in order</h2>
+        <p>Try them one at a time and check the widget after each. Most people never get past the second.</p>
+        <ol>
+          <li><strong>Turn off Low Power Mode.</strong> Open <strong>Settings &rarr; Battery</strong> and switch it off, or tap the battery button in Control Center. Low Power Mode cuts background work hard, and widget refreshes are among the first things it trims.</li>
+          <li><strong>Open the app.</strong> An app that is open can tell iOS to redraw its widgets straight away, and most do. If the widget catches up the moment you open its app, the cause was the refresh budget, not a fault.</li>
+          <li><strong>Check Background App Refresh.</strong> Open <strong>Settings &rarr; General &rarr; Background App Refresh</strong>, make sure it is on, and that the app in question is switched on in the list. This matters most for widgets that fetch from the internet, such as weather, news and stocks.</li>
+          <li><strong>Remove the widget and add it back.</strong> Touch and hold it, tap <strong>Remove Widget</strong>, then add it again. This makes iOS ask the app for a fresh schedule from scratch.</li>
+          <li><strong>Restart your iPhone.</strong> It clears whatever iOS was holding for its widgets, and fixes more of these than it has any right to.</li>
+          <li><strong>Update the app and iOS.</strong> Widget bugs do get fixed in point releases, on both sides. After an app update, open the app once so its widget picks up the new version.</li>
+          <li><strong>Delete and reinstall the app.</strong> The last resort, and the only step that can lose anything. Check what the app keeps on your iPhone before you delete it.</li>
+        </ol>
+      </section>
+
+      <section id="symptoms">
+        <h2>Matching the symptom</h2>
+        <h3>The widget is blank, gray or showing placeholder text</h3>
+        <p>That is the stand-in iOS draws while it waits for the app. You often see it just after adding a widget, after a restart, or after the app updates. Open the app once. If it stays blank, remove the widget and add it back.</p>
+
+        <h3>The app is missing from the widget list</h3>
+        <p>iOS only offers an app's widgets after the app has been opened at least once. Open it, then try again. If it is still missing, restart your iPhone, and check the app has not been offloaded: an offloaded app keeps its icon, with a small cloud beside the name, and its widgets go with it until you tap to download it again. Some apps also offer only certain sizes, so swipe through the sizes in the gallery before deciding it is not there.</p>
+
+        <h3>It updates when I open the app, and not otherwise</h3>
+        <p>The refresh budget, nearly always. Low Power Mode is the first suspect, then Background App Refresh for anything that needs the internet. If neither is on, the widget may simply be one iOS thinks you rarely look at.</p>
+
+        <h3>The Lock Screen widget is behind but the Home Screen one is fine</h3>
+        <p>They are separate widgets with separate schedules, even from the same app. Remove the Lock Screen one and add it back: touch and hold the Lock Screen, tap <strong>Customize</strong>, then <strong>Lock Screen</strong>, and tap the widget to edit it.</p>
+
+        <h3>It stopped after an iOS update</h3>
+        <p>Open the app, then restart your iPhone. A major iOS update rebuilds a lot of what it keeps for widgets, and the first restart afterwards often finishes the job.</p>
+      </section>
+
+      <section id="dailies">
+        <h2>The Dailies widget</h2>
+        <p>If the stuck widget is ours, a few things specific to <a href="/">Dailies</a>:</p>
+        <figure class="shot-zoom"><img src="/img/guides/zoom-update-widget.jpg" width="1100" height="600" loading="lazy" alt="A Dailies widget on an iPhone Home Screen showing Turtles can tell more about the roads than hares, Kahlil Gibran"><figcaption>The arrows step to the next quote whenever you like, refresh or no refresh.</figcaption></figure>
+        <ul>
+          <li>The quote changes <strong>about once an hour</strong>, so seeing the same one for a while is expected.</li>
+          <li>The Home Screen widget has <strong>arrows</strong> on it. Tap them to step to the next quote or back to the last one whenever you like, without opening the app.</li>
+          <li>The quotes live on your iPhone, so the widget does not need the internet or Background App Refresh to change. If it is stuck, Low Power Mode is the likeliest cause.</li>
+          <li>Opening Dailies pushes a fresh quote to both widgets straight away.</li>
+          <li>If you do reinstall, the quotes you heart and the ones you write come back from your own iCloud account. Your topics and your look are quick to set again.</li>
+        </ul>
+        <p>Still stuck after all of that? Write to <a href="mailto:help@mydailies.app">help@mydailies.app</a> and a person will answer. The <a href="/help/#widget">help page</a> has the short version of everything here.</p>
+      </section>
+
+      <section id="faq">
+        <h2>Questions</h2>
+        <div class="faq">
+          <details open><summary>How often do iPhone widgets update?</summary>
+            <div class="details-body">
+              <p>It depends on the widget and on you. iOS gives each widget a daily refresh budget, and widgets you look at often get more of it. A few minutes behind is normal. Hours behind usually means Low Power Mode or a setting.</p>
+            </div></details>
+
+          <details><summary>Can I force a widget to refresh?</summary>
+            <div class="details-body">
+              <p>iOS has no refresh button for widgets. Opening the app is the closest thing, because most apps redraw their widgets when they open. Removing the widget and adding it back works too. Some widgets, such as the Dailies Home Screen widget, have buttons of their own that change what they show.</p>
+            </div></details>
+
+          <details><summary>Does Low Power Mode stop widgets from updating?</summary>
+            <div class="details-body">
+              <p>It slows them down a lot. Low Power Mode cuts background work, and widget refreshes are part of that. Widgets catch up once it is off or once you open their app.</p>
+            </div></details>
+
+          <details><summary>Do widgets drain the battery?</summary>
+            <div class="details-body">
+              <p>Very little, and the refresh budget is the reason. iOS decides when widgets refresh precisely so that a Home Screen full of them does not cost you a day of battery.</p>
+            </div></details>
+
+          <details><summary>Why does my widget show old information right after I unlock?</summary>
+            <div class="details-body">
+              <p>iOS may show the last picture it drew while it fetches the next one. Give it a moment. If it is still old a minute later, start with the fixes above.</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="more">
+        <h2>Keep reading</h2>
+        <ul>
+          <li><a href="/guides/add-a-widget-to-your-home-screen/">How to add a widget to your Home Screen</a></li>
+          <li><a href="/guides/quotes-on-your-iphone-lock-screen/">How to put quotes on your iPhone Lock Screen</a></li>
+          <li><a href="/guides/focus-lock-screen-iphone/">How to link a Lock Screen to a Focus on iPhone</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <section class="strip">
+    <div class="wrap strip-in">
+      <h2>Start today with something good.</h2>
+      <p class="lede">Set it up once. Dailies takes it from there.</p>
+      <a class="store-badge" href="https://apps.apple.com/app/id6804210416?pt=129347926&amp;ct=web-guides&amp;mt=8" data-download="page"><img src="/img/app-store-badge.svg" width="156" height="52" alt="Download on the App Store"></a>
+    </div>
+  </section>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/help/">Help</a>
+      <a href="/blog/">Blog</a>
+      <a href="/compare/">Compare</a>
+      <a href="/about/">About</a>
+      <a href="/terms/">Terms</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/cookies/">Cookies</a>
+      <a href="#" data-cookie-settings>Cookie settings</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to fix an iPhone widget that is not updating","description":"The fixes for a stuck iPhone widget, in the order worth trying them.","totalTime":"PT5M","author":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"supply":[{"@type":"HowToSupply","name":"An iPhone"}],"step":[
+{"@type":"HowToStep","name":"Turn off Low Power Mode","text":"Open Settings, then Battery, and switch it off, or tap the battery button in Control Center. Low Power Mode cuts background work hard, and widget refreshes are among the first things it trims."},
+{"@type":"HowToStep","name":"Open the app","text":"An app that is open can tell iOS to redraw its widgets straight away, and most do. If the widget catches up the moment you open its app, the cause was the refresh budget, not a fault."},
+{"@type":"HowToStep","name":"Check Background App Refresh","text":"Open Settings, then General, then Background App Refresh. Make sure it is on, and that the app in question is switched on in the list. This matters most for widgets that fetch from the internet, such as weather, news and stocks."},
+{"@type":"HowToStep","name":"Remove the widget and add it back","text":"Touch and hold it, tap Remove Widget, then add it again. This makes iOS ask the app for a fresh schedule from scratch."},
+{"@type":"HowToStep","name":"Restart your iPhone","text":"It clears whatever iOS was holding for its widgets, and fixes more of these than it has any right to."},
+{"@type":"HowToStep","name":"Update the app and iOS","text":"Widget bugs do get fixed in point releases, on both sides. After an app update, open the app once so its widget picks up the new version."},
+{"@type":"HowToStep","name":"Delete and reinstall the app","text":"The last resort, and the only step that can lose anything. Check what the app keeps on your iPhone before you delete it."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How often do iPhone widgets update?","acceptedAnswer":{"@type":"Answer","text":"It depends on the widget and on you. iOS gives each widget a daily refresh budget, and widgets you look at often get more of it. A few minutes behind is normal. Hours behind usually means Low Power Mode or a setting."}},
+{"@type":"Question","name":"Can I force a widget to refresh?","acceptedAnswer":{"@type":"Answer","text":"iOS has no refresh button for widgets. Opening the app is the closest thing, because most apps redraw their widgets when they open. Removing the widget and adding it back works too. Some widgets, such as the Dailies Home Screen widget, have buttons of their own that change what they show."}},
+{"@type":"Question","name":"Does Low Power Mode stop widgets from updating?","acceptedAnswer":{"@type":"Answer","text":"It slows them down a lot. Low Power Mode cuts background work, and widget refreshes are part of that. Widgets catch up once it is off or once you open their app."}},
+{"@type":"Question","name":"Do widgets drain the battery?","acceptedAnswer":{"@type":"Answer","text":"Very little, and the refresh budget is the reason. iOS decides when widgets refresh precisely so that a Home Screen full of them does not cost you a day of battery."}},
+{"@type":"Question","name":"Why does my widget show old information right after I unlock?","acceptedAnswer":{"@type":"Answer","text":"iOS may show the last picture it drew while it fetches the next one. Give it a moment. If it is still old a minute later, start with the fixes above."}}
+]}
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>
