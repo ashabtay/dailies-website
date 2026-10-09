@@ -238,15 +238,41 @@ nothing new to learn to edit one. Four things to keep true:
    few releases — the `+` in the Home Screen editor became `Edit → Add Widget` —
    so re-walk them when a major version ships and move the date when you do.
 
-**The images.** Like the blog, every guide opens on one of the app's own
-backgrounds, cropped into `img/guides/`: `<slug>.jpg` (1080x608, the hero),
-`<slug>-thumb.jpg` (640x360, its card on the hub) and `<slug>-og.jpg` (1200x630,
-its share image), plus `guides.jpg`/`guides-thumb.jpg`/`guides-og.jpg` for the hub.
-The `shot-*.jpg` files are real app screens at 414x900, scaled from the App Store
-raw captures in the `dailies` repo (`appstore/screenshots/raw-captures/iphone-6.9`),
-and sit in `.shots` blocks (`.shots.pair` puts two side by side). Re-export them
-when those captures are re-shot. The hub's card icons are inline SVG line drawings,
-the same `.ico` style as the blog hub.
+**The images.** The guides use real photographs, not the app's backgrounds:
+each opens on an Unsplash photo (free for commercial use under the Unsplash
+License, no attribution required, credited below anyway), cropped into
+`img/guides/` as `<slug>.jpg` (1080x608, the hero), `<slug>-thumb.jpg`
+(640x360, its card on the hub) and `<slug>-og.jpg` (1200x630, its share image);
+`guides.jpg` and friends are the hub's. Check a photo is not Unsplash+ before
+using it: the download link 403s for those.
+
+The `zoom-*.jpg` files are real app screens from the Shots 17 Pro Max simulator,
+cropped to the part that matters (the widget, the notification, the setup
+choice) and shown at column width in a `.shot-zoom` figure so the words can be
+read. They were shot on a black wallpaper and the photo behind them keyed in
+with `appstore/screenshots/wallpaper.py` in the `dailies` repo. **Every screen
+carries its own line and its own wallpaper, and no line or photo appears twice
+across the guides**; the Bible guide shows verses only. Keep it that way when
+adding one.
+
+| File | Line on screen | Wallpaper (Unsplash) |
+| --- | --- | --- |
+| `zoom-bible-lock` | Be still, and know that I am God. (Psalm 46:10) | hU93H0oT2Ok, Miguel Alcântara |
+| `zoom-bible-home` | They are new every morning... (Lamentations 3:23) | ESEnXckWlLY, Dewang Gupta |
+| `zoom-bible-notification` | The LORD is my shepherd... (Psalm 23:1) | mPnxwQBtUZE, Casey Horner |
+| `zoom-bible-categories` | Setup, with Faith chosen | none |
+| `zoom-lock-widget`, `zoom-lock-notification` | Victor Hugo; William James | VTt9uOBQb6M, Simona Peneva |
+| `zoom-home-widget` | Samuel Johnson | AdIJ9S-kbrc, David Gavi |
+| `zoom-focus-lock` | Lao Tzu | DuiPYwz3CBA, Ivana Cajina |
+| `zoom-update-widget` | Kahlil Gibran | tjA9rmcop2c, Joey Genovese |
+
+Heroes: hub UD-TfIuU-pA (Vitaly Gariev), Lock Screen _8S9nEmCZK0 (Oliur), Home
+Screen 4gtMwj9uxwc (Amanz), Bible Iz6x7yHMkQA (Sixteen Miles Out), Focus
+DCCwdPccREs (Irwan), widget not updating cQ38vs4NFP4 (VD Photography). The Bible
+guide's verse card is the app's own `sky_cloud_line` background.
+
+The hub's card icons are inline SVG line drawings, the same `.ico` style as the
+blog hub.
 
 Adding a guide: copy the closest existing one, give it a hero, thumb and og image,
 then add its card to `guides/index.html`, to `PAGES` in `tools/sitemap.py`, and to

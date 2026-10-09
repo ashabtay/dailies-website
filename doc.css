@@ -192,8 +192,12 @@ td strong{color:var(--text)}
   border:1px solid var(--rule-soft); background:var(--ground-deep);
 }
 .shots figcaption{font-size:13.5px; line-height:1.45; color:var(--text-faint); text-wrap:pretty}
-/* Two captures side by side: a step and its result. */
-.shots.pair{grid-template-columns:repeat(2,minmax(0,186px)); gap:18px}
+/* A crop of the part of a capture that matters (the widget, the notification),
+   shown at column width so its words can actually be read. */
+.shot-zoom{margin:26px 0; max-width:560px; display:flex; flex-direction:column; gap:9px}
+.shot-zoom.narrow{max-width:400px}
+.shot-zoom img{width:100%; height:auto; border-radius:18px; border:1px solid var(--rule-soft); background:var(--ground-deep)}
+.shot-zoom figcaption{font-size:13.5px; line-height:1.45; color:var(--text-faint); text-wrap:pretty}
 
 .shot-aside{display:grid; grid-template-columns:186px minmax(0,1fr); gap:clamp(18px,2.4vw,30px); align-items:start; margin-bottom:20px}
 .shot-aside .shots{margin:0}
