@@ -1,0 +1,25 @@
+# Tells IndexNow (Bing and the engines that share its feed) which pages changed
+# in a push, once GitHub Pages has published it. See tools/indexnow.py.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths: [sitemap.xml]
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Submit changed pages
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            python3 tools/indexnow.py --all
+          else
+            python3 tools/indexnow.py --since "${{ github.event.before }}"
+          fi
