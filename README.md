@@ -466,6 +466,34 @@ the script does not stamp it with the day you happened to add it.
 `404.html` is deliberately not in `PAGES`. It is not a destination, and it is
 `noindex`.
 
+## IndexNow
+
+`fdab89882c61113ed7ab401b375f4a2b.txt` in the root is the IndexNow key, and
+`BingSiteAuth.xml` is the Bing Webmaster Tools verification. **Do not rename or
+delete either one.** Both are public by design: Bing proves the site is ours by
+fetching them.
+
+IndexNow tells Bing which pages changed, so they are re-crawled within hours
+instead of whenever the crawler next comes by. Bing's index also feeds ChatGPT
+search, Copilot, DuckDuckGo and Yahoo, and Yandex, Naver and Seznam share the
+same feed. Google does not take part.
+
+It runs by itself. `.github/workflows/indexnow.yml` fires on every push to
+`main` that changes `sitemap.xml`, waits until GitHub Pages has published the
+push, and submits each page whose `<lastmod>` moved, was added or was removed.
+That makes `tools/sitemap.py` the trigger: **edit a page, run the sitemap
+script, and the page is submitted when the PR merges.** Skip the sitemap script
+and nothing is sent.
+
+To send every page by hand (after a site-wide change, say), run the workflow
+from the Actions tab, or:
+
+```bash
+python3 tools/indexnow.py --all
+```
+
+`--dry-run` prints the URLs without sending anything.
+
 ## Analytics, pixels and consent
 
 `consent.js` is loaded by every page and is the **only** place a tracking tag is
