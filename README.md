@@ -6,7 +6,7 @@ The website for the Dailies app — https://mydailies.app
 
 | URL | File | What it is |
 | --- | --- | --- |
-| `/` | `index.html` | The landing page |
+| `/` | `index.html` | The landing page, and the brand's `Organization` block (see [The brand's profiles](#the-brands-profiles)) |
 | `/help` | `help/index.html` | Help center, with a client-side search over the entries |
 | `/guides` | `guides/index.html` | Guides hub, linking the how-to articles below |
 | `/guides/quotes-on-your-iphone-lock-screen` | `guides/quotes-on-your-iphone-lock-screen/index.html` | How to put quotes on your iPhone Lock Screen |
@@ -427,6 +427,21 @@ Three `<meta>` tags go with it on every page and are not optional: `og:image`
 needs `og:image:width` and `og:image:height` for the card to lay out before the
 image has loaded, and `twitter:card` must be `summary_large_image` or X renders
 the small square regardless of what size the image actually is.
+
+## The brand's profiles
+
+The landing page carries one `Organization` JSON-LD block, just before
+`</head>`. Its `sameAs` list names every official Dailies profile: the App
+Store listing, TikTok, Instagram, Threads, the Facebook Page, YouTube,
+Pinterest and LinkedIn. It is how Google learns those accounts and this site
+are the same brand. The links on the profiles themselves are nofollow and do
+nothing for ranking, so this list is the part that counts.
+
+**A new profile gets added here the day it is made, and a closed one comes
+out.** Use the plain profile URL with no tracking parameters, check that it
+loads, and run the page through https://validator.schema.org afterwards. Only
+the landing page carries the block; every other page's structured data
+describes that page, not the brand.
 
 ## The sitemap
 
