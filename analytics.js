@@ -70,6 +70,8 @@
   function slug(text) {
     var s = (text || '')
       .toLowerCase()
+      // Accents off first, so "¿Cómo...?" on /es/ slugs to `como` and not `c_mo`.
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
       .replace(/[^a-z0-9]+/g, '_')
       .replace(/^_+|_+$/g, '');
     if (!s) return 'unnamed';
@@ -115,11 +117,18 @@
      apart because they mean different things. Selecting is someone saying what
      they came for. Cycling is someone enjoying it enough to ask for more. */
 
+  /* `set` is the chip's data-set, the English slug, when it has one: the
+     translated home pages label the same chips Confianza and Confiança, and
+     those are the same tap. */
+  function setName(chip) {
+    return chip.getAttribute('data-set') || slug(chip.textContent);
+  }
+
   function onChip(chip) {
     var pressed = chip.getAttribute('aria-pressed') === 'true';
     track('taste_used', {
       action: pressed ? 'another' : 'select',
-      set: slug(chip.textContent),
+      set: setName(chip),
       source: 'chip'
     });
   }
@@ -128,7 +137,7 @@
     var active = document.querySelector('#chips .chip[aria-pressed="true"]');
     track('taste_used', {
       action: 'another',
-      set: active ? slug(active.textContent) : 'unknown',
+      set: active ? setName(active) : 'unknown',
       source: 'button'
     });
   }

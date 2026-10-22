@@ -7,6 +7,20 @@
 <title>About Dailies: who makes it, and why</title>
 <meta name="description" content="Dailies is made by one person, Amit Shabtay. What the app is for, how the quotes and the comparison pages are chosen, and how to reach a human.">
 <link rel="canonical" href="https://mydailies.app/about/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/about/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/acerca-de/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/sobre/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/about/">
+<script>/* Written by tools/languages.py: send a visitor whose browser asks for Spanish or Portuguese before English to this page in that language. */
+(function(){try{
+  var r=document.referrer; if(r&&r.indexOf(location.origin+'/')===0) return;
+  var l=navigator.languages||[navigator.language||''];
+  for(var i=0;i<l.length;i++){
+    var c=String(l[i]).slice(0,2).toLowerCase(); if(c==='en') return;
+    var a=document.querySelector('link[rel="alternate"][hreflang="'+c+'"]');
+    if(a){location.replace(new URL(a.href).pathname+location.search+location.hash); return;}
+  }
+}catch(e){}})();</script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="About Dailies: who makes it, and why">
 <meta property="og:description" content="One person, no company, no accounts. What Dailies is for, and who to email when it breaks.">
@@ -34,6 +48,7 @@
       <a href="/blog/">Blog</a>
       <a href="/guides/">Guides</a>
       <a href="/help/">Help</a>
+      <details class="lang"><summary aria-label="Language: English"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">English</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/about/" hreflang="en" lang="en" aria-current="true">English</a><a href="/es/acerca-de/" hreflang="es" lang="es-MX">Español</a><a href="/pt/sobre/" hreflang="pt" lang="pt-BR">Português</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
       <a class="btn btn-primary" href="/#get">Get Dailies</a>
     </div>
   </div>
@@ -145,8 +160,6 @@
     <span>&copy; 2026 Dailies</span>
     <nav>
       <a href="/">Home</a>
-      <a href="/help/">Help</a>
-      <a href="/blog/">Blog</a>
       <a href="/compare/">Compare</a>
       <a href="/about/">About</a>
       <a href="/terms/">Terms</a>

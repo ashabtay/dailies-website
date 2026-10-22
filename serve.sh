@@ -33,6 +33,7 @@ echo "  /compare    comparison pages"
 echo "  /guides     how-to guides"
 echo "  /blog       motivation posts and quote collections"
 echo "  /about      about page"
+echo "  /es/  /pt/  the same site in Spanish and Portuguese"
 echo "  /anything   the custom 404"
 echo
 echo "Edit a file, reload the browser. Ctrl-C to stop."

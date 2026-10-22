@@ -26,12 +26,120 @@ The website for the Dailies app — https://mydailies.app
 | `/compare/dailies-vs-thinkup` | `compare/dailies-vs-thinkup/index.html` | Dailies vs ThinkUp (Precise Wellness) |
 | `/compare/dailies-vs-motivate` | `compare/dailies-vs-motivate/index.html` | Dailies vs Motivate (Brave New Logic) |
 | any missing path | `404.html` | The custom 404 |
+| `/es/…`, `/pt/…` | `es/…/index.html`, `pt/…/index.html` | The same site in Mexican Spanish and Brazilian Portuguese. See [Languages](#languages) |
 
 `/terms` and `/privacy` are not optional paths: the app links to them from the
 legal line on the first onboarding screen (`lib/app_config.dart` in the `dailies`
 repo), and Apple checks those links during review. Each document page is a
 directory with an `index.html` so the extensionless URL resolves on GitHub Pages,
 Netlify, Vercel and Cloudflare Pages alike — do not flatten them to `terms.html`.
+
+## Languages
+
+The site is in three languages, the same three-way split as the app's
+(`lib/l10n/app_locale.dart` in the `dailies` repo): **English** at `/`,
+**Mexican Spanish** at `/es/` and **Brazilian Portuguese** at `/pt/`. Every
+Spanish phone gets the app's es-MX and every Portuguese one its pt-BR, so each
+is the one Spanish or Portuguese the site has: `<html lang>` says `es-MX` and
+`pt-BR`, and the hreflang says plain `es` and `pt`.
+
+Everything is translated except the **Terms of Use, the Privacy Policy and the
+Cookie Policy**, which stay English only: they are the binding text, and a
+translation would be a second version of a contract nobody has reviewed. The
+translated footers and pages link to them with `hreflang="en"` and say "(en
+inglés)" / "(em inglês)".
+
+**`tools/languages.py` is the one record of which page translates which.** Its
+`PAGES` table lists each page's English, Spanish and Portuguese URL (the
+translated slugs are written for search in that language, so they are not the
+English ones). From it the script writes three things into every page, and
+none of them should be hand-edited:
+
+- `<html lang>`;
+- the `<link rel="alternate" hreflang>` block right after the canonical link,
+  only on pages that really have a translation;
+- the language menu in the nav, just before the Get Dailies pill: a
+  `<details class="lang">` whose button names the page's language in full
+  (globe, "Español", chevron) and opens a list of the three, each going to
+  this page in that language, or to that language's home page where there is
+  none (the legal pages). A line of script beside it closes the list on an
+  outside click or Escape. Phones show the globe and chevron without the
+  name. Languages are named, never abbreviated, and are not in the footer;
+- on English pages that have a translation, a few lines of inline script after
+  the hreflang block that send a visitor on to their browser's language. It
+  walks the browser's language list the way the app walks the phone's:
+  English first stays, Spanish or Portuguese first goes, anything else is
+  skipped. It only acts on arrival from outside the site, so a visitor who
+  picks English in the menu stays in English for the visit, and it stores nothing
+  (the Cookie Policy says the consent answer is the only thing kept).
+  Crawlers report English, so every page is still indexed in its own
+  language. A visitor on a Spanish browser who wants the English page from a
+  fresh visit is sent to Spanish and has to pick English; that is the trade.
+
+```bash
+python3 tools/languages.py           # rewrite whatever is out of step
+python3 tools/languages.py --check   # just say
+```
+
+`tools/sitemap.py` reads the same table, so a translated page is in the sitemap,
+with its `xhtml:link` alternates, the moment it is in `PAGES`.
+
+**Adding a page** now means adding it in all three languages (or `None` where it
+has no translation), then running `languages.py` and `sitemap.py`. **Editing a
+page** means editing its translations too; nothing checks that they still say
+the same thing.
+
+The rules for the translations, on top of the house rules (which bind them
+exactly as they bind the English, dashes included):
+
+- **The app's voice**, from `docs/localization.md` in the app repo: *tú* and
+  *você*, sentence case, and copy that never decides the reader's gender (no
+  *listo*, *motivado*, *bem-vindo*, *sozinho* agreeing with the reader).
+- **Apple's own words** for anything on the iPhone, as the app's own strings
+  have them: *pantalla de bloqueo*, *pantalla de inicio*, *Agregar widget*,
+  *Listo*; *Tela Bloqueada*, *Tela de Início*, *Adicionar Widget*, *OK*.
+- **Every quote is the app's own translation, word for word** from
+  `assets/quotes.db` (`textEs`, `textPt`, with `authors.nameEs`/`namePt`). The
+  corpus has no translation of James Clear (his grant covers quotation, not
+  translation), so his lines are replaced on the translated pages and there are
+  no jamesclear.com links there. The blog check, for the translations:
+
+  ```bash
+  python3 - <<'PY'
+  import re,glob,html,sqlite3
+  db=sqlite3.connect('../dailies/assets/quotes.db')
+  for lang,col in (('es','textEs'),('pt','textPt')):
+      ok={r[0] for r in db.execute(f"select {col} from quotes where {col} is not null")}
+      for f in sorted(glob.glob(f'{lang}/**/index.html',recursive=True)):
+          for t in re.findall(r'<blockquote><p>(.*?)</p>',open(f,encoding='utf-8').read()):
+              if html.unescape(t) not in ok: print('NOT IN DB',f,t)
+  PY
+  ```
+
+- **The crisis line is local**: the Spanish posts give Mexico's Línea de la
+  Vida (800 911 2000) and the US 988, which answers in Spanish; the Portuguese
+  give Brazil's CVV (188).
+- **The guide screenshots are the English app.** The `zoom-*.jpg` captures are
+  shared by all three languages, with translated alt text and captions.
+- **The App Store badge is Apple's localized artwork**:
+  `img/app-store-badge-es.svg` ("Descárgalo en el App Store") and
+  `img/app-store-badge-pt.svg` ("Baixar na App Store"), from the same Apple
+  marketing tools as the English one, unmodified. Apple asks for the badge in
+  the language of the page.
+- **Campaign tokens carry the language**: `web-guides-es`, `web-home-pt` and so
+  on, so App Store Connect shows which language's pages send downloads.
+- **Analytics stays comparable.** The translated home pages give each picker
+  chip a `set` (its English slug) that `analytics.js` reports instead of the
+  label, so *Confianza* and *Confidence* are one row. FAQ and page events are
+  told apart by their URL.
+
+The cookie banner (`consent.js`) reads `<html lang>` and has its words in all
+three languages in its `WORDS` table. The 404 is one file for every missing
+address; under `/es/` or `/pt/` it swaps in the translated `<main>` from its
+`<template>`s and relabels the nav.
+
+The translations were machine-made, from the English, and have not had a
+native read. As with the app, that is the next step before leaning on them.
 
 ## How the files are organized
 
@@ -111,11 +219,20 @@ should rarely need to touch either.
 **The nav on every document and comparison page is a hand-copied version of the
 landing page's nav.** It carries Blog, Help and the Get Dailies pill (which
 points at `/#get`). Change the landing page's nav and change every other page's
-to match. Nothing checks this.
+to match. Nothing checks this. The Spanish and Portuguese pages carry their own
+translated copy (Guías, Ayuda, Descarga Dailies; Guias, Ajuda, Baixe o Dailies),
+pointing at their own language's pages, and change with it. The language menu
+in it is the exception: `tools/languages.py` writes that one. The FAQ's
+`details`/`summary` styles reach it too, and its CSS takes them back off; keep
+that in mind before restyling the accordions.
 
-On small screens the landing page keeps only the Blog link (the App Store badge
-in the hero is the way in), and the brand stacks the icon over the name, after
-motivation.app's mobile header. The document pages keep Blog and the pill.
+On phones every page's nav is Blog, Guides, Help and the language menu (the
+globe and chevron, without the name), and the brand stacks the icon over the
+name, after motivation.app's mobile header. The Get Dailies pill is dropped
+there: it did not fit beside Help, and a phone has two other ways in, Apple's
+install banner at the top in Safari and the App Store badge on every page.
+Measured to fit from 320px up in all three languages; recheck at 320px after
+renaming a nav link, since the Spanish labels are the longest.
 
 **Every download button is Apple's official App Store badge**
 (`img/app-store-badge.svg`, the black US/UK artwork from Apple's marketing tools
@@ -131,9 +248,11 @@ Title separators are " | Dailies" or a colon.
 `sitemap.xml` is **generated** — do not hand-edit it. Add a page to `PAGES` in
 `tools/sitemap.py` and run it. See [The sitemap](#the-sitemap).
 
-**Every page's footer is hand-copied too**, and it now carries ten links.
+**Every page's footer is hand-copied too.** It carries no Blog or Help: the
+nav at the top already does.
 Adding a top-level page means adding it to the footer of all of them, the same
-way the nav works.
+way the nav works. The translated footers are the same links in their language, with
+the three legal pages left in English.
 
 ### The document pages
 
@@ -265,6 +384,23 @@ adding one.
 | `zoom-home-widget` | Samuel Johnson | AdIJ9S-kbrc, David Gavi |
 | `zoom-focus-lock` | Lao Tzu | DuiPYwz3CBA, Ivana Cajina |
 | `zoom-update-widget` | Kahlil Gibran | tjA9rmcop2c, Joey Genovese |
+
+**The Spanish and Portuguese guides have their own screens**, in
+`img/guides/es/` and `img/guides/pt/`, with the same file names: the same
+lines from `quotes.db` in that language, the same wallpapers, and iOS itself
+in Spanish (Mexico) or Portuguese (Brazil), so the date under the clock and
+"Ahora"/"agora" on a notification are the phone's own. The setup screen there
+is cropped taller than the English one so all three choices show. They were
+shot on 21 October 2026 on the same simulator without the shoot rig: the
+Lock and Home Screen line comes from writing a one-quote `widget/quotes.json`
+into the app group container and tapping the widget's arrow (the tap is what
+reloads every widget; never tap the body, which opens the app and overwrites
+the file), with `fontScale` at 1.25 in the group's defaults; notifications
+are `simctl push`; the setup screen is the app relaunched with
+`flutter.onboardingStep` set to `categories`. Back up the app's prefs and
+app group first and put them back after. The two English notification
+captures were re-shot the same day: the old files had lost the notification
+card in keying and showed only the wallpaper.
 
 Heroes: hub UD-TfIuU-pA (Vitaly Gariev), Lock Screen _8S9nEmCZK0 (Oliur), Home
 Screen 4gtMwj9uxwc (Amanz), Bible Iz6x7yHMkQA (Sixteen Miles Out), Focus
@@ -668,6 +804,9 @@ in App Store Connect first; a new `ct` value simply appears. The values in use:
 | `web-compare` | `/compare/` and every comparison        |
 | `web-about`   | `/about/`                               |
 | `web-404`     | the 404 page                            |
+
+The Spanish and Portuguese pages use the same values with the language on the
+end: `web-home-es`, `web-qr-pt`, `web-guides-es`, `web-404-pt` and so on.
 
 A new page in an existing section reuses that section's value; a new section
 gets a new `web-` value and a row in this table. In the HTML the `&`s are

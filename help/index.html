@@ -17,6 +17,20 @@
 <meta property="og:site_name" content="Dailies">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://mydailies.app/help/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/help/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/ayuda/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/ajuda/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/help/">
+<script>/* Written by tools/languages.py: send a visitor whose browser asks for Spanish or Portuguese before English to this page in that language. */
+(function(){try{
+  var r=document.referrer; if(r&&r.indexOf(location.origin+'/')===0) return;
+  var l=navigator.languages||[navigator.language||''];
+  for(var i=0;i<l.length;i++){
+    var c=String(l[i]).slice(0,2).toLowerCase(); if(c==='en') return;
+    var a=document.querySelector('link[rel="alternate"][hreflang="'+c+'"]');
+    if(a){location.replace(new URL(a.href).pathname+location.search+location.hash); return;}
+  }
+}catch(e){}})();</script>
 <meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/icon.png">
@@ -34,6 +48,7 @@
       <a href="/blog/">Blog</a>
       <a href="/guides/">Guides</a>
       <a href="/help/" aria-current="page">Help</a>
+      <details class="lang"><summary aria-label="Language: English"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">English</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/help/" hreflang="en" lang="en" aria-current="true">English</a><a href="/es/ayuda/" hreflang="es" lang="es-MX">Español</a><a href="/pt/ajuda/" hreflang="pt" lang="pt-BR">Português</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
       <a class="btn btn-primary" href="/#get">Get Dailies</a>
     </div>
   </div>
@@ -100,7 +115,7 @@
 
           <details><summary>Which devices does it run on?</summary>
             <div class="details-body">
-              <p>iPhone and iPad, in portrait or landscape. It speaks English, Spanish, French, German and Simplified Chinese. It follows the language your iPhone or iPad is set to, and you can choose any of them under <strong>Profile → Language</strong>.</p>
+              <p>iPhone and iPad, in portrait or landscape. It speaks English, Spanish, Portuguese, French, German and Simplified Chinese. It follows the language your iPhone or iPad is set to, and you can choose any of them under <strong>Profile → Language</strong>.</p>
             </div></details>
         </div>
       </section>
@@ -314,8 +329,6 @@
     <span>&copy; 2026 Dailies</span>
     <nav>
       <a href="/">Home</a>
-      <a href="/help/">Help</a>
-      <a href="/blog/">Blog</a>
       <a href="/compare/">Compare</a>
       <a href="/about/">About</a>
       <a href="/terms/">Terms</a>

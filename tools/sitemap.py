@@ -30,7 +30,8 @@ that touched its file - rather than from today, so adding this script did not
 silently stamp the whole site with the day it was added. A page that is not in
 git yet is seeded with today.
 
-Adding a page: add it to PAGES below and run the script. Removing one: take it
+Adding a page: add it to PAGES in languages.py (with its translations, or
+None where it has none) and run the script. Removing one: take it
 out of PAGES and delete its entry from sitemap-state.json.
 
 404.html is deliberately absent. It is not a destination and it is noindex.
@@ -49,37 +50,25 @@ SITEMAP = os.path.join(ROOT, "sitemap.xml")
 STATE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap-state.json")
 BASE = "https://mydailies.app"
 
-# (url path, file that renders it) - in the order they should appear.
-PAGES = [
-    ("/",                                             "index.html"),
-    ("/help/",                                        "help/index.html"),
-    ("/guides/",                                      "guides/index.html"),
-    ("/guides/quotes-on-your-iphone-lock-screen/",     "guides/quotes-on-your-iphone-lock-screen/index.html"),
-    ("/guides/add-a-widget-to-your-home-screen/",      "guides/add-a-widget-to-your-home-screen/index.html"),
-    ("/guides/bible-verse-on-iphone-lock-screen/",     "guides/bible-verse-on-iphone-lock-screen/index.html"),
-    ("/guides/focus-lock-screen-iphone/",              "guides/focus-lock-screen-iphone/index.html"),
-    ("/guides/iphone-widget-not-updating/",            "guides/iphone-widget-not-updating/index.html"),
-    ("/blog/",                                        "blog/index.html"),
-    ("/blog/how-to-motivate-yourself/",                "blog/how-to-motivate-yourself/index.html"),
-    ("/blog/motivation-vs-discipline/",                "blog/motivation-vs-discipline/index.html"),
-    ("/blog/how-to-stop-procrastinating/",             "blog/how-to-stop-procrastinating/index.html"),
-    ("/blog/how-to-stay-motivated/",                   "blog/how-to-stay-motivated/index.html"),
-    ("/blog/quotes-for-when-you-feel-stuck/",          "blog/quotes-for-when-you-feel-stuck/index.html"),
-    ("/blog/motivational-quotes-for-hard-times/",      "blog/motivational-quotes-for-hard-times/index.html"),
-    ("/blog/quotes-for-self-doubt/",                   "blog/quotes-for-self-doubt/index.html"),
-    ("/blog/morning-motivation-quotes/",               "blog/morning-motivation-quotes/index.html"),
-    ("/blog/quotes-about-starting-over/",              "blog/quotes-about-starting-over/index.html"),
-    ("/blog/discipline-and-consistency-quotes/",       "blog/discipline-and-consistency-quotes/index.html"),
-    ("/compare/",                                     "compare/index.html"),
-    ("/compare/dailies-vs-motivation/",               "compare/dailies-vs-motivation/index.html"),
-    ("/compare/dailies-vs-i-am/",                     "compare/dailies-vs-i-am/index.html"),
-    ("/compare/dailies-vs-thinkup/",                  "compare/dailies-vs-thinkup/index.html"),
-    ("/compare/dailies-vs-motivate/",                 "compare/dailies-vs-motivate/index.html"),
-    ("/about/",                                       "about/index.html"),
-    ("/terms/",                                       "terms/index.html"),
-    ("/privacy/",                                     "privacy/index.html"),
-    ("/cookies/",                                     "cookies/index.html"),
-]
+# (url path, file that renders it) - in the order they should appear: every
+# English page, then every Spanish one, then every Portuguese one. The list
+# itself lives in languages.py, which is the one record of which page is a
+# translation of which; add a page there, not here.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import languages  # noqa: E402
+
+PAGES = [(row[i], languages.file_for(row[i])[len(ROOT) + 1:])
+         for i in range(len(languages.LANGS)) for row in languages.PAGES if row[i]]
+
+# url -> its hreflang block, as (code, url) pairs, for pages that exist in
+# more than one language. The same alternates languages.py writes into each
+# page's <head>; Google reads either, and the sitemap is the copy Bing uses.
+ALTERNATES = {}
+for _row in languages.PAGES:
+    _present = [(languages.LANGS[i][0], u) for i, u in enumerate(_row) if u]
+    if len(_present) > 1:
+        for _code, _u in _present:
+            ALTERNATES[_u] = _present + [("x-default", _row[0])]
 
 
 def signature(path):
@@ -138,13 +127,22 @@ def main():
     for stale in set(state) - {u for u, _ in PAGES}:
         del state[stale]
 
+    # The alternates go after <lastmod>, never between it and <loc>:
+    # indexnow.py reads the pair with one regex that expects them adjacent.
+    def alternates(url):
+        return "".join(
+            '    <xhtml:link rel="alternate" hreflang="%s" href="%s%s"/>\n' % (code, BASE, u)
+            for code, u in ALTERNATES.get(url, [])
+        )
+
     body = "".join(
-        "  <url>\n    <loc>%s%s</loc>\n    <lastmod>%s</lastmod>\n  </url>\n" % (BASE, url, lastmod)
+        "  <url>\n    <loc>%s%s</loc>\n    <lastmod>%s</lastmod>\n%s  </url>\n" % (BASE, url, lastmod, alternates(url))
         for url, lastmod in rows
     )
     open(SITEMAP, "w", encoding="utf-8").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n"
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+        'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + body + "</urlset>\n"
     )
     json.dump(state, open(STATE, "w", encoding="utf-8"), indent=2, sort_keys=True)
     open(STATE, "a", encoding="utf-8").write("\n")
