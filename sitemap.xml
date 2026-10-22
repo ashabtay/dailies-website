@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mydailies.app/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/"/>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/help/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/help/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/ayuda/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/ajuda/"/>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/quotes-on-your-iphone-lock-screen/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quotes-on-your-iphone-lock-screen/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/frases-en-la-pantalla-de-bloqueo-del-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/frases-na-tela-bloqueada-do-iphone/"/>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/add-a-widget-to-your-home-screen/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-a-widget-to-your-home-screen/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-un-widget-a-la-pantalla-de-inicio/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-um-widget-na-tela-de-inicio/"/>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/focus-lock-screen-iphone/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/focus-lock-screen-iphone/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/concentracion-pantalla-de-bloqueo-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/foco-tela-bloqueada-iphone/"/>
@@ -58,15 +58,47 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/iphone-widget-not-updating/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-widget-not-updating/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/widget-del-iphone-no-se-actualiza/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/widget-do-iphone-nao-atualiza/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-widget-not-updating/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/guides/iphone-notifications-not-working/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-notifications-not-working/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/no-me-llegan-las-notificaciones-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-iphone-nao-chegam/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-notifications-not-working/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/guides/customize-iphone-lock-screen/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/customize-iphone-lock-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/personalizar-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/personalizar-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/customize-iphone-lock-screen/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/guides/quote-wallpaper-iphone/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quote-wallpaper-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/fondo-de-pantalla-con-frases-en-el-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/papel-de-parede-com-frases-no-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/quote-wallpaper-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/guides/add-widgets-on-ipad/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-widgets-en-el-ipad/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-widgets-no-ipad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/blog/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/"/>
@@ -74,7 +106,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/blog/how-to-motivate-yourself/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-motivate-yourself/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-motivarte/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-se-motivar/"/>
@@ -82,7 +114,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/blog/motivation-vs-discipline/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/motivation-vs-discipline/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/motivacion-vs-disciplina/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/motivacao-vs-disciplina/"/>
@@ -90,7 +122,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/blog/how-to-stop-procrastinating/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-stop-procrastinating/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-dejar-de-procrastinar/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-parar-de-procrastinar/"/>
@@ -98,7 +130,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/blog/how-to-stay-motivated/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-stay-motivated/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-mantener-la-motivacion/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-manter-a-motivacao/"/>
@@ -106,7 +138,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/blog/quotes-for-when-you-feel-stuck/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/quotes-for-when-you-feel-stuck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-para-cuando-no-avanzas/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-para-quando-nada-anda/"/>
@@ -114,7 +146,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/blog/motivational-quotes-for-hard-times/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/motivational-quotes-for-hard-times/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-motivadoras-para-tiempos-dificiles/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-motivacionais-para-tempos-dificeis/"/>
@@ -122,7 +154,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/blog/quotes-for-self-doubt/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/quotes-for-self-doubt/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-para-cuando-dudas-de-ti/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-para-quando-voce-duvida-de-si/"/>
@@ -130,7 +162,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/blog/morning-motivation-quotes/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/morning-motivation-quotes/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-de-motivacion-para-la-manana/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-de-motivacao-para-a-manha/"/>
@@ -138,7 +170,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/blog/quotes-about-starting-over/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/quotes-about-starting-over/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-para-empezar-de-nuevo/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-para-recomecar/"/>
@@ -146,11 +178,51 @@
   </url>
   <url>
     <loc>https://mydailies.app/blog/discipline-and-consistency-quotes/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/discipline-and-consistency-quotes/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-de-disciplina-y-constancia/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-de-disciplina-e-constancia/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/discipline-and-consistency-quotes/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/blog/quotes-for-anxiety-and-overthinking/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/quotes-for-anxiety-and-overthinking/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-para-la-ansiedad-y-el-sobrepensamiento/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-para-ansiedade-e-pensar-demais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/quotes-for-anxiety-and-overthinking/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/blog/how-to-stop-overthinking/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-stop-overthinking/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-dejar-de-sobrepensar/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-parar-de-pensar-demais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-to-stop-overthinking/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/blog/how-long-does-it-take-to-form-a-habit/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-long-does-it-take-to-form-a-habit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/cuanto-tiempo-se-tarda-en-formar-un-habito/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/quanto-tempo-leva-para-criar-um-habito/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-long-does-it-take-to-form-a-habit/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/blog/do-affirmations-work/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/do-affirmations-work/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/funcionan-las-afirmaciones/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/afirmacoes-funcionam/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/do-affirmations-work/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/blog/how-to-use-your-phone-less/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-use-your-phone-less/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-usar-menos-el-celular/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-usar-menos-o-celular/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-to-use-your-phone-less/"/>
   </url>
   <url>
     <loc>https://mydailies.app/compare/</loc>
@@ -214,7 +286,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/"/>
@@ -222,7 +294,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/ayuda/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/help/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/ayuda/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/ajuda/"/>
@@ -230,7 +302,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/guias/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -238,7 +310,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/guias/frases-en-la-pantalla-de-bloqueo-del-iphone/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quotes-on-your-iphone-lock-screen/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/frases-en-la-pantalla-de-bloqueo-del-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/frases-na-tela-bloqueada-do-iphone/"/>
@@ -246,7 +318,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/guias/agregar-un-widget-a-la-pantalla-de-inicio/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-a-widget-to-your-home-screen/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-un-widget-a-la-pantalla-de-inicio/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-um-widget-na-tela-de-inicio/"/>
@@ -262,7 +334,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/guias/concentracion-pantalla-de-bloqueo-iphone/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/focus-lock-screen-iphone/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/concentracion-pantalla-de-bloqueo-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/foco-tela-bloqueada-iphone/"/>
@@ -270,15 +342,47 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/guias/widget-del-iphone-no-se-actualiza/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-widget-not-updating/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/widget-del-iphone-no-se-actualiza/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/widget-do-iphone-nao-atualiza/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-widget-not-updating/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/es/guias/no-me-llegan-las-notificaciones-del-iphone/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-notifications-not-working/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/no-me-llegan-las-notificaciones-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-iphone-nao-chegam/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-notifications-not-working/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/guias/personalizar-la-pantalla-de-bloqueo-del-iphone/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/customize-iphone-lock-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/personalizar-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/personalizar-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/customize-iphone-lock-screen/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/guias/fondo-de-pantalla-con-frases-en-el-iphone/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quote-wallpaper-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/fondo-de-pantalla-con-frases-en-el-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/papel-de-parede-com-frases-no-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/quote-wallpaper-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/guias/agregar-widgets-en-el-ipad/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-widgets-en-el-ipad/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-widgets-no-ipad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/es/blog/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/"/>
@@ -286,7 +390,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/blog/como-motivarte/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-motivate-yourself/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-motivarte/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-se-motivar/"/>
@@ -294,7 +398,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/blog/motivacion-vs-disciplina/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/motivation-vs-discipline/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/motivacion-vs-disciplina/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/motivacao-vs-disciplina/"/>
@@ -302,7 +406,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/blog/como-dejar-de-procrastinar/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-stop-procrastinating/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-dejar-de-procrastinar/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-parar-de-procrastinar/"/>
@@ -310,7 +414,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/blog/como-mantener-la-motivacion/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-stay-motivated/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-mantener-la-motivacion/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-manter-a-motivacao/"/>
@@ -318,7 +422,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/blog/frases-para-cuando-no-avanzas/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/quotes-for-when-you-feel-stuck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-para-cuando-no-avanzas/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-para-quando-nada-anda/"/>
@@ -326,7 +430,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/blog/frases-motivadoras-para-tiempos-dificiles/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/motivational-quotes-for-hard-times/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-motivadoras-para-tiempos-dificiles/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-motivacionais-para-tempos-dificeis/"/>
@@ -334,7 +438,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/blog/frases-para-cuando-dudas-de-ti/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/quotes-for-self-doubt/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-para-cuando-dudas-de-ti/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-para-quando-voce-duvida-de-si/"/>
@@ -342,7 +446,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/blog/frases-de-motivacion-para-la-manana/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/morning-motivation-quotes/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-de-motivacion-para-la-manana/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-de-motivacao-para-a-manha/"/>
@@ -358,11 +462,51 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/blog/frases-de-disciplina-y-constancia/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/discipline-and-consistency-quotes/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-de-disciplina-y-constancia/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-de-disciplina-e-constancia/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/discipline-and-consistency-quotes/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/blog/frases-para-la-ansiedad-y-el-sobrepensamiento/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/quotes-for-anxiety-and-overthinking/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-para-la-ansiedad-y-el-sobrepensamiento/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-para-ansiedade-e-pensar-demais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/quotes-for-anxiety-and-overthinking/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/blog/como-dejar-de-sobrepensar/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-stop-overthinking/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-dejar-de-sobrepensar/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-parar-de-pensar-demais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-to-stop-overthinking/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/blog/cuanto-tiempo-se-tarda-en-formar-un-habito/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-long-does-it-take-to-form-a-habit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/cuanto-tiempo-se-tarda-en-formar-un-habito/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/quanto-tempo-leva-para-criar-um-habito/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-long-does-it-take-to-form-a-habit/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/blog/funcionan-las-afirmaciones/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/do-affirmations-work/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/funcionan-las-afirmaciones/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/afirmacoes-funcionam/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/do-affirmations-work/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/blog/como-usar-menos-el-celular/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-use-your-phone-less/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-usar-menos-el-celular/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-usar-menos-o-celular/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-to-use-your-phone-less/"/>
   </url>
   <url>
     <loc>https://mydailies.app/es/comparar/</loc>
@@ -414,7 +558,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/"/>
@@ -422,7 +566,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/ajuda/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/help/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/ayuda/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/ajuda/"/>
@@ -430,7 +574,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/guias/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -438,7 +582,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/guias/frases-na-tela-bloqueada-do-iphone/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quotes-on-your-iphone-lock-screen/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/frases-en-la-pantalla-de-bloqueo-del-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/frases-na-tela-bloqueada-do-iphone/"/>
@@ -446,7 +590,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/guias/adicionar-um-widget-na-tela-de-inicio/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-a-widget-to-your-home-screen/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-un-widget-a-la-pantalla-de-inicio/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-um-widget-na-tela-de-inicio/"/>
@@ -462,7 +606,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/guias/foco-tela-bloqueada-iphone/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/focus-lock-screen-iphone/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/concentracion-pantalla-de-bloqueo-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/foco-tela-bloqueada-iphone/"/>
@@ -470,15 +614,47 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/guias/widget-do-iphone-nao-atualiza/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-widget-not-updating/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/widget-del-iphone-no-se-actualiza/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/widget-do-iphone-nao-atualiza/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-widget-not-updating/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/pt/guias/notificacoes-do-iphone-nao-chegam/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-notifications-not-working/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/no-me-llegan-las-notificaciones-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-iphone-nao-chegam/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-notifications-not-working/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/guias/personalizar-a-tela-bloqueada-do-iphone/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/customize-iphone-lock-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/personalizar-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/personalizar-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/customize-iphone-lock-screen/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/guias/papel-de-parede-com-frases-no-iphone/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quote-wallpaper-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/fondo-de-pantalla-con-frases-en-el-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/papel-de-parede-com-frases-no-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/quote-wallpaper-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/guias/adicionar-widgets-no-ipad/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-widgets-en-el-ipad/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-widgets-no-ipad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/pt/blog/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/"/>
@@ -486,7 +662,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/blog/como-se-motivar/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-motivate-yourself/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-motivarte/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-se-motivar/"/>
@@ -494,7 +670,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/blog/motivacao-vs-disciplina/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/motivation-vs-discipline/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/motivacion-vs-disciplina/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/motivacao-vs-disciplina/"/>
@@ -502,7 +678,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/blog/como-parar-de-procrastinar/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-stop-procrastinating/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-dejar-de-procrastinar/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-parar-de-procrastinar/"/>
@@ -510,7 +686,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/blog/como-manter-a-motivacao/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-stay-motivated/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-mantener-la-motivacion/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-manter-a-motivacao/"/>
@@ -518,7 +694,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/blog/frases-para-quando-nada-anda/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/quotes-for-when-you-feel-stuck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-para-cuando-no-avanzas/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-para-quando-nada-anda/"/>
@@ -526,7 +702,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/blog/frases-motivacionais-para-tempos-dificeis/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/motivational-quotes-for-hard-times/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-motivadoras-para-tiempos-dificiles/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-motivacionais-para-tempos-dificeis/"/>
@@ -534,7 +710,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/blog/frases-para-quando-voce-duvida-de-si/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/quotes-for-self-doubt/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-para-cuando-dudas-de-ti/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-para-quando-voce-duvida-de-si/"/>
@@ -542,7 +718,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/blog/frases-de-motivacao-para-a-manha/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/morning-motivation-quotes/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-de-motivacion-para-la-manana/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-de-motivacao-para-a-manha/"/>
@@ -558,11 +734,51 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/blog/frases-de-disciplina-e-constancia/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/discipline-and-consistency-quotes/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-de-disciplina-y-constancia/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-de-disciplina-e-constancia/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/discipline-and-consistency-quotes/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/blog/frases-para-ansiedade-e-pensar-demais/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/quotes-for-anxiety-and-overthinking/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/frases-para-la-ansiedad-y-el-sobrepensamiento/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/frases-para-ansiedade-e-pensar-demais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/quotes-for-anxiety-and-overthinking/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/blog/como-parar-de-pensar-demais/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-stop-overthinking/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-dejar-de-sobrepensar/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-parar-de-pensar-demais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-to-stop-overthinking/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/blog/quanto-tempo-leva-para-criar-um-habito/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-long-does-it-take-to-form-a-habit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/cuanto-tiempo-se-tarda-en-formar-un-habito/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/quanto-tempo-leva-para-criar-um-habito/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-long-does-it-take-to-form-a-habit/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/blog/afirmacoes-funcionam/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/do-affirmations-work/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/funcionan-las-afirmaciones/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/afirmacoes-funcionam/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/do-affirmations-work/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/blog/como-usar-menos-o-celular/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/how-to-use-your-phone-less/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/como-usar-menos-el-celular/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/como-usar-menos-o-celular/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-to-use-your-phone-less/"/>
   </url>
   <url>
     <loc>https://mydailies.app/pt/comparar/</loc>

@@ -14,8 +14,12 @@ The website for the Dailies app — https://mydailies.app
 | `/guides/bible-verse-on-iphone-lock-screen` | `guides/bible-verse-on-iphone-lock-screen/index.html` | How to put a Bible verse on your iPhone Lock Screen |
 | `/guides/focus-lock-screen-iphone` | `guides/focus-lock-screen-iphone/index.html` | How to link a Lock Screen to a Focus on iPhone |
 | `/guides/iphone-widget-not-updating` | `guides/iphone-widget-not-updating/index.html` | Why an iPhone widget stops updating, and the fixes |
-| `/blog` | `blog/index.html` | Blog hub, linking the ten posts below |
-| `/blog/<slug>` | `blog/<slug>/index.html` | Motivation posts: four explainers and six quote collections. See [The blog](#the-blog) |
+| `/guides/iphone-notifications-not-working` | `guides/iphone-notifications-not-working/index.html` | Why an app's notifications stop arriving, and the fixes |
+| `/guides/customize-iphone-lock-screen` | `guides/customize-iphone-lock-screen/index.html` | How to customize the iPhone Lock Screen |
+| `/guides/quote-wallpaper-iphone` | `guides/quote-wallpaper-iphone/index.html` | How to make a quote wallpaper on iPhone |
+| `/guides/add-widgets-on-ipad` | `guides/add-widgets-on-ipad/index.html` | How to add widgets on iPad, Home Screen and Lock Screen |
+| `/blog` | `blog/index.html` | Blog hub, linking the fifteen posts below |
+| `/blog/<slug>` | `blog/<slug>/index.html` | Motivation posts: eight explainers and seven quote collections. See [The blog](#the-blog) |
 | `/about` | `about/index.html` | Who makes Dailies, the editorial rules, and the contact route |
 | `/terms` | `terms/index.html` | Terms of Use |
 | `/privacy` | `privacy/index.html` | Privacy Policy |
@@ -404,7 +408,7 @@ card in keying and showed only the wallpaper.
 
 Heroes: hub UD-TfIuU-pA (Vitaly Gariev), Lock Screen _8S9nEmCZK0 (Oliur), Home
 Screen 4gtMwj9uxwc (Amanz), Bible Iz6x7yHMkQA (Sixteen Miles Out), Focus
-DCCwdPccREs (Irwan), widget not updating cQ38vs4NFP4 (VD Photography). The Bible
+DCCwdPccREs (Irwan), widget not updating cQ38vs4NFP4 (VD Photography), notifications not working L5DxWLmywmM (freestocks), customize the Lock Screen x5-ESxKi1fA (Vince Picipo), quote wallpaper vZg8GN5WDp0 (Omar Al-Ghosson), widgets on iPad 7OFnb7NOvjw (Henry Ascroft). The Bible
 guide's verse card is the app's own `sky_cloud_line` background.
 
 The hub's card icons are inline SVG line drawings, the same `.ico` style as the
