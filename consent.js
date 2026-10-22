@@ -269,6 +269,80 @@
     document.head.appendChild(s);
   }
 
+  /* ------------------------------------------------------------- the words */
+  /* The banner speaks the page's language, read off <html lang>: es-MX on
+     /es/, pt-BR on /pt/, English everywhere else. The Cookie Policy itself is
+     English only (see tools/languages.py), and the translated banners say so
+     where they link to it. Same meaning in all three; change one, change the
+     others. */
+
+  var WORDS = {
+    en: {
+      askTitle: 'A quick word about cookies',
+      askBody: 'This site would like to measure how it is used, and which advert brought you here. ' +
+        'Nothing is set unless you say yes, and the app itself is a separate question. Both are ' +
+        'explained in the <a href="/cookies/">Cookie Policy</a>.',
+      all: 'Accept all', none: 'Reject all', choose: 'Choose',
+      chooseTitle: 'Choose what you allow',
+      chooseBody: 'You can change this whenever you like from the <strong>Cookie settings</strong> link in the footer.',
+      signal: function (name) {
+        return '<strong>Your browser is asking sites not to track you</strong>' +
+          ' \u2014 ' + name + ' is switched on and is being' +
+          ' honoured: everything below is off, and nothing has been loaded. Ticking a box overrides that for this site only.';
+      },
+      necLabel: 'Strictly necessary',
+      necBody: 'Only your answer to this question. It cannot be switched off, and it is the sole thing stored without consent.',
+      anaLabel: 'Analytics',
+      anaBody: 'PostHog. Which pages are read and how people move through the site, so it can be improved.',
+      mktLabel: 'Advertising',
+      mktBody: 'Google, Meta and TikTok pixels. Measures which advert led to a download, and lets those platforms show you ads.',
+      save: 'Save choices'
+    },
+    es: {
+      askTitle: 'Unas palabras sobre las cookies',
+      askBody: 'Este sitio quiere medir cómo se usa y qué anuncio te trajo hasta aquí. ' +
+        'No se guarda nada a menos que digas que sí, y la app es un tema aparte. Ambas cosas se ' +
+        'explican en la <a href="/cookies/" hreflang="en">Política de cookies</a> (en inglés).',
+      all: 'Aceptar todo', none: 'Rechazar todo', choose: 'Elegir',
+      chooseTitle: 'Elige lo que permites',
+      chooseBody: 'Puedes cambiarlo cuando quieras desde el enlace <strong>Configuración de cookies</strong> del pie de página.',
+      signal: function (name) {
+        return '<strong>Tu navegador pide a los sitios que no te rastreen.</strong> ' + name +
+          ' está activado y lo estamos respetando: todo lo de abajo está desactivado y no se ha cargado nada.' +
+          ' Marcar una casilla lo anula solo para este sitio.';
+      },
+      necLabel: 'Estrictamente necesarias',
+      necBody: 'Solo tu respuesta a esta pregunta. No se puede desactivar, y es lo único que se guarda sin consentimiento.',
+      anaLabel: 'Analítica',
+      anaBody: 'PostHog. Qué páginas se leen y cómo se recorre el sitio, para poder mejorarlo.',
+      mktLabel: 'Publicidad',
+      mktBody: 'Píxeles de Google, Meta y TikTok. Miden qué anuncio llevó a una descarga y permiten que esas plataformas te muestren anuncios.',
+      save: 'Guardar mis opciones'
+    },
+    pt: {
+      askTitle: 'Uma palavrinha sobre cookies',
+      askBody: 'Este site gostaria de medir como é usado e qual anúncio trouxe você até aqui. ' +
+        'Nada é gravado a menos que você aceite, e o app é uma questão à parte. As duas coisas estão ' +
+        'explicadas na <a href="/cookies/" hreflang="en">Política de Cookies</a> (em inglês).',
+      all: 'Aceitar tudo', none: 'Recusar tudo', choose: 'Escolher',
+      chooseTitle: 'Escolha o que você permite',
+      chooseBody: 'Você pode mudar isso quando quiser pelo link <strong>Configurações de cookies</strong> no rodapé.',
+      signal: function (name) {
+        return '<strong>Seu navegador está pedindo aos sites que não rastreiem você.</strong> O ' + name +
+          ' está ativado e está sendo respeitado: tudo abaixo está desligado e nada foi carregado.' +
+          ' Marcar uma opção substitui isso só para este site.';
+      },
+      necLabel: 'Estritamente necessários',
+      necBody: 'Só a sua resposta a esta pergunta. Não pode ser desligado, e é a única coisa guardada sem consentimento.',
+      anaLabel: 'Análise',
+      anaBody: 'PostHog. Quais páginas são lidas e como as pessoas navegam pelo site, para que ele possa melhorar.',
+      mktLabel: 'Publicidade',
+      mktBody: 'Pixels do Google, da Meta e do TikTok. Medem qual anúncio levou a um download e permitem que essas plataformas mostrem anúncios para você.',
+      save: 'Salvar escolhas'
+    }
+  };
+  var T = WORDS[(document.documentElement.lang || 'en').slice(0, 2)] || WORDS.en;
+
   var el = null, scrim = null, lastFocus = null;
 
   function close() {
@@ -308,44 +382,41 @@
 
     if (!showDetail) {
       el.innerHTML =
-        '<h2 id="cc-title">A quick word about cookies</h2>' +
-        '<p>This site would like to measure how it is used, and which advert brought you here. ' +
-        'Nothing is set unless you say yes, and the app itself is a separate question. Both are ' +
-        'explained in the <a href="/cookies/">Cookie Policy</a>.</p>' +
+        '<h2 id="cc-title">' + T.askTitle + '</h2>' +
+        '<p>' + T.askBody + '</p>' +
         '<div class="cc-row">' +
-          '<button class="cc-btn primary" data-act="all">Accept all</button>' +
-          '<button class="cc-btn" data-act="none">Reject all</button>' +
-          '<button class="cc-btn link" data-act="detail">Choose</button>' +
+          '<button class="cc-btn primary" data-act="all">' + T.all + '</button>' +
+          '<button class="cc-btn" data-act="none">' + T.none + '</button>' +
+          '<button class="cc-btn link" data-act="detail">' + T.choose + '</button>' +
         '</div>';
     } else {
       el.innerHTML =
-        '<h2 id="cc-title">Choose what you allow</h2>' +
-        '<p>You can change this whenever you like from the <strong>Cookie settings</strong> link in the footer.</p>' +
+        '<h2 id="cc-title">' + T.chooseTitle + '</h2>' +
+        '<p>' + T.chooseBody + '</p>' +
         (SIGNAL
-          ? '<div class="cc-signal"><strong>Your browser is asking sites not to track you</strong>' +
-            ' \u2014 ' + (SIGNAL === 'gpc' ? 'Global Privacy Control' : 'Do Not Track') + ' is switched on and is being' +
-            ' honoured: everything below is off, and nothing has been loaded. Ticking a box overrides that for this site only.</div>'
+          ? '<div class="cc-signal">' +
+            T.signal(SIGNAL === 'gpc' ? 'Global Privacy Control' : 'Do Not Track') + '</div>'
           : '') +
         '<div class="cc-opts">' +
           '<div class="cc-opt fixed">' +
             '<input type="checkbox" id="cc-nec" checked disabled>' +
-            '<div><label for="cc-nec">Strictly necessary</label>' +
-            '<span>Only your answer to this question. It cannot be switched off, and it is the sole thing stored without consent.</span></div>' +
+            '<div><label for="cc-nec">' + T.necLabel + '</label>' +
+            '<span>' + T.necBody + '</span></div>' +
           '</div>' +
           '<div class="cc-opt">' +
             '<input type="checkbox" id="cc-ana"' + (cur.analytics ? ' checked' : '') + '>' +
-            '<div><label for="cc-ana">Analytics</label>' +
-            '<span>PostHog. Which pages are read and how people move through the site, so it can be improved.</span></div>' +
+            '<div><label for="cc-ana">' + T.anaLabel + '</label>' +
+            '<span>' + T.anaBody + '</span></div>' +
           '</div>' +
           '<div class="cc-opt">' +
             '<input type="checkbox" id="cc-mkt"' + (cur.marketing ? ' checked' : '') + '>' +
-            '<div><label for="cc-mkt">Advertising</label>' +
-            '<span>Google, Meta and TikTok pixels. Measures which advert led to a download, and lets those platforms show you ads.</span></div>' +
+            '<div><label for="cc-mkt">' + T.mktLabel + '</label>' +
+            '<span>' + T.mktBody + '</span></div>' +
           '</div>' +
         '</div>' +
         '<div class="cc-row">' +
-          '<button class="cc-btn primary" data-act="save">Save choices</button>' +
-          '<button class="cc-btn" data-act="none">Reject all</button>' +
+          '<button class="cc-btn primary" data-act="save">' + T.save + '</button>' +
+          '<button class="cc-btn" data-act="none">' + T.none + '</button>' +
         '</div>';
     }
 
