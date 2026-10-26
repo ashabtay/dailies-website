@@ -390,7 +390,11 @@
 (function () {
   function openTarget() {
     if (!location.hash) return;
-    var target = document.querySelector(location.hash);
+    // By id, not as a selector: the hash is whatever the link said, and a
+    // stray bracket or comma in it must open nothing rather than throw.
+    var id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+    var target = document.getElementById(id);
     if (!target) return;
     var first = target.querySelector('.faq details');
     if (first) first.setAttribute('open', '');
