@@ -271,10 +271,10 @@
 
   /* ------------------------------------------------------------- the words */
   /* The banner speaks the page's language, read off <html lang>: es-MX on
-     /es/, pt-BR on /pt/, English everywhere else. The Cookie Policy itself is
-     English only (see tools/languages.py), and the translated banners say so
-     where they link to it. Same meaning in all three; change one, change the
-     others. */
+     /es/, pt-BR on /pt/, fr-FR on /fr/, de-DE on /de/, English everywhere
+     else. The Cookie Policy itself is English only (see tools/languages.py),
+     and the translated banners say so where they link to it. Same meaning in
+     all five; change one, change the others. */
 
   var WORDS = {
     en: {
@@ -339,6 +339,48 @@
       mktLabel: 'Publicidade',
       mktBody: 'Pixels do Google, da Meta e do TikTok. Medem qual anúncio levou a um download e permitem que essas plataformas mostrem anúncios para você.',
       save: 'Salvar escolhas'
+    },
+    fr: {
+      askTitle: 'Un petit mot sur les cookies',
+      askBody: 'Ce site aimerait mesurer comment il est utilisé, et quelle publicité t’a fait venir ici.' +
+        'Rien n’est enregistré si tu ne dis pas oui, et l’app est une autre question. Les deux sont ' +
+        'expliqués dans la <a href="/cookies/" hreflang="en">Politique relative aux cookies</a> (en anglais).',
+      all: 'Tout accepter', none: 'Tout refuser', choose: 'Choisir',
+      chooseTitle: 'Choisis ce que tu autorises',
+      chooseBody: 'Tu peux changer d’avis quand tu veux avec le lien <strong>Paramètres des cookies</strong> en bas de page.',
+      signal: function (name) {
+        return '<strong>Ton navigateur demande aux sites de ne pas te suivre.</strong> ' + name +
+          ' est activé et respecté : tout ce qui suit est désactivé, et rien n’a été chargé.' +
+          ' Cocher une case passe outre, pour ce site seulement.';
+      },
+      necLabel: 'Strictement nécessaires',
+      necBody: 'Seulement ta réponse à cette question. Impossible de la désactiver, et c’est la seule chose gardée sans consentement.',
+      anaLabel: 'Mesure d’audience',
+      anaBody: 'PostHog. Quelles pages sont lues et comment on circule sur le site, pour pouvoir l’améliorer.',
+      mktLabel: 'Publicité',
+      mktBody: 'Pixels de Google, Meta et TikTok. Ils mesurent quelle publicité a mené à un téléchargement, et permettent à ces plateformes de te montrer des publicités.',
+      save: 'Enregistrer mes choix'
+    },
+    de: {
+      askTitle: 'Kurz zu Cookies',
+      askBody: 'Diese Website würde gern messen, wie sie genutzt wird und welche Anzeige dich hergebracht hat. ' +
+        'Nichts wird gespeichert, solange du nicht zustimmst, und die App ist eine eigene Frage. Beides steht ' +
+        'in der <a href="/cookies/" hreflang="en">Cookie-Richtlinie</a> (auf Englisch).',
+      all: 'Alle akzeptieren', none: 'Alle ablehnen', choose: 'Auswählen',
+      chooseTitle: 'Wähle, was du erlaubst',
+      chooseBody: 'Du kannst das jederzeit über den Link <strong>Cookie-Einstellungen</strong> unten auf der Seite ändern.',
+      signal: function (name) {
+        return '<strong>Dein Browser bittet Websites, dich nicht zu verfolgen.</strong> ' + name +
+          ' ist eingeschaltet und wird respektiert: Alles unten ist aus, und nichts wurde geladen.' +
+          ' Ein Häkchen setzt das nur für diese Website außer Kraft.';
+      },
+      necLabel: 'Unbedingt erforderlich',
+      necBody: 'Nur deine Antwort auf diese Frage. Sie lässt sich nicht ausschalten und ist das Einzige, was ohne Einwilligung gespeichert wird.',
+      anaLabel: 'Statistik',
+      anaBody: 'PostHog. Welche Seiten gelesen werden und wie man sich durch die Website bewegt, damit sie besser werden kann.',
+      mktLabel: 'Werbung',
+      mktBody: 'Pixel von Google, Meta und TikTok. Sie messen, welche Anzeige zu einem Download geführt hat, und lassen diese Plattformen dir Werbung zeigen.',
+      save: 'Auswahl speichern'
     }
   };
   var T = WORDS[(document.documentElement.lang || 'en').slice(0, 2)] || WORDS.en;
