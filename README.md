@@ -30,7 +30,7 @@ The website for the Dailies app — https://mydailies.app
 | `/compare/dailies-vs-thinkup` | `compare/dailies-vs-thinkup/index.html` | Dailies vs ThinkUp (Precise Wellness) |
 | `/compare/dailies-vs-motivate` | `compare/dailies-vs-motivate/index.html` | Dailies vs Motivate (Brave New Logic) |
 | any missing path | `404.html` | The custom 404 |
-| `/es/…`, `/pt/…` | `es/…/index.html`, `pt/…/index.html` | The same site in Mexican Spanish and Brazilian Portuguese. See [Languages](#languages) |
+| `/es/…`, `/pt/…`, `/fr/…`, `/de/…` | `es/…/index.html` and so on | The same site in Mexican Spanish, Brazilian Portuguese, French and German. See [Languages](#languages) |
 
 `/terms` and `/privacy` are not optional paths: the app links to them from the
 legal line on the first onboarding screen (`lib/app_config.dart` in the `dailies`
@@ -40,22 +40,24 @@ Netlify, Vercel and Cloudflare Pages alike — do not flatten them to `terms.htm
 
 ## Languages
 
-The site is in three languages, the same three-way split as the app's
-(`lib/l10n/app_locale.dart` in the `dailies` repo): **English** at `/`,
-**Mexican Spanish** at `/es/` and **Brazilian Portuguese** at `/pt/`. Every
-Spanish phone gets the app's es-MX and every Portuguese one its pt-BR, so each
-is the one Spanish or Portuguese the site has: `<html lang>` says `es-MX` and
-`pt-BR`, and the hreflang says plain `es` and `pt`.
+The site is in five languages, the same as the app's
+(`lib/l10n/app_locale.dart` in the `dailies` repo) less Chinese: **English** at
+`/`, **Mexican Spanish** at `/es/`, **Brazilian Portuguese** at `/pt/`,
+**French** at `/fr/` and **German** at `/de/`. Every Spanish phone gets the
+app's es-MX, every Portuguese one its pt-BR, every French one fr-FR and every
+German one de-DE, so each is the one Spanish, Portuguese, French or German the
+site has: `<html lang>` says `es-MX`, `pt-BR`, `fr-FR` and `de-DE`, and the
+hreflang says plain `es`, `pt`, `fr` and `de`.
 
 Everything is translated except the **Terms of Use, the Privacy Policy and the
 Cookie Policy**, which stay English only: they are the binding text, and a
 translation would be a second version of a contract nobody has reviewed. The
 translated footers and pages link to them with `hreflang="en"` and say "(en
-inglés)" / "(em inglês)".
+inglés)", "(em inglês)", "(en anglais)" or "(auf Englisch)".
 
 **`tools/languages.py` is the one record of which page translates which.** Its
-`PAGES` table lists each page's English, Spanish and Portuguese URL (the
-translated slugs are written for search in that language, so they are not the
+`PAGES` table lists each page's English, Spanish, Portuguese, French and
+German URL, in that column order (the translated slugs are written for search in that language, so they are not the
 English ones). From it the script writes three things into every page, and
 none of them should be hand-edited:
 
@@ -64,16 +66,18 @@ none of them should be hand-edited:
   only on pages that really have a translation;
 - the language menu in the nav, just before the Get Dailies pill: a
   `<details class="lang">` whose button names the page's language in full
-  (globe, "Español", chevron) and opens a list of the three, each going to
+  (globe, "Español", chevron) and opens a list of the five, each going to
   this page in that language, or to that language's home page where there is
   none (the legal pages). A line of script beside it closes the list on an
   outside click or Escape. Phones show the globe and chevron without the
-  name. Languages are named, never abbreviated, and are not in the footer;
+  name. Languages are named, never abbreviated, and are not in the footer.
+  The list's order is `MENU_ORDER`, not the column order: English,
+  Français, Deutsch, Español, Português;
 - on English pages that have a translation, a few lines of inline script after
   the hreflang block that send a visitor on to their browser's language. It
   walks the browser's language list the way the app walks the phone's:
-  English first stays, Spanish or Portuguese first goes, anything else is
-  skipped. It only acts on arrival from outside the site, so a visitor who
+  English first stays, a language the page is translated into goes,
+  anything else is skipped. It only acts on arrival from outside the site, so a visitor who
   picks English in the menu stays in English for the visit, and it stores nothing
   (the Cookie Policy says the consent answer is the only thing kept).
   Crawlers report English, so every page is still indexed in its own
@@ -88,7 +92,7 @@ python3 tools/languages.py --check   # just say
 `tools/sitemap.py` reads the same table, so a translated page is in the sitemap,
 with its `xhtml:link` alternates, the moment it is in `PAGES`.
 
-**Adding a page** now means adding it in all three languages (or `None` where it
+**Adding a page** now means adding it in all five languages (or `None` where it
 has no translation), then running `languages.py` and `sitemap.py`. **Editing a
 page** means editing its translations too; nothing checks that they still say
 the same thing.
@@ -96,14 +100,19 @@ the same thing.
 The rules for the translations, on top of the house rules (which bind them
 exactly as they bind the English, dashes included):
 
-- **The app's voice**, from `docs/localization.md` in the app repo: *tú* and
-  *você*, sentence case, and copy that never decides the reader's gender (no
-  *listo*, *motivado*, *bem-vindo*, *sozinho* agreeing with the reader).
+- **The app's voice**, from `docs/localization.md` in the app repo: *tú*,
+  *você*, *tu* and *du*, sentence case, and copy that never decides the
+  reader's gender (no *listo*, *motivado*, *bem-vindo*, *sozinho*, *prêt*,
+  *seul* agreeing with the reader; no German role noun like *Anfänger* or
+  *Leser* for the reader). French takes a no-break space before `? ! : ;`.
 - **Apple's own words** for anything on the iPhone, as the app's own strings
   have them: *pantalla de bloqueo*, *pantalla de inicio*, *Agregar widget*,
-  *Listo*; *Tela Bloqueada*, *Tela de Início*, *Adicionar Widget*, *OK*.
+  *Listo*; *Tela Bloqueada*, *Tela de Início*, *Adicionar Widget*, *OK*;
+  *écran verrouillé*, *écran d’accueil*, *Ajouter un widget*, *OK*;
+  *Sperrbildschirm*, *Home-Bildschirm*, „Widget hinzufügen“, „Fertig“.
 - **Every quote is the app's own translation, word for word** from
-  `assets/quotes.db` (`textEs`, `textPt`, with `authors.nameEs`/`namePt`). The
+  `assets/quotes.db` (`textEs`, `textPt`, `textFr`, `textDe`, with
+  `authors.nameEs` and its siblings). The
   corpus has no translation of James Clear (his grant covers quotation, not
   translation), so his lines are replaced on the translated pages and there are
   no jamesclear.com links there. The blog check, for the translations:
@@ -112,7 +121,7 @@ exactly as they bind the English, dashes included):
   python3 - <<'PY'
   import re,glob,html,sqlite3
   db=sqlite3.connect('../dailies/assets/quotes.db')
-  for lang,col in (('es','textEs'),('pt','textPt')):
+  for lang,col in (('es','textEs'),('pt','textPt'),('fr','textFr'),('de','textDe')):
       ok={r[0] for r in db.execute(f"select {col} from quotes where {col} is not null")}
       for f in sorted(glob.glob(f'{lang}/**/index.html',recursive=True)):
           for t in re.findall(r'<blockquote><p>(.*?)</p>',open(f,encoding='utf-8').read()):
@@ -122,25 +131,33 @@ exactly as they bind the English, dashes included):
 
 - **The crisis line is local**: the Spanish posts give Mexico's Línea de la
   Vida (800 911 2000) and the US 988, which answers in Spanish; the Portuguese
-  give Brazil's CVV (188).
-- **The guide screenshots are the English app.** The `zoom-*.jpg` captures are
-  shared by all three languages, with translated alt text and captions.
+  give Brazil's CVV (188); the French give France's 3114, with Belgium,
+  Switzerland and Canada beside it; the German give the TelefonSeelsorge
+  (0800 111 0 111), with Austria's 142 and Switzerland's 143.
+- **The guide screenshots are in the page's language**: each translation
+  has its own `img/guides/<lang>/zoom-*.jpg`, see [The guides](#the-guides).
+  The comparison pages' Lock Screens stay the English app in every language,
+  and their alt text says so.
 - **The App Store badge is Apple's localized artwork**:
-  `img/app-store-badge-es.svg` ("Descárgalo en el App Store") and
-  `img/app-store-badge-pt.svg` ("Baixar na App Store"), from the same Apple
-  marketing tools as the English one, unmodified. Apple asks for the badge in
+  `img/app-store-badge-es.svg` ("Descárgalo en el App Store"),
+  `img/app-store-badge-pt.svg` ("Baixar na App Store"),
+  `img/app-store-badge-fr.svg` ("Télécharger dans l’App Store", wider: 164px
+  at 52px tall) and `img/app-store-badge-de.svg` ("Laden im App Store"), from
+  the same Apple marketing tools as the English one
+  (`tools.applemediaservices.com/api/badges/download-on-the-app-store/black/<locale>`),
+  unmodified. Apple asks for the badge in
   the language of the page.
 - **Campaign tokens carry the language**: `web-guides-es`, `web-home-pt` and so
-  on, so App Store Connect shows which language's pages send downloads.
+  on (and `-fr`, `-de`), so App Store Connect shows which language's pages send downloads.
 - **Analytics stays comparable.** The translated home pages give each picker
   chip a `set` (its English slug) that `analytics.js` reports instead of the
   label, so *Confianza* and *Confidence* are one row. FAQ and page events are
   told apart by their URL.
 
 The cookie banner (`consent.js`) reads `<html lang>` and has its words in all
-three languages in its `WORDS` table. The 404 is one file for every missing
-address; under `/es/` or `/pt/` it swaps in the translated `<main>` from its
-`<template>`s and relabels the nav.
+five languages in its `WORDS` table. The 404 is one file for every missing
+address; under `/es/`, `/pt/`, `/fr/` or `/de/` it swaps in the translated
+`<main>` from its `<template>`s and relabels the nav.
 
 The translations were machine-made, from the English, and have not had a
 native read. As with the app, that is the next step before leaning on them.
@@ -223,8 +240,9 @@ should rarely need to touch either.
 **The nav on every document and comparison page is a hand-copied version of the
 landing page's nav.** It carries Blog, Help and the Get Dailies pill (which
 points at `/#get`). Change the landing page's nav and change every other page's
-to match. Nothing checks this. The Spanish and Portuguese pages carry their own
-translated copy (Guías, Ayuda, Descarga Dailies; Guias, Ajuda, Baixe o Dailies),
+to match. Nothing checks this. The translated pages carry their own
+translated copy (Guías, Ayuda, Descarga Dailies; Guias, Ajuda, Baixe o Dailies;
+Guides, Aide, Télécharger Dailies; Anleitungen, Hilfe, Dailies laden),
 pointing at their own language's pages, and change with it. The language menu
 in it is the exception: `tools/languages.py` writes that one. The FAQ's
 `details`/`summary` styles reach it too, and its CSS takes them back off; keep
@@ -235,8 +253,8 @@ globe and chevron, without the name), and the brand stacks the icon over the
 name, after motivation.app's mobile header. The Get Dailies pill is dropped
 there: it did not fit beside Help, and a phone has two other ways in, Apple's
 install banner at the top in Safari and the App Store badge on every page.
-Measured to fit from 320px up in all three languages; recheck at 320px after
-renaming a nav link, since the Spanish labels are the longest.
+Measured to fit from 320px up in all five languages; recheck at 320px after
+renaming a nav link, since the Spanish and German labels are the longest.
 
 **Every download button is Apple's official App Store badge**
 (`img/app-store-badge.svg`, the black US/UK artwork from Apple's marketing tools
@@ -405,6 +423,28 @@ are `simctl push`; the setup screen is the app relaunched with
 app group first and put them back after. The two English notification
 captures were re-shot the same day: the old files had lost the notification
 card in keying and showed only the wallpaper.
+
+**The French and German screens**, in `img/guides/fr/` and `img/guides/de/`,
+were shot the same way on 29 October 2026, with iOS in French (France) and
+German (Germany), so the clock reads 09:41 and the notification says
+"maintenant" / "jetzt". Three things had changed on the simulator since the
+Spanish shoot, and will matter for the next one. The app had been
+reinstalled, so it held no notification permission and every `simctl push`
+was silently dropped: relaunch onboarding at `flutter.onboardingStep`
+`daily_dose` and allow notifications there. The Home Screen widget was gone
+and had to be added back at the top of page one, where `wallpaper.py`'s
+`HOME` box expects it. And iOS now draws the Lock Screen clock as flat grey
+148 over black, above the band `wallpaper.py` frosts as glass, so the clock
+digits (rows 365 to 700 of the capture) were dimmed by half before keying.
+Each notification needs a Lock Screen of its own: a second push stacks on
+the first, and only emptying the app's `DeliveredNotifications.plist` under
+the simulator's `Library/UserNotifications` with the device shut down
+clears it.
+
+`img/lock-screen.jpg`, the Dailies vs Motivation Lock Screen, was re-shot
+the same day: its notification line had been withdrawn from `quotes.db`. It
+now shows George Sand in the notification and Joseph Joubert under the
+clock, over the app's `night_lake` background.
 
 Heroes: hub UD-TfIuU-pA (Vitaly Gariev), Lock Screen _8S9nEmCZK0 (Oliur), Home
 Screen 4gtMwj9uxwc (Amanz), Bible Iz6x7yHMkQA (Sixteen Miles Out), Focus
@@ -757,7 +797,8 @@ when the 404 is what you are working on.
 The quotes in the "Pick a topic. See what lands." picker are real quotes from
 `assets/quotes.db` in the `dailies` repo, and each chip is named after a real
 **section** of the app's topic list — Confidence, Humor, Direction, Calm,
-Starting, Self-kindness.
+Work, Self-kindness. (Work replaced a "Starting" chip in October 2026:
+Starting was never a section, so its chip could not pass the check below.)
 
 Two things have to stay true, and neither is enforced by anything:
 
@@ -809,8 +850,8 @@ in App Store Connect first; a new `ct` value simply appears. The values in use:
 | `web-about`   | `/about/`                               |
 | `web-404`     | the 404 page                            |
 
-The Spanish and Portuguese pages use the same values with the language on the
-end: `web-home-es`, `web-qr-pt`, `web-guides-es`, `web-404-pt` and so on.
+The translated pages use the same values with the language on the
+end: `web-home-es`, `web-qr-pt`, `web-guides-fr`, `web-404-de` and so on.
 
 A new page in an existing section reuses that section's value; a new section
 gets a new `web-` value and a row in this table. In the HTML the `&`s are
