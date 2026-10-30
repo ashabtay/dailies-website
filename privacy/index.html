@@ -47,7 +47,7 @@
       <h1>Privacy Policy</h1>
       <p class="lede">Some of what you tell Dailies stays on your phone. Most of how you have set it up is also sent to analytics. This sets out which is which, who sees it, and what you can switch off.</p>
       <div class="doc-meta">
-        <span>Last updated 29 October 2026</span>
+        <span>Last updated 30 October 2026</span>
         <span>Applies to the Dailies app and mydailies.app</span>
       </div>
     </div>
@@ -188,7 +188,8 @@
         <p>Dailies is also an app inside ChatGPT and Claude. When you ask one of them for a quote, it asks our server for one and shows it to you on a card.</p>
         <ul>
           <li><strong>What our server receives</strong>: the topic and language the assistant picked, and the identifiers of quotes already shown in that conversation, so none comes up twice. Never your messages, your name or your account.</li>
-          <li><strong>What we keep</strong>: a log line naming the topic and language, held by Cloudflare for a few days. Your internet address passes through Cloudflare so it can limit how fast any one address asks; we do not store it.</li>
+          <li><strong>What we keep</strong>: a log line naming the assistant, the topic and the language, held by Cloudflare for a few days. Your internet address passes through Cloudflare so it can limit how fast any one address asks; we do not store it.</li>
+          <li><strong>What we measure</strong>: for each quote, an analytics event in PostHog naming the assistant, the topic, the language, the quote, and whether it was the first or a later quote in that conversation. From the card, an event when it is shown and when its buttons are tapped. None of these events carries an identifier for you, your device or your conversation, so they count quotes and taps, not people.</li>
           <li><strong>Your conversation</strong> is between you and OpenAI or Anthropic, under their own privacy policies. We never see it.</li>
         </ul>
         <p>The card loads its photo and typefaces from our server. The link under it opens the App Store with a campaign tag, so we can count installs that started in an assistant, without knowing who you are.</p>
@@ -199,13 +200,13 @@
         <div class="table-scroll">
           <table>
             <tr><th>Who</th><th>What for</th><th>Their role</th></tr>
-            <tr><td><strong>PostHog</strong></td><td>App and website analytics</td><td><strong>Processor</strong>: acts only on our instructions, under a data processing agreement</td></tr>
+            <tr><td><strong>PostHog</strong></td><td>App, website and assistant analytics (section 6)</td><td><strong>Processor</strong>: acts only on our instructions, under a data processing agreement</td></tr>
             <tr><td><strong>Meta</strong></td><td>Ad measurement and targeting on the website; in the app, which ads lead to installs and trials (section 4)</td><td><strong>Independent controller</strong>: also uses the data for its own purposes under its own policy</td></tr>
             <tr><td><strong>Google</strong></td><td>Ad measurement and targeting, on the website only</td><td><strong>Independent controller</strong>: same</td></tr>
             <tr><td><strong>TikTok</strong></td><td>Ad measurement and targeting, on the website only</td><td><strong>Independent controller</strong>: same</td></tr>
             <tr><td><strong>Apple</strong></td><td>Distribution, payments, aggregate App Analytics, and whether an install came from an App Store search ad (section 4)</td><td><strong>Independent controller</strong> (see section 11)</td></tr>
             <tr><td><strong>OpenAI</strong> and <strong>Anthropic</strong></td><td>ChatGPT and Claude, when you ask them for a Dailies quote (section 6)</td><td><strong>Independent controller</strong>: your conversation is governed by their own policy</td></tr>
-            <tr><td><strong>Cloudflare</strong></td><td>Running the server behind Dailies in ChatGPT and Claude (section 6)</td><td>Processor: a short log of topic and language</td></tr>
+            <tr><td><strong>Cloudflare</strong></td><td>Running the server behind Dailies in ChatGPT and Claude (section 6)</td><td>Processor: a short log of assistant, topic and language</td></tr>
             <tr><td><strong>GitHub Pages (GitHub, Inc.)</strong></td><td>Serving the website</td><td>Processor: standard server logs</td></tr>
             <tr><td><strong>Google (Gmail)</strong></td><td>Receiving support email</td><td>Processor</td></tr>
           </table>
@@ -307,7 +308,7 @@
         <h2>14. How long anything is kept</h2>
         <ul>
           <li><strong>On your device:</strong> until you delete the app, and not a moment longer.</li>
-          <li><strong>Analytics events:</strong> kept for as long as they remain useful for understanding how Dailies is used. They are not deleted on a fixed schedule; what actually governs how long they survive is the retention setting on the analytics project itself. <strong>You can ask us to delete the events tied to your install at any time</strong> (see <a href="#rights">Your rights</a>).</li>
+          <li><strong>Analytics events:</strong> kept for as long as they remain useful for understanding how Dailies is used. They are not deleted on a fixed schedule; what actually governs how long they survive is the retention setting on the analytics project itself. <strong>You can ask us to delete the events tied to your install at any time</strong> (see <a href="#rights">Your rights</a>). Events from ChatGPT and Claude are tied to no one, so none of them can be traced back to you.</li>
           <li><strong>Advertising data held by Meta, Google and TikTok:</strong> under their own retention schedules, not ours.</li>
           <li><strong>Support emails:</strong> kept in our mailbox. We do not routinely clear out correspondence, so assume a message stays until you ask us to remove it, which you can do at any time, and we will.</li>
           <li><strong>Purchase records:</strong> as long as tax law requires, typically six or seven years.</li>
