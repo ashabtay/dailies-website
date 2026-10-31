@@ -29,6 +29,7 @@ The website for the Dailies app — https://mydailies.app
 | `/compare/dailies-vs-i-am` | `compare/dailies-vs-i-am/index.html` | Dailies vs I am (Monkey Taps) |
 | `/compare/dailies-vs-thinkup` | `compare/dailies-vs-thinkup/index.html` | Dailies vs ThinkUp (Precise Wellness) |
 | `/compare/dailies-vs-motivate` | `compare/dailies-vs-motivate/index.html` | Dailies vs Motivate (Brave New Logic) |
+| `/widget/motion.json` | `widget/motion.json` | Off switch for the app's moving Home Screen widget effects, read by the widget about hourly. `"motion": false` turns them off everywhere; `"offOn": ["27.2"]` only on those iOS versions (`"27"` = all of iOS 27). A missing or broken file leaves them on. Not a page: keep it out of the sitemap |
 | any missing path | `404.html` | The custom 404 |
 | `/es/…`, `/pt/…`, `/fr/…`, `/de/…` | `es/…/index.html` and so on | The same site in Mexican Spanish, Brazilian Portuguese, French and German. See [Languages](#languages) |
 
