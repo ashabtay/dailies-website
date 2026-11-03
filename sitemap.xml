@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -121,8 +121,58 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/guides/iphone-lock-screen-ideas/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/ideas-para-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ideias-para-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/idees-d-ecran-verrouille-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-ideen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/guides/new-iphone-setup/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/new-iphone-setup/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/configurar-un-iphone-nuevo/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/configurar-um-iphone-novo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/configurer-un-nouvel-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/neues-iphone-einrichten/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/new-iphone-setup/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/guides/turn-on-notifications-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/activar-las-notificaciones-de-una-app-en-el-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ativar-notificacoes-de-um-app-no-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/activer-les-notifications-d-une-app-sur-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/guides/change-or-delete-lock-screen-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/change-or-delete-lock-screen-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/cambiar-o-borrar-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/mudar-ou-apagar-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/changer-ou-supprimer-l-ecran-verrouille-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-aendern-oder-loeschen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/change-or-delete-lock-screen-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/guides/affirmations-on-iphone-lock-screen/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/affirmations-on-iphone-lock-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/afirmaciones-en-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/afirmacoes-na-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/affirmations-sur-l-ecran-verrouille-de-l-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/affirmationen-auf-dem-iphone-sperrbildschirm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/affirmations-on-iphone-lock-screen/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/blog/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/"/>
@@ -281,6 +331,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-to-use-your-phone-less/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/blog/new-years-resolutions/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/new-years-resolutions/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/propositos-de-ano-nuevo/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/resolucoes-de-ano-novo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/blog/resolutions-du-nouvel-an/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/blog/gute-vorsaetze-fuer-das-neue-jahr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/new-years-resolutions/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/compare/</loc>
     <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/compare/"/>
@@ -329,6 +389,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/comparer/dailies-vs-motivate/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/vergleich/dailies-vs-motivate/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/compare/dailies-vs-motivate/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/compare/best-motivational-quote-apps/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/compare/best-motivational-quote-apps/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/comparar/mejores-apps-de-frases-motivadoras/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/comparar/melhores-apps-de-frases-motivacionais/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/comparer/meilleures-applis-de-citations-motivantes/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/vergleich/beste-apps-fuer-motivationszitate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/compare/best-motivational-quote-apps/"/>
   </url>
   <url>
     <loc>https://mydailies.app/compare/dailies-vs-daily-quote/</loc>
@@ -444,7 +514,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/guias/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -543,8 +613,58 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/es/guias/ideas-para-la-pantalla-de-bloqueo-del-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/ideas-para-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ideias-para-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/idees-d-ecran-verrouille-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-ideen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/guias/configurar-un-iphone-nuevo/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/new-iphone-setup/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/configurar-un-iphone-nuevo/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/configurar-um-iphone-novo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/configurer-un-nouvel-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/neues-iphone-einrichten/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/new-iphone-setup/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/guias/activar-las-notificaciones-de-una-app-en-el-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/activar-las-notificaciones-de-una-app-en-el-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ativar-notificacoes-de-um-app-no-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/activer-les-notifications-d-une-app-sur-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/guias/cambiar-o-borrar-la-pantalla-de-bloqueo-del-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/change-or-delete-lock-screen-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/cambiar-o-borrar-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/mudar-ou-apagar-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/changer-ou-supprimer-l-ecran-verrouille-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-aendern-oder-loeschen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/change-or-delete-lock-screen-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/guias/afirmaciones-en-la-pantalla-de-bloqueo-del-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/affirmations-on-iphone-lock-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/afirmaciones-en-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/afirmacoes-na-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/affirmations-sur-l-ecran-verrouille-de-l-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/affirmationen-auf-dem-iphone-sperrbildschirm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/affirmations-on-iphone-lock-screen/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/es/blog/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/"/>
@@ -703,6 +823,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-to-use-your-phone-less/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/es/blog/propositos-de-ano-nuevo/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/new-years-resolutions/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/propositos-de-ano-nuevo/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/resolucoes-de-ano-novo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/blog/resolutions-du-nouvel-an/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/blog/gute-vorsaetze-fuer-das-neue-jahr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/new-years-resolutions/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/es/comparar/</loc>
     <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/compare/"/>
@@ -751,6 +881,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/comparer/dailies-vs-motivate/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/vergleich/dailies-vs-motivate/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/compare/dailies-vs-motivate/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/comparar/mejores-apps-de-frases-motivadoras/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/compare/best-motivational-quote-apps/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/comparar/mejores-apps-de-frases-motivadoras/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/comparar/melhores-apps-de-frases-motivacionais/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/comparer/meilleures-applis-de-citations-motivantes/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/vergleich/beste-apps-fuer-motivationszitate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/compare/best-motivational-quote-apps/"/>
   </url>
   <url>
     <loc>https://mydailies.app/es/comparar/dailies-vs-daily-quote/</loc>
@@ -854,7 +994,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/guias/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -953,8 +1093,58 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/pt/guias/ideias-para-a-tela-bloqueada-do-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/ideas-para-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ideias-para-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/idees-d-ecran-verrouille-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-ideen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/guias/configurar-um-iphone-novo/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/new-iphone-setup/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/configurar-un-iphone-nuevo/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/configurar-um-iphone-novo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/configurer-un-nouvel-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/neues-iphone-einrichten/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/new-iphone-setup/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/guias/ativar-notificacoes-de-um-app-no-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/activar-las-notificaciones-de-una-app-en-el-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ativar-notificacoes-de-um-app-no-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/activer-les-notifications-d-une-app-sur-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/guias/mudar-ou-apagar-a-tela-bloqueada-do-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/change-or-delete-lock-screen-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/cambiar-o-borrar-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/mudar-ou-apagar-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/changer-ou-supprimer-l-ecran-verrouille-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-aendern-oder-loeschen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/change-or-delete-lock-screen-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/guias/afirmacoes-na-tela-bloqueada-do-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/affirmations-on-iphone-lock-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/afirmaciones-en-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/afirmacoes-na-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/affirmations-sur-l-ecran-verrouille-de-l-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/affirmationen-auf-dem-iphone-sperrbildschirm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/affirmations-on-iphone-lock-screen/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/pt/blog/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/"/>
@@ -1113,6 +1303,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-to-use-your-phone-less/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/pt/blog/resolucoes-de-ano-novo/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/new-years-resolutions/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/propositos-de-ano-nuevo/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/resolucoes-de-ano-novo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/blog/resolutions-du-nouvel-an/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/blog/gute-vorsaetze-fuer-das-neue-jahr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/new-years-resolutions/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/pt/comparar/</loc>
     <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/compare/"/>
@@ -1161,6 +1361,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/comparer/dailies-vs-motivate/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/vergleich/dailies-vs-motivate/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/compare/dailies-vs-motivate/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/comparar/melhores-apps-de-frases-motivacionais/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/compare/best-motivational-quote-apps/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/comparar/mejores-apps-de-frases-motivadoras/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/comparar/melhores-apps-de-frases-motivacionais/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/comparer/meilleures-applis-de-citations-motivantes/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/vergleich/beste-apps-fuer-motivationszitate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/compare/best-motivational-quote-apps/"/>
   </url>
   <url>
     <loc>https://mydailies.app/pt/comparar/dailies-vs-daily-quote/</loc>
@@ -1264,7 +1474,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/fr/guides/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -1363,8 +1573,58 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/fr/guides/idees-d-ecran-verrouille-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/ideas-para-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ideias-para-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/idees-d-ecran-verrouille-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-ideen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/fr/guides/configurer-un-nouvel-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/new-iphone-setup/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/configurar-un-iphone-nuevo/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/configurar-um-iphone-novo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/configurer-un-nouvel-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/neues-iphone-einrichten/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/new-iphone-setup/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/fr/guides/activer-les-notifications-d-une-app-sur-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/activar-las-notificaciones-de-una-app-en-el-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ativar-notificacoes-de-um-app-no-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/activer-les-notifications-d-une-app-sur-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/fr/guides/changer-ou-supprimer-l-ecran-verrouille-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/change-or-delete-lock-screen-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/cambiar-o-borrar-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/mudar-ou-apagar-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/changer-ou-supprimer-l-ecran-verrouille-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-aendern-oder-loeschen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/change-or-delete-lock-screen-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/fr/guides/affirmations-sur-l-ecran-verrouille-de-l-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/affirmations-on-iphone-lock-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/afirmaciones-en-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/afirmacoes-na-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/affirmations-sur-l-ecran-verrouille-de-l-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/affirmationen-auf-dem-iphone-sperrbildschirm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/affirmations-on-iphone-lock-screen/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/fr/blog/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/"/>
@@ -1523,6 +1783,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-to-use-your-phone-less/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/fr/blog/resolutions-du-nouvel-an/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/new-years-resolutions/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/propositos-de-ano-nuevo/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/resolucoes-de-ano-novo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/blog/resolutions-du-nouvel-an/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/blog/gute-vorsaetze-fuer-das-neue-jahr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/new-years-resolutions/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/fr/comparer/</loc>
     <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/compare/"/>
@@ -1571,6 +1841,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/comparer/dailies-vs-motivate/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/vergleich/dailies-vs-motivate/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/compare/dailies-vs-motivate/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/fr/comparer/meilleures-applis-de-citations-motivantes/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/compare/best-motivational-quote-apps/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/comparar/mejores-apps-de-frases-motivadoras/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/comparar/melhores-apps-de-frases-motivacionais/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/comparer/meilleures-applis-de-citations-motivantes/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/vergleich/beste-apps-fuer-motivationszitate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/compare/best-motivational-quote-apps/"/>
   </url>
   <url>
     <loc>https://mydailies.app/fr/comparer/dailies-vs-daily-quote/</loc>
@@ -1674,7 +1954,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/de/anleitungen/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -1773,8 +2053,58 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-ideen/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/ideas-para-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ideias-para-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/idees-d-ecran-verrouille-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-ideen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/de/anleitungen/neues-iphone-einrichten/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/new-iphone-setup/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/configurar-un-iphone-nuevo/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/configurar-um-iphone-novo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/configurer-un-nouvel-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/neues-iphone-einrichten/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/new-iphone-setup/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/activar-las-notificaciones-de-una-app-en-el-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ativar-notificacoes-de-um-app-no-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/activer-les-notifications-d-une-app-sur-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-aendern-oder-loeschen/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/change-or-delete-lock-screen-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/cambiar-o-borrar-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/mudar-ou-apagar-a-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/changer-ou-supprimer-l-ecran-verrouille-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-aendern-oder-loeschen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/change-or-delete-lock-screen-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/de/anleitungen/affirmationen-auf-dem-iphone-sperrbildschirm/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/affirmations-on-iphone-lock-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/afirmaciones-en-la-pantalla-de-bloqueo-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/afirmacoes-na-tela-bloqueada-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/affirmations-sur-l-ecran-verrouille-de-l-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/affirmationen-auf-dem-iphone-sperrbildschirm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/affirmations-on-iphone-lock-screen/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/de/blog/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/"/>
@@ -1933,6 +2263,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/how-to-use-your-phone-less/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/de/blog/gute-vorsaetze-fuer-das-neue-jahr/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/new-years-resolutions/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/propositos-de-ano-nuevo/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/resolucoes-de-ano-novo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/blog/resolutions-du-nouvel-an/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/blog/gute-vorsaetze-fuer-das-neue-jahr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/new-years-resolutions/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/de/vergleich/</loc>
     <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/compare/"/>
@@ -1981,6 +2321,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/comparer/dailies-vs-motivate/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/vergleich/dailies-vs-motivate/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/compare/dailies-vs-motivate/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/de/vergleich/beste-apps-fuer-motivationszitate/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/compare/best-motivational-quote-apps/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/comparar/mejores-apps-de-frases-motivadoras/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/comparar/melhores-apps-de-frases-motivacionais/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/comparer/meilleures-applis-de-citations-motivantes/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/vergleich/beste-apps-fuer-motivationszitate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/compare/best-motivational-quote-apps/"/>
   </url>
   <url>
     <loc>https://mydailies.app/de/vergleich/dailies-vs-daily-quote/</loc>
