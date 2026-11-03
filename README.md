@@ -18,13 +18,19 @@ The website for the Dailies app — https://mydailies.app
 | `/guides/customize-iphone-lock-screen` | `guides/customize-iphone-lock-screen/index.html` | How to customize the iPhone Lock Screen |
 | `/guides/quote-wallpaper-iphone` | `guides/quote-wallpaper-iphone/index.html` | How to make a quote wallpaper on iPhone |
 | `/guides/add-widgets-on-ipad` | `guides/add-widgets-on-ipad/index.html` | How to add widgets on iPad, Home Screen and Lock Screen |
-| `/blog` | `blog/index.html` | Blog hub, linking the fifteen posts below |
-| `/blog/<slug>` | `blog/<slug>/index.html` | Motivation posts: eight explainers and seven quote collections. See [The blog](#the-blog) |
+| `/guides/iphone-lock-screen-ideas` | `guides/iphone-lock-screen-ideas/index.html` | iPhone Lock Screen ideas for iOS 27 |
+| `/guides/new-iphone-setup` | `guides/new-iphone-setup/index.html` | Setting up a new iPhone: Lock Screen, widgets and Focus |
+| `/guides/turn-on-notifications-iphone` | `guides/turn-on-notifications-iphone/index.html` | How to turn on notifications for an app on iPhone |
+| `/guides/change-or-delete-lock-screen-iphone` | `guides/change-or-delete-lock-screen-iphone/index.html` | How to change or delete a Lock Screen on iPhone |
+| `/guides/affirmations-on-iphone-lock-screen` | `guides/affirmations-on-iphone-lock-screen/index.html` | How to put affirmations on your iPhone Lock Screen |
+| `/blog` | `blog/index.html` | Blog hub, linking the sixteen posts below |
+| `/blog/<slug>` | `blog/<slug>/index.html` | Motivation posts: nine explainers and seven quote collections. See [The blog](#the-blog) |
 | `/about` | `about/index.html` | Who makes Dailies, the editorial rules, and the contact route |
 | `/terms` | `terms/index.html` | Terms of Use |
 | `/privacy` | `privacy/index.html` | Privacy Policy |
 | `/cookies` | `cookies/index.html` | Cookie Policy |
-| `/compare` | `compare/index.html` | Comparison hub, linking the four articles below |
+| `/compare` | `compare/index.html` | Comparison hub, linking the five articles below |
+| `/compare/best-motivational-quote-apps` | `compare/best-motivational-quote-apps/index.html` | The best motivational quote apps for iPhone: all five side by side |
 | `/compare/dailies-vs-motivation` | `compare/dailies-vs-motivation/index.html` | Dailies vs Motivation (Monkey Taps) |
 | `/compare/dailies-vs-i-am` | `compare/dailies-vs-i-am/index.html` | Dailies vs I am (Monkey Taps) |
 | `/compare/dailies-vs-thinkup` | `compare/dailies-vs-thinkup/index.html` | Dailies vs ThinkUp (Precise Wellness) |
@@ -451,6 +457,8 @@ Screen 4gtMwj9uxwc (Amanz), Bible Iz6x7yHMkQA (Sixteen Miles Out), Focus
 DCCwdPccREs (Irwan), widget not updating cQ38vs4NFP4 (VD Photography), notifications not working L5DxWLmywmM (freestocks), customize the Lock Screen x5-ESxKi1fA (Vince Picipo), quote wallpaper vZg8GN5WDp0 (Omar Al-Ghosson), widgets on iPad 7OFnb7NOvjw (Henry Ascroft). The Bible
 guide's verse card is the app's own `sky_cloud_line` background.
 
+The five guides added in November 2026 (Lock Screen ideas, new iPhone setup, turning on notifications, changing or deleting a Lock Screen, affirmations) are the exception: their heroes are crops of the app's own backgrounds, the same source as the blog, rather than Unsplash photos of phones (`night_milky_way`, `sky_above_the_clouds`, `night_boathouse`, `mtn_fjord`, `field_dandelions`). They carry no `zoom-*` screens yet, and their steps were written from Apple's documentation and iOS 27 coverage, not walked on a phone: walk them and move the date line when you do. Swap a hero for a phone photo whenever one is wanted.
+
 The hub's card icons are inline SVG line drawings, the same `.ico` style as the
 blog hub.
 
@@ -532,7 +540,7 @@ related posts.
 
 ## The comparison pages
 
-`/compare` and its four articles are SEO pages: somebody searching *dailies vs
+`/compare` and its five articles are SEO pages: somebody searching *dailies vs
 motivation* or *best daily quotes app* should land on one. They use `doc.css`
 and the same nav and footer as the document pages, so there is nothing new to
 maintain in the styling.

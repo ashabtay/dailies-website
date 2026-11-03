@@ -8,8 +8,8 @@
     "sig": "160d3b0cefd9f874241adff402aab8b9f7ab0f7a4812b6b28284aa13370d7048"
   },
   "/blog/": {
-    "lastmod": "2026-10-29",
-    "sig": "98c1da28d6623de1b72ec0a6b07305d7dc3074dac7a099e508bc6d5c39ac3c09"
+    "lastmod": "2026-11-03",
+    "sig": "0b4f86517ed99b7a97af89c59a99bd49913399bc83e6f4797473e7f7670d8a5c"
   },
   "/blog/discipline-and-consistency-quotes/": {
     "lastmod": "2026-10-29",
@@ -55,6 +55,10 @@
     "lastmod": "2026-10-29",
     "sig": "acde63337dd85eb85c8bf11e51ffad618bb6a1045d15d1272c521b03df979620"
   },
+  "/blog/new-years-resolutions/": {
+    "lastmod": "2026-11-03",
+    "sig": "2d640c490507273bdda32bd8e1bc2313d1c2b00c490989d26b3350a9fd5c9007"
+  },
   "/blog/quotes-about-starting-over/": {
     "lastmod": "2026-10-29",
     "sig": "3bdede87088ce421c14553343ed28588dcb856e880a653e1fcdab11b5e093242"
@@ -72,8 +76,12 @@
     "sig": "50d5b4983404e0d712fefa5f366813223848d6bd7b3e56517fb8d3e8ee14a156"
   },
   "/compare/": {
-    "lastmod": "2026-10-29",
-    "sig": "891df578b587561d5c169413a03342af5c8f96a14d4c62a8f9023ac6809e9c3f"
+    "lastmod": "2026-11-03",
+    "sig": "e101197d2c5159b927313de7a0d72bb23b5157e99eeaca9096d6de295936af38"
+  },
+  "/compare/best-motivational-quote-apps/": {
+    "lastmod": "2026-11-03",
+    "sig": "e39115a52a0ba6e1fdbd5751d4f98d3cf6ee1197d25169eaa6725670ee1f67a1"
   },
   "/compare/dailies-vs-i-am/": {
     "lastmod": "2026-10-29",
@@ -100,8 +108,12 @@
     "sig": "83e5a20d3dcd3caf333a115fa862caf1d0d2943b5ecbbf2ab317090fbb2f476c"
   },
   "/de/anleitungen/": {
-    "lastmod": "2026-10-29",
-    "sig": "85bd164d19200cf83a99eddf6434af22cda45e51099c792ea5fcb5f280d4efb6"
+    "lastmod": "2026-11-03",
+    "sig": "f737c15a7d4ed4974bb672025fb118985ac097a52c83d680b3c8770fc4172e8d"
+  },
+  "/de/anleitungen/affirmationen-auf-dem-iphone-sperrbildschirm/": {
+    "lastmod": "2026-11-03",
+    "sig": "99198cebf1405887cd8462fa251aa2f39823bb6782d80b1bda1b7488fb7b7321"
   },
   "/de/anleitungen/bibelvers-auf-dem-iphone-sperrbildschirm/": {
     "lastmod": "2026-10-29",
@@ -115,13 +127,29 @@
     "lastmod": "2026-10-29",
     "sig": "16586283adbfe3deef414f68e03de08648ad19cf0348a88594bffc2aa3cdc1be"
   },
+  "/de/anleitungen/iphone-sperrbildschirm-aendern-oder-loeschen/": {
+    "lastmod": "2026-11-03",
+    "sig": "71889754c5c0fefd9e5e82f767105ce8d4f3dcc51892fed534b6ba0929ff6c18"
+  },
   "/de/anleitungen/iphone-sperrbildschirm-anpassen/": {
     "lastmod": "2026-10-29",
     "sig": "c78b09835072b5297e23651a95d099817a858bbdc9f6a7bddd38f98a2f0e263b"
   },
+  "/de/anleitungen/iphone-sperrbildschirm-ideen/": {
+    "lastmod": "2026-11-03",
+    "sig": "8a329cf994b8e3c034af0ca5059f5ae51e03bba0f818d2f6e7b0a02c32509713"
+  },
   "/de/anleitungen/iphone-widget-aktualisiert-nicht/": {
     "lastmod": "2026-10-29",
     "sig": "2180cf4351c7f025507d724d848b7fab97cd64bf1f0fddd95a52b330dc37a5f8"
+  },
+  "/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "3276c1af662f15bfeffb80520384bb10d3aa0ac9a4de65bce203f2df2fa4d062"
+  },
+  "/de/anleitungen/neues-iphone-einrichten/": {
+    "lastmod": "2026-11-03",
+    "sig": "9d86eb88b52a1c3f0685778c47ba4a9824dd4c92b756473416ff33d1c00221be"
   },
   "/de/anleitungen/widget-zum-home-bildschirm-hinzufuegen/": {
     "lastmod": "2026-10-29",
@@ -140,8 +168,8 @@
     "sig": "48cfc9545f6dc404dda8778f45eacdc113534edf8dc8b5d80d2b954bc53b7c69"
   },
   "/de/blog/": {
-    "lastmod": "2026-10-29",
-    "sig": "5c7d1a065f2f40c37681b3c3eac41e7b49fd44df7e95e9ee2b853230a3a68ff2"
+    "lastmod": "2026-11-03",
+    "sig": "9e66354151be9ffd00fbb4065c788bc045d5e82c317b840b922cf29153050c3b"
   },
   "/de/blog/aufhoeren-zu-gruebeln/": {
     "lastmod": "2026-10-29",
@@ -154,6 +182,10 @@
   "/de/blog/funktionieren-affirmationen/": {
     "lastmod": "2026-10-29",
     "sig": "f7bcf6469dbf2d6e7493dd5973898eabb4fa2253019e31445498b371ebefd6b8"
+  },
+  "/de/blog/gute-vorsaetze-fuer-das-neue-jahr/": {
+    "lastmod": "2026-11-03",
+    "sig": "99514549202544aee06a82bc6fd48d8d4abf5f426f7ef98711fe57904cdc3a57"
   },
   "/de/blog/motivation-oder-disziplin/": {
     "lastmod": "2026-10-29",
@@ -205,15 +237,19 @@
   },
   "/de/hilfe/": {
     "lastmod": "2026-11-03",
-    "sig": "f1cd1583a1dbc3760fe9c38c13cfc5adf36ee91041f5a8493769b611fc58f98e"
+    "sig": "0c5d3dd2fd311b4ce265b78ca47cea069f147b3138325477c1fe4a94ed774a40"
   },
   "/de/ueber/": {
     "lastmod": "2026-10-29",
     "sig": "cc1221cfc4d40b4b320d6f916c5b2f9c1a3bfcda29341c85bddf1fb8699f709f"
   },
   "/de/vergleich/": {
-    "lastmod": "2026-10-29",
-    "sig": "27fa6925b0c0fd247cde7eb60bb41a715bed231dfd05ea0cf4d745f253d191e6"
+    "lastmod": "2026-11-03",
+    "sig": "25fc18e1c33f7a77b927e9eff6e9f28e0309a2fcfc60ac052304ba6fdb20a4b9"
+  },
+  "/de/vergleich/beste-apps-fuer-motivationszitate/": {
+    "lastmod": "2026-11-03",
+    "sig": "e908a2a6d44b222c06c1a5fda09c4e3f35462ad1f6e561b9f7b163d36188ccab"
   },
   "/de/vergleich/dailies-vs-i-am/": {
     "lastmod": "2026-10-29",
@@ -241,11 +277,11 @@
   },
   "/es/ayuda/": {
     "lastmod": "2026-11-03",
-    "sig": "1b2cae9a8d623b11bc269403c6b7ab43be449bfc611eb724bf586239f2a69a91"
+    "sig": "f0aa218245eda51c7eee688301bda99e67e0b5db2e3499bd50aef8d8345c487e"
   },
   "/es/blog/": {
-    "lastmod": "2026-10-29",
-    "sig": "48b72196366a5ed228dc49813807be61abc3d33c1f4fdf91d8e10425d930e58f"
+    "lastmod": "2026-11-03",
+    "sig": "74ffbb61df0b153b258b1031f16d94e1280c8bbc142ecec42d5e0af2c87c376b"
   },
   "/es/blog/como-dejar-de-procrastinar/": {
     "lastmod": "2026-10-29",
@@ -307,9 +343,13 @@
     "lastmod": "2026-10-29",
     "sig": "4dad12379803a9dd5e15b903e183bae292f52a9a120c146c0ead91acac4e3f35"
   },
+  "/es/blog/propositos-de-ano-nuevo/": {
+    "lastmod": "2026-11-03",
+    "sig": "c9cd99176a302f9cfe3bea94129c18d427fcfcd874a0fe005b61c7e1a0579cc7"
+  },
   "/es/comparar/": {
-    "lastmod": "2026-10-29",
-    "sig": "fb718be83c46d937472712989c1745765af7f0249c2634e403a70b83023c3d73"
+    "lastmod": "2026-11-03",
+    "sig": "ceca6c06e2cf87d4d138de322cf32a7f30fde6aac9112d8b5aa8c12cb65f8f9c"
   },
   "/es/comparar/dailies-vs-i-am/": {
     "lastmod": "2026-10-29",
@@ -327,9 +367,21 @@
     "lastmod": "2026-10-29",
     "sig": "0ee5cdde2ef92072a5dcb2f8b7fb0beb49153c3599a1dffd947591f458492a43"
   },
+  "/es/comparar/mejores-apps-de-frases-motivadoras/": {
+    "lastmod": "2026-11-03",
+    "sig": "7db9d45a0b236ef67634a290dfdced95d86c8449cd8fb3f4f4a5db12f1c0c60e"
+  },
   "/es/guias/": {
-    "lastmod": "2026-10-29",
-    "sig": "cf63a743d8b4b79c615da449df7e0298cda88d6f63fb4df1c99c5ee47cb7e945"
+    "lastmod": "2026-11-03",
+    "sig": "3d4b1fd901437ce5e49ecd3d556ceafa42b6b1a2e77960ac1036b06d27ec9ed0"
+  },
+  "/es/guias/activar-las-notificaciones-de-una-app-en-el-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "d80e061d7e5793dabcd59109d363d2e9472a33ec4291e7247fcc101b2f3703dd"
+  },
+  "/es/guias/afirmaciones-en-la-pantalla-de-bloqueo-del-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "c83198c37245918f015095915ac8d758908658c9f690a91025eda5d310648552"
   },
   "/es/guias/agregar-un-widget-a-la-pantalla-de-inicio/": {
     "lastmod": "2026-10-29",
@@ -339,9 +391,17 @@
     "lastmod": "2026-10-29",
     "sig": "8651ec2656ca044dea4ea09a516c137c6e30e35ec7dd12f71db46abaa86c4522"
   },
+  "/es/guias/cambiar-o-borrar-la-pantalla-de-bloqueo-del-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "8dec9c0b1a5e160c33b6df4e2cc652dd8d135d4714beeabca8ea5ba03ca51c7e"
+  },
   "/es/guias/concentracion-pantalla-de-bloqueo-iphone/": {
     "lastmod": "2026-10-29",
     "sig": "3523a30d57abb19ac88f0d05fb1a9f5c36e37cc9de740494cdf53d28f377dc32"
+  },
+  "/es/guias/configurar-un-iphone-nuevo/": {
+    "lastmod": "2026-11-03",
+    "sig": "52f11ca19e52e8dc1e42f8252eff29dd90bcc39c43499000141a3d48a5690a52"
   },
   "/es/guias/fondo-de-pantalla-con-frases-en-el-iphone/": {
     "lastmod": "2026-10-29",
@@ -350,6 +410,10 @@
   "/es/guias/frases-en-la-pantalla-de-bloqueo-del-iphone/": {
     "lastmod": "2026-10-29",
     "sig": "18db1583ff3cbd74c36965f4ce34545459a978ced7544a15817fd9e5b249040b"
+  },
+  "/es/guias/ideas-para-la-pantalla-de-bloqueo-del-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "59d17bb52fd4a5d5940be9f0f183fbf2e72a8902eb40f3e25e860fa919e56ed5"
   },
   "/es/guias/no-me-llegan-las-notificaciones-del-iphone/": {
     "lastmod": "2026-10-29",
@@ -377,11 +441,11 @@
   },
   "/fr/aide/": {
     "lastmod": "2026-11-03",
-    "sig": "9a8c38c454df0b62eca976468a37c1c6e12fb9c91db063c09ae367b334590dda"
+    "sig": "2e3122b803d9dad5649966435774f1da58a7c4b6173ea346cb89584c92a7adff"
   },
   "/fr/blog/": {
-    "lastmod": "2026-10-29",
-    "sig": "8bf9df498a52f9c6e40f83301fa5ca4caa0540893d5c5212bf7178639ddb62e5"
+    "lastmod": "2026-11-03",
+    "sig": "842d500b9f2ad0156331e8dd49dac7c0373c789088f65d8eccaa9290efc73c86"
   },
   "/fr/blog/citations-contre-l-anxiete-et-la-rumination/": {
     "lastmod": "2026-10-29",
@@ -443,9 +507,13 @@
     "lastmod": "2026-10-29",
     "sig": "b1629575dbc187ab6c0065eb84ecbc4df4c170383604e0b823041188119e37f2"
   },
+  "/fr/blog/resolutions-du-nouvel-an/": {
+    "lastmod": "2026-11-03",
+    "sig": "e68bf4f48cb858becec059210e6db23afcf6d05ce7dbc3aa90fdafc1c88b4b14"
+  },
   "/fr/comparer/": {
-    "lastmod": "2026-10-29",
-    "sig": "25c1e5b49e27c315597a82b051700d1451d57455c74813bc3900463fb91ba3ae"
+    "lastmod": "2026-11-03",
+    "sig": "7dcb7f0b290d3416705d7776e3528d9824dd0ed42d85c2158e85b678363e1340"
   },
   "/fr/comparer/dailies-vs-i-am/": {
     "lastmod": "2026-10-29",
@@ -463,9 +531,21 @@
     "lastmod": "2026-10-29",
     "sig": "80332ab10f748f07a1728c0093908d43cf288ef54f7beae7600bb3cfe117cfe4"
   },
+  "/fr/comparer/meilleures-applis-de-citations-motivantes/": {
+    "lastmod": "2026-11-03",
+    "sig": "7160ff2deb8ee27226eb7c76d272f22247f158146d44755fd355e403e901386c"
+  },
   "/fr/guides/": {
-    "lastmod": "2026-10-29",
-    "sig": "0463d4b951407bd4160ff9c33a02e7dab7053b51a5c3d8787ac75d74f25b4fe1"
+    "lastmod": "2026-11-03",
+    "sig": "80e648a7896f5066d04c0db87ce4ca78a877e49512ba2c7c3f2ab3361751a72f"
+  },
+  "/fr/guides/activer-les-notifications-d-une-app-sur-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "db96b49b6c622f4cfb86534e60aebec18e0d4d04d63dfbbfe0908d7260a11e6b"
+  },
+  "/fr/guides/affirmations-sur-l-ecran-verrouille-de-l-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "3ce76066ea75dd46930e32b0df487c356ec501f3ade34a35d4cda81ed510eaa1"
   },
   "/fr/guides/ajouter-des-widgets-sur-l-ipad/": {
     "lastmod": "2026-10-29",
@@ -475,6 +555,10 @@
     "lastmod": "2026-10-29",
     "sig": "21f050754d75ac6c6187b81af4ec5c2384d9330ad2adb889e582d26721aa45ce"
   },
+  "/fr/guides/changer-ou-supprimer-l-ecran-verrouille-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "806037502a350ae185ff36045dc5dbf78917c82875c2562d88346f424c0ee20f"
+  },
   "/fr/guides/citations-sur-l-ecran-verrouille-de-l-iphone/": {
     "lastmod": "2026-10-29",
     "sig": "60d4c4c074aabf980a1fe2593016fed8d88878a6d41da9852805302d3fe5feb3"
@@ -483,9 +567,17 @@
     "lastmod": "2026-10-29",
     "sig": "9193f9bc0e086a7e63f99b29ee9cff600aa84dbb0004a80003592cb028b24b12"
   },
+  "/fr/guides/configurer-un-nouvel-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "49aeb0590138acbc4298d8a4dec6f79bae1f62300eeb6dcc471daf185d5b4480"
+  },
   "/fr/guides/fond-d-ecran-avec-citation-iphone/": {
     "lastmod": "2026-10-29",
     "sig": "0c34b3d093f90dcfa524a5d39607275df2cc1633ee92489c7ef5ca20c5cbe6aa"
+  },
+  "/fr/guides/idees-d-ecran-verrouille-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "2c996c483556a6f7053d582e2b2afecd50a82c42f935e5615faf553be2f6cb5d"
   },
   "/fr/guides/notifications-iphone-ne-fonctionnent-pas/": {
     "lastmod": "2026-10-29",
@@ -504,8 +596,8 @@
     "sig": "7075b837b60dcfd140b91968b80e07ba9fb58c129598a1bde691e21f347f9263"
   },
   "/guides/": {
-    "lastmod": "2026-10-29",
-    "sig": "6e9acec48ec45516fb0a17ca8b7cdcd42abbdb69ad64cae5b9f2a6ffa8618ec4"
+    "lastmod": "2026-11-03",
+    "sig": "0a128b2b2d6a20eda69ff8b0af8d75921c3270dfccb6a435e75d11884aa4049c"
   },
   "/guides/add-a-widget-to-your-home-screen/": {
     "lastmod": "2026-10-29",
@@ -515,9 +607,17 @@
     "lastmod": "2026-10-29",
     "sig": "1ee37be9e5d8f50fd58815b49f3de0de9e44130b2692b290aef18347586d6470"
   },
+  "/guides/affirmations-on-iphone-lock-screen/": {
+    "lastmod": "2026-11-03",
+    "sig": "dd94a9d0470aea9d43bfb2a250798b69fea5bfb49dbd2e1b5da746090d5092ab"
+  },
   "/guides/bible-verse-on-iphone-lock-screen/": {
     "lastmod": "2026-10-29",
     "sig": "23ae01bbfd7e21d1e76f25385c6c303ab32eb5089d24877ef17de983c3473b6b"
+  },
+  "/guides/change-or-delete-lock-screen-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "ba6e2f16665c9ac999851f053b5fd05a27850ae67e98b6bdaa52f4b004bfea80"
   },
   "/guides/customize-iphone-lock-screen/": {
     "lastmod": "2026-10-29",
@@ -527,6 +627,10 @@
     "lastmod": "2026-10-29",
     "sig": "2656798a8289d26188b45aa7a9e61e3a7ee61985be79e7d3d34c6de186eb600e"
   },
+  "/guides/iphone-lock-screen-ideas/": {
+    "lastmod": "2026-11-03",
+    "sig": "456af396614b3c33630485e6fd61c1c3ee3ce99a113fbe18b1eda0e36b40374f"
+  },
   "/guides/iphone-notifications-not-working/": {
     "lastmod": "2026-10-29",
     "sig": "79b4f21e617e201182179f25a8b35e003de149c21a8f7e81b38971eee9dcb850"
@@ -534,6 +638,10 @@
   "/guides/iphone-widget-not-updating/": {
     "lastmod": "2026-10-29",
     "sig": "2c6e0afce43f66dbae14be54502e64674da5cde0d89f65eebb0feff250f10fa6"
+  },
+  "/guides/new-iphone-setup/": {
+    "lastmod": "2026-11-03",
+    "sig": "0f2a810c6bd0bd6df4d4a434d246a16e7d4178947ac35f65640c8fea413f0f7e"
   },
   "/guides/quote-wallpaper-iphone/": {
     "lastmod": "2026-10-29",
@@ -543,9 +651,13 @@
     "lastmod": "2026-10-29",
     "sig": "b19bb3938370b4f88eeaa72f272c978fbb9d73122b3895367bb00733ccef8a03"
   },
+  "/guides/turn-on-notifications-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "dda96e586cae35233b7f99e37dbcd8a92818160e96a91e9046f08be448cb47a1"
+  },
   "/help/": {
     "lastmod": "2026-11-03",
-    "sig": "fbf9f1e055b99be1023eee2e84ff730e9968ce7eedc34a12051c9286aa9f15cb"
+    "sig": "6d7ba82f23dcf61e14c679d7f03b72bae4cc0f572eb27288f9691697794b4055"
   },
   "/privacy/": {
     "lastmod": "2026-11-03",
@@ -557,11 +669,11 @@
   },
   "/pt/ajuda/": {
     "lastmod": "2026-11-03",
-    "sig": "4184bd5a70be31530d367c79a4888376392038db4ac20e62c59c45bbc0379cf6"
+    "sig": "27783ee491b2aa505f099f093639cb7b656bf2f64230584681181b3d5fd5a227"
   },
   "/pt/blog/": {
-    "lastmod": "2026-10-29",
-    "sig": "57bc11f2f3bfcf5b1db22aa4611a1fc4f9ab9493e4ea8830fade4b80bf9fb7de"
+    "lastmod": "2026-11-03",
+    "sig": "d5587c9af27bdda5d8eebda074b1460a4df03c22aaed15a924f800f6382255bc"
   },
   "/pt/blog/afirmacoes-funcionam/": {
     "lastmod": "2026-10-29",
@@ -623,9 +735,13 @@
     "lastmod": "2026-10-29",
     "sig": "e2b79fc0fe116b60e4cb33e529a0e71df94c33c1df7aefd0feae30142f27984d"
   },
+  "/pt/blog/resolucoes-de-ano-novo/": {
+    "lastmod": "2026-11-03",
+    "sig": "08e96e3ea311566f4821c5e17187315614f2f189918a27e35f322fc33718910c"
+  },
   "/pt/comparar/": {
-    "lastmod": "2026-10-29",
-    "sig": "982faa27b7d391e78b5757f8ce04d12df07b808ead662a2e6b84ce4194cde712"
+    "lastmod": "2026-11-03",
+    "sig": "921a4dfbe7b1bf73424be9bce8f31ba641731a72dbb7a43d4538a9a81ccb7843"
   },
   "/pt/comparar/dailies-vs-i-am/": {
     "lastmod": "2026-10-29",
@@ -643,9 +759,13 @@
     "lastmod": "2026-10-29",
     "sig": "cb26a9f99e52c8795e7bfc40ee764b14bd22ce65a0fa597298c0b4688a6df4d9"
   },
+  "/pt/comparar/melhores-apps-de-frases-motivacionais/": {
+    "lastmod": "2026-11-03",
+    "sig": "b3da00b6ea203c9566f16775d31d947c19adb88d9189a054fdb3077244386608"
+  },
   "/pt/guias/": {
-    "lastmod": "2026-10-29",
-    "sig": "a0ec71f2f2f3e1d4d107b1dd8e6aebc328bcecf877cc37996f297620d5301a09"
+    "lastmod": "2026-11-03",
+    "sig": "aacf5799671e1d64462e59cdd09bfcc9f2d1c306e5a38700e07cd46ddf04e66b"
   },
   "/pt/guias/adicionar-um-widget-na-tela-de-inicio/": {
     "lastmod": "2026-10-29",
@@ -655,6 +775,18 @@
     "lastmod": "2026-10-29",
     "sig": "929c09b5c5961f09024fa2ad5a77c46116f47e6c1e7c80a11588820b5a68342f"
   },
+  "/pt/guias/afirmacoes-na-tela-bloqueada-do-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "f496f4fc2e907ca12dd21aec8297ae251d110a05fef1a115b9655b04f0d334f1"
+  },
+  "/pt/guias/ativar-notificacoes-de-um-app-no-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "5a49ebc3e14890ca5ed9a0b5711e564ed3795f7950c922049d261824b4cd5e54"
+  },
+  "/pt/guias/configurar-um-iphone-novo/": {
+    "lastmod": "2026-11-03",
+    "sig": "b17c264656c1facb3804512bc9ff034af8999c75791874518b1142fa88941141"
+  },
   "/pt/guias/foco-tela-bloqueada-iphone/": {
     "lastmod": "2026-10-29",
     "sig": "7df7c7609f0dda2fc884ad96fb3416d5a336717717d425a2cecfe94df5211baf"
@@ -662,6 +794,14 @@
   "/pt/guias/frases-na-tela-bloqueada-do-iphone/": {
     "lastmod": "2026-10-29",
     "sig": "a65f98ca8030e969633504551d6b4b6662e4bb56f47ca95c240d5366cc8555c7"
+  },
+  "/pt/guias/ideias-para-a-tela-bloqueada-do-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "420fda8e3f169c8371ebe8de5d60ec640f75f08ac122f36947926049dc97e72e"
+  },
+  "/pt/guias/mudar-ou-apagar-a-tela-bloqueada-do-iphone/": {
+    "lastmod": "2026-11-03",
+    "sig": "d55c90754cbb678047e147560f94ae93b9d478d864d94e421a8f0f5f69ada12f"
   },
   "/pt/guias/notificacoes-do-iphone-nao-chegam/": {
     "lastmod": "2026-10-29",
