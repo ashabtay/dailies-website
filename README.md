@@ -911,7 +911,7 @@ pictures; in November 2026 ChatGPT's card for Dailies linked to this site and
 showed another app's screenshots.
 
 The screenshots are the band **What it looks like on your iPhone** on each home
-page, `img/app/<lang>/lock-screen.jpg`, `home-screen.jpg`, `topics.jpg` and
+page, straight under the hero and above the topic picker, `img/app/<lang>/lock-screen.jpg`, `home-screen.jpg`, `topics.jpg` and
 `notifications.jpg`. They are frames 01, 02, 04 and 06 of the App Store set,
 `appstore/screenshots/iphone-6.5[-<locale>]/iphone-0N.png` in the `dailies`
 repo, at 600px wide. When the App Store set is redrawn, re-export them:
@@ -919,6 +919,22 @@ repo, at 600px wide. When the App Store set is redrawn, re-export them:
 ```sh
 sips -s format jpeg -s formatOptions 78 --resampleWidth 600 <dailies>/appstore/screenshots/iphone-6.5-fr-FR/iphone-01.png --out img/app/fr/lock-screen.jpg
 ```
+
+## The hero cards
+
+The three cards beside the headline (two on a phone) show quotes from the app's
+curated start: the 30 of `kCuratedRandom30` in `lib/data/curated_start_sets.dart`
+in the `dailies` repo, the most-hearted lines new readers are dealt first. A
+script right after the cards draws three at random on every visit, in the page's
+language, and adds the author under a bylined line. The text written into the
+cards is the first three of the list, for anyone without scripts.
+
+The list is copied into each home page, so a change to `kCuratedRandom30` does
+not reach the site by itself: export the 30 again from `assets/quotes.db`
+(`text`, `textEs`, `textPt`, `textFr`, `textDe`, with the author's `name` in the
+same language) and replace the `var Q=` array on all five pages. Long lines get
+a smaller size (`--fit`: 0.88 over 70 characters, 0.78 over 95); the longest
+of the 30, 117 characters in German, fits a phone card.
 
 Do not add an `aggregateRating`: it would have to match the App Store's, and a
 number copied in by hand goes stale.
