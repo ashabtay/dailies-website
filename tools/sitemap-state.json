@@ -72,12 +72,28 @@
     "sig": "50d5b4983404e0d712fefa5f366813223848d6bd7b3e56517fb8d3e8ee14a156"
   },
   "/compare/": {
-    "lastmod": "2026-10-29",
-    "sig": "891df578b587561d5c169413a03342af5c8f96a14d4c62a8f9023ac6809e9c3f"
+    "lastmod": "2026-11-03",
+    "sig": "6b9034aad31b8f43b5ad8c08fe4133635ffb9f71d495d6e1e9271d5a44214387"
+  },
+  "/compare/dailies-vs-daily-quote/": {
+    "lastmod": "2026-11-03",
+    "sig": "b7da0f97f5d32bcba6d293b67e0e81b5166961f60d189aee6eea260d8e865077"
   },
   "/compare/dailies-vs-i-am/": {
     "lastmod": "2026-10-29",
     "sig": "89b4ee6ae5854837e7e20b718dbd5e7a3bce36f29b2d68a1118618f70844573d"
+  },
+  "/compare/dailies-vs-innertune/": {
+    "lastmod": "2026-11-03",
+    "sig": "8f47d510377d2378b069d272139b9d53e3bbd0e39f9658fed9a75bc24ed068e1"
+  },
+  "/compare/dailies-vs-locksmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "b938d70b62cef46f445a91c8cf5b1150e067510130eb7d96417de7aac0433d22"
+  },
+  "/compare/dailies-vs-mantra/": {
+    "lastmod": "2026-11-03",
+    "sig": "7a8faf1b78f8a6042f19e0dce9cd777ba20c7554247bdb149b780c2c2448be30"
   },
   "/compare/dailies-vs-motivate/": {
     "lastmod": "2026-10-29",
@@ -87,9 +103,21 @@
     "lastmod": "2026-10-29",
     "sig": "0a66e99c6b0413bebabca14131fb145ab0248df89325bd85cda535b0fed80616"
   },
+  "/compare/dailies-vs-motivational-quotes-daily/": {
+    "lastmod": "2026-11-03",
+    "sig": "79facba777ff74a3907be59b94dcc74ef7f75376a8f53118c03b172386721ba2"
+  },
+  "/compare/dailies-vs-peptalk/": {
+    "lastmod": "2026-11-03",
+    "sig": "ee850f220b3aba3dd2ffbbac90b03144a9ff75928d85042a92883601d373da18"
+  },
   "/compare/dailies-vs-thinkup/": {
     "lastmod": "2026-10-29",
     "sig": "f1190b8b757a03377eb86760ffabae181f7ea4c2415aa04e81f9aa26a800c245"
+  },
+  "/compare/dailies-vs-widgetsmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "b724038ccd9d0e9c0ad11dc4adc4056591ca74f322bce2f5ef2d98a9f6fd1022"
   },
   "/cookies/": {
     "lastmod": "2026-10-29",
@@ -204,20 +232,36 @@
     "sig": "372616fd2ecd5ff070d2416611fc5cb4fd4e307049756ee1748541943dcb3727"
   },
   "/de/hilfe/": {
-    "lastmod": "2026-10-29",
-    "sig": "fc47ee1cb1d4ae1860a86c56cccc447a0c81b07f04a5cfd777b1001217885aec"
+    "lastmod": "2026-11-03",
+    "sig": "f1cd1583a1dbc3760fe9c38c13cfc5adf36ee91041f5a8493769b611fc58f98e"
   },
   "/de/ueber/": {
     "lastmod": "2026-10-29",
     "sig": "cc1221cfc4d40b4b320d6f916c5b2f9c1a3bfcda29341c85bddf1fb8699f709f"
   },
   "/de/vergleich/": {
-    "lastmod": "2026-10-29",
-    "sig": "27fa6925b0c0fd247cde7eb60bb41a715bed231dfd05ea0cf4d745f253d191e6"
+    "lastmod": "2026-11-03",
+    "sig": "0c0213af3d5c67cf6874bfa99acdfdb1ec00a4c62ba04a41881945b5a34fc957"
+  },
+  "/de/vergleich/dailies-vs-daily-quote/": {
+    "lastmod": "2026-11-03",
+    "sig": "f686ee5af7dab3447b00f0efdd2f666c3a62927fc3b5e33767c2f7959289e943"
   },
   "/de/vergleich/dailies-vs-i-am/": {
     "lastmod": "2026-10-29",
     "sig": "07bd48c81a64ca998233d4ed66b5a813fe266147b7d859f12dfca71c8fdf9637"
+  },
+  "/de/vergleich/dailies-vs-innertune/": {
+    "lastmod": "2026-11-03",
+    "sig": "ced3fe0bd262903d5cf05e90dc8008839ffd82a29233726374bd05dc79d8fbe6"
+  },
+  "/de/vergleich/dailies-vs-locksmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "49730c15ae5e8305291b2056f7c58c1b2ada1f27b2e7439d5d9a0fbc8bb68d87"
+  },
+  "/de/vergleich/dailies-vs-mantra/": {
+    "lastmod": "2026-11-03",
+    "sig": "9734d5efa65af97ecedcaf589c77a8c3aaa4e179ac3136d64583bb08f4aa2f78"
   },
   "/de/vergleich/dailies-vs-motivate/": {
     "lastmod": "2026-10-29",
@@ -227,9 +271,21 @@
     "lastmod": "2026-10-29",
     "sig": "099a8434cb0f548ff8a53e1b6dea5effd021a9345475e0fe6a75586bbbf285d9"
   },
+  "/de/vergleich/dailies-vs-motivational-quotes-daily/": {
+    "lastmod": "2026-11-03",
+    "sig": "6e3e966046f0976647538a2a0dd0e4806b711b0973d7ca0bee36eafa6613b168"
+  },
+  "/de/vergleich/dailies-vs-peptalk/": {
+    "lastmod": "2026-11-03",
+    "sig": "8bdad3e07bc3de9f4763084d264b28895bd1c4281357cce309b69f7558c74ab0"
+  },
   "/de/vergleich/dailies-vs-thinkup/": {
     "lastmod": "2026-10-29",
     "sig": "f4d56c2941ea5f6695e91fba5c5b182c5d4606911609ae92c2aad2bed4441b23"
+  },
+  "/de/vergleich/dailies-vs-widgetsmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "eff76bb951a78a62cfc5f4f4adff16daf52e729aa53f60d468eb13522f1c180c"
   },
   "/es/": {
     "lastmod": "2026-10-29",
@@ -240,8 +296,8 @@
     "sig": "44e2bbe3a588525db743de415050199e721bafe4a46fb4ca19db2a61203ace70"
   },
   "/es/ayuda/": {
-    "lastmod": "2026-10-29",
-    "sig": "ca2b63fa83dbe2141fe2e28d2fb56b144daeb428bdd7c1b1371f886ba0c20690"
+    "lastmod": "2026-11-03",
+    "sig": "1b2cae9a8d623b11bc269403c6b7ab43be449bfc611eb724bf586239f2a69a91"
   },
   "/es/blog/": {
     "lastmod": "2026-10-29",
@@ -308,12 +364,28 @@
     "sig": "4dad12379803a9dd5e15b903e183bae292f52a9a120c146c0ead91acac4e3f35"
   },
   "/es/comparar/": {
-    "lastmod": "2026-10-29",
-    "sig": "fb718be83c46d937472712989c1745765af7f0249c2634e403a70b83023c3d73"
+    "lastmod": "2026-11-03",
+    "sig": "57aab31bbae3ae9c648783c60056c5ae03ddd7d64d5fda959b9df78a58e31560"
+  },
+  "/es/comparar/dailies-vs-daily-quote/": {
+    "lastmod": "2026-11-03",
+    "sig": "897831dbcb69ac3f2bfdd13d67d4e407f40249c901d6d58d4b57d697b65758e0"
   },
   "/es/comparar/dailies-vs-i-am/": {
     "lastmod": "2026-10-29",
     "sig": "cc31f75a941db4c7b7f80cc990c5a66ba2eede9cfd05cedfc054f4ad169d04b6"
+  },
+  "/es/comparar/dailies-vs-innertune/": {
+    "lastmod": "2026-11-03",
+    "sig": "c44a81677eafff001450d75556fbb7e16e455a190a2a25a5cac4e4afe23bbe85"
+  },
+  "/es/comparar/dailies-vs-locksmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "26d397095f23c169be0f374d8583bec6ac13aabc68481c805cb6398e86b24742"
+  },
+  "/es/comparar/dailies-vs-mantra/": {
+    "lastmod": "2026-11-03",
+    "sig": "0cbf6ba1d45f4ba3af119fc9108c1bc4b33c54a25b35855281ba3c33f75c0821"
   },
   "/es/comparar/dailies-vs-motivate/": {
     "lastmod": "2026-10-29",
@@ -323,9 +395,21 @@
     "lastmod": "2026-10-29",
     "sig": "701ada39b0c4037fc757b4615697082d9a35874a0c6252396a6d857110cd37dc"
   },
+  "/es/comparar/dailies-vs-motivational-quotes-daily/": {
+    "lastmod": "2026-11-03",
+    "sig": "9fe6e82b83025b98ac741720c0ff0938c3f7c85c101a771ed40d6b63d40a4321"
+  },
+  "/es/comparar/dailies-vs-peptalk/": {
+    "lastmod": "2026-11-03",
+    "sig": "7788ef6d3835eac6432420cf604c3072adbf1f2fbca9b090bca64a481642b069"
+  },
   "/es/comparar/dailies-vs-thinkup/": {
     "lastmod": "2026-10-29",
     "sig": "0ee5cdde2ef92072a5dcb2f8b7fb0beb49153c3599a1dffd947591f458492a43"
+  },
+  "/es/comparar/dailies-vs-widgetsmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "d3873263889e11b03e059e467b6560339b114a577f7435db18b85edb1450c5d6"
   },
   "/es/guias/": {
     "lastmod": "2026-10-29",
@@ -376,8 +460,8 @@
     "sig": "2b325b86ce06ab482199582a54bc7b8d93bb7f02f6004410805aae2ed9f53462"
   },
   "/fr/aide/": {
-    "lastmod": "2026-10-29",
-    "sig": "5dfde467417845fe5c4909dcae6cd7aa346c7367a595bb9873efcd82fc345067"
+    "lastmod": "2026-11-03",
+    "sig": "9a8c38c454df0b62eca976468a37c1c6e12fb9c91db063c09ae367b334590dda"
   },
   "/fr/blog/": {
     "lastmod": "2026-10-29",
@@ -444,12 +528,28 @@
     "sig": "b1629575dbc187ab6c0065eb84ecbc4df4c170383604e0b823041188119e37f2"
   },
   "/fr/comparer/": {
-    "lastmod": "2026-10-29",
-    "sig": "25c1e5b49e27c315597a82b051700d1451d57455c74813bc3900463fb91ba3ae"
+    "lastmod": "2026-11-03",
+    "sig": "0c207b90e8757d6744838db0fe37b2c5283b6077db0dea33df2c035bebf673ac"
+  },
+  "/fr/comparer/dailies-vs-daily-quote/": {
+    "lastmod": "2026-11-03",
+    "sig": "2a4ed9876d855abad1cd392844545bfc4dd580510eccf766849467bca7eef128"
   },
   "/fr/comparer/dailies-vs-i-am/": {
     "lastmod": "2026-10-29",
     "sig": "b8ce2fa498b3222f2ef595626afa1123b8460ec0993919893215246c9e90e0c2"
+  },
+  "/fr/comparer/dailies-vs-innertune/": {
+    "lastmod": "2026-11-03",
+    "sig": "1fe7fdfa7b4a037aeb9d8d3508f0a6a3eeb8da83174d3d6f8e667bc4912bf940"
+  },
+  "/fr/comparer/dailies-vs-locksmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "55db50bba46bec55bcfe89be2ff32ccdcce7d8985b93724c20da57759d0a9bfd"
+  },
+  "/fr/comparer/dailies-vs-mantra/": {
+    "lastmod": "2026-11-03",
+    "sig": "17a1294d688c415caf46732ca88db7533fce6e28dd37b60cce695db2c2fe4050"
   },
   "/fr/comparer/dailies-vs-motivate/": {
     "lastmod": "2026-10-29",
@@ -459,9 +559,21 @@
     "lastmod": "2026-10-29",
     "sig": "faf99b5777052194ab21cf5152140ff9281e3a7daeb7611882bcf682de0c1296"
   },
+  "/fr/comparer/dailies-vs-motivational-quotes-daily/": {
+    "lastmod": "2026-11-03",
+    "sig": "3009879624dfb11d08d79de2e9f39bda315409bc15e08e946705c03b690b43b4"
+  },
+  "/fr/comparer/dailies-vs-peptalk/": {
+    "lastmod": "2026-11-03",
+    "sig": "29a1f041832ce8550934449f5c1c61dc099454f13a75c9fc9541129940099d78"
+  },
   "/fr/comparer/dailies-vs-thinkup/": {
     "lastmod": "2026-10-29",
     "sig": "80332ab10f748f07a1728c0093908d43cf288ef54f7beae7600bb3cfe117cfe4"
+  },
+  "/fr/comparer/dailies-vs-widgetsmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "cb300edfd150f3a0a170694ad9f7ffea50ea8a5fb5e3927040248c637c077c22"
   },
   "/fr/guides/": {
     "lastmod": "2026-10-29",
@@ -544,20 +656,20 @@
     "sig": "b19bb3938370b4f88eeaa72f272c978fbb9d73122b3895367bb00733ccef8a03"
   },
   "/help/": {
-    "lastmod": "2026-10-29",
-    "sig": "1fb83be9b8a70dff0fcc5d503e7c5a67db814760d4101c42a645999a807d162a"
+    "lastmod": "2026-11-03",
+    "sig": "fbf9f1e055b99be1023eee2e84ff730e9968ce7eedc34a12051c9286aa9f15cb"
   },
   "/privacy/": {
-    "lastmod": "2026-10-29",
-    "sig": "f859a8dd0e5196bc2ab238405d0c8c703561d52bb9d8ec86e7eed6b8cc16df2c"
+    "lastmod": "2026-11-03",
+    "sig": "a7ea15dee73d49a320a2fd3ff6e92dab1a35074611b100d4d786554b0d256295"
   },
   "/pt/": {
     "lastmod": "2026-10-29",
     "sig": "6a1f71593faa7938cf1eea64e2d093ecb1d408da02d48321a99457244b22c341"
   },
   "/pt/ajuda/": {
-    "lastmod": "2026-10-29",
-    "sig": "ec24438df6a3746458ce459d6affb001ff99e21b65f6bac7a725e4876f3cc4a9"
+    "lastmod": "2026-11-03",
+    "sig": "4184bd5a70be31530d367c79a4888376392038db4ac20e62c59c45bbc0379cf6"
   },
   "/pt/blog/": {
     "lastmod": "2026-10-29",
@@ -624,12 +736,28 @@
     "sig": "e2b79fc0fe116b60e4cb33e529a0e71df94c33c1df7aefd0feae30142f27984d"
   },
   "/pt/comparar/": {
-    "lastmod": "2026-10-29",
-    "sig": "982faa27b7d391e78b5757f8ce04d12df07b808ead662a2e6b84ce4194cde712"
+    "lastmod": "2026-11-03",
+    "sig": "08c1b0de01c2d59f9356ff4dfb584015b3938715bd48c5078b69f99d743c8447"
+  },
+  "/pt/comparar/dailies-vs-daily-quote/": {
+    "lastmod": "2026-11-03",
+    "sig": "86232a5ee79dba0e249c747bf6f1b6371596b11f54b77ff18804b41d94a4d06a"
   },
   "/pt/comparar/dailies-vs-i-am/": {
     "lastmod": "2026-10-29",
     "sig": "88f74b8bb4e1b6d9a96f0acb3484a788f6e2091fb8bf572084685004d0181e5f"
+  },
+  "/pt/comparar/dailies-vs-innertune/": {
+    "lastmod": "2026-11-03",
+    "sig": "79b5e499a51417de7e27745bd328eeba3683bbe308bc431bbef68ba53f680c68"
+  },
+  "/pt/comparar/dailies-vs-locksmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "93f437e7f3bb4e117c40ca446340dbbb6136a0f9fcfde753b584685b4afdb716"
+  },
+  "/pt/comparar/dailies-vs-mantra/": {
+    "lastmod": "2026-11-03",
+    "sig": "0dbc0a795d8adef37360064910f94fda9f6c0276388802524b698bee48bb822d"
   },
   "/pt/comparar/dailies-vs-motivate/": {
     "lastmod": "2026-10-29",
@@ -639,9 +767,21 @@
     "lastmod": "2026-10-29",
     "sig": "feac66fa13865d8360c0092fc7d2d63f9600ceb2860f21057750fe1e02265629"
   },
+  "/pt/comparar/dailies-vs-motivational-quotes-daily/": {
+    "lastmod": "2026-11-03",
+    "sig": "77c1823f2cce2898924333b89d50ec79e8dea6a5e67c704280a7304b4fb3a51a"
+  },
+  "/pt/comparar/dailies-vs-peptalk/": {
+    "lastmod": "2026-11-03",
+    "sig": "4aca31709e840aa57be6ebb4e45818f0603d0fc59df2842dc57a27e2da2ba946"
+  },
   "/pt/comparar/dailies-vs-thinkup/": {
     "lastmod": "2026-10-29",
     "sig": "cb26a9f99e52c8795e7bfc40ee764b14bd22ce65a0fa597298c0b4688a6df4d9"
+  },
+  "/pt/comparar/dailies-vs-widgetsmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "8be8dd54010734d3e90fc7ad026ae947bd7e9f069e0dc429448753adf16a8664"
   },
   "/pt/guias/": {
     "lastmod": "2026-10-29",
