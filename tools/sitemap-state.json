@@ -773,7 +773,7 @@
   },
   "/privacy/": {
     "lastmod": "2026-11-03",
-    "sig": "a7ea15dee73d49a320a2fd3ff6e92dab1a35074611b100d4d786554b0d256295"
+    "sig": "d9e391b0698406d0c19235ae42cb706ba1c1d27297babfedd6ce2ee6b774081a"
   },
   "/pt/": {
     "lastmod": "2026-11-03",
@@ -968,7 +968,7 @@
     "sig": "5147ce7de46ba0b147f37bb553709e8616f926311d04adae22f909b523d9ef4a"
   },
   "/terms/": {
-    "lastmod": "2026-10-29",
-    "sig": "8cd3c4e7adb6e11e5c974b73346f7ef8b19a4c996d8cce2a4199233b17ee3d74"
+    "lastmod": "2026-11-03",
+    "sig": "9cefa29f1f8b769bbea15e52e37f5641a5bedf53499391f6e2311e8f275d4ca0"
   }
 }
