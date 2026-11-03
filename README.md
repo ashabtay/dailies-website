@@ -29,12 +29,19 @@ The website for the Dailies app — https://mydailies.app
 | `/terms` | `terms/index.html` | Terms of Use |
 | `/privacy` | `privacy/index.html` | Privacy Policy |
 | `/cookies` | `cookies/index.html` | Cookie Policy |
-| `/compare` | `compare/index.html` | Comparison hub, linking the five articles below |
-| `/compare/best-motivational-quote-apps` | `compare/best-motivational-quote-apps/index.html` | The best motivational quote apps for iPhone: all five side by side |
+| `/compare` | `compare/index.html` | Comparison hub, linking the twelve articles below |
+| `/compare/best-motivational-quote-apps` | `compare/best-motivational-quote-apps/index.html` | The best motivational quote apps for iPhone: the five biggest side by side |
 | `/compare/dailies-vs-motivation` | `compare/dailies-vs-motivation/index.html` | Dailies vs Motivation (Monkey Taps) |
 | `/compare/dailies-vs-i-am` | `compare/dailies-vs-i-am/index.html` | Dailies vs I am (Monkey Taps) |
 | `/compare/dailies-vs-thinkup` | `compare/dailies-vs-thinkup/index.html` | Dailies vs ThinkUp (Precise Wellness) |
 | `/compare/dailies-vs-motivate` | `compare/dailies-vs-motivate/index.html` | Dailies vs Motivate (Brave New Logic) |
+| `/compare/dailies-vs-daily-quote` | `compare/dailies-vs-daily-quote/index.html` | Dailies vs Daily Quote (Ultabit) |
+| `/compare/dailies-vs-motivational-quotes-daily` | `compare/dailies-vs-motivational-quotes-daily/index.html` | Dailies vs Motivational Quotes Daily (Sumit Kataria) |
+| `/compare/dailies-vs-mantra` | `compare/dailies-vs-mantra/index.html` | Dailies vs Mantra (Broftware House) |
+| `/compare/dailies-vs-innertune` | `compare/dailies-vs-innertune/index.html` | Dailies vs Innertune (Innertune Media) |
+| `/compare/dailies-vs-peptalk` | `compare/dailies-vs-peptalk/index.html` | Dailies vs PepTalk (Dark Knight) |
+| `/compare/dailies-vs-widgetsmith` | `compare/dailies-vs-widgetsmith/index.html` | Dailies vs Widgetsmith (Cross Forward Consulting) |
+| `/compare/dailies-vs-locksmith` | `compare/dailies-vs-locksmith/index.html` | Dailies vs locksmith (iconic hearts, the makers of sendit) |
 | any missing path | `404.html` | The custom 404 |
 | `/es/…`, `/pt/…`, `/fr/…`, `/de/…` | `es/…/index.html` and so on | The same site in Mexican Spanish, Brazilian Portuguese, French and German. See [Languages](#languages) |
 
@@ -540,7 +547,7 @@ related posts.
 
 ## The comparison pages
 
-`/compare` and its five articles are SEO pages: somebody searching *dailies vs
+`/compare` and its twelve articles are SEO pages: somebody searching *dailies vs
 motivation* or *best daily quotes app* should land on one. They use `doc.css`
 and the same nav and footer as the document pages, so there is nothing new to
 maintain in the styling.
@@ -549,8 +556,10 @@ Two rules keep them defensible, and both are load-bearing rather than editorial
 taste:
 
 1. **Every number about another app is dated on the page and sourced to that
-   app's own App Store listing.** The current figures were read from the US
-   storefront on **8 September 2026**. Ratings counts, prices, sizes, languages
+   app's own App Store listing.** The first four articles' figures were read
+   from the US storefront on **8 and 21 September 2026**; the seven added after
+   them (Daily Quote, Motivational Quotes Daily, Mantra, Innertune, PepTalk,
+   Widgetsmith, locksmith) on **3 November 2026**. Each page states its own date. Ratings counts, prices, sizes, languages
    and age ratings all move, and prices in this category are A/B tested — an
    undated claim about a competitor's price goes stale within weeks and is the
    one thing a rival could reasonably complain about.

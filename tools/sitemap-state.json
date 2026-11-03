@@ -77,27 +77,55 @@
   },
   "/compare/": {
     "lastmod": "2026-11-03",
-    "sig": "e101197d2c5159b927313de7a0d72bb23b5157e99eeaca9096d6de295936af38"
+    "sig": "37dade9deacf487152f293f18b431af5655c390f2580d2974d251498ed489952"
   },
   "/compare/best-motivational-quote-apps/": {
     "lastmod": "2026-11-03",
-    "sig": "e39115a52a0ba6e1fdbd5751d4f98d3cf6ee1197d25169eaa6725670ee1f67a1"
+    "sig": "24efd04f862030e464890b5b46d390fcb9b5f9787a565bf7299da6743bb5879b"
+  },
+  "/compare/dailies-vs-daily-quote/": {
+    "lastmod": "2026-11-03",
+    "sig": "b7da0f97f5d32bcba6d293b67e0e81b5166961f60d189aee6eea260d8e865077"
   },
   "/compare/dailies-vs-i-am/": {
-    "lastmod": "2026-10-29",
-    "sig": "89b4ee6ae5854837e7e20b718dbd5e7a3bce36f29b2d68a1118618f70844573d"
+    "lastmod": "2026-11-03",
+    "sig": "43e5fa376a71edf9d101c014cb87457ad9ae2a06489d7f2648ab1c7d4c0c2445"
+  },
+  "/compare/dailies-vs-innertune/": {
+    "lastmod": "2026-11-03",
+    "sig": "8f47d510377d2378b069d272139b9d53e3bbd0e39f9658fed9a75bc24ed068e1"
+  },
+  "/compare/dailies-vs-locksmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "b938d70b62cef46f445a91c8cf5b1150e067510130eb7d96417de7aac0433d22"
+  },
+  "/compare/dailies-vs-mantra/": {
+    "lastmod": "2026-11-03",
+    "sig": "7a8faf1b78f8a6042f19e0dce9cd777ba20c7554247bdb149b780c2c2448be30"
   },
   "/compare/dailies-vs-motivate/": {
-    "lastmod": "2026-10-29",
-    "sig": "6572edbd135499d1e715fb706597aa59de03bacd532ad64d4b9c94ec861ac482"
+    "lastmod": "2026-11-03",
+    "sig": "215d0087aca40674aaf3277b11a8dbd97175cfc1b97d1ae81f62f1be5726e8e3"
   },
   "/compare/dailies-vs-motivation/": {
-    "lastmod": "2026-10-29",
-    "sig": "0a66e99c6b0413bebabca14131fb145ab0248df89325bd85cda535b0fed80616"
+    "lastmod": "2026-11-03",
+    "sig": "e81fa59b05b8bdd5157bcfe237541f8c9dd2981d403e09eb8da4bbb0d7e216b9"
+  },
+  "/compare/dailies-vs-motivational-quotes-daily/": {
+    "lastmod": "2026-11-03",
+    "sig": "79facba777ff74a3907be59b94dcc74ef7f75376a8f53118c03b172386721ba2"
+  },
+  "/compare/dailies-vs-peptalk/": {
+    "lastmod": "2026-11-03",
+    "sig": "ee850f220b3aba3dd2ffbbac90b03144a9ff75928d85042a92883601d373da18"
   },
   "/compare/dailies-vs-thinkup/": {
-    "lastmod": "2026-10-29",
-    "sig": "f1190b8b757a03377eb86760ffabae181f7ea4c2415aa04e81f9aa26a800c245"
+    "lastmod": "2026-11-03",
+    "sig": "3d6f1906052638a2f91d9fd8eb2675fe5983a29fe8e80a1d521ff017d2840c2f"
+  },
+  "/compare/dailies-vs-widgetsmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "b724038ccd9d0e9c0ad11dc4adc4056591ca74f322bce2f5ef2d98a9f6fd1022"
   },
   "/cookies/": {
     "lastmod": "2026-10-29",
@@ -245,27 +273,55 @@
   },
   "/de/vergleich/": {
     "lastmod": "2026-11-03",
-    "sig": "25fc18e1c33f7a77b927e9eff6e9f28e0309a2fcfc60ac052304ba6fdb20a4b9"
+    "sig": "03884eacd2b89acd160ae4bbd82bef17de5fcc2090ab22b68b85b3398ad1d433"
   },
   "/de/vergleich/beste-apps-fuer-motivationszitate/": {
     "lastmod": "2026-11-03",
-    "sig": "e908a2a6d44b222c06c1a5fda09c4e3f35462ad1f6e561b9f7b163d36188ccab"
+    "sig": "0a976fd03fe842252da676c0b635ef768598c1463386799cfac33352c58d7fa7"
+  },
+  "/de/vergleich/dailies-vs-daily-quote/": {
+    "lastmod": "2026-11-03",
+    "sig": "6533942034e85abcf9e16cbcf5c547beb7466f2f9f310f8e6d8155e83be910a8"
   },
   "/de/vergleich/dailies-vs-i-am/": {
-    "lastmod": "2026-10-29",
-    "sig": "07bd48c81a64ca998233d4ed66b5a813fe266147b7d859f12dfca71c8fdf9637"
+    "lastmod": "2026-11-03",
+    "sig": "877d7d6de5ba73953e1d12ccc215e989d7676c3c148a9a1d016d3e5ff32a3401"
+  },
+  "/de/vergleich/dailies-vs-innertune/": {
+    "lastmod": "2026-11-03",
+    "sig": "ddcdbf48e9afdbaf16c48a7c2e81b2af4052a8ad4dd5ec02414bbefdc84bda61"
+  },
+  "/de/vergleich/dailies-vs-locksmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "e2f5339ac98b174a3fbb8b2f17d09d3e5514b34ef520798bc0b27f2e5e29096f"
+  },
+  "/de/vergleich/dailies-vs-mantra/": {
+    "lastmod": "2026-11-03",
+    "sig": "132f940b6f87df9e2280f805435ae3f978ee2fcfe6d776b00e4eab62bccafaaa"
   },
   "/de/vergleich/dailies-vs-motivate/": {
-    "lastmod": "2026-10-29",
-    "sig": "7d66df9fa3c4c000ff6dc92064c53ebad651e9bf22645e100f2336af00e315ed"
+    "lastmod": "2026-11-03",
+    "sig": "bfe49ce7287d2dde1b51bcf054f730984503f773d4033951ec2ae50b729cfd9b"
   },
   "/de/vergleich/dailies-vs-motivation/": {
-    "lastmod": "2026-10-29",
-    "sig": "099a8434cb0f548ff8a53e1b6dea5effd021a9345475e0fe6a75586bbbf285d9"
+    "lastmod": "2026-11-03",
+    "sig": "adb977d48f8877c4c2344efc90ebe203654f3d83efc12b10cd2b472cc26d9d70"
+  },
+  "/de/vergleich/dailies-vs-motivational-quotes-daily/": {
+    "lastmod": "2026-11-03",
+    "sig": "3ff23c6b9e2edc06d3847a1f8fda89350752f873706b5e6d293a77ddffae93d6"
+  },
+  "/de/vergleich/dailies-vs-peptalk/": {
+    "lastmod": "2026-11-03",
+    "sig": "28b45b2b3c6640eb24ccb95354b8c13b3ff2fea5f6fb54787ec027a3f73d81b0"
   },
   "/de/vergleich/dailies-vs-thinkup/": {
-    "lastmod": "2026-10-29",
-    "sig": "f4d56c2941ea5f6695e91fba5c5b182c5d4606911609ae92c2aad2bed4441b23"
+    "lastmod": "2026-11-03",
+    "sig": "1404807514c0919f4cb6e7ddfaf1f1efc04528fdd384b5da8423435278266f88"
+  },
+  "/de/vergleich/dailies-vs-widgetsmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "e7ff4a96d6b2d67051fd74f1f68f8f220b223fc0154cd0cf24abc6f46f95fa3a"
   },
   "/es/": {
     "lastmod": "2026-11-03",
@@ -349,27 +405,55 @@
   },
   "/es/comparar/": {
     "lastmod": "2026-11-03",
-    "sig": "ceca6c06e2cf87d4d138de322cf32a7f30fde6aac9112d8b5aa8c12cb65f8f9c"
+    "sig": "a65e4fb4451901d65c114065bdcc6f0194c726aa6ad8dbf435363ab3028c73ea"
+  },
+  "/es/comparar/dailies-vs-daily-quote/": {
+    "lastmod": "2026-11-03",
+    "sig": "044d83e1e6af5e5a22f58ddad9704a458768f4def7ee681e6ef6a06c55dad6cd"
   },
   "/es/comparar/dailies-vs-i-am/": {
-    "lastmod": "2026-10-29",
-    "sig": "cc31f75a941db4c7b7f80cc990c5a66ba2eede9cfd05cedfc054f4ad169d04b6"
+    "lastmod": "2026-11-03",
+    "sig": "102a11e65422b0b4f79251926dab521bdd8dde99f07193b4c1241c3f0a3dae7e"
+  },
+  "/es/comparar/dailies-vs-innertune/": {
+    "lastmod": "2026-11-03",
+    "sig": "ed45ee12cd7921a5259a1940db3042d5bf2eacfd80f61c2b3487d96d93d132b8"
+  },
+  "/es/comparar/dailies-vs-locksmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "c5c3a2a0b5b1d8971888e02263dcb75ce9f9aaade41a7c4d01c6c02ee8e4eff7"
+  },
+  "/es/comparar/dailies-vs-mantra/": {
+    "lastmod": "2026-11-03",
+    "sig": "dfd48248c4be70ad2f4ece1be1dfcbd0da9d9ecbfc380feb52936abbdb70585e"
   },
   "/es/comparar/dailies-vs-motivate/": {
-    "lastmod": "2026-10-29",
-    "sig": "837a20457f9aafc12d3031b79aa0e5f30e0c478388d318656e9f9a0d78cc4f09"
+    "lastmod": "2026-11-03",
+    "sig": "88ebe2b21189a42c4a0cb17ce111d6827e056a4f6e21e1dd11dfaa016e439df2"
   },
   "/es/comparar/dailies-vs-motivation/": {
-    "lastmod": "2026-10-29",
-    "sig": "701ada39b0c4037fc757b4615697082d9a35874a0c6252396a6d857110cd37dc"
+    "lastmod": "2026-11-03",
+    "sig": "83c4d0cb3fea9eb97f20d9d7c27a1b8404795e241e89de167d3cb0e5cdd15267"
+  },
+  "/es/comparar/dailies-vs-motivational-quotes-daily/": {
+    "lastmod": "2026-11-03",
+    "sig": "284ec5b3e238583e9683b61ad718de6ddd917cec7c181aab88799412fda8cff8"
+  },
+  "/es/comparar/dailies-vs-peptalk/": {
+    "lastmod": "2026-11-03",
+    "sig": "064389ab938129b03b186d30a58e912f2b37de339ddcc9406cf864646625a6b8"
   },
   "/es/comparar/dailies-vs-thinkup/": {
-    "lastmod": "2026-10-29",
-    "sig": "0ee5cdde2ef92072a5dcb2f8b7fb0beb49153c3599a1dffd947591f458492a43"
+    "lastmod": "2026-11-03",
+    "sig": "5fccef114d9538b0e0cb54a65976305580c9bc9ec32be4e82d0c17765529e9a3"
+  },
+  "/es/comparar/dailies-vs-widgetsmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "fc8b32840deb51b70b3235bf6a92df4bf9a6d66ee48daa5745ab3b4b020a3539"
   },
   "/es/comparar/mejores-apps-de-frases-motivadoras/": {
     "lastmod": "2026-11-03",
-    "sig": "7db9d45a0b236ef67634a290dfdced95d86c8449cd8fb3f4f4a5db12f1c0c60e"
+    "sig": "9e850ab8bafdb0d402c9282296f2dc5c4b2ae10776a81ed3a45bb90e402e59f5"
   },
   "/es/guias/": {
     "lastmod": "2026-11-03",
@@ -513,27 +597,55 @@
   },
   "/fr/comparer/": {
     "lastmod": "2026-11-03",
-    "sig": "7dcb7f0b290d3416705d7776e3528d9824dd0ed42d85c2158e85b678363e1340"
+    "sig": "39ffe96ed007070bfd0626acca7132acc7fd4a5a6df288f7af6e93a04fd64d1c"
+  },
+  "/fr/comparer/dailies-vs-daily-quote/": {
+    "lastmod": "2026-11-03",
+    "sig": "2a4ed9876d855abad1cd392844545bfc4dd580510eccf766849467bca7eef128"
   },
   "/fr/comparer/dailies-vs-i-am/": {
-    "lastmod": "2026-10-29",
-    "sig": "b8ce2fa498b3222f2ef595626afa1123b8460ec0993919893215246c9e90e0c2"
+    "lastmod": "2026-11-03",
+    "sig": "3402e56bfbd2afaa1f6d6d2b8730fb6f3b6069d91828784b56678deb587d9030"
+  },
+  "/fr/comparer/dailies-vs-innertune/": {
+    "lastmod": "2026-11-03",
+    "sig": "1fe7fdfa7b4a037aeb9d8d3508f0a6a3eeb8da83174d3d6f8e667bc4912bf940"
+  },
+  "/fr/comparer/dailies-vs-locksmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "55db50bba46bec55bcfe89be2ff32ccdcce7d8985b93724c20da57759d0a9bfd"
+  },
+  "/fr/comparer/dailies-vs-mantra/": {
+    "lastmod": "2026-11-03",
+    "sig": "17a1294d688c415caf46732ca88db7533fce6e28dd37b60cce695db2c2fe4050"
   },
   "/fr/comparer/dailies-vs-motivate/": {
-    "lastmod": "2026-10-29",
-    "sig": "84520a522b0f0675e83023a4ba713bef0ee356aa97c47d6223fb844c9d73248f"
+    "lastmod": "2026-11-03",
+    "sig": "f79e8868434b6be0c1afb1a01dae100be0a11b63eeddfee56ba1eb9a41bd92c5"
   },
   "/fr/comparer/dailies-vs-motivation/": {
-    "lastmod": "2026-10-29",
-    "sig": "faf99b5777052194ab21cf5152140ff9281e3a7daeb7611882bcf682de0c1296"
+    "lastmod": "2026-11-03",
+    "sig": "f0db232ebc14bb7d9ed80116f55bd9c9921746e37e7b528d9d424d7a66dc910e"
+  },
+  "/fr/comparer/dailies-vs-motivational-quotes-daily/": {
+    "lastmod": "2026-11-03",
+    "sig": "3009879624dfb11d08d79de2e9f39bda315409bc15e08e946705c03b690b43b4"
+  },
+  "/fr/comparer/dailies-vs-peptalk/": {
+    "lastmod": "2026-11-03",
+    "sig": "29a1f041832ce8550934449f5c1c61dc099454f13a75c9fc9541129940099d78"
   },
   "/fr/comparer/dailies-vs-thinkup/": {
-    "lastmod": "2026-10-29",
-    "sig": "80332ab10f748f07a1728c0093908d43cf288ef54f7beae7600bb3cfe117cfe4"
+    "lastmod": "2026-11-03",
+    "sig": "6e2f96cec6ce82ccf530742b3486ced0879b300fbc3b1f2025260bac0d85e0df"
+  },
+  "/fr/comparer/dailies-vs-widgetsmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "cb300edfd150f3a0a170694ad9f7ffea50ea8a5fb5e3927040248c637c077c22"
   },
   "/fr/comparer/meilleures-applis-de-citations-motivantes/": {
     "lastmod": "2026-11-03",
-    "sig": "7160ff2deb8ee27226eb7c76d272f22247f158146d44755fd355e403e901386c"
+    "sig": "8ca2fcdb1f5a707ac0b5e8d9b95dcb40659e77f5bf0f9b490655b6175da2e087"
   },
   "/fr/guides/": {
     "lastmod": "2026-11-03",
@@ -741,27 +853,55 @@
   },
   "/pt/comparar/": {
     "lastmod": "2026-11-03",
-    "sig": "921a4dfbe7b1bf73424be9bce8f31ba641731a72dbb7a43d4538a9a81ccb7843"
+    "sig": "1018eb04b2b2bc961377fd0269ad41efa2a9bb8e3881449607b4da6683b08ac8"
+  },
+  "/pt/comparar/dailies-vs-daily-quote/": {
+    "lastmod": "2026-11-03",
+    "sig": "f0d6deb464934abcb1f8063d2a5a910881ee7178eeb8383ecaf63461756aec0b"
   },
   "/pt/comparar/dailies-vs-i-am/": {
-    "lastmod": "2026-10-29",
-    "sig": "88f74b8bb4e1b6d9a96f0acb3484a788f6e2091fb8bf572084685004d0181e5f"
+    "lastmod": "2026-11-03",
+    "sig": "dddb0c8f1e87682fd60bf8598ebc7cba767ee5ccfb75e5b5f7d706162a1c3f80"
+  },
+  "/pt/comparar/dailies-vs-innertune/": {
+    "lastmod": "2026-11-03",
+    "sig": "2ce969cf0da53470e1e79e1fda12a3dc33e80f35f84bcc4505b1f78a12e76604"
+  },
+  "/pt/comparar/dailies-vs-locksmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "2280d3a4a7fcfd02a9a20781ac14aafcd89111e7aca8aa5293ea2a4b38215471"
+  },
+  "/pt/comparar/dailies-vs-mantra/": {
+    "lastmod": "2026-11-03",
+    "sig": "7401f088d1cd8df85615ad2ecc1ad76b85b830798d6ee4886b58bc35e8c542f9"
   },
   "/pt/comparar/dailies-vs-motivate/": {
-    "lastmod": "2026-10-29",
-    "sig": "7fb4882b7e5ac8000be89b00577a155817ef33f4ba4d07313d59067df7462671"
+    "lastmod": "2026-11-03",
+    "sig": "a3859a5757a5c2dc43c34b62abdf06347ab236da5905b475f1e517d3abe099d2"
   },
   "/pt/comparar/dailies-vs-motivation/": {
-    "lastmod": "2026-10-29",
-    "sig": "feac66fa13865d8360c0092fc7d2d63f9600ceb2860f21057750fe1e02265629"
+    "lastmod": "2026-11-03",
+    "sig": "d6321ec8c38e55279f7e3625ac15bf3b797560b427b003343b738232536a4c4e"
+  },
+  "/pt/comparar/dailies-vs-motivational-quotes-daily/": {
+    "lastmod": "2026-11-03",
+    "sig": "58d6ac99ea5de931f8b339c3fac924cb484cc73e4c1fe706fc0d19a63aaed5e6"
+  },
+  "/pt/comparar/dailies-vs-peptalk/": {
+    "lastmod": "2026-11-03",
+    "sig": "78842244ce206c028224cf92d6a999a4ec913a7d693c862fad869696cea652a0"
   },
   "/pt/comparar/dailies-vs-thinkup/": {
-    "lastmod": "2026-10-29",
-    "sig": "cb26a9f99e52c8795e7bfc40ee764b14bd22ce65a0fa597298c0b4688a6df4d9"
+    "lastmod": "2026-11-03",
+    "sig": "e4dd230b58b89de76a382d118529c5224d0f25403d610165ba45bb581b7f4478"
+  },
+  "/pt/comparar/dailies-vs-widgetsmith/": {
+    "lastmod": "2026-11-03",
+    "sig": "3d386a210db25bafa8fe168cad7a7ececa7f5fa03f372574f49ef0fe0f247c51"
   },
   "/pt/comparar/melhores-apps-de-frases-motivacionais/": {
     "lastmod": "2026-11-03",
-    "sig": "b3da00b6ea203c9566f16775d31d947c19adb88d9189a054fdb3077244386608"
+    "sig": "f321e5ec3ea53f6fdc49ab2dc7076841873185747d40e59595185750dc3d40e0"
   },
   "/pt/guias/": {
     "lastmod": "2026-11-03",
