@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="apple-itunes-app" content="app-id=6804210416">
+<script>/* ChatGPT tags the links it cites utm_source=chatgpt.com. A visitor it sends here on an iPhone or iPad has already chosen the app, so skip the page and open the App Store. See README, "Visitors from ChatGPT". */
+(function(){try{
+  if(!/[?&]utm_source=chatgpt\.com(&|$)/.test(location.search)) return;
+  var u=navigator.userAgent;
+  if(!/iPhone|iPad|iPod/.test(u)&&!(/Macintosh/.test(u)&&navigator.maxTouchPoints>1)) return;
+  location.replace('https://apps.apple.com/app/id6804210416?pt=129347926&ct=web-chatgpt&mt=8');
+}catch(e){}})();</script>
 <meta name="p:domain_verify" content="801c54653c023cddcd5ceb462975cf7e">
 <title>Dailies: tägliche Motivation auf deinem Sperrbildschirm</title>
 <meta name="description" content="Dailies schickt kurze motivierende Zitate auf den Sperrbildschirm und ins Home-Bildschirm-Widget deines iPhone. Wähl deine Themen und deine Uhrzeiten, und dann geht dein Tag einfach weiter.">
@@ -273,6 +280,8 @@ section[id]{scroll-margin-top:84px}
 .step{display:flex; flex-direction:column; gap:9px; padding-top:22px; border-top:1px solid var(--rule); counter-increment:s}
 .step::before{content:counter(s,decimal-leading-zero); font-family:var(--f-mono); font-size:12.5px; letter-spacing:.13em; color:var(--accent)}
 .step p{color:var(--text-dim); font-size:15.5px}
+.shots{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,2vw,26px)}
+.shots img{width:100%; height:auto; border-radius:18px}
 
 /* ============ FAQ ============ */
 .faq{max-width:70ch}
@@ -357,6 +366,8 @@ footer a:hover{color:var(--accent)}
   .lang-menu{right:16px; top:calc(100% - 4px)}
   .wrap{width:min(100% - 32px,var(--max))}
   .moments,.steps{grid-template-columns:1fr}
+  .shots{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:64%; overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:-16px; padding-inline:16px; scroll-padding-inline:16px}
+  .shots img{scroll-snap-align:start}
   .home-posts{grid-template-columns:1fr}
   /* A phone cannot scan its own screen; the button is the way in there. */
   .qr{display:none}
@@ -372,7 +383,10 @@ footer a:hover{color:var(--accent)}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies bringt kurze motivierende Zitate auf den Sperrbildschirm und den Home-Bildschirm deines iPhone.","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/app/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.threads.com/@mydailies.app","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
+{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - motivational quotes","description":"Dailies schickt kurze motivierende Zitate auf den Sperrbildschirm und ins Home-Bildschirm-Widget deines iPhone. Wähl deine Themen und deine Uhrzeiten, und dann geht dein Tag einfach weiter.","url":"https://mydailies.app/de/","inLanguage":"de","operatingSystem":"iOS","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/app/id6804210416","downloadUrl":"https://apps.apple.com/app/id6804210416","sameAs":["https://apps.apple.com/app/id6804210416"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/de/lock-screen.jpg","https://mydailies.app/img/app/de/home-screen.jpg","https://mydailies.app/img/app/de/topics.jpg","https://mydailies.app/img/app/de/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies bringt kurze motivierende Zitate auf den Sperrbildschirm und den Home-Bildschirm deines iPhone.","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/app/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
 </script>
 </head>
 <body>
@@ -444,6 +458,22 @@ footer a:hover{color:var(--accent)}
     <div class="wrap">
       <blockquote>Du bist auch so stark wie dein stärkstes Glied.</blockquote>
       <cite>Khalil Gibran, Der Prophet</cite>
+    </div>
+  </section>
+
+  <!-- THE APP -->
+  <section class="band" id="app">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">In der App</div>
+        <h2>So sieht es auf deinem iPhone aus.</h2>
+      </div>
+      <div class="shots">
+        <img src="/img/app/de/lock-screen.jpg" width="600" height="1298" alt="Dailies auf dem Sperrbildschirm des iPhone: ein Zitat unter der Uhr" loading="lazy">
+        <img src="/img/app/de/home-screen.jpg" width="600" height="1298" alt="Das Dailies-Widget auf dem Home-Bildschirm des iPhone" loading="lazy">
+        <img src="/img/app/de/topics.jpg" width="600" height="1298" alt="Themen in Dailies auswählen, etwa Ruhe und Selbstvertrauen" loading="lazy">
+        <img src="/img/app/de/notifications.jpg" width="600" height="1298" alt="Ein Dailies-Zitat, das als Mitteilung ankommt" loading="lazy">
+      </div>
     </div>
   </section>
 

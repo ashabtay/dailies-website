@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="apple-itunes-app" content="app-id=6804210416">
+<script>/* ChatGPT tags the links it cites utm_source=chatgpt.com. A visitor it sends here on an iPhone or iPad has already chosen the app, so skip the page and open the App Store. See README, "Visitors from ChatGPT". */
+(function(){try{
+  if(!/[?&]utm_source=chatgpt\.com(&|$)/.test(location.search)) return;
+  var u=navigator.userAgent;
+  if(!/iPhone|iPad|iPod/.test(u)&&!(/Macintosh/.test(u)&&navigator.maxTouchPoints>1)) return;
+  location.replace('https://apps.apple.com/app/id6804210416?pt=129347926&ct=web-chatgpt&mt=8');
+}catch(e){}})();</script>
 <meta name="p:domain_verify" content="801c54653c023cddcd5ceb462975cf7e">
 <title>Dailies: frases motivadoras en tu pantalla de bloqueo</title>
 <meta name="description" content="Dailies te manda frases motivadoras cortas a la pantalla de bloqueo y al widget de la pantalla de inicio de tu iPhone. Elige tus temas y tus horarios, y sigue con tu día.">
@@ -273,6 +280,8 @@ section[id]{scroll-margin-top:84px}
 .step{display:flex; flex-direction:column; gap:9px; padding-top:22px; border-top:1px solid var(--rule); counter-increment:s}
 .step::before{content:counter(s,decimal-leading-zero); font-family:var(--f-mono); font-size:12.5px; letter-spacing:.13em; color:var(--accent)}
 .step p{color:var(--text-dim); font-size:15.5px}
+.shots{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,2vw,26px)}
+.shots img{width:100%; height:auto; border-radius:18px}
 
 /* ============ FAQ ============ */
 .faq{max-width:70ch}
@@ -357,6 +366,8 @@ footer a:hover{color:var(--accent)}
   .lang-menu{right:16px; top:calc(100% - 4px)}
   .wrap{width:min(100% - 32px,var(--max))}
   .moments,.steps{grid-template-columns:1fr}
+  .shots{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:64%; overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:-16px; padding-inline:16px; scroll-padding-inline:16px}
+  .shots img{scroll-snap-align:start}
   .home-posts{grid-template-columns:1fr}
   /* A phone cannot scan its own screen; the button is the way in there. */
   .qr{display:none}
@@ -372,7 +383,10 @@ footer a:hover{color:var(--accent)}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies pone frases motivadoras cortas en la pantalla de bloqueo y en la pantalla de inicio de tu iPhone.","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/app/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.threads.com/@mydailies.app","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
+{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - motivational quotes","description":"Dailies te manda frases motivadoras cortas a la pantalla de bloqueo y al widget de la pantalla de inicio de tu iPhone. Elige tus temas y tus horarios, y sigue con tu día.","url":"https://mydailies.app/es/","inLanguage":"es","operatingSystem":"iOS","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/app/id6804210416","downloadUrl":"https://apps.apple.com/app/id6804210416","sameAs":["https://apps.apple.com/app/id6804210416"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/es/lock-screen.jpg","https://mydailies.app/img/app/es/home-screen.jpg","https://mydailies.app/img/app/es/topics.jpg","https://mydailies.app/img/app/es/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies pone frases motivadoras cortas en la pantalla de bloqueo y en la pantalla de inicio de tu iPhone.","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/app/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
 </script>
 </head>
 <body>
@@ -444,6 +458,22 @@ footer a:hover{color:var(--accent)}
     <div class="wrap">
       <blockquote>También eres tan fuerte como tu eslabón más fuerte.</blockquote>
       <cite>Khalil Gibran, El profeta</cite>
+    </div>
+  </section>
+
+  <!-- THE APP -->
+  <section class="band" id="app">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">En la app</div>
+        <h2>Así se ve en tu iPhone.</h2>
+      </div>
+      <div class="shots">
+        <img src="/img/app/es/lock-screen.jpg" width="600" height="1298" alt="Dailies en la pantalla de bloqueo del iPhone: una frase bajo el reloj" loading="lazy">
+        <img src="/img/app/es/home-screen.jpg" width="600" height="1298" alt="El widget de Dailies en la pantalla de inicio del iPhone" loading="lazy">
+        <img src="/img/app/es/topics.jpg" width="600" height="1298" alt="Elegir temas en Dailies, como calma y confianza" loading="lazy">
+        <img src="/img/app/es/notifications.jpg" width="600" height="1298" alt="Una frase de Dailies que llega como notificación" loading="lazy">
+      </div>
     </div>
   </section>
 

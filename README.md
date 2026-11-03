@@ -612,15 +612,15 @@ the small square regardless of what size the image actually is.
 
 The landing page carries one `Organization` JSON-LD block, just before
 `</head>`. Its `sameAs` list names every official Dailies profile: the App
-Store listing, TikTok, Instagram, Threads, the Facebook Page, YouTube,
-Pinterest and LinkedIn. It is how Google learns those accounts and this site
+Store listing, TikTok, Instagram, the Facebook Page, YouTube, Pinterest and
+LinkedIn. (Threads came out in November 2026: Meta banned the account.) It is how Google learns those accounts and this site
 are the same brand. The links on the profiles themselves are nofollow and do
 nothing for ranking, so this list is the part that counts.
 
 **A new profile gets added here the day it is made, and a closed one comes
 out.** Use the plain profile URL with no tracking parameters, check that it
 loads, and run the page through https://validator.schema.org afterwards. Only
-the landing page carries the block; every other page's structured data
+the home pages carry the block; every other page's structured data
 describes that page, not the brand.
 
 ## The sitemap
@@ -849,9 +849,12 @@ in App Store Connect first; a new `ct` value simply appears. The values in use:
 | `web-compare` | `/compare/` and every comparison        |
 | `web-about`   | `/about/`                               |
 | `web-404`     | the 404 page                            |
+| `web-chatgpt` | the ChatGPT redirect on the five home pages (see [Visitors from ChatGPT](#visitors-from-chatgpt)) |
 
 The translated pages use the same values with the language on the
 end: `web-home-es`, `web-qr-pt`, `web-guides-fr`, `web-404-de` and so on.
+`web-chatgpt` is the one exception: it has no language, so the ChatGPT
+downloads stay in one row and clear Apple's five-download threshold sooner.
 
 A new page in an existing section reuses that section's value; a new section
 gets a new `web-` value and a row in this table. In the HTML the `&`s are
@@ -866,6 +869,59 @@ chip's colors, with `shape-rendering="crispEdges"` added to the `<svg>` tag:
 ```sh
 python3 -c "import segno; segno.make('https://apps.apple.com/app/id6804210416?pt=129347926&ct=web-qr&mt=8', error='m', micro=False).save('qr.svg', dark='#191c1d', light='#f4ecdc', border=2, xmldecl=False, omitsize=True)"
 ```
+
+## Visitors from ChatGPT
+
+ChatGPT recommends Dailies in its app-list answers, but its card links to this
+site (`https://mydailies.app/?utm_source=chatgpt.com`) instead of the App Store.
+Those visitors have already chosen the app: in the week from 26 Oct 2026 half of
+them tapped Download, with a median of one second on the page, and the other
+half left without tapping.
+
+So the five home pages send them straight on. A script at the top of `<head>`,
+just under the Smart App Banner tag, checks for `utm_source=chatgpt.com` in the
+address and an iPhone or iPad (iPadOS reports a Mac, so a Mac with a touch
+screen counts too), and `location.replace`s to the App Store with
+`ct=web-chatgpt`. It runs before the language redirect, so a French phone goes
+straight to the App Store instead of via `/fr/`. Everyone else, a Mac or Android
+visitor from ChatGPT included, sees the page as usual.
+
+Two things follow from it:
+
+- **The App Store is the only count.** The redirect happens before the cookie
+  banner, so PostHog never sees these visits and the dashboard's *Where visitors
+  come from* tile stops counting ChatGPT on iPhone. Read
+  Analytics → Acquisition → Campaigns → `web-chatgpt` instead.
+- **Crawlers are unaffected.** They never carry the `utm_source`, so search
+  engines and ChatGPT's own crawler index the page as before.
+
+Safari hands an `apps.apple.com` address to the App Store app even from a script
+redirect, with no tap. In the Simulator, which has no App Store, that shows as
+"Safari cannot open the page because the address is invalid": that is the
+redirect working.
+
+## The app's own structured data
+
+Next to the `Organization` block, each home page carries a `MobileApplication`
+block (`@id` `https://mydailies.app/#app`) in its own language: the name, the
+page's meta description, iOS, Lifestyle, free, the App Store URL as `installUrl`,
+`downloadUrl` and `sameAs`, and four screenshots. It is there so search engines
+and assistants tie the name *Dailies* to the App Store listing and to our own
+pictures; in November 2026 ChatGPT's card for Dailies linked to this site and
+showed another app's screenshots.
+
+The screenshots are the band **What it looks like on your iPhone** on each home
+page, `img/app/<lang>/lock-screen.jpg`, `home-screen.jpg`, `topics.jpg` and
+`notifications.jpg`. They are frames 01, 02, 04 and 06 of the App Store set,
+`appstore/screenshots/iphone-6.5[-<locale>]/iphone-0N.png` in the `dailies`
+repo, at 600px wide. When the App Store set is redrawn, re-export them:
+
+```sh
+sips -s format jpeg -s formatOptions 78 --resampleWidth 600 <dailies>/appstore/screenshots/iphone-6.5-fr-FR/iphone-01.png --out img/app/fr/lock-screen.jpg
+```
+
+Do not add an `aggregateRating`: it would have to match the App Store's, and a
+number copied in by hand goes stale.
 
 **Every page carries Apple's Smart App Banner**, right under the viewport tag —
 copy it into any new page:
