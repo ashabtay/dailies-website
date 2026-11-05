@@ -47,7 +47,7 @@
       <h1>Privacy Policy</h1>
       <p class="lede">Some of what you tell Dailies stays on your phone. Most of how you have set it up is also sent to analytics. This sets out which is which, who sees it, and what you can switch off.</p>
       <div class="doc-meta">
-        <span>Last updated 3 November 2026</span>
+        <span>Last updated 5 November 2026</span>
         <span>Applies to the Dailies app on iPhone, iPad and Android, and mydailies.app</span>
       </div>
     </div>
@@ -121,6 +121,7 @@
             <tr><td><strong>Quotes you have hearted</strong></td><td>To fill your Liked quotes list and bring favorites back around</td><td><strong>Yes</strong>, the quote's identifier, not its text</td></tr>
             <tr><td><strong>Appearance choices</strong><br>Background, typeface, effect</td><td>So the app looks the way you left it</td><td><strong>Yes</strong></td></tr>
             <tr><td><strong>The language you chose</strong><br>One of the app's languages, if you picked one rather than following your phone or tablet</td><td>So the app and its quotes read in the language you want</td><td><strong>Yes</strong>, as part of the technical context below</td></tr>
+            <tr><td><strong>Read aloud settings</strong><br>The voice you picked, and whether the speaker button is shown on your feed</td><td>So the app reads in the voice you chose</td><td><strong>Yes</strong></td></tr>
             <tr><td><strong>Quotes you have written yourself</strong></td><td>So Dailies can serve your own lines back to you</td><td><strong>No</strong>, only how many you have written, never the text</td></tr>
             <tr><td><strong>A photo you choose as a background</strong></td><td>A copy is placed in the app's private folder to draw behind your quotes</td><td><strong>No</strong></td></tr>
           </table>
@@ -137,6 +138,9 @@
         <p>As with iCloud, that copy is in <strong>your</strong> Google Account, governed by <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>. We cannot read it, we are not sent a copy, and it is never used for analytics or advertising. Android has no switch for one app alone: backup is turned on or off for the whole phone in its settings (usually <strong>Settings &rarr; Google &rarr; Backup</strong>, though the path varies by phone).</p>
         <h3>The widgets</h3>
         <p>On iPhone and iPad, some of these are also written to a <strong>shared app group container</strong>. That is still private storage on your phone; it exists only so the Home Screen and Lock Screen widgets can read the same quote and settings the app is using. On Android, the Home Screen widget reads them from a folder inside the app's own private storage.</p>
+        <h3>Read aloud</h3>
+        <p>The app can read a quote out loud with a voice of its own. The first time you tap the speaker, it asks before fetching that voice: a one-time download of about 145 MB from <strong>GitHub</strong>, where we publish the files, kept in the app's private storage so it works offline from then on. That download is an ordinary web request and reaches GitHub like any file you download, with your internet address and nothing else about you; it is not linked to the analytics identifier.</p>
+        <p>After that, everything happens on your phone. The quote is turned into speech <strong>on the device itself</strong>, and the text of what is read never leaves it. What analytics (section 3) sees is that a quote was read, in which language and voice, and how long the clip was; not which quote.</p>
       </section>
 
       <section id="app-analytics">
@@ -213,7 +217,7 @@
             <tr><td><strong>Google Play</strong></td><td>Distribution, payments and aggregate Play Console statistics, for the Android app</td><td><strong>Independent controller</strong> (see section 11)</td></tr>
             <tr><td><strong>OpenAI</strong> and <strong>Anthropic</strong></td><td>ChatGPT and Claude, when you ask them for a Dailies quote (section 6)</td><td><strong>Independent controller</strong>: your conversation is governed by their own policy</td></tr>
             <tr><td><strong>Cloudflare</strong></td><td>Running the server behind Dailies in ChatGPT and Claude (section 6)</td><td>Processor: a short log of assistant, topic and language</td></tr>
-            <tr><td><strong>GitHub Pages (GitHub, Inc.)</strong></td><td>Serving the website</td><td>Processor: standard server logs</td></tr>
+            <tr><td><strong>GitHub (GitHub, Inc.)</strong></td><td>Serving the website, and the one-time download of the read-aloud voice (section 2)</td><td>Processor: standard server logs</td></tr>
             <tr><td><strong>Google (Gmail)</strong></td><td>Receiving support email</td><td>Processor</td></tr>
           </table>
         </div>
