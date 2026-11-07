@@ -23,6 +23,9 @@ The website for the Dailies app — https://mydailies.app
 | `/guides/turn-on-notifications-iphone` | `guides/turn-on-notifications-iphone/index.html` | How to turn on notifications for an app on iPhone |
 | `/guides/change-or-delete-lock-screen-iphone` | `guides/change-or-delete-lock-screen-iphone/index.html` | How to change or delete a Lock Screen on iPhone |
 | `/guides/affirmations-on-iphone-lock-screen` | `guides/affirmations-on-iphone-lock-screen/index.html` | How to put affirmations on your iPhone Lock Screen |
+| `/guides/motivational-quotes-at-random-times` | `guides/motivational-quotes-at-random-times/index.html` | How to get motivational quotes at random times of day on iPhone |
+| `/guides/aesthetic-quote-widget-iphone` | `guides/aesthetic-quote-widget-iphone/index.html` | How to make an aesthetic quote widget for your iPhone Home Screen, with the moving widget GIF |
+| `/guides/funny-daily-quotes-iphone` | `guides/funny-daily-quotes-iphone/index.html` | How to get a funny quote on your iPhone every day (the Humor topics) |
 | `/blog` | `blog/index.html` | Blog hub, linking the sixteen posts below |
 | `/blog/<slug>` | `blog/<slug>/index.html` | Motivation posts: nine explainers and seven quote collections. See [The blog](#the-blog) |
 | `/about` | `about/index.html` | Who makes Dailies, the editorial rules, and the contact route |
@@ -465,6 +468,10 @@ DCCwdPccREs (Irwan), widget not updating cQ38vs4NFP4 (VD Photography), notificat
 guide's verse card is the app's own `sky_cloud_line` background.
 
 The five guides added in November 2026 (Lock Screen ideas, new iPhone setup, turning on notifications, changing or deleting a Lock Screen, affirmations) are the exception: their heroes are crops of the app's own backgrounds, the same source as the blog, rather than Unsplash photos of phones (`night_milky_way`, `sky_above_the_clouds`, `night_boathouse`, `mtn_fjord`, `field_dandelions`). They carry no `zoom-*` screens yet, and their steps were written from Apple's documentation and iOS 27 coverage, not walked on a phone: walk them and move the date line when you do. Swap a hero for a phone photo whenever one is wanted.
+
+**The three need pages** (random times, aesthetic widget, funny quotes, 7 November 2026) answer a question people put to ChatGPT and search, where Dailies is a true answer rather than one of a list. Their heroes are app backgrounds too (`field_first_light`, `night_aurora`, `desert_cactus`), and their steps were written from the app's own code and strings on that date, not walked on a phone. The funny page's quotes are from `quotes.db` like the blog's: run the blog check above with its glob pointed at `guides/*/index.html` (and the translations' check at `<lang>/guias/` and friends).
+
+`moving-widget.gif` (and `es/`, `pt/`, `fr/`, `de/` copies with the quote in that language) is the medium Home Screen widget cycling Blizzard, Embers and Butterflies. It is cut from the App Store preview shoot (`~/Documents/dailies/marketing/appstore_preview/raw/fx_<effect>[_<locale>]_cfr.mp4`, recorded on the Shots 17 Pro Max simulator): three seconds of each from second 3, cropped to the tile (`crop=1176:610:72:260`), 640 wide at 12 fps with a 192-color palette, about 1.1 MB each.
 
 The hub's card icons are inline SVG line drawings, the same `.ico` style as the
 blog hub.

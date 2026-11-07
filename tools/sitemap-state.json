@@ -136,8 +136,12 @@
     "sig": "9ec40414027bd390686ca1d0d9c52ea719f4b808c785d84c953294256ec511e2"
   },
   "/de/anleitungen/": {
-    "lastmod": "2026-11-03",
-    "sig": "92cf68ce5e10055944d8015aa9dadc4bc30cfe59b90c585ce816ff66169c88a6"
+    "lastmod": "2026-11-07",
+    "sig": "44a7670ce8b096615c547b8dbb9e83b635d25aa8bf30544df11ff5cc375d7a67"
+  },
+  "/de/anleitungen/aesthetic-zitat-widget-iphone/": {
+    "lastmod": "2026-11-07",
+    "sig": "e08e07525e7928b84040e6a1eff7e419bb566ea42b65a3ba424e278b0a4c6993"
   },
   "/de/anleitungen/affirmationen-auf-dem-iphone-sperrbildschirm/": {
     "lastmod": "2026-11-03",
@@ -171,9 +175,17 @@
     "lastmod": "2026-10-29",
     "sig": "63f992d6b76e76fe6e1063646157159fed53497ef7dc0bec687dff8756d7b665"
   },
+  "/de/anleitungen/lustige-sprueche-jeden-tag-iphone/": {
+    "lastmod": "2026-11-07",
+    "sig": "47705617aa64fa0019d295a6af1e768f3fb054308c9209cbc710f6d5cf5e16e0"
+  },
   "/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/": {
     "lastmod": "2026-11-03",
     "sig": "98a5f4824a3f0f21d724b9577a9f1978c22be95467b81be287b963cf022e54fc"
+  },
+  "/de/anleitungen/motivierende-sprueche-zu-zufaelligen-zeiten/": {
+    "lastmod": "2026-11-07",
+    "sig": "3ad3ee8cc94e03fe519341a8236c17fa78ae2dc762086d18e18579c784e17072"
   },
   "/de/anleitungen/neues-iphone-einrichten/": {
     "lastmod": "2026-11-03",
@@ -264,8 +276,8 @@
     "sig": "f1ba30da9fa564db3d10c01eac0c6d0b3233ba40f0bfffbb64844d8b4d1d36eb"
   },
   "/de/hilfe/": {
-    "lastmod": "2026-11-05",
-    "sig": "0bd88e90ab9f3e6944cf0fe2aa496131d6b7428dca81d5e1eda595363d3a26c2"
+    "lastmod": "2026-11-07",
+    "sig": "0dd6a7c19abc5106edbaeeb1e5155083100d0152edacbcae8ccbc05d8ce082b7"
   },
   "/de/ueber/": {
     "lastmod": "2026-10-29",
@@ -332,8 +344,8 @@
     "sig": "c9e5946ff3bc412c22e358453908dea4b49a4ab380ac114bb1485e164ac73e5c"
   },
   "/es/ayuda/": {
-    "lastmod": "2026-11-05",
-    "sig": "64e7b17855a585019b2d9701c4a8e64ae7b0ec5ac6af88400633043ab5a422d6"
+    "lastmod": "2026-11-07",
+    "sig": "0b28c0bd7be2a1d33eae2cb4e689e9d38f19d7c364384e8e3f489555e6a50834"
   },
   "/es/blog/": {
     "lastmod": "2026-11-03",
@@ -456,8 +468,8 @@
     "sig": "f249bf76a457ae74969f57f6a01e6dc3d144972e17b737f73b072d84afe52a8a"
   },
   "/es/guias/": {
-    "lastmod": "2026-11-03",
-    "sig": "98dfbe92d396a2cfe1550b86b9efcb34f398cab18cf708d26efe5a6efe02e88b"
+    "lastmod": "2026-11-07",
+    "sig": "a7cac3a06bb86c45af574c581dbb2be3c369103c8c954e709c1f69c0fdc7d6bb"
   },
   "/es/guias/activar-las-notificaciones-de-una-app-en-el-iphone/": {
     "lastmod": "2026-11-03",
@@ -495,6 +507,14 @@
     "lastmod": "2026-10-29",
     "sig": "bd81a1508ad7f85e7c9007b6d8de089436cfc9865712c52943f0027535868824"
   },
+  "/es/guias/frases-graciosas-cada-dia-iphone/": {
+    "lastmod": "2026-11-07",
+    "sig": "cb6988b574bed5d6390df0b4754e84e9270260cd746745da6f6924691b7db014"
+  },
+  "/es/guias/frases-motivadoras-a-horas-aleatorias/": {
+    "lastmod": "2026-11-07",
+    "sig": "eebbb175b10786c7fcface87eb95e5d541305b68aa9990f8d6efe62487b33d27"
+  },
   "/es/guias/ideas-para-la-pantalla-de-bloqueo-del-iphone/": {
     "lastmod": "2026-11-03",
     "sig": "a54b620abe7896c063767f3d7dce99e630358d7da853dde51cd9180861add6b5"
@@ -510,6 +530,10 @@
   "/es/guias/versiculo-biblico-en-la-pantalla-de-bloqueo-del-iphone/": {
     "lastmod": "2026-10-29",
     "sig": "24a6d2b8492c5af480b3331ec7408fc8e9e6a3169ea15dee8b8307bab6bc5cfc"
+  },
+  "/es/guias/widget-de-frases-aesthetic-iphone/": {
+    "lastmod": "2026-11-07",
+    "sig": "ea469bdc3237c5badb1f625f10469c44caacfe101698e68484b8358870c9468d"
   },
   "/es/guias/widget-del-iphone-no-se-actualiza/": {
     "lastmod": "2026-10-29",
@@ -528,8 +552,8 @@
     "sig": "94eadc392eaaed9e2979575504e985ffc0b0d8d4d02b0f8c012ab0a27f82f9a1"
   },
   "/fr/aide/": {
-    "lastmod": "2026-11-05",
-    "sig": "4c4b8e5411d3fb0b93b241fcf061d4474a130a40c38887ade9be60fc7db9c22d"
+    "lastmod": "2026-11-07",
+    "sig": "bf2881bf40fd0884ff88431100eeb31c11725cb8e4e934a1ea3240296b346566"
   },
   "/fr/blog/": {
     "lastmod": "2026-11-03",
@@ -652,8 +676,8 @@
     "sig": "8e227d27cb4c869336672774ba170be798d9822ea1f6d614022c541b77510f34"
   },
   "/fr/guides/": {
-    "lastmod": "2026-11-03",
-    "sig": "0ca461b3c95019e7d3527769cd83d080022f09bf486cd73e5efba879db77ecb8"
+    "lastmod": "2026-11-07",
+    "sig": "9bfa9d5f9f4798f8888454fa1ddde39ec51b11567981b2a51bf73add6b74d397"
   },
   "/fr/guides/activer-les-notifications-d-une-app-sur-iphone/": {
     "lastmod": "2026-11-03",
@@ -674,6 +698,14 @@
   "/fr/guides/changer-ou-supprimer-l-ecran-verrouille-iphone/": {
     "lastmod": "2026-11-03",
     "sig": "5e2c59903d6fd0b0b38bd93f86aba40cd1e23215c3ab6494d53711e4baaad9d5"
+  },
+  "/fr/guides/citations-droles-chaque-jour-iphone/": {
+    "lastmod": "2026-11-07",
+    "sig": "e1f58df3d09bf61fb4bb84cce7feae729febb99eb2d87de14763774b868b4c78"
+  },
+  "/fr/guides/citations-motivantes-a-des-heures-aleatoires/": {
+    "lastmod": "2026-11-07",
+    "sig": "9bd6ce9983bb0f648210b88676f9cc315c100c85e6cf883455ab8e1fe4bb2f4d"
   },
   "/fr/guides/citations-sur-l-ecran-verrouille-de-l-iphone/": {
     "lastmod": "2026-10-29",
@@ -707,13 +739,17 @@
     "lastmod": "2026-10-29",
     "sig": "6bcac0985a81f673bb1ce6b224a1b28239526784a78207cdc3d35ed3c6e001ab"
   },
+  "/fr/guides/widget-de-citations-esthetique-iphone/": {
+    "lastmod": "2026-11-07",
+    "sig": "c98877d85f70c6f815166783ff22c535e5977d5355a44ce810608efc8f3cf6cd"
+  },
   "/fr/guides/widget-iphone-ne-se-met-pas-a-jour/": {
     "lastmod": "2026-10-29",
     "sig": "6b389cce6dad8f078b0e64d04e04bdda67f525411087481096ce8acf9184ddd4"
   },
   "/guides/": {
-    "lastmod": "2026-11-03",
-    "sig": "47bfdc67ad09d2d5b424280803e0901934cd652eed9afea5e157477a3b6f571a"
+    "lastmod": "2026-11-07",
+    "sig": "92d203c7b368eed267f233094527795a4bf97cdba10f42890342c8a8d5a2aaed"
   },
   "/guides/add-a-widget-to-your-home-screen/": {
     "lastmod": "2026-10-29",
@@ -722,6 +758,10 @@
   "/guides/add-widgets-on-ipad/": {
     "lastmod": "2026-10-29",
     "sig": "3fca122af63192cbbbc9dac6cf67f86d6b015fb5ab790806b169149bebc12974"
+  },
+  "/guides/aesthetic-quote-widget-iphone/": {
+    "lastmod": "2026-11-07",
+    "sig": "008dc971bf6a0e08d874082e9618e665ab724f983569c09e2b86abc63a61f835"
   },
   "/guides/affirmations-on-iphone-lock-screen/": {
     "lastmod": "2026-11-03",
@@ -743,6 +783,10 @@
     "lastmod": "2026-10-29",
     "sig": "0bcf7b4e6e2fa90290637977f97eb457381b774d95640493b3983794cdd204a7"
   },
+  "/guides/funny-daily-quotes-iphone/": {
+    "lastmod": "2026-11-07",
+    "sig": "38ce6a48fcefb33c22018931ca4678e54cf0ad0848311558df5cd6fe4d0b4ae6"
+  },
   "/guides/iphone-lock-screen-ideas/": {
     "lastmod": "2026-11-03",
     "sig": "ff0d1729df07a66694c1ce673c8a8c08595a34ef68013f39ea5937b0ef253f4e"
@@ -754,6 +798,10 @@
   "/guides/iphone-widget-not-updating/": {
     "lastmod": "2026-10-29",
     "sig": "34216aeeca6dadbfb2baecfae30b7ef865ac06509222ee3f5f5c3cfed71f9e2a"
+  },
+  "/guides/motivational-quotes-at-random-times/": {
+    "lastmod": "2026-11-07",
+    "sig": "cc6b83d8e07cdcadd344a134f09e8a94e9f0b2cde2f91c4f50d554e61926f905"
   },
   "/guides/new-iphone-setup/": {
     "lastmod": "2026-11-03",
@@ -772,8 +820,8 @@
     "sig": "1ba8b0d5193b44f67b2c04859ad191587f967aef26c85a5af8843251e9e8068d"
   },
   "/help/": {
-    "lastmod": "2026-11-05",
-    "sig": "7d8b75e9a92bc116ea3e347d46479b295f4643371ed288b5d086770319e158a1"
+    "lastmod": "2026-11-07",
+    "sig": "38a6c422251f51b9a5c1a79c5ea66afa268532b010f1445c12a6bc546e84a104"
   },
   "/privacy/": {
     "lastmod": "2026-11-03",
@@ -784,8 +832,8 @@
     "sig": "15f114c0b06f911aeef458e8ace1316505d9bdb90aa96f9ce7141e1cf511e13b"
   },
   "/pt/ajuda/": {
-    "lastmod": "2026-11-05",
-    "sig": "f73bdb312b2c2267e6ab24e1fab7b17b2905dace49dbf4a70776ba4a6d6ff634"
+    "lastmod": "2026-11-07",
+    "sig": "79c3b41fc49a622e9ea9e1912325e058a9ef2dd53b3345fd81ee0f3206fcc6e2"
   },
   "/pt/blog/": {
     "lastmod": "2026-11-03",
@@ -908,8 +956,8 @@
     "sig": "08d54690d49f31277ad98a7d672664604b6fd336eece1fa525a548a8eedbf025"
   },
   "/pt/guias/": {
-    "lastmod": "2026-11-03",
-    "sig": "a22d5ac90e5cd30ffebe4b6f5b610a37b134e4a0119e085de7a3763eb67c9432"
+    "lastmod": "2026-11-07",
+    "sig": "89a294992f6904fe8e9ee90fc2442537e27127aefc58750b1d985fef595635d0"
   },
   "/pt/guias/adicionar-um-widget-na-tela-de-inicio/": {
     "lastmod": "2026-10-29",
@@ -934,6 +982,14 @@
   "/pt/guias/foco-tela-bloqueada-iphone/": {
     "lastmod": "2026-10-29",
     "sig": "eacdbba9089b6996d78c2d54885f3f4ecefeb1663ec3953655848909008a91aa"
+  },
+  "/pt/guias/frases-engracadas-todo-dia-iphone/": {
+    "lastmod": "2026-11-07",
+    "sig": "c2ed36f67cfabecbd6109319efaf2405d6b8a6adad6de6f6e3e89ab893bba95f"
+  },
+  "/pt/guias/frases-motivacionais-em-horarios-aleatorios/": {
+    "lastmod": "2026-11-07",
+    "sig": "8b265fa015cb11c6667e7ff59c83fa227d5573b30836b34933c8de214a784c9d"
   },
   "/pt/guias/frases-na-tela-bloqueada-do-iphone/": {
     "lastmod": "2026-10-29",
@@ -962,6 +1018,10 @@
   "/pt/guias/versiculo-biblico-na-tela-bloqueada-do-iphone/": {
     "lastmod": "2026-10-29",
     "sig": "06135604cbc682f8d9ff5c3b1f36d426c29fce1929d79cc34f4742ba7d7e83e8"
+  },
+  "/pt/guias/widget-de-frases-aesthetic-iphone/": {
+    "lastmod": "2026-11-07",
+    "sig": "f7a99d265d901ed93f3f131c8bcf66203b56b946d183bc454f43d65c43ee7ea3"
   },
   "/pt/guias/widget-do-iphone-nao-atualiza/": {
     "lastmod": "2026-10-29",
