@@ -335,8 +335,6 @@ PAGES = [
     ("/terms/", None, None, None, None),
     ("/privacy/", None, None, None, None),
     ("/cookies/", None, None, None, None),
-    # English only: the badges on it are English artwork from each site.
-    ("/featured/", None, None, None, None),
 ]
 
 # Written right after the hreflang block on English pages that have one. It
