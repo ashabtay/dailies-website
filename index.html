@@ -316,15 +316,16 @@ details p a{color:var(--accent); text-decoration:underline; text-underline-offse
 .final .lede{text-align:center}
 .final .qr{flex-direction:column; text-align:center; gap:10px}
 .final .qr-note{max-width:22ch}
+.featured-on{display:flex; flex-direction:column; align-items:center; gap:10px; margin-top:8px}
+.featured-label{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--text-faint)}
+.featured-badges{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:14px}
+.featured-badges a{line-height:0}
 footer{
   margin-top:clamp(56px,7vw,84px); padding:24px 0 28px; border-top:1px solid var(--rule-soft);
   display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
   font-family:var(--f-mono); font-size:12px; letter-spacing:.05em; color:var(--text-faint);
-  align-items:center;
 }
 footer nav{display:flex; gap:22px; flex-wrap:wrap}
-footer .listed{display:flex; align-items:center; gap:16px; flex-wrap:wrap}
-footer .listed a{line-height:0}
 footer a{text-decoration:none}
 footer a:hover{color:var(--accent)}
 
@@ -568,12 +569,16 @@ footer a:hover{color:var(--accent)}
         <div class="qr-chip"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MSA0MSIgY2xhc3M9InNlZ25vIiBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPjxwYXRoIGZpbGw9IiNmNGVjZGMiIGQ9Ik0wIDBoNDF2NDFoLTQxeiIvPjxwYXRoIGNsYXNzPSJxcmxpbmUiIHN0cm9rZT0iIzE5MWMxZCIgZD0iTTIgMi41aDdtMSAwaDJtNiAwaDFtMiAwaDJtMyAwaDVtMSAwaDdtLTM3IDFoMW01IDBoMW0yIDBoMW0xIDBoMW0xIDBoMm0xIDBoNG00IDBoM20xIDBoMW0xIDBoMW01IDBoMW0tMzcgMWgxbTEgMGgzbTEgMGgxbTIgMGgybTIgMGgxbTMgMGgxbTMgMGgzbTMgMGgxbTIgMGgxbTEgMGgzbTEgMGgxbS0zNyAxaDFtMSAwaDNtMSAwaDFtMSAwaDJtMSAwaDFtMSAwaDFtMiAwaDFtMyAwaDFtMyAwaDRtMiAwaDFtMSAwaDNtMSAwaDFtLTM3IDFoMW0xIDBoM20xIDBoMW0xIDBoMW00IDBoMW0yIDBoMm0yIDBoMW0xIDBoMm0xIDBoNG0xIDBoMW0xIDBoM20xIDBoMW0tMzcgMWgxbTUgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTIgMGgxbTEgMGgxbTEgMGgybTUgMGgxbTMgMGgxbTUgMGgxbS0zNyAxaDdtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDdtLTI5IDFoOW0zIDBoNG0zIDBoMm0tMjkgMWgxbTMgMGgxbTEgMGg0bTUgMGgybTIgMGgybTUgMGgxbTIgMGg1bTIgMGgxbS0zNSAxaDJtMyAwaDFtMyAwaDRtMyAwaDJtMyAwaDJtMSAwaDRtMSAwaDJtMiAwaDFtLTM2IDFoMW0xIDBoMW0zIDBoM20xIDBoMW0xIDBoMW0yIDBoMW0xIDBoMW0xIDBoMW0xIDBoNG0xIDBoMm0xIDBoMW0yIDBoMm0tMzMgMWgybTQgMGgxbTEgMGgxbTEgMGgybTEgMGgxMW04IDBoM20tMzYgMWgxbTEgMGgybTEgMGgybTEgMGgxbTUgMGgxbTEgMGgzbTIgMGgxbTEgMGgybTMgMGg0bTEgMGg0bS0zNyAxaDNtMiAwaDFtMSAwaDFtMSAwaDFtMSAwaDJtMSAwaDNtMyAwaDJtMSAwaDFtMiAwaDRtMiAwaDJtMSAwaDFtLTMxIDFoMm0yIDBoMm0yIDBoMW0xIDBoM201IDBoMm0xIDBoMm0zIDBoNW0tMzYgMWgzbTEgMGgxbTIgMGgybTIgMGgxbTEgMGgxbTEgMGg0bTMgMGgxbTEgMGgxbTEgMGg3bTEgMGgxbS0zMiAxaDFtMSAwaDJtMyAwaDVtMyAwaDJtMiAwaDJtNCAwaDFtMSAwaDFtMiAwaDJtMSAwaDFtLTM1IDFoMm02IDBoMm0yIDBoMW0xIDBoMW0yIDBoM20xIDBoM20xIDBoMm0yIDBoMm0xIDBoMm0tMzYgMWgzbTMgMGgybTEgMGgybTEgMGgxbTEgMGgxbTEgMGgybTIgMGgxbTIgMGgxbTIgMGgybTEgMGgxbTEgMGgxbTIgMGgxbS0zNSAxaDNtMSAwaDJtMiAwaDFtMiAwaDFtNSAwaDFtMyAwaDFtMSAwaDJtMSAwaDJtMSAwaDFtMiAwaDRtLTM1IDFoMW0xIDBoNG0xIDBoM20yIDBoMW0xIDBoNW0xIDBoMm0xIDBoMW0xIDBoMm0xIDBoM20xIDBoMm0tMzUgMWg0bTEgMGgxbTUgMGg3bTIgMGgxbTIgMGg3bTEgMGgybTIgMGgxbS0zNCAxaDNtMSAwaDFtMyAwaDNtMSAwaDJtMiAwaDFtMiAwaDRtMiAwaDJtMiAwaDVtLTMxIDFoMW0xIDBoMm0xIDBoNG03IDBoMW0xIDBoMm0xIDBoMW0yIDBoNG0xIDBoMW0tMzQgMWgybTEgMGgzbTMgMGgzbTIgMGgybTMgMGgxbTIgMGgxbTMgMGg0bTIgMGgzbS0zNiAxaDFtMyAwaDFtMiAwaDZtNSAwaDJtMSAwaDNtMyAwaDFtMyAwaDJtLTI5IDFoMW0xIDBoMW0xIDBoMm0yIDBoNG0xIDBoM20xIDBoOW0xIDBoMm0tMzEgMWgxbTIgMGgxbTUgMGgzbTEgMGgzbTEgMGgzbTEgMGgybTIgMGgxbTEgMGgxbTEgMGgxbTEgMGgybTEgMGgxbS0zNyAxaDJtMSAwaDFtMSAwaDJtNCAwaDJtMyAwaDNtMiAwaDRtMyAwaDdtMSAwaDFtLTI5IDFoM20xIDBoMm0xIDBoMW00IDBoMm0xIDBoMW0xIDBoMm0xIDBoMW0zIDBoMW0yIDBoMW0tMzYgMWg3bTEgMGg1bTEgMGg0bTUgMGgzbTIgMGgxbTEgMGgxbTEgMGgxbTIgMGgxbS0zNiAxaDFtNSAwaDFtMTAgMGg0bTEgMGgxbTEgMGgxbTIgMGgybTMgMGg0bS0zNiAxaDFtMSAwaDNtMSAwaDFtMSAwaDFtMSAwaDNtNSAwaDJtMiAwaDNtMSAwaDFtMSAwaDltLTM3IDFoMW0xIDBoM20xIDBoMW00IDBoMW00IDBoMW0yIDBoMm0yIDBoMW0xIDBoN20xIDBoMW0yIDBoMW0tMzcgMWgxbTEgMGgzbTEgMGgxbTQgMGgybTEgMGgxbTEgMGgybTIgMGgybTEgMGgxbTEgMGgxbTEgMGgybTEgMGgxbTIgMGgybS0zNSAxaDFtNSAwaDFtMiAwaDFtMiAwaDFtMSAwaDFtMiAwaDJtMiAwaDJtMSAwaDFtMSAwaDFtMiAwaDFtMiAwaDRtLTM2IDFoN20xIDBoMm0yIDBoOG0xIDBoMW0yIDBoMW0yIDBoMW0xIDBoMW0xIDBoMW0xIDBoNCIvPjwvc3ZnPg==" alt="QR code linking to Dailies on the App Store"></div>
         <p class="qr-note">Scan with your iPhone camera to open the App Store</p>
       </div>
+      <div class="featured-on">
+        <span class="featured-label">Featured on</span>
+        <div class="featured-badges">
+          <a href="https://apptierlist.com/apps/dailies-motivational-quotes-6804210416/?from=badge"><img src="https://apptierlist.com/badge/dailies-motivational-quotes-6804210416.svg?k=atl-zlfcqm" alt="Dailies - motivational quotes on AppTierList" width="116" height="32"></a>
+          <a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge2-dark.svg" alt="Featured on Twelve Tools" width="148" height="40"></a>
+        </div>
+      </div>
     </div>
     <div class="wrap"><footer>
-      <div class="listed">
-        <span>&copy; 2026 Dailies</span>
-        <a href="https://apptierlist.com/apps/dailies-motivational-quotes-6804210416/?from=badge"><img src="https://apptierlist.com/badge/dailies-motivational-quotes-6804210416.svg?k=atl-zlfcqm" alt="Dailies - motivational quotes on AppTierList" width="116" height="32" loading="lazy"></a>
-      </div>
+      <span>&copy; 2026 Dailies</span>
       <nav>
         <a href="/compare/">Compare</a>
         <a href="/about/">About</a>
