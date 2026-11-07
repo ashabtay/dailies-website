@@ -320,8 +320,11 @@ footer{
   margin-top:clamp(56px,7vw,84px); padding:24px 0 28px; border-top:1px solid var(--rule-soft);
   display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
   font-family:var(--f-mono); font-size:12px; letter-spacing:.05em; color:var(--text-faint);
+  align-items:center;
 }
 footer nav{display:flex; gap:22px; flex-wrap:wrap}
+footer .listed{display:flex; align-items:center; gap:16px; flex-wrap:wrap}
+footer .listed a{line-height:0}
 footer a{text-decoration:none}
 footer a:hover{color:var(--accent)}
 
@@ -567,11 +570,13 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
     <div class="wrap"><footer>
-      <span>&copy; 2026 Dailies</span>
+      <div class="listed">
+        <span>&copy; 2026 Dailies</span>
+        <a href="https://apptierlist.com/apps/dailies-motivational-quotes-6804210416/?from=badge"><img src="https://apptierlist.com/badge/dailies-motivational-quotes-6804210416.svg?k=atl-zlfcqm" alt="Dailies - motivational quotes on AppTierList" width="116" height="32" loading="lazy"></a>
+      </div>
       <nav>
         <a href="/compare/">Compare</a>
         <a href="/about/">About</a>
-        <a href="/featured/">Featured on</a>
         <a href="/terms/">Terms</a>
         <a href="/privacy/">Privacy</a>
         <a href="/cookies/">Cookies</a>
