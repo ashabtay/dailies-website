@@ -1,15 +1,15 @@
 {
   "/": {
     "lastmod": "2026-11-08",
-    "sig": "a43c554dc467431a08eb8bf17849e3dcac7f0b3825ce4c95d06c7a211092acdd"
+    "sig": "643553ac6940e6f70d95f771d80ab8a1660a5435e2b6e887d6ea7287d3a3eec3"
   },
   "/about/": {
-    "lastmod": "2026-10-29",
-    "sig": "160d3b0cefd9f874241adff402aab8b9f7ab0f7a4812b6b28284aa13370d7048"
+    "lastmod": "2026-11-08",
+    "sig": "01f784df8266cbc1207e61646b4fee0555fcceac1112168eeae38b2bafa4b871"
   },
   "/blog/": {
-    "lastmod": "2026-11-03",
-    "sig": "00be8d2596da9c2a647d8c97f7c07ac0ff6430e4011ca7f7fce74d6568100871"
+    "lastmod": "2026-11-08",
+    "sig": "eb5a74ccfcf410e8100ddfd8d302499bc63e14fd5debc41188a8943ec9af3df1"
   },
   "/blog/discipline-and-consistency-quotes/": {
     "lastmod": "2026-10-29",
@@ -132,8 +132,8 @@
     "sig": "354cc008ee094c79ed42d2979c98954f525a6a82439ed943e23f8269b223c630"
   },
   "/de/": {
-    "lastmod": "2026-11-03",
-    "sig": "83e5a20d3dcd3caf333a115fa862caf1d0d2943b5ecbbf2ab317090fbb2f476c"
+    "lastmod": "2026-11-08",
+    "sig": "7ed4e8881ef809f9f66110062bd78d54061833354e0b602d7011cc459d41dde8"
   },
   "/de/anleitungen/": {
     "lastmod": "2026-11-07",
@@ -208,8 +208,8 @@
     "sig": "48cfc9545f6dc404dda8778f45eacdc113534edf8dc8b5d80d2b954bc53b7c69"
   },
   "/de/blog/": {
-    "lastmod": "2026-11-03",
-    "sig": "70978e28c40451f71e524f3310e5b2083f42ff689311b3d4c71e272301aee3f6"
+    "lastmod": "2026-11-08",
+    "sig": "496e284f33c8a125c80959526a2ed8369b8ad38ba13430c0f665989815491c0b"
   },
   "/de/blog/aufhoeren-zu-gruebeln/": {
     "lastmod": "2026-10-29",
@@ -280,8 +280,8 @@
     "sig": "3c5f7dc7fed78d5ab7bdec3bb73e34c53969c3bdcf0e1289efcb7a157bc8f8a3"
   },
   "/de/ueber/": {
-    "lastmod": "2026-10-29",
-    "sig": "cc1221cfc4d40b4b320d6f916c5b2f9c1a3bfcda29341c85bddf1fb8699f709f"
+    "lastmod": "2026-11-08",
+    "sig": "90a070e961a94e769f45e1dbdba2964d2ce55ac3613b97539b3ac6565978b74d"
   },
   "/de/vergleich/": {
     "lastmod": "2026-11-03",
@@ -336,20 +336,20 @@
     "sig": "e7ff4a96d6b2d67051fd74f1f68f8f220b223fc0154cd0cf24abc6f46f95fa3a"
   },
   "/es/": {
-    "lastmod": "2026-11-03",
-    "sig": "a00aa55f6b4ebaf3b9482cc768305841e0e36169ffd52871108b7d39ceeafe4c"
+    "lastmod": "2026-11-08",
+    "sig": "994c02757502dc5dd4b216337e0bbff4ab1e47357858adc47d247c8dd44293c6"
   },
   "/es/acerca-de/": {
-    "lastmod": "2026-10-29",
-    "sig": "44e2bbe3a588525db743de415050199e721bafe4a46fb4ca19db2a61203ace70"
+    "lastmod": "2026-11-08",
+    "sig": "a1b95f5fce6c753eb0877d6352adcee9eaa703114dea1f5c6321b532697b7b87"
   },
   "/es/ayuda/": {
     "lastmod": "2026-11-07",
     "sig": "b5e2a39a8c45aaea4d496619d668a0bcee589115934fe70144d4f20191779d43"
   },
   "/es/blog/": {
-    "lastmod": "2026-11-03",
-    "sig": "f2740a1dd5c9f81d777929d1d008d98a9e1841257cd0de9e73b5915cf31ffd1f"
+    "lastmod": "2026-11-08",
+    "sig": "259587290abdadf99e05597cd77661bc4ce4bed4568889b7f384f1c7a1cab8ef"
   },
   "/es/blog/como-dejar-de-procrastinar/": {
     "lastmod": "2026-10-29",
@@ -540,20 +540,20 @@
     "sig": "006682c6e4e21084b9e8c9379401ce8405602b84519311d3bbd53a2b92d41020"
   },
   "/fr/": {
-    "lastmod": "2026-11-03",
-    "sig": "7c65efdedb2900c180ab57d182df8d867f053b8cb0ff24215421e230b9223a4e"
+    "lastmod": "2026-11-08",
+    "sig": "5bddd2cd4779bd6c0c9a35bb24b53f30370ae8ad456cc9a735d994d924d04f88"
   },
   "/fr/a-propos/": {
-    "lastmod": "2026-10-29",
-    "sig": "2b325b86ce06ab482199582a54bc7b8d93bb7f02f6004410805aae2ed9f53462"
+    "lastmod": "2026-11-08",
+    "sig": "be469e79351853176e6d7232266b2667c6f83e7b411480d46dd6853da3cc30ae"
   },
   "/fr/aide/": {
     "lastmod": "2026-11-07",
     "sig": "ae0af52db4b9183643e6c1707d54ba80dc3646532c8b9945d797f38186ed1b83"
   },
   "/fr/blog/": {
-    "lastmod": "2026-11-03",
-    "sig": "1bb18db5571c8626de86b1f1ba45f97647c53aecdd5ebd01cb85a45892a1bc7f"
+    "lastmod": "2026-11-08",
+    "sig": "1dff994787c08b95344d185c4c8b0f39082e2a4e7a74fe13195936d755dff7ab"
   },
   "/fr/blog/citations-contre-l-anxiete-et-la-rumination/": {
     "lastmod": "2026-10-29",
@@ -824,16 +824,16 @@
     "sig": "997a3b77f75f7b84111df8f8b0c04bb99eec745fd5c52063f9bcc5fb34119234"
   },
   "/pt/": {
-    "lastmod": "2026-11-03",
-    "sig": "dc20467a93443fa3a1bf73cb051fc0e5eda779401521767e30a27ef3a10eff71"
+    "lastmod": "2026-11-08",
+    "sig": "694487797d2f9ebf5222868b13489ecfd80d685d1a6d69c65781b939275cc504"
   },
   "/pt/ajuda/": {
     "lastmod": "2026-11-07",
     "sig": "d25d13693f0c3295bfd4fbb13e11452aa27a436fcd74f36dcd066e4786758290"
   },
   "/pt/blog/": {
-    "lastmod": "2026-11-03",
-    "sig": "3524ba77de2249be8723391505607388b3d6e1b188d56300b34b2ff7b125004e"
+    "lastmod": "2026-11-08",
+    "sig": "4b45f9a5f78d99f0726765dd220a66aa0fffdf510e4384f69d1e32c1cfb0a308"
   },
   "/pt/blog/afirmacoes-funcionam/": {
     "lastmod": "2026-10-29",
@@ -1024,8 +1024,8 @@
     "sig": "03d54c26c34ad92b6abcdfdf5e7fbc1a8f9068f99077d0cf33d030a1be5fb47c"
   },
   "/pt/sobre/": {
-    "lastmod": "2026-10-29",
-    "sig": "5147ce7de46ba0b147f37bb553709e8616f926311d04adae22f909b523d9ef4a"
+    "lastmod": "2026-11-08",
+    "sig": "6d7e519a489baa44823ab9eea6016dc490e57bac5d89e5022e749ec68aa1b435"
   },
   "/terms/": {
     "lastmod": "2026-11-03",
