@@ -1,1034 +1,1238 @@
 {
   "/": {
-    "lastmod": "2026-11-08",
-    "sig": "643553ac6940e6f70d95f771d80ab8a1660a5435e2b6e887d6ea7287d3a3eec3"
+    "lastmod": "2026-11-10",
+    "sig": "4eac0905c83c23f83c276ac435dbb3911166ef5eb513b902db654ee5bae3cb7a"
   },
   "/about/": {
-    "lastmod": "2026-11-08",
-    "sig": "01f784df8266cbc1207e61646b4fee0555fcceac1112168eeae38b2bafa4b871"
+    "lastmod": "2026-11-10",
+    "sig": "d3ac3a70b7dcd79d111eb6c6f2e75ef52f02ab1edd15855d6d07cf2debe4d668"
   },
   "/blog/": {
-    "lastmod": "2026-11-08",
-    "sig": "eb5a74ccfcf410e8100ddfd8d302499bc63e14fd5debc41188a8943ec9af3df1"
+    "lastmod": "2026-11-10",
+    "sig": "aa520d6b4fc209f59302f25b5e3a7ed931bea2de318a3ac41cbf37fdca471f45"
   },
   "/blog/discipline-and-consistency-quotes/": {
-    "lastmod": "2026-10-29",
-    "sig": "d45e480f29f4e46b2fda566ce092e807b911971d6eb55b376a901756789ce34b"
+    "lastmod": "2026-11-10",
+    "sig": "81713d4cdf0d6207527fe913badc9f85b595d4c0fac7ac09c1b5c6f05809bfa2"
   },
   "/blog/do-affirmations-work/": {
-    "lastmod": "2026-10-29",
-    "sig": "b1b75ca80a6c0d040c9c39c34ebd32f0155941ebde47c1faba4e336ba0596859"
+    "lastmod": "2026-11-10",
+    "sig": "ba88f289fac1ceb0f4d0304687ae3bdf88721d03686eef05dff78d70e041edb9"
   },
   "/blog/how-long-does-it-take-to-form-a-habit/": {
-    "lastmod": "2026-10-29",
-    "sig": "95f80fd0b7e45cc0040e18354f81e2012413bd4c1877a1e58295e49110f53028"
+    "lastmod": "2026-11-10",
+    "sig": "64eb4fd5e5567ca1725c794a2445077a3821cfc25db398312b39aef105383434"
   },
   "/blog/how-to-motivate-yourself/": {
-    "lastmod": "2026-10-29",
-    "sig": "8f8696e2beff7577e7ae0bfd636216dcfa3da1d88bea9614f6d9aff063c2ee0b"
+    "lastmod": "2026-11-10",
+    "sig": "1548901f19e2ecc25b408be4a9dd1ac787f4563b2a862fccfb712a272f6f8684"
   },
   "/blog/how-to-stay-motivated/": {
-    "lastmod": "2026-10-29",
-    "sig": "0e987b958224e753c7033441c448c4c01bdaf98267e1e0cee97923c27cd19b7d"
+    "lastmod": "2026-11-10",
+    "sig": "b529e3af0b21abc9fb9f7e456daa1ca44d961390c2dd89cae79abef81fd91d5a"
   },
   "/blog/how-to-stop-overthinking/": {
-    "lastmod": "2026-10-29",
-    "sig": "e31c21496ad6bcebc66265466d5e1ad52e96aaf49a329ef55ed573336f241757"
+    "lastmod": "2026-11-10",
+    "sig": "cc10075745fce16e8323a4e7c52b3f685dd2ec95c1d07beaa79c2cbb03a52c91"
   },
   "/blog/how-to-stop-procrastinating/": {
-    "lastmod": "2026-10-29",
-    "sig": "2aafc2d09e5dcf8155a63112884c9872adf3a6c33e768bb7079cc4a779fba9b2"
+    "lastmod": "2026-11-10",
+    "sig": "385509fe610da08ea8bcba3c5f5ff5d82634608e91357d58aa81b0163d5dffc4"
   },
   "/blog/how-to-use-your-phone-less/": {
-    "lastmod": "2026-10-29",
-    "sig": "1d0583a3ce0781ad0cc94414211c538826096978b692c406b509d3b34690271a"
+    "lastmod": "2026-11-10",
+    "sig": "a8832c5704c795508400a85ef9d6868e66ac1e715718ca998236297471349823"
   },
   "/blog/morning-motivation-quotes/": {
-    "lastmod": "2026-10-29",
-    "sig": "30a3b21ee8e96d210e7319e6bf955de55fbecb5dca3b5ce4557618186add28f0"
+    "lastmod": "2026-11-10",
+    "sig": "506f8b2455364c9d899c1a0b33e388f5d62f817fe065360e6d47b283c8cfa883"
   },
   "/blog/motivation-vs-discipline/": {
-    "lastmod": "2026-10-29",
-    "sig": "9b5056b66d2541e2de5afa97b8d348259c455b4706ea05a5d0dcb3ce8e6509b7"
+    "lastmod": "2026-11-10",
+    "sig": "2cb153bf58ffe9a1846a2e22ec7758970c35db0df1e4447fa94bb94352dd51b8"
   },
   "/blog/motivational-quotes-for-hard-times/": {
-    "lastmod": "2026-10-29",
-    "sig": "acde63337dd85eb85c8bf11e51ffad618bb6a1045d15d1272c521b03df979620"
+    "lastmod": "2026-11-10",
+    "sig": "e28f909df943c9f027c8c79817882f2a4c1bc86b8562e0255565145f40dd84ca"
   },
   "/blog/new-years-resolutions/": {
-    "lastmod": "2026-11-03",
-    "sig": "2d640c490507273bdda32bd8e1bc2313d1c2b00c490989d26b3350a9fd5c9007"
+    "lastmod": "2026-11-10",
+    "sig": "3eff28f344e0fceab47cc8a2f495f8f48f3799f4fe5e3ab18031772f6813b596"
   },
   "/blog/quotes-about-starting-over/": {
-    "lastmod": "2026-10-29",
-    "sig": "3bdede87088ce421c14553343ed28588dcb856e880a653e1fcdab11b5e093242"
+    "lastmod": "2026-11-10",
+    "sig": "3a206f52fb86f34b69237e6e2a46fabc51066b3c61ac2f8d9104b207a4062f9b"
   },
   "/blog/quotes-for-anxiety-and-overthinking/": {
-    "lastmod": "2026-10-29",
-    "sig": "755c1556c968a3a2e038e8d6a6eda2dcf95b3f9362177cc37ccefb2101aaea80"
+    "lastmod": "2026-11-10",
+    "sig": "0218dbf38bb99cbc0496cbf26a64974db1659f8dec65c0630e90d2ab7b68ac9b"
   },
   "/blog/quotes-for-self-doubt/": {
-    "lastmod": "2026-10-29",
-    "sig": "fa99b47b0fef38459b6e7b56bfd94f0a9a1be4681594206d6612e92fcc3205ba"
+    "lastmod": "2026-11-10",
+    "sig": "5c56740626e770a62a3b3990b5a1a401f5555469a041e950210276acb47b695b"
   },
   "/blog/quotes-for-when-you-feel-stuck/": {
-    "lastmod": "2026-10-29",
-    "sig": "50d5b4983404e0d712fefa5f366813223848d6bd7b3e56517fb8d3e8ee14a156"
+    "lastmod": "2026-11-10",
+    "sig": "3f58e981beb5f70c8ec6ef0fda4038d5f1c1a09160cf085d49529c010bc7958f"
   },
   "/compare/": {
-    "lastmod": "2026-11-03",
-    "sig": "37dade9deacf487152f293f18b431af5655c390f2580d2974d251498ed489952"
+    "lastmod": "2026-11-10",
+    "sig": "e2af09a79bb0ae4ff41394a8564c02b9021bb9e6cb0aaf4efcf74b0a83dbcaf9"
   },
   "/compare/best-motivational-quote-apps/": {
-    "lastmod": "2026-11-03",
-    "sig": "24efd04f862030e464890b5b46d390fcb9b5f9787a565bf7299da6743bb5879b"
+    "lastmod": "2026-11-10",
+    "sig": "f97285c6cec9174d8809812d6bece0fe4c8cd90779bfa9eacf39aad2d91e88a5"
   },
   "/compare/dailies-vs-daily-quote/": {
-    "lastmod": "2026-11-03",
-    "sig": "b7da0f97f5d32bcba6d293b67e0e81b5166961f60d189aee6eea260d8e865077"
+    "lastmod": "2026-11-10",
+    "sig": "0d29bb4ecdd912fdb488c44a0722801fbe156d54dbc5319bb536a52f67fbedc4"
   },
   "/compare/dailies-vs-i-am/": {
-    "lastmod": "2026-11-03",
-    "sig": "43e5fa376a71edf9d101c014cb87457ad9ae2a06489d7f2648ab1c7d4c0c2445"
+    "lastmod": "2026-11-10",
+    "sig": "d5d0aeaa31f5b4ef721e93fa9389c6cf0af6b8283ca0d5c0375a2ddebe3fadb3"
   },
   "/compare/dailies-vs-innertune/": {
-    "lastmod": "2026-11-03",
-    "sig": "8f47d510377d2378b069d272139b9d53e3bbd0e39f9658fed9a75bc24ed068e1"
+    "lastmod": "2026-11-10",
+    "sig": "2df65baf03508eb4494b0a85b6d7315eaf0b9a52dfee81acee63e46fdd4aabea"
   },
   "/compare/dailies-vs-locksmith/": {
-    "lastmod": "2026-11-03",
-    "sig": "b938d70b62cef46f445a91c8cf5b1150e067510130eb7d96417de7aac0433d22"
+    "lastmod": "2026-11-10",
+    "sig": "08b4e4980395a913e319eb79d8560fbd88b990cdace3a3f0c52b62326429d47b"
   },
   "/compare/dailies-vs-mantra/": {
-    "lastmod": "2026-11-03",
-    "sig": "7a8faf1b78f8a6042f19e0dce9cd777ba20c7554247bdb149b780c2c2448be30"
+    "lastmod": "2026-11-10",
+    "sig": "7929f49216b22fdd723818a896e59033c0f2b98ae502cef78c6f29903f033271"
   },
   "/compare/dailies-vs-motivate/": {
-    "lastmod": "2026-11-03",
-    "sig": "215d0087aca40674aaf3277b11a8dbd97175cfc1b97d1ae81f62f1be5726e8e3"
+    "lastmod": "2026-11-10",
+    "sig": "fc670ad1118f9afe69d718abde2d8fe46f6c714f508ce9c6b4b01495c3b71ef6"
   },
   "/compare/dailies-vs-motivation/": {
-    "lastmod": "2026-11-03",
-    "sig": "e81fa59b05b8bdd5157bcfe237541f8c9dd2981d403e09eb8da4bbb0d7e216b9"
+    "lastmod": "2026-11-10",
+    "sig": "aecbb6c29678b75829c4047e837549244b1145256eef20b854c015a1fe06b593"
   },
   "/compare/dailies-vs-motivational-quotes-daily/": {
-    "lastmod": "2026-11-03",
-    "sig": "79facba777ff74a3907be59b94dcc74ef7f75376a8f53118c03b172386721ba2"
+    "lastmod": "2026-11-10",
+    "sig": "84df83b6eb6c69a87fff1143d6bed9580bb6d7980be64869a8e28d5a8b44b8a6"
   },
   "/compare/dailies-vs-peptalk/": {
-    "lastmod": "2026-11-03",
-    "sig": "ee850f220b3aba3dd2ffbbac90b03144a9ff75928d85042a92883601d373da18"
+    "lastmod": "2026-11-10",
+    "sig": "1ad9ce4df4a0bf302126514516e5862f48f0826c66542e2ab40b78ec6b06e4cf"
   },
   "/compare/dailies-vs-thinkup/": {
-    "lastmod": "2026-11-03",
-    "sig": "3d6f1906052638a2f91d9fd8eb2675fe5983a29fe8e80a1d521ff017d2840c2f"
+    "lastmod": "2026-11-10",
+    "sig": "6576332d8400790d554179f47aca908cb9496155f56971c7975c7e739d77cfab"
   },
   "/compare/dailies-vs-widgetsmith/": {
-    "lastmod": "2026-11-03",
-    "sig": "b724038ccd9d0e9c0ad11dc4adc4056591ca74f322bce2f5ef2d98a9f6fd1022"
+    "lastmod": "2026-11-10",
+    "sig": "d6572c01ef21cd08a3d1be43d64be6684f26c7e47083c97ed17a5d4dab541fa2"
   },
   "/cookies/": {
-    "lastmod": "2026-10-29",
-    "sig": "354cc008ee094c79ed42d2979c98954f525a6a82439ed943e23f8269b223c630"
+    "lastmod": "2026-11-10",
+    "sig": "171ca601f6de08e130f43ccb79b79e8ccf0ad600a087435bc448fb3141eab13b"
   },
   "/de/": {
-    "lastmod": "2026-11-08",
-    "sig": "7ed4e8881ef809f9f66110062bd78d54061833354e0b602d7011cc459d41dde8"
+    "lastmod": "2026-11-10",
+    "sig": "692ecfd23fdb692d79a62915470c939501d1ba4dd8d3ee8b7fd05e46971a2794"
   },
   "/de/anleitungen/": {
-    "lastmod": "2026-11-07",
-    "sig": "026c301721298a1ca671853c5b91fd7196281139e8f9c63bdab564622d2185b3"
+    "lastmod": "2026-11-10",
+    "sig": "55a08d12cc9ef6c28edb171bba4912a747b214af526d13b7c77dbd1eeb54a2ce"
   },
   "/de/anleitungen/aesthetic-zitat-widget-iphone/": {
-    "lastmod": "2026-11-07",
-    "sig": "12bc9de67cba0005b984246c730cce8aa7f8f4759448cd6ef103fdc444ec7335"
+    "lastmod": "2026-11-10",
+    "sig": "d7bd88974a510a7f56cb306a794aacd93b9a29f2b44175f0e76f1eacb93ebacb"
   },
   "/de/anleitungen/affirmationen-auf-dem-iphone-sperrbildschirm/": {
-    "lastmod": "2026-11-03",
-    "sig": "99198cebf1405887cd8462fa251aa2f39823bb6782d80b1bda1b7488fb7b7321"
+    "lastmod": "2026-11-10",
+    "sig": "5f8f36ad47f6569ff343450d61686d2625f7db0e0bc053c11f49e1798a4dccac"
   },
   "/de/anleitungen/bibelvers-auf-dem-iphone-sperrbildschirm/": {
-    "lastmod": "2026-10-29",
-    "sig": "8bc885a954be8c8e7b86e96c548f5253d1fbd77a3d0950df2a955d45b205ef20"
+    "lastmod": "2026-11-10",
+    "sig": "62783c16d7c4f0537ddb86800afd27f9aeb158ffb5a596a06dcd3e9626f4231f"
   },
   "/de/anleitungen/fokus-sperrbildschirm-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "ac31fe978438f6f38263ca359b6c631c000c107acc2dcae8f425babee3ebd19e"
+    "lastmod": "2026-11-10",
+    "sig": "a367da85402987e4a4fcfbe073303b4c5914d0fbbdb50bb4659afaf37ca6a06f"
   },
   "/de/anleitungen/iphone-mitteilungen-kommen-nicht-an/": {
-    "lastmod": "2026-10-29",
-    "sig": "16586283adbfe3deef414f68e03de08648ad19cf0348a88594bffc2aa3cdc1be"
+    "lastmod": "2026-11-10",
+    "sig": "46fe278201da8911c1c0dd677b22b664d8aa477671ab902e67840e97a802e366"
   },
   "/de/anleitungen/iphone-sperrbildschirm-aendern-oder-loeschen/": {
-    "lastmod": "2026-11-03",
-    "sig": "71889754c5c0fefd9e5e82f767105ce8d4f3dcc51892fed534b6ba0929ff6c18"
+    "lastmod": "2026-11-10",
+    "sig": "5123739fb30988086bf60bdd2740081d3734aa04be8d9c351171a16808b2a40f"
   },
   "/de/anleitungen/iphone-sperrbildschirm-anpassen/": {
-    "lastmod": "2026-10-29",
-    "sig": "c78b09835072b5297e23651a95d099817a858bbdc9f6a7bddd38f98a2f0e263b"
+    "lastmod": "2026-11-10",
+    "sig": "8f3fcbc7d422bd65e1e54d66014afe296bd2f10068df97054a52477425175039"
   },
   "/de/anleitungen/iphone-sperrbildschirm-ideen/": {
-    "lastmod": "2026-11-03",
-    "sig": "8a329cf994b8e3c034af0ca5059f5ae51e03bba0f818d2f6e7b0a02c32509713"
+    "lastmod": "2026-11-10",
+    "sig": "8e28c647868e856d1bbd7c468d3b5032a4b62a8d34cf5bdfc6099feab58aa638"
   },
   "/de/anleitungen/iphone-widget-aktualisiert-nicht/": {
-    "lastmod": "2026-10-29",
-    "sig": "2180cf4351c7f025507d724d848b7fab97cd64bf1f0fddd95a52b330dc37a5f8"
+    "lastmod": "2026-11-10",
+    "sig": "7b2bb6bbaa20afdc1209ac3145858729b60bb28bc5c7232b0dcae6961f96becf"
   },
   "/de/anleitungen/lustige-sprueche-jeden-tag-iphone/": {
-    "lastmod": "2026-11-07",
-    "sig": "cd5390b6ce61bc7a527741ed85fc0f73452fc427547fdf6a7f14b6b084a3a4b3"
+    "lastmod": "2026-11-10",
+    "sig": "4da0fae019481367e57b2fc9bd9130fe29c9d8bfb58aa8ce3c45f2b0f88bb13f"
   },
   "/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "3276c1af662f15bfeffb80520384bb10d3aa0ac9a4de65bce203f2df2fa4d062"
+    "lastmod": "2026-11-10",
+    "sig": "246107012d6d409d644b3d4b1429ff9073dccdbb3e8ba8c0c356dff4e111272d"
   },
   "/de/anleitungen/motivierende-sprueche-zu-zufaelligen-zeiten/": {
-    "lastmod": "2026-11-07",
-    "sig": "d3c36509c8a32d19c161217e31bca03dc5b3c0eefd9e222e1a7c33398763464b"
+    "lastmod": "2026-11-10",
+    "sig": "a1efefb407e277e25505ffe389f113bb28bf431bddb7fbe59e54ee518eb9227a"
   },
   "/de/anleitungen/neues-iphone-einrichten/": {
-    "lastmod": "2026-11-03",
-    "sig": "9d86eb88b52a1c3f0685778c47ba4a9824dd4c92b756473416ff33d1c00221be"
+    "lastmod": "2026-11-10",
+    "sig": "a6a822960b0481c72edcfd6e57ed26a1af1cfc607957bc38006654f724b21fa2"
   },
   "/de/anleitungen/widget-zum-home-bildschirm-hinzufuegen/": {
-    "lastmod": "2026-10-29",
-    "sig": "ac00ae8820440e766c4adb28f85e4d4429e2afdabd2bdf4c11fcabce33ca8f51"
+    "lastmod": "2026-11-10",
+    "sig": "404e1f7839c5fb7a908cd18b68403c3ee391b19bdd5fcf749d1a3c27607ea405"
   },
   "/de/anleitungen/widgets-auf-dem-ipad-hinzufuegen/": {
-    "lastmod": "2026-10-29",
-    "sig": "da96b1f1ae033c6ad11ef3e273127a5cb446a00d05ac02b3088d370adad01206"
+    "lastmod": "2026-11-10",
+    "sig": "dad89e3846ff3afd6f79e0f504155f5da9affe2baaf1f574411b749503f8bd5b"
   },
   "/de/anleitungen/zitat-hintergrundbild-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "d05ea4274aa1eb639fa8eda332ce9931ac979fd87210a3de969217ef78801d35"
+    "lastmod": "2026-11-10",
+    "sig": "1aea74ded9c06c84b7c0a9f513bbc1f46cda80bd156b79ab55bef4a65853ce17"
   },
   "/de/anleitungen/zitate-auf-dem-iphone-sperrbildschirm/": {
-    "lastmod": "2026-10-29",
-    "sig": "48cfc9545f6dc404dda8778f45eacdc113534edf8dc8b5d80d2b954bc53b7c69"
+    "lastmod": "2026-11-10",
+    "sig": "2c4010ecbd7d68b2e8a3f7a6df3f098c872e257537e9b8101e0555fafaaf2d90"
   },
   "/de/blog/": {
-    "lastmod": "2026-11-08",
-    "sig": "496e284f33c8a125c80959526a2ed8369b8ad38ba13430c0f665989815491c0b"
+    "lastmod": "2026-11-10",
+    "sig": "26bb54bacf90d3488abb8431dbed768b8607d6cb3688e206db258e74638e961a"
   },
   "/de/blog/aufhoeren-zu-gruebeln/": {
-    "lastmod": "2026-10-29",
-    "sig": "043c7d57586b89f4208f2887e621a34f675ca669c0b39bb1a7359f192c606c9b"
+    "lastmod": "2026-11-10",
+    "sig": "47f957f0023f175fe399b7efd3259c8f30c2540907b40a98c5ee74001e4924b3"
   },
   "/de/blog/aufhoeren-zu-prokrastinieren/": {
-    "lastmod": "2026-10-29",
-    "sig": "2985e5f45623c92794f35584066941e22e1c3dcbf254ec247a4aa9c03c803823"
+    "lastmod": "2026-11-10",
+    "sig": "c025efa3a5feaa5621483f04643255dc220c3a36d48cf4a06e3e8dc12b9156a1"
   },
   "/de/blog/funktionieren-affirmationen/": {
-    "lastmod": "2026-10-29",
-    "sig": "f7bcf6469dbf2d6e7493dd5973898eabb4fa2253019e31445498b371ebefd6b8"
+    "lastmod": "2026-11-10",
+    "sig": "af969bbe22f809c49b7ac2fc53e886e8033130922dfe4a442c9fad319e40d2c4"
   },
   "/de/blog/gute-vorsaetze-fuer-das-neue-jahr/": {
-    "lastmod": "2026-11-03",
-    "sig": "99514549202544aee06a82bc6fd48d8d4abf5f426f7ef98711fe57904cdc3a57"
+    "lastmod": "2026-11-10",
+    "sig": "379c3c399f4df166a5c4e42a4573c6ab094e6b60b683db10dfcb3c6400ef3815"
   },
   "/de/blog/motivation-oder-disziplin/": {
-    "lastmod": "2026-10-29",
-    "sig": "beb921ada7f838f3c3600486c9280e3e63ebfe70e801f8b762e4b1ab6d171a53"
+    "lastmod": "2026-11-10",
+    "sig": "8e924fc2d7432d9034fd631999e20f072d7c854c05ce74fa64f06ad47d2b9fd9"
   },
   "/de/blog/motivationszitate-fuer-den-morgen/": {
-    "lastmod": "2026-10-29",
-    "sig": "cf31ac6d50bd519a8bfc2602d30799aee5b4918438c7e54bc1d7f2e9fd993e9c"
+    "lastmod": "2026-11-10",
+    "sig": "62b58b722019cbf109be79c308a5623787c3418acbd02e79d665bd7344bcadfb"
   },
   "/de/blog/motivierende-zitate-fuer-schwere-zeiten/": {
-    "lastmod": "2026-10-29",
-    "sig": "4f4536ba53c8a742c4de0e5ee676c4aa2beaa48a5a199c276e62b3b6944de56e"
+    "lastmod": "2026-11-10",
+    "sig": "3068f565c93e0486c54b13def7a460b8ba03185b78de09c13b9be3540b249da3"
   },
   "/de/blog/motiviert-bleiben/": {
-    "lastmod": "2026-10-29",
-    "sig": "b1418e0bb2ae2e951d20fa6273998e40c72d3c81137ec706c1a07065d6cd0dfe"
+    "lastmod": "2026-11-10",
+    "sig": "551565bc54e0c12862656167cbfaa9004a3072ce185becaf8f3c114568eca3ec"
   },
   "/de/blog/sich-selbst-motivieren/": {
-    "lastmod": "2026-10-29",
-    "sig": "fea93f34b52dc93bccfbb1f3e4ab1092bdea7b8712ec7b9658705a385b95d6ee"
+    "lastmod": "2026-11-10",
+    "sig": "f6ee329d7f405ab4f80609c7b834daa1d2607a8b1f0ac272bcdbda49a9410e37"
   },
   "/de/blog/weniger-am-handy-sein/": {
-    "lastmod": "2026-10-29",
-    "sig": "e869903345cec23d349589160410e919e331a41ff6dc01a88dab5362fbd4e7f4"
+    "lastmod": "2026-11-10",
+    "sig": "bf26f987649c8abd9e28b81364b5bb17746a240010a31f831a66de6677871b6d"
   },
   "/de/blog/wie-lange-dauert-es-eine-gewohnheit-aufzubauen/": {
-    "lastmod": "2026-10-29",
-    "sig": "85a79f14d15a44b0538d91ada363bee8e8740ffaeb8cd53770e000b7a5ef3657"
+    "lastmod": "2026-11-10",
+    "sig": "9ee91f1898865edc628e5fc1f709b9854d8ea5f9b426d239454421040f2e8e83"
   },
   "/de/blog/zitate-gegen-angst-und-gedankenkarussell/": {
-    "lastmod": "2026-10-29",
-    "sig": "0ade03ff031ec4978906864c9bda6561eebbd14016376240e38fe02d171cc30c"
+    "lastmod": "2026-11-10",
+    "sig": "0dcca8d49487397970a6eb3e858ec5ede1944a57f86d7a5d16044c86343c8896"
   },
   "/de/blog/zitate-gegen-selbstzweifel/": {
-    "lastmod": "2026-10-29",
-    "sig": "3c75c159bd4f03f19e9f0070a5fb93d9e61c0a51616e8474fefbe980916ff2d4"
+    "lastmod": "2026-11-10",
+    "sig": "ca5dbe37958ab9364d7634894793f1b1f6febe6c0f3557490fb99fcc4a910e5a"
   },
   "/de/blog/zitate-ueber-den-neuanfang/": {
-    "lastmod": "2026-10-29",
-    "sig": "03a65993b4e612f96e96d824122dbaffe7c43568d2f54e942b53e7674775be6f"
+    "lastmod": "2026-11-10",
+    "sig": "11a86c3e5e951059fb1dd755891a0471293bdb4e0601d87a9b72af13e6277513"
   },
   "/de/blog/zitate-ueber-disziplin-und-bestaendigkeit/": {
-    "lastmod": "2026-10-29",
-    "sig": "819ed447e97237fd424698389ef1ad8384651175cc740917f753b84dbf14fc37"
+    "lastmod": "2026-11-10",
+    "sig": "718dfb8defe5f93af36d14d7248d0047067ceb758ca82f6ee684e52bb4a607fd"
   },
   "/de/blog/zitate-wenn-nichts-vorangeht/": {
-    "lastmod": "2026-10-29",
-    "sig": "372616fd2ecd5ff070d2416611fc5cb4fd4e307049756ee1748541943dcb3727"
+    "lastmod": "2026-11-10",
+    "sig": "f3d0c28ed677c95a301e992e5ad0ac04beeee597e0bfe3a08cd3188298a9cffc"
   },
   "/de/hilfe/": {
-    "lastmod": "2026-11-07",
-    "sig": "3c5f7dc7fed78d5ab7bdec3bb73e34c53969c3bdcf0e1289efcb7a157bc8f8a3"
+    "lastmod": "2026-11-10",
+    "sig": "427990951b1aee68813c96b7565b0bff6a159474544cc36affde6ca63d166b88"
   },
   "/de/ueber/": {
-    "lastmod": "2026-11-08",
-    "sig": "90a070e961a94e769f45e1dbdba2964d2ce55ac3613b97539b3ac6565978b74d"
+    "lastmod": "2026-11-10",
+    "sig": "2987742570d44e8eff08eb10524df89b7c9b90b3661f6237127ba665067ac5a3"
   },
   "/de/vergleich/": {
-    "lastmod": "2026-11-03",
-    "sig": "03884eacd2b89acd160ae4bbd82bef17de5fcc2090ab22b68b85b3398ad1d433"
+    "lastmod": "2026-11-10",
+    "sig": "a39333fbc966a2092d202342c21e083f3b0f837b69b10bc58ce2e6c500923099"
   },
   "/de/vergleich/beste-apps-fuer-motivationszitate/": {
-    "lastmod": "2026-11-03",
-    "sig": "0a976fd03fe842252da676c0b635ef768598c1463386799cfac33352c58d7fa7"
+    "lastmod": "2026-11-10",
+    "sig": "7453dfa6c3c894cf1f0bd8164c39bcc327b8ed7054345b1a2cf1780cd55eb495"
   },
   "/de/vergleich/dailies-vs-daily-quote/": {
-    "lastmod": "2026-11-03",
-    "sig": "6533942034e85abcf9e16cbcf5c547beb7466f2f9f310f8e6d8155e83be910a8"
+    "lastmod": "2026-11-10",
+    "sig": "cf2c309ef99f0d717e0b1b5afead9b1ae7ff24d55cb286aaf5a1c25e4f3a04af"
   },
   "/de/vergleich/dailies-vs-i-am/": {
-    "lastmod": "2026-11-03",
-    "sig": "877d7d6de5ba73953e1d12ccc215e989d7676c3c148a9a1d016d3e5ff32a3401"
+    "lastmod": "2026-11-10",
+    "sig": "63dc86be689b5beb7f12eb526c1a49d7c3adc7ac0af46dfcc3ede12d184db2c9"
   },
   "/de/vergleich/dailies-vs-innertune/": {
-    "lastmod": "2026-11-03",
-    "sig": "ddcdbf48e9afdbaf16c48a7c2e81b2af4052a8ad4dd5ec02414bbefdc84bda61"
+    "lastmod": "2026-11-10",
+    "sig": "69ac5ae8b13720336108ccc7f2b99c321b9c9549667308b3b506874527841dad"
   },
   "/de/vergleich/dailies-vs-locksmith/": {
-    "lastmod": "2026-11-03",
-    "sig": "e2f5339ac98b174a3fbb8b2f17d09d3e5514b34ef520798bc0b27f2e5e29096f"
+    "lastmod": "2026-11-10",
+    "sig": "ebfbbd38af9ddc8110c2187d56f3073fd61a10d76a4e0491f1d1473df4c30214"
   },
   "/de/vergleich/dailies-vs-mantra/": {
-    "lastmod": "2026-11-03",
-    "sig": "132f940b6f87df9e2280f805435ae3f978ee2fcfe6d776b00e4eab62bccafaaa"
+    "lastmod": "2026-11-10",
+    "sig": "50f78f55ab132b8db06b2fa680add240187ead29554bef9c1474578eb07a30c0"
   },
   "/de/vergleich/dailies-vs-motivate/": {
-    "lastmod": "2026-11-03",
-    "sig": "bfe49ce7287d2dde1b51bcf054f730984503f773d4033951ec2ae50b729cfd9b"
+    "lastmod": "2026-11-10",
+    "sig": "2089ab3a6040df2e6a8202a722fb0bb6c3914710b1e4ffb7d54227ed23482b36"
   },
   "/de/vergleich/dailies-vs-motivation/": {
-    "lastmod": "2026-11-03",
-    "sig": "adb977d48f8877c4c2344efc90ebe203654f3d83efc12b10cd2b472cc26d9d70"
+    "lastmod": "2026-11-10",
+    "sig": "0ed1b93ab996689b2f5fa6c61bc4b5a1c23b7f5cc0e7eb40849585912768fbf4"
   },
   "/de/vergleich/dailies-vs-motivational-quotes-daily/": {
-    "lastmod": "2026-11-03",
-    "sig": "3ff23c6b9e2edc06d3847a1f8fda89350752f873706b5e6d293a77ddffae93d6"
+    "lastmod": "2026-11-10",
+    "sig": "4311eb0a176605695b4751e0e940dcc473436373ee5eb44d14da030b2e70fc12"
   },
   "/de/vergleich/dailies-vs-peptalk/": {
-    "lastmod": "2026-11-03",
-    "sig": "28b45b2b3c6640eb24ccb95354b8c13b3ff2fea5f6fb54787ec027a3f73d81b0"
+    "lastmod": "2026-11-10",
+    "sig": "fc2ec8cacd1513e3dd5d8ac190ec1c5bf549f928352ae4e40b18b787f68fbae2"
   },
   "/de/vergleich/dailies-vs-thinkup/": {
-    "lastmod": "2026-11-03",
-    "sig": "1404807514c0919f4cb6e7ddfaf1f1efc04528fdd384b5da8423435278266f88"
+    "lastmod": "2026-11-10",
+    "sig": "af03988e5975da622a05e5c13c1a7bb49013c6c514f2ec5187210d472d5b6a79"
   },
   "/de/vergleich/dailies-vs-widgetsmith/": {
-    "lastmod": "2026-11-03",
-    "sig": "e7ff4a96d6b2d67051fd74f1f68f8f220b223fc0154cd0cf24abc6f46f95fa3a"
+    "lastmod": "2026-11-10",
+    "sig": "692cce60f3ffd3b2959da557c2a60c75a398b3edfec09d08eea1d62b264b4c46"
   },
   "/es/": {
-    "lastmod": "2026-11-08",
-    "sig": "994c02757502dc5dd4b216337e0bbff4ab1e47357858adc47d247c8dd44293c6"
+    "lastmod": "2026-11-10",
+    "sig": "9303f3fa9fcf20230e45b4004d2c96b1d77ab6766634b23d596ab4bcc0db695d"
   },
   "/es/acerca-de/": {
-    "lastmod": "2026-11-08",
-    "sig": "a1b95f5fce6c753eb0877d6352adcee9eaa703114dea1f5c6321b532697b7b87"
+    "lastmod": "2026-11-10",
+    "sig": "6b5439118453d2fe3f4765fad57b1e6fa780dc20aaa8cca297b13a02a4d18620"
   },
   "/es/ayuda/": {
-    "lastmod": "2026-11-07",
-    "sig": "b5e2a39a8c45aaea4d496619d668a0bcee589115934fe70144d4f20191779d43"
+    "lastmod": "2026-11-10",
+    "sig": "54d0db38805bd8d2710c2aa522393e7e0f9aa8124b1af9b70751f60ffd58db78"
   },
   "/es/blog/": {
-    "lastmod": "2026-11-08",
-    "sig": "259587290abdadf99e05597cd77661bc4ce4bed4568889b7f384f1c7a1cab8ef"
+    "lastmod": "2026-11-10",
+    "sig": "982d257f2a20279f7afa4304098d290714e7313ad1f45e666acdfc8a368b8501"
   },
   "/es/blog/como-dejar-de-procrastinar/": {
-    "lastmod": "2026-10-29",
-    "sig": "3c2bb2cf43d6254d54934409a4530ec44f4366d888bc143b30af06548153838c"
+    "lastmod": "2026-11-10",
+    "sig": "6068d7d4597eac5e263a7001b513d1af21529cb7d722a82cccf5db7fc7398b11"
   },
   "/es/blog/como-dejar-de-sobrepensar/": {
-    "lastmod": "2026-10-29",
-    "sig": "3fb821e9b6ba695d233aec027e5d165f335591c04b109a8ecc6269507ed806bd"
+    "lastmod": "2026-11-10",
+    "sig": "d9b334457a89922147a07dc8c4a134b64304485483ad2504e6e13d97f762b174"
   },
   "/es/blog/como-mantener-la-motivacion/": {
-    "lastmod": "2026-10-29",
-    "sig": "36044fcbd312e0d28181247815fbc5a774be503fcdf8122b65996b7016468425"
+    "lastmod": "2026-11-10",
+    "sig": "b1d12275a5319c0eebf9c18317e2d4582e666f283ff19e1aa25dfe67a0c84b8a"
   },
   "/es/blog/como-motivarte/": {
-    "lastmod": "2026-10-29",
-    "sig": "ef3a739e2c32a7e2054f341afcb722cc417bf3fc2c74e56ceb40fd771d10f5a7"
+    "lastmod": "2026-11-10",
+    "sig": "60ae845fcd9ae221c3d19ba880ab824e897ee1ed38b77f34182769b98c93529a"
   },
   "/es/blog/como-usar-menos-el-celular/": {
-    "lastmod": "2026-10-29",
-    "sig": "d4535d57d49ee70b4e31be032488cc4a5ef0623b974e20255fea87c24d7ac462"
+    "lastmod": "2026-11-10",
+    "sig": "8eb0f718c3eece2202c05bb6b0d09633c1e4c9beaee6530f99094ff0e83d6d85"
   },
   "/es/blog/cuanto-tiempo-se-tarda-en-formar-un-habito/": {
-    "lastmod": "2026-10-29",
-    "sig": "efefa948ab8f9e710188d28734a2c2b02373155e19ce584513b815816b61634c"
+    "lastmod": "2026-11-10",
+    "sig": "04c40f100458899cbf56c9a634e4ac73b8db9f7c295c83cbd4b89e44ce713e87"
   },
   "/es/blog/frases-de-disciplina-y-constancia/": {
-    "lastmod": "2026-10-29",
-    "sig": "1111f60d53246862a730f79408435ccc24fc331f92c0fa5c32f58e855b5d8e4e"
+    "lastmod": "2026-11-10",
+    "sig": "245116e65166c7c4e8f8cb87cb8d8e6e591aa350864f49c94ee3736fa1b989f0"
   },
   "/es/blog/frases-de-motivacion-para-la-manana/": {
-    "lastmod": "2026-10-29",
-    "sig": "d8dd4554ce2aa8efe80f6ddc2c08c2d0735aabaf7c4c85061cb17bd55bc43748"
+    "lastmod": "2026-11-10",
+    "sig": "897dc6646b5ae5cde9e2a3b7fb2d45b5f422e8a6e282ffbba9542e0f5934be22"
   },
   "/es/blog/frases-motivadoras-para-tiempos-dificiles/": {
-    "lastmod": "2026-10-29",
-    "sig": "185ffd483ca12083e532919d83dc95939fef8f18f979f61a7f67a5ce33ebe4c1"
+    "lastmod": "2026-11-10",
+    "sig": "4bf6798e5fe51f15a7b1737a5d8fc0b0766a2fa9764efa78faa389c375372a15"
   },
   "/es/blog/frases-para-cuando-dudas-de-ti/": {
-    "lastmod": "2026-10-29",
-    "sig": "d2779f2ea545772fef8e5911c10ec512e1d60d307039b411d8d6bbe67a4aee2e"
+    "lastmod": "2026-11-10",
+    "sig": "efc7f393dab2682c4576cdc7c389dc940ce746540393dca8b65f4ece72fc002f"
   },
   "/es/blog/frases-para-cuando-no-avanzas/": {
-    "lastmod": "2026-10-29",
-    "sig": "3196d4ff3eee1798d5d9cf328b32caa1c94b3dba57a5515eeecdeba386046eae"
+    "lastmod": "2026-11-10",
+    "sig": "1be6384aa4954f4d0565e3f0f5a6d2d72f950e3f0058d23515333356ada79ab6"
   },
   "/es/blog/frases-para-empezar-de-nuevo/": {
-    "lastmod": "2026-10-29",
-    "sig": "4d78c6e7b4aa18502bc82fe308cd6e34a56473855755528ab7ed996044883b91"
+    "lastmod": "2026-11-10",
+    "sig": "3e56905f8bdbc838120bcbc2d6b6658779ab659b6b423481570dfcc0191234eb"
   },
   "/es/blog/frases-para-la-ansiedad-y-el-sobrepensamiento/": {
-    "lastmod": "2026-10-29",
-    "sig": "5f56c1c7ba5eafd850113851ebcdae13510cb2f7ba96cca79ecdb3fdf280f5c5"
+    "lastmod": "2026-11-10",
+    "sig": "f3552d51070e1a3e595f0d50b62a236c3843e3c26328fb3745dae957f5ac5710"
   },
   "/es/blog/funcionan-las-afirmaciones/": {
-    "lastmod": "2026-10-29",
-    "sig": "1a796eb0c6ade99a5902a0c6242fa6f4dd3ea9174c44501b02e047f39b37d91e"
+    "lastmod": "2026-11-10",
+    "sig": "1ba00c3791954ce7d8f7fcae364f0e5a15424287c80d421bbee6df7c14894144"
   },
   "/es/blog/motivacion-vs-disciplina/": {
-    "lastmod": "2026-10-29",
-    "sig": "4dad12379803a9dd5e15b903e183bae292f52a9a120c146c0ead91acac4e3f35"
+    "lastmod": "2026-11-10",
+    "sig": "2de35ee1e3321ec7eb9555cb294fd46f10dd65a2447d96cbe73a7828532db6ca"
   },
   "/es/blog/propositos-de-ano-nuevo/": {
-    "lastmod": "2026-11-03",
-    "sig": "c9cd99176a302f9cfe3bea94129c18d427fcfcd874a0fe005b61c7e1a0579cc7"
+    "lastmod": "2026-11-10",
+    "sig": "3e5f2c66ec6f4520957852db38a30cc3a3c42905e36ac108685748d617ae1cbd"
   },
   "/es/comparar/": {
-    "lastmod": "2026-11-03",
-    "sig": "a65e4fb4451901d65c114065bdcc6f0194c726aa6ad8dbf435363ab3028c73ea"
+    "lastmod": "2026-11-10",
+    "sig": "96058093f50683e934ac3e179e96d3a69bd33169a46448a942e281f06b73359d"
   },
   "/es/comparar/dailies-vs-daily-quote/": {
-    "lastmod": "2026-11-03",
-    "sig": "044d83e1e6af5e5a22f58ddad9704a458768f4def7ee681e6ef6a06c55dad6cd"
+    "lastmod": "2026-11-10",
+    "sig": "7651f0cccc8d89e4edc3e8bfdefd2c7ee64c9880441d3d9e60cd8219f48708c7"
   },
   "/es/comparar/dailies-vs-i-am/": {
-    "lastmod": "2026-11-03",
-    "sig": "102a11e65422b0b4f79251926dab521bdd8dde99f07193b4c1241c3f0a3dae7e"
+    "lastmod": "2026-11-10",
+    "sig": "3210002ca372484af342ae7f2312a1ef67a3436c929689592c7a6a1b6f2ae93c"
   },
   "/es/comparar/dailies-vs-innertune/": {
-    "lastmod": "2026-11-03",
-    "sig": "ed45ee12cd7921a5259a1940db3042d5bf2eacfd80f61c2b3487d96d93d132b8"
+    "lastmod": "2026-11-10",
+    "sig": "60f546119fb088591c64ee0074ba5e83d848431505dc335f4e201a1e2767ea06"
   },
   "/es/comparar/dailies-vs-locksmith/": {
-    "lastmod": "2026-11-03",
-    "sig": "c5c3a2a0b5b1d8971888e02263dcb75ce9f9aaade41a7c4d01c6c02ee8e4eff7"
+    "lastmod": "2026-11-10",
+    "sig": "dd60d8ec7b6315336db4e88ca322a39650a836a7a31431cb793b44a481cc5d76"
   },
   "/es/comparar/dailies-vs-mantra/": {
-    "lastmod": "2026-11-03",
-    "sig": "dfd48248c4be70ad2f4ece1be1dfcbd0da9d9ecbfc380feb52936abbdb70585e"
+    "lastmod": "2026-11-10",
+    "sig": "fe4b2aa38f42253372e6d5a084ea1c712f25e813cc46b3716a73b416b26076b0"
   },
   "/es/comparar/dailies-vs-motivate/": {
-    "lastmod": "2026-11-03",
-    "sig": "88ebe2b21189a42c4a0cb17ce111d6827e056a4f6e21e1dd11dfaa016e439df2"
+    "lastmod": "2026-11-10",
+    "sig": "b7853e50b58e0466e57bf88f2e7071e0d71b7bec9b7b8b73c93a622ee791cc7e"
   },
   "/es/comparar/dailies-vs-motivation/": {
-    "lastmod": "2026-11-03",
-    "sig": "83c4d0cb3fea9eb97f20d9d7c27a1b8404795e241e89de167d3cb0e5cdd15267"
+    "lastmod": "2026-11-10",
+    "sig": "7b84b93698741bc2b1694e0c6f485e9308633ff2c2b27d3f4eab90738a723c28"
   },
   "/es/comparar/dailies-vs-motivational-quotes-daily/": {
-    "lastmod": "2026-11-03",
-    "sig": "284ec5b3e238583e9683b61ad718de6ddd917cec7c181aab88799412fda8cff8"
+    "lastmod": "2026-11-10",
+    "sig": "fa253bf48031513b96c19f264843491dd83c7ce8ae82ea1a6a799ea928d79089"
   },
   "/es/comparar/dailies-vs-peptalk/": {
-    "lastmod": "2026-11-03",
-    "sig": "064389ab938129b03b186d30a58e912f2b37de339ddcc9406cf864646625a6b8"
+    "lastmod": "2026-11-10",
+    "sig": "99fd922d13603015d6315c6d61ab7af78a9f0e9705d181abd9c5a8d3aa0503c0"
   },
   "/es/comparar/dailies-vs-thinkup/": {
-    "lastmod": "2026-11-03",
-    "sig": "5fccef114d9538b0e0cb54a65976305580c9bc9ec32be4e82d0c17765529e9a3"
+    "lastmod": "2026-11-10",
+    "sig": "011aaeb85324eb1f57b642fc55198c267c8f7d6ee319de6f958b9699683af7bd"
   },
   "/es/comparar/dailies-vs-widgetsmith/": {
-    "lastmod": "2026-11-03",
-    "sig": "fc8b32840deb51b70b3235bf6a92df4bf9a6d66ee48daa5745ab3b4b020a3539"
+    "lastmod": "2026-11-10",
+    "sig": "8f83c02748461ce55327753500951fb30594240c1e28f2e67fe6b284b7a3b73c"
   },
   "/es/comparar/mejores-apps-de-frases-motivadoras/": {
-    "lastmod": "2026-11-03",
-    "sig": "9e850ab8bafdb0d402c9282296f2dc5c4b2ae10776a81ed3a45bb90e402e59f5"
+    "lastmod": "2026-11-10",
+    "sig": "a6a630086fbe3089e0755ba1d0035808382508d492acc0a7cb3fc9e965e82c18"
   },
   "/es/guias/": {
-    "lastmod": "2026-11-07",
-    "sig": "da3d1c2be660ff6add8c19608a7f76c06ec4bdafdcae689fcf4fbbc5e29f3d8c"
+    "lastmod": "2026-11-10",
+    "sig": "4792fe40369f575227ba60f03947d2b7cf416317149bdc6cb824dfdd5e018371"
   },
   "/es/guias/activar-las-notificaciones-de-una-app-en-el-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "d80e061d7e5793dabcd59109d363d2e9472a33ec4291e7247fcc101b2f3703dd"
+    "lastmod": "2026-11-10",
+    "sig": "8aea33289d2044ee4af5f46568cae00ad0989b388b3e724fd394e5a95c704179"
   },
   "/es/guias/afirmaciones-en-la-pantalla-de-bloqueo-del-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "c83198c37245918f015095915ac8d758908658c9f690a91025eda5d310648552"
+    "lastmod": "2026-11-10",
+    "sig": "d0da16d5d41c06cd20f7a3af19017dc4d9cf0442ce40ba40ef497a8b9a467182"
   },
   "/es/guias/agregar-un-widget-a-la-pantalla-de-inicio/": {
-    "lastmod": "2026-10-29",
-    "sig": "8344655be3c6dc36086826e364976ce32150f548984e9399c219ff34c471aebf"
+    "lastmod": "2026-11-10",
+    "sig": "0bb398a02bcfee6f361241243a391c09f3d069d5856ec6766d9d0e515377cb14"
   },
   "/es/guias/agregar-widgets-en-el-ipad/": {
-    "lastmod": "2026-10-29",
-    "sig": "8651ec2656ca044dea4ea09a516c137c6e30e35ec7dd12f71db46abaa86c4522"
+    "lastmod": "2026-11-10",
+    "sig": "0cb3acc5a21175a71b7a1f5c25e99bb474c4aed98762011118628c190db6c634"
   },
   "/es/guias/cambiar-o-borrar-la-pantalla-de-bloqueo-del-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "8dec9c0b1a5e160c33b6df4e2cc652dd8d135d4714beeabca8ea5ba03ca51c7e"
+    "lastmod": "2026-11-10",
+    "sig": "82d1f27ba46560f52f8a671b1e17c1ac39554a30b7ce3c037c0f50200e09d091"
   },
   "/es/guias/concentracion-pantalla-de-bloqueo-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "3523a30d57abb19ac88f0d05fb1a9f5c36e37cc9de740494cdf53d28f377dc32"
+    "lastmod": "2026-11-10",
+    "sig": "531ea22ceed8a7ba0de3c78446a50dbe157c798d6dd67eaee070a947c7426bfe"
   },
   "/es/guias/configurar-un-iphone-nuevo/": {
-    "lastmod": "2026-11-03",
-    "sig": "52f11ca19e52e8dc1e42f8252eff29dd90bcc39c43499000141a3d48a5690a52"
+    "lastmod": "2026-11-10",
+    "sig": "c4a1609cb991f5d5e083860aa2a4b218ac39637b8aec7e0f1158ea11bd789061"
   },
   "/es/guias/fondo-de-pantalla-con-frases-en-el-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "c30137a15ad2a22ee9fd6b46d5cafc6b7010e4dadb1e7901dceb0649a1ba77f6"
+    "lastmod": "2026-11-10",
+    "sig": "87cf844135cc2a2f68b187c43be7716f4af65fea891ff5ca8e55ac6ae2417eea"
   },
   "/es/guias/frases-en-la-pantalla-de-bloqueo-del-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "18db1583ff3cbd74c36965f4ce34545459a978ced7544a15817fd9e5b249040b"
+    "lastmod": "2026-11-10",
+    "sig": "383ef1b065579270c7951355c91e77b1ff6a3f854a323e4d8ecbf5d1c697aa06"
   },
   "/es/guias/frases-graciosas-cada-dia-iphone/": {
-    "lastmod": "2026-11-07",
-    "sig": "f388dc6b5c4361e279e5f07e24dedba7a41aab9bf7c0e8d1754acffe515154b0"
+    "lastmod": "2026-11-10",
+    "sig": "d900f2e436c67e584ae6ac33584ecb3fc0f77272122469d7cb15f2b4e109c517"
   },
   "/es/guias/frases-motivadoras-a-horas-aleatorias/": {
-    "lastmod": "2026-11-07",
-    "sig": "243be75d457eac56aaf2172f3e4c91468d54b3b9856cd2dbf618bab9f6e7997f"
+    "lastmod": "2026-11-10",
+    "sig": "3ee4aea67dbfc779bcc67a65d5d219c24b23d702204a8c3a7d0c603f1d591e5c"
   },
   "/es/guias/ideas-para-la-pantalla-de-bloqueo-del-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "59d17bb52fd4a5d5940be9f0f183fbf2e72a8902eb40f3e25e860fa919e56ed5"
+    "lastmod": "2026-11-10",
+    "sig": "f067f646faaec82409754bb8e8b0bcb4998c35012852f8b344ff17c86134a3f2"
   },
   "/es/guias/no-me-llegan-las-notificaciones-del-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "c105bfe481983defd9917ec6e10305de18da3c528e4aad1ab0137fefebef1672"
+    "lastmod": "2026-11-10",
+    "sig": "21222e5d5ba0bfc83031a2add4e6a762ec3aee7febc210bad821ea31be94bdee"
   },
   "/es/guias/personalizar-la-pantalla-de-bloqueo-del-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "69ae32382759a2cbaddb60e497bc1564c1b3700cb13abc183cdf77fe1c7bbf52"
+    "lastmod": "2026-11-10",
+    "sig": "449f8a7765b92d8a843bcc9c92eb621bf8274dc5cd182de21114c1ef992584e8"
   },
   "/es/guias/versiculo-biblico-en-la-pantalla-de-bloqueo-del-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "f63940b380c37d6dfb79e647d2408e10921e4902434c40138a17840d889b4de2"
+    "lastmod": "2026-11-10",
+    "sig": "a3e45a316342356fd9acbfbd125b63bd50c9a2b090a0023696105bc17eec7fb4"
   },
   "/es/guias/widget-de-frases-aesthetic-iphone/": {
-    "lastmod": "2026-11-07",
-    "sig": "fa23f7a5cd859134f29852b939a820274d119b6277ad3c14cb9cc04b2a974356"
+    "lastmod": "2026-11-10",
+    "sig": "440cdd30b8354de6bf0878d8ac39678c281cbaecc199d6ce34bfc6ea78cc9c32"
   },
   "/es/guias/widget-del-iphone-no-se-actualiza/": {
-    "lastmod": "2026-10-29",
-    "sig": "006682c6e4e21084b9e8c9379401ce8405602b84519311d3bbd53a2b92d41020"
+    "lastmod": "2026-11-10",
+    "sig": "1931a1cc70325e5a66e41d381f7ac99ac68e9ea8fb3e5e25f695858b54d3b3e8"
   },
   "/fr/": {
-    "lastmod": "2026-11-08",
-    "sig": "5bddd2cd4779bd6c0c9a35bb24b53f30370ae8ad456cc9a735d994d924d04f88"
+    "lastmod": "2026-11-10",
+    "sig": "1db260c25dff81ac7aab411faa5eb4b44c13ebc7932a7c4aa6e89a8bebe1e33e"
   },
   "/fr/a-propos/": {
-    "lastmod": "2026-11-08",
-    "sig": "be469e79351853176e6d7232266b2667c6f83e7b411480d46dd6853da3cc30ae"
+    "lastmod": "2026-11-10",
+    "sig": "61f4d4537b0b0ba0750309edede7cbea2977494aeb6586237204d78d17d73bb8"
   },
   "/fr/aide/": {
-    "lastmod": "2026-11-07",
-    "sig": "ae0af52db4b9183643e6c1707d54ba80dc3646532c8b9945d797f38186ed1b83"
+    "lastmod": "2026-11-10",
+    "sig": "720bbad4990e3904ba0db0a2e83343b99a62382bf3636ef31ca72ae7600601f5"
   },
   "/fr/blog/": {
-    "lastmod": "2026-11-08",
-    "sig": "1dff994787c08b95344d185c4c8b0f39082e2a4e7a74fe13195936d755dff7ab"
+    "lastmod": "2026-11-10",
+    "sig": "f9a7d396b3cf97d570e881c665e7ac7414108167f7b77e99e7bd4d098142fba5"
   },
   "/fr/blog/citations-contre-l-anxiete-et-la-rumination/": {
-    "lastmod": "2026-10-29",
-    "sig": "31833a9498fa9f9f9cc38f2db7f66bab70cc328481316e59b365cbaf59b9818e"
+    "lastmod": "2026-11-10",
+    "sig": "122c84a8a50ae64224a8857dbe819508ef42e04ed6aee95c15df83de6431d836"
   },
   "/fr/blog/citations-contre-le-doute-de-soi/": {
-    "lastmod": "2026-10-29",
-    "sig": "34a1ec895e7578d516c19ba4c79638f629835d14e255495819449dc797fc06e3"
+    "lastmod": "2026-11-10",
+    "sig": "3c9ea7f0f6aa2770f91332a729b9beb7fb275fd79d2fa35d0fcaa59e45d56990"
   },
   "/fr/blog/citations-de-motivation-du-matin/": {
-    "lastmod": "2026-10-29",
-    "sig": "ae91d20fcc866308bcdb3240b86b661a4c1eddaf79430af571459f78811540af"
+    "lastmod": "2026-11-10",
+    "sig": "deace20e0e8e6a8af56e2d5d40427e82e83b8afe0e650667c3013a94a28a4273"
   },
   "/fr/blog/citations-motivantes-pour-les-moments-difficiles/": {
-    "lastmod": "2026-10-29",
-    "sig": "004cb6f64498034ab83ad05a612fd4e08790b8aaaf3e7dc3a448d09662a5cef8"
+    "lastmod": "2026-11-10",
+    "sig": "a44fd93ba563e60cacb6676a54f4674c3b9eaa36ba5986db254c8ad74f0244f0"
   },
   "/fr/blog/citations-pour-recommencer/": {
-    "lastmod": "2026-10-29",
-    "sig": "dcd250b0dacb91e86e54f9e9c39a2e6774d303dead2f6b8afd12a35e335130fc"
+    "lastmod": "2026-11-10",
+    "sig": "c28d3117cc380748a84ded75f6cdb5b20aa327e5098b13f4ecde973c2b15c1da"
   },
   "/fr/blog/citations-quand-rien-n-avance/": {
-    "lastmod": "2026-10-29",
-    "sig": "d0efc7da975474b8422831aee6f8d35f4eaaf0cbfb8a5abc4ad9dee1f73ecbed"
+    "lastmod": "2026-11-10",
+    "sig": "1dc6e1643648104c4e3a0acaf4a6c356c6a9ae1c4fe721a007221b957d99fa2b"
   },
   "/fr/blog/citations-sur-la-discipline-et-la-constance/": {
-    "lastmod": "2026-10-29",
-    "sig": "ec85bb8aa38a3cc7c4bd8b6f182056b7ebd9e2bbb314be5772e5e681a58316f9"
+    "lastmod": "2026-11-10",
+    "sig": "5245e5eb13a85072e6c803811079175fe4b35b42f8e309ca37fbde3134f4b654"
   },
   "/fr/blog/combien-de-temps-pour-prendre-une-habitude/": {
-    "lastmod": "2026-10-29",
-    "sig": "6dd6436cd3f292fc349bc8d2c1f9f52080bc129b802e1978830c5a8ac32197dc"
+    "lastmod": "2026-11-10",
+    "sig": "cb173ce2e46a6749973f856940d0244c843e972085d5d6157274ccefcbd59f69"
   },
   "/fr/blog/comment-arreter-de-procrastiner/": {
-    "lastmod": "2026-10-29",
-    "sig": "22851d8fc4a2ebe904377c77a293e976a829f72c17101fc6cb31fdc2fd8e0422"
+    "lastmod": "2026-11-10",
+    "sig": "86de1f017866be1bb2505c2d420ea127d68fb2edfdcf3f1f1b4d776374e0228e"
   },
   "/fr/blog/comment-arreter-de-trop-reflechir/": {
-    "lastmod": "2026-10-29",
-    "sig": "49116c28ad7478e541691c5538c490637ece19f773fcf6257a7a79343388971f"
+    "lastmod": "2026-11-10",
+    "sig": "25230313f7a1d5145f09aef9623bd452dea498a7c4bfcb8710c680488f23525b"
   },
   "/fr/blog/comment-se-motiver/": {
-    "lastmod": "2026-10-29",
-    "sig": "16129295e1c15c712615e2bee23196638d28110fb2d11fcce993eca99f234c60"
+    "lastmod": "2026-11-10",
+    "sig": "e1d4c481f3b3bc25615649356a103f0b83a915ad85b9df8be790b7bdc3c775f3"
   },
   "/fr/blog/garder-la-motivation/": {
-    "lastmod": "2026-10-29",
-    "sig": "80e88b990b8a6f68694a15d9c17d8bfcaae0e312b95459570e3b80748103494e"
+    "lastmod": "2026-11-10",
+    "sig": "2527a1e6319edae0b06af1eec92f6531af38372f4b889adea039c92694bd1791"
   },
   "/fr/blog/les-affirmations-fonctionnent-elles/": {
-    "lastmod": "2026-10-29",
-    "sig": "0a73fe61c7e5c960755aed489c2b93b28b205206e0aa7239e639f0a68aa26502"
+    "lastmod": "2026-11-10",
+    "sig": "68107a3557887c63e51853acf71eadbd21771e7f9d6fb753babf5374788ecbef"
   },
   "/fr/blog/moins-utiliser-son-telephone/": {
-    "lastmod": "2026-10-29",
-    "sig": "819cbede981ddbd7b6bdae789653c7aaee5898323c1a1c7a9a2650fd227a55e1"
+    "lastmod": "2026-11-10",
+    "sig": "3ac9826c4070b1de4c32bd2da441a45be8cc2455afbcac11cb327c1bc7c3b9ee"
   },
   "/fr/blog/motivation-ou-discipline/": {
-    "lastmod": "2026-10-29",
-    "sig": "b1629575dbc187ab6c0065eb84ecbc4df4c170383604e0b823041188119e37f2"
+    "lastmod": "2026-11-10",
+    "sig": "5d617b0bf2e7e9b560659fe9c95215ee0cd43f35de52381d126eafbb6fe9c9b7"
   },
   "/fr/blog/resolutions-du-nouvel-an/": {
-    "lastmod": "2026-11-03",
-    "sig": "e68bf4f48cb858becec059210e6db23afcf6d05ce7dbc3aa90fdafc1c88b4b14"
+    "lastmod": "2026-11-10",
+    "sig": "7214477097613fd33bb57506761d744eb507ba07f1e9dad962e439888082815a"
   },
   "/fr/comparer/": {
-    "lastmod": "2026-11-03",
-    "sig": "39ffe96ed007070bfd0626acca7132acc7fd4a5a6df288f7af6e93a04fd64d1c"
+    "lastmod": "2026-11-10",
+    "sig": "a1392d202dfd2a950f622714a0ccbce57f156b64892c5aa17cc466db99ae3531"
   },
   "/fr/comparer/dailies-vs-daily-quote/": {
-    "lastmod": "2026-11-03",
-    "sig": "2a4ed9876d855abad1cd392844545bfc4dd580510eccf766849467bca7eef128"
+    "lastmod": "2026-11-10",
+    "sig": "1b4adcf9fd14815bf039413b503310fa2ae6691bc698308c1baf6aa69ce5a69f"
   },
   "/fr/comparer/dailies-vs-i-am/": {
-    "lastmod": "2026-11-03",
-    "sig": "3402e56bfbd2afaa1f6d6d2b8730fb6f3b6069d91828784b56678deb587d9030"
+    "lastmod": "2026-11-10",
+    "sig": "cb28250dbbc6472e0e5a9498e842ad9a96a2777d5ca16e979954e90236bb87b7"
   },
   "/fr/comparer/dailies-vs-innertune/": {
-    "lastmod": "2026-11-03",
-    "sig": "1fe7fdfa7b4a037aeb9d8d3508f0a6a3eeb8da83174d3d6f8e667bc4912bf940"
+    "lastmod": "2026-11-10",
+    "sig": "7ef5de247d9ab3879cf964f84d5d88fa9635b470fe98e0e33a8cc8b7fcbd7006"
   },
   "/fr/comparer/dailies-vs-locksmith/": {
-    "lastmod": "2026-11-03",
-    "sig": "55db50bba46bec55bcfe89be2ff32ccdcce7d8985b93724c20da57759d0a9bfd"
+    "lastmod": "2026-11-10",
+    "sig": "e8ff95684e7cceba2fac30497221a3493b34dc1d95612ae988e2d5badb7f33fa"
   },
   "/fr/comparer/dailies-vs-mantra/": {
-    "lastmod": "2026-11-03",
-    "sig": "17a1294d688c415caf46732ca88db7533fce6e28dd37b60cce695db2c2fe4050"
+    "lastmod": "2026-11-10",
+    "sig": "b4c0b1bb2dc59f434dc394a75f7e73650c846134b7f30c30012d0c41122df7cb"
   },
   "/fr/comparer/dailies-vs-motivate/": {
-    "lastmod": "2026-11-03",
-    "sig": "f79e8868434b6be0c1afb1a01dae100be0a11b63eeddfee56ba1eb9a41bd92c5"
+    "lastmod": "2026-11-10",
+    "sig": "a0b37cb409bd685f682a94481773e7d5b86ac5592680c7476deafd7d245c75a5"
   },
   "/fr/comparer/dailies-vs-motivation/": {
-    "lastmod": "2026-11-03",
-    "sig": "f0db232ebc14bb7d9ed80116f55bd9c9921746e37e7b528d9d424d7a66dc910e"
+    "lastmod": "2026-11-10",
+    "sig": "84077fffaba36193bf816903614acb8f3c4a685a848c26238dd125d99015d89f"
   },
   "/fr/comparer/dailies-vs-motivational-quotes-daily/": {
-    "lastmod": "2026-11-03",
-    "sig": "3009879624dfb11d08d79de2e9f39bda315409bc15e08e946705c03b690b43b4"
+    "lastmod": "2026-11-10",
+    "sig": "344fe18df982d018ea916f0d5468d8883b0dcb5693be62622894a1e042efbe68"
   },
   "/fr/comparer/dailies-vs-peptalk/": {
-    "lastmod": "2026-11-03",
-    "sig": "29a1f041832ce8550934449f5c1c61dc099454f13a75c9fc9541129940099d78"
+    "lastmod": "2026-11-10",
+    "sig": "4842baf055e762c2a527337200f72be9c2bfe26948a584356b5861ddacb16307"
   },
   "/fr/comparer/dailies-vs-thinkup/": {
-    "lastmod": "2026-11-03",
-    "sig": "6e2f96cec6ce82ccf530742b3486ced0879b300fbc3b1f2025260bac0d85e0df"
+    "lastmod": "2026-11-10",
+    "sig": "9697e6dd5fcfb081418e61aeea119ae90c602a9fc492d7f0050098f238da7c06"
   },
   "/fr/comparer/dailies-vs-widgetsmith/": {
-    "lastmod": "2026-11-03",
-    "sig": "cb300edfd150f3a0a170694ad9f7ffea50ea8a5fb5e3927040248c637c077c22"
+    "lastmod": "2026-11-10",
+    "sig": "e489d80a3b3b137fee386a64068234555b9728f5685502faceccda4241f8ded9"
   },
   "/fr/comparer/meilleures-applis-de-citations-motivantes/": {
-    "lastmod": "2026-11-03",
-    "sig": "8ca2fcdb1f5a707ac0b5e8d9b95dcb40659e77f5bf0f9b490655b6175da2e087"
+    "lastmod": "2026-11-10",
+    "sig": "f0d4ebf4862ab44728098526fa6dc3d0daf3f828e4347ceb8ead5709e59709a8"
   },
   "/fr/guides/": {
-    "lastmod": "2026-11-07",
-    "sig": "ea6435936df29b17b61fb8495f33af8d30a1895040056088f8c4c20ad4cb390d"
+    "lastmod": "2026-11-10",
+    "sig": "f09fccce07545310290b7d6e708605f55772b759d26805659ccf0cf83a693430"
   },
   "/fr/guides/activer-les-notifications-d-une-app-sur-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "db96b49b6c622f4cfb86534e60aebec18e0d4d04d63dfbbfe0908d7260a11e6b"
+    "lastmod": "2026-11-10",
+    "sig": "63043c6360c72fd9ec41c07f9cd0e6c2e044d981d3427c6157c065e868718762"
   },
   "/fr/guides/affirmations-sur-l-ecran-verrouille-de-l-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "3ce76066ea75dd46930e32b0df487c356ec501f3ade34a35d4cda81ed510eaa1"
+    "lastmod": "2026-11-10",
+    "sig": "91dd37ebf0ee0dcccbe8c6c960115d118342c01a6fe55e605729e907064579e4"
   },
   "/fr/guides/ajouter-des-widgets-sur-l-ipad/": {
-    "lastmod": "2026-10-29",
-    "sig": "ee87e0c8e23e4d1ed0731896998b70dd32729e92336dc5ce6e0a8f1073fb108a"
+    "lastmod": "2026-11-10",
+    "sig": "55d0b3c04a545bb67c1fd679adf0ffec6ee04d03ead3a6c78998d7999d98304e"
   },
   "/fr/guides/ajouter-un-widget-a-l-ecran-d-accueil/": {
-    "lastmod": "2026-10-29",
-    "sig": "21f050754d75ac6c6187b81af4ec5c2384d9330ad2adb889e582d26721aa45ce"
+    "lastmod": "2026-11-10",
+    "sig": "e69a8d5fe1ba90a4eaa1eef89dd7c6aef2a78133d31f25ad0f8f4b8b6bb66543"
   },
   "/fr/guides/changer-ou-supprimer-l-ecran-verrouille-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "806037502a350ae185ff36045dc5dbf78917c82875c2562d88346f424c0ee20f"
+    "lastmod": "2026-11-10",
+    "sig": "4445ee4fd43c2046d1f46873e42e1d28bee468c23040c7e34f6a37530a2d7b3e"
   },
   "/fr/guides/citations-droles-chaque-jour-iphone/": {
-    "lastmod": "2026-11-07",
-    "sig": "bbeb5dcffff9e76b052ec1c1b661abe486a6bae1bf776434745a9fab71e8651e"
+    "lastmod": "2026-11-10",
+    "sig": "d746e0105a55d93af332baf89702e490f43ffe17bea7b49ae198ddd209bbfb91"
   },
   "/fr/guides/citations-motivantes-a-des-heures-aleatoires/": {
-    "lastmod": "2026-11-07",
-    "sig": "2a3eba51ed31318569ddd8df88d9a952b1baf6c552c8954dcf48bcf6a2e844bb"
+    "lastmod": "2026-11-10",
+    "sig": "5342904115c1a473cc9bab73bcc52efcffae86200996b0d885a0383e129192e5"
   },
   "/fr/guides/citations-sur-l-ecran-verrouille-de-l-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "60d4c4c074aabf980a1fe2593016fed8d88878a6d41da9852805302d3fe5feb3"
+    "lastmod": "2026-11-10",
+    "sig": "da32e18cce75426260117e175a455a5d8ea1ab546cb794e15be81a7fb01f249a"
   },
   "/fr/guides/concentration-ecran-verrouille-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "9193f9bc0e086a7e63f99b29ee9cff600aa84dbb0004a80003592cb028b24b12"
+    "lastmod": "2026-11-10",
+    "sig": "be421f5d7a341fc7a072c9d04c37fd5e37b33118c44377c8d6b99c43963c4c24"
   },
   "/fr/guides/configurer-un-nouvel-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "49aeb0590138acbc4298d8a4dec6f79bae1f62300eeb6dcc471daf185d5b4480"
+    "lastmod": "2026-11-10",
+    "sig": "71ff9d4101a76281f680e6e4db39e5be7c9e4902127ceee54d322a5b6db5eecb"
   },
   "/fr/guides/fond-d-ecran-avec-citation-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "0c34b3d093f90dcfa524a5d39607275df2cc1633ee92489c7ef5ca20c5cbe6aa"
+    "lastmod": "2026-11-10",
+    "sig": "feae55056a24985c89d0c70083eefc9f612a6d21b773323516de4b5474a0a03f"
   },
   "/fr/guides/idees-d-ecran-verrouille-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "2c996c483556a6f7053d582e2b2afecd50a82c42f935e5615faf553be2f6cb5d"
+    "lastmod": "2026-11-10",
+    "sig": "472e31f59739430a6eeb6d12a6b5fb220c8d22b5bea9f22f89ddd61618dca65a"
   },
   "/fr/guides/notifications-iphone-ne-fonctionnent-pas/": {
-    "lastmod": "2026-10-29",
-    "sig": "8bb2be70a9b30b2b97b7bb10f50f10bc3a81891366ba200167729df15caf958e"
+    "lastmod": "2026-11-10",
+    "sig": "f4c6063d5700739800a9e43daddda9ddb5de06eeeaad5609b1c43f74754f2241"
   },
   "/fr/guides/personnaliser-l-ecran-verrouille-de-l-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "edf929f82467132d858a73ab1f1134bf67eb34247e64488823f91cf2a47913f6"
+    "lastmod": "2026-11-10",
+    "sig": "97a467ea62bc8164a0892ba57fd3ff7d7a47f02da21bcd6e3a96a24cdab9622e"
   },
   "/fr/guides/verset-biblique-sur-l-ecran-verrouille-de-l-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "f4eb4d524bd61f9b7b2487ca1194e92f3f728157873ed099a305fdd3d7e87811"
+    "lastmod": "2026-11-10",
+    "sig": "e6a80ea994395e38d1cd2c5e876296da7b3349d2cc0320545ebf884f87d03473"
   },
   "/fr/guides/widget-de-citations-esthetique-iphone/": {
-    "lastmod": "2026-11-07",
-    "sig": "064ed69641df97cb23a99ca68263552fa3d34a1f29e103d3cc926833b0bc6bc3"
+    "lastmod": "2026-11-10",
+    "sig": "18670cca8310baafb7579871146b61e1dd9f946ff6bd9a84fdc4dcb72f64c422"
   },
   "/fr/guides/widget-iphone-ne-se-met-pas-a-jour/": {
-    "lastmod": "2026-10-29",
-    "sig": "7075b837b60dcfd140b91968b80e07ba9fb58c129598a1bde691e21f347f9263"
+    "lastmod": "2026-11-10",
+    "sig": "1369153b3edbbf12af289a848b5f63e2848a656345ea6c52b9919179b2e575e1"
   },
   "/guides/": {
-    "lastmod": "2026-11-07",
-    "sig": "9061c351bf60da597d573c3bc76b33def6bb47196e416da6709b8eccfa8e2bf3"
+    "lastmod": "2026-11-10",
+    "sig": "7a59572cda1b936c0af81b082c4d9930672e8637a69c92b168d5c89a444e562c"
   },
   "/guides/add-a-widget-to-your-home-screen/": {
-    "lastmod": "2026-10-29",
-    "sig": "63d936f072a4e6daa876e82fb14a56d83aef891da9d80eb9b4720fcce35452ff"
+    "lastmod": "2026-11-10",
+    "sig": "961ac408073ff53fe84fce4aea92d710ba772c60ae38143df869e7d6fb6259b1"
   },
   "/guides/add-widgets-on-ipad/": {
-    "lastmod": "2026-10-29",
-    "sig": "1ee37be9e5d8f50fd58815b49f3de0de9e44130b2692b290aef18347586d6470"
+    "lastmod": "2026-11-10",
+    "sig": "e4f85601fca2fddbfc7059d3fa638e97532af4796f3be095ac684a76e2bfdd9f"
   },
   "/guides/aesthetic-quote-widget-iphone/": {
-    "lastmod": "2026-11-07",
-    "sig": "e763eb1a639035532d574d65eadf8a4542dae8d73718ab4e2523f114a6ae0714"
+    "lastmod": "2026-11-10",
+    "sig": "13104d53da2eefcc30cd53abdb9797c60803e1cdff1c7fa04c87c5cbf9eee678"
   },
   "/guides/affirmations-on-iphone-lock-screen/": {
-    "lastmod": "2026-11-03",
-    "sig": "dd94a9d0470aea9d43bfb2a250798b69fea5bfb49dbd2e1b5da746090d5092ab"
+    "lastmod": "2026-11-10",
+    "sig": "796b7530de1cd1353ccc95ac19006314dec0cb06cee422e4d275679209d40e93"
   },
   "/guides/bible-verse-on-iphone-lock-screen/": {
-    "lastmod": "2026-10-29",
-    "sig": "23ae01bbfd7e21d1e76f25385c6c303ab32eb5089d24877ef17de983c3473b6b"
+    "lastmod": "2026-11-10",
+    "sig": "6e6b789728ca42fd33be44eb68357e43f9ad41f0a30a6114565c7242bdf9bc13"
   },
   "/guides/change-or-delete-lock-screen-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "ba6e2f16665c9ac999851f053b5fd05a27850ae67e98b6bdaa52f4b004bfea80"
+    "lastmod": "2026-11-10",
+    "sig": "d8b4a5dca408a6875fdf4b07d22c503ecf3012e05e1dbe712d22d3206e669e55"
   },
   "/guides/customize-iphone-lock-screen/": {
-    "lastmod": "2026-10-29",
-    "sig": "edf13b6d13ccb4ded4b7af2cc198a3ae765e205112c12a982bef05ec8a8eb167"
+    "lastmod": "2026-11-10",
+    "sig": "9d278c7c7dd44417298b2cd7da8cabad9b289d48b63a1b80050d039b282a092b"
   },
   "/guides/focus-lock-screen-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "2656798a8289d26188b45aa7a9e61e3a7ee61985be79e7d3d34c6de186eb600e"
+    "lastmod": "2026-11-10",
+    "sig": "701ffc45bed6f277ea9c389c28faa4ce1621500b1433fb221b8c2f15d1fbe1ec"
   },
   "/guides/funny-daily-quotes-iphone/": {
-    "lastmod": "2026-11-07",
-    "sig": "5911e3eb5bc2c4c2052571e65a23c515282852100a7b626468fd5b39f9fdbd72"
+    "lastmod": "2026-11-10",
+    "sig": "4642cc84ca64f1de77ec1e8d84a355abc23705854265beedb63ff34ffcc0289f"
   },
   "/guides/iphone-lock-screen-ideas/": {
-    "lastmod": "2026-11-03",
-    "sig": "456af396614b3c33630485e6fd61c1c3ee3ce99a113fbe18b1eda0e36b40374f"
+    "lastmod": "2026-11-10",
+    "sig": "2cc222a4b7dbeec4257dcefa3d8a015585925d725944f8be5470b7475ea86a63"
   },
   "/guides/iphone-notifications-not-working/": {
-    "lastmod": "2026-10-29",
-    "sig": "79b4f21e617e201182179f25a8b35e003de149c21a8f7e81b38971eee9dcb850"
+    "lastmod": "2026-11-10",
+    "sig": "477ca04b48a93e11fdacf3ef13b2442aafe65965b3be565a12047bdedabc281c"
   },
   "/guides/iphone-widget-not-updating/": {
-    "lastmod": "2026-10-29",
-    "sig": "2c6e0afce43f66dbae14be54502e64674da5cde0d89f65eebb0feff250f10fa6"
+    "lastmod": "2026-11-10",
+    "sig": "27cea39cc8e98397e425d2c429b4303b974d7e019e562852428788808f72e1c6"
   },
   "/guides/motivational-quotes-at-random-times/": {
-    "lastmod": "2026-11-07",
-    "sig": "79581ccb6b2c983edd6a1c9e83d9de8ff828e299482197c03727b3f9e1bb48c9"
+    "lastmod": "2026-11-10",
+    "sig": "91fc9b583f833f1ebacad8c897eaf13957a24cd70efce7e6a3baddb1eba80e08"
   },
   "/guides/new-iphone-setup/": {
-    "lastmod": "2026-11-03",
-    "sig": "0f2a810c6bd0bd6df4d4a434d246a16e7d4178947ac35f65640c8fea413f0f7e"
+    "lastmod": "2026-11-10",
+    "sig": "8200202fe3190048823cb86baee61eac571d831a880a20d423db1936eb2bfe7c"
   },
   "/guides/quote-wallpaper-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "217c9dc09b51cbe43e0278cd45ef9b3c96f5041ac2cb332b84003e780cdaf062"
+    "lastmod": "2026-11-10",
+    "sig": "d294b4aee76be0df6a103c543bf35216ea92cd31f8bac5a677a8e780f8d86c7e"
   },
   "/guides/quotes-on-your-iphone-lock-screen/": {
-    "lastmod": "2026-10-29",
-    "sig": "b19bb3938370b4f88eeaa72f272c978fbb9d73122b3895367bb00733ccef8a03"
+    "lastmod": "2026-11-10",
+    "sig": "771c45376dbe1bb228ada6270020a7cf746d64211641354ad87f0ed2e3d0bd53"
   },
   "/guides/turn-on-notifications-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "dda96e586cae35233b7f99e37dbcd8a92818160e96a91e9046f08be448cb47a1"
+    "lastmod": "2026-11-10",
+    "sig": "c0682f7731f79ea88f89c9d23ae6b16f45df8c035e28b654fc4ef648db2c318c"
   },
   "/help/": {
-    "lastmod": "2026-11-07",
-    "sig": "38f032a295d17a95451430cb333403dfb48431bc8820bcae25e1fcae93a4e0cb"
+    "lastmod": "2026-11-10",
+    "sig": "e57da8bd3f9255603c969897254da8b82b185177e00736864960d87401ce0760"
+  },
+  "/ja/": {
+    "lastmod": "2026-11-10",
+    "sig": "819016624a866f25212893da43bc48ef3e2063f69e3780bb51c5d057653d5355"
+  },
+  "/ja/about/": {
+    "lastmod": "2026-11-10",
+    "sig": "5fb89cd19ba52f05812c687324783ee3d3a10222420af3cb52541d9495bf71b7"
+  },
+  "/ja/blog/": {
+    "lastmod": "2026-11-10",
+    "sig": "ab79c9278187fa74b036c3ba953fed45f1d08aa6746c94091861a3f9d99f17b7"
+  },
+  "/ja/blog/discipline-and-consistency-quotes/": {
+    "lastmod": "2026-11-10",
+    "sig": "f12ebd1d907b5918fe2b9168ec0e6b0de622dfee217fddc32bfad33a1d4a5dc5"
+  },
+  "/ja/blog/do-affirmations-work/": {
+    "lastmod": "2026-11-10",
+    "sig": "503ebe54d4253eae61303727fa741c4f970038e3519dceebf9139cb718f6e918"
+  },
+  "/ja/blog/how-long-does-it-take-to-form-a-habit/": {
+    "lastmod": "2026-11-10",
+    "sig": "e60049022e3bca8e45219565f3d262c885101753acf296b8b928ef992e800ffe"
+  },
+  "/ja/blog/how-to-motivate-yourself/": {
+    "lastmod": "2026-11-10",
+    "sig": "f8394f63a4f834d908488d8365b73b956acafeade9bf4231428e28495b48a83d"
+  },
+  "/ja/blog/how-to-stay-motivated/": {
+    "lastmod": "2026-11-10",
+    "sig": "6af07d1bde630f40ccf9fb18f2666a94ffc2630db437f3ef9bfe6ab6575d0f43"
+  },
+  "/ja/blog/how-to-stop-overthinking/": {
+    "lastmod": "2026-11-10",
+    "sig": "06a2b194e4598637f222ce9d1ad088f3bc2505bc22081f4fd20543c1470dcc0b"
+  },
+  "/ja/blog/how-to-stop-procrastinating/": {
+    "lastmod": "2026-11-10",
+    "sig": "febb234328e3fc95d413ffa3944167b499bebf0ce1b3c7efe68c27d39389329a"
+  },
+  "/ja/blog/how-to-use-your-phone-less/": {
+    "lastmod": "2026-11-10",
+    "sig": "7658abf6dae63581bdab68a9269684c45ce4d991ec6da0f8772c7f6cd1045f8e"
+  },
+  "/ja/blog/morning-motivation-quotes/": {
+    "lastmod": "2026-11-10",
+    "sig": "b90af0db4c94e2e1fb1d7345c8a70d2e0c173e4f24b29b636902ef67ee079579"
+  },
+  "/ja/blog/motivation-vs-discipline/": {
+    "lastmod": "2026-11-10",
+    "sig": "bc80401a8fff745c42a079e3c0cf569c87065be86cdf9fde00269c4b42e84f84"
+  },
+  "/ja/blog/motivational-quotes-for-hard-times/": {
+    "lastmod": "2026-11-10",
+    "sig": "7512c133a950a51d3eccd945b5238354649b8bfe88c240f5c22f6e56a6a738d7"
+  },
+  "/ja/blog/new-years-resolutions/": {
+    "lastmod": "2026-11-10",
+    "sig": "663afee5162ec64041bfd6377f2375cafef68619ad9496a98d4f83985af6178e"
+  },
+  "/ja/blog/quotes-about-starting-over/": {
+    "lastmod": "2026-11-10",
+    "sig": "5af042b5bc9a993ab3324b730e9be70f285b17175f6fb00d63dc979b2a1e8291"
+  },
+  "/ja/blog/quotes-for-anxiety-and-overthinking/": {
+    "lastmod": "2026-11-10",
+    "sig": "ab5b242df717a73f585d9f5967f4413299f79a90b9cf03dab8084be2f84396cc"
+  },
+  "/ja/blog/quotes-for-self-doubt/": {
+    "lastmod": "2026-11-10",
+    "sig": "3f0d19ad1ead45d53c507e0f0dcd723a105a5b33f3d284a481e962497a669bf2"
+  },
+  "/ja/blog/quotes-for-when-you-feel-stuck/": {
+    "lastmod": "2026-11-10",
+    "sig": "39492214336da002b6df00dd58e778e07fc22e0b2a77e7e7ea62d894e2225253"
+  },
+  "/ja/compare/": {
+    "lastmod": "2026-11-10",
+    "sig": "ca1b459c65f7ef71cf53b8e56c4f187ee67b5d64e0fbf4f971a01c2770d9de5c"
+  },
+  "/ja/compare/best-motivational-quote-apps/": {
+    "lastmod": "2026-11-10",
+    "sig": "78c1b6a972c274a5d22e2fa49b4a2c7ccd3131f620d627210f5edaa22e2fc76b"
+  },
+  "/ja/compare/dailies-vs-daily-quote/": {
+    "lastmod": "2026-11-10",
+    "sig": "0587cfc7d52eddbc5729b5ed182da41ab8c083a9b1e7566e0a6a7d595a813484"
+  },
+  "/ja/compare/dailies-vs-i-am/": {
+    "lastmod": "2026-11-10",
+    "sig": "95e5a06ff8802d48eeb590bb949fa630dc984f04e38f5a8c43f348892b368530"
+  },
+  "/ja/compare/dailies-vs-innertune/": {
+    "lastmod": "2026-11-10",
+    "sig": "da255e5bbcb05fac226818741990788b40f2f4833a04a25ebe894d613ac4f099"
+  },
+  "/ja/compare/dailies-vs-locksmith/": {
+    "lastmod": "2026-11-10",
+    "sig": "e7b4091056319072ea18ec2bda72b9059a81c1cd29e5c9817f410c1b7f530e67"
+  },
+  "/ja/compare/dailies-vs-mantra/": {
+    "lastmod": "2026-11-10",
+    "sig": "418c1c4bc83afc09f9b40b11293c818e5a0ce0a426e16dbcd1186b6aed1bf158"
+  },
+  "/ja/compare/dailies-vs-motivate/": {
+    "lastmod": "2026-11-10",
+    "sig": "a64c6a0b173a5d4ac644e6a05e4f942823111d74da9cea7e651a78561784c151"
+  },
+  "/ja/compare/dailies-vs-motivation/": {
+    "lastmod": "2026-11-10",
+    "sig": "4ae9b154c88f270d5a450123f03ed07bbde82d42fbe98845e97c94b9e5143ff9"
+  },
+  "/ja/compare/dailies-vs-motivational-quotes-daily/": {
+    "lastmod": "2026-11-10",
+    "sig": "dcb0f88aabd356b2c2b512d905a822c3a66b1dcb3deeca2af7aa5ab654b1f2d1"
+  },
+  "/ja/compare/dailies-vs-peptalk/": {
+    "lastmod": "2026-11-10",
+    "sig": "44687413601c6b30e1ca9b4f19a7be3970c7200812a87aa12d654ac10b7af581"
+  },
+  "/ja/compare/dailies-vs-thinkup/": {
+    "lastmod": "2026-11-10",
+    "sig": "c704c2c5a20cbaa9593b8f127a4625dd3fdc4d9a9299cc9393b537ff7394c14a"
+  },
+  "/ja/compare/dailies-vs-widgetsmith/": {
+    "lastmod": "2026-11-10",
+    "sig": "8f693a3e1bd206f029468ec0725f6d7002fb8b250f2c21607d63453b6f24f98a"
+  },
+  "/ja/guides/": {
+    "lastmod": "2026-11-10",
+    "sig": "e5e26d68aee1ac38144c90f0ad837d5ae9e8f4615aef08c07ffe88ac8f47f34a"
+  },
+  "/ja/guides/add-a-widget-to-your-home-screen/": {
+    "lastmod": "2026-11-10",
+    "sig": "9c258d4a897d95b659e14eacae7a7ef987ba33591d8dcddd4bd7c0accc5426ba"
+  },
+  "/ja/guides/add-widgets-on-ipad/": {
+    "lastmod": "2026-11-10",
+    "sig": "6d56fd56a7fe02fd57098e5f3edec9accbc701c00338039a16d3f07653e69ecc"
+  },
+  "/ja/guides/aesthetic-quote-widget-iphone/": {
+    "lastmod": "2026-11-10",
+    "sig": "18bfe75ee8b696ac7313d2363897729fe082505d924ae123d91e9f0bae040af5"
+  },
+  "/ja/guides/affirmations-on-iphone-lock-screen/": {
+    "lastmod": "2026-11-10",
+    "sig": "9c16b46c8d828ef81bfcafb9ddde1fb63ac0cf86b6e2a22d4bf01d41b5ccfbbb"
+  },
+  "/ja/guides/bible-verse-on-iphone-lock-screen/": {
+    "lastmod": "2026-11-10",
+    "sig": "9cf3549a01cac5219fe5f6b0dc3613e84e268f8d30042fed139d3c4495a8dc80"
+  },
+  "/ja/guides/change-or-delete-lock-screen-iphone/": {
+    "lastmod": "2026-11-10",
+    "sig": "1183f548e43d509e029e2901a55ca33b10efd95601bb95bcea51229590bb9a26"
+  },
+  "/ja/guides/customize-iphone-lock-screen/": {
+    "lastmod": "2026-11-10",
+    "sig": "5561a0146b3ea348bce07d128afbbcad8aeeb23dd594ff537c8707b333946121"
+  },
+  "/ja/guides/focus-lock-screen-iphone/": {
+    "lastmod": "2026-11-10",
+    "sig": "f0cec483654f6b1e63b14a472a1f0eec7a52dd734d5d78720d0ad5715bdccce1"
+  },
+  "/ja/guides/funny-daily-quotes-iphone/": {
+    "lastmod": "2026-11-10",
+    "sig": "86557edf43f58180778a26633b783cf9cdea06539641ad31f93c5737ac1dcd4d"
+  },
+  "/ja/guides/iphone-lock-screen-ideas/": {
+    "lastmod": "2026-11-10",
+    "sig": "f5124c824b1d871ca2c3c4ed5b241da24b50f8e6abd266838304b36ee6fe6a27"
+  },
+  "/ja/guides/iphone-notifications-not-working/": {
+    "lastmod": "2026-11-10",
+    "sig": "812fbbd2ae913f637e940d0aead550e737af871ef4c579a59e9edc5b09836cb8"
+  },
+  "/ja/guides/iphone-widget-not-updating/": {
+    "lastmod": "2026-11-10",
+    "sig": "79bd36f4fd7e4f0e58cf900ebb04001ff8df597f4cfca3fd27cb38efd422134f"
+  },
+  "/ja/guides/motivational-quotes-at-random-times/": {
+    "lastmod": "2026-11-10",
+    "sig": "26abd1e9137e9fbfbdda9f6c1b3934bad0a55a3a7be420abcb634c36f70ea44f"
+  },
+  "/ja/guides/new-iphone-setup/": {
+    "lastmod": "2026-11-10",
+    "sig": "536c7f19ea43a203f0c13a52a62fcad345038a6c48eb521d5ec5950dbae4d52f"
+  },
+  "/ja/guides/quote-wallpaper-iphone/": {
+    "lastmod": "2026-11-10",
+    "sig": "56a27d42bbe2ba8cbc64c58264c45074563e48e9431c5b291a58fef8c58de346"
+  },
+  "/ja/guides/quotes-on-your-iphone-lock-screen/": {
+    "lastmod": "2026-11-10",
+    "sig": "2163c2496a26fce07b3ab8e1a66045744d9f2aee34845fe09622842ede101a0a"
+  },
+  "/ja/guides/turn-on-notifications-iphone/": {
+    "lastmod": "2026-11-10",
+    "sig": "f1c9858d14d0ccd522c16b449d7e4c9379dc29db79cbb78b6778ef892a259cf3"
+  },
+  "/ja/help/": {
+    "lastmod": "2026-11-10",
+    "sig": "b84a29f2d13bcde9f241da2571453f80f8eb8549603785bb78894ca2701faf05"
   },
   "/privacy/": {
-    "lastmod": "2026-11-03",
-    "sig": "997a3b77f75f7b84111df8f8b0c04bb99eec745fd5c52063f9bcc5fb34119234"
+    "lastmod": "2026-11-10",
+    "sig": "a93bf4ab83c7e7b62d8769f8047ec2905db8dacdac2bf4ccb20b94433f3a9e07"
   },
   "/pt/": {
-    "lastmod": "2026-11-08",
-    "sig": "694487797d2f9ebf5222868b13489ecfd80d685d1a6d69c65781b939275cc504"
+    "lastmod": "2026-11-10",
+    "sig": "3d535513df3561ebb053b4210c5827adfb054ce2a8ad78fa09a96f539f1c6f25"
   },
   "/pt/ajuda/": {
-    "lastmod": "2026-11-07",
-    "sig": "d25d13693f0c3295bfd4fbb13e11452aa27a436fcd74f36dcd066e4786758290"
+    "lastmod": "2026-11-10",
+    "sig": "03a170e8ab7dd48d773435abe0d5118efbde5a5c34f5eddb47f7329ff3f967cb"
   },
   "/pt/blog/": {
-    "lastmod": "2026-11-08",
-    "sig": "4b45f9a5f78d99f0726765dd220a66aa0fffdf510e4384f69d1e32c1cfb0a308"
+    "lastmod": "2026-11-10",
+    "sig": "344cdbe3fde18dbd1563ab69cf836593c45d71db270ea121f9ce6ac1e4a29239"
   },
   "/pt/blog/afirmacoes-funcionam/": {
-    "lastmod": "2026-10-29",
-    "sig": "de9ef4c592e8c70f37506be5b40e370365a31fc700a5a244160cea50db0996af"
+    "lastmod": "2026-11-10",
+    "sig": "e2ca8c576b188d8d9ed0b3a4321dd8121deac47316e679fd1b8b473adce2f33c"
   },
   "/pt/blog/como-manter-a-motivacao/": {
-    "lastmod": "2026-10-29",
-    "sig": "7d012c637164dba46454b87986b48cd2a5027976c5613c8341d66303209cbf41"
+    "lastmod": "2026-11-10",
+    "sig": "1f903a08845e45766a850635eaeff11691e5b69cd3c549d93d9f3b00e77695b0"
   },
   "/pt/blog/como-parar-de-pensar-demais/": {
-    "lastmod": "2026-10-29",
-    "sig": "5f2a78090e5d40b437b2c781c29b103c13b97a955e72e97965665e3be5f5d58c"
+    "lastmod": "2026-11-10",
+    "sig": "ba6eac60157fc366e2078f8d4d4b412c4dcf20e271dd03fdb0f09bb8212400e5"
   },
   "/pt/blog/como-parar-de-procrastinar/": {
-    "lastmod": "2026-10-29",
-    "sig": "381174693757835297dfba516d3dca758635efc65bec7e6e0a6cec4c21a2e835"
+    "lastmod": "2026-11-10",
+    "sig": "c95c7ef96ffd5d2dc8bc726be672f7d1689ecdd743efa00daf29261fb0ce2315"
   },
   "/pt/blog/como-se-motivar/": {
-    "lastmod": "2026-10-29",
-    "sig": "ce4f5a6f815538fc5e65ae5cece55e84a22e40a12e10d49baa5ef3a17789eab4"
+    "lastmod": "2026-11-10",
+    "sig": "bc3b710648ee0f21c66e7acdd3250cd7c68b5f5d1a49491c090bba43b09e8068"
   },
   "/pt/blog/como-usar-menos-o-celular/": {
-    "lastmod": "2026-10-29",
-    "sig": "27196308d6464c98ff00cd2789618f989e9381079e60fcacb83d75eb57916da1"
+    "lastmod": "2026-11-10",
+    "sig": "1137acc21b21ac6195c2e7fc1ab9890779828d94d017797bf1bdab7d4003647e"
   },
   "/pt/blog/frases-de-disciplina-e-constancia/": {
-    "lastmod": "2026-10-29",
-    "sig": "b46f7b49b8ab8cd01c2f949efab98be4c5b1c5ae4770c3fef4839cd4a320148f"
+    "lastmod": "2026-11-10",
+    "sig": "3300826698df9ce5c95b588614bb3f9206f26cc79a55fc170fa1717a8f16db6b"
   },
   "/pt/blog/frases-de-motivacao-para-a-manha/": {
-    "lastmod": "2026-10-29",
-    "sig": "1fd89c61e51378b2c6e21e2d0f1386562efbe8041d30b6e18a325e7acb1d84a4"
+    "lastmod": "2026-11-10",
+    "sig": "88d6f6adfd376c73569f474c22d0b7383f4372487506922753a1a52d8c3ed5a6"
   },
   "/pt/blog/frases-motivacionais-para-tempos-dificeis/": {
-    "lastmod": "2026-10-29",
-    "sig": "851e3c37b37c989b0051091754da4dad6babdf5fcdc532cc0441cb5975205bfc"
+    "lastmod": "2026-11-10",
+    "sig": "19c0f46e35258a3228a91fdce4cedb285a2eb422d756fcdc88e1a2648e640203"
   },
   "/pt/blog/frases-para-ansiedade-e-pensar-demais/": {
-    "lastmod": "2026-10-29",
-    "sig": "c93bfe0c84db563ab36ecf9470c5b68b6b3087a44d407a5b15ae759217291054"
+    "lastmod": "2026-11-10",
+    "sig": "6ebcfde4fd9b9c77ade4cdc6fa1054630b89131bd9af0547e1b1fa65311f345e"
   },
   "/pt/blog/frases-para-quando-nada-anda/": {
-    "lastmod": "2026-10-29",
-    "sig": "9079d453efa479cfae355a7b72d1716020247bce1ae538cd83aa2119a61f981b"
+    "lastmod": "2026-11-10",
+    "sig": "248f58e85ba561a7cc0ea77fcd020e1f6b1dace67338de2ed4ec6248d5bd4448"
   },
   "/pt/blog/frases-para-quando-voce-duvida-de-si/": {
-    "lastmod": "2026-10-29",
-    "sig": "3352d451617756fd42f44d8e0a95dded1f9f112a69ce153c709b735c66ac894f"
+    "lastmod": "2026-11-10",
+    "sig": "3a67c3cc9f7f22a6aa8d2a645b4190cc37b513fd864838d6bf853557b9c1fcb8"
   },
   "/pt/blog/frases-para-recomecar/": {
-    "lastmod": "2026-10-29",
-    "sig": "67fc6c93c58d7822594fcfda28a373ac2269b24ba247a7956ab3096931145245"
+    "lastmod": "2026-11-10",
+    "sig": "b20d58675697a624e7853a155543f8f923a27c27adf2e4cb5787af7e715d00cd"
   },
   "/pt/blog/motivacao-vs-disciplina/": {
-    "lastmod": "2026-10-29",
-    "sig": "23c42008785a8d3c3fbda9d63db30c8f8bfb49a8efc9b9d883a90d10ceda9503"
+    "lastmod": "2026-11-10",
+    "sig": "2688c643c968d3f096b1fb0e22e01df93b05c3f9c935ef5a54570ccaf714597a"
   },
   "/pt/blog/quanto-tempo-leva-para-criar-um-habito/": {
-    "lastmod": "2026-10-29",
-    "sig": "e2b79fc0fe116b60e4cb33e529a0e71df94c33c1df7aefd0feae30142f27984d"
+    "lastmod": "2026-11-10",
+    "sig": "ba3e26b1828af6fe80c4ea5265e7dbe469bf306c614b09f00558f3210594bbab"
   },
   "/pt/blog/resolucoes-de-ano-novo/": {
-    "lastmod": "2026-11-03",
-    "sig": "08e96e3ea311566f4821c5e17187315614f2f189918a27e35f322fc33718910c"
+    "lastmod": "2026-11-10",
+    "sig": "f2d11a74a00efc7d73f2ef78f856354396e78b6bb6fd96b68b20c999f89166ef"
   },
   "/pt/comparar/": {
-    "lastmod": "2026-11-03",
-    "sig": "1018eb04b2b2bc961377fd0269ad41efa2a9bb8e3881449607b4da6683b08ac8"
+    "lastmod": "2026-11-10",
+    "sig": "7553305e868cd0ece6f995a61f49323f786d3cd7fe843c3372abc4fd3ffb10e3"
   },
   "/pt/comparar/dailies-vs-daily-quote/": {
-    "lastmod": "2026-11-03",
-    "sig": "f0d6deb464934abcb1f8063d2a5a910881ee7178eeb8383ecaf63461756aec0b"
+    "lastmod": "2026-11-10",
+    "sig": "30906d397c7aca1231241501928263ae892b55b14491430015752453b27ad152"
   },
   "/pt/comparar/dailies-vs-i-am/": {
-    "lastmod": "2026-11-03",
-    "sig": "dddb0c8f1e87682fd60bf8598ebc7cba767ee5ccfb75e5b5f7d706162a1c3f80"
+    "lastmod": "2026-11-10",
+    "sig": "d7bdc4cde61aebacb85d75f6128f61ef3895547928470e62c7977e841c39200a"
   },
   "/pt/comparar/dailies-vs-innertune/": {
-    "lastmod": "2026-11-03",
-    "sig": "2ce969cf0da53470e1e79e1fda12a3dc33e80f35f84bcc4505b1f78a12e76604"
+    "lastmod": "2026-11-10",
+    "sig": "b1012c4a68f4100d2ed28ac0eb1dafcfa30aed38c26a13608105d803c0906b0a"
   },
   "/pt/comparar/dailies-vs-locksmith/": {
-    "lastmod": "2026-11-03",
-    "sig": "2280d3a4a7fcfd02a9a20781ac14aafcd89111e7aca8aa5293ea2a4b38215471"
+    "lastmod": "2026-11-10",
+    "sig": "5684d864f78875bbfe8f64c3078a3501d595abdaf53a89e431da690f8d1b8219"
   },
   "/pt/comparar/dailies-vs-mantra/": {
-    "lastmod": "2026-11-03",
-    "sig": "7401f088d1cd8df85615ad2ecc1ad76b85b830798d6ee4886b58bc35e8c542f9"
+    "lastmod": "2026-11-10",
+    "sig": "1329a57a6d0775c47117cedf69a90a68604c0ca86fa5ce05456923d042a6e50a"
   },
   "/pt/comparar/dailies-vs-motivate/": {
-    "lastmod": "2026-11-03",
-    "sig": "a3859a5757a5c2dc43c34b62abdf06347ab236da5905b475f1e517d3abe099d2"
+    "lastmod": "2026-11-10",
+    "sig": "e7eaf6755ade2d5c15117ed1024099e0a0dff48fb38fc49543d5fcd608d64c59"
   },
   "/pt/comparar/dailies-vs-motivation/": {
-    "lastmod": "2026-11-03",
-    "sig": "d6321ec8c38e55279f7e3625ac15bf3b797560b427b003343b738232536a4c4e"
+    "lastmod": "2026-11-10",
+    "sig": "afb54cd84f94360d1db1f8cc3f296b1026e073e25b3280a4802bd7980d4ea0fe"
   },
   "/pt/comparar/dailies-vs-motivational-quotes-daily/": {
-    "lastmod": "2026-11-03",
-    "sig": "58d6ac99ea5de931f8b339c3fac924cb484cc73e4c1fe706fc0d19a63aaed5e6"
+    "lastmod": "2026-11-10",
+    "sig": "d03ce5bb284f5b0ca45e575cc502a27afa2a5abbf997906e1c136b5cf37077a7"
   },
   "/pt/comparar/dailies-vs-peptalk/": {
-    "lastmod": "2026-11-03",
-    "sig": "78842244ce206c028224cf92d6a999a4ec913a7d693c862fad869696cea652a0"
+    "lastmod": "2026-11-10",
+    "sig": "9fa098683831038b98c64a7fcd2ed60a37e360318420e9c5a7b0d317447e22fa"
   },
   "/pt/comparar/dailies-vs-thinkup/": {
-    "lastmod": "2026-11-03",
-    "sig": "e4dd230b58b89de76a382d118529c5224d0f25403d610165ba45bb581b7f4478"
+    "lastmod": "2026-11-10",
+    "sig": "a5c09d24d21bd14bc6e6f5182c29c388a8df29bb991ba8b39981165afc249b99"
   },
   "/pt/comparar/dailies-vs-widgetsmith/": {
-    "lastmod": "2026-11-03",
-    "sig": "3d386a210db25bafa8fe168cad7a7ececa7f5fa03f372574f49ef0fe0f247c51"
+    "lastmod": "2026-11-10",
+    "sig": "954d388d7b6d3998853b4e5bd99472e2cb6748afdafb5307f9eabea1e97c7db1"
   },
   "/pt/comparar/melhores-apps-de-frases-motivacionais/": {
-    "lastmod": "2026-11-03",
-    "sig": "f321e5ec3ea53f6fdc49ab2dc7076841873185747d40e59595185750dc3d40e0"
+    "lastmod": "2026-11-10",
+    "sig": "55e9a3a8c9197433ea347829267c5f1027ead52096df86e1497cbfcdb51310ea"
   },
   "/pt/guias/": {
-    "lastmod": "2026-11-07",
-    "sig": "e75e35ff0bac381caf577642de09a9c222a8d58c395d062a6d303173f0db2781"
+    "lastmod": "2026-11-10",
+    "sig": "1278188c157fcb410605c67980ecf867ab6a4bc002439f1c0397c024c6fad279"
   },
   "/pt/guias/adicionar-um-widget-na-tela-de-inicio/": {
-    "lastmod": "2026-10-29",
-    "sig": "71c00f23e44885dedb09c706108902ff74097650fc31253025d19b94c9e56b78"
+    "lastmod": "2026-11-10",
+    "sig": "c540bb49f66748de38cef0e1406c5331172c090cc3877893184026e2ac23026f"
   },
   "/pt/guias/adicionar-widgets-no-ipad/": {
-    "lastmod": "2026-10-29",
-    "sig": "929c09b5c5961f09024fa2ad5a77c46116f47e6c1e7c80a11588820b5a68342f"
+    "lastmod": "2026-11-10",
+    "sig": "b57b63780e6a4b40e63b97199027d9e7f87ea4baa58e473789d51156f90b12ee"
   },
   "/pt/guias/afirmacoes-na-tela-bloqueada-do-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "f496f4fc2e907ca12dd21aec8297ae251d110a05fef1a115b9655b04f0d334f1"
+    "lastmod": "2026-11-10",
+    "sig": "c13a43830ba205076df87f293fad472a846021a271eb5cb94cac0bb5a6e8b85c"
   },
   "/pt/guias/ativar-notificacoes-de-um-app-no-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "5a49ebc3e14890ca5ed9a0b5711e564ed3795f7950c922049d261824b4cd5e54"
+    "lastmod": "2026-11-10",
+    "sig": "49f093d8f3a067debb0927b67c5cc9a2b2e54ae66e738f9cffe4b8c93ab9baa6"
   },
   "/pt/guias/configurar-um-iphone-novo/": {
-    "lastmod": "2026-11-03",
-    "sig": "b17c264656c1facb3804512bc9ff034af8999c75791874518b1142fa88941141"
+    "lastmod": "2026-11-10",
+    "sig": "46a72f7486a5ef765187453c96eb328a2a23ca74d6e6057a5fd117b5dd72dd6a"
   },
   "/pt/guias/foco-tela-bloqueada-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "7df7c7609f0dda2fc884ad96fb3416d5a336717717d425a2cecfe94df5211baf"
+    "lastmod": "2026-11-10",
+    "sig": "9f84846c94a7dfd84e764bc455c289fd4de24aaec2029b5a2cf381ce8b4a4252"
   },
   "/pt/guias/frases-engracadas-todo-dia-iphone/": {
-    "lastmod": "2026-11-07",
-    "sig": "4497b482123695348e1a9f6c1419ca239bfce8c41db108367bc60cfcede4d860"
+    "lastmod": "2026-11-10",
+    "sig": "232998a881a1505a8551c061ea4eb0dd0ac6ad7c94583008e06771d645b1af75"
   },
   "/pt/guias/frases-motivacionais-em-horarios-aleatorios/": {
-    "lastmod": "2026-11-07",
-    "sig": "5d5c400d172eb409092efbbeac9a943ab3dfa8071f22f4f4d60fb30b92ef2a71"
+    "lastmod": "2026-11-10",
+    "sig": "4eb3a148be8a2b994a4d621e7a6d6fc1e32ce0f6e5b102f1102edbbeb37ca8a4"
   },
   "/pt/guias/frases-na-tela-bloqueada-do-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "a65f98ca8030e969633504551d6b4b6662e4bb56f47ca95c240d5366cc8555c7"
+    "lastmod": "2026-11-10",
+    "sig": "e8cd22003be586803d8dec4fafe5dea2dbedaf33fdbdd6dab1884ace820a92ae"
   },
   "/pt/guias/ideias-para-a-tela-bloqueada-do-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "420fda8e3f169c8371ebe8de5d60ec640f75f08ac122f36947926049dc97e72e"
+    "lastmod": "2026-11-10",
+    "sig": "671acf66a9fef6439f3cd2438c9ff4a70757e3f4462122e84ab6a974c970d6da"
   },
   "/pt/guias/mudar-ou-apagar-a-tela-bloqueada-do-iphone/": {
-    "lastmod": "2026-11-03",
-    "sig": "d55c90754cbb678047e147560f94ae93b9d478d864d94e421a8f0f5f69ada12f"
+    "lastmod": "2026-11-10",
+    "sig": "b4e3d8a6b10d93fc7f7dd1adf2740a87aa98ab2855e53c6bc16a95bf3122faa8"
   },
   "/pt/guias/notificacoes-do-iphone-nao-chegam/": {
-    "lastmod": "2026-10-29",
-    "sig": "5a3ce58bf3136d1a850ed527644abc38ccccc17799f6666865b1949fcf3cdc9d"
+    "lastmod": "2026-11-10",
+    "sig": "fe030b4ecaeb0d6d5c5c91d05a6346782ffd30b6871fbca77f58548bcb7b1fc0"
   },
   "/pt/guias/papel-de-parede-com-frases-no-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "6e97532f3766e85bfc770c88cf58622955302b47ab80c68b26b4edfa867fdb96"
+    "lastmod": "2026-11-10",
+    "sig": "89fd0abf787d843d2e1f197eba723f32e52498f1d25a38f8b6c4eb9a2b876ba3"
   },
   "/pt/guias/personalizar-a-tela-bloqueada-do-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "09431218df53d20a1a41230cb8b0ad54a8f3cffcfb1be5786155f99fa4f33b40"
+    "lastmod": "2026-11-10",
+    "sig": "c695cf43c9cb82fa5b5d4b78f3ed67fa431ade3f7622958aee7adfda85464ffe"
   },
   "/pt/guias/versiculo-biblico-na-tela-bloqueada-do-iphone/": {
-    "lastmod": "2026-10-29",
-    "sig": "d513d0623b5f9602bff930db33d06f559b37d305749b29c0b213e8b9b24e457e"
+    "lastmod": "2026-11-10",
+    "sig": "f0ad772e58b3093126f0563ea88f54a42365e3937fa2047b50b9d9aef3a47ece"
   },
   "/pt/guias/widget-de-frases-aesthetic-iphone/": {
-    "lastmod": "2026-11-07",
-    "sig": "61b288438ef1bb193080e005736d225380b1c602471db38bb0393688075d48b0"
+    "lastmod": "2026-11-10",
+    "sig": "84e174300c104c893329f269a3bed49c700f556b9e531fb3e6491093e500dc01"
   },
   "/pt/guias/widget-do-iphone-nao-atualiza/": {
-    "lastmod": "2026-10-29",
-    "sig": "03d54c26c34ad92b6abcdfdf5e7fbc1a8f9068f99077d0cf33d030a1be5fb47c"
+    "lastmod": "2026-11-10",
+    "sig": "fdc3f76ff06db2e503e936d1be23418ec82e0938f065c816fc4d27226727efa6"
   },
   "/pt/sobre/": {
-    "lastmod": "2026-11-08",
-    "sig": "6d7e519a489baa44823ab9eea6016dc490e57bac5d89e5022e749ec68aa1b435"
+    "lastmod": "2026-11-10",
+    "sig": "45b04bc02e015b43d79a636d0e75332795a4fa6bf6946dcce4edd42ff5bac40d"
   },
   "/terms/": {
-    "lastmod": "2026-11-03",
-    "sig": "9cefa29f1f8b769bbea15e52e37f5641a5bedf53499391f6e2311e8f275d4ca0"
+    "lastmod": "2026-11-10",
+    "sig": "9f268e37968b78ac4cecea95470f60d446a34667f2517270a1276edeeff6bae2"
   }
 }
