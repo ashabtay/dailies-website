@@ -169,11 +169,8 @@ exactly as they bind the English, dashes included):
 - **The guide screenshots are in the page's language**: each translation
   has its own `img/guides/<lang>/zoom-*.jpg`, see [The guides](#the-guides).
   The comparison pages' Lock Screens stay the English app in every language,
-  and their alt text says so. **Japanese has no guide screens of its own
-  yet**: `/ja/` guides show the English `img/guides/zoom-*.jpg` and
-  `moving-widget.gif`, and their alt text says the screen is the English app.
-  Shoot an `img/guides/ja/` set (iOS in Japanese, the same lines' `textJa`)
-  and point the pages at it.
+  and their alt text says so. Japanese has its set in `img/guides/ja/`,
+  shot on 10 November 2026 (see [The guides](#the-guides)).
 - **The App Store badge is Apple's localized artwork**:
   `img/app-store-badge-es.svg` ("Descárgalo en el App Store"),
   `img/app-store-badge-pt.svg` ("Baixar na App Store"),
@@ -480,6 +477,27 @@ the first, and only emptying the app's `DeliveredNotifications.plist` under
 the simulator's `Library/UserNotifications` with the device shut down
 clears it.
 
+**The Japanese screens**, in `img/guides/ja/`, were shot the same way on
+10 November 2026, with iOS in Japanese (`ja-JP`, locale `ja_JP`), so the
+clock reads 9:41 under 1月1日(土) and the notification says 今. The lines are
+each row's `textJa` (the Bible verses in the 文語訳) and the bylines its
+author's `nameJa`. The setup screen keeps the other sets' crop: Japanese has
+a sixth row of choices (生きる意味, 進む方向) below the three chosen, and the
+crop stops above it. Three things for the next shoot. The Dailies widget had
+gone from the Home Screen again and was added back at the top of page one.
+After the first reload WidgetKit stopped acting on the arrow (the intent ran
+and moved the anchor, the tile stayed put), so every line got a fresh boot:
+write `widget/quotes.json`, shut down, boot, tap the arrow. And the widget's
+photo needs no app: `widget/background.jpg` is the background's asset file
+copied as it is, so copying `assets/backgrounds/<id>.jpg` there changes it.
+Edit the app's own prefs inside its data container with the device shut down
+(`simctl spawn … defaults write com.ashabtay.dailies` writes a different,
+device-wide plist the app never reads), and put `onboardingComplete` back
+before the next launch, or a "finish setting up" Live Activity lands on the
+Lock Screen. The widgets on the three Home Screen captures carry the app's
+`forest_river` (Samuel Johnson), `mtn_blue_ridges` (Lamentations) and
+`sea_sunset_surf` (Kahlil Gibran), the same as every other language's.
+
 `img/lock-screen.jpg`, the Dailies vs Motivation Lock Screen, was re-shot
 the same day: its notification line had been withdrawn from `quotes.db`. It
 now shows George Sand in the notification and Joseph Joubert under the
@@ -494,7 +512,14 @@ The five guides added in November 2026 (Lock Screen ideas, new iPhone setup, tur
 
 **The three need pages** (random times, aesthetic widget, funny quotes, 7 November 2026) answer a question people put to ChatGPT and search, where Dailies is a true answer rather than one of a list. Their heroes are app backgrounds too (`field_first_light`, `night_aurora`, `desert_cactus`), and their steps were written from the app's own code and strings on that date, not walked on a phone. The funny page's quotes are from `quotes.db` like the blog's: run the blog check above with its glob pointed at `guides/*/index.html` (and the translations' check at `<lang>/guias/` and friends).
 
-`moving-widget.gif` (and `es/`, `pt/`, `fr/`, `de/` copies with the quote in that language; none for `ja/` yet, as the preview shoot has no Japanese takes) is the medium Home Screen widget cycling Blizzard, Embers and Butterflies. It is cut from the App Store preview shoot (`~/Documents/dailies/marketing/appstore_preview/raw/fx_<effect>[_<locale>]_cfr.mp4`, recorded on the Shots 17 Pro Max simulator): three seconds of each from second 3, cropped to the tile (`crop=1176:610:72:260`), 640 wide at 12 fps with a 192-color palette, about 1.1 MB each.
+`moving-widget.gif` (and `es/`, `pt/`, `fr/`, `de/` and `ja/` copies with the quote in that language) is the medium Home Screen widget cycling Blizzard, Embers and Butterflies. It is cut from the App Store preview shoot (`~/Documents/dailies/marketing/appstore_preview/raw/fx_<effect>[_<locale>]_cfr.mp4`, recorded on the Shots 17 Pro Max simulator): three seconds of each from second 3, cropped to the tile (`crop=1176:610:72:260`), 640 wide at 12 fps with a 192-color palette, about 1.1 MB each. The palette is applied with ordered dithering; ffmpeg's default error diffusion makes a file three times the size:
+
+```bash
+ffmpeg -ss 3 -t 3 -i fx_blizzard_<locale>_cfr.mp4 -ss 3 -t 3 -i fx_embers_<locale>_cfr.mp4 -ss 3 -t 3 -i fx_butterflies_<locale>_cfr.mp4 \
+  -filter_complex "[0:v][1:v][2:v]concat=n=3:v=1,crop=1176:610:72:260,scale=640:-1:flags=lanczos,fps=12,split[a][b];[a]palettegen=max_colors=192[p];[b][p]paletteuse=dither=bayer:bayer_scale=4" moving-widget.gif
+```
+
+The Japanese takes (`fx_<effect>_ja_cfr.mp4`, 10 November 2026) were recorded without the shoot rig, whose build no longer exists: the same photo, effect and line per take as the other languages, set straight into the app group (the `effect` and `fontScale` 1.0 keys in its defaults, `widget/background.jpg`, `widget/quotes.json`), then a fresh boot, a tap on the arrow and `shoot.py`'s own `record()`.
 
 The hub's card icons are inline SVG line drawings, the same `.ico` style as the
 blog hub.
