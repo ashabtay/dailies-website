@@ -46,7 +46,7 @@ The website for the Dailies app — https://mydailies.app
 | `/compare/dailies-vs-widgetsmith` | `compare/dailies-vs-widgetsmith/index.html` | Dailies vs Widgetsmith (Cross Forward Consulting) |
 | `/compare/dailies-vs-locksmith` | `compare/dailies-vs-locksmith/index.html` | Dailies vs locksmith (iconic hearts, the makers of sendit) |
 | any missing path | `404.html` | The custom 404 |
-| `/es/…`, `/pt/…`, `/fr/…`, `/de/…` | `es/…/index.html` and so on | The same site in Mexican Spanish, Brazilian Portuguese, French and German. See [Languages](#languages) |
+| `/es/…`, `/pt/…`, `/fr/…`, `/de/…`, `/ja/…` | `es/…/index.html` and so on | The same site in Mexican Spanish, Brazilian Portuguese, French, German and Japanese. See [Languages](#languages) |
 
 `/terms` and `/privacy` are not optional paths: the app links to them from the
 legal line on the first onboarding screen (`lib/app_config.dart` in the `dailies`
@@ -56,25 +56,27 @@ Netlify, Vercel and Cloudflare Pages alike — do not flatten them to `terms.htm
 
 ## Languages
 
-The site is in five languages, the same as the app's
+The site is in six languages, the same as the app's
 (`lib/l10n/app_locale.dart` in the `dailies` repo) less Chinese: **English** at
 `/`, **Mexican Spanish** at `/es/`, **Brazilian Portuguese** at `/pt/`,
-**French** at `/fr/` and **German** at `/de/`. Every Spanish phone gets the
+**French** at `/fr/`, **German** at `/de/` and **Japanese** at `/ja/`. Every Spanish phone gets the
 app's es-MX, every Portuguese one its pt-BR, every French one fr-FR and every
 German one de-DE, so each is the one Spanish, Portuguese, French or German the
 site has: `<html lang>` says `es-MX`, `pt-BR`, `fr-FR` and `de-DE`, and the
-hreflang says plain `es`, `pt`, `fr` and `de`.
+hreflang says plain `es`, `pt`, `fr` and `de`. Japanese is `ja` in both.
 
 Everything is translated except the **Terms of Use, the Privacy Policy and the
 Cookie Policy**, which stay English only: they are the binding text, and a
 translation would be a second version of a contract nobody has reviewed. The
 translated footers and pages link to them with `hreflang="en"` and say "(en
-inglés)", "(em inglês)", "(en anglais)" or "(auf Englisch)".
+inglés)", "(em inglês)", "(en anglais)", "(auf Englisch)" or "（英語）".
 
 **`tools/languages.py` is the one record of which page translates which.** Its
-`PAGES` table lists each page's English, Spanish, Portuguese, French and
-German URL, in that column order (the translated slugs are written for search in that language, so they are not the
-English ones). From it the script writes three things into every page, and
+`PAGES` table lists each page's English, Spanish, Portuguese, French,
+German and Japanese URL, in that column order (the translated slugs are written for search in that language, so they are not the
+English ones; the Japanese pages keep the English slugs under `/ja/`, since a
+Japanese slug is a wall of percent-escapes in every link and search reads
+the page, not the path). From it the script writes three things into every page, and
 none of them should be hand-edited:
 
 - `<html lang>`;
@@ -82,13 +84,13 @@ none of them should be hand-edited:
   only on pages that really have a translation;
 - the language menu in the nav, just before the Get Dailies pill: a
   `<details class="lang">` whose button names the page's language in full
-  (globe, "Español", chevron) and opens a list of the five, each going to
+  (globe, "Español", chevron) and opens a list of the six, each going to
   this page in that language, or to that language's home page where there is
   none (the legal pages). A line of script beside it closes the list on an
   outside click or Escape. Phones show the globe and chevron without the
   name. Languages are named, never abbreviated, and are not in the footer.
   The list's order is `MENU_ORDER`, not the column order: English,
-  Français, Deutsch, Español, Português;
+  Français, Deutsch, Español, Português, 日本語;
 - on English pages that have a translation, a few lines of inline script after
   the hreflang block that send a visitor on to their browser's language. It
   walks the browser's language list the way the app walks the phone's:
@@ -108,7 +110,7 @@ python3 tools/languages.py --check   # just say
 `tools/sitemap.py` reads the same table, so a translated page is in the sitemap,
 with its `xhtml:link` alternates, the moment it is in `PAGES`.
 
-**Adding a page** now means adding it in all five languages (or `None` where it
+**Adding a page** now means adding it in all six languages (or `None` where it
 has no translation), then running `languages.py` and `sitemap.py`. **Editing a
 page** means editing its translations too; nothing checks that they still say
 the same thing.
@@ -125,9 +127,20 @@ exactly as they bind the English, dashes included):
   have them: *pantalla de bloqueo*, *pantalla de inicio*, *Agregar widget*,
   *Listo*; *Tela Bloqueada*, *Tela de Início*, *Adicionar Widget*, *OK*;
   *écran verrouillé*, *écran d’accueil*, *Ajouter un widget*, *OK*;
-  *Sperrbildschirm*, *Home-Bildschirm*, „Widget hinzufügen“, „Fertig“.
+  *Sperrbildschirm*, *Home-Bildschirm*, „Widget hinzufügen“, „Fertig“;
+  ロック画面, ホーム画面, 「ウィジェットを追加」, 「完了」.
+- **Japanese** follows the app's register (decided 2026-11-10, see
+  `docs/localization.md` in the app repo): soft です・ます for everything the
+  site says, plain form for the quotes, no あなた where Japanese drops the
+  subject, 私 and never 僕, no gendered endings, full-width punctuation, a
+  half-width space between Japanese and Latin words (`Dailies は`, as Apple
+  Japan and the app's listing write it), no dashes of any kind. The Latin
+  faces have no kana or kanji, so `doc.css` (and `ja/index.html`'s own
+  stylesheet) name the system's Mincho and Gothic after them under
+  `html:lang(ja)`, turn off italics and negative tracking, and measure lines in
+  `em`.
 - **Every quote is the app's own translation, word for word** from
-  `assets/quotes.db` (`textEs`, `textPt`, `textFr`, `textDe`, with
+  `assets/quotes.db` (`textEs`, `textPt`, `textFr`, `textDe`, `textJa`, with
   `authors.nameEs` and its siblings). The
   corpus has no translation of James Clear (his grant covers quotation, not
   translation), so his lines are replaced on the translated pages and there are
@@ -137,7 +150,7 @@ exactly as they bind the English, dashes included):
   python3 - <<'PY'
   import re,glob,html,sqlite3
   db=sqlite3.connect('../dailies/assets/quotes.db')
-  for lang,col in (('es','textEs'),('pt','textPt'),('fr','textFr'),('de','textDe')):
+  for lang,col in (('es','textEs'),('pt','textPt'),('fr','textFr'),('de','textDe'),('ja','textJa')):
       ok={r[0] for r in db.execute(f"select {col} from quotes where {col} is not null")}
       for f in sorted(glob.glob(f'{lang}/**/index.html',recursive=True)):
           for t in re.findall(r'<blockquote><p>(.*?)</p>',open(f,encoding='utf-8').read()):
@@ -149,30 +162,36 @@ exactly as they bind the English, dashes included):
   Vida (800 911 2000) and the US 988, which answers in Spanish; the Portuguese
   give Brazil's CVV (188); the French give France's 3114, with Belgium,
   Switzerland and Canada beside it; the German give the TelefonSeelsorge
-  (0800 111 0 111), with Austria's 142 and Switzerland's 143.
+  (0800 111 0 111), with Austria's 142 and Switzerland's 143; the Japanese
+  give よりそいホットライン (0120-279-338, around the clock) and the
+  ministry's こころの健康相談統一ダイヤル (0570-064-556), with 119 in an
+  emergency.
 - **The guide screenshots are in the page's language**: each translation
   has its own `img/guides/<lang>/zoom-*.jpg`, see [The guides](#the-guides).
   The comparison pages' Lock Screens stay the English app in every language,
-  and their alt text says so.
+  and their alt text says so. Japanese has its set in `img/guides/ja/`,
+  shot on 10 November 2026 (see [The guides](#the-guides)).
 - **The App Store badge is Apple's localized artwork**:
   `img/app-store-badge-es.svg` ("Descárgalo en el App Store"),
   `img/app-store-badge-pt.svg` ("Baixar na App Store"),
   `img/app-store-badge-fr.svg` ("Télécharger dans l’App Store", wider: 164px
-  at 52px tall) and `img/app-store-badge-de.svg` ("Laden im App Store"), from
+  at 52px tall), `img/app-store-badge-de.svg` ("Laden im App Store") and
+  `img/app-store-badge-ja.svg` ("App Storeからダウンロード", narrower: 142px at
+  52px tall), from
   the same Apple marketing tools as the English one
   (`tools.applemediaservices.com/api/badges/download-on-the-app-store/black/<locale>`),
   unmodified. Apple asks for the badge in
   the language of the page.
 - **Campaign tokens carry the language**: `web-guides-es`, `web-home-pt` and so
-  on (and `-fr`, `-de`), so App Store Connect shows which language's pages send downloads.
+  on (and `-fr`, `-de`, `-ja`), so App Store Connect shows which language's pages send downloads.
 - **Analytics stays comparable.** The translated home pages give each picker
   chip a `set` (its English slug) that `analytics.js` reports instead of the
   label, so *Confianza* and *Confidence* are one row. FAQ and page events are
   told apart by their URL.
 
 The cookie banner (`consent.js`) reads `<html lang>` and has its words in all
-five languages in its `WORDS` table. The 404 is one file for every missing
-address; under `/es/`, `/pt/`, `/fr/` or `/de/` it swaps in the translated
+six languages in its `WORDS` table. The 404 is one file for every missing
+address; under `/es/`, `/pt/`, `/fr/`, `/de/` or `/ja/` it swaps in the translated
 `<main>` from its `<template>`s and relabels the nav.
 
 The translations were machine-made, from the English, and have not had a
@@ -258,7 +277,8 @@ landing page's nav.** It carries Blog, Help and the Get Dailies pill (which
 points at `/#get`). Change the landing page's nav and change every other page's
 to match. Nothing checks this. The translated pages carry their own
 translated copy (Guías, Ayuda, Descarga Dailies; Guias, Ajuda, Baixe o Dailies;
-Guides, Aide, Télécharger Dailies; Anleitungen, Hilfe, Dailies laden),
+Guides, Aide, Télécharger Dailies; Anleitungen, Hilfe, Dailies laden;
+ブログ, ガイド, ヘルプ, Dailies を入手),
 pointing at their own language's pages, and change with it. The language menu
 in it is the exception: `tools/languages.py` writes that one. The FAQ's
 `details`/`summary` styles reach it too, and its CSS takes them back off; keep
@@ -269,7 +289,7 @@ globe and chevron, without the name), and the brand stacks the icon over the
 name, after motivation.app's mobile header. The Get Dailies pill is dropped
 there: it did not fit beside Help, and a phone has two other ways in, Apple's
 install banner at the top in Safari and the App Store badge on every page.
-Measured to fit from 320px up in all five languages; recheck at 320px after
+Measured to fit from 320px up in all six languages; recheck at 320px after
 renaming a nav link, since the Spanish and German labels are the longest.
 
 **Every download button is Apple's official App Store badge**
@@ -457,6 +477,27 @@ the first, and only emptying the app's `DeliveredNotifications.plist` under
 the simulator's `Library/UserNotifications` with the device shut down
 clears it.
 
+**The Japanese screens**, in `img/guides/ja/`, were shot the same way on
+10 November 2026, with iOS in Japanese (`ja-JP`, locale `ja_JP`), so the
+clock reads 9:41 under 1月1日(土) and the notification says 今. The lines are
+each row's `textJa` (the Bible verses in the 文語訳) and the bylines its
+author's `nameJa`. The setup screen keeps the other sets' crop: Japanese has
+a sixth row of choices (生きる意味, 進む方向) below the three chosen, and the
+crop stops above it. Three things for the next shoot. The Dailies widget had
+gone from the Home Screen again and was added back at the top of page one.
+After the first reload WidgetKit stopped acting on the arrow (the intent ran
+and moved the anchor, the tile stayed put), so every line got a fresh boot:
+write `widget/quotes.json`, shut down, boot, tap the arrow. And the widget's
+photo needs no app: `widget/background.jpg` is the background's asset file
+copied as it is, so copying `assets/backgrounds/<id>.jpg` there changes it.
+Edit the app's own prefs inside its data container with the device shut down
+(`simctl spawn … defaults write com.ashabtay.dailies` writes a different,
+device-wide plist the app never reads), and put `onboardingComplete` back
+before the next launch, or a "finish setting up" Live Activity lands on the
+Lock Screen. The widgets on the three Home Screen captures carry the app's
+`forest_river` (Samuel Johnson), `mtn_blue_ridges` (Lamentations) and
+`sea_sunset_surf` (Kahlil Gibran), the same as every other language's.
+
 `img/lock-screen.jpg`, the Dailies vs Motivation Lock Screen, was re-shot
 the same day: its notification line had been withdrawn from `quotes.db`. It
 now shows George Sand in the notification and Joseph Joubert under the
@@ -471,7 +512,14 @@ The five guides added in November 2026 (Lock Screen ideas, new iPhone setup, tur
 
 **The three need pages** (random times, aesthetic widget, funny quotes, 7 November 2026) answer a question people put to ChatGPT and search, where Dailies is a true answer rather than one of a list. Their heroes are app backgrounds too (`field_first_light`, `night_aurora`, `desert_cactus`), and their steps were written from the app's own code and strings on that date, not walked on a phone. The funny page's quotes are from `quotes.db` like the blog's: run the blog check above with its glob pointed at `guides/*/index.html` (and the translations' check at `<lang>/guias/` and friends).
 
-`moving-widget.gif` (and `es/`, `pt/`, `fr/`, `de/` copies with the quote in that language) is the medium Home Screen widget cycling Blizzard, Embers and Butterflies. It is cut from the App Store preview shoot (`~/Documents/dailies/marketing/appstore_preview/raw/fx_<effect>[_<locale>]_cfr.mp4`, recorded on the Shots 17 Pro Max simulator): three seconds of each from second 3, cropped to the tile (`crop=1176:610:72:260`), 640 wide at 12 fps with a 192-color palette, about 1.1 MB each.
+`moving-widget.gif` (and `es/`, `pt/`, `fr/`, `de/` and `ja/` copies with the quote in that language) is the medium Home Screen widget cycling Blizzard, Embers and Butterflies. It is cut from the App Store preview shoot (`~/Documents/dailies/marketing/appstore_preview/raw/fx_<effect>[_<locale>]_cfr.mp4`, recorded on the Shots 17 Pro Max simulator): three seconds of each from second 3, cropped to the tile (`crop=1176:610:72:260`), 640 wide at 12 fps with a 192-color palette, about 1.1 MB each. The palette is applied with ordered dithering; ffmpeg's default error diffusion makes a file three times the size:
+
+```bash
+ffmpeg -ss 3 -t 3 -i fx_blizzard_<locale>_cfr.mp4 -ss 3 -t 3 -i fx_embers_<locale>_cfr.mp4 -ss 3 -t 3 -i fx_butterflies_<locale>_cfr.mp4 \
+  -filter_complex "[0:v][1:v][2:v]concat=n=3:v=1,crop=1176:610:72:260,scale=640:-1:flags=lanczos,fps=12,split[a][b];[a]palettegen=max_colors=192[p];[b][p]paletteuse=dither=bayer:bayer_scale=4" moving-widget.gif
+```
+
+The Japanese takes (`fx_<effect>_ja_cfr.mp4`, 10 November 2026) were recorded without the shoot rig, whose build no longer exists: the same photo, effect and line per take as the other languages, set straight into the app group (the `effect` and `fontScale` 1.0 keys in its defaults, `widget/background.jpg`, `widget/quotes.json`), then a fresh boot, a tap on the arrow and `shoot.py`'s own `record()`.
 
 The hub's card icons are inline SVG line drawings, the same `.ico` style as the
 blog hub.
@@ -873,10 +921,10 @@ in App Store Connect first; a new `ct` value simply appears. The values in use:
 | `web-compare` | `/compare/` and every comparison        |
 | `web-about`   | `/about/`                               |
 | `web-404`     | the 404 page                            |
-| `web-chatgpt` | the ChatGPT redirect on the five home pages (see [Visitors from ChatGPT](#visitors-from-chatgpt)) |
+| `web-chatgpt` | the ChatGPT redirect on the six home pages (see [Visitors from ChatGPT](#visitors-from-chatgpt)) |
 
 The translated pages use the same values with the language on the
-end: `web-home-es`, `web-qr-pt`, `web-guides-fr`, `web-404-de` and so on.
+end: `web-home-es`, `web-qr-pt`, `web-guides-fr`, `web-404-de`, `web-blog-ja` and so on.
 `web-chatgpt` is the one exception: it has no language, so the ChatGPT
 downloads stay in one row and clear Apple's five-download threshold sooner.
 
@@ -902,7 +950,7 @@ Those visitors have already chosen the app: in the week from 26 Oct 2026 half of
 them tapped Download, with a median of one second on the page, and the other
 half left without tapping.
 
-So the five home pages send them straight on. A script at the top of `<head>`,
+So the six home pages send them straight on. A script at the top of `<head>`,
 just under the Smart App Banner tag, checks for `utm_source=chatgpt.com` in the
 address and an iPhone or iPad (iPadOS reports a Mac, so a Mac with a touch
 screen counts too), and `location.replace`s to the App Store with
@@ -947,18 +995,22 @@ sips -s format jpeg -s formatOptions 78 --resampleWidth 600 <dailies>/appstore/s
 ## The hero cards
 
 The three cards beside the headline (two on a phone) show quotes from the app's
-curated start: the 30 of `kCuratedRandom30` in `lib/data/curated_start_sets.dart`
-in the `dailies` repo, the most-hearted lines new readers are dealt first. A
+curated start: the 30 that were `kCuratedRandom30` in `lib/data/curated_start_sets.dart`
+in the `dailies` repo, the most-hearted lines new readers were dealt first. (The
+app went back to its 10, `kCuratedRandom10`, on 9 November 2026; the site
+still carries the 30, which are all still in the corpus.) A
 script right after the cards draws three at random on every visit, in the page's
 language, and adds the author under a bylined line. The text written into the
 cards is the first three of the list, for anyone without scripts.
 
-The list is copied into each home page, so a change to `kCuratedRandom30` does
+The list is copied into each home page, so a change to the app's curated start does
 not reach the site by itself: export the 30 again from `assets/quotes.db`
-(`text`, `textEs`, `textPt`, `textFr`, `textDe`, with the author's `name` in the
-same language) and replace the `var Q=` array on all five pages. Long lines get
+(`text`, `textEs`, `textPt`, `textFr`, `textDe`, `textJa`, with the author's `name` in the
+same language) and replace the `var Q=` array on all six pages. Long lines get
 a smaller size (`--fit`: 0.88 over 70 characters, 0.78 over 95); the longest
-of the 30, 117 characters in German, fits a phone card.
+of the 30, 117 characters in German, fits a phone card. The Japanese page
+counts a kana or kanji as two and the byline too, and steps down sooner (0.88
+over 60, 0.78 over 74), since a kanji is twice as wide as a letter.
 
 Do not add an `aggregateRating`: it would have to match the App Store's, and a
 number copied in by hand goes stale.

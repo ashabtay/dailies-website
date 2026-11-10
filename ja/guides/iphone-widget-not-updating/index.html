@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
+<title>iPhone のウィジェットが更新されない？原因と対処法 | Dailies</title>
+<meta name="description" content="古い情報のまま止まった iPhone のウィジェットを直す方法。低電力モード、アプリを開く、Appのバックグラウンド更新など、試す価値のある順に紹介します。">
+<link rel="canonical" href="https://mydailies.app/ja/guides/iphone-widget-not-updating/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-widget-not-updating/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/widget-del-iphone-no-se-actualiza/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/widget-do-iphone-nao-atualiza/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/widget-iphone-ne-se-met-pas-a-jour/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/iphone-widget-aktualisiert-nicht/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/iphone-widget-not-updating/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-widget-not-updating/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iPhone のウィジェットが更新されない？原因と対処法">
+<meta property="og:description" content="ウィジェットをいつ更新するかを決めるのは、アプリではなく iOS です。それが何を意味するのかと、試す価値のある順の対処法。">
+<meta property="og:url" content="https://mydailies.app/ja/guides/iphone-widget-not-updating/">
+<meta property="og:image" content="https://mydailies.app/img/guides/iphone-widget-not-updating-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="窓辺の暗いテーブルに置かれた、コーヒーのマグと iPhone">
+<meta property="og:site_name" content="Dailies">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/ja/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/ja/blog/">ブログ</a>
+      <a href="/ja/guides/">ガイド</a>
+      <a href="/ja/help/">ヘルプ</a>
+      <details class="lang"><summary aria-label="言語: 日本語"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">日本語</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/guides/iphone-widget-not-updating/" hreflang="en" lang="en">English</a><a href="/fr/guides/widget-iphone-ne-se-met-pas-a-jour/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/anleitungen/iphone-widget-aktualisiert-nicht/" hreflang="de" lang="de-DE">Deutsch</a><a href="/es/guias/widget-del-iphone-no-se-actualiza/" hreflang="es" lang="es-MX">Español</a><a href="/pt/guias/widget-do-iphone-nao-atualiza/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/guides/iphone-widget-not-updating/" hreflang="ja" lang="ja" aria-current="true">日本語</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/ja/#get">Dailies を入手</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">ガイド</div>
+      <h1>iPhone のウィジェットが更新されない？原因と対処法</h1>
+      <p class="lede">ウィジェットは、ホーム画面で動いている小さなアプリではありません。アプリが iOS に渡す1枚の絵で、次の絵をいつ求めるかは iOS が決めています。止まって見えるウィジェットのほとんどは iOS がバッテリーを節約しているだけで、いくつかは設定の問題、本当の不具合はごくわずかです。どれに当たるのかの見分け方と、それぞれの対処法を紹介します。</p>
+      <p class="doc-meta"><span><a href="/ja/about/">Amit Shabtay</a>（Dailies の開発者）</span> <span>手順の作成：2026年10月8日</span></p>
+    </div>
+  </header>
+
+  <div class="wrap"><figure class="post-hero"><img src="/img/guides/iphone-widget-not-updating.jpg" width="1080" height="608" alt="窓辺の暗いテーブルに置かれた、コーヒーのマグと iPhone" fetchpriority="high"></figure></div>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">このページの内容</div>
+      <a href="#why">ウィジェットが遅れる理由</a>
+      <a href="#fixes">対処法を順番に</a>
+      <a href="#symptoms">症状から探す</a>
+      <a href="#dailies">Dailies のウィジェット</a>
+      <a href="#faq">よくある質問</a>
+    </aside>
+
+    <div class="prose">
+
+      <section id="why">
+        <h2>ウィジェットが遅れる理由</h2>
+        <p>ウィジェットを追加すると、アプリは iOS に予定表を渡します。いまはこれを表示して、3時になったらあれを表示して、そのあとでまた声をかけて、という具合です。iOS はその予定表を預かり、時間が来るたびにそれぞれの項目を描きます。iOS が制限しているのは、アプリが<em>新しい</em>予定表を書ける回数のほうです。新しい予定表を書くにはアプリをバックグラウンドで起こす必要があり、アプリを起こすとバッテリーを使うからです。</p>
+        <p>Apple の開発者向けドキュメントでは、これを1日あたりの予算として説明しています。よく見るウィジェットは、まったく見ないウィジェットより多く更新されます。Apple 自身の指針では、よく見られるウィジェットで1日に数十回程度、つまり15分から1時間に1回ほどとされています。めったに見ないウィジェットは、それより少なくなります。</p>
+        <div class="callout">
+          <div class="callout-label">実際にはどういうことか</div>
+          <p>数分遅れているウィジェットは、設計どおりに動いています。何時間も、あるいは何日も遅れているウィジェットには、たいてい限られた原因のどれかがあります。以下の対処法は、可能性の高い順にそれを取り上げています。</p>
+        </div>
+      </section>
+
+      <section id="fixes">
+        <h2>対処法を順番に</h2>
+        <p>ひとつずつ試して、そのたびにウィジェットを確かめてください。たいていの人は、2つめまでで解決します。</p>
+        <ol>
+          <li><strong>「低電力モード」をオフにします。</strong><strong>「設定」&rarr;「バッテリー」</strong>を開いてオフにするか、コントロールセンターのバッテリーのボタンをタップします。低電力モードはバックグラウンドの処理を大きく減らし、ウィジェットの更新は真っ先に削られるもののひとつです。</li>
+          <li><strong>アプリを開きます。</strong>開いているアプリは、ウィジェットをすぐに描き直すよう iOS に伝えられ、ほとんどのアプリがそうしています。アプリを開いた瞬間にウィジェットが追いつくなら、原因は更新の予算で、不具合ではありません。</li>
+          <li><strong>「Appのバックグラウンド更新」を確かめます。</strong><strong>「設定」&rarr;「一般」&rarr;「Appのバックグラウンド更新」</strong>を開き、オンになっていること、リストでそのアプリがオンになっていることを確かめます。天気、ニュース、株価など、インターネットから情報を取ってくるウィジェットでは特に大切です。</li>
+          <li><strong>ウィジェットを削除して、もう一度追加します。</strong>ウィジェットを長押しして<strong>「ウィジェットを削除」</strong>をタップし、もう一度追加します。こうすると iOS が、アプリに新しい予定表をいちから求め直します。</li>
+          <li><strong>iPhone を再起動します。</strong>iOS がウィジェットのために抱えていたものがすべて消え、意外なほど多くの場合、これで直ります。</li>
+          <li><strong>アプリと iOS をアップデートします。</strong>ウィジェットの不具合は、アプリでも iOS でも、小さなアップデートで実際に直されています。アプリをアップデートしたら、一度開いてください。ウィジェットが新しいバージョンを読み込みます。</li>
+          <li><strong>アプリを削除して、入れ直します。</strong>最後の手段で、何かを失う可能性があるのはこの手順だけです。削除する前に、そのアプリが iPhone の中に何を保存しているか確かめてください。</li>
+        </ol>
+      </section>
+
+      <section id="symptoms">
+        <h2>症状から探す</h2>
+        <h3>ウィジェットが空白、灰色、または仮の文字のまま</h3>
+        <p>iOS がアプリを待つあいだに描く、代わりの表示です。ウィジェットを追加した直後、再起動した直後、アプリがアップデートされた直後によく見られます。アプリを一度開いてください。それでも空白のままなら、ウィジェットを削除して、もう一度追加します。</p>
+
+        <h3>ウィジェットのリストにアプリが出てこない</h3>
+        <p>iOS は、アプリが一度でも開かれてからでないと、そのアプリのウィジェットを表示しません。アプリを開いてから、もう一度試してください。それでも出てこない場合は iPhone を再起動し、アプリが取り除かれていないか確かめます。取り除かれたアプリは、名前の横に小さな雲のマークが付いたアイコンだけが残り、タップしてもう一度ダウンロードするまで、ウィジェットも一緒に消えています。特定のサイズしか用意していないアプリもあるので、見つからないと判断する前に、ギャラリーでサイズをスワイプして確かめてください。</p>
+
+        <h3>アプリを開いたときだけ更新される</h3>
+        <p>ほぼ間違いなく、更新の予算が原因です。まず疑うべきは低電力モード、インターネットを使うものなら次に「Appのバックグラウンド更新」です。どちらも当てはまらないなら、iOS がそのウィジェットを、あまり見られていないものと判断しているだけかもしれません。</p>
+
+        <h3>ホーム画面のウィジェットは問題ないのに、ロック画面のウィジェットが遅れる</h3>
+        <p>同じアプリのものでも、この2つは別々のウィジェットで、予定表も別々です。ロック画面のウィジェットを削除して、もう一度追加してください。ロック画面を長押しして<strong>「カスタマイズ」</strong>、<strong>「ロック画面」</strong>の順にタップし、ウィジェットをタップすると編集できます。</p>
+
+        <h3>iOS をアップデートしたら止まった</h3>
+        <p>アプリを開いてから、iPhone を再起動してください。iOS の大きなアップデートでは、ウィジェットのために保存しているものの多くが作り直されます。アップデート後の最初の再起動で、その作業が終わることがよくあります。</p>
+      </section>
+
+      <section id="dailies">
+        <h2>Dailies のウィジェット</h2>
+        <p>止まっているのが <a href="/ja/">Dailies</a> のウィジェットなら、次のことも知っておいてください。</p>
+        <figure class="shot-zoom"><img src="/img/guides/ja/zoom-update-widget.jpg" width="1100" height="600" loading="lazy" alt="iPhone のホーム画面にある Dailies のウィジェット。カリール・ジブランの「道については、ウサギよりカメのほうがよく知っている。」"><figcaption>更新があってもなくても、矢印でいつでも次の言葉に進めます。</figcaption></figure>
+        <ul>
+          <li>言葉が変わるのは<strong>1時間に1回ほど</strong>なので、しばらく同じ言葉が表示されているのは想定どおりです。</li>
+          <li>ホーム画面のウィジェットには<strong>矢印</strong>があります。タップすれば、アプリを開かずに、いつでも次の言葉に進んだり、前の言葉に戻ったりできます。</li>
+          <li>言葉は iPhone の中に入っているので、ウィジェットが変わるのにインターネットも「Appのバックグラウンド更新」も必要ありません。止まっているなら、いちばん考えられる原因は低電力モードです。</li>
+          <li>Dailies を開くと、すぐに新しい言葉が両方のウィジェットに送られます。</li>
+          <li>入れ直した場合も、ハートを付けた言葉と自分で書いた言葉は、自分の iCloud アカウントから戻ってきます。トピックと見た目は、すぐに設定し直せます。</li>
+        </ul>
+        <p>ここまで試しても止まったままなら、<a href="mailto:help@mydailies.app">help@mydailies.app</a> に連絡してください。人が返事をします。<a href="/ja/help/#widget">ヘルプページ</a>には、ここに書いたことを短くまとめたものがあります。</p>
+      </section>
+
+      <section id="faq">
+        <h2>よくある質問</h2>
+        <div class="faq">
+          <details open><summary>iPhone のウィジェットは、どのくらいの頻度で更新されますか？</summary>
+            <div class="details-body">
+              <p>ウィジェットによっても、使う人によっても変わります。iOS はウィジェットごとに1日の更新の予算を割り当て、よく見るウィジェットほど多く割り当てます。数分の遅れはふつうです。何時間も遅れているなら、たいていは低電力モードか、何かの設定が原因です。</p>
+            </div></details>
+
+          <details><summary>ウィジェットを強制的に更新できますか？</summary>
+            <div class="details-body">
+              <p>iOS には、ウィジェットを更新するボタンはありません。いちばん近いのはアプリを開くことです。ほとんどのアプリは、開いたときにウィジェットを描き直すからです。ウィジェットを削除して追加し直すのも効きます。Dailies のホーム画面のウィジェットのように、表示を切り替えるボタンを自分で持っているウィジェットもあります。</p>
+            </div></details>
+
+          <details><summary>低電力モードにすると、ウィジェットは更新されなくなりますか？</summary>
+            <div class="details-body">
+              <p>更新がかなり遅くなります。低電力モードはバックグラウンドの処理を減らし、ウィジェットの更新もそこに含まれます。低電力モードをオフにするか、アプリを開けば、ウィジェットは追いつきます。</p>
+            </div></details>
+
+          <details><summary>ウィジェットでバッテリーは減りますか？</summary>
+            <div class="details-body">
+              <p>ごくわずかです。その理由が、更新の予算です。ホーム画面がウィジェットでいっぱいでも、バッテリーが1日分なくなったりしないように、iOS がウィジェットの更新のタイミングを決めているのです。</p>
+            </div></details>
+
+          <details><summary>ロックを解除した直後に、ウィジェットが古い情報を表示するのはなぜですか？</summary>
+            <div class="details-body">
+              <p>iOS は、次の絵を取ってくるあいだ、最後に描いた絵を表示することがあります。少し待ってください。1分たっても古いままなら、上の対処法を順に試してください。</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="more">
+        <h2>あわせて読みたい</h2>
+        <ul>
+          <li><a href="/ja/guides/add-a-widget-to-your-home-screen/">ホーム画面にウィジェットを追加する方法</a></li>
+          <li><a href="/ja/guides/quotes-on-your-iphone-lock-screen/">iPhone のロック画面に名言を表示する方法</a></li>
+          <li><a href="/ja/guides/focus-lock-screen-iphone/">iPhone でロック画面を集中モードに連動させる方法</a></li>
+          <li><a href="/ja/guides/iphone-notifications-not-working/">iPhone でアプリの通知が来ない？対処法</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <section class="strip">
+    <div class="wrap strip-in">
+      <h2>いい言葉で、今日を始めましょう。</h2>
+      <p class="lede">設定は一度だけ。あとは Dailies におまかせください。</p>
+      <a class="store-badge" href="https://apps.apple.com/app/id6804210416?pt=129347926&amp;ct=web-guides-ja&amp;mt=8" data-download="page"><img src="/img/app-store-badge-ja.svg" width="142" height="52" alt="App Store からダウンロード"></a>
+    </div>
+  </section>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <nav>
+      <a href="/ja/">ホーム</a>
+      <a href="/ja/compare/">比較</a>
+      <a href="/ja/about/">Dailies について</a>
+      <a href="/terms/" hreflang="en">利用規約</a>
+      <a href="/privacy/" hreflang="en">プライバシーポリシー</a>
+      <a href="/cookies/" hreflang="en">Cookie ポリシー</a>
+      <a href="#" data-cookie-settings>Cookie 設定</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","inLanguage":"ja","name":"更新されない iPhone のウィジェットを直す方法","description":"止まった iPhone のウィジェットの対処法を、試す価値のある順に紹介します。","totalTime":"PT5M","author":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/ja/about/"},"supply":[{"@type":"HowToSupply","name":"iPhone"}],"step":[
+{"@type":"HowToStep","name":"「低電力モード」をオフにする","text":"「設定」から「バッテリー」を開いてオフにするか、コントロールセンターのバッテリーのボタンをタップします。低電力モードはバックグラウンドの処理を大きく減らし、ウィジェットの更新は真っ先に削られるもののひとつです。"},
+{"@type":"HowToStep","name":"アプリを開く","text":"開いているアプリは、ウィジェットをすぐに描き直すよう iOS に伝えられ、ほとんどのアプリがそうしています。アプリを開いた瞬間にウィジェットが追いつくなら、原因は更新の予算で、不具合ではありません。"},
+{"@type":"HowToStep","name":"「Appのバックグラウンド更新」を確かめる","text":"「設定」から「一般」、「Appのバックグラウンド更新」を開きます。オンになっていること、リストでそのアプリがオンになっていることを確かめます。天気、ニュース、株価など、インターネットから情報を取ってくるウィジェットでは特に大切です。"},
+{"@type":"HowToStep","name":"ウィジェットを削除して、もう一度追加する","text":"ウィジェットを長押しして「ウィジェットを削除」をタップし、もう一度追加します。こうすると iOS が、アプリに新しい予定表をいちから求め直します。"},
+{"@type":"HowToStep","name":"iPhone を再起動する","text":"iOS がウィジェットのために抱えていたものがすべて消え、意外なほど多くの場合、これで直ります。"},
+{"@type":"HowToStep","name":"アプリと iOS をアップデートする","text":"ウィジェットの不具合は、アプリでも iOS でも、小さなアップデートで実際に直されています。アプリをアップデートしたら、一度開いてください。ウィジェットが新しいバージョンを読み込みます。"},
+{"@type":"HowToStep","name":"アプリを削除して、入れ直す","text":"最後の手段で、何かを失う可能性があるのはこの手順だけです。削除する前に、そのアプリが iPhone の中に何を保存しているか確かめてください。"}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[
+{"@type":"Question","name":"iPhone のウィジェットは、どのくらいの頻度で更新されますか？","acceptedAnswer":{"@type":"Answer","text":"ウィジェットによっても、使う人によっても変わります。iOS はウィジェットごとに1日の更新の予算を割り当て、よく見るウィジェットほど多く割り当てます。数分の遅れはふつうです。何時間も遅れているなら、たいていは低電力モードか、何かの設定が原因です。"}},
+{"@type":"Question","name":"ウィジェットを強制的に更新できますか？","acceptedAnswer":{"@type":"Answer","text":"iOS には、ウィジェットを更新するボタンはありません。いちばん近いのはアプリを開くことです。ほとんどのアプリは、開いたときにウィジェットを描き直すからです。ウィジェットを削除して追加し直すのも効きます。Dailies のホーム画面のウィジェットのように、表示を切り替えるボタンを自分で持っているウィジェットもあります。"}},
+{"@type":"Question","name":"低電力モードにすると、ウィジェットは更新されなくなりますか？","acceptedAnswer":{"@type":"Answer","text":"更新がかなり遅くなります。低電力モードはバックグラウンドの処理を減らし、ウィジェットの更新もそこに含まれます。低電力モードをオフにするか、アプリを開けば、ウィジェットは追いつきます。"}},
+{"@type":"Question","name":"ウィジェットでバッテリーは減りますか？","acceptedAnswer":{"@type":"Answer","text":"ごくわずかです。その理由が、更新の予算です。ホーム画面がウィジェットでいっぱいでも、バッテリーが1日分なくなったりしないように、iOS がウィジェットの更新のタイミングを決めているのです。"}},
+{"@type":"Question","name":"ロックを解除した直後に、ウィジェットが古い情報を表示するのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"iOS は、次の絵を取ってくるあいだ、最後に描いた絵を表示することがあります。少し待ってください。1分たっても古いままなら、上の対処法を順に試してください。"}}
+]}
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

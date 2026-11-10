@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
+<title>ヘルプ | Dailies</title>
+<meta name="description" content="Dailies の設定方法、届かなくなった通知の直し方、ホーム画面ウィジェットの追加、届く言葉の変え方、そして人に直接問い合わせる方法をまとめています。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ヘルプ | Dailies">
+<meta property="og:description" content="設定、通知、ウィジェット、そして人に直接問い合わせる方法。">
+<meta property="og:url" content="https://mydailies.app/ja/help/">
+<meta property="og:image" content="https://mydailies.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dailies：毎日のモチベーションを、ロック画面にそのまま届けます">
+<meta property="og:site_name" content="Dailies">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mydailies.app/ja/help/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/help/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/ayuda/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/ajuda/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/aide/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/hilfe/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/help/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/help/">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/ja/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/ja/blog/">ブログ</a>
+      <a href="/ja/guides/">ガイド</a>
+      <a href="/ja/help/" aria-current="page">ヘルプ</a>
+      <details class="lang"><summary aria-label="言語: 日本語"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">日本語</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/help/" hreflang="en" lang="en">English</a><a href="/fr/aide/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/hilfe/" hreflang="de" lang="de-DE">Deutsch</a><a href="/es/ayuda/" hreflang="es" lang="es-MX">Español</a><a href="/pt/ajuda/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/help/" hreflang="ja" lang="ja" aria-current="true">日本語</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/ja/#get">Dailies を入手</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">ヘルプ</div>
+      <h1>どんなことでお困りですか？</h1>
+      <p class="lede">Dailies について知っておきたいことを、ここにまとめました。言葉が届かなくなったときは、まず<a href="#notifications" style="color:var(--accent)">通知</a>から見てください。答えはほとんどいつもそこにあります。</p>
+      <div class="help-search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="q" placeholder="ヘルプを検索（例：「ウィジェット」「多すぎる」）" aria-label="ヘルプを検索">
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">トピック</div>
+      <a href="#start">はじめに</a>
+      <a href="#notifications">通知</a>
+      <a href="#widget">ウィジェット</a>
+      <a href="#quotes">保存と自分の言葉</a>
+      <a href="#looks">自分好みにする</a>
+      <a href="#voice">読み上げ</a>
+      <a href="#assistants">ChatGPT と Claude で使う</a>
+      <a href="#privacy">プライバシーとデータ</a>
+      <a href="#premium">プレミアムと支払い</a>
+      <a href="#contact">お問い合わせ</a>
+    </aside>
+
+    <div class="prose">
+
+      <div class="cards">
+        <a class="card" href="#notifications">
+          <div class="card-icon">🔔</div>
+          <h3>何も届かない</h3>
+          <p>言葉がロック画面に届かなくなる設定を確認します。</p>
+        </a>
+        <a class="card" href="#widget">
+          <div class="card-icon">▦</div>
+          <h3>ウィジェットを追加</h3>
+          <p>iPhone、iPad、Android での手順を順番に。</p>
+        </a>
+        <a class="card" href="#looks">
+          <div class="card-icon">✦</div>
+          <h3>自分好みにする</h3>
+          <p>背景、エフェクト、文字の大きさ、自分の写真。</p>
+        </a>
+      </div>
+
+      <section id="start">
+        <h2>はじめに</h2>
+        <div class="faq">
+          <details open><summary>Dailies を初めて開くと、どうなりますか？</summary>
+            <div class="details-body">
+              <p>言葉をあなたに合わせるための短い設定があり、それで準備は完了です。聞きたいトピック、言葉を受け取る頻度、言葉を表示するスタイルを選びます。</p>
+            </div></details>
+
+          <details><summary>アカウントは必要ですか？</summary>
+            <div class="details-body">
+              <p>いいえ。登録も、メールアドレスも、パスワードもいりません。Dailies にはアカウントというもの自体がありません。</p>
+            </div></details>
+
+          <details><summary>どの端末で使えますか？</summary>
+            <div class="details-body">
+              <p>iPhone と iPad、そして Android 10 以降の Android スマートフォンで、縦向きでも横向きでも使えます。対応している言語は、英語、スペイン語、ポルトガル語、フランス語、ドイツ語、簡体字中国語、日本語です。端末の言語設定に合わせて表示され、<strong>「プロフィール」→「言語」</strong>からどの言語にも切り替えられます。</p>
+              <p>iPad では、ロック画面が縦向きと横向きで別々に設定されます。iPad でのウィジェットの設定はこちら：<a href="/ja/guides/add-widgets-on-ipad/">iPad にウィジェットを追加する方法</a>。</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="notifications">
+        <h2>通知</h2>
+        <div class="faq">
+          <details open><summary>言葉が届かなくなりました</summary>
+            <div class="details-body">
+              <p>ほとんどの場合、次のどれかが原因です。上から順に確認してください。</p>
+              <ol>
+                <li><strong>通知の許可。</strong><strong>「設定」→「Dailies」→「通知」</strong>を開き、<em>「通知を許可」</em>がオンで、<em>「ロック画面」</em>にチェックが入っているか確認します。Android では<strong>「設定」→「アプリ」→「Dailies」→「通知」</strong>（場所は機種によって異なります）を開き、通知が許可されていて、<em>「毎日の言葉」</em>がオンになっているか確認します。</li>
+                <li><strong>集中モード。</strong>「睡眠」「仕事」「おやすみモード」は、許可リストにないアプリの通知を止めます。使っている集中モードに Dailies を追加するか、「設定」→「集中モード」を確認してください。Android では<strong>「サイレント モード」</strong>が同じ働きをします。オフにするか、その設定で Dailies を許可してください。</li>
+                <li><strong>言葉が届く時間帯。</strong><strong>「カスタマイズ」→「1日に届く言葉」</strong>を開き、設定した時間帯を確認します。午前9時から午後5時に設定していて、午前8時に確認しているなら、まだ届く時間ではありません。</li>
+              </ol>
+              <p>もうひとつ、見落としやすいのが<strong>「低電力モード」</strong>です。iOS がバックグラウンドの処理を後回しにするため、届くのが遅れることがあります。Android では<strong>「バッテリー セーバー」</strong>が同じように働くことがあります。</p>
+              <p>どれも問題なさそうなら、アプリを一度開いてください。開くと、Dailies が届けるスケジュールを組み直します。</p>
+              <p>iOS が通知を止めうる場所をすべて確認する、詳しい手順はこちら：<a href="/ja/guides/iphone-notifications-not-working/">iPhone でアプリの通知が届かないとき</a>。</p>
+            </div></details>
+
+          <details><summary>1日にいくつ受け取れますか？</summary>
+            <div class="details-body">
+              <p>少なくても多くても、好きなだけ受け取れます。<strong>「カスタマイズ」→「1日に届く言葉」</strong>で、言葉を受け取る一番早い時刻と一番遅い時刻と一緒に設定します。Dailies は、その時間帯の中で一度にまとめず、均等に散らして届けます。</p>
+              <p>届くタイミングの選ばれ方と、夜や週末を静かにしておく方法はこちら：<a href="/ja/guides/motivational-quotes-at-random-times/">1日のランダムな時間に名言を受け取る方法</a>。</p>
+            </div></details>
+
+          <details><summary>多すぎる／少なすぎる</summary>
+            <div class="details-body">
+              <p><strong>「カスタマイズ」→「1日に届く言葉」</strong>で、数を変えてください。1日1回まで減らすのも、Dailies のとてもいい使い方です。変更はすぐに反映されます。</p>
+            </div></details>
+
+          <details><summary>通知だけオフにして、アプリは使い続けられますか？</summary>
+            <div class="details-body">
+              <p>はい。<strong>「設定」→「Dailies」→「通知」</strong>でオフにできます。</p>
+              <p>あとでまたオンにするときも、同じスイッチです：<a href="/ja/guides/turn-on-notifications-iphone/">iPhone でアプリの通知をオンにする方法</a>。</p>
+              <p><strong>Android では：</strong><strong>「設定」→「アプリ」→「Dailies」→「通知」</strong>（場所は機種によって異なります）でオフにし、同じ場所でオンに戻せます。</p>
+            </div></details>
+
+        </div>
+      </section>
+
+      <section id="widget">
+        <h2>ウィジェット</h2>
+        <div class="faq">
+          <details open><summary>ホーム画面のウィジェットを追加するには？</summary>
+            <div class="details-body">
+              <p><strong>iPhone と iPad では：</strong></p>
+              <ol>
+                <li>ホーム画面の何もない場所を、アイコンが揺れ始めるまで長押しします。</li>
+                <li>左上の<strong>「編集」</strong>をタップし、<strong>「ウィジェットを追加」</strong>をタップします。</li>
+                <li><strong>Dailies</strong> を検索して選びます。</li>
+                <li>スワイプして好きなサイズを選び、<strong>「ウィジェットを追加」</strong>をタップしてから<strong>「完了」</strong>をタップします。</li>
+              </ol>
+              <p>Dailies のウィジェットは<strong>中</strong>サイズと<strong>大</strong>サイズです。小サイズはありません。言葉を読みやすく表示するには、それだけの広さが必要だからです。</p>
+              <p>アプリの中にも、この手順を動きで見せる案内があります。<strong>「カスタマイズ」→「ホーム画面のウィジェット」</strong>を開いてください。</p>
+              <p>ウィジェットのサイズやスタック、一覧に Dailies が見つからないときの対処まで含めた詳しい手順はこちら：<a href="/ja/guides/add-a-widget-to-your-home-screen/">ホーム画面にウィジェットを追加する方法</a>。</p>
+              <p><strong>Android では：</strong></p>
+              <ol>
+                <li>ホーム画面の何もない場所を長押しします。</li>
+                <li><strong>「ウィジェット」</strong>をタップします。</li>
+                <li>一覧から <strong>Dailies</strong> を探します。</li>
+                <li>ウィジェットを長押しして、置きたい場所までドラッグします。</li>
+              </ol>
+              <p>アプリに置いてもらうこともできます。<strong>「カスタマイズ」→「ホーム画面のウィジェット」</strong>を開き、<strong>「ホーム画面に追加」</strong>をタップします。この機能がない機種もあるため、ボタンは使える端末にだけ表示されます。</p>
+              <p>ホーム画面に置いたあとは、ウィジェットを長押しして端をドラッグすると、サイズを変えられます。</p>
+            </div></details>
+
+          <details><summary>ロック画面のウィジェットを追加するには？</summary>
+            <div class="details-body">
+              <p><strong>iPhone と iPad では：</strong></p>
+              <ol>
+                <li>ロック画面を長押しします。</li>
+                <li><strong>「カスタマイズ」</strong>をタップし、<strong>「ロック画面」</strong>をタップします。</li>
+                <li>時刻の下にある空いた枠をタップします。</li>
+                <li>一覧から <strong>Dailies</strong> を選びます。</li>
+                <li><strong>「完了」</strong>をタップします。</li>
+              </ol>
+              <p>iOS はロック画面のウィジェットに小さな枠をひとつだけ用意し、単色で表示します。そのため Dailies は、そこに長い言葉ではなく短い言葉を表示します。タップすると、その言葉のところでアプリが開きます。</p>
+              <p>アプリの中の<strong>「カスタマイズ」→「ロック画面のウィジェット」</strong>から設定することもできます。</p>
+              <p>ロック画面に言葉を表示する方法は、ほかにもふたつあります。通知と、言葉を壁紙として保存する方法です。3つすべては<a href="/ja/guides/quotes-on-your-iphone-lock-screen/">iPhone のロック画面に名言を表示する方法</a>で、壁紙の作り方の詳細は<a href="/ja/guides/quote-wallpaper-iphone/">iPhone で名言の壁紙を作る方法</a>で紹介しています。</p>
+              <p><strong>Android では：</strong>Dailies のウィジェットはホーム画面用だけで、ロック画面用はありません。それでも、通知として、またはギャラリーに保存した画像を壁紙に設定することで、ロック画面に言葉を表示できます。</p>
+            </div></details>
+
+          <details><summary>ウィジェットはどのくらいの頻度で変わりますか？</summary>
+            <div class="details-body">
+              <p>だいたい1時間に1回です。ホーム画面のウィジェットには矢印もあるので、アプリを開かずに、いつでも次の言葉に進んだり前の言葉に戻ったりできます。ロック画面のウィジェットも同じ言葉を表示します。</p>
+              <p><strong>Android では：</strong>ホーム画面のウィジェットも同じで、矢印もあります。</p>
+            </div></details>
+
+          <details><summary>ウィジェットの言葉が変わりません</summary>
+            <div class="details-body">
+              <p>たいていは、iOS がバッテリーを節約しているためです。次の順に試してください。</p>
+              <ul>
+                <li><strong>「低電力モード」</strong>をオフにします。ウィジェットの更新を大きく抑えてしまうためです。</li>
+                <li>Dailies のアプリを一度開きます。すぐに新しい言葉がウィジェットに届きます。</li>
+                <li>ウィジェットを削除して、もう一度追加します。</li>
+              </ul>
+              <p>すべての対処法を順番に、症状ごとのよくある原因と合わせてまとめた詳しい記事はこちら：<a href="/ja/guides/iphone-widget-not-updating/">iPhone のウィジェットが更新されない理由</a>。</p>
+              <p><strong>Android では：</strong>こちらもたいていは、スマートフォンがバッテリーを節約しているためです。<strong>「バッテリー セーバー」</strong>をオフにして、Dailies のアプリを一度開いてください。それでも直らなければ、ウィジェットを削除して追加し直します。</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="quotes">
+        <h2>保存と自分の言葉</h2>
+        <div class="faq">
+          <details open><summary>気に入った言葉を保存するには？</summary>
+            <div class="details-body">
+              <p>言葉のハートをタップするだけです。いいねした言葉は、すべて<strong>「いいねした言葉」</strong>にまとめて残ります。Dailies Premium なら、トピック画面で<strong>「いいねした言葉」</strong>をひとつのトピックとしてフォローすることもできます。すると、フィードに新しい言葉ではなく、いいねした言葉がまた流れてきます。</p>
+            </div></details>
+
+          <details><summary>自分で言葉を書けますか？</summary>
+            <div class="details-body">
+              <p>はい。<strong>「自分の言葉」</strong>に、自分の言葉を書き残せます。誰かにかけてもらった言葉、本の一節、必要な日のための自分へのメモ。どのプランでも、そこに残ります。</p>
+              <p>Dailies Premium なら、トピック画面で<strong>「自分の言葉」</strong>をフォローすると、Dailies がほかの言葉と一緒に、通知でも、フィードでも、ウィジェットでも届けてくれます。「自分の言葉」だけをフォローすれば、フィードは自分の言葉だけになります。</p>
+            </div></details>
+
+          <details><summary>スマートフォンを買い替えたら、どうなりますか？</summary>
+            <div class="details-body">
+              <p>そのまま引き継がれます。iPhone と iPad では、自分で書いた言葉といいねした言葉が<strong>あなた自身の iCloud</strong> にも保存されるので、新しい iPhone に Dailies を入れれば戻ってきます。サインインするアカウントも、手作業で復元するものもありません。</p>
+              <p>端末で iCloud がオンになっている必要があります。それ以外は同期されません。名前、トピック、選んだスタイルはすぐに設定し直せますし、背景に使った写真は iCloud の容量を使わず、写真ライブラリに残ります。</p>
+              <p><strong>Android では：</strong>iCloud がないため、スマートフォン自体のバックアップで引き継がれます。Google アカウントへのバックアップがオンなら、Android がアプリのデータをそのバックアップにコピーします。設定、名前、自分で書いた言葉、いいねした言葉、背景に選んだ写真です。新しいスマートフォンを設定するとすべて戻り、スマートフォン同士で直接データを移す場合も、同じデータが移ります。</p>
+              <p>Android にはアプリごとのスイッチはなく、バックアップはスマートフォン全体でオンかオフかです。たいていは<strong>「設定」→「Google」→「バックアップ」</strong>にありますが、場所は機種によって異なります。バックアップがオフの場合、直接データを移さない限り、言葉は古いスマートフォンに残ります。</p>
+            </div></details>
+
+          <details><summary>自分の言葉は、ほかの人に見られませんか？</summary>
+            <div class="details-body">
+              <p>見られません。iPhone と iPad では、端末の中と、あなたしか読めないあなた自身の iCloud にだけ保存されます。私たちが見ることはなく、私たちやほかの誰かに送られることもありません。</p>
+              <p><strong>Android では：</strong>スマートフォンの中と、バックアップがオンならあなた自身の Google アカウントにあるバックアップに保存されます。私たちはそのコピーを読めず、送られてくることもなく、分析や広告に使われることもありません。</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="looks">
+        <h2>自分好みにする</h2>
+        <div class="faq">
+          <details open><summary>何を変えられますか？</summary>
+            <div class="details-body">
+              <ul>
+                <li><strong>背景</strong>：たくさんの写真、さまざまなグラデーション、自分の写真、自分で作る単色。</li>
+                <li><strong>文字の大きさ</strong>：言葉の文字の大きさを変えられます。書体を選べるのは欧文の言語だけで、日本語の言葉は端末の標準の書体で表示されます。</li>
+                <li><strong>エフェクト</strong>：漂うちり、降る雪、もや、ホタル、流れ星、レンズフレア、火の粉など。</li>
+              </ul>
+              <p>どれも、フィードの下のバーにある<strong>「スタイル」</strong>から変えられます。</p>
+              <p>エフェクトの動きも含めて、その見た目をホーム画面に持っていくには：<a href="/ja/guides/aesthetic-quote-widget-iphone/">おしゃれな名言ウィジェットの作り方</a>。</p>
+            </div></details>
+
+          <details><summary>自分の写真を使えますか？</summary>
+            <div class="details-body">
+              <p>はい。写真ライブラリから選ぶと、言葉の背景になります。これは <strong>Dailies Premium</strong> の機能で、単色を自分で作る機能も同じです。</p>
+            </div></details>
+
+          <details><summary>端末のダークモードに合わせて表示されますか？</summary>
+            <div class="details-body">
+              <p>はい。アプリはダークモードに対応しています。</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="voice">
+        <h2>読み上げ</h2>
+        <div class="faq">
+          <details open><summary>Dailies に言葉を読み上げてもらえますか？</summary>
+            <div class="details-body">
+              <p>はい。言葉の下にあるスピーカーをタップすると、Dailies が読み上げます。声はスマートフォンのものではなく、Dailies 独自の声です。初めて使うときは、その声を取得する前に確認されます。約145 MB の、1回だけのダウンロードです。その後はオフラインで使え、聞いている内容がどこかに送られることもありません。言葉はスマートフォンの中で音声になります。</p>
+              <p>止めるには、もう一度スピーカーをタップするか、次の言葉にスワイプします。</p>
+            </div></details>
+
+          <details><summary>声を変えられますか？</summary>
+            <div class="details-body">
+              <p><strong>「プロフィール」→「読み上げ」</strong>を開いてください。女性5人、男性5人の10種類の声があり、それぞれ再生ボタンで聞いてから選べます。選んだ声は、それ以降のすべての言葉に使われます。</p>
+            </div></details>
+
+          <details><summary>フィードからスピーカーを消すには？</summary>
+            <div class="details-body">
+              <p><strong>「プロフィール」→「読み上げ」</strong>を開き、<strong>「フィードに表示」</strong>をオフにします。フィードからスピーカーが消えます。プロフィールの項目は残るので、同じ手順で元に戻せます。</p>
+            </div></details>
+
+          <details><summary>ダウンロードが止まった、またはキャンセルしてしまった</summary>
+            <div class="details-body">
+              <p>もう一度スピーカーをタップして、<strong>「ダウンロード」</strong>を押してください。終わった部分は残っているので、足りない分だけを取得します。何度も失敗する場合は、接続と、スマートフォンに数百 MB の空きがあるかを確認してください。</p>
+            </div></details>
+
+          <details><summary>スピーカーが表示されないのはなぜですか？</summary>
+            <div class="details-body">
+              <p>「プロフィール」→「読み上げ」で<strong>「フィードに表示」</strong>がオフになっているか、アプリの言語が中国語になっているかのどちらかです。声がまだ中国語を話せないため、中国語ではこの機能を表示していません。日本語を含め、それ以外のアプリの言語はすべて読み上げます。</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="assistants">
+        <h2>ChatGPT と Claude で使う</h2>
+        <div class="faq">
+          <details open><summary>ChatGPT や Claude で Dailies を使えますか？</summary>
+            <div class="details-body">
+              <p>はい。名言をお願いすると、Dailies が今の気持ちに合った言葉を選び、落ち着いた写真の上に、下に著者名を添えて表示します。<strong>「Another one」</strong>（もうひとつ）をタップすれば、何度でも新しい言葉が出てきます。</p>
+              <p>無料で、サインインも必要ありません。英語、スペイン語、ポルトガル語、フランス語、ドイツ語、簡体字中国語のうち、書いた言語で答えます。日本語にはまだ対応していません。</p>
+              <p>カードの下の一文から、App Store の Dailies を開けます。毎日ロック画面にも言葉がほしくなったときのために。</p>
+            </div></details>
+          <details><summary>Claude に Dailies を追加するには？</summary>
+            <div class="details-body">
+              <ol>
+                <li>Claude で<strong>「カスタマイズ」→「コネクタ」</strong>を開きます。</li>
+                <li>ディレクトリで Dailies を探し、<strong>「接続」</strong>を選びます。サインインは必要ありません。</li>
+                <li>チャットで<strong>「+」→「コネクタ」</strong>からオンにして、名言をお願いします。初回は、カードを表示する前に Claude が確認します。次から確認しなくてよければ、<strong>「常に許可」</strong>を選んでください。</li>
+              </ol>
+            </div></details>
+          <details><summary>ChatGPT に Dailies を追加するには？</summary>
+            <div class="details-body">
+              <p>ChatGPT のアプリディレクトリで Dailies を探して接続します。あとはどのチャットでも、Dailies の名言をお願いするだけです。</p>
+            </div></details>
+          <details><summary>どんなことをお願いできますか？</summary>
+            <div class="details-body">
+              <p>必要なことを、自分の言葉でどうぞ。「気分が落ち込んでいる」「面接の前に元気がほしい」「一日を始めるやる気がほしい」。Dailies は、言われたことに一番近いトピックを選びます。アシスタントが自分で名言を返してきたときは、Dailies の名前を出して頼んでください。</p>
+              <p>Dailies が出すのは名言だけです。誰の言葉かを調べたり、メッセージを書いたり、アドバイスをしたりはしません。</p>
+            </div></details>
+          <details><summary>Dailies には、会話のどこまで見えますか？</summary>
+            <div class="details-body">
+              <p>何も見えません。アシスタントが私たちのサーバーに送るのは、選んだトピックと言語、そして同じ言葉が二度出ないように、すでに表示した言葉だけです。メッセージ、名前、アカウントが送られることはありません。詳しくは<a href="/privacy/#assistants" hreflang="en">プライバシーポリシー</a>（英語）をご覧ください。</p>
+            </div></details>
+          <details><summary>オフにするには？</summary>
+            <div class="details-body">
+              <p>Claude では、ひとつのチャットだけなら<strong>「+」→「コネクタ」</strong>からオフにし、完全に外すなら<strong>「カスタマイズ」→「コネクタ」</strong>で削除します。ChatGPT では<strong>「設定」→「アプリ」</strong>で接続を解除します。</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="privacy">
+        <h2>プライバシーとデータ</h2>
+        <div class="faq">
+          <details open><summary>Dailies は私について何を知っていますか？</summary>
+            <div class="details-body">
+              <p>呼んでほしいと伝えた名前、フォローしているトピック、通知の設定、選んだ言語、いいねした言葉、自分で書いた言葉、選んだスタイルです。</p>
+              <p>iPhone と iPad では、自分で書いた言葉といいねした言葉が、スマートフォンを替えても残るように、<strong>あなた自身の iCloud</strong> にも保存されます。それ以外に端末の外に出るのは、ポリシーに書かれている匿名の利用状況の計測だけです。</p>
+              <p><strong>Android では：</strong>iCloud はありません。スマートフォンのバックアップがオンなら、Android がアプリのデータを、名前や背景に選んだ写真も含めて、あなた自身の Google アカウントにコピーします。私たちはそのコピーを読めません。それ以外に端末の外に出るのは、ポリシーに書かれている匿名の利用状況の計測だけです。</p>
+              <p>詳しくは<a href="/privacy/" hreflang="en">プライバシーポリシー</a>（英語）をご覧ください。</p>
+            </div></details>
+
+          <details><summary>利用状況の計測はオフにできますか？</summary>
+            <div class="details-body">
+              <p>はい。<strong>「プロフィール」→「その他の情報」</strong>を開き、<strong>「利用状況データを共有」</strong>をオフにします。それ以降、スマートフォンからは何も送られなくなり、アプリの中は何も変わりません。</p>
+              <p>ほかにオフにするものはありません。Dailies はトラッキングの許可を求めず、広告識別子も読まず、アプリの中で広告のためのトラッキングを一切行いません。</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="premium">
+        <h2>プレミアムと支払い</h2>
+        <div class="faq">
+          <details open><summary>Dailies Premium では何ができますか？</summary>
+            <div class="details-body">
+              <p><strong>すべてのトピック。</strong>無料版では、最初の設定での答えから選ばれたいくつかのトピックをフォローします。プレミアムでは、すべてのセクションのすべてのトピックが開放されるので、聞きたいことだけでフィードを作れます。<strong>「いいねした言葉」</strong>と<strong>「自分の言葉」</strong>をそれぞれトピックとしてフォローすることもでき、お気に入りの言葉や自分の言葉が、フィードでも、通知でも、ウィジェットでも、また巡ってきます。</p>
+              <p>さらに、アプリの<strong>すべての背景とエフェクト</strong>が使えるようになり、自分で用意するふたつ、<strong>自分の写真</strong>と<strong>自分で作った色</strong>を言葉の背景にできます。書き出した画像からは、小さな Dailies のロゴも消えます。</p>
+            </div></details>
+
+          <details><summary>料金はいくらですか？無料トライアルはありますか？</summary>
+            <div class="details-body">
+              <p>プレミアムは<strong>年額のサブスクリプション</strong>で、通常は<strong>無料トライアル</strong>付きで提供しています。料金はアプリのサブスクリプション画面で確認できます。</p>
+            </div></details>
+
+          <details><summary>課金される前にトライアルを止めるには？</summary>
+            <div class="details-body">
+              <p><strong>iPhone と iPad では：</strong><strong>トライアル終了の24時間前まで</strong>に、<strong>「設定」→ 自分の名前 →「サブスクリプション」→「Dailies」→「サブスクリプションをキャンセルする」</strong>で解約してください。トライアルの最終日まではプレミアムを使えます。</p>
+              <p><strong>Android では：</strong>トライアルが終わる前なら、いつ解約しても料金はかかりません。Google Play アプリで、<strong>プロフィール アイコン →「お支払いと定期購入」→「定期購入」→「Dailies」→「定期購入を解約」</strong>と進みます。</p>
+            </div></details>
+
+          <details><summary>解約するには？</summary>
+            <div class="details-body">
+              <p><strong>iPhone と iPad では：</strong><strong>「設定」→ 自分の名前 →「サブスクリプション」→「Dailies」→「サブスクリプションをキャンセルする」</strong>から解約します。サブスクリプションは Apple が管理しているため、アプリの中ではなく、そこで手続きする必要があります。</p>
+              <p><strong>Android では：</strong>Google Play アプリの<strong>プロフィール アイコン →「お支払いと定期購入」→「定期購入」→「Dailies」→「定期購入を解約」</strong>から解約します。サブスクリプションは Google Play が管理しているため、アプリの中ではなく、そこで手続きする必要があります。</p>
+              <p><strong>App を削除しても、サブスクリプションは解約されません。</strong>ストアのどのアプリでも、多くの人が見落としがちな点です。</p>
+              <p>すでに支払った期間の終わりまでは、プレミアムを使えます。その後は無料版に戻ります。作ったものが消えることはなく、使えなくなった背景やエフェクトは、無料のものに切り替わるだけです。</p>
+            </div></details>
+
+          <details><summary>返金してもらえますか？</summary>
+            <div class="details-body">
+              <p><strong>iPhone と iPad では：</strong>返金を行うのは Apple です。<a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a> から申請してください。支払いが直接私たちに届くことはないため、私たちから返金することはできません。</p>
+              <p><strong>Android では：</strong>返金は Google Play を通して、<a href="https://support.google.com/googleplay/answer/2479637" rel="noopener">Google Play の返金ポリシー</a>に沿って行われます。Google で解決しない場合は、<a href="mailto:help@mydailies.app">help@mydailies.app</a> にメールしてください。Google Play では、私たちからも購入を返金できます。</p>
+              <p>アプリの中で、約束どおりに動かなかったことがあれば、ぜひメールでお知らせください。知らせてもらえると助かりますし、直せることもよくあります。</p>
+            </div></details>
+
+          <details><summary>支払ったのに、機能が使えるようになりません</summary>
+            <div class="details-body">
+              <p>まずはプレミアムの画面で<strong>「購入を復元」</strong>を試してください。そのためのボタンで、ほとんどの場合これで直ります。購入したときと同じ Apple アカウントでサインインしているかも確認してください。Android では、購入したときと同じ Google アカウントで Google Play にサインインしているか確認してください。</p>
+              <p>それでも解決しないときは、<a href="mailto:help@mydailies.app">help@mydailies.app</a> にメールしてください。</p>
+            </div></details>
+        </div>
+      </section>
+
+      <p class="no-results" id="noResults">一致する項目が見つかりません。別の言葉で探すか、<a href="mailto:help@mydailies.app" style="color:var(--accent)">help@mydailies.app</a> にそのままメールでお尋ねください。</p>
+
+      <section id="contact">
+        <h2>お問い合わせ</h2>
+        <ul>
+          <li><strong>不具合があるとき、質問があるとき：</strong><a href="mailto:help@mydailies.app">help@mydailies.app</a></li>
+          <li><strong>アプリのアイデアがあるとき：</strong><a href="mailto:feature.suggestion@mydailies.app">feature.suggestion@mydailies.app</a></li>
+        </ul>
+        <p>どちらも、同じ人が読んでいます。<a href="/ja/about/">Dailies を作っている本人</a>です。返信はすぐではありませんが、決まりきった定型文でもありません。</p>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <nav>
+      <a href="/ja/">ホーム</a>
+      <a href="/ja/compare/">比較</a>
+      <a href="/ja/about/">Dailies について</a>
+      <a href="/terms/" hreflang="en">利用規約</a>
+      <a href="/privacy/" hreflang="en">プライバシーポリシー</a>
+      <a href="/cookies/" hreflang="en">Cookie ポリシー</a>
+      <a href="#" data-cookie-settings>Cookie 設定</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script>
+/* Filter the accordions as you type. Plain substring matching over the visible
+   text: the corpus is a few dozen entries, so anything cleverer would cost more
+   than it returns. An empty box restores the page exactly as it loaded. */
+(function () {
+  var box = document.getElementById('q');
+  if (!box) return;
+
+  var noResults = document.getElementById('noResults');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('.prose section'));
+  var cards = document.querySelector('.cards');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.faq details')).map(function (d) {
+    return { el: d, text: (d.textContent || '').toLowerCase(), wasOpen: d.hasAttribute('open') };
+  });
+
+  function reset() {
+    items.forEach(function (i) {
+      i.el.style.display = '';
+      if (i.wasOpen) i.el.setAttribute('open', ''); else i.el.removeAttribute('open');
+    });
+    sections.forEach(function (s) { s.style.display = ''; });
+    if (cards) cards.style.display = '';
+    noResults.style.display = 'none';
+  }
+
+  function apply(term) {
+    var hits = 0;
+    items.forEach(function (i) {
+      var match = i.text.indexOf(term) !== -1;
+      i.el.style.display = match ? '' : 'none';
+      // Open the matches so the answer is on screen rather than one tap away.
+      if (match) { i.el.setAttribute('open', ''); hits++; }
+      else { i.el.removeAttribute('open'); }
+    });
+    // Hide a heading whose every entry was filtered out, so the page does not
+    // read as a list of empty topics. #contact has no details and always stays.
+    sections.forEach(function (s) {
+      if (s.id === 'contact') return;
+      var visible = s.querySelectorAll('.faq details:not([style*="none"])').length;
+      s.style.display = visible ? '' : 'none';
+    });
+    if (cards) cards.style.display = 'none';
+    noResults.style.display = hits ? 'none' : 'block';
+  }
+
+  box.addEventListener('input', function () {
+    var term = box.value.trim().toLowerCase();
+    if (term.length < 2) reset(); else apply(term);
+  });
+})();
+
+/* Open the right accordion when someone arrives on a #hash link. */
+(function () {
+  function openTarget() {
+    if (!location.hash) return;
+    // By id, not as a selector: the hash is whatever the link said, and a
+    // stray bracket or comma in it must open nothing rather than throw.
+    var id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+    var target = document.getElementById(id);
+    if (!target) return;
+    var first = target.querySelector('.faq details');
+    if (first) first.setAttribute('open', '');
+  }
+  window.addEventListener('hashchange', openTarget);
+  openTarget();
+})();
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

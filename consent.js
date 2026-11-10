@@ -271,10 +271,10 @@
 
   /* ------------------------------------------------------------- the words */
   /* The banner speaks the page's language, read off <html lang>: es-MX on
-     /es/, pt-BR on /pt/, fr-FR on /fr/, de-DE on /de/, English everywhere
+     /es/, pt-BR on /pt/, fr-FR on /fr/, de-DE on /de/, ja on /ja/, English everywhere
      else. The Cookie Policy itself is English only (see tools/languages.py),
      and the translated banners say so where they link to it. Same meaning in
-     all five; change one, change the others. */
+     all six; change one, change the others. */
 
   var WORDS = {
     en: {
@@ -381,6 +381,27 @@
       mktLabel: 'Werbung',
       mktBody: 'Pixel von Google, Meta und TikTok. Sie messen, welche Anzeige zu einem Download geführt hat, und lassen diese Plattformen dir Werbung zeigen.',
       save: 'Auswahl speichern'
+    },
+    ja: {
+      askTitle: 'Cookie について',
+      askBody: 'このサイトでは、どのように使われているか、どの広告からいらしたかを計測したいと考えています。' +
+        '同意いただかない限り何も保存しません。App のほうは別の話です。どちらも' +
+        '<a href="/cookies/" hreflang="en">Cookie ポリシー</a>（英語）で説明しています。',
+      all: 'すべて許可', none: 'すべて拒否', choose: '選択する',
+      chooseTitle: '許可するものを選んでください',
+      chooseBody: 'ページ下部の<strong>Cookie 設定</strong>から、いつでも変更できます。',
+      signal: function (name) {
+        return '<strong>お使いのブラウザは、サイトに追跡しないよう求めています。</strong>' + name +
+          ' がオンになっており、その設定を尊重しています。下の項目はすべてオフで、何も読み込んでいません。' +
+          'チェックを入れると、このサイトに限りその設定より優先されます。';
+      },
+      necLabel: '必須',
+      necBody: 'この質問へのお答えだけです。オフにはできず、同意なしに保存されるのはこれだけです。',
+      anaLabel: 'アクセス解析',
+      anaBody: 'PostHog。どのページが読まれ、サイト内をどう移動しているかを把握して、サイトの改善に役立てます。',
+      mktLabel: '広告',
+      mktBody: 'Google、Meta、TikTok のピクセル。どの広告がダウンロードにつながったかを計測し、各プラットフォームが広告を表示できるようにします。',
+      save: '選択を保存'
     }
   };
   var T = WORDS[(document.documentElement.lang || 'en').slice(0, 2)] || WORDS.en;

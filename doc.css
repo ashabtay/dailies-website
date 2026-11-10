@@ -39,6 +39,24 @@
   --chip:rgba(27,31,28,.045); --chip-on:rgba(71,85,47,.12);
 }
 
+/* Japanese (/ja/). Fraunces, Figtree and Courier Prime have no kana or kanji,
+   so the system's Japanese faces follow them: Mincho for the display face,
+   as the app's own Japanese store art sets its headlines, and the Gothic for
+   body text. Latin words still draw in the Latin faces. Japanese is never
+   slanted (a browser can only fake it), is not tracked tighter, wants more
+   leading, and measures its lines in em, not ch: a kanji is two ch wide. */
+html:lang(ja){
+  --f-display:Fraunces,"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+  --f-body:Figtree,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,"Noto Sans JP",sans-serif;
+  --f-mono:"Courier Prime","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,monospace;
+  line-break:strict;
+}
+html:lang(ja) body{line-height:1.85}
+html:lang(ja) :is(h1,h2,h3,em,i,blockquote,blockquote p,.pull,.pull *){letter-spacing:0; font-style:normal}
+html:lang(ja) h1{line-height:1.3}
+html:lang(ja) h2{line-height:1.4}
+html:lang(ja) .lede{max-width:34em}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{

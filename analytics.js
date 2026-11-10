@@ -71,8 +71,11 @@
     var s = (text || '')
       .toLowerCase()
       // Accents off first, so "¿Cómo...?" on /es/ slugs to `como` and not `c_mo`.
-      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9]+/g, '_')
+      // Then composed again, so the kana keep their voicing marks (が stays が).
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '').normalize('NFC')
+      // Kana and kanji are kept: a /ja/ question has no Latin letters, and
+      // without them every one of them would be `unnamed`.
+      .replace(/[^a-z0-9\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff]+/g, '_')
       .replace(/^_+|_+$/g, '');
     if (!s) return 'unnamed';
     // Long enough for any question on the site, short enough that a stray

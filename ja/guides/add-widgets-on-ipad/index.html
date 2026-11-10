@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
+<title>iPad のホーム画面とロック画面にウィジェットを追加する方法 | Dailies</title>
+<meta name="description" content="iPad のホーム画面やロック画面にウィジェットを追加する方法。サイズの選び方、スタックの作り方、そして iPadOS が縦向きと横向きで別々に管理するロック画面の設定まで。">
+<link rel="canonical" href="https://mydailies.app/ja/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-widgets-en-el-ipad/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-widgets-no-ipad/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/ajouter-des-widgets-sur-l-ipad/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/widgets-auf-dem-ipad-hinzufuegen/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iPad のホーム画面とロック画面にウィジェットを追加する方法">
+<meta property="og:description" content="iPad のウィジェットは、iPhone とほとんど同じです。違うのはサイズと、縦向きと横向きでウィジェットを別々に持つロック画面です。">
+<meta property="og:url" content="https://mydailies.app/ja/guides/add-widgets-on-ipad/">
+<meta property="og:image" content="https://mydailies.app/img/guides/add-widgets-on-ipad-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="明るい窓辺で iPad を掲げる手。ロック画面には青と黄色の壁紙の上に時刻が表示されている">
+<meta property="og:site_name" content="Dailies">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/ja/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/ja/blog/">ブログ</a>
+      <a href="/ja/guides/">ガイド</a>
+      <a href="/ja/help/">ヘルプ</a>
+      <details class="lang"><summary aria-label="言語: 日本語"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">日本語</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/guides/add-widgets-on-ipad/" hreflang="en" lang="en">English</a><a href="/fr/guides/ajouter-des-widgets-sur-l-ipad/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/anleitungen/widgets-auf-dem-ipad-hinzufuegen/" hreflang="de" lang="de-DE">Deutsch</a><a href="/es/guias/agregar-widgets-en-el-ipad/" hreflang="es" lang="es-MX">Español</a><a href="/pt/guias/adicionar-widgets-no-ipad/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/guides/add-widgets-on-ipad/" hreflang="ja" lang="ja" aria-current="true">日本語</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/ja/#get">Dailies を入手</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">ガイド</div>
+      <h1>iPad のホーム画面とロック画面にウィジェットを追加する方法</h1>
+      <p class="lede">iPad のウィジェットは、iPhone とほぼ同じしくみです。ただ、始める前に知っておきたい違いがあります。サイズがひとつ多いこと、向きを変えると並びが変わるホーム画面、そして縦向き用と横向き用で別々のウィジェットを持つロック画面です。</p>
+      <p class="doc-meta"><span><a href="/ja/about/">Amit Shabtay</a>（Dailies の開発者）</span> <span>手順の作成：2026年10月22日</span></p>
+    </div>
+  </header>
+
+  <div class="wrap"><figure class="post-hero"><img src="/img/guides/add-widgets-on-ipad.jpg" width="1080" height="608" alt="明るい窓辺で iPad を掲げる手。ロック画面には青と黄色の壁紙の上に時刻が表示されている" fetchpriority="high"></figure></div>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">このページの内容</div>
+      <a href="#steps">ホーム画面に追加する</a>
+      <a href="#size">iPad のサイズ</a>
+      <a href="#arrange">向き、スタック、今日の表示</a>
+      <a href="#lock">ロック画面に追加する</a>
+      <a href="#landscape">縦向きと横向き</a>
+      <a href="#remove">ウィジェットを削除する</a>
+      <a href="#dailies">iPad の Dailies</a>
+      <a href="#fix">うまくいかないとき</a>
+      <a href="#faq">よくある質問</a>
+    </aside>
+
+    <div class="prose">
+
+      <section id="steps">
+        <h2>iPad のホーム画面にウィジェットを追加する</h2>
+        <p>どのアプリでも手順は同じです。ここでは Dailies を例にしますが、使いたいアプリに置き換えてください。</p>
+        <ol>
+          <li><strong>ウィジェットを置きたいホーム画面のページ</strong>を開きます。</li>
+          <li><strong>背景の何もない場所を長押しし</strong>、アプリが揺れ始めるまで待ちます。</li>
+          <li>画面上部の<strong>「編集」</strong>をタップし、<strong>「ウィジェットを追加」</strong>をタップします。</li>
+          <li><strong>Dailies</strong> を検索するかスクロールして探し、タップします。</li>
+          <li>左右にスワイプしてサイズを見比べます。使いたいサイズが表示されたら、<strong>「ウィジェットを追加」</strong>をタップします。</li>
+          <li>アプリが揺れているあいだにウィジェットを置きたい場所までドラッグし、<strong>「完了」</strong>をタップします。</li>
+        </ol>
+        <p>最近の iPadOS には近道もあります。アプリのアイコンがすでにホーム画面にあるなら、そのアイコンを長押しします。開いたメニューの上部にアプリのウィジェットのサイズが並んでいるので、どれかをタップすると、アイコンがそのウィジェットに変わります。あとでウィジェットを長押しすれば、アイコンに戻せます。</p>
+      </section>
+
+      <section id="size">
+        <h2>iPad のサイズ</h2>
+        <p>iPhone では、アプリが用意できるウィジェットは小、中、大です。iPad にはもうひとつ<strong>特大</strong>があります。大の2倍の幅で、この大きさの画面だからこそ意味のあるサイズです。どのサイズを用意するかはアプリごとに決めるので、すべてのサイズがそろっているアプリばかりではありません。</p>
+        <p>Dailies は iPad でも iPhone と同じく、<strong>中</strong>と<strong>大</strong>を用意しています。小がないのは、その枠に言葉を入れると途中で切れるか、読めないほど小さくなるからです。特大がないのは、1行の文章を iPad の半分の幅に引き伸ばすと、ゆったりというより間延びして見えるからです。</p>
+        <p>すでに置いたウィジェットのサイズを変えるには、ウィジェットを長押しし、開いたメニューから別のサイズを選びます。表示されるのは、そのアプリが用意しているサイズだけです。</p>
+      </section>
+
+      <section id="arrange">
+        <h2>向き、スタック、今日の表示</h2>
+        <h3>iPad の向きを変える</h3>
+        <p>ホーム画面のグリッドは縦向きと横向きで形が違うので、向きを変えると iPadOS がアプリとウィジェットを並べ直します。いちばんよく使う向きでウィジェットを好きな位置に置いてから、一度向きを変えて、どこに移動したか確かめましょう。</p>
+        <h3>スタック</h3>
+        <p>スタックは、<strong>同じサイズ</strong>のウィジェットを1か所に重ねて、スワイプで切り替えられるようにしたものです。2つのウィジェットを追加してから、一方をもう一方の真上にドラッグして指を離します。スタックを変更するには、長押しして<strong>「スタックを編集」</strong>をタップします。並べ替えやウィジェットの削除ができ、<strong>「スマートローテーション」</strong>と<strong>「ウィジェットの提案」</strong>をオフにすることもできます。</p>
+        <p>スマートローテーションでは、スタックにどのウィジェットを表示するかを iPadOS が選びます。カレンダーや天気なら便利ですが、読むつもりだった言葉だとわずらわしく感じます。見るたびにそこに言葉があってほしいなら、オフにしましょう。</p>
+        <h3>今日の表示</h3>
+        <p>ホーム画面の左端から右にスワイプすると、ウィジェットが縦に並んだ「今日の表示」が現れます。ここへの追加方法も同じです。何もない場所をアイコンが揺れるまで長押しし、<strong>「編集」</strong>、<strong>「ウィジェットを追加」</strong>の順にタップします。ホーム画面そのものはアプリのために空けておきたいなら、言葉を置くのにちょうどいい場所です。</p>
+        <p>iPad がロックされているときにも今日の表示を見られるようにするには、<strong>「設定」→「Face IDとパスコード」</strong>（または<strong>「Touch IDとパスコード」</strong>）を開き、「ロック中にアクセスを許可」の下にある<strong>「今日の表示と検索」</strong>がオンになっているか確かめてください。</p>
+      </section>
+
+      <section id="lock">
+        <h2>iPad のロック画面にウィジェットを追加する</h2>
+        <p>ロック画面のウィジェットが iPad に来たのは iPhone より遅く、iPadOS 17 からです。Dailies が動く iPad ならどれでも表示できるので、アプリをインストールできたなら、この手順も使えます。</p>
+        <ol>
+          <li>トップボタンで <strong>iPad のスリープを解除し</strong>、ロック画面を長押しします。何も起きなければ、もう一度長押ししてパスコードを入力します。</li>
+          <li>変更したいロック画面までスワイプし、<strong>「カスタマイズ」</strong>をタップします。iPadOS に尋ねられたら、ホーム画面ではなくロック画面を選びます。</li>
+          <li>すでに置いてあるウィジェットをタップするか、<strong>「ウィジェットを追加」</strong>をタップします。</li>
+          <li>リストから <strong>Dailies</strong> を選び、ウィジェットをタップして追加します。</li>
+          <li>ウィジェットのパネルの外側をタップして閉じ、<strong>「完了」</strong>をタップします。</li>
+        </ol>
+        <p>ロック画面のウィジェットは、iPhone と同じく iPad でも iPadOS が単色で表示します。背景も色も、アプリ独自の書体もありません。これは OS のルールで、どのアプリもそれに従っています。</p>
+      </section>
+
+      <section id="landscape">
+        <h2>縦向きと横向きは別々に設定します</h2>
+        <p>いちばんつまずきやすいのがここです。iPad のロック画面は<strong>2組のウィジェット</strong>を持っています。縦向きでは時計の下に1列に並び、横向きでは左側に縦に並びます。iPadOS はこの2組を別々に扱うので、iPad を縦に持って追加したウィジェットは、横にすると表示されません。</p>
+        <div class="callout">
+          <div class="callout-label">だから2回追加します</div>
+          <p>いちばんよく使う向きでウィジェットを追加したら、iPad の向きを変え、もう一度ロック画面を長押しして<strong>「カスタマイズ」</strong>をタップし、もう一方の向きでも追加します。iPad をキーボードケースに入れて使っているなら、大事なのは横向きのほうです。</p>
+        </div>
+        <p>時計の上の枠は、さらに別扱いです。どちらの向きでも、日付や天気についての1行が入ります。Dailies はここにはウィジェットを用意していません。数語で切れてしまう言葉は、もう名言とは言えないからです。</p>
+      </section>
+
+      <section id="remove">
+        <h2>ウィジェットを削除する</h2>
+        <ul>
+          <li><strong>ホーム画面から：</strong>ウィジェットを長押しし、<strong>「ウィジェットを削除」</strong>、<strong>「削除」</strong>の順にタップします。スタックの場合、メニューには代わりに<strong>「スタックを削除」</strong>と表示されます。</li>
+          <li><strong>ロック画面から：</strong>ロック画面を長押しして<strong>「カスタマイズ」</strong>をタップし、ウィジェットをタップしてから、外したいウィジェットの <strong>&minus;</strong> をタップします。もう一方の向きも忘れずに確かめてください。</li>
+        </ul>
+        <p>ウィジェットを削除しても、アプリやその中身が消えることはありません。</p>
+      </section>
+
+      <section id="dailies">
+        <h2>iPad の Dailies</h2>
+        <p><a href="/ja/">Dailies</a> は iPad の縦向きでも横向きでも使え、ウィジェットも iPhone と同じように動きます。</p>
+        <ul>
+          <li><strong>ホーム画面のウィジェット</strong>は中と大があり、アプリで選んだ背景と書体で表示されます。<strong>矢印</strong>をタップすれば、アプリを開かずに次の言葉へ進んだり、前の言葉に戻ったりできます。</li>
+          <li><strong>ロック画面のウィジェット</strong>は、iPadOS がそこで許す単色で短い言葉を表示します。タップすると、その言葉を開いた状態でアプリが起動します。</li>
+          <li>どちらも<strong>だいたい1時間ごと</strong>に替わり、同じ言葉を表示します。2つのウィジェットに別々の言葉が並ぶことはありません。</li>
+          <li>iPad でも、言葉を通知で受け取れます。届く時間帯は、アプリの<strong>「カスタマイズ」→「1日に届く言葉」</strong>で設定します。</li>
+        </ul>
+        <p>アプリの<strong>「カスタマイズ」→「ホーム画面のウィジェット」</strong>と<strong>「カスタマイズ」→「ロック画面のウィジェット」</strong>では、どちらのウィジェットも画面の図を見ながら追加できるように案内しています。</p>
+        <p>iPhone でも Dailies を使っている場合、ウィジェットはデバイスごとに別々です。iPad で追加しても iPhone には何も変わりはなく、その逆も同じです。</p>
+      </section>
+
+      <section id="fix">
+        <h2>うまくいかないとき</h2>
+        <h3>ウィジェットのリストにアプリがない</h3>
+        <ol>
+          <li><strong>この iPad でアプリを一度開きます。</strong>iPhone で毎日使っていても、その iPad で一度もアプリを起動していなければ、iPadOS はそのアプリのウィジェットを表示しません。</li>
+          <li><strong>リストはスクロールせずに検索します。</strong></li>
+          <li><strong>iPad を再起動します。</strong>ウィジェットのリストが作り直されます。</li>
+          <li><strong>アプリが取り除かれていないか確かめます。</strong>取り除かれたアプリはアイコンが残り、名前の横に小さな雲のマークが付きます。タップしてもう一度ダウンロードするまで、ウィジェットも一緒に消えています。</li>
+        </ol>
+        <h3>iPad の向きを変えたら、ロック画面のウィジェットが消えた</h3>
+        <p>消えたわけではありません。もう一方の向きの組にあるだけです。新しい向きで iPad を持ったまま、もう一度追加してください。<a href="#landscape">縦向きと横向き</a>をご覧ください。</p>
+        <h3>ウィジェットが同じ言葉のまま変わらない</h3>
+        <p>たいていは、iPad がバッテリーを節約しているためです。<strong>「低電力モード」</strong>をオフにしてから、アプリを一度開いてください。両方のウィジェットに新しい言葉が送られます。対処法の一覧は<a href="/ja/guides/iphone-widget-not-updating/">ウィジェットが更新されない理由</a>にあり、どれも iPad にそのまま当てはまります。</p>
+        <p>それでも直らなければ、<a href="mailto:help@mydailies.app">help@mydailies.app</a> までご連絡ください。人が直接お返事します。短いまとめは<a href="/ja/help/#widget">ヘルプページ</a>にあります。</p>
+      </section>
+
+      <section id="faq">
+        <h2>よくある質問</h2>
+        <div class="faq">
+          <details open><summary>iPad のロック画面にウィジェットを置けますか？</summary>
+            <div class="details-body">
+              <p>はい、iPadOS 17 から置けます。ロック画面を長押しして「カスタマイズ」をタップし、「ウィジェットを追加」をタップします。iPadOS は縦向き用と横向き用を別々に持っているので、iPad の向きを変えて使うなら両方に追加してください。</p>
+            </div></details>
+
+          <details><summary>iPad を回転させると、ロック画面のウィジェットが消えるのはなぜですか？</summary>
+            <div class="details-body">
+              <p>iPad のロック画面には、時計の下に1列に並ぶ縦向き用のウィジェットと、左側に縦に並ぶ横向き用のウィジェットが別々にあるからです。もう一方の向きでロック画面をもう一度カスタマイズし、そこにも追加してください。</p>
+            </div></details>
+
+          <details><summary>特大のウィジェットとは何ですか？</summary>
+            <div class="details-body">
+              <p>iPad だけにあるサイズで、大のウィジェットの2倍の幅があります。用意するかどうかはアプリごとに決めます。Dailies は iPad で中と大を用意しています。</p>
+            </div></details>
+
+          <details><summary>iPad のウィジェットのリストにアプリが見当たらないのはなぜですか？</summary>
+            <div class="details-body">
+              <p>いちばん多いのは、その iPad でまだアプリを開いていないケースです。iPadOS は、そのデバイスで一度でも起動したアプリのウィジェットしか表示しません。アプリを開いてからもう一度試し、それでも見当たらなければ iPad を再起動してください。</p>
+            </div></details>
+
+          <details><summary>iPad と iPhone のウィジェットは同期されますか？</summary>
+            <div class="details-body">
+              <p>いいえ。ホーム画面とロック画面はデバイスごとに別々なので、iPad で追加したウィジェットは iPhone でも別に追加する必要があります。その逆も同じです。</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="more">
+        <h2>あわせて読みたい</h2>
+        <ul>
+          <li><a href="/ja/guides/add-a-widget-to-your-home-screen/">iPhone のホーム画面にウィジェットを追加する方法</a></li>
+          <li><a href="/ja/guides/quotes-on-your-iphone-lock-screen/">iPhone のロック画面に名言を表示する方法</a></li>
+          <li><a href="/ja/guides/iphone-widget-not-updating/">iPhone のウィジェットが更新されない？原因と直し方</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <section class="strip">
+    <div class="wrap strip-in">
+      <h2>いい言葉で、今日を始めましょう。</h2>
+      <p class="lede">設定は一度だけ。あとは Dailies におまかせください。</p>
+      <a class="store-badge" href="https://apps.apple.com/app/id6804210416?pt=129347926&amp;ct=web-guides-ja&amp;mt=8" data-download="page"><img src="/img/app-store-badge-ja.svg" width="142" height="52" alt="App Store からダウンロード"></a>
+    </div>
+  </section>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <nav>
+      <a href="/ja/">ホーム</a>
+      <a href="/ja/compare/">比較</a>
+      <a href="/ja/about/">Dailies について</a>
+      <a href="/terms/" hreflang="en">利用規約</a>
+      <a href="/privacy/" hreflang="en">プライバシーポリシー</a>
+      <a href="/cookies/" hreflang="en">Cookie ポリシー</a>
+      <a href="#" data-cookie-settings>Cookie 設定</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","inLanguage":"ja","name":"iPad のホーム画面にウィジェットを追加する方法","description":"アプリのウィジェットを、好きなサイズで iPad のホーム画面に追加します。","totalTime":"PT1M","author":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/ja/about/"},"supply":[{"@type":"HowToSupply","name":"iPad"},{"@type":"HowToSupply","name":"ウィジェットのあるアプリ（Dailies など）"}],"step":[
+{"@type":"HowToStep","name":"ホーム画面のページを開きます","text":"ウィジェットを置きたいホーム画面のページを開きます。"},
+{"@type":"HowToStep","name":"編集モードにします","text":"背景の何もない場所を長押しし、アプリが揺れ始めるまで待ちます。"},
+{"@type":"HowToStep","name":"ウィジェットギャラリーを開きます","text":"画面上部の「編集」をタップし、「ウィジェットを追加」をタップします。"},
+{"@type":"HowToStep","name":"アプリを探します","text":"アプリを検索するかスクロールして探し、タップします。"},
+{"@type":"HowToStep","name":"サイズを選びます","text":"左右にスワイプしてサイズを見比べます。使いたいサイズが表示されたら、「ウィジェットを追加」をタップします。"},
+{"@type":"HowToStep","name":"配置します","text":"アプリが揺れているあいだにウィジェットを置きたい場所までドラッグし、「完了」をタップします。"}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[
+{"@type":"Question","name":"iPad のロック画面にウィジェットを置けますか？","acceptedAnswer":{"@type":"Answer","text":"はい、iPadOS 17 から置けます。ロック画面を長押しして「カスタマイズ」をタップし、「ウィジェットを追加」をタップします。iPadOS は縦向き用と横向き用を別々に持っているので、iPad の向きを変えて使うなら両方に追加してください。"}},
+{"@type":"Question","name":"iPad を回転させると、ロック画面のウィジェットが消えるのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"iPad のロック画面には、時計の下に1列に並ぶ縦向き用のウィジェットと、左側に縦に並ぶ横向き用のウィジェットが別々にあるからです。もう一方の向きでロック画面をもう一度カスタマイズし、そこにも追加してください。"}},
+{"@type":"Question","name":"特大のウィジェットとは何ですか？","acceptedAnswer":{"@type":"Answer","text":"iPad だけにあるサイズで、大のウィジェットの2倍の幅があります。用意するかどうかはアプリごとに決めます。Dailies は iPad で中と大を用意しています。"}},
+{"@type":"Question","name":"iPad のウィジェットのリストにアプリが見当たらないのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"いちばん多いのは、その iPad でまだアプリを開いていないケースです。iPadOS は、そのデバイスで一度でも起動したアプリのウィジェットしか表示しません。アプリを開いてからもう一度試し、それでも見当たらなければ iPad を再起動してください。"}},
+{"@type":"Question","name":"iPad と iPhone のウィジェットは同期されますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。ホーム画面とロック画面はデバイスごとに別々なので、iPad で追加したウィジェットは iPhone でも別に追加する必要があります。その逆も同じです。"}}
+]}
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>
