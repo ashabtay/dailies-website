@@ -210,6 +210,11 @@ its own `ct`), the hero quote-card photographs (`img/home/card-1.jpg` to
 other photographs in `img/home/` (the pull quote's background and the three "How
 it works" steps), and the blog thumbnails in `img/blog/` for its "From the
 blog" section. Do not inline images again.
+
+Each home page also carries a `FAQPage` JSON-LD block just before `</head>`,
+built from its visible "Questions." list. As with the guides and posts, the two
+must match: edit a question or answer in the `<details>` list and edit the
+`FAQPage` too, in all six languages.
 The home photographs are crops of the app's own backgrounds, the same source as
 the blog's (see [The blog](#the-blog)).
 
