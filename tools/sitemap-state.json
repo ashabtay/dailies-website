@@ -1,7 +1,7 @@
 {
   "/": {
-    "lastmod": "2026-11-10",
-    "sig": "3e09d1a9a4784f54489346ebc309496739f1ab44aa152443bf0a27a41955dcb8"
+    "lastmod": "2026-11-11",
+    "sig": "aba4b0143e8c19720d6467a405a189c0a586903f39529f233022ed5d3be16abc"
   },
   "/about/": {
     "lastmod": "2026-11-10",
@@ -132,8 +132,8 @@
     "sig": "171ca601f6de08e130f43ccb79b79e8ccf0ad600a087435bc448fb3141eab13b"
   },
   "/de/": {
-    "lastmod": "2026-11-10",
-    "sig": "3b56c215f940ea985252c67ab4a821b6ce23ff7357e94ee2b9a9c8a3f41f7ef8"
+    "lastmod": "2026-11-11",
+    "sig": "ac42af99ee4269362a30df0d5a7f8222170e23bc5c498b56de3f0b3ea3f15048"
   },
   "/de/anleitungen/": {
     "lastmod": "2026-11-10",
@@ -276,8 +276,8 @@
     "sig": "f3d0c28ed677c95a301e992e5ad0ac04beeee597e0bfe3a08cd3188298a9cffc"
   },
   "/de/hilfe/": {
-    "lastmod": "2026-11-10",
-    "sig": "427990951b1aee68813c96b7565b0bff6a159474544cc36affde6ca63d166b88"
+    "lastmod": "2026-11-11",
+    "sig": "a46594fe3a28aa83b2616625457581de406636bb87e6a34ee3903b03993b9859"
   },
   "/de/ueber/": {
     "lastmod": "2026-11-10",
@@ -336,16 +336,16 @@
     "sig": "692cce60f3ffd3b2959da557c2a60c75a398b3edfec09d08eea1d62b264b4c46"
   },
   "/es/": {
-    "lastmod": "2026-11-10",
-    "sig": "d9a2e11f0069852edd5747726c9a582bb2174bb69cec8a77ab96c3ecc10a6c81"
+    "lastmod": "2026-11-11",
+    "sig": "3e2ed9171491e3a23f87758842f129d0913fdfc4ee44792beaf18fbe348d3e26"
   },
   "/es/acerca-de/": {
     "lastmod": "2026-11-10",
     "sig": "665ebb780c4cc32ff1fde21a101e5d8fa8774dac16fbb9ae38fe7d35404944e9"
   },
   "/es/ayuda/": {
-    "lastmod": "2026-11-10",
-    "sig": "54d0db38805bd8d2710c2aa522393e7e0f9aa8124b1af9b70751f60ffd58db78"
+    "lastmod": "2026-11-11",
+    "sig": "011e7dea437c63fc317969effd2f187b8989d99daff76c30c2f2fa9484845379"
   },
   "/es/blog/": {
     "lastmod": "2026-11-10",
@@ -540,16 +540,16 @@
     "sig": "1931a1cc70325e5a66e41d381f7ac99ac68e9ea8fb3e5e25f695858b54d3b3e8"
   },
   "/fr/": {
-    "lastmod": "2026-11-10",
-    "sig": "7c35543d73a8e31c288afe6d18dc1ee85a185553d663d9c34d19c9dd4fc69275"
+    "lastmod": "2026-11-11",
+    "sig": "4ffb5537533ec1f11b690f76328537fe1d8b6edfc07544a454776b74bf82820f"
   },
   "/fr/a-propos/": {
     "lastmod": "2026-11-10",
     "sig": "8b1a13a44b12832b170ab64aec4534001df2dae70af4d59891a1399e674739b6"
   },
   "/fr/aide/": {
-    "lastmod": "2026-11-10",
-    "sig": "720bbad4990e3904ba0db0a2e83343b99a62382bf3636ef31ca72ae7600601f5"
+    "lastmod": "2026-11-11",
+    "sig": "a80d0a90d0897912828fbe9a1a3c314a5524e57b29718ca69f073e430476a151"
   },
   "/fr/blog/": {
     "lastmod": "2026-11-10",
@@ -816,12 +816,12 @@
     "sig": "c0682f7731f79ea88f89c9d23ae6b16f45df8c035e28b654fc4ef648db2c318c"
   },
   "/help/": {
-    "lastmod": "2026-11-10",
-    "sig": "e57da8bd3f9255603c969897254da8b82b185177e00736864960d87401ce0760"
+    "lastmod": "2026-11-11",
+    "sig": "6bbc6cb592f510926ec24769a348858e8b484a23552ed901f6eb0fa198b71571"
   },
   "/ja/": {
-    "lastmod": "2026-11-10",
-    "sig": "cf85e9233b1cae65c6bc23763168fdad6520f51e9d8ac4986a4f9c9c1b96d3c6"
+    "lastmod": "2026-11-11",
+    "sig": "8d1deae1e084512ccdfbfb5d705d376d42df17b91ff27b15ece24728d9e9620b"
   },
   "/ja/about/": {
     "lastmod": "2026-11-10",
@@ -1020,20 +1020,20 @@
     "sig": "f1c9858d14d0ccd522c16b449d7e4c9379dc29db79cbb78b6778ef892a259cf3"
   },
   "/ja/help/": {
-    "lastmod": "2026-11-10",
-    "sig": "19fc083f9c8d40f2af814ed3e874c5b0d2bb9e8acdfe87f06817c865298c937e"
+    "lastmod": "2026-11-11",
+    "sig": "ac86bd81aeadef96b7ed1e2340aaf2b379e3966850405c52974d3a7cbda3ea0e"
   },
   "/privacy/": {
-    "lastmod": "2026-11-10",
-    "sig": "a93bf4ab83c7e7b62d8769f8047ec2905db8dacdac2bf4ccb20b94433f3a9e07"
+    "lastmod": "2026-11-11",
+    "sig": "64bbd95646246abf80214536e62b9c44b760516019ef1a432fba4758733e1d65"
   },
   "/pt/": {
-    "lastmod": "2026-11-10",
-    "sig": "61e1a52fc2ee9c2335f24567dfd37e64fe6e671b881cdbd676b3be5bc23ebc98"
+    "lastmod": "2026-11-11",
+    "sig": "dc5768e1e6d50e3099cefd2ca13a468e758547907e8c9d4105bd849b9ef8236b"
   },
   "/pt/ajuda/": {
-    "lastmod": "2026-11-10",
-    "sig": "03a170e8ab7dd48d773435abe0d5118efbde5a5c34f5eddb47f7329ff3f967cb"
+    "lastmod": "2026-11-11",
+    "sig": "8078cf08a235af49a407d5325f8c06d01f2e68e2070b41ba9beb51a759dc2c2c"
   },
   "/pt/blog/": {
     "lastmod": "2026-11-10",
