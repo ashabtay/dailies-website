@@ -199,11 +199,17 @@ native read. As with the app, that is the next step before leaning on them.
 
 ## How the files are organized
 
-`index.html` is a single file with no build step: its styles, scripts, app icon,
-QR code and hero quote-card photography are inlined. Below the hero it links a
-few shared files: the photographs in `img/home/` (the pull quote's background
-and the three "How it works" steps), the blog thumbnails in `img/blog/` for its
-"From the blog" section, and the App Store badge in `img/app-store-badge.svg`.
+`index.html` is a single file with no build step: its styles and scripts are
+inlined. Images are not: they are linked files, so the HTML stays small and the
+page text is near the top of what a crawler or an AI assistant fetches (with the
+images inlined the home page was 280KB, 83% of it base64). It links the app
+icon (`icon.png`), the App Store badge (`img/app-store-badge.svg`), the QR code
+(`img/home/qr.svg`, and `qr-es.svg` and so on per language, since each carries
+its own `ct`), the hero quote-card photographs (`img/home/card-1.jpg` to
+`card-3.jpg`, shared by every language, marked `fetchpriority="high"`), the
+other photographs in `img/home/` (the pull quote's background and the three "How
+it works" steps), and the blog thumbnails in `img/blog/` for its "From the
+blog" section. Do not inline images again.
 The home photographs are crops of the app's own backgrounds, the same source as
 the blog's (see [The blog](#the-blog)).
 
@@ -211,7 +217,7 @@ The document and comparison pages carry no photography, so they share two small
 assets instead of each inlining a copy:
 
 - `doc.css` — all their styling, including the design tokens
-- `icon.png` — the app icon in the nav, extracted from the data URI in `index.html`
+- `icon.png` - the app icon in the nav and the favicon, on the landing page too
 
 One more asset is shared by every page including the landing page:
 
@@ -922,6 +928,7 @@ in App Store Connect first; a new `ct` value simply appears. The values in use:
 | `web-about`   | `/about/`                               |
 | `web-404`     | the 404 page                            |
 | `web-chatgpt` | the ChatGPT redirect on the six home pages (see [Visitors from ChatGPT](#visitors-from-chatgpt)) |
+| `web-llms`    | the App Store link in `/llms.txt` (see [llms.txt](#llmstxt)) |
 
 The translated pages use the same values with the language on the
 end: `web-home-es`, `web-qr-pt`, `web-guides-fr`, `web-404-de`, `web-blog-ja` and so on.
@@ -934,13 +941,23 @@ written `&amp;`. Off-site links (TikTok bio and so on) should get their own `ct`
 without the `web-` prefix.
 
 The link carries no storefront, so Apple sends each visitor to their own
-country's store. The QR is an inline SVG made with
+country's store. The QR is an SVG file, `img/home/qr.svg` (`qr-es.svg` and so on
+for the other languages, each with its own `ct`), made with
 [segno](https://pypi.org/project/segno/), error level M, two-module border, in the
 chip's colors, with `shape-rendering="crispEdges"` added to the `<svg>` tag:
 
 ```sh
 python3 -c "import segno; segno.make('https://apps.apple.com/app/id6804210416?pt=129347926&ct=web-qr&mt=8', error='m', micro=False).save('qr.svg', dark='#191c1d', light='#f4ecdc', border=2, xmldecl=False, omitsize=True)"
 ```
+
+## llms.txt
+
+`/llms.txt` is a plain Markdown summary of Dailies for AI assistants, in the
+[llms.txt](https://llmstxt.org/) format: what the app does, the key facts, and
+links to the main, comparison, guide and blog pages. It is English only and
+hand-written. Keep its facts in step with the home page FAQ, and add a link when
+a comparison or an important guide is added. The house rules apply: no counts,
+no prices, no em-dashes.
 
 ## Visitors from ChatGPT
 
