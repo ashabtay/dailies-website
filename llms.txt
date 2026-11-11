@@ -1,0 +1,67 @@
+# Dailies
+
+> Dailies is a motivational quotes app. It sends short motivational quotes through the day, from the topics you follow and in the hours you choose, and keeps a fresh one on your Lock Screen and Home Screen widget, so you get your daily motivation without opening the app. It is on the App Store for iPhone and iPad.
+
+Key facts:
+
+- What it does: quotes arrive as notifications at varied times inside the hours you set, and a widget on the Lock Screen and Home Screen always shows a fresh one. There is also a feed to swipe through when you want more.
+- Topics: you follow the topics you care about (calm, confidence, humor, work, health, faith, creativity and more) and Dailies picks from those. Change them, how often quotes arrive and the hours you can be reached at any time.
+- Your own quotes: heart quotes to keep them under Liked quotes, and write your own lines under My quotes. Both are backed up to your iCloud account.
+- Styling: backgrounds, typefaces and effects behind each quote, including quiet moving effects on the widget, and your own photos and colors with Premium.
+- Price: free to download, with a free set of topics, backgrounds and typefaces. Dailies Premium is an optional subscription that opens every topic, background, typeface and effect.
+- No account needed to start.
+- Languages: English, Spanish, Brazilian Portuguese, French, German, Japanese and Simplified Chinese.
+- Devices: iPhone and iPad, in portrait or landscape.
+- Made by one person, Amit Shabtay, with editorial rules for which quotes get in (see About).
+- Download: [Dailies - Daily Motivation on the App Store](https://apps.apple.com/app/id6804210416?pt=129347926&ct=web-llms&mt=8)
+
+## Main pages
+
+- [Home](https://mydailies.app/): what Dailies is, how it works, and answers to common questions
+- [Help](https://mydailies.app/help/): setting up, notifications that stopped arriving, the widget, changing what you get
+- [About](https://mydailies.app/about/): who makes Dailies, how quotes and comparisons are chosen, how to reach a human
+
+## Comparisons
+
+Dated, sourced side-by-side comparisons of Dailies and other quote and affirmation apps.
+
+- [The best motivational quote apps for iPhone, compared](https://mydailies.app/compare/best-motivational-quote-apps/): Motivation, I am, Dailies, ThinkUp and Motivate side by side
+- [Dailies vs Motivation](https://mydailies.app/compare/dailies-vs-motivation/)
+- [Dailies vs I am](https://mydailies.app/compare/dailies-vs-i-am/)
+- [Dailies vs ThinkUp](https://mydailies.app/compare/dailies-vs-thinkup/)
+- [Dailies vs Motivate](https://mydailies.app/compare/dailies-vs-motivate/)
+- [Dailies vs Daily Quote](https://mydailies.app/compare/dailies-vs-daily-quote/)
+- [Dailies vs Motivational Quotes Daily](https://mydailies.app/compare/dailies-vs-motivational-quotes-daily/)
+- [Dailies vs Mantra](https://mydailies.app/compare/dailies-vs-mantra/)
+- [Dailies vs Innertune](https://mydailies.app/compare/dailies-vs-innertune/)
+- [Dailies vs PepTalk](https://mydailies.app/compare/dailies-vs-peptalk/)
+- [Dailies vs Widgetsmith](https://mydailies.app/compare/dailies-vs-widgetsmith/)
+- [Dailies vs locksmith](https://mydailies.app/compare/dailies-vs-locksmith/)
+
+## Guides
+
+- [How to put quotes on your iPhone Lock Screen](https://mydailies.app/guides/quotes-on-your-iphone-lock-screen/)
+- [How to get motivational quotes at random times of day](https://mydailies.app/guides/motivational-quotes-at-random-times/)
+- [How to make an aesthetic quote widget for your Home Screen](https://mydailies.app/guides/aesthetic-quote-widget-iphone/)
+- [How to get a funny quote every day](https://mydailies.app/guides/funny-daily-quotes-iphone/)
+- [How to put affirmations on your iPhone Lock Screen](https://mydailies.app/guides/affirmations-on-iphone-lock-screen/)
+- [How to put a Bible verse on your iPhone Lock Screen](https://mydailies.app/guides/bible-verse-on-iphone-lock-screen/)
+- [How to add a widget to your Home Screen](https://mydailies.app/guides/add-a-widget-to-your-home-screen/)
+- [All guides](https://mydailies.app/guides/)
+
+## Blog
+
+- [How to motivate yourself when you have no motivation](https://mydailies.app/blog/how-to-motivate-yourself/)
+- [Motivational quotes for hard times](https://mydailies.app/blog/motivational-quotes-for-hard-times/)
+- [Morning motivation: quotes to start your day](https://mydailies.app/blog/morning-motivation-quotes/)
+- [All posts](https://mydailies.app/blog/)
+
+## Other languages
+
+The site is also in [Spanish](https://mydailies.app/es/), [Brazilian Portuguese](https://mydailies.app/pt/), [French](https://mydailies.app/fr/), [German](https://mydailies.app/de/) and [Japanese](https://mydailies.app/ja/).
+
+## Optional
+
+- [Privacy Policy](https://mydailies.app/privacy/)
+- [Terms of Use](https://mydailies.app/terms/)
+- [Full sitemap](https://mydailies.app/sitemap.xml)
