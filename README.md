@@ -29,6 +29,7 @@ The website for the Dailies app — https://mydailies.app
 | `/blog` | `blog/index.html` | Blog hub, linking the sixteen posts below |
 | `/blog/<slug>` | `blog/<slug>/index.html` | Motivation posts: nine explainers and seven quote collections. See [The blog](#the-blog) |
 | `/about` | `about/index.html` | Who makes Dailies, the editorial rules, and the contact route |
+| `/press` | `press/index.html` | Press kit: facts, descriptions at three lengths, founders, icon, screenshots (`press/screenshots/`, plus `dailies-press-kit.zip`), the moving widget and coverage. "In the press" first, one card per article with a small Dailies picture (`press/coverage-*.jpg`, 360x360, cropped from the screenshots). English only, in every footer. `press/if-7k2q/` is the unlisted InspireFusion page (noindex) |
 | `/terms` | `terms/index.html` | Terms of Use |
 | `/privacy` | `privacy/index.html` | Privacy Policy |
 | `/cookies` | `cookies/index.html` | Cookie Policy |

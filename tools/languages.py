@@ -384,6 +384,9 @@ PAGES = [
      "/fr/a-propos/",
      "/de/ueber/",
      "/ja/about/"),
+    # English only: a press kit is read by journalists and editors, and its
+    # downloads (screenshots, icon, widget video) are the English app.
+    ("/press/", None, None, None, None, None),
     # English only. The Terms, the Privacy Policy and the Cookie Policy are
     # the binding text, and a translation would be a second version of a
     # contract nobody has had reviewed. The translated footers link here.
