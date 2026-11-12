@@ -707,6 +707,12 @@ loads, and run the page through https://validator.schema.org afterwards. Only
 the home pages carry the block; every other page's structured data
 describes that page, not the brand.
 
+**The footer carries the same profiles as icons**, on every page, in the same
+order as `sameAs`. The icons are symbols in `img/social.svg` (Bootstrap Icons,
+MIT), and the row is plain HTML in each page's footer, so a new or closed
+profile means editing `img/social.svg` and every footer as well as the block.
+The labels are brand names and are not translated.
+
 ## The sitemap
 
 `sitemap.xml` is generated. **Do not hand-edit it**, and do not add a `<url>`
