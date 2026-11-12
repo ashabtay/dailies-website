@@ -286,6 +286,9 @@ footer{
 footer nav{display:flex; gap:22px; flex-wrap:wrap}
 footer a{text-decoration:none}
 footer a:hover{color:var(--accent)}
+footer .social{display:flex; align-items:center; gap:6px; margin:-6px auto -6px -6px}
+footer .social a{display:flex; padding:6px}
+footer .social svg{width:16px; height:16px; fill:currentColor}
 
 /* ============ APP STORE BADGE ============ */
 /* Apple's official badge artwork (img/app-store-badge.svg, from Apple's
