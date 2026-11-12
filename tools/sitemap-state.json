@@ -43,6 +43,10 @@
     "lastmod": "2026-11-12",
     "sig": "ef9155b1b1a816a893c004657732a369c1663aa26877f1c584df22ffbcade1ac"
   },
+  "/blog/marcus-aurelius-quotes/": {
+    "lastmod": "2026-11-12",
+    "sig": "bf695aae611f80f1fbeca6d95cc050f82502dacff1c27af6668dd0337bab62fc"
+  },
   "/blog/morning-motivation-quotes/": {
     "lastmod": "2026-11-12",
     "sig": "64d85e118fe5c2616d4f8f54e06b5ef7d196e636ecb1c0d04560a2ee3a70692e"
@@ -58,6 +62,10 @@
   "/blog/new-years-resolutions/": {
     "lastmod": "2026-11-12",
     "sig": "3dd504db528005515c225f4627aab8d7e5bd0da56549769527d7e707a4a5efec"
+  },
+  "/blog/quotes-about-ego/": {
+    "lastmod": "2026-11-12",
+    "sig": "8d81792fc07f5855a117887b952bfdab08a61ca15b0ab324535041f99f4ad91d"
   },
   "/blog/quotes-about-starting-over/": {
     "lastmod": "2026-11-12",
@@ -771,6 +779,10 @@
     "lastmod": "2026-11-12",
     "sig": "d0dfadd943fa579cbbbcb60847932da9a01280acfc4940b6bb2a2fca83e74359"
   },
+  "/guides/christmas-lock-screen-ideas/": {
+    "lastmod": "2026-11-12",
+    "sig": "d43b3d73f283c701248a27d4fef926a96edfbb4a9cd57c4fede3c6dd11782c98"
+  },
   "/guides/customize-iphone-lock-screen/": {
     "lastmod": "2026-11-12",
     "sig": "e974952930e612fc94a0e1aaa85c24e90b3c0fa5ef5f9625aa0d7bd9a1980065"
@@ -1025,7 +1037,7 @@
   },
   "/press/": {
     "lastmod": "2026-11-12",
-    "sig": "e68bf91b064e89d519e5b962fce323024cadb91840ad1f14f9ce62f8c7e5c7b7"
+    "sig": "405aabf5f1be7fef3413a4c6030645a60ed9dbbe5e673772f12bbdc66fce3459"
   },
   "/privacy/": {
     "lastmod": "2026-11-12",
