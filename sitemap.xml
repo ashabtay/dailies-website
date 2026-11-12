@@ -552,7 +552,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/about/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/acerca-de/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/sobre/"/>
@@ -560,6 +560,10 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/ueber/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/about/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/press/</loc>
+    <lastmod>2026-11-12</lastmod>
   </url>
   <url>
     <loc>https://mydailies.app/terms/</loc>
@@ -1125,7 +1129,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/acerca-de/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/acerca-de/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/sobre/"/>
@@ -1686,7 +1690,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/sobre/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/acerca-de/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/sobre/"/>
@@ -2247,7 +2251,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/fr/a-propos/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/acerca-de/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/sobre/"/>
@@ -2808,7 +2812,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/de/ueber/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/acerca-de/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/sobre/"/>
@@ -3369,7 +3373,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/ja/about/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/acerca-de/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/sobre/"/>

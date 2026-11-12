@@ -12,7 +12,7 @@ Key facts:
 - No account needed to start.
 - Languages: English, Spanish, Brazilian Portuguese, French, German, Japanese and Simplified Chinese.
 - Devices: iPhone and iPad, in portrait or landscape.
-- Made by one person, Amit Shabtay, with editorial rules for which quotes get in (see About).
+- Made by Amit Shabtay with his son Itamar, with editorial rules for which quotes get in (see About).
 - Download: [Dailies - Daily Motivation on the App Store](https://apps.apple.com/app/id6804210416?pt=129347926&ct=web-llms&mt=8)
 
 ## Main pages
@@ -20,6 +20,7 @@ Key facts:
 - [Home](https://mydailies.app/): what Dailies is, how it works, and answers to common questions
 - [Help](https://mydailies.app/help/): setting up, notifications that stopped arriving, the widget, changing what you get
 - [About](https://mydailies.app/about/): who makes Dailies, how quotes and comparisons are chosen, how to reach a human
+- [Press kit](https://mydailies.app/press/): facts, ready-to-use descriptions, the founders, the app icon, screenshots, Asides and press coverage
 
 ## Comparisons
 
