@@ -26,8 +26,9 @@ The website for the Dailies app — https://mydailies.app
 | `/guides/motivational-quotes-at-random-times` | `guides/motivational-quotes-at-random-times/index.html` | How to get motivational quotes at random times of day on iPhone |
 | `/guides/aesthetic-quote-widget-iphone` | `guides/aesthetic-quote-widget-iphone/index.html` | How to make an aesthetic quote widget for your iPhone Home Screen, with the moving widget GIF |
 | `/guides/funny-daily-quotes-iphone` | `guides/funny-daily-quotes-iphone/index.html` | How to get a funny quote on your iPhone every day (the Humor topics) |
-| `/blog` | `blog/index.html` | Blog hub, linking the sixteen posts below |
-| `/blog/<slug>` | `blog/<slug>/index.html` | Motivation posts: nine explainers and seven quote collections. See [The blog](#the-blog) |
+| `/guides/christmas-lock-screen-ideas` | `guides/christmas-lock-screen-ideas/index.html` | Christmas Lock Screen ideas for iPhone, with Snow Globe on the Home Screen (English only) |
+| `/blog` | `blog/index.html` | Blog hub, linking the twenty-one posts below |
+| `/blog/<slug>` | `blog/<slug>/index.html` | Motivation posts: twelve explainers and nine quote collections (quotes about ego, Marcus Aurelius in plain English, Monday motivation, New Year quotes and winter quotes are English only). See [The blog](#the-blog) |
 | `/about` | `about/index.html` | Who makes Dailies, the editorial rules, and the contact route |
 | `/press` | `press/index.html` | Press kit: facts, descriptions at three lengths, founders, icon, screenshots (`press/screenshots/`, plus `dailies-press-kit.zip`), the moving widget and coverage. "In the press" first, one card per article with a small Dailies picture (`press/coverage-*.jpg`, 360x360, cropped from the screenshots). English only, in every footer. `press/if-7k2q/` is the unlisted InspireFusion page (noindex) |
 | `/terms` | `terms/index.html` | Terms of Use |
