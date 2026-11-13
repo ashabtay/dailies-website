@@ -24,7 +24,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -226,7 +226,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/blog/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/"/>
@@ -303,7 +303,19 @@
   </url>
   <url>
     <loc>https://mydailies.app/blog/quotes-about-ego/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
+  </url>
+  <url>
+    <loc>https://mydailies.app/blog/monday-motivation/</loc>
+    <lastmod>2026-11-13</lastmod>
+  </url>
+  <url>
+    <loc>https://mydailies.app/blog/new-year-quotes/</loc>
+    <lastmod>2026-11-13</lastmod>
+  </url>
+  <url>
+    <loc>https://mydailies.app/blog/winter-quotes/</loc>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://mydailies.app/blog/marcus-aurelius-quotes/</loc>
