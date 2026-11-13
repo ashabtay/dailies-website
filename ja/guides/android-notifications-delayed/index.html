@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Android の通知が遅れる、届かないときの対処法 | Dailies</title>
+<meta name="description" content="Android の通知が遅れたり届かなかったりする理由と、試す順に並べた対処法。通知の設定、サイレント モード、バッテリー セーバー、アプリのバッテリー使用量、Doze、Samsung のスリープ設定まで。">
+<link rel="canonical" href="https://mydailies.app/ja/guides/android-notifications-delayed/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/guides/android-notifications-delayed/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/notificaciones-de-android-llegan-tarde/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-android-atrasadas/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/notifications-android-en-retard/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/android-benachrichtigungen-kommen-spaet/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/android-notifications-delayed/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/android-notifications-delayed/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android の通知が遅れる、届かないときの対処法">
+<meta property="og:description" content="Android で通知が遅れる原因のほとんどは、アプリの故障ではなく、スマートフォンのバッテリー節約です。通知が止まる場所と、通す方法を紹介します。">
+<meta property="og:url" content="https://mydailies.app/ja/guides/android-notifications-delayed/">
+<meta property="og:image" content="https://mydailies.app/img/guides/android-notifications-delayed-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="暗い木々のそばに立つ4人のシルエットと、地平線がオレンジ色に光る星空">
+<meta property="og:site_name" content="Dailies">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/ja/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/ja/blog/">ブログ</a>
+      <a href="/ja/guides/">ガイド</a>
+      <a href="/ja/help/">ヘルプ</a>
+      <details class="lang"><summary aria-label="言語: 日本語"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">日本語</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/guides/android-notifications-delayed/" hreflang="en" lang="en">English</a><a href="/fr/guides/notifications-android-en-retard/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/anleitungen/android-benachrichtigungen-kommen-spaet/" hreflang="de" lang="de-DE">Deutsch</a><a href="/es/guias/notificaciones-de-android-llegan-tarde/" hreflang="es" lang="es-MX">Español</a><a href="/pt/guias/notificacoes-do-android-atrasadas/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/guides/android-notifications-delayed/" hreflang="ja" lang="ja" aria-current="true">日本語</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/ja/#get">Dailies を入手</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">ガイド</div>
+      <h1>Android の通知が遅れる、届かないときの対処法</h1>
+      <p class="lede">Android では、アプリが朝8時に通知を出す予定を立てても、実際にいつ表示するかを決めるのはスマートフォンです。Android はバッテリーを節約するために通知を後回しにし、メーカーは独自のバッテリー管理を重ね、ひとつのカテゴリがオフになっているだけで、すべて許可したはずのアプリが静かになることもあります。遅れる通知や届かない通知のほとんどは、アプリの故障ではなく、このどれかが原因です。確かめる場所を、順番に紹介します。</p>
+      <p class="doc-meta"><span><a href="/ja/about/">Amit Shabtay</a>（Dailies の開発者）</span> <span>手順の作成：2026年11月13日（Google と Samsung のドキュメントをもとに作成。実機での確認はしていません）</span></p>
+    </div>
+  </header>
+
+  <div class="wrap"><figure class="post-hero"><img src="/img/guides/android-notifications-delayed.jpg" width="1080" height="608" alt="暗い木々のそばに立つ4人のシルエットと、地平線がオレンジ色に光る星空" fetchpriority="high"></figure></div>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">このページの内容</div>
+      <a href="#why">通知が遅れる理由</a>
+      <a href="#fixes">対処法を順番に</a>
+      <a href="#symptoms">症状から探す</a>
+      <a href="#dailies">Dailies の通知</a>
+      <a href="#faq">よくある質問</a>
+    </aside>
+
+    <div class="prose">
+
+      <section id="why">
+        <h2>通知が遅れる理由</h2>
+        <p>アプリから画面に届くまでに、通知はいくつかの関門を通ります。そのどれもが、通知を止めたり、後回しにしたり、気づかないほど静かに届けたりします。</p>
+        <ul>
+          <li><strong>通知の許可とカテゴリ。</strong>アプリが通知を出してよいかどうか。そして、アプリが送る通知の種類ごと（Android ではカテゴリと呼びます）に、その種類がオンになっているか、音が鳴るかどうか。</li>
+          <li><strong>サイレント モードとモード。</strong>リストにないアプリの通知をすべて止めます。Android 15 以降の Pixel では、サイレント モードはいくつかある<strong>「モード」</strong>のひとつで、おやすみ時間のモードのように、スケジュールで自動的にオンになるものもあります。</li>
+          <li><strong>バッテリー セーバー。</strong>スマートフォン全体のバックグラウンドの処理を減らします。Google も、オンのあいだは一部のアプリで遅れが出ることがあると説明しています。</li>
+          <li><strong>アプリごとのバッテリー設定。</strong>Android では、アプリごとに、バックグラウンドで自由に動くか、管理されながら動くか、ほとんど動かないかを決められます。Galaxy では、さらに Samsung 独自の、スリープ中のアプリ、ディープスリープ中のアプリ、スリープさせないアプリの一覧があります。</li>
+          <li><strong>Doze。</strong>画面が消えたまま、充電せずにスマートフォンを置いておくと、Android はバックグラウンドの処理をほぼ止め、ときどきだけ短いメンテナンスの時間を設けて、アプリに遅れを取り戻させます。そのあいだに予定されていた通知は、次のメンテナンスの時間まで待つことがあります。</li>
+        </ul>
+        <div class="callout">
+          <div class="callout-label">まず確かめること</div>
+          <p>画面の上から下にスワイプします。クイック設定でサイレント モード、いずれかのモード、バッテリー セーバーが点灯していたら、そこから始めてください。どれも点灯しておらず、通知は届くけれど遅れるだけなら、バッテリーの手順まで進んでください。</p>
+        </div>
+        <p>iPhone の場合は、設定の場所が違います。<a href="/ja/guides/iphone-notifications-not-working/">iPhone でアプリの通知が来ない？対処法</a>をご覧ください。</p>
+      </section>
+
+      <section id="fixes">
+        <h2>対処法を順番に</h2>
+        <p>ひとつずつ試してください。最初の4つで、たいていは解決します。メニューは機種によって違います。以下の場所は Pixel については Google、Galaxy については Samsung の説明によるもので、ほかの機種でも、たいてい似た名前で同じ設定があります。</p>
+        <ol>
+          <li><strong>アプリの通知とカテゴリを確かめます。</strong><strong>「設定」&rarr;「アプリ」</strong>を開いてアプリをタップし（一覧にないときは、すべてのアプリを表示して探します）、<strong>「通知」</strong>をタップします。<strong>「<em>アプリ名</em> のすべての通知」</strong>がオンになっているか確かめ、その下のカテゴリもひとつずつ見てください。アプリが許可されていても、気になるカテゴリだけがオフだったり、<strong>「サイレント」</strong>になっていたりすることがあります。サイレントのカテゴリは、音もバナーもなしに通知シェードに入るだけです。</li>
+          <li><strong>サイレント モードとモードを確かめます。</strong>下にスワイプしてクイック設定を開き、サイレント モードやオンになっているモードをオフにします。モードはそのままでアプリだけ通したいときは、<strong>「設定」&rarr;「モード」</strong>を開いてモードをタップし、通知の設定で<strong>「アプリ」</strong>を選んでアプリを追加します。古いバージョンの Android では、サイレント モードは<strong>「設定」&rarr;「通知」</strong>か<strong>「音」</strong>にあります。モードが何度もオンに戻るときは、スケジュールを確かめてください。</li>
+          <li><strong>バッテリー セーバーをオフにします。</strong><strong>「設定」&rarr;「バッテリー」&rarr;「バッテリー セーバー」</strong>を開いてオフにし、スケジュールで自動的にオンに戻らないかも確かめます。Galaxy では、<strong>「設定」&rarr;「バッテリー」</strong>の<strong>「省電力モード」</strong>です。オンのあいだはバックグラウンドの処理が減るため、アプリが予定していた通知が遅れることがあります。</li>
+          <li><strong>アプリがバックグラウンドで動けるようにします。</strong>Pixel では<strong>「設定」&rarr;「アプリ」</strong>を開いてアプリをタップし、<strong>「アプリのバッテリー使用量」</strong>を開きます。<strong>「バックグラウンドでの使用を許可」</strong>をオンにしてからタップし、<strong>「制限なし」</strong>を選びます。<strong>「最適化」</strong>が初期設定で、たいていのアプリはこれで十分ですが、<strong>「制限」</strong>は通知を止めてしまう設定です。Galaxy では<strong>「設定」&rarr;「バッテリー」&rarr;「バックグラウンドでの使用を制限」</strong>を開きます（機種によってはデバイスケアの中にあります）。スリープ中のアプリとディープスリープ中のアプリの一覧からアプリを外し、プラスのボタンで、スリープさせないアプリの一覧に追加します。使っていないアプリを自動でスリープさせる設定がオンだと、しばらく開いていないアプリを Samsung が自動でこの一覧に移すため、何もしていないのにアプリが入っていることがあります。</li>
+          <li><strong>自動調整バッテリーを確かめます。</strong>Pixel では<strong>「設定」&rarr;「バッテリー」&rarr;「バッテリー セーバー」&rarr;「自動調整バッテリー」</strong>にあります。よく使うアプリを学習してほかのアプリを制限する機能で、Google も通知が遅れることがあると説明しています。Google はオンのままにすることをすすめています。1日だけオフにしてみると原因かどうかがわかり、原因だったときは、オフにしておくより、前の手順でそのアプリを「制限なし」にするほうがよい解決になります。</li>
+          <li><strong>Doze で少しずれることを知っておきます。</strong>Doze にはオンとオフのスイッチがありません。画面が消えたままスマートフォンを置いておくと、Android はふつうのアラームを次のメンテナンスの時間まで待たせ、置いたままの時間が長いほど、その間隔は広がっていきます。目覚まし時計のように分単位で鳴る必要のあるアプリは、Android に正確なアラームを求めます。そうしないアプリも多く、その通知は予定より少し遅れて届くことがあります。スマートフォンを手に取ったり充電を始めたりすると Doze は終わるので、遅れていた通知が、見た瞬間に届くことがよくあります。</li>
+          <li><strong>Samsung の自動再起動を確かめます。</strong>Galaxy では<strong>「設定」&rarr;「デバイスケア」&rarr;「自動最適化」&rarr;「自動再起動」</strong>を開きます。使っていないあいだにスマートフォンを再起動し、バックグラウンドのアプリを閉じる機能です。再起動のあと、スマートフォンの中で通知の予定を立てるアプリは、ロックを解除するまで予定を立て直せないため、それまでに届くはずだった通知は待たされます。<strong>「スケジュールどおりに再起動」</strong>をオフにするか、何も届かない時間帯に設定してください。</li>
+          <li><strong>Xiaomi、Huawei、OnePlus などでは、アプリの自動起動を許可します。</strong>Android よりも強くアプリを止めるメーカーがあります。設定のアプリのページや、スマートフォンのバッテリー設定で、自動起動などの名前のスイッチを探してオンにし、アプリのバッテリーを制限なしにします。こうした機種の一部では、最近使ったアプリの画面からアプリをスワイプして消すと完全に停止します。機種にその機能があれば、最近使ったアプリの画面でアプリをロックしておくと防げます。<a href="https://dontkillmyapp.com/" rel="noopener">Don't kill my app!</a> に、メーカーごとの設定がまとめられています（英語）。</li>
+          <li><strong>アプリを強制停止せず、一度開きます。</strong><strong>「設定」&rarr;「アプリ」</strong>のアプリのページにある<strong>「強制停止」</strong>を使うと、次にアプリを開くまで、予定されていたものがすべて取り消されます。使ったときは、アプリを一度開いてください。また、数か月開いていないアプリを Android が一時停止することもあります。通知を受け取りたいアプリは、同じページの<strong>「使用していない時はアプリを一時停止する」</strong>をオフにしてください。</li>
+          <li><strong>スマートフォンを再起動し、Android とアプリを更新します。</strong>再起動で、止まっていた通知の仕組みが動き出すことは意外と多く、通知の不具合は、両方の更新で直されていきます。</li>
+        </ol>
+      </section>
+
+      <section id="symptoms">
+        <h2>症状から探す</h2>
+        <h3>届くけれど遅れる。とくに、スマートフォンを置いたままにしたあと</h3>
+        <p>スマートフォンがバッテリーを節約しています。Doze、バッテリー セーバー、アプリのバッテリー設定のどれかです。対処法の3から6を試し、Pixel ではアプリを「制限なし」に、Galaxy ではスリープさせないアプリの一覧に入れてください。</p>
+
+        <h3>手に取ると、いくつかがまとめて届く</h3>
+        <p>スマートフォンが眠っているあいだ止められていた通知が、目を覚ましたときにまとめて出てきています。同じ対処法が効きます。まずはアプリのバッテリー設定からです。</p>
+
+        <h3>通知シェードには入っているのに、音もバナーもない</h3>
+        <p>アプリのカテゴリが<strong>「サイレント」</strong>になっています。アプリの<strong>「通知」</strong>のページでカテゴリをタップし、知らせてくれる設定を選んでください。機種に画面へのポップアップ表示の設定があれば、それも許可します。</p>
+
+        <h3>再起動やアップデートのあと、または数週間アプリを開かなかったあとに届かなくなった</h3>
+        <p>アプリを一度開いて、予定を立て直させてください。そのうえで、スマートフォンがアプリを眠らせていないか確かめます。Samsung のスリープの一覧や、アプリのページの<strong>「使用していない時はアプリを一時停止する」</strong>です。</p>
+      </section>
+
+      <section id="dailies">
+        <h2>Dailies の通知</h2>
+        <p>遅れているのが <a href="/ja/">Dailies</a> なら、Android ならではの次のことも知っておいてください。</p>
+        <ul>
+          <li><strong>言葉には専用のカテゴリがあります。</strong><strong>「設定」&rarr;「アプリ」&rarr;「Dailies」&rarr;「通知」</strong>（場所は機種によって異なります）で、通知が許可されていて、<strong>「毎日の言葉」</strong>のカテゴリがオンになっているか確かめてください。届いたことを音で知りたいなら、サイレントになっていないかも確かめます。</li>
+          <li><strong>言葉は、自分で選んだ時間帯のなかに届きます。</strong><strong>「カスタマイズ」&rarr;「1日に届く言葉」</strong>を開くと、1日にいくつ届くか、届いてもいい時間帯、届く曜日を確かめられます。時間帯が午前9時から午後5時で、いまが午前8時なら、まだ届く時間ではありません。時間帯のなかでは、自分で選んだのではない瞬間に届きます。これは意図してそうしています。</li>
+          <li><strong>予定はスマートフォンの中で立てています。</strong>Dailies は、インターネットを使わずにスマートフォンの中で言葉の予定を立てるので、データセーバーや電波の弱さは関係ありません。</li>
+          <li><strong>言葉が遅れる原因で多いのは、バッテリーの節約です。</strong>バッテリー セーバーや Samsung のスリープの一覧は、言葉を時間帯が終わったあとまで止めてしまったり、届かなくしてしまったりすることがあります。Pixel では<strong>「アプリのバッテリー使用量」</strong>で Dailies を<strong>「制限なし」</strong>に、Galaxy では Dailies をスリープさせないアプリの一覧に追加してください。</li>
+          <li><strong>アプリを開くと、言葉が補充されます。</strong>Dailies は、開くたびに予定を更新します。強制停止したあとや、長いあいだ開いていなかったときは、一度開いてください。次の言葉の予定が立ちます。</li>
+        </ul>
+        <p>それでも届かないときは、<a href="mailto:help@mydailies.app">help@mydailies.app</a> に連絡してください。人が返事をします。<a href="/ja/help/#notifications">ヘルプページ</a>には短くまとめたものがあります。</p>
+      </section>
+
+      <section id="faq">
+        <h2>よくある質問</h2>
+        <div class="faq">
+          <details open><summary>Android の通知が遅れるのはなぜですか？</summary>
+            <div class="details-body">
+              <p>多くの場合、スマートフォンがバッテリーを節約しています。バッテリー セーバー、バッテリー設定が「制限」になっているアプリ、Galaxy では Samsung のスリープの一覧が、通知を止めることがあります。画面が消えたまま置いてあるときは、Doze も次のメンテナンスの時間まで通知を待たせます。</p>
+            </div></details>
+
+          <details><summary>Android の Doze とは何ですか？</summary>
+            <div class="details-body">
+              <p>充電しておらず、動かさず、画面が消えているときに Android が入る、バッテリーを節約する状態です。バックグラウンドの処理をほぼ止め、短いメンテナンスの時間にだけアプリに遅れを取り戻させます。置いたままの時間が長いほど、その時間は少なくなります。スマートフォンを動かす、画面をつける、充電を始めると終わります。</p>
+            </div></details>
+
+          <details><summary>アプリのバッテリー使用量は「制限なし」にしたほうがいいですか？</summary>
+            <div class="details-body">
+              <p>時間どおりに届いてほしい、いくつかのアプリだけで十分です。Google はほとんどのアプリに「最適化」をすすめていて、「制限なし」はバッテリーを多く使うことがあります。通知を時間どおりに受け取りたいアプリなら、「制限なし」が通知を通す設定です。</p>
+            </div></details>
+
+          <details><summary>データセーバーで通知は遅れますか？</summary>
+            <div class="details-body">
+              <p>データセーバーは、アプリがバックグラウンドで使うモバイルデータを制限する機能です。アプリがスマートフォンの中で予定を立てる通知にはデータが要らないので、データセーバーで止まることはありません。</p>
+            </div></details>
+
+          <details><summary>アプリをスワイプして消すと通知が来なくなるのはなぜですか？</summary>
+            <div class="details-body">
+              <p>Xiaomi、Huawei、OnePlus の一部の機種などでは、最近使ったアプリの画面からアプリを消すと、予定されていたものも含めて、アプリが完全に停止します。スマートフォンの設定でアプリの自動起動を許可するか、最近使ったアプリの画面でロックしておき、一度アプリを開いて予定を立て直させてください。</p>
+            </div></details>
+
+          <details><summary>Pixel のサイレント モードはどこへ行きましたか？</summary>
+            <div class="details-body">
+              <p>Android 15 以降の Pixel では、サイレント モードは「設定」の「モード」にあり、おやすみ時間などのほかのモードと並んでいます。モードごとに、通知を通すアプリのリストがあります。</p>
+            </div></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <div class="social">
+      <a href="https://www.tiktok.com/@mydailies.app" aria-label="TikTok" title="TikTok" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#tiktok"/></svg></a>
+      <a href="https://www.instagram.com/mydailies.app/" aria-label="Instagram" title="Instagram" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#instagram"/></svg></a>
+      <a href="https://www.facebook.com/mydailiesapp" aria-label="Facebook" title="Facebook" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#facebook"/></svg></a>
+      <a href="https://www.youtube.com/@mydailiesapp" aria-label="YouTube" title="YouTube" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#youtube"/></svg></a>
+      <a href="https://www.pinterest.com/mydailiesapp/" aria-label="Pinterest" title="Pinterest" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#pinterest"/></svg></a>
+      <a href="https://www.linkedin.com/company/mydailiesapp/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#linkedin"/></svg></a>
+    </div>
+    <nav>
+      <a href="/ja/">ホーム</a>
+      <a href="/ja/compare/">比較</a>
+      <a href="/ja/about/">Dailies について</a>
+      <a href="/press/" hreflang="en">プレス</a>
+      <a href="/terms/" hreflang="en">利用規約</a>
+      <a href="/privacy/" hreflang="en">プライバシーポリシー</a>
+      <a href="/cookies/" hreflang="en">Cookie ポリシー</a>
+      <a href="#" data-cookie-settings>Cookie 設定</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","inLanguage":"ja","name":"Android の通知が遅れる、届かないときの直し方","description":"Android で遅れる通知、届かない通知の対処法を、試す価値のある順に紹介します。","totalTime":"PT15M","author":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/ja/about/"},"supply":[{"@type":"HowToSupply","name":"Android スマートフォン"}],"step":[
+{"@type":"HowToStep","name":"アプリの通知とカテゴリを確かめます","text":"「設定」→「アプリ」を開いてアプリをタップし（一覧にないときは、すべてのアプリを表示して探します）、「通知」をタップします。「アプリ名 のすべての通知」がオンになっているか確かめ、その下のカテゴリもひとつずつ見てください。アプリが許可されていても、気になるカテゴリだけがオフだったり、「サイレント」になっていたりすることがあります。サイレントのカテゴリは、音もバナーもなしに通知シェードに入るだけです。"},
+{"@type":"HowToStep","name":"サイレント モードとモードを確かめます","text":"下にスワイプしてクイック設定を開き、サイレント モードやオンになっているモードをオフにします。モードはそのままでアプリだけ通したいときは、「設定」→「モード」を開いてモードをタップし、通知の設定で「アプリ」を選んでアプリを追加します。古いバージョンの Android では、サイレント モードは「設定」→「通知」か「音」にあります。モードが何度もオンに戻るときは、スケジュールを確かめてください。"},
+{"@type":"HowToStep","name":"バッテリー セーバーをオフにします","text":"「設定」→「バッテリー」→「バッテリー セーバー」を開いてオフにし、スケジュールで自動的にオンに戻らないかも確かめます。Galaxy では、「設定」→「バッテリー」の「省電力モード」です。オンのあいだはバックグラウンドの処理が減るため、アプリが予定していた通知が遅れることがあります。"},
+{"@type":"HowToStep","name":"アプリがバックグラウンドで動けるようにします","text":"Pixel では「設定」→「アプリ」を開いてアプリをタップし、「アプリのバッテリー使用量」を開きます。「バックグラウンドでの使用を許可」をオンにしてからタップし、「制限なし」を選びます。「最適化」が初期設定で、たいていのアプリはこれで十分ですが、「制限」は通知を止めてしまう設定です。Galaxy では「設定」→「バッテリー」→「バックグラウンドでの使用を制限」を開きます（機種によってはデバイスケアの中にあります）。スリープ中のアプリとディープスリープ中のアプリの一覧からアプリを外し、プラスのボタンで、スリープさせないアプリの一覧に追加します。使っていないアプリを自動でスリープさせる設定がオンだと、しばらく開いていないアプリを Samsung が自動でこの一覧に移すため、何もしていないのにアプリが入っていることがあります。"},
+{"@type":"HowToStep","name":"自動調整バッテリーを確かめます","text":"Pixel では「設定」→「バッテリー」→「バッテリー セーバー」→「自動調整バッテリー」にあります。よく使うアプリを学習してほかのアプリを制限する機能で、Google も通知が遅れることがあると説明しています。Google はオンのままにすることをすすめています。1日だけオフにしてみると原因かどうかがわかり、原因だったときは、オフにしておくより、前の手順でそのアプリを「制限なし」にするほうがよい解決になります。"},
+{"@type":"HowToStep","name":"Doze で少しずれることを知っておきます","text":"Doze にはオンとオフのスイッチがありません。画面が消えたままスマートフォンを置いておくと、Android はふつうのアラームを次のメンテナンスの時間まで待たせ、置いたままの時間が長いほど、その間隔は広がっていきます。目覚まし時計のように分単位で鳴る必要のあるアプリは、Android に正確なアラームを求めます。そうしないアプリも多く、その通知は予定より少し遅れて届くことがあります。スマートフォンを手に取ったり充電を始めたりすると Doze は終わるので、遅れていた通知が、見た瞬間に届くことがよくあります。"},
+{"@type":"HowToStep","name":"Samsung の自動再起動を確かめます","text":"Galaxy では「設定」→「デバイスケア」→「自動最適化」→「自動再起動」を開きます。使っていないあいだにスマートフォンを再起動し、バックグラウンドのアプリを閉じる機能です。再起動のあと、スマートフォンの中で通知の予定を立てるアプリは、ロックを解除するまで予定を立て直せないため、それまでに届くはずだった通知は待たされます。「スケジュールどおりに再起動」をオフにするか、何も届かない時間帯に設定してください。"},
+{"@type":"HowToStep","name":"Xiaomi、Huawei、OnePlus などでは、アプリの自動起動を許可します","text":"Android よりも強くアプリを止めるメーカーがあります。設定のアプリのページや、スマートフォンのバッテリー設定で、自動起動などの名前のスイッチを探してオンにし、アプリのバッテリーを制限なしにします。こうした機種の一部では、最近使ったアプリの画面からアプリをスワイプして消すと完全に停止します。機種にその機能があれば、最近使ったアプリの画面でアプリをロックしておくと防げます。Don't kill my app! に、メーカーごとの設定がまとめられています（英語）。"},
+{"@type":"HowToStep","name":"アプリを強制停止せず、一度開きます","text":"「設定」→「アプリ」のアプリのページにある「強制停止」を使うと、次にアプリを開くまで、予定されていたものがすべて取り消されます。使ったときは、アプリを一度開いてください。また、数か月開いていないアプリを Android が一時停止することもあります。通知を受け取りたいアプリは、同じページの「使用していない時はアプリを一時停止する」をオフにしてください。"},
+{"@type":"HowToStep","name":"スマートフォンを再起動し、Android とアプリを更新します","text":"再起動で、止まっていた通知の仕組みが動き出すことは意外と多く、通知の不具合は、両方の更新で直されていきます。"}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[
+{"@type":"Question","name":"Android の通知が遅れるのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"多くの場合、スマートフォンがバッテリーを節約しています。バッテリー セーバー、バッテリー設定が「制限」になっているアプリ、Galaxy では Samsung のスリープの一覧が、通知を止めることがあります。画面が消えたまま置いてあるときは、Doze も次のメンテナンスの時間まで通知を待たせます。"}},
+{"@type":"Question","name":"Android の Doze とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"充電しておらず、動かさず、画面が消えているときに Android が入る、バッテリーを節約する状態です。バックグラウンドの処理をほぼ止め、短いメンテナンスの時間にだけアプリに遅れを取り戻させます。置いたままの時間が長いほど、その時間は少なくなります。スマートフォンを動かす、画面をつける、充電を始めると終わります。"}},
+{"@type":"Question","name":"アプリのバッテリー使用量は「制限なし」にしたほうがいいですか？","acceptedAnswer":{"@type":"Answer","text":"時間どおりに届いてほしい、いくつかのアプリだけで十分です。Google はほとんどのアプリに「最適化」をすすめていて、「制限なし」はバッテリーを多く使うことがあります。通知を時間どおりに受け取りたいアプリなら、「制限なし」が通知を通す設定です。"}},
+{"@type":"Question","name":"データセーバーで通知は遅れますか？","acceptedAnswer":{"@type":"Answer","text":"データセーバーは、アプリがバックグラウンドで使うモバイルデータを制限する機能です。アプリがスマートフォンの中で予定を立てる通知にはデータが要らないので、データセーバーで止まることはありません。"}},
+{"@type":"Question","name":"アプリをスワイプして消すと通知が来なくなるのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"Xiaomi、Huawei、OnePlus の一部の機種などでは、最近使ったアプリの画面からアプリを消すと、予定されていたものも含めて、アプリが完全に停止します。スマートフォンの設定でアプリの自動起動を許可するか、最近使ったアプリの画面でロックしておき、一度アプリを開いて予定を立て直させてください。"}},
+{"@type":"Question","name":"Pixel のサイレント モードはどこへ行きましたか？","acceptedAnswer":{"@type":"Answer","text":"Android 15 以降の Pixel では、サイレント モードは「設定」の「モード」にあり、おやすみ時間などのほかのモードと並んでいます。モードごとに、通知を通すアプリのリストがあります。"}}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://mydailies.app/ja/"},{"@type":"ListItem","position":2,"name":"ガイド","item":"https://mydailies.app/ja/guides/"},{"@type":"ListItem","position":3,"name":"Android の通知が遅れる、届かないときの対処法","item":"https://mydailies.app/ja/guides/android-notifications-delayed/"}]}
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

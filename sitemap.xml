@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/help/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/help/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/ayuda/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/ajuda/"/>
@@ -35,7 +35,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/quotes-on-your-iphone-lock-screen/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quotes-on-your-iphone-lock-screen/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/frases-en-la-pantalla-de-bloqueo-del-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/frases-na-tela-bloqueada-do-iphone/"/>
@@ -68,7 +68,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/focus-lock-screen-iphone/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/focus-lock-screen-iphone/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/concentracion-pantalla-de-bloqueo-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/foco-tela-bloqueada-iphone/"/>
@@ -90,7 +90,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/iphone-notifications-not-working/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-notifications-not-working/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/no-me-llegan-las-notificaciones-del-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-iphone-nao-chegam/"/>
@@ -101,7 +101,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/customize-iphone-lock-screen/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/customize-iphone-lock-screen/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/personalizar-la-pantalla-de-bloqueo-del-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/personalizar-a-tela-bloqueada-do-iphone/"/>
@@ -134,11 +134,18 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/christmas-lock-screen-ideas/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/christmas-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/ideas-de-pantalla-de-bloqueo-navidena/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ideias-de-tela-bloqueada-de-natal/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/idees-d-ecran-verrouille-de-noel/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/weihnachtliche-sperrbildschirm-ideen/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/christmas-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/christmas-lock-screen-ideas/"/>
   </url>
   <url>
     <loc>https://mydailies.app/guides/iphone-lock-screen-ideas/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/ideas-para-la-pantalla-de-bloqueo-del-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ideias-para-a-tela-bloqueada-do-iphone/"/>
@@ -160,7 +167,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/guides/turn-on-notifications-iphone/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/activar-las-notificaciones-de-una-app-en-el-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ativar-notificacoes-de-um-app-no-iphone/"/>
@@ -170,8 +177,52 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/guides/iphone-notification-banner-style/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-notification-banner-style/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/estilo-de-tira-de-notificaciones-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/estilo-do-banner-de-notificacoes-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/style-des-bannieres-de-notifications-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/bannerstil-mitteilungen-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/iphone-notification-banner-style/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-notification-banner-style/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/guides/add-a-widget-on-android/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-a-widget-on-android/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-un-widget-en-android/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-um-widget-no-android/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/ajouter-un-widget-sur-android/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/widget-hinzufuegen-android/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/add-a-widget-on-android/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-a-widget-on-android/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/guides/quotes-on-your-android-home-screen/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quotes-on-your-android-home-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/frases-en-la-pantalla-de-inicio-de-android/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/frases-na-tela-inicial-do-android/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/citations-sur-l-ecran-d-accueil-android/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/zitate-auf-dem-android-startbildschirm/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/quotes-on-your-android-home-screen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/quotes-on-your-android-home-screen/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/guides/android-notifications-delayed/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/android-notifications-delayed/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/notificaciones-de-android-llegan-tarde/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-android-atrasadas/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/notifications-android-en-retard/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/android-benachrichtigungen-kommen-spaet/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/android-notifications-delayed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/android-notifications-delayed/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/guides/change-or-delete-lock-screen-iphone/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/change-or-delete-lock-screen-iphone/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/cambiar-o-borrar-la-pantalla-de-bloqueo-del-iphone/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/mudar-ou-apagar-a-tela-bloqueada-do-iphone/"/>
@@ -614,7 +665,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/ayuda/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/help/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/ayuda/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/ajuda/"/>
@@ -625,7 +676,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/guias/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -734,6 +785,17 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/es/guias/ideas-de-pantalla-de-bloqueo-navidena/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/christmas-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/ideas-de-pantalla-de-bloqueo-navidena/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ideias-de-tela-bloqueada-de-natal/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/idees-d-ecran-verrouille-de-noel/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/weihnachtliche-sperrbildschirm-ideen/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/christmas-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/christmas-lock-screen-ideas/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/es/guias/ideas-para-la-pantalla-de-bloqueo-del-iphone/</loc>
     <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
@@ -765,6 +827,50 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/turn-on-notifications-iphone/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/guias/estilo-de-tira-de-notificaciones-del-iphone/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-notification-banner-style/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/estilo-de-tira-de-notificaciones-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/estilo-do-banner-de-notificacoes-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/style-des-bannieres-de-notifications-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/bannerstil-mitteilungen-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/iphone-notification-banner-style/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-notification-banner-style/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/guias/agregar-un-widget-en-android/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-a-widget-on-android/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-un-widget-en-android/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-um-widget-no-android/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/ajouter-un-widget-sur-android/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/widget-hinzufuegen-android/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/add-a-widget-on-android/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-a-widget-on-android/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/guias/frases-en-la-pantalla-de-inicio-de-android/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quotes-on-your-android-home-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/frases-en-la-pantalla-de-inicio-de-android/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/frases-na-tela-inicial-do-android/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/citations-sur-l-ecran-d-accueil-android/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/zitate-auf-dem-android-startbildschirm/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/quotes-on-your-android-home-screen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/quotes-on-your-android-home-screen/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/guias/notificaciones-de-android-llegan-tarde/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/android-notifications-delayed/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/notificaciones-de-android-llegan-tarde/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-android-atrasadas/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/notifications-android-en-retard/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/android-benachrichtigungen-kommen-spaet/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/android-notifications-delayed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/android-notifications-delayed/"/>
   </url>
   <url>
     <loc>https://mydailies.app/es/guias/cambiar-o-borrar-la-pantalla-de-bloqueo-del-iphone/</loc>
@@ -823,7 +929,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/es/blog/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/"/>
@@ -897,6 +1003,10 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/blog/motivierende-zitate-fuer-schwere-zeiten/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/blog/motivational-quotes-for-hard-times/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/motivational-quotes-for-hard-times/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/es/blog/frases-para-una-semana-dificil/</loc>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://mydailies.app/es/blog/frases-para-cuando-dudas-de-ti/</loc>
@@ -1175,7 +1285,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/ajuda/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/help/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/ayuda/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/ajuda/"/>
@@ -1186,7 +1296,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/guias/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -1295,6 +1405,17 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/pt/guias/ideias-de-tela-bloqueada-de-natal/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/christmas-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/ideas-de-pantalla-de-bloqueo-navidena/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ideias-de-tela-bloqueada-de-natal/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/idees-d-ecran-verrouille-de-noel/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/weihnachtliche-sperrbildschirm-ideen/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/christmas-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/christmas-lock-screen-ideas/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/pt/guias/ideias-para-a-tela-bloqueada-do-iphone/</loc>
     <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
@@ -1326,6 +1447,50 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/turn-on-notifications-iphone/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/guias/estilo-do-banner-de-notificacoes-do-iphone/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-notification-banner-style/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/estilo-de-tira-de-notificaciones-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/estilo-do-banner-de-notificacoes-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/style-des-bannieres-de-notifications-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/bannerstil-mitteilungen-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/iphone-notification-banner-style/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-notification-banner-style/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/guias/adicionar-um-widget-no-android/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-a-widget-on-android/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-un-widget-en-android/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-um-widget-no-android/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/ajouter-un-widget-sur-android/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/widget-hinzufuegen-android/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/add-a-widget-on-android/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-a-widget-on-android/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/guias/frases-na-tela-inicial-do-android/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quotes-on-your-android-home-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/frases-en-la-pantalla-de-inicio-de-android/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/frases-na-tela-inicial-do-android/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/citations-sur-l-ecran-d-accueil-android/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/zitate-auf-dem-android-startbildschirm/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/quotes-on-your-android-home-screen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/quotes-on-your-android-home-screen/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/guias/notificacoes-do-android-atrasadas/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/android-notifications-delayed/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/notificaciones-de-android-llegan-tarde/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-android-atrasadas/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/notifications-android-en-retard/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/android-benachrichtigungen-kommen-spaet/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/android-notifications-delayed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/android-notifications-delayed/"/>
   </url>
   <url>
     <loc>https://mydailies.app/pt/guias/mudar-ou-apagar-a-tela-bloqueada-do-iphone/</loc>
@@ -1384,7 +1549,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/pt/blog/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/blog/"/>
@@ -1458,6 +1623,10 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/blog/motivierende-zitate-fuer-schwere-zeiten/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/blog/motivational-quotes-for-hard-times/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/blog/motivational-quotes-for-hard-times/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/pt/blog/falta-de-motivacao/</loc>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://mydailies.app/pt/blog/frases-para-quando-voce-duvida-de-si/</loc>
@@ -1736,7 +1905,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/fr/aide/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/help/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/ayuda/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/ajuda/"/>
@@ -1747,7 +1916,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/fr/guides/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -1856,6 +2025,17 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/fr/guides/idees-d-ecran-verrouille-de-noel/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/christmas-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/ideas-de-pantalla-de-bloqueo-navidena/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ideias-de-tela-bloqueada-de-natal/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/idees-d-ecran-verrouille-de-noel/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/weihnachtliche-sperrbildschirm-ideen/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/christmas-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/christmas-lock-screen-ideas/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/fr/guides/idees-d-ecran-verrouille-iphone/</loc>
     <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
@@ -1887,6 +2067,50 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/turn-on-notifications-iphone/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/fr/guides/style-des-bannieres-de-notifications-iphone/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-notification-banner-style/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/estilo-de-tira-de-notificaciones-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/estilo-do-banner-de-notificacoes-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/style-des-bannieres-de-notifications-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/bannerstil-mitteilungen-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/iphone-notification-banner-style/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-notification-banner-style/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/fr/guides/ajouter-un-widget-sur-android/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-a-widget-on-android/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-un-widget-en-android/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-um-widget-no-android/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/ajouter-un-widget-sur-android/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/widget-hinzufuegen-android/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/add-a-widget-on-android/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-a-widget-on-android/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/fr/guides/citations-sur-l-ecran-d-accueil-android/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quotes-on-your-android-home-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/frases-en-la-pantalla-de-inicio-de-android/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/frases-na-tela-inicial-do-android/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/citations-sur-l-ecran-d-accueil-android/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/zitate-auf-dem-android-startbildschirm/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/quotes-on-your-android-home-screen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/quotes-on-your-android-home-screen/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/fr/guides/notifications-android-en-retard/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/android-notifications-delayed/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/notificaciones-de-android-llegan-tarde/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-android-atrasadas/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/notifications-android-en-retard/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/android-benachrichtigungen-kommen-spaet/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/android-notifications-delayed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/android-notifications-delayed/"/>
   </url>
   <url>
     <loc>https://mydailies.app/fr/guides/changer-ou-supprimer-l-ecran-verrouille-iphone/</loc>
@@ -2297,7 +2521,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/de/hilfe/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/help/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/ayuda/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/ajuda/"/>
@@ -2308,7 +2532,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/de/anleitungen/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -2417,6 +2641,17 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/de/anleitungen/weihnachtliche-sperrbildschirm-ideen/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/christmas-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/ideas-de-pantalla-de-bloqueo-navidena/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ideias-de-tela-bloqueada-de-natal/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/idees-d-ecran-verrouille-de-noel/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/weihnachtliche-sperrbildschirm-ideen/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/christmas-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/christmas-lock-screen-ideas/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-ideen/</loc>
     <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
@@ -2448,6 +2683,50 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/turn-on-notifications-iphone/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/de/anleitungen/bannerstil-mitteilungen-iphone/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-notification-banner-style/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/estilo-de-tira-de-notificaciones-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/estilo-do-banner-de-notificacoes-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/style-des-bannieres-de-notifications-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/bannerstil-mitteilungen-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/iphone-notification-banner-style/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-notification-banner-style/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/de/anleitungen/widget-hinzufuegen-android/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-a-widget-on-android/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-un-widget-en-android/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-um-widget-no-android/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/ajouter-un-widget-sur-android/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/widget-hinzufuegen-android/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/add-a-widget-on-android/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-a-widget-on-android/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/de/anleitungen/zitate-auf-dem-android-startbildschirm/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quotes-on-your-android-home-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/frases-en-la-pantalla-de-inicio-de-android/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/frases-na-tela-inicial-do-android/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/citations-sur-l-ecran-d-accueil-android/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/zitate-auf-dem-android-startbildschirm/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/quotes-on-your-android-home-screen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/quotes-on-your-android-home-screen/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/de/anleitungen/android-benachrichtigungen-kommen-spaet/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/android-notifications-delayed/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/notificaciones-de-android-llegan-tarde/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-android-atrasadas/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/notifications-android-en-retard/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/android-benachrichtigungen-kommen-spaet/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/android-notifications-delayed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/android-notifications-delayed/"/>
   </url>
   <url>
     <loc>https://mydailies.app/de/anleitungen/iphone-sperrbildschirm-aendern-oder-loeschen/</loc>
@@ -2858,7 +3137,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/ja/help/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/help/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/ayuda/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/ajuda/"/>
@@ -2869,7 +3148,7 @@
   </url>
   <url>
     <loc>https://mydailies.app/ja/guides/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/"/>
@@ -2978,6 +3257,17 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/"/>
   </url>
   <url>
+    <loc>https://mydailies.app/ja/guides/christmas-lock-screen-ideas/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/christmas-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/ideas-de-pantalla-de-bloqueo-navidena/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/ideias-de-tela-bloqueada-de-natal/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/idees-d-ecran-verrouille-de-noel/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/weihnachtliche-sperrbildschirm-ideen/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/christmas-lock-screen-ideas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/christmas-lock-screen-ideas/"/>
+  </url>
+  <url>
     <loc>https://mydailies.app/ja/guides/iphone-lock-screen-ideas/</loc>
     <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-lock-screen-ideas/"/>
@@ -3009,6 +3299,50 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/mitteilungen-fuer-eine-app-aktivieren-iphone/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/turn-on-notifications-iphone/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/turn-on-notifications-iphone/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/ja/guides/iphone-notification-banner-style/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-notification-banner-style/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/estilo-de-tira-de-notificaciones-del-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/estilo-do-banner-de-notificacoes-do-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/style-des-bannieres-de-notifications-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/bannerstil-mitteilungen-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/iphone-notification-banner-style/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-notification-banner-style/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/ja/guides/add-a-widget-on-android/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-a-widget-on-android/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-un-widget-en-android/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-um-widget-no-android/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/ajouter-un-widget-sur-android/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/widget-hinzufuegen-android/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/add-a-widget-on-android/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-a-widget-on-android/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/ja/guides/quotes-on-your-android-home-screen/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/quotes-on-your-android-home-screen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/frases-en-la-pantalla-de-inicio-de-android/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/frases-na-tela-inicial-do-android/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/citations-sur-l-ecran-d-accueil-android/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/zitate-auf-dem-android-startbildschirm/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/quotes-on-your-android-home-screen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/quotes-on-your-android-home-screen/"/>
+  </url>
+  <url>
+    <loc>https://mydailies.app/ja/guides/android-notifications-delayed/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydailies.app/guides/android-notifications-delayed/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/notificaciones-de-android-llegan-tarde/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-android-atrasadas/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/notifications-android-en-retard/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/android-benachrichtigungen-kommen-spaet/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/android-notifications-delayed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/android-notifications-delayed/"/>
   </url>
   <url>
     <loc>https://mydailies.app/ja/guides/change-or-delete-lock-screen-iphone/</loc>
