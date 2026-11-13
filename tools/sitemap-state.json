@@ -156,8 +156,8 @@
     "sig": "8158eae1acfb06acf92cb155a0c99ef8c92d6ee95010ec6d1f896aee71b75bf4"
   },
   "/de/anleitungen/": {
-    "lastmod": "2026-11-12",
-    "sig": "4c6940cd3d6cea08280a8e32b79a7892d0e367867177e9801e6f8ab7daf73ec1"
+    "lastmod": "2026-11-13",
+    "sig": "9f5ecf4e2f0420699ebd1dc3ae325c8f38f373f1a15c6c7bc0686e5e45dce308"
   },
   "/de/anleitungen/aesthetic-zitat-widget-iphone/": {
     "lastmod": "2026-11-12",
@@ -166,6 +166,14 @@
   "/de/anleitungen/affirmationen-auf-dem-iphone-sperrbildschirm/": {
     "lastmod": "2026-11-12",
     "sig": "913c476c130fb22b35bda9911d68d1f881f97a80d9343ddc3adf2b517991f7d7"
+  },
+  "/de/anleitungen/android-benachrichtigungen-kommen-spaet/": {
+    "lastmod": "2026-11-13",
+    "sig": "f534a2036503f0e87be77686a21269130d9fe1731307e893f3a181154262be2a"
+  },
+  "/de/anleitungen/bannerstil-mitteilungen-iphone/": {
+    "lastmod": "2026-11-13",
+    "sig": "b70a36bb1c613f26e07e718d962937b1c8ea972430f3d822069f3a5caebb96e0"
   },
   "/de/anleitungen/bibelvers-auf-dem-iphone-sperrbildschirm/": {
     "lastmod": "2026-11-12",
@@ -211,6 +219,14 @@
     "lastmod": "2026-11-12",
     "sig": "c3c1288473c299b2fa9698b5c87aa4fc004bafa9825989835c8b093c325e6e2e"
   },
+  "/de/anleitungen/weihnachtliche-sperrbildschirm-ideen/": {
+    "lastmod": "2026-11-13",
+    "sig": "092fd5a52a53eb09a10d8593920e5cbe0199851e6732788607450dea7230a065"
+  },
+  "/de/anleitungen/widget-hinzufuegen-android/": {
+    "lastmod": "2026-11-13",
+    "sig": "bd080bd46766324632e757ff5a940cdda1998c5713ee7ddc29f21311f1b5c83b"
+  },
   "/de/anleitungen/widget-zum-home-bildschirm-hinzufuegen/": {
     "lastmod": "2026-11-12",
     "sig": "3ef3789f481a9627b1d68b3b5eeddbb02d28062a4cc510b2ced2330d51ab6b2e"
@@ -222,6 +238,10 @@
   "/de/anleitungen/zitat-hintergrundbild-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "de73128b7cebd0942dae3c788f80b3a577cf711388aa69bf26266d9cf3dd343b"
+  },
+  "/de/anleitungen/zitate-auf-dem-android-startbildschirm/": {
+    "lastmod": "2026-11-13",
+    "sig": "15b03b726591258d1f448a18999822f636561bb5f03fc4f46a485b896ec03997"
   },
   "/de/anleitungen/zitate-auf-dem-iphone-sperrbildschirm/": {
     "lastmod": "2026-11-12",
@@ -296,8 +316,8 @@
     "sig": "80c085a13e7c56cc9cb305ba04b291cee4bc6db04ffe477ba83909609a9dfa0e"
   },
   "/de/hilfe/": {
-    "lastmod": "2026-11-12",
-    "sig": "41f51dd4863045fcb1d02e6fe91cec9ee4c6d88324002c8804beac4adc7d120e"
+    "lastmod": "2026-11-13",
+    "sig": "7cdc08f7c9894693d678385c6ab69b9f992a6391ce922d63d312adcd5301d86b"
   },
   "/de/ueber/": {
     "lastmod": "2026-11-12",
@@ -364,12 +384,12 @@
     "sig": "b4ccd32d3ba8ff9372a2f3fb7593b818bdce02151f8c8e0db0998e90b94cc07c"
   },
   "/es/ayuda/": {
-    "lastmod": "2026-11-12",
-    "sig": "5d4d87aa4a47c6d8e0faf475459be9fdbedfa339dfc3580e8fdd143bc4c4d8ed"
+    "lastmod": "2026-11-13",
+    "sig": "2926894f6bbab167dbff580710cec6cd7c884080966cd8d1a0280251e23eb5ba"
   },
   "/es/blog/": {
-    "lastmod": "2026-11-12",
-    "sig": "5a849074fc9759e7f99c6396aa35fb76a1203f7ee242a46a68b58a0b37406f56"
+    "lastmod": "2026-11-13",
+    "sig": "d7b5bd41b127ef1a5a862cac9f81201555baae209eb4b61683f6fd901cadca75"
   },
   "/es/blog/como-dejar-de-procrastinar/": {
     "lastmod": "2026-11-12",
@@ -422,6 +442,10 @@
   "/es/blog/frases-para-la-ansiedad-y-el-sobrepensamiento/": {
     "lastmod": "2026-11-12",
     "sig": "06c757886e538fcf7fd6c5f68fe13a1edae715c661635d383d62755f43f35c38"
+  },
+  "/es/blog/frases-para-una-semana-dificil/": {
+    "lastmod": "2026-11-13",
+    "sig": "f35c8df3bbc7d6c99d23f5c4e5cdea5f2711c10675267f34571d0121653d5e48"
   },
   "/es/blog/funcionan-las-afirmaciones/": {
     "lastmod": "2026-11-12",
@@ -488,8 +512,8 @@
     "sig": "a5b18654aeca7d56ebeba8862f5cb6e362453501ab1cbc87bf7113c270317d48"
   },
   "/es/guias/": {
-    "lastmod": "2026-11-12",
-    "sig": "1acaaf13540aa736fdbff52bc3af18645136df74e73a6b158a1ca7544716fb98"
+    "lastmod": "2026-11-13",
+    "sig": "91599373bc170146d0703f13922504c50b7b8a3dc230f71c9765d7188ed7da98"
   },
   "/es/guias/activar-las-notificaciones-de-una-app-en-el-iphone/": {
     "lastmod": "2026-11-12",
@@ -502,6 +526,10 @@
   "/es/guias/agregar-un-widget-a-la-pantalla-de-inicio/": {
     "lastmod": "2026-11-12",
     "sig": "cb9b5900b57832ba534082bbb734392c12e05e0e62897c0b3cc87133d230ed0a"
+  },
+  "/es/guias/agregar-un-widget-en-android/": {
+    "lastmod": "2026-11-13",
+    "sig": "621f89dcaceff130d21481b45575004c326306002a223d538e964909d9a9c51f"
   },
   "/es/guias/agregar-widgets-en-el-ipad/": {
     "lastmod": "2026-11-12",
@@ -519,6 +547,10 @@
     "lastmod": "2026-11-12",
     "sig": "fa10b8a791ed6341a431d550c78716684cdb168f8e7e3ed79635bd252c55623f"
   },
+  "/es/guias/estilo-de-tira-de-notificaciones-del-iphone/": {
+    "lastmod": "2026-11-13",
+    "sig": "55f1ecc2ea58fbb44f01a303a46a82e753a55b3e26e4ef202764d24cc8d33efd"
+  },
   "/es/guias/fondo-de-pantalla-con-frases-en-el-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "06457d48a865cd2babf8bb8109b56617f7e78b6090052f35229d71f051579e2c"
@@ -526,6 +558,10 @@
   "/es/guias/frases-en-la-pantalla-de-bloqueo-del-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "ee9d0f8f384480de6536ea4e8ef2bd64f6b484d86e14757acf2746d16f170cb1"
+  },
+  "/es/guias/frases-en-la-pantalla-de-inicio-de-android/": {
+    "lastmod": "2026-11-13",
+    "sig": "4f09e6d9a54fe718d34c6a5104e6aaec8e05cac61643940c5a396b9adb2ce991"
   },
   "/es/guias/frases-graciosas-cada-dia-iphone/": {
     "lastmod": "2026-11-12",
@@ -535,6 +571,10 @@
     "lastmod": "2026-11-12",
     "sig": "e74164ea8383659eaf94bee232954d8eeb2caf057bc891c349b07b4e2cb147a1"
   },
+  "/es/guias/ideas-de-pantalla-de-bloqueo-navidena/": {
+    "lastmod": "2026-11-13",
+    "sig": "0a7a4f261582088673837d5c55cbb8fcc78e2e938786ed9befe8608eb5250d64"
+  },
   "/es/guias/ideas-para-la-pantalla-de-bloqueo-del-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "3550c6245c4e766963975588497f9193620667972c14faca6403e5a6ce9d7302"
@@ -542,6 +582,10 @@
   "/es/guias/no-me-llegan-las-notificaciones-del-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "da7e962267f5ee3f9c1a6953cf5281a39a2206769e1815158f2937751eb65054"
+  },
+  "/es/guias/notificaciones-de-android-llegan-tarde/": {
+    "lastmod": "2026-11-13",
+    "sig": "77298df241188b128dc64376897d4a996ac51bf6923f508562701f6041236f11"
   },
   "/es/guias/personalizar-la-pantalla-de-bloqueo-del-iphone/": {
     "lastmod": "2026-11-12",
@@ -568,8 +612,8 @@
     "sig": "a49790d774bceb47fbae139e4d73c2926c4ac24c049093650017a33ad057172f"
   },
   "/fr/aide/": {
-    "lastmod": "2026-11-12",
-    "sig": "da32c5605996098867328450c3f826e4cf65dd0c1d0a9e2a3b314fac58d2cf9a"
+    "lastmod": "2026-11-13",
+    "sig": "9a2b0da91264e1ab8092e5b779a487754381354ee2d3cbdc39436124dbaea373"
   },
   "/fr/blog/": {
     "lastmod": "2026-11-12",
@@ -692,8 +736,8 @@
     "sig": "1dd4e146026c53826924cd3234a5308b078188c6578d74ac8f393c8c27dae760"
   },
   "/fr/guides/": {
-    "lastmod": "2026-11-12",
-    "sig": "e09e43cc3284fd0f36fa358d409768a2d9df35221fcf2c87cc5c14237c817e8f"
+    "lastmod": "2026-11-13",
+    "sig": "fc388aab0006bdfd47d71016b2522e9e0a1d9fba6677336c92344a74961d5d5c"
   },
   "/fr/guides/activer-les-notifications-d-une-app-sur-iphone/": {
     "lastmod": "2026-11-12",
@@ -711,6 +755,10 @@
     "lastmod": "2026-11-12",
     "sig": "6e8610583b4e9944eef5aa56fb2e3d3b539fb88f4543e00a810ecee093059c0a"
   },
+  "/fr/guides/ajouter-un-widget-sur-android/": {
+    "lastmod": "2026-11-13",
+    "sig": "caccaef92949b425966e5229b40317251d24732066714f53c3896a537ac38aa4"
+  },
   "/fr/guides/changer-ou-supprimer-l-ecran-verrouille-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "215b33803608844342e214e69dcec19982342f3e1b5a6db829df103b52f03689"
@@ -722,6 +770,10 @@
   "/fr/guides/citations-motivantes-a-des-heures-aleatoires/": {
     "lastmod": "2026-11-12",
     "sig": "388095ceb5f90f41554f6286fdc3b0300080603ae148789e6a6f754409990726"
+  },
+  "/fr/guides/citations-sur-l-ecran-d-accueil-android/": {
+    "lastmod": "2026-11-13",
+    "sig": "16afcf72cab3f77f45b594c25d78e0b20fd44eae9a003202b51427cc15f81bfd"
   },
   "/fr/guides/citations-sur-l-ecran-verrouille-de-l-iphone/": {
     "lastmod": "2026-11-12",
@@ -739,9 +791,17 @@
     "lastmod": "2026-11-12",
     "sig": "a760e33462ea3a96a46b4e4482cb762ccd8f76aebc661b540cec5d4770300aea"
   },
+  "/fr/guides/idees-d-ecran-verrouille-de-noel/": {
+    "lastmod": "2026-11-13",
+    "sig": "719fec5d0234a70b09ae50e6ef09d43c099d49e3544dbacd1429f3f5519707fe"
+  },
   "/fr/guides/idees-d-ecran-verrouille-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "cd5783ea15e3defb5fffdbfb0469c1329dc0a5935e45c793dce01727ce805e29"
+  },
+  "/fr/guides/notifications-android-en-retard/": {
+    "lastmod": "2026-11-13",
+    "sig": "d24b2f40e4edf9f68dcd13f4d120aeb9110836fbcc7e4c30011da6061253e1bb"
   },
   "/fr/guides/notifications-iphone-ne-fonctionnent-pas/": {
     "lastmod": "2026-11-12",
@@ -750,6 +810,10 @@
   "/fr/guides/personnaliser-l-ecran-verrouille-de-l-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "fc646052d41c12b772335cff177329b369d984ae4e1e0503fa3d7ec3578b24ed"
+  },
+  "/fr/guides/style-des-bannieres-de-notifications-iphone/": {
+    "lastmod": "2026-11-13",
+    "sig": "eb3e3d32b59fd2d1f397e559cf83d738133ee3d4c0c003d1a0452f5116206754"
   },
   "/fr/guides/verset-biblique-sur-l-ecran-verrouille-de-l-iphone/": {
     "lastmod": "2026-11-12",
@@ -765,7 +829,11 @@
   },
   "/guides/": {
     "lastmod": "2026-11-13",
-    "sig": "d84b7034190ac3650ed7322a093e790f9861bf94bd278a38529cd1849452ec6d"
+    "sig": "5c747429b2a474b16d6f80c0d385143b62cd05bc391ef534b00008ecad339013"
+  },
+  "/guides/add-a-widget-on-android/": {
+    "lastmod": "2026-11-13",
+    "sig": "1c0d618d33f8c2c9b8d0df7d78fa3c980200acc6e043582404a8ea838fba086c"
   },
   "/guides/add-a-widget-to-your-home-screen/": {
     "lastmod": "2026-11-12",
@@ -783,37 +851,45 @@
     "lastmod": "2026-11-12",
     "sig": "ae905762949bf8df2b7c45c31917f52ef6f7534f9a5793af6c288c8422b4c5d1"
   },
+  "/guides/android-notifications-delayed/": {
+    "lastmod": "2026-11-13",
+    "sig": "3092e16bc62fa03cf468ff6628ff0f81393b2e9e2aeb9c8d4c6c225adde4b4fc"
+  },
   "/guides/bible-verse-on-iphone-lock-screen/": {
     "lastmod": "2026-11-12",
     "sig": "0ab7c0122917c160c7c0a687b09ccfda082fd636ebf4eb0dd268817b94430036"
   },
   "/guides/change-or-delete-lock-screen-iphone/": {
-    "lastmod": "2026-11-12",
-    "sig": "d0dfadd943fa579cbbbcb60847932da9a01280acfc4940b6bb2a2fca83e74359"
+    "lastmod": "2026-11-13",
+    "sig": "adda43f6b5eb11f4eaa615bfe57f63f4c07f066a5ef6004009db27e5ed1746b8"
   },
   "/guides/christmas-lock-screen-ideas/": {
-    "lastmod": "2026-11-12",
-    "sig": "d43b3d73f283c701248a27d4fef926a96edfbb4a9cd57c4fede3c6dd11782c98"
+    "lastmod": "2026-11-13",
+    "sig": "14fa5ed5cf49422e65093692aab09c13a8b206b6dd02a28f9a3543c0526ac9cd"
   },
   "/guides/customize-iphone-lock-screen/": {
-    "lastmod": "2026-11-12",
-    "sig": "e974952930e612fc94a0e1aaa85c24e90b3c0fa5ef5f9625aa0d7bd9a1980065"
+    "lastmod": "2026-11-13",
+    "sig": "5848adcb0b566095d693b2f62f079729ea0e090069aae8dc74c57fce41ad336c"
   },
   "/guides/focus-lock-screen-iphone/": {
-    "lastmod": "2026-11-12",
-    "sig": "5e53d6cc669ebc5b031933341c3d596ea577116d0f94f180d2e9715fefc8f310"
+    "lastmod": "2026-11-13",
+    "sig": "9e581520976a67f1db22bc9338d637bd95ff80dbc819c158f61d3ff50b97bbb1"
   },
   "/guides/funny-daily-quotes-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "e37178ec41742535250ffc955a9b2f75147fd869350725e3dbc8828aaff769b4"
   },
   "/guides/iphone-lock-screen-ideas/": {
-    "lastmod": "2026-11-12",
-    "sig": "f369bb07776c5e67eb83f7be4390b74ea3e9a48b1002c251cce23798e1100e87"
+    "lastmod": "2026-11-13",
+    "sig": "c523b002da249b60a42eb57388595f4000cf6825ba03420f474c1c3ab56b9de1"
+  },
+  "/guides/iphone-notification-banner-style/": {
+    "lastmod": "2026-11-13",
+    "sig": "d0bfbb38999ad3aff3a1f6085e0432f10e9861d34060745d40e8421420d21acc"
   },
   "/guides/iphone-notifications-not-working/": {
-    "lastmod": "2026-11-12",
-    "sig": "aca8e66fc892d876cb8104ba2ddba6a665a02bbb78737da781d3ee6ef017a2a9"
+    "lastmod": "2026-11-13",
+    "sig": "5d4d940d7ba4fdf274ac233b17a11e30075ab7aa02cc3d28492c51bcfcdf08f1"
   },
   "/guides/iphone-widget-not-updating/": {
     "lastmod": "2026-11-12",
@@ -831,17 +907,21 @@
     "lastmod": "2026-11-12",
     "sig": "d15b929a6209bb3a671633b265822c28b3bd357321a934c492729bf99cd8dfac"
   },
+  "/guides/quotes-on-your-android-home-screen/": {
+    "lastmod": "2026-11-13",
+    "sig": "cec8c4d63c8f5b1d2e70a0badbbb752d9efac5bb274b4dacef3a452b89d22c05"
+  },
   "/guides/quotes-on-your-iphone-lock-screen/": {
-    "lastmod": "2026-11-12",
-    "sig": "621c4e777510342f08ef8d187b995b8a141fbeb6f2535fcdc7dee8c9f77643c7"
+    "lastmod": "2026-11-13",
+    "sig": "ed6cdb4a00399cef7e3ec5755172bf6f1d386b56c110fec1266ede9fe8ae7bda"
   },
   "/guides/turn-on-notifications-iphone/": {
-    "lastmod": "2026-11-12",
-    "sig": "5349579a7c5f728912df80639801f54e0c9006c413d9866e27ce209eba483a1e"
+    "lastmod": "2026-11-13",
+    "sig": "97b866c0963413375570deddf52a720c3a37dbd4d7f9e311ae5a22eeadc1be8d"
   },
   "/help/": {
-    "lastmod": "2026-11-12",
-    "sig": "3d474abb396b2328e3e64276d2240cf85677b2b5f2257f026ce0cdc34cfccf99"
+    "lastmod": "2026-11-13",
+    "sig": "fc9510ad6522a1cda02638f6351544ece67c2804a988b19070e8bdd0cd2826c7"
   },
   "/ja/": {
     "lastmod": "2026-11-12",
@@ -972,8 +1052,12 @@
     "sig": "5a0e298214d9c000443100982a2b3e9ac8427c349546be3f93054bc7b8f2a529"
   },
   "/ja/guides/": {
-    "lastmod": "2026-11-12",
-    "sig": "7f1b870538303b4d84c05a1be32516f2681904b85f258e60fe5bba18380b391e"
+    "lastmod": "2026-11-13",
+    "sig": "a7ae90837e220c9455c82bef4618a6ce358a9f4ab906ec6e58dbd78870083642"
+  },
+  "/ja/guides/add-a-widget-on-android/": {
+    "lastmod": "2026-11-13",
+    "sig": "c5718567f5ca535063c1a23cf530fd823adeae24325e411d0dcbfbac86d67f4d"
   },
   "/ja/guides/add-a-widget-to-your-home-screen/": {
     "lastmod": "2026-11-12",
@@ -991,6 +1075,10 @@
     "lastmod": "2026-11-12",
     "sig": "8786bd00b871d5e7ff90e18ae7828f7958ffd2c23388bd7a847c0b86ba2aa1ff"
   },
+  "/ja/guides/android-notifications-delayed/": {
+    "lastmod": "2026-11-13",
+    "sig": "79eb20e52515d48d63948a6875af544d64ebd70e7259389d3e90306f66a1d290"
+  },
   "/ja/guides/bible-verse-on-iphone-lock-screen/": {
     "lastmod": "2026-11-12",
     "sig": "8876d02d50be77a97ba358b8b015f78ee4b4c3d2f6ad4f9df61f72461bb49cdc"
@@ -998,6 +1086,10 @@
   "/ja/guides/change-or-delete-lock-screen-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "19d973f7698d560b4f2336db59558e1da6d0ed771f3816d2e398c27e5eac44eb"
+  },
+  "/ja/guides/christmas-lock-screen-ideas/": {
+    "lastmod": "2026-11-13",
+    "sig": "ca07deedd7becceca4ae064f0f10b4e6696e35b61b6bbdedf5812f31a9d872b1"
   },
   "/ja/guides/customize-iphone-lock-screen/": {
     "lastmod": "2026-11-12",
@@ -1014,6 +1106,10 @@
   "/ja/guides/iphone-lock-screen-ideas/": {
     "lastmod": "2026-11-12",
     "sig": "edd7784b06fb4102df8d08c7ff74abc265db752d616ff8440ee7d484b3e236f4"
+  },
+  "/ja/guides/iphone-notification-banner-style/": {
+    "lastmod": "2026-11-13",
+    "sig": "985a70e4f02369f9d338581e6e88a933cf8c837b3ced24957639d7604ea3c1fe"
   },
   "/ja/guides/iphone-notifications-not-working/": {
     "lastmod": "2026-11-12",
@@ -1035,6 +1131,10 @@
     "lastmod": "2026-11-12",
     "sig": "f37621ded736a2e9cbc3e84efd6d1e45f85827f5c428a9d2b55308b5db11a738"
   },
+  "/ja/guides/quotes-on-your-android-home-screen/": {
+    "lastmod": "2026-11-13",
+    "sig": "fe3ca1eb98d405440c6196a4a16b82b3172857a457eeb040722621779f11c2ac"
+  },
   "/ja/guides/quotes-on-your-iphone-lock-screen/": {
     "lastmod": "2026-11-12",
     "sig": "3c7eb67d72c354bbd5eda07c6fa3b82b49bace1f305bee88e4b917074a9433f5"
@@ -1044,8 +1144,8 @@
     "sig": "280d413d8fd797f1e71abea8a8301a10841fc214338292aa60892e7b30a3c766"
   },
   "/ja/help/": {
-    "lastmod": "2026-11-12",
-    "sig": "9c10a04cef91db489c8b8def7cf07b11e63afcbdb2686b2f3714fbbb5943e9a7"
+    "lastmod": "2026-11-13",
+    "sig": "f1d6975461414fd8a283936967614419a6eb8ec8c923bb7072cc866ed7d2de23"
   },
   "/press/": {
     "lastmod": "2026-11-12",
@@ -1060,12 +1160,12 @@
     "sig": "2b75b371750d0787f6540d4147f6e3c463786b2e68c7b6980779efbdaa105e9e"
   },
   "/pt/ajuda/": {
-    "lastmod": "2026-11-12",
-    "sig": "d7a96b0c7e8cefc14e38ee0763f9680c7aaecb1ce2f0fcc27a2edbf7b35e9503"
+    "lastmod": "2026-11-13",
+    "sig": "d56d70bfcc4b0d85f30075a085d57937ec7d6ab70739022390dd7ae57ced9730"
   },
   "/pt/blog/": {
-    "lastmod": "2026-11-12",
-    "sig": "df22a4d5cf5d42c1f591b1211d56061ad8920019516d21508a830aca86b772da"
+    "lastmod": "2026-11-13",
+    "sig": "434f7a1049fd7a51ceb2f30f14a4ba72d07e5508e6f55958546e2bfcf01c73fa"
   },
   "/pt/blog/afirmacoes-funcionam/": {
     "lastmod": "2026-11-12",
@@ -1090,6 +1190,10 @@
   "/pt/blog/como-usar-menos-o-celular/": {
     "lastmod": "2026-11-12",
     "sig": "8532561c47fcff89219f1ec1c5ac59f2e7873a80853ce953ceac5c51c59fef85"
+  },
+  "/pt/blog/falta-de-motivacao/": {
+    "lastmod": "2026-11-13",
+    "sig": "601263a0bc1921153899047a43c6519f4330b85266f09e0cb0e156fec31f1ed2"
   },
   "/pt/blog/frases-de-disciplina-e-constancia/": {
     "lastmod": "2026-11-12",
@@ -1184,12 +1288,16 @@
     "sig": "eacb7a65c31eaaa773a0a160f33f50e0ad6023a1a96c1e5e42de65352618ee69"
   },
   "/pt/guias/": {
-    "lastmod": "2026-11-12",
-    "sig": "420d75750cd1beda9a8eede665eca4e2a35280d044e6f35a64d37b16a32a0fe5"
+    "lastmod": "2026-11-13",
+    "sig": "3ae8732ef28a8319fe0d98e646733859c592e64967f7ac85f93ed858d6fb7821"
   },
   "/pt/guias/adicionar-um-widget-na-tela-de-inicio/": {
     "lastmod": "2026-11-12",
     "sig": "4b82b27752697b8a95ff5cdff5c3125a76ae3072bfe93ea1cca5cebf8a15bb8f"
+  },
+  "/pt/guias/adicionar-um-widget-no-android/": {
+    "lastmod": "2026-11-13",
+    "sig": "eafe38453e4f8f5e2673b0d183f8a0a6c44bcab23b9512115c42d77bfd1bc5a9"
   },
   "/pt/guias/adicionar-widgets-no-ipad/": {
     "lastmod": "2026-11-12",
@@ -1207,6 +1315,10 @@
     "lastmod": "2026-11-12",
     "sig": "0cf852cca14df83299dc60231d8b31bb8a2eddfc2e39e3e529f3a242dce54d23"
   },
+  "/pt/guias/estilo-do-banner-de-notificacoes-do-iphone/": {
+    "lastmod": "2026-11-13",
+    "sig": "14a7e387e2cec0929ac27118dc44eddcd43a908dc7e74d73c12a325d90c7fc76"
+  },
   "/pt/guias/foco-tela-bloqueada-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "b0a83d426205adbc64494277f0dbc8b93dc883c9e0b07e8af9bb256e6a09976b"
@@ -1223,6 +1335,14 @@
     "lastmod": "2026-11-12",
     "sig": "b268d57bee1af5350e86351d929906a6ff9ff977488c29e53f4900cda3cc668e"
   },
+  "/pt/guias/frases-na-tela-inicial-do-android/": {
+    "lastmod": "2026-11-13",
+    "sig": "6aa60821a81ec26025439697d2dee7439d8c00c651e215c2c32176c6c4ab1993"
+  },
+  "/pt/guias/ideias-de-tela-bloqueada-de-natal/": {
+    "lastmod": "2026-11-13",
+    "sig": "895c574ca8f10aa6e4933db699bbe503baa95cb991356a570b23e9e9af5bb3ab"
+  },
   "/pt/guias/ideias-para-a-tela-bloqueada-do-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "4786856c67cf16aaa62430714170634d5ace683db08305c8804d9d6e176230cb"
@@ -1230,6 +1350,10 @@
   "/pt/guias/mudar-ou-apagar-a-tela-bloqueada-do-iphone/": {
     "lastmod": "2026-11-12",
     "sig": "9acc6302bd3d7bc6ca5eada04ab2e7433720a5a3faa4ed7eb48a264cb6488e4b"
+  },
+  "/pt/guias/notificacoes-do-android-atrasadas/": {
+    "lastmod": "2026-11-13",
+    "sig": "21843a1fda55ddbaf4a080bb078c5bb24533e041fc57d0ed8552842ca3cd947e"
   },
   "/pt/guias/notificacoes-do-iphone-nao-chegam/": {
     "lastmod": "2026-11-12",

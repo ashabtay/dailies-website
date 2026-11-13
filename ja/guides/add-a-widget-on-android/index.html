@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Android でウィジェットを追加する方法 | Dailies</title>
+<meta name="description" content="Samsung Galaxy、Google Pixel などの Android スマートフォンで、ホーム画面にウィジェットを追加する方法です。サイズ変更、移動、削除のほか、ウィジェットが見つからないときや更新されないときの対処もまとめました。">
+<link rel="canonical" href="https://mydailies.app/ja/guides/add-a-widget-on-android/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-a-widget-on-android/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-un-widget-en-android/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-um-widget-no-android/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/ajouter-un-widget-sur-android/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/widget-hinzufuegen-android/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/add-a-widget-on-android/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-a-widget-on-android/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android でウィジェットを追加する方法">
+<meta property="og:description" content="長押しして「ウィジェット」、あとはドラッグ。Samsung と Pixel の違いや、ウィジェットが見つからないとき、止まったときの対処もまとめました。">
+<meta property="og:url" content="https://mydailies.app/ja/guides/add-a-widget-on-android/">
+<meta property="og:image" content="https://mydailies.app/img/guides/add-a-widget-on-android-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="霧のかかった斜面の松林を抜ける細い山道">
+<meta property="og:site_name" content="Dailies">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/ja/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/ja/blog/">ブログ</a>
+      <a href="/ja/guides/">ガイド</a>
+      <a href="/ja/help/">ヘルプ</a>
+      <details class="lang"><summary aria-label="言語: 日本語"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">日本語</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/guides/add-a-widget-on-android/" hreflang="en" lang="en">English</a><a href="/fr/guides/ajouter-un-widget-sur-android/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/anleitungen/widget-hinzufuegen-android/" hreflang="de" lang="de-DE">Deutsch</a><a href="/es/guias/agregar-un-widget-en-android/" hreflang="es" lang="es-MX">Español</a><a href="/pt/guias/adicionar-um-widget-no-android/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/guides/add-a-widget-on-android/" hreflang="ja" lang="ja" aria-current="true">日本語</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/ja/#get">Dailies を入手</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">ガイド</div>
+      <h1>Android でウィジェットを追加する方法</h1>
+      <p class="lede">ほとんどの Android スマートフォンでは、ホーム画面を長押しし、「ウィジェット」を開き、ウィジェットをドラッグして置く、という同じ三つの動作です。呼び方はメーカーによって少しずつ違うので、このページではその違いを整理し、探しているウィジェットが見つからないときや止まったときの対処もまとめます。</p>
+      <p class="doc-meta"><span><a href="/ja/about/">Amit Shabtay</a>（Dailies の開発者）</span> <span>Google と Samsung の公式ドキュメントをもとに作成：2026年11月13日（実機では未確認）</span></p>
+    </div>
+  </header>
+
+  <div class="wrap"><figure class="post-hero"><img src="/img/guides/add-a-widget-on-android.jpg" width="1080" height="608" alt="霧のかかった斜面の松林を抜ける細い山道" fetchpriority="high"></figure></div>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">このページの内容</div>
+      <a href="#steps">ウィジェットを追加する</a>
+      <a href="#samsung">Samsung Galaxy の場合</a>
+      <a href="#pixel">Google Pixel の場合</a>
+      <a href="#resize">サイズ変更、移動、削除</a>
+      <a href="#app">アプリから追加する</a>
+      <a href="#fix">うまくいかないとき</a>
+      <a href="#dailies">Dailies のウィジェット</a>
+      <a href="#faq">よくある質問</a>
+    </aside>
+
+    <div class="prose">
+
+      <section id="steps">
+        <h2>ウィジェットを追加する</h2>
+        <div class="callout plain">
+          <p>iPhone をお使いなら、<a href="/ja/guides/add-a-widget-to-your-home-screen/">ホーム画面にウィジェットを追加する方法</a>をご覧ください。</p>
+        </div>
+        <p>Google の Android ヘルプに載っている手順で、ほとんどの Android スマートフォンで使えます。例として Dailies を挙げていますが、ウィジェットのあるアプリならどれも同じです。</p>
+        <ol>
+          <li><strong>ホーム画面の何もない場所を長押しします。</strong>アイコンもウィジェットもない場所です。</li>
+          <li><strong>「ウィジェット」</strong>をタップします。</li>
+          <li><strong>目的のウィジェットがあるアプリを探し</strong>（Dailies など）、タップしてウィジェットの一覧を開きます。</li>
+          <li><strong>ウィジェットを長押しします。</strong>ホーム画面の画像が表示されます。</li>
+          <li><strong>置きたい場所までスライドして</strong>、指を離します。</li>
+        </ol>
+        <p>Google によると、これらの手順の一部は Android 14 以降でのみ使えます。古い機種ではメニューの見た目が違うことがありますが、長押しして<strong>「ウィジェット」</strong>、ドラッグという流れは同じです。</p>
+        <p>多くの機種にある近道が二つあります。ウィジェットの一覧の上には検索欄があることが多く、長い一覧をスクロールするより早く見つかります。また、アプリのアイコンを長押しすると小さなメニューが開き、多くの機種ではそこからそのアプリのウィジェットに直接進めます。</p>
+      </section>
+
+      <section id="samsung">
+        <h2>Samsung Galaxy の場合</h2>
+        <p>Galaxy は Samsung 独自の Android である One UI を使っていて、Samsung のヘルプでは、ウィジェットをドラッグする代わりに、選んでボタンをタップします。</p>
+        <ol>
+          <li>ホーム画面の何もない場所を長押しします。</li>
+          <li>画面下部の<strong>「ウィジェット」</strong>をタップします。おすすめのウィジェットが先に表示されるので、ほかのものは下にスクロールして探します。</li>
+          <li>アプリをタップし、目的のウィジェットをタップします。スタイルやサイズが複数あるウィジェットは、ここで選びます。</li>
+          <li><strong>「追加」</strong>をタップします。ウィジェットがホーム画面に置かれます。</li>
+        </ol>
+        <p>置いたウィジェットを長押しすると、Samsung のメニューが開きます。ウィジェットが対応していれば背景色や透明度などを変えられ、<strong>「削除」</strong>をタップするとホーム画面から取り除けます。Samsung では、ウィジェットを同じ場所に重ねてスワイプで切り替えることもできます。</p>
+      </section>
+
+      <section id="pixel">
+        <h2>Google Pixel の場合</h2>
+        <p>Pixel は Google 自身のスマートフォンなので、このページの最初の手順がそのまま Pixel の手順です。何もない場所を長押しし、<strong>「ウィジェット」</strong>をタップし、アプリをタップしてから、ウィジェットを長押ししてドラッグします。</p>
+        <ul>
+          <li><strong>一覧はアプリごとにまとまっています。</strong>各アプリは一度だけ表示されるので、タップしてウィジェットを開きます。上の検索欄にアプリ名を入力することもできます。</li>
+          <li><strong>ドラッグしなくてよいバージョンもあります。</strong>一覧でウィジェットをタップすると追加用のボタンが表示され、それをタップすると Pixel が空いている場所に置きます。</li>
+        </ul>
+      </section>
+
+      <section id="resize">
+        <h2>サイズ変更、移動、削除</h2>
+        <h3>サイズを変える</h3>
+        <ul>
+          <li>ウィジェットを長押しして、指を離します。</li>
+          <li>サイズを変えられるウィジェットなら、点の付いた枠が表示されます。</li>
+          <li>点をドラッグして、大きくしたり小さくしたりします。</li>
+          <li>終わったら、ウィジェット以外の場所をタップします。</li>
+        </ul>
+        <p>Samsung でも枠の使い方は同じで、点を長押ししてドラッグします。変えられるのはアプリが用意したサイズだけなので、画面の端に届く前に大きくならなくなることもあります。</p>
+        <h3>移動する</h3>
+        <p>ウィジェットを長押ししてドラッグします。ホーム画面の画像が表示されるので、新しい場所までスライドし（別のページに移すときは画面の端まで）、指を離します。</p>
+        <h3>削除する</h3>
+        <p>ウィジェットを長押しして、上の<strong>「削除」</strong>までドラッグします。Samsung では、長押しして<strong>「削除」</strong>をタップします。取り除かれるのはホーム画面のウィジェットだけで、アプリとその中身はそのまま残ります。同じ場所に<strong>「アンインストール」</strong>が表示される機種もあり、こちらはアプリそのものを消すので、どこで指を離すかよく確認してください。</p>
+      </section>
+
+      <section id="app">
+        <h2>アプリから追加する</h2>
+        <p>Android 8 以降では、アプリがスマートフォンに、自分のウィジェットをホーム画面に置くよう頼めます。アプリの中で<strong>「ホーム画面に追加」</strong>のようなボタンをタップすると、Android がウィジェットのプレビューが入った専用の画面を表示します。</p>
+        <ul>
+          <li><strong>確認するまで何も追加されません。</strong>その画面で確定するとウィジェットがホーム画面に置かれ、閉じれば何も変わりません。</li>
+          <li><strong>機種によっては自分で置くこともできます。</strong>プレビューを長押しして、好きな場所までドラッグします。</li>
+          <li><strong>すべてのホーム画面が対応しているわけではありません。</strong>アプリは事前に確認できるため、機種によってはボタン自体が表示されません。このページの最初の手順なら、いつでも使えます。</li>
+        </ul>
+      </section>
+
+      <section id="fix">
+        <h2>うまくいかないとき</h2>
+
+        <h3>一覧にウィジェットがない</h3>
+        <p>よくある原因の順に並べています。</p>
+        <ol>
+          <li><strong>アプリを一度開きます。</strong>機種によっては、アプリを開いたあとでないとウィジェットが表示されません。試しても損はありません。</li>
+          <li><strong>スクロールせずに検索し</strong>、アプリ名のところを見ます。一覧はウィジェットの機能ではなく、アプリごとに並んでいます。</li>
+          <li><strong>そのアプリにウィジェットがあるか確認します。</strong>ウィジェットのないアプリもあります。</li>
+          <li><strong>アプリを入れ直します。</strong>アンインストールしてもう一度インストールし、一度開いてから、また探します。</li>
+          <li><strong>仕事用プロファイルがないか確認します。</strong>仕事用プロファイルがある端末では、仕事用のアプリと個人用のアプリが分かれていて、ウィジェットの一覧でも別のタブに表示されることがよくあります。片方にしか入っていないアプリのウィジェットは、そちらにしか出てきません。</li>
+          <li><strong>Samsung では、レイアウトがロックされていないか確認します。</strong>何も追加も削除もできない、または項目がグレー表示になっている場合は、ホーム画面のレイアウトをロックする設定がオンになっているかもしれません。ホーム画面の設定でオフにします。</li>
+        </ol>
+
+        <h3>ウィジェットが更新されない</h3>
+        <p>ウィジェットをいつ描き直すかを決めるのはアプリではなく Android で、バッテリーを節約するために後回しにすることがあります。</p>
+        <ul>
+          <li><strong>「バッテリー セーバー」をオフにします。</strong>Samsung では名前が違いますが、バッテリーの設定にある省電力のモードがこれにあたります。どちらも、ウィジェットを含め、アプリがバックグラウンドで行う処理を抑えます。</li>
+          <li><strong>アプリのバッテリー設定を確認します。</strong><strong>「設定」→「アプリ」</strong>でアプリを開き、バッテリーの項目を見ます。バックグラウンドでの動作が制限されていたら、許可します。</li>
+          <li><strong>Samsung では、スリープ中のアプリを確認します。</strong>バッテリーの設定にあるバックグラウンドでの使用制限で、Samsung がスリープさせるアプリの一覧からアプリを外します。</li>
+          <li><strong>アプリを一度開きます。</strong>開いたときにウィジェットを描き直すアプリはたくさんあります。</li>
+          <li><strong>ウィジェットを削除して、追加し直します。</strong></li>
+        </ul>
+
+        <h3>画面の見た目が違う</h3>
+        <p>ホーム画面そのものもランチャーと呼ばれるアプリで、メーカーごとに独自のものが入っています。Google のスマートフォンには Pixel Launcher、Samsung には One UI Home があり、Motorola、OnePlus、Xiaomi などにもそれぞれのものがあります。どれも長押しと<strong>「ウィジェット」</strong>のメニューは共通ですが、周りの言葉は変わります。自分でランチャーを入れた場合、ウィジェットのメニューはそのランチャーが用意した場所にあり、たいていは同じ長押しから開けます。このページの表記がお使いの機種と合わないときは、「ウィジェット」という言葉を探してください。</p>
+      </section>
+
+      <section id="dailies">
+        <h2>Android の Dailies ウィジェット</h2>
+        <p>Dailies は、前向きになれる短い名言を届けるアプリです。Android 10 以降のスマートフォンでは、ホーム画面に言葉を表示します。知っておきたいことをまとめます。</p>
+        <ul>
+          <li><strong>ホーム画面だけです。</strong>Android には、ロック画面用のウィジェットはありません。それでも、通知として、またはギャラリーに保存した画像を壁紙に設定することで、ロック画面に言葉を表示できます。</li>
+          <li><strong>矢印とハートはその場で使えます。</strong>ホーム画面のまま、前後の言葉に移ったり、ハートを付けたりできます。</li>
+          <li><strong>言葉は毎時ちょうどに切り替わります。</strong>何も開かなくても、一時間ごとに新しい言葉になります。</li>
+          <li><strong>アプリから置くこともできます。</strong><strong>「カスタマイズ」→「ホーム画面のウィジェット」</strong>を開き、<strong>「ホーム画面に追加」</strong>をタップします。この機能がない機種もあるため、ボタンは使える端末にだけ表示されます。</li>
+          <li><strong>「バッテリー セーバー」で止まることがあります。</strong>言葉が変わらなくなったら、「バッテリー セーバー」をオフにして Dailies を一度開いてください。それでも直らなければ、ウィジェットを削除して追加し直します。</li>
+        </ul>
+        <p>通知は<strong>「設定」→「アプリ」→「Dailies」→「通知」</strong>（場所は機種によって異なります）で、<em>「毎日の言葉」</em>がオンになっているか確認してください。そのほかのことは<a href="/ja/help/#widget">ヘルプページ</a>にまとめています。</p>
+      </section>
+
+      <section id="faq">
+        <h2>よくある質問</h2>
+        <div class="faq">
+          <details open><summary>長押ししても「ウィジェット」が出てこないのはなぜですか？</summary>
+            <div class="details-body">
+              <p>アイコンかウィジェットを長押ししている可能性があります。その場合は、その項目のメニューが開きます。何もない場所を長押ししてください。機種によっては、ホーム画面を二本の指でつまむ操作でも同じメニューが開きます。</p>
+            </div></details>
+
+          <details><summary>ウィジェットを削除すると、アプリもアンインストールされますか？</summary>
+            <div class="details-body">
+              <p>いいえ。「削除」はホーム画面からウィジェットを取り除くだけで、アプリとその中身はそのまま残ります。アプリを消すのは「アンインストール」です。</p>
+            </div></details>
+
+          <details><summary>ウィジェットを大きく、または小さくするには？</summary>
+            <div class="details-body">
+              <p>ウィジェットを長押しして指を離し、枠の点をドラッグします。点が表示されない場合、そのウィジェットのサイズは一つだけです。</p>
+            </div></details>
+
+          <details><summary>Android で Dailies のウィジェットをロック画面に置けますか？</summary>
+            <div class="details-body">
+              <p>いいえ。Android の Dailies には、ホーム画面用のウィジェットしかありません。それでも、通知として、またはギャラリーに保存した画像を壁紙に設定することで、ロック画面に言葉を表示できます。</p>
+            </div></details>
+
+          <details><summary>Dailies のウィジェットが変わらなくなったのはなぜですか？</summary>
+            <div class="details-body">
+              <p>たいていは、スマートフォンがバッテリーを節約しているためです。「バッテリー セーバー」をオフにして、Dailies を一度開いてください。それでも直らなければ、ウィジェットを削除して追加し直します。</p>
+            </div></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <div class="social">
+      <a href="https://www.tiktok.com/@mydailies.app" aria-label="TikTok" title="TikTok" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#tiktok"/></svg></a>
+      <a href="https://www.instagram.com/mydailies.app/" aria-label="Instagram" title="Instagram" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#instagram"/></svg></a>
+      <a href="https://www.facebook.com/mydailiesapp" aria-label="Facebook" title="Facebook" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#facebook"/></svg></a>
+      <a href="https://www.youtube.com/@mydailiesapp" aria-label="YouTube" title="YouTube" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#youtube"/></svg></a>
+      <a href="https://www.pinterest.com/mydailiesapp/" aria-label="Pinterest" title="Pinterest" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#pinterest"/></svg></a>
+      <a href="https://www.linkedin.com/company/mydailiesapp/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#linkedin"/></svg></a>
+    </div>
+    <nav>
+      <a href="/ja/">ホーム</a>
+      <a href="/ja/compare/">比較</a>
+      <a href="/ja/about/">Dailies について</a>
+      <a href="/press/" hreflang="en">プレス</a>
+      <a href="/terms/" hreflang="en">利用規約</a>
+      <a href="/privacy/" hreflang="en">プライバシーポリシー</a>
+      <a href="/cookies/" hreflang="en">Cookie ポリシー</a>
+      <a href="#" data-cookie-settings>Cookie 設定</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","inLanguage":"ja","name":"Android でウィジェットを追加する方法","description":"Android スマートフォンのホーム画面に、アプリのウィジェットを追加します。","totalTime":"PT1M","author":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/ja/about/"},"supply":[{"@type":"HowToSupply","name":"Android スマートフォン"},{"@type":"HowToSupply","name":"ウィジェットのあるアプリ（Dailies など）"}],"step":[
+{"@type":"HowToStep","name":"ホーム画面を長押し","text":"ホーム画面の何もない場所を長押しします。アイコンもウィジェットもない場所です。"},
+{"@type":"HowToStep","name":"「ウィジェット」を開く","text":"「ウィジェット」をタップします。"},
+{"@type":"HowToStep","name":"アプリを探す","text":"目的のウィジェットがあるアプリを探し（Dailies など）、タップしてウィジェットの一覧を開きます。"},
+{"@type":"HowToStep","name":"ウィジェットを長押し","text":"ウィジェットを長押しします。ホーム画面の画像が表示されます。"},
+{"@type":"HowToStep","name":"置く","text":"置きたい場所までスライドして、指を離します。"}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[
+{"@type":"Question","name":"長押ししても「ウィジェット」が出てこないのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"アイコンかウィジェットを長押ししている可能性があります。その場合は、その項目のメニューが開きます。何もない場所を長押ししてください。機種によっては、ホーム画面を二本の指でつまむ操作でも同じメニューが開きます。"}},
+{"@type":"Question","name":"ウィジェットを削除すると、アプリもアンインストールされますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。「削除」はホーム画面からウィジェットを取り除くだけで、アプリとその中身はそのまま残ります。アプリを消すのは「アンインストール」です。"}},
+{"@type":"Question","name":"ウィジェットを大きく、または小さくするには？","acceptedAnswer":{"@type":"Answer","text":"ウィジェットを長押しして指を離し、枠の点をドラッグします。点が表示されない場合、そのウィジェットのサイズは一つだけです。"}},
+{"@type":"Question","name":"Android で Dailies のウィジェットをロック画面に置けますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。Android の Dailies には、ホーム画面用のウィジェットしかありません。それでも、通知として、またはギャラリーに保存した画像を壁紙に設定することで、ロック画面に言葉を表示できます。"}},
+{"@type":"Question","name":"Dailies のウィジェットが変わらなくなったのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"たいていは、スマートフォンがバッテリーを節約しているためです。「バッテリー セーバー」をオフにして、Dailies を一度開いてください。それでも直らなければ、ウィジェットを削除して追加し直します。"}}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://mydailies.app/ja/"},{"@type":"ListItem","position":2,"name":"ガイド","item":"https://mydailies.app/ja/guides/"},{"@type":"ListItem","position":3,"name":"Android でウィジェットを追加する方法","item":"https://mydailies.app/ja/guides/add-a-widget-on-android/"}]}
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

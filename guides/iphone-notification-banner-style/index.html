@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
+<title>iPhone banner style: Temporary or Persistent, and Notification Center | Dailies</title>
+<meta name="description" content="What Temporary and Persistent banners mean on iPhone, where Banner Style is in Settings, how to open Notification Center, and how Count, Stack and List change the Lock Screen.">
+<link rel="canonical" href="https://mydailies.app/guides/iphone-notification-banner-style/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/guides/iphone-notification-banner-style/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/estilo-de-tira-de-notificaciones-del-iphone/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/estilo-do-banner-de-notificacoes-do-iphone/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/style-des-bannieres-de-notifications-iphone/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/bannerstil-mitteilungen-iphone/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/iphone-notification-banner-style/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/iphone-notification-banner-style/">
+<script>/* Written by tools/languages.py: send a visitor whose browser asks for another of the site's languages before English to this page in that language. */
+(function(){try{
+  var r=document.referrer; if(r&&r.indexOf(location.origin+'/')===0) return;
+  var l=navigator.languages||[navigator.language||''];
+  for(var i=0;i<l.length;i++){
+    var c=String(l[i]).slice(0,2).toLowerCase(); if(c==='en') return;
+    var a=document.querySelector('link[rel="alternate"][hreflang="'+c+'"]');
+    if(a){location.replace(new URL(a.href).pathname+location.search+location.hash); return;}
+  }
+}catch(e){}})();</script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="iPhone banner style: Temporary or Persistent?">
+<meta property="og:description" content="What the two banner styles mean, where to change them, and how Notification Center and the Lock Screen fit in.">
+<meta property="og:url" content="https://mydailies.app/guides/iphone-notification-banner-style/">
+<meta property="og:image" content="https://mydailies.app/img/guides/iphone-notification-banner-style-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A row of trees on a dark hill above rolling fog, in black and white">
+<meta property="og:site_name" content="Dailies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/blog/">Blog</a>
+      <a href="/guides/">Guides</a>
+      <a href="/help/">Help</a>
+      <details class="lang"><summary aria-label="Language: English"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">English</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/guides/iphone-notification-banner-style/" hreflang="en" lang="en" aria-current="true">English</a><a href="/fr/guides/style-des-bannieres-de-notifications-iphone/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/anleitungen/bannerstil-mitteilungen-iphone/" hreflang="de" lang="de-DE">Deutsch</a><a href="/es/guias/estilo-de-tira-de-notificaciones-del-iphone/" hreflang="es" lang="es-MX">Español</a><a href="/pt/guias/estilo-do-banner-de-notificacoes-do-iphone/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/guides/iphone-notification-banner-style/" hreflang="ja" lang="ja">日本語</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/#get">Get Dailies</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">Guide</div>
+      <h1>iPhone notification banner style: Temporary or Persistent?</h1>
+      <p class="lede">Every app that sends you notifications has a small setting called Banner Style, with two choices: Temporary and Persistent. It decides whether a notification slips away on its own or waits for you. Here is what each one does, where to find it, and how it fits with Notification Center and the Lock Screen.</p>
+      <p class="doc-meta"><span>By <a href="/about/">Amit Shabtay</a>, who makes Dailies</span> <span>Steps written on 13 November 2026</span></p>
+    </div>
+  </header>
+
+  <div class="wrap"><figure class="post-hero"><img src="/img/guides/iphone-notification-banner-style.jpg" width="1080" height="608" alt="A row of trees on a dark hill above rolling fog, in black and white" fetchpriority="high"></figure></div>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">On this page</div>
+      <a href="#meaning">What the two styles mean</a>
+      <a href="#steps">How to change it</a>
+      <a href="#which">Which one to pick</a>
+      <a href="#alerts">Where notifications go</a>
+      <a href="#center">Notification Center</a>
+      <a href="#lock">The Lock Screen</a>
+      <a href="#dailies">For Dailies</a>
+      <a href="#faq">Questions</a>
+    </aside>
+
+    <div class="prose">
+
+      <section id="meaning">
+        <h2>What the two styles mean</h2>
+        <p>A banner is the card that slides in at the top of the screen when a notification arrives while you are using the phone. <strong>Banner Style</strong> decides how long it stays there:</p>
+        <ul>
+          <li><strong>Temporary.</strong> The banner shows for a few seconds and goes away by itself. You can still tap it while it is there. This is how most apps start out.</li>
+          <li><strong>Persistent.</strong> The banner stays at the top of the screen until you do something with it: tap it to open the app, or swipe it up to put it away.</li>
+        </ul>
+        <p>Either way, the notification is not lost when the banner goes. If <strong>Notification Center</strong> is ticked for that app, it waits there until you clear it.</p>
+      </section>
+
+      <section id="steps">
+        <h2>How to change it</h2>
+        <p>Banner Style lives on each app's own notification page in the Settings app:</p>
+        <ol>
+          <li><strong>Open Settings and tap Notifications.</strong> It is in the same group as Sounds &amp; Haptics and Focus.</li>
+          <li><strong>Tap the app.</strong> Every app that has asked to send notifications is in the list under <strong>Notification Style</strong>.</li>
+          <li><strong>Check that Allow Notifications is on.</strong> The switch at the top. Nothing else on the page shows while it is off.</li>
+          <li><strong>Tick Banners under Alerts.</strong> <strong>Banner Style</strong> only appears when <strong>Banners</strong> is ticked.</li>
+          <li><strong>Tap Banner Style and pick one.</strong> <strong>Temporary</strong> or <strong>Persistent</strong>. The change is saved straight away, so you can go back.</li>
+        </ol>
+        <p>The setting belongs to each app, so there is no switch that makes every app persistent at once. Repeat the steps for each app you want to change. The same page is also inside the app's own entry in Settings: scroll down the main list to the app's name, tap it, then tap <strong>Notifications</strong>.</p>
+      </section>
+
+      <section id="which">
+        <h2>Which one to pick</h2>
+        <ul>
+          <li><strong>Persistent</strong> suits the few things you do not want to miss or want to read in full: messages from the people closest to you, your calendar, a reminder, a line you want to finish reading.</li>
+          <li><strong>Temporary</strong> suits everything else: news, social apps, games, shopping. A persistent banner sits over the top of the screen, where search bars and back buttons live, so a lot of them at once gets tiring.</li>
+        </ul>
+        <p>A simple rule: persistent for the apps you would stop what you are doing for, temporary for the rest.</p>
+      </section>
+
+      <section id="alerts">
+        <h2>Where notifications go</h2>
+        <p>Above Banner Style, under <strong>Alerts</strong>, each app has three boxes, and Banner Style only matters for one of them:</p>
+        <ul>
+          <li><strong>Lock Screen.</strong> The notification shows on the Lock Screen while the phone is locked.</li>
+          <li><strong>Notification Center.</strong> The notification is kept in the list after the banner goes.</li>
+          <li><strong>Banners.</strong> The card at the top of the screen while you use the phone.</li>
+        </ul>
+        <p>Untick Banners and the app's notifications arrive quietly on the Lock Screen and in Notification Center, with no card over what you are doing. The full walk through these switches is in <a href="/guides/turn-on-notifications-iphone/">how to turn on notifications for an app on iPhone</a>.</p>
+      </section>
+
+      <section id="center">
+        <h2>Notification Center</h2>
+        <p>Notification Center is the list of notifications you have not cleared yet, the thing people often call the notification bar. Every iPhone has it, and there is nothing to switch on. To open it:</p>
+        <ul>
+          <li><strong>While you are using the phone,</strong> swipe down from the top left of the screen, or from the middle. The top right corner opens Control Center instead.</li>
+          <li><strong>On the Lock Screen,</strong> swipe up from the middle of the screen.</li>
+        </ul>
+        <p>Scroll up inside it to see older notifications, and swipe up from the bottom of the screen to close it. To clear one, swipe it to the left and tap <strong>Clear</strong>.</p>
+        <p>If an app's notifications never appear in the list, its Notification Center box is unticked. And if the list will not open while the phone is locked, look in <strong>Settings</strong>, <strong>Face ID &amp; Passcode</strong>: <strong>Notification Center</strong> under <strong>Allow Access When Locked</strong> has to be on.</p>
+      </section>
+
+      <section id="lock">
+        <h2>The Lock Screen</h2>
+        <p>How notifications are laid out on the Lock Screen is one setting for all apps, at the top of <strong>Settings</strong>, <strong>Notifications</strong>, under <strong>Display As</strong>:</p>
+        <ul>
+          <li><strong>Count</strong> shows only a number at the bottom of the screen until you tap it.</li>
+          <li><strong>Stack</strong> piles the notifications up, with the newest on top.</li>
+          <li><strong>List</strong> shows each one in full.</li>
+        </ul>
+        <p>You can also switch between them by pinching the notifications on the Lock Screen. Each app then has its own <strong>Lock Screen Appearance</strong> settings, below Banner Style:</p>
+        <ul>
+          <li><strong>Show Previews.</strong> <strong>Always</strong> shows the text of the notification, <strong>When Unlocked</strong> hides it until the phone recognizes you, and <strong>Never</strong> shows only the app's name. The same setting for all apps at once is on the main Notifications page.</li>
+          <li><strong>Notification Grouping.</strong> <strong>Automatic</strong> lets the app group its notifications by topic or conversation, <strong>By App</strong> puts all of them in one pile, and <strong>Off</strong> shows each one on its own.</li>
+        </ul>
+        <div class="callout plain"><p>One more setting changes when banners appear at all: <strong>Scheduled Summary</strong>, in Settings, Notifications. Apps you add to it stop sending banners and are delivered together at the times you pick. Leave out any app whose notifications you want the moment they arrive.</p></div>
+      </section>
+
+      <section id="dailies">
+        <h2>For Dailies</h2>
+        <p><a href="/">Dailies</a> sends quotes as notifications inside the hours you choose. Under <strong>Personalize &rarr; Daily dose</strong> you pick how many you get a day, the hours they are allowed to reach you and the days of the week, and inside that window they come at moments you did not pick, on purpose. A quote is short, but it is still something to read, and since you never know quite when one will land, a temporary banner can slide away before you have finished the sentence.</p>
+        <p>If that happens to you, set Dailies to <strong>Persistent</strong>. The line then waits at the top of the screen until you have read it, and a swipe up puts it away. It is a small way of giving a few words your full attention:</p>
+        <blockquote><p>Give your attention to what is in front of you, whether it is a thought, a deed or a word.</p><cite>Marcus Aurelius, <em>Meditations</em></cite></blockquote>
+        <p>If you would rather never be interrupted, untick Banners for Dailies and leave Lock Screen and Notification Center on: the quotes then wait quietly for the next time you look. If they stop arriving, <a href="/guides/iphone-notifications-not-working/">not getting notifications from an app on iPhone</a> goes through every cause.</p>
+      </section>
+
+      <section id="faq">
+        <h2>Questions</h2>
+        <div class="faq">
+          <details open><summary>What is the difference between Temporary and Persistent banners on iPhone?</summary>
+            <div class="details-body">
+              <p>A Temporary banner appears at the top of the screen and goes away by itself after a few seconds. A Persistent banner stays there until you tap it or swipe it up. You choose one or the other for each app in Settings, Notifications, the app, Banner Style.</p>
+            </div></details>
+
+          <details><summary>Can I make every app's banners persistent at once?</summary>
+            <div class="details-body">
+              <p>No. Banner Style is set app by app, so open Settings, Notifications and change it for each app you care about. Most people only need it for a few.</p>
+            </div></details>
+
+          <details><summary>Where is Notification Center and how do I turn it on?</summary>
+            <div class="details-body">
+              <p>There is nothing to turn on: swipe down from the top left of the screen, or from the middle, to open it, and swipe up from the middle of the Lock Screen to see it there. If one app never shows up in it, tick Notification Center in that app's notification settings. To reach it while the phone is locked, turn on Notification Center under Allow Access When Locked in Settings, Face ID &amp; Passcode.</p>
+            </div></details>
+
+          <details><summary>Why does a notification disappear before I can read it?</summary>
+            <div class="details-body">
+              <p>Its banner is set to Temporary. Set Banner Style to Persistent for that app and the banner waits until you deal with it. The notification itself is also kept in Notification Center, as long as that box is ticked.</p>
+            </div></details>
+
+          <details><summary>Can I see notifications in the App Library?</summary>
+            <div class="details-body">
+              <p>Not as a list, but the red badges can show there. Open Settings, Home Screen &amp; App Library, and turn on Show in App Library. The notifications themselves are in Notification Center.</p>
+            </div></details>
+
+          <details><summary>How do I turn on live notifications for an app?</summary>
+            <div class="details-body">
+              <p>The updates that stay on the Lock Screen while something is happening, like a delivery or a score, are called Live Activities. If an app offers them, open Settings, tap the app's name and turn on Live Activities.</p>
+            </div></details>
+
+        </div>
+      </section>
+
+      <section id="more">
+        <h2>Keep reading</h2>
+        <ul>
+          <li><a href="/guides/turn-on-notifications-iphone/">How to turn on notifications for an app on iPhone</a></li>
+          <li><a href="/guides/iphone-notifications-not-working/">Not getting notifications from an app on iPhone? The fixes</a></li>
+          <li><a href="/guides/quotes-on-your-iphone-lock-screen/">How to put quotes on your iPhone Lock Screen</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <section class="strip">
+    <div class="wrap strip-in">
+      <h2>Start today with something good.</h2>
+      <p class="lede">Set it up once. Dailies takes it from there.</p>
+      <a class="store-badge" href="https://apps.apple.com/app/id6804210416?pt=129347926&amp;ct=web-guides&amp;mt=8" data-download="page"><img src="/img/app-store-badge.svg" width="156" height="52" alt="Download on the App Store"></a>
+    </div>
+  </section>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <div class="social">
+      <a href="https://www.tiktok.com/@mydailies.app" aria-label="TikTok" title="TikTok" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#tiktok"/></svg></a>
+      <a href="https://www.instagram.com/mydailies.app/" aria-label="Instagram" title="Instagram" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#instagram"/></svg></a>
+      <a href="https://www.facebook.com/mydailiesapp" aria-label="Facebook" title="Facebook" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#facebook"/></svg></a>
+      <a href="https://www.youtube.com/@mydailiesapp" aria-label="YouTube" title="YouTube" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#youtube"/></svg></a>
+      <a href="https://www.pinterest.com/mydailiesapp/" aria-label="Pinterest" title="Pinterest" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#pinterest"/></svg></a>
+      <a href="https://www.linkedin.com/company/mydailiesapp/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#linkedin"/></svg></a>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/compare/">Compare</a>
+      <a href="/about/">About</a>
+      <a href="/press/">Press</a>
+      <a href="/terms/">Terms</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/cookies/">Cookies</a>
+      <a href="#" data-cookie-settings>Cookie settings</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to change the notification banner style on iPhone","description":"Choose whether an app's notification banners go away on their own or stay on the iPhone's screen until you act on them.","totalTime":"PT2M","author":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"supply":[{"@type":"HowToSupply","name":"An iPhone"}],"step":[
+{"@type":"HowToStep","name":"Open Settings and tap Notifications","text":"It is in the same group as Sounds & Haptics and Focus."},
+{"@type":"HowToStep","name":"Tap the app","text":"Every app that has asked to send notifications is in the list under Notification Style."},
+{"@type":"HowToStep","name":"Check that Allow Notifications is on","text":"The switch at the top. Nothing else on the page shows while it is off."},
+{"@type":"HowToStep","name":"Tick Banners under Alerts","text":"Banner Style only appears when Banners is ticked."},
+{"@type":"HowToStep","name":"Tap Banner Style and pick one","text":"Temporary or Persistent. The change is saved straight away, so you can go back."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is the difference between Temporary and Persistent banners on iPhone?","acceptedAnswer":{"@type":"Answer","text":"A Temporary banner appears at the top of the screen and goes away by itself after a few seconds. A Persistent banner stays there until you tap it or swipe it up. You choose one or the other for each app in Settings, Notifications, the app, Banner Style."}},
+{"@type":"Question","name":"Can I make every app's banners persistent at once?","acceptedAnswer":{"@type":"Answer","text":"No. Banner Style is set app by app, so open Settings, Notifications and change it for each app you care about. Most people only need it for a few."}},
+{"@type":"Question","name":"Where is Notification Center and how do I turn it on?","acceptedAnswer":{"@type":"Answer","text":"There is nothing to turn on: swipe down from the top left of the screen, or from the middle, to open it, and swipe up from the middle of the Lock Screen to see it there. If one app never shows up in it, tick Notification Center in that app's notification settings. To reach it while the phone is locked, turn on Notification Center under Allow Access When Locked in Settings, Face ID & Passcode."}},
+{"@type":"Question","name":"Why does a notification disappear before I can read it?","acceptedAnswer":{"@type":"Answer","text":"Its banner is set to Temporary. Set Banner Style to Persistent for that app and the banner waits until you deal with it. The notification itself is also kept in Notification Center, as long as that box is ticked."}},
+{"@type":"Question","name":"Can I see notifications in the App Library?","acceptedAnswer":{"@type":"Answer","text":"Not as a list, but the red badges can show there. Open Settings, Home Screen & App Library, and turn on Show in App Library. The notifications themselves are in Notification Center."}},
+{"@type":"Question","name":"How do I turn on live notifications for an app?","acceptedAnswer":{"@type":"Answer","text":"The updates that stay on the Lock Screen while something is happening, like a delivery or a score, are called Live Activities. If an app offers them, open Settings, tap the app's name and turn on Live Activities."}}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mydailies.app/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://mydailies.app/guides/"},{"@type":"ListItem","position":3,"name":"How to change the notification banner style on iPhone","item":"https://mydailies.app/guides/iphone-notification-banner-style/"}]}
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

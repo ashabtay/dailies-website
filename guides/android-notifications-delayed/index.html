@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Android notifications late or not arriving? The fixes | Dailies</title>
+<meta name="description" content="Why Android notifications arrive late or not at all, and the fixes in order: notification settings, Do Not Disturb, Battery Saver, app battery usage, Doze and Samsung's sleeping apps.">
+<link rel="canonical" href="https://mydailies.app/guides/android-notifications-delayed/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/guides/android-notifications-delayed/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/notificaciones-de-android-llegan-tarde/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-android-atrasadas/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/notifications-android-en-retard/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/android-benachrichtigungen-kommen-spaet/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/android-notifications-delayed/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/android-notifications-delayed/">
+<script>/* Written by tools/languages.py: send a visitor whose browser asks for another of the site's languages before English to this page in that language. */
+(function(){try{
+  var r=document.referrer; if(r&&r.indexOf(location.origin+'/')===0) return;
+  var l=navigator.languages||[navigator.language||''];
+  for(var i=0;i<l.length;i++){
+    var c=String(l[i]).slice(0,2).toLowerCase(); if(c==='en') return;
+    var a=document.querySelector('link[rel="alternate"][hreflang="'+c+'"]');
+    if(a){location.replace(new URL(a.href).pathname+location.search+location.hash); return;}
+  }
+}catch(e){}})();</script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android notifications late or not arriving? The fixes">
+<meta property="og:description" content="Most late notifications on Android are the phone saving battery, not a broken app. Where they get held, and how to let them through.">
+<meta property="og:url" content="https://mydailies.app/guides/android-notifications-delayed/">
+<meta property="og:image" content="https://mydailies.app/img/guides/android-notifications-delayed-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Four people in silhouette beside dark trees, under a starry night sky that glows orange at the horizon">
+<meta property="og:site_name" content="Dailies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/blog/">Blog</a>
+      <a href="/guides/">Guides</a>
+      <a href="/help/">Help</a>
+      <details class="lang"><summary aria-label="Language: English"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">English</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/guides/android-notifications-delayed/" hreflang="en" lang="en" aria-current="true">English</a><a href="/fr/guides/notifications-android-en-retard/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/anleitungen/android-benachrichtigungen-kommen-spaet/" hreflang="de" lang="de-DE">Deutsch</a><a href="/es/guias/notificaciones-de-android-llegan-tarde/" hreflang="es" lang="es-MX">Español</a><a href="/pt/guias/notificacoes-do-android-atrasadas/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/guides/android-notifications-delayed/" hreflang="ja" lang="ja">日本語</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/#get">Get Dailies</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">Guide</div>
+      <h1>Android notifications late or not arriving? The fixes</h1>
+      <p class="lede">On Android, an app can plan a notification for eight in the morning and the phone still decides when it shows. Android holds notifications back to save battery, phone makers add battery managers of their own, and one switched off category can quiet an app that looks fully allowed. Nearly every late or missing notification is one of these, not a broken app. Here is where to look, in order.</p>
+      <p class="doc-meta"><span>By <a href="/about/">Amit Shabtay</a>, who makes Dailies</span> <span>Steps written from Google's and Samsung's documentation on 13 November 2026, not walked on a phone</span></p>
+    </div>
+  </header>
+
+  <div class="wrap"><figure class="post-hero"><img src="/img/guides/android-notifications-delayed.jpg" width="1080" height="608" alt="Four people in silhouette beside dark trees, under a starry night sky that glows orange at the horizon" fetchpriority="high"></figure></div>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">On this page</div>
+      <a href="#why">Why notifications run late</a>
+      <a href="#fixes">The fixes, in order</a>
+      <a href="#symptoms">Matching the symptom</a>
+      <a href="#dailies">Dailies notifications</a>
+      <a href="#faq">Questions</a>
+    </aside>
+
+    <div class="prose">
+
+      <section id="why">
+        <h2>Why notifications run late</h2>
+        <p>Between an app and your screen, every notification passes a few gates. Any one of them can stop it, hold it for later or deliver it so quietly you never notice:</p>
+        <ul>
+          <li><strong>Permission and categories.</strong> Whether the app may notify you at all, and, for each kind of notification it sends (Android calls these categories), whether that kind is on and whether it makes a sound.</li>
+          <li><strong>Do Not Disturb and Modes.</strong> They silence every app that is not on their list. On Pixel phones with Android 15 and later, Do Not Disturb is one of several Modes, and a mode such as Bedtime can switch itself on by schedule.</li>
+          <li><strong>Battery Saver.</strong> It cuts background work across the whole phone, and Google says apps may experience delays while it is on.</li>
+          <li><strong>The app's battery setting.</strong> Android lets each app run in the background freely, in a managed way or hardly at all. Samsung keeps lists of its own on Galaxy phones: sleeping apps, deep sleeping apps and never sleeping apps.</li>
+          <li><strong>Doze.</strong> When the phone lies still with its screen off and is not charging, Android pauses most background work and wakes only now and then, in short maintenance windows, to let apps catch up. A notification due in between can wait for the next window.</li>
+        </ul>
+        <div class="callout">
+          <div class="callout-label">The quick check</div>
+          <p>Swipe down from the top of the screen. If Do Not Disturb, a mode or Battery Saver is lit in Quick Settings, start there. If nothing is lit and the notifications do come, only late, go straight to the battery steps.</p>
+        </div>
+        <p>On an iPhone? The settings are different there: see <a href="/guides/iphone-notifications-not-working/">Not getting notifications from an app on iPhone? The fixes</a>.</p>
+      </section>
+
+      <section id="fixes">
+        <h2>The fixes, in order</h2>
+        <p>Try them one at a time. The first four cover most cases. Menus vary from phone to phone: the paths below are Google's for Pixel phones and Samsung's for Galaxy phones, and other phones usually have the same setting under a similar name.</p>
+        <ol>
+          <li><strong>Check the app's notifications and its categories.</strong> Open <strong>Settings &rarr; Apps</strong>, tap the app (look under <strong>See all apps</strong> if it is not listed), then tap <strong>Notifications</strong>. Make sure <strong>All <em>app name</em> notifications</strong> is on, then check each category below it. An app can be allowed while the one category you care about is off, or set to <strong>Silent</strong>, which puts it in the notification shade without a sound or a banner.</li>
+          <li><strong>Check Do Not Disturb and Modes.</strong> Swipe down to Quick Settings and turn off Do Not Disturb or any mode that is on. To keep a mode and let the app through, open <strong>Settings &rarr; Modes</strong>, tap the mode, and in its notification settings choose <strong>Apps</strong> and add the app. On older versions of Android, Do Not Disturb sits under <strong>Settings &rarr; Notifications</strong> or <strong>Sound</strong>. If a mode keeps coming back on, check its schedule.</li>
+          <li><strong>Turn off Battery Saver.</strong> Open <strong>Settings &rarr; Battery &rarr; Battery Saver</strong>, switch it off, and check whether a schedule turns it back on by itself. On a Galaxy phone it is called <strong>Power saving</strong>, under <strong>Settings &rarr; Battery</strong>. While it is on, Android cuts background work, and notifications an app has planned can run late.</li>
+          <li><strong>Let the app run in the background.</strong> On a Pixel, open <strong>Settings &rarr; Apps</strong>, tap the app, then <strong>App battery usage</strong>. Turn on <strong>Allow background usage</strong>, tap it, and choose <strong>Unrestricted</strong>. <strong>Optimized</strong> is the default and suits most apps, while <strong>Restricted</strong> is the one that holds notifications back. On a Galaxy phone, open <strong>Settings &rarr; Battery &rarr; Background usage limits</strong> (on some models under <strong>Battery and device care</strong>). Take the app out of <strong>Sleeping apps</strong> and <strong>Deep sleeping apps</strong>, then add it to <strong>Never sleeping apps</strong> with the plus button. With <strong>Put unused apps to sleep</strong> on, Samsung moves apps you have not opened for a while into those lists by itself, so an app can end up there without you doing anything.</li>
+          <li><strong>Check Adaptive Battery.</strong> On a Pixel it is under <strong>Settings &rarr; Battery &rarr; Battery Saver &rarr; Adaptive Battery</strong>. It learns which apps you use and limits the rest, and Google notes that it can delay notifications. Google recommends leaving it on. Switching it off for a day is a fair test of whether it is the cause, and if it is, setting that one app to Unrestricted in the step above is the better fix.</li>
+          <li><strong>Expect Doze to move things a little.</strong> Doze has no switch. When the phone lies still with its screen off, Android holds ordinary alarms until its next maintenance window, and the windows come further apart the longer the phone stays still. Apps that must fire on the minute, like an alarm clock, ask Android for exact alarms. Many other apps do not, so their notifications can arrive a little after the planned time. Picking up the phone or plugging it in ends Doze, which is why late notifications often turn up the moment you look.</li>
+          <li><strong>Check Samsung's automatic restart.</strong> On a Galaxy phone, open <strong>Settings &rarr; Device care &rarr; Auto optimization &rarr; Auto restart</strong>. It restarts the phone while you are not using it, closing background apps. After a restart, apps that plan notifications on the phone can only put them back once you unlock it, so one due before that waits. Turn off <strong>Restart on schedule</strong>, or set it for a time you expect nothing.</li>
+          <li><strong>On Xiaomi, Huawei, OnePlus and similar phones, let the app start by itself.</strong> Some phone makers stop apps more firmly than Android does. Look on the app's page in Settings, or in the phone's battery settings, for a switch called autostart or something close to it, turn it on, and set the app's battery setting to no restrictions. On some of these phones, swiping an app away from recent apps stops it completely, and locking it in recent apps, where the phone offers that, prevents this. <a href="https://dontkillmyapp.com/" rel="noopener">Don't kill my app!</a> keeps a list of these settings, phone maker by phone maker.</li>
+          <li><strong>Do not force stop the app, and open it once.</strong> <strong>Force stop</strong> on the app's page in <strong>Settings &rarr; Apps</strong> cancels everything the app had scheduled until you open it again, so open it once if you used it. Android can also pause an app you have not opened for a few months: on the same page, turn off <strong>Pause app activity if unused</strong> for apps whose notifications you want.</li>
+          <li><strong>Restart the phone, then update Android and the app.</strong> A restart clears a stuck notification service more often than it should, and notification bugs get fixed in updates, on both sides.</li>
+        </ol>
+      </section>
+
+      <section id="symptoms">
+        <h2>Matching the symptom</h2>
+        <h3>They arrive, but late, mostly after the phone has been lying still</h3>
+        <p>That is the phone saving battery: Doze, Battery Saver or the app's battery setting. Go through fixes three to six, and set the app to Unrestricted on a Pixel or Never sleeping on a Galaxy phone.</p>
+
+        <h3>Several arrive at once when I pick up the phone</h3>
+        <p>They were held while the phone slept and released when it woke. The same fixes apply, starting with the app's battery setting.</p>
+
+        <h3>They are in the notification shade, but make no sound and show no banner</h3>
+        <p>The app's category is set to <strong>Silent</strong>. On the app's <strong>Notifications</strong> page, tap the category and choose the option that alerts you, with pop on screen allowed if your phone offers it.</p>
+
+        <h3>They stopped after a restart, an update or a few weeks away from the app</h3>
+        <p>Open the app once, so it can schedule again. Then check whether the phone put it to sleep: Samsung's sleeping apps lists, or <strong>Pause app activity if unused</strong> on the app's page.</p>
+      </section>
+
+      <section id="dailies">
+        <h2>Dailies notifications</h2>
+        <p>If the late app is ours, a few things specific to <a href="/">Dailies</a> on Android:</p>
+        <ul>
+          <li><strong>Quotes have a category of their own.</strong> In <strong>Settings &rarr; Apps &rarr; Dailies &rarr; Notifications</strong> (the path varies by phone), check that notifications are allowed and that the <strong>Daily quotes</strong> category is on, and not set to Silent if you want to hear them arrive.</li>
+          <li><strong>Quotes arrive inside the hours you chose.</strong> Open <strong>Personalize &rarr; Daily dose</strong> to see how many you get a day, the hours they are allowed to reach you and the days of the week. If the window runs from 9am to 5pm and you are checking at 8am, nothing is due yet. Inside the window they come at moments you did not pick, on purpose.</li>
+          <li><strong>They are planned on your phone.</strong> Dailies schedules its quotes on the phone itself, with no internet needed, so Data Saver and a weak signal make no difference.</li>
+          <li><strong>Battery saving is the usual cause of a late quote.</strong> Battery Saver and Samsung's sleeping apps lists can hold a quote until after your window has closed, or keep it from arriving at all. The fix: on a Pixel, set Dailies to <strong>Unrestricted</strong> in <strong>App battery usage</strong>. On a Galaxy phone, add Dailies to <strong>Never sleeping apps</strong>.</li>
+          <li><strong>Opening the app tops them up.</strong> Dailies refreshes its plan every time you open it. After a force stop, or a long stretch without opening it, open it once and the next quotes are scheduled.</li>
+        </ul>
+        <p>Still nothing? Write to <a href="mailto:help@mydailies.app">help@mydailies.app</a> and a person will answer. The <a href="/help/#notifications">help page</a> has the short version.</p>
+      </section>
+
+      <section id="faq">
+        <h2>Questions</h2>
+        <div class="faq">
+          <details open><summary>Why are my Android notifications delayed?</summary>
+            <div class="details-body">
+              <p>Most often the phone is saving battery. Battery Saver, an app set to Restricted in its battery settings or, on a Galaxy phone, Samsung's sleeping apps lists can hold notifications back. When the phone lies still with its screen off, Doze also holds them until its next maintenance window.</p>
+            </div></details>
+
+          <details><summary>What is Doze on Android?</summary>
+            <div class="details-body">
+              <p>A battery saving state that Android enters when the phone is unplugged, still and has its screen off. It pauses most background work and lets apps catch up in short maintenance windows, which come less often the longer the phone stays still. Moving the phone, turning on the screen or plugging it in ends it.</p>
+            </div></details>
+
+          <details><summary>Should I set apps to Unrestricted battery usage?</summary>
+            <div class="details-body">
+              <p>Only the few whose timing matters to you. Google recommends Optimized for most apps, and Unrestricted can use more battery. For an app whose notifications you want on time, Unrestricted is the setting that lets them through.</p>
+            </div></details>
+
+          <details><summary>Does Data Saver delay notifications?</summary>
+            <div class="details-body">
+              <p>Data Saver limits how much mobile data apps use in the background. Notifications that an app schedules on the phone itself need no data, so Data Saver does not hold those back.</p>
+            </div></details>
+
+          <details><summary>Why do notifications stop after I swipe an app away?</summary>
+            <div class="details-body">
+              <p>On some phones, such as Xiaomi, Huawei and OnePlus models, clearing an app from recent apps stops it completely, along with everything it had scheduled. Allow the app to start by itself in the phone's settings, or lock it in recent apps, and open it once so it can schedule again.</p>
+            </div></details>
+
+          <details><summary>Where did Do Not Disturb go on my Pixel?</summary>
+            <div class="details-body">
+              <p>On Android 15 and later, Pixel phones list Do Not Disturb under Settings, then Modes, beside other modes such as Bedtime. Each mode has its own list of apps it lets through.</p>
+            </div></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <div class="social">
+      <a href="https://www.tiktok.com/@mydailies.app" aria-label="TikTok" title="TikTok" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#tiktok"/></svg></a>
+      <a href="https://www.instagram.com/mydailies.app/" aria-label="Instagram" title="Instagram" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#instagram"/></svg></a>
+      <a href="https://www.facebook.com/mydailiesapp" aria-label="Facebook" title="Facebook" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#facebook"/></svg></a>
+      <a href="https://www.youtube.com/@mydailiesapp" aria-label="YouTube" title="YouTube" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#youtube"/></svg></a>
+      <a href="https://www.pinterest.com/mydailiesapp/" aria-label="Pinterest" title="Pinterest" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#pinterest"/></svg></a>
+      <a href="https://www.linkedin.com/company/mydailiesapp/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#linkedin"/></svg></a>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/compare/">Compare</a>
+      <a href="/about/">About</a>
+      <a href="/press/">Press</a>
+      <a href="/terms/">Terms</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/cookies/">Cookies</a>
+      <a href="#" data-cookie-settings>Cookie settings</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to fix Android notifications that arrive late or not at all","description":"The fixes for late or missing Android notifications, in the order worth trying them.","totalTime":"PT15M","author":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"supply":[{"@type":"HowToSupply","name":"An Android phone"}],"step":[
+{"@type":"HowToStep","name":"Check the app's notifications and its categories","text":"Open Settings → Apps, tap the app (look under See all apps if it is not listed), then tap Notifications. Make sure All app name notifications is on, then check each category below it. An app can be allowed while the one category you care about is off, or set to Silent, which puts it in the notification shade without a sound or a banner."},
+{"@type":"HowToStep","name":"Check Do Not Disturb and Modes","text":"Swipe down to Quick Settings and turn off Do Not Disturb or any mode that is on. To keep a mode and let the app through, open Settings → Modes, tap the mode, and in its notification settings choose Apps and add the app. On older versions of Android, Do Not Disturb sits under Settings → Notifications or Sound. If a mode keeps coming back on, check its schedule."},
+{"@type":"HowToStep","name":"Turn off Battery Saver","text":"Open Settings → Battery → Battery Saver, switch it off, and check whether a schedule turns it back on by itself. On a Galaxy phone it is called Power saving, under Settings → Battery. While it is on, Android cuts background work, and notifications an app has planned can run late."},
+{"@type":"HowToStep","name":"Let the app run in the background","text":"On a Pixel, open Settings → Apps, tap the app, then App battery usage. Turn on Allow background usage, tap it, and choose Unrestricted. Optimized is the default and suits most apps, while Restricted is the one that holds notifications back. On a Galaxy phone, open Settings → Battery → Background usage limits (on some models under Battery and device care). Take the app out of Sleeping apps and Deep sleeping apps, then add it to Never sleeping apps with the plus button. With Put unused apps to sleep on, Samsung moves apps you have not opened for a while into those lists by itself, so an app can end up there without you doing anything."},
+{"@type":"HowToStep","name":"Check Adaptive Battery","text":"On a Pixel it is under Settings → Battery → Battery Saver → Adaptive Battery. It learns which apps you use and limits the rest, and Google notes that it can delay notifications. Google recommends leaving it on. Switching it off for a day is a fair test of whether it is the cause, and if it is, setting that one app to Unrestricted in the step above is the better fix."},
+{"@type":"HowToStep","name":"Expect Doze to move things a little","text":"Doze has no switch. When the phone lies still with its screen off, Android holds ordinary alarms until its next maintenance window, and the windows come further apart the longer the phone stays still. Apps that must fire on the minute, like an alarm clock, ask Android for exact alarms. Many other apps do not, so their notifications can arrive a little after the planned time. Picking up the phone or plugging it in ends Doze, which is why late notifications often turn up the moment you look."},
+{"@type":"HowToStep","name":"Check Samsung's automatic restart","text":"On a Galaxy phone, open Settings → Device care → Auto optimization → Auto restart. It restarts the phone while you are not using it, closing background apps. After a restart, apps that plan notifications on the phone can only put them back once you unlock it, so one due before that waits. Turn off Restart on schedule, or set it for a time you expect nothing."},
+{"@type":"HowToStep","name":"On Xiaomi, Huawei, OnePlus and similar phones, let the app start by itself","text":"Some phone makers stop apps more firmly than Android does. Look on the app's page in Settings, or in the phone's battery settings, for a switch called autostart or something close to it, turn it on, and set the app's battery setting to no restrictions. On some of these phones, swiping an app away from recent apps stops it completely, and locking it in recent apps, where the phone offers that, prevents this. Don't kill my app! keeps a list of these settings, phone maker by phone maker."},
+{"@type":"HowToStep","name":"Do not force stop the app, and open it once","text":"Force stop on the app's page in Settings → Apps cancels everything the app had scheduled until you open it again, so open it once if you used it. Android can also pause an app you have not opened for a few months: on the same page, turn off Pause app activity if unused for apps whose notifications you want."},
+{"@type":"HowToStep","name":"Restart the phone, then update Android and the app","text":"A restart clears a stuck notification service more often than it should, and notification bugs get fixed in updates, on both sides."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Why are my Android notifications delayed?","acceptedAnswer":{"@type":"Answer","text":"Most often the phone is saving battery. Battery Saver, an app set to Restricted in its battery settings or, on a Galaxy phone, Samsung's sleeping apps lists can hold notifications back. When the phone lies still with its screen off, Doze also holds them until its next maintenance window."}},
+{"@type":"Question","name":"What is Doze on Android?","acceptedAnswer":{"@type":"Answer","text":"A battery saving state that Android enters when the phone is unplugged, still and has its screen off. It pauses most background work and lets apps catch up in short maintenance windows, which come less often the longer the phone stays still. Moving the phone, turning on the screen or plugging it in ends it."}},
+{"@type":"Question","name":"Should I set apps to Unrestricted battery usage?","acceptedAnswer":{"@type":"Answer","text":"Only the few whose timing matters to you. Google recommends Optimized for most apps, and Unrestricted can use more battery. For an app whose notifications you want on time, Unrestricted is the setting that lets them through."}},
+{"@type":"Question","name":"Does Data Saver delay notifications?","acceptedAnswer":{"@type":"Answer","text":"Data Saver limits how much mobile data apps use in the background. Notifications that an app schedules on the phone itself need no data, so Data Saver does not hold those back."}},
+{"@type":"Question","name":"Why do notifications stop after I swipe an app away?","acceptedAnswer":{"@type":"Answer","text":"On some phones, such as Xiaomi, Huawei and OnePlus models, clearing an app from recent apps stops it completely, along with everything it had scheduled. Allow the app to start by itself in the phone's settings, or lock it in recent apps, and open it once so it can schedule again."}},
+{"@type":"Question","name":"Where did Do Not Disturb go on my Pixel?","acceptedAnswer":{"@type":"Answer","text":"On Android 15 and later, Pixel phones list Do Not Disturb under Settings, then Modes, beside other modes such as Bedtime. Each mode has its own list of apps it lets through."}}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mydailies.app/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://mydailies.app/guides/"},{"@type":"ListItem","position":3,"name":"Android notifications late or not arriving? The fixes","item":"https://mydailies.app/guides/android-notifications-delayed/"}]}
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>
