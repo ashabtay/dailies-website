@@ -947,13 +947,10 @@ in App Store Connect first; a new `ct` value simply appears. The values in use:
 | `web-compare` | `/compare/` and every comparison        |
 | `web-about`   | `/about/`                               |
 | `web-404`     | the 404 page                            |
-| `web-chatgpt` | the ChatGPT redirect on the six home pages (see [Visitors from ChatGPT](#visitors-from-chatgpt)) |
 | `web-llms`    | the App Store link in `/llms.txt` (see [llms.txt](#llmstxt)) |
 
 The translated pages use the same values with the language on the
 end: `web-home-es`, `web-qr-pt`, `web-guides-fr`, `web-404-de`, `web-blog-ja` and so on.
-`web-chatgpt` is the one exception: it has no language, so the ChatGPT
-downloads stay in one row and clear Apple's five-download threshold sooner.
 
 A new page in an existing section reuses that section's value; a new section
 gets a new `web-` value and a row in this table. In the HTML the `&`s are
@@ -981,33 +978,16 @@ no prices, no em-dashes.
 
 ## Visitors from ChatGPT
 
-ChatGPT recommends Dailies in its app-list answers, but its card links to this
-site (`https://mydailies.app/?utm_source=chatgpt.com`) instead of the App Store.
-Those visitors have already chosen the app: in the week from 26 Oct 2026 half of
-them tapped Download, with a median of one second on the page, and the other
-half left without tapping.
+ChatGPT tags the links it cites `utm_source=chatgpt.com`, and its answers have
+linked to this site (`https://mydailies.app/?utm_source=chatgpt.com`) instead of
+the App Store. Those visitors land on the home page like anyone else and show in
+the dashboard's *Where visitors come from* tile as ChatGPT.
 
-So the six home pages send them straight on. A script at the top of `<head>`,
-just under the Smart App Banner tag, checks for `utm_source=chatgpt.com` in the
-address and an iPhone or iPad (iPadOS reports a Mac, so a Mac with a touch
-screen counts too), and `location.replace`s to the App Store with
-`ct=web-chatgpt`. It runs before the language redirect, so a French phone goes
-straight to the App Store instead of via `/fr/`. Everyone else, a Mac or Android
-visitor from ChatGPT included, sees the page as usual.
-
-Two things follow from it:
-
-- **The App Store is the only count.** The redirect happens before the cookie
-  banner, so PostHog never sees these visits and the dashboard's *Where visitors
-  come from* tile stops counting ChatGPT on iPhone. Read
-  Analytics → Acquisition → Campaigns → `web-chatgpt` instead.
-- **Crawlers are unaffected.** They never carry the `utm_source`, so search
-  engines and ChatGPT's own crawler index the page as before.
-
-Safari hands an `apps.apple.com` address to the App Store app even from a script
-redirect, with no tap. In the Simulator, which has no App Store, that shows as
-"Safari cannot open the page because the address is invalid": that is the
-redirect working.
+From 3 to 15 November 2026 the six home pages sent iPhone and iPad visitors with
+that tag straight to the App Store from a script at the top of `<head>`. It was
+removed: the App Store dropped the `ct=web-chatgpt` tag on a script redirect, so
+the downloads could not be counted, and it added no visible lift. Do not bring it
+back without a way to measure it.
 
 ## The app's own structured data
 
