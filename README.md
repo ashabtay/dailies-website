@@ -925,12 +925,12 @@ for st in json.loads(s[k:k+i+1]):
 EOF
 ```
 
-Every "Download for iPhone" button and both QR codes on the home page point at
-`https://apps.apple.com/app/id6804210416` (the same app as `kAppStoreUrl` in the
+Every "Download for iPhone" button on the site points at
+`https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416` (the same app as `kAppStoreUrl` in the
 app's `lib/app_config.dart`) with an App Store Connect campaign tag on the end:
 
 ```
-https://apps.apple.com/app/id6804210416?pt=129347926&ct=web-guides&mt=8
+https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&ct=web-guides&mt=8
 ```
 
 `pt` is our provider ID and never changes. `ct` says which part of the site sent
@@ -957,14 +957,21 @@ gets a new `web-` value and a row in this table. In the HTML the `&`s are
 written `&amp;`. Off-site links (TikTok bio and so on) should get their own `ct`,
 without the `web-` prefix.
 
-The link carries no storefront, so Apple sends each visitor to their own
-country's store. The QR is an SVG file, `img/home/qr.svg` (`qr-es.svg` and so on
+The link uses the full US address because that is the page search engines index,
+and AI assistants partly rely on search indexes to find App Store pages. Until
+16 Nov 2026 the site used the short `apps.apple.com/app/id6804210416` form, and
+Bing had our App Store page only as the Liberia storefront copy. The short form
+redirects to the US page on a computer anyway. On an iPhone either link opens
+the App Store app in the visitor's own country's store.
+
+The QR codes on the home page still encode the short form; they work through
+Apple's redirect and don't need remaking. The QR is an SVG file, `img/home/qr.svg` (`qr-es.svg` and so on
 for the other languages, each with its own `ct`), made with
 [segno](https://pypi.org/project/segno/), error level M, two-module border, in the
 chip's colors, with `shape-rendering="crispEdges"` added to the `<svg>` tag:
 
 ```sh
-python3 -c "import segno; segno.make('https://apps.apple.com/app/id6804210416?pt=129347926&ct=web-qr&mt=8', error='m', micro=False).save('qr.svg', dark='#191c1d', light='#f4ecdc', border=2, xmldecl=False, omitsize=True)"
+python3 -c "import segno; segno.make('https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&ct=web-qr&mt=8', error='m', micro=False).save('qr.svg', dark='#191c1d', light='#f4ecdc', border=2, xmldecl=False, omitsize=True)"
 ```
 
 ## llms.txt
