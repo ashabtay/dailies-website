@@ -39,6 +39,11 @@ The website for the Dailies app — https://mydailies.app
 | `/terms` | `terms/index.html` | Terms of Use |
 | `/privacy` | `privacy/index.html` | Privacy Policy |
 | `/cookies` | `cookies/index.html` | Cookie Policy |
+| `/motivational-wallpapers` | `motivational-wallpapers/index.html` | The wallpaper maker and gallery, in six languages. See [The wallpaper and encouragement pages](#the-wallpaper-and-encouragement-pages) |
+| `/words-of-encouragement` | `words-of-encouragement/index.html` | Lines to send a friend in an envelope, in six languages. Same section |
+| `/inspirational-quotes-lock-screen`, `/positive-quotes-lock-screen` | their `index.html` | Two more wallpaper makers, each with its own lines, in six languages. Same section |
+| `/motivational-quotes-for-a-friend`, `/love-quotes-for-your-partner`, `/good-morning-quotes` | their `index.html` | Three more envelope pages, each with its own lines, in six languages. Same section |
+| `/e/#…` | `e/index.html` | Where a friend opens an envelope. One page for every language, `noindex`, not in the sitemap. Same section |
 | `/compare` | `compare/index.html` | Comparison hub, linking the twelve articles below |
 | `/compare/best-motivational-quote-apps` | `compare/best-motivational-quote-apps/index.html` | The best motivational quote apps for iPhone: the five biggest side by side |
 | `/compare/dailies-vs-motivation` | `compare/dailies-vs-motivation/index.html` | Dailies vs Motivation (Monkey Taps) |
@@ -619,6 +624,61 @@ Adding a post: copy the closest existing one, add a card on `blog/index.html` an
 a `blogPost` entry in its `Blog` JSON-LD, add it to `PAGES` in
 `tools/sitemap.py`, and link it from the "Keep reading" list of two or three
 related posts.
+
+## The wallpaper and encouragement pages
+
+Seven pages, each in all six languages, built to be found on Google and to turn the people who land there into app users: three wallpaper makers (motivational, inspirational, positive) and four envelope pages (encouragement, motivational quotes for a friend, love quotes, good morning quotes). `PAGES` at the end of `tools/play_copy.py` lists them; each has its own lines under its key in `tools/play/lines.json`, so no two pages are the same page under a different title. All are written by `tools/play_pages.py`; edit its inputs, never the pages by hand. Every page links to all the others at the bottom, and the home pages link to all of them in the "Free to try" section under the hero. An envelope remembers the page it was sealed on (`p`), so Send one back and the More link lead back to the same kind of lines.
+
+| Page | Aimed at (US monthly searches, Google Ads, 17 Nov 2026) | What a visitor does there |
+| --- | --- | --- |
+| `/motivational-wallpapers/` and its translations | "motivational wallpaper" 14,800, "quote wallpaper" 5,400, "inspirational quotes wallpaper" 4,400 | Picks a mood, a line and one of the app's backgrounds in the maker at the top, sees it live under a Lock Screen clock, and saves it full size; then gets the steps for their phone and the App Store badge (`web-wallpaper`) |
+| `/words-of-encouragement/` and its translations | "words of encouragement", "encouraging words", "encouraging quotes", 40,500 each | Picks an occasion and a line, types a friend's name, and seals it into an envelope link (`/e/`), sent by the share sheet, WhatsApp, email or a copied link; the badge is `web-envelope` |
+
+Everything a search engine reads is plain HTML in the page: the headings, every line as text under its mood or occasion, the gallery pictures with their alt text, the steps and the questions (with `FAQPage` JSON-LD, and an `ItemList` of `ImageObject`s for the gallery). The maker and the composer are scripts on top (`wallpaper.js`, `encourage.js`, both on `play.js`), so the page reads the same without them.
+
+**Building.** From the root of the repo:
+
+```bash
+python3 tools/play_pages.py
+python3 tools/languages.py
+python3 tools/sitemap.py
+```
+
+`play_pages.py` writes the twelve pages, `play-lines.js` (the lines by id, for the browser), the gallery pictures (`img/wallpapers/<lang>/`, the first four lines of each mood, 540 x 1170) and the share images (`img/wallpapers/og-*.jpg`). It draws the pictures with Pillow, in `tools/play/Lora-Regular.ttf` (SIL Open Font License, `tools/play/Lora-OFL.txt`; the app's own copy) and, for Japanese, the Mac's Hiragino Mincho. `wallpaper.js` draws the same layout on a canvas; the numbers are `LAYOUT` in the script and `L` in `wallpaper.js`, and the two must stay in step. Its inputs:
+
+- `tools/play/lines.json`: every line, with its quote id, in six languages, word for word from the app's `assets/quotes.db`. Wallpapers in five moods, encouragement in five occasions (the last, "with their name", is the app's `personalized` lines). Check it from the root of this repo:
+
+  ```bash
+  python3 - <<'PY'
+  import json,sqlite3
+  db=sqlite3.connect('../dailies/assets/quotes.db')
+  C={'en':'','es':'Es','pt':'Pt','fr':'Fr','de':'De','ja':'Ja'}
+  for page,groups in json.load(open('tools/play/lines.json')).items():
+      for g,items in groups.items():
+          for it in items:
+              col='personalized' if g=='named' else 'text'
+              for l,s in C.items():
+                  v=db.execute(f'select {col}{s}, sourceDbId from quotes where quoteId=?',(it['id'],)).fetchone()
+                  if not v or v[0]!=it['text'][l] or v[1]=='modern': print('CHECK',it['id'],l)
+  PY
+  ```
+
+- `tools/play/backgrounds.json`: the app's backgrounds used here (copied to `img/wallpapers/bg/`, 1080 x 1920, from the app's `assets/backgrounds/`), their names in each language from the app's catalogs, and their credits. They are Unsplash photographs; the license allows this use, and the credits are kept as the app keeps them.
+- `tools/play_copy.py`: every other word, in six languages.
+
+**Rules for the lines.**
+
+1. **Only lines that can go on a picture.** The app's own lines and public-domain authors: nothing from the `modern` source, where living authors' grants cover quotation and not images. James Clear's lines are never used.
+2. **Lines that motivate, in the plain register**, short enough for a Lock Screen (wallpapers under about 60 characters), and none from the groups the app skips (see the quote-review skill).
+3. **The order in `lines.json` and `backgrounds.json` is part of every link.** An envelope names its background by position in the backgrounds list, and the wallpaper maker's `#k=` does too: add to the end, never reorder or remove.
+
+**Envelopes.** `https://mydailies.app/e/#<base64url(JSON)>`: either one of the site's lines by its short id, or the sender's own words (up to 200 characters), plus both names, the language and a background, all after the `#`, which a browser never sends to a server. Own words are shown as the sender's ("Amit wrote this for you") on a `noindex` page. The opened envelope offers **Send one back** (the encouragement page with `#to=` and `#from=`, the names swapped round, so the friend picks a line or writes their own; the page clears them from the address), **Make it a wallpaper** (the maker, opened with `#q=` or `#t=`, `#k=` and, for a `{name}` line, `#n=`; also cleared) and **More words of encouragement**. Sealing offers the phone's share sheet where there is one, then Message (phones only), WhatsApp and email; there is no copied link. The field list is at the top of `play.js`.
+
+**Saving on an iPhone.** The picture always ends up in Photos, never Files: the share sheet (Save Image) where Safari allows it (https only), and otherwise the full-size picture in a sheet to press and hold (Save to Photos). Only Android and computers download.
+
+**The way in.** The six home pages link to both pages right under the App Store badge (`.try-row`).
+
+**The names never reach analytics.** `/e/` sets `data-analytics="private"` on `<body>`, and `consent.js` then starts PostHog without autocapture, heatmaps or performance capture and with the fragment cut from every URL, and loads no ad pixels at all. It also sets `data-consent="deferred"`, so the cookie question waits until a couple of seconds after the envelope is open. The composer carries `ph-no-capture`. The wallpaper maker's own words never leave the browser. The events go through `dailiesAnalytics.play()` in `analytics.js`, which drops any value that is not a short slug, a number or a true/false; the list of events and their properties is there. The wallpaper is drawn in the browser and never uploaded. The privacy policy's website section says all of this in plain words; change one, change the other.
 
 ## The comparison pages
 

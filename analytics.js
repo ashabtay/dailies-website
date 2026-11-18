@@ -242,6 +242,72 @@
 
   ready(watchHelpSearch);
 
+  /* --------------------------------------------- envelopes and wallpapers */
+  /* play.js, envelope.js, encourage.js and wallpaper.js report through
+     dailiesAnalytics.play(). The names live here, with every other event on
+     the site:
+
+       envelope_picked   a line chosen on the words-of-encouragement page;
+                         `from` is occasion (a chip), own (Write your own) or
+                         list (Send this one)
+       envelope_sealed   somebody sealed a line; `mode` is page (a line
+                         from the encouragement page) or own (their own words)
+       envelope_shared   ...and sent it; `method` is share, message, whatsapp or email
+       envelope_viewed   /e/ showed a sealed envelope
+       envelope_opened   ...and it was opened; `ms_to_open` is how long they looked first
+       envelope_cta      a button on an opened envelope: `action` is send_back,
+                         wallpaper or read_more
+       envelope_invalid  the link did not decode; `reason` is empty, decode or field
+       wallpaper_changed the maker: `change` is mood, line, bg or own (the first
+                         three of each per page)
+       wallpaper_picked  a gallery picture or a listed line opened in the
+                         maker; `from` is gallery or list
+       wallpaper_saved   the picture was handed over: `method` is share, download
+                         or hold (pressed and held on an iPhone), `mood` the mood it came from (or none),
+                         `from` maker, gallery, list or envelope
+
+     An envelope carries two names, and the composer shows them on screen.
+     They are never sent: only the keys below get through, and a string value
+     has to look like a slug, so a name cannot ride along by mistake. On /e/
+     the link's #fragment, which holds them, is cut off every URL PostHog
+     records (data-analytics="private" in consent.js).
+
+     The banner on /e/ is only asked once the envelope is open, so the first
+     events there happen before anybody has said yes. They are held here in
+     memory, never stored, sent if the visitor then allows analytics and
+     dropped with the page otherwise. The same holds on any page whose banner
+     is still unanswered. */
+
+  var PLAY_EVENTS = {
+    envelope_picked: 1, envelope_sealed: 1, envelope_shared: 1, envelope_viewed: 1,
+    envelope_opened: 1, envelope_cta: 1, envelope_invalid: 1,
+    wallpaper_changed: 1, wallpaper_picked: 1, wallpaper_saved: 1
+  };
+  var PLAY_KEYS = ['mode', 'method', 'action', 'reason', 'from', 'change', 'mood', 'ms_to_open',
+    'has_to', 'has_from'];
+  var SAFE_STRING = /^[a-z0-9_-]{1,40}$/i;
+  var held = [];
+
+  function play(event, props) {
+    if (!PLAY_EVENTS[event]) return;
+    var clean = {};
+    PLAY_KEYS.forEach(function (k) {
+      if (!props || !(k in props)) return;
+      var v = props[k];
+      if (v === null || typeof v === 'boolean' || (typeof v === 'number' && isFinite(v))) clean[k] = v;
+      else if (typeof v === 'string' && SAFE_STRING.test(v)) clean[k] = v;
+    });
+    if (window.posthog && window.posthog.capture) track(event, clean);
+    else if (held.length < 20) held.push([event, clean]);
+  }
+
+  function releaseHeld(state) {
+    var list = held;
+    held = [];
+    if (!state || !state.analytics) return;
+    list.forEach(function (e) { track(e[0], e[1]); });
+  }
+
   /* ---------------------------------------------------------------- public */
   /* consent.js calls this the moment a decision is saved. It only ever
      arrives when analytics was allowed (a refusal loads no PostHog for it to
@@ -252,12 +318,14 @@
 
   window.dailiesAnalytics = {
     track: track,
+    play: play,
     consentDecided: function (state, choice) {
       track('consent_decided', {
         choice: choice,
         analytics: !!(state && state.analytics),
         marketing: !!(state && state.marketing)
       });
+      releaseHeld(state);
     }
   };
 })();

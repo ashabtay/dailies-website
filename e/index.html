@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
+<meta name="robots" content="noindex, nofollow">
+<title>Someone thought of you | Dailies</title>
+<meta name="description" content="Someone thought of you and picked these words for you. Open them, and send some back.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dailies">
+<meta property="og:title" content="Someone thought of you">
+<meta property="og:description" content="Tap to open what they picked for you.">
+<meta property="og:image" content="https://mydailies.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/icon.png">
+<!-- The envelope says which language it was sealed in. Set before anything
+     else reads <html lang>: play.js picks its words from it, and consent.js
+     asks its question in it. Nothing from the link is written anywhere else
+     here; envelope.js decodes it properly. -->
+<script>(function(){try{var h=location.hash.slice(1).replace(/-/g,'+').replace(/_/g,'/');while(h.length%4)h+='=';var b=atob(h),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);var o=JSON.parse(new TextDecoder().decode(u));var m={es:'es-MX',pt:'pt-BR',fr:'fr-FR',de:'de-DE',ja:'ja'};if(o&&m[o.l])document.documentElement.lang=m[o.l];}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body data-consent="deferred" data-analytics="private">
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" id="env-home" href="/"><img src="/icon.png" alt=""> Dailies</a>
+  </div>
+</nav>
+
+<main class="env-main">
+  <div class="wrap" id="env" aria-live="polite"></div>
+  <noscript><div class="wrap"><p class="env-note">This envelope needs JavaScript to open.</p></div></noscript>
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <nav>
+      <a href="/privacy/">Privacy</a>
+      <a href="#" data-cookie-settings>Cookie settings</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script src="/play-lines.js" defer></script>
+<script src="/play.js" defer></script>
+<script src="/envelope.js" defer></script>
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>
