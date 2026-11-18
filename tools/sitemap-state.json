@@ -1,7 +1,7 @@
 {
   "/": {
-    "lastmod": "2026-11-16",
-    "sig": "0c57b0914d1a8260d09315df0c0b2776334356121f20eb1cbdddda056345e1c9"
+    "lastmod": "2026-11-18",
+    "sig": "583cf27ff20f3aea363fb331e89ff1e513cc2195bb37c0446d505a00de9ba1e4"
   },
   "/about/": {
     "lastmod": "2026-11-16",
@@ -152,8 +152,8 @@
     "sig": "d0719767f519501cdb376da9d441c55d72ab9e3556f97b50d61befce6831e815"
   },
   "/de/": {
-    "lastmod": "2026-11-16",
-    "sig": "720cba1d687540cea42e40e67d8ee21118949e4d548767f15ffe5c0bfe6937c6"
+    "lastmod": "2026-11-18",
+    "sig": "127f9d80def83f80f404c40d6e78373793b6f91a74e0c60fa8999f16b980b062"
   },
   "/de/anleitungen/": {
     "lastmod": "2026-11-16",
@@ -247,6 +247,10 @@
     "lastmod": "2026-11-16",
     "sig": "8027acd244ef86e379e1aeea3066288df955df561598ac26d9d6abe596cc2949"
   },
+  "/de/aufmunternde-worte/": {
+    "lastmod": "2026-11-18",
+    "sig": "e1cc814a3b733d482e7740d38b7572287beb55251f353529ae96bd4752fbac26"
+  },
   "/de/blog/": {
     "lastmod": "2026-11-16",
     "sig": "9596b82abf4af2576275ca1bf9c9498b61ce981a0f0ed725437ac95d7be85533"
@@ -315,9 +319,33 @@
     "lastmod": "2026-11-16",
     "sig": "a8bdac19922666498404c93b1330273581ad188be28eb43854f7d03178555dae"
   },
+  "/de/guten-morgen-sprueche/": {
+    "lastmod": "2026-11-18",
+    "sig": "dc7f07bd5d106869d3ab357dc42a40475fa4b486c2ac8ff9f2847c7e48b8f039"
+  },
   "/de/hilfe/": {
     "lastmod": "2026-11-13",
     "sig": "7cdc08f7c9894693d678385c6ab69b9f992a6391ce922d63d312adcd5301d86b"
+  },
+  "/de/inspirierende-zitate-sperrbildschirm/": {
+    "lastmod": "2026-11-18",
+    "sig": "68ea64f5bc2961006127454b4c8b24d35b08006b2bf3b0e70abd24ce92a3b58d"
+  },
+  "/de/liebesspruche-zum-verschicken/": {
+    "lastmod": "2026-11-18",
+    "sig": "9221ace0ffbc955c5413403a83af131b7305238b302a417fdf86ec52ec741453"
+  },
+  "/de/motivierende-hintergrundbilder/": {
+    "lastmod": "2026-11-18",
+    "sig": "3b49f1eb23f79d670b905fd605055bc85b99234df98624ce37fc2cb80814ca35"
+  },
+  "/de/motivierende-sprueche-zum-verschicken/": {
+    "lastmod": "2026-11-18",
+    "sig": "aca5a165f4ad609bfb5e5e1ab64f0e69a59f575cc27e082ae3d9c64f32d4c2ee"
+  },
+  "/de/positive-sprueche-sperrbildschirm/": {
+    "lastmod": "2026-11-18",
+    "sig": "238093cce292d7af20ffafe7a1427545aa576f783a9e59d51f73ea55520a12d1"
   },
   "/de/ueber/": {
     "lastmod": "2026-11-16",
@@ -376,8 +404,8 @@
     "sig": "df9815b3ab6632b5a27ee16a37cfc7de633753914285a707834f0688b800fd88"
   },
   "/es/": {
-    "lastmod": "2026-11-16",
-    "sig": "debfe23b1596c4cbfbeb8e58cb36f4a6a9b55e3a66e3d7e8a77b6c674fc82d79"
+    "lastmod": "2026-11-18",
+    "sig": "2b51536a15fe157ca62840d9441dfeec101edb367d00407cd050cb971cf9828f"
   },
   "/es/acerca-de/": {
     "lastmod": "2026-11-16",
@@ -511,6 +539,30 @@
     "lastmod": "2026-11-16",
     "sig": "15682c7c1fcb85af69768f12ae70e50aebb7f40ac468ca3876f30edc27795b66"
   },
+  "/es/fondos-de-pantalla-motivadores/": {
+    "lastmod": "2026-11-18",
+    "sig": "f41f1b088e7e21a5fdd20b900aa34cc09786e96fe45c0482481af8bfe5b3709d"
+  },
+  "/es/frases-de-amor-para-tu-pareja/": {
+    "lastmod": "2026-11-18",
+    "sig": "d69678c21f173897cf3f90ee6134bf75febb024a4b50bd6602c641a67e00ee7b"
+  },
+  "/es/frases-de-buenos-dias/": {
+    "lastmod": "2026-11-18",
+    "sig": "f1eae6156806d24cf1fbb684c7c3a4f67f95d511e2978fac04555effbb34e13e"
+  },
+  "/es/frases-inspiradoras-pantalla-de-bloqueo/": {
+    "lastmod": "2026-11-18",
+    "sig": "e2cf37395e4b65410181970737f30901e7e92e2795e0dc610c4082d8de916c82"
+  },
+  "/es/frases-motivadoras-para-enviar/": {
+    "lastmod": "2026-11-18",
+    "sig": "0044f072ae7468dce3030f2b2f6cdd8f6912569461c4a747524bb0e046564121"
+  },
+  "/es/frases-positivas-pantalla-de-bloqueo/": {
+    "lastmod": "2026-11-18",
+    "sig": "ecccc7f16d9ad1a2b2ee14a2e1d619acac6853a6882324b6319e222f54aa66d9"
+  },
   "/es/guias/": {
     "lastmod": "2026-11-16",
     "sig": "8510942dc5ebe0765013ff6a780c9f6e1c259755e47aad36a8b88943fc2b6534"
@@ -603,9 +655,13 @@
     "lastmod": "2026-11-16",
     "sig": "aa07db742e10b4e6612a1ef5b3c8d4232ec41bf80bbabec8dc3ee8b683bac0ea"
   },
+  "/es/palabras-de-aliento/": {
+    "lastmod": "2026-11-18",
+    "sig": "53b1091635254038d09cedf60f75b38e72f69a214f4dd2b4bdc3a11160c0028c"
+  },
   "/fr/": {
-    "lastmod": "2026-11-16",
-    "sig": "7c71f511fcafe826d62b2bedf5bcad7c0ff6c831f266a307cc1c0afb2d197b6b"
+    "lastmod": "2026-11-18",
+    "sig": "598fc6d7aa43407333db710a7155c8405138be6ed7a675f7f6a57f405605ad0c"
   },
   "/fr/a-propos/": {
     "lastmod": "2026-11-16",
@@ -683,6 +739,22 @@
     "lastmod": "2026-11-16",
     "sig": "6977ab9ec91549ecd4eaccd0273c57c81e075e0bd86dd8c2cf4b7097072ef4f6"
   },
+  "/fr/citations-d-amour-a-envoyer/": {
+    "lastmod": "2026-11-18",
+    "sig": "fb7e1a1169d361f921b09e58ad0d920fe434b899ed64127a84f77adbf2d032a0"
+  },
+  "/fr/citations-inspirantes-ecran-verrouille/": {
+    "lastmod": "2026-11-18",
+    "sig": "aef4a209e30107497fbd406e35afe73c5ef70b4b42f656469cb8469cba6a35a9"
+  },
+  "/fr/citations-motivantes-a-envoyer/": {
+    "lastmod": "2026-11-18",
+    "sig": "f615a1d9cb08caaf3b846bd6ff045ca9e6a05617593c513089e68aff01cc1207"
+  },
+  "/fr/citations-positives-ecran-verrouille/": {
+    "lastmod": "2026-11-18",
+    "sig": "c061fd1fc2638f51fe769a42421931cdb7a7e2c692c07ca1cd7f34395196822f"
+  },
   "/fr/comparer/": {
     "lastmod": "2026-11-16",
     "sig": "38cd0c26d716f1ccd9546fa26454bbe95f5690788d9820345eeb980aacdf4168"
@@ -734,6 +806,10 @@
   "/fr/comparer/meilleures-applis-de-citations-motivantes/": {
     "lastmod": "2026-11-16",
     "sig": "a8367738a3e0c6e8f4ae4a49f12ff931d14c8e5cbc32f29eb96a24233381df03"
+  },
+  "/fr/fonds-d-ecran-motivants/": {
+    "lastmod": "2026-11-18",
+    "sig": "ccb4d01d8258be1bf8da4f597387bf6e5b08059a6928a91722867f30c4de1a94"
   },
   "/fr/guides/": {
     "lastmod": "2026-11-16",
@@ -826,6 +902,18 @@
   "/fr/guides/widget-iphone-ne-se-met-pas-a-jour/": {
     "lastmod": "2026-11-16",
     "sig": "d23bc58d65e0451f952fb55cc19033601eb477f6018738ba633e13c2996257de"
+  },
+  "/fr/messages-de-bonjour/": {
+    "lastmod": "2026-11-18",
+    "sig": "08fcc69caf1058d26da8552cc839b4f2effda2d3b5b73d0c773445f076a799f3"
+  },
+  "/fr/mots-d-encouragement/": {
+    "lastmod": "2026-11-18",
+    "sig": "3dcebe3a31d3452a12a8ac774a722e6c46c7fe7b26d817166c9f9dc5e3a6d4d4"
+  },
+  "/good-morning-quotes/": {
+    "lastmod": "2026-11-18",
+    "sig": "7fd5b239d0b44da6efc757ebc7e7475121f13242c8a52635fd26483c179d7691"
   },
   "/guides/": {
     "lastmod": "2026-11-16",
@@ -923,9 +1011,13 @@
     "lastmod": "2026-11-13",
     "sig": "fc9510ad6522a1cda02638f6351544ece67c2804a988b19070e8bdd0cd2826c7"
   },
+  "/inspirational-quotes-lock-screen/": {
+    "lastmod": "2026-11-18",
+    "sig": "5eea4e4869cfe073dbd26794abc2d5c870de17b9eb57f025195981062afdf1b0"
+  },
   "/ja/": {
-    "lastmod": "2026-11-16",
-    "sig": "24c64ec78e7d55cbdf396ac2a6d6f8883e44234fd405d04f0461af76e9447cff"
+    "lastmod": "2026-11-18",
+    "sig": "7f608a925e6fc203fab6cb22e8d7e56f44fc1220b44d5e10172e4c0ac2beed0b"
   },
   "/ja/about/": {
     "lastmod": "2026-11-16",
@@ -1051,6 +1143,10 @@
     "lastmod": "2026-11-16",
     "sig": "42b41e754997fcfa49562cecb693c38b37a8b5610f12b6d1964a3ee7c12ffc75"
   },
+  "/ja/good-morning-quotes/": {
+    "lastmod": "2026-11-18",
+    "sig": "103054f024b967c84d3d1423616bb60607d7cef101a92cd6ea7eeb18fc66e828"
+  },
   "/ja/guides/": {
     "lastmod": "2026-11-16",
     "sig": "b1d2ae1cda3ddd02962e3960daf20014c5f32c6a15712f6f063d78f2ca5622eb"
@@ -1147,17 +1243,57 @@
     "lastmod": "2026-11-13",
     "sig": "f1d6975461414fd8a283936967614419a6eb8ec8c923bb7072cc866ed7d2de23"
   },
+  "/ja/inspirational-quotes-lock-screen/": {
+    "lastmod": "2026-11-18",
+    "sig": "b4b2941745670ad195c5cff4c42d8eb7d52039ec2dc092bd3b0cf74a36a457ca"
+  },
+  "/ja/love-quotes-for-your-partner/": {
+    "lastmod": "2026-11-18",
+    "sig": "39f03240a9579f55f825e223a48efd5d5cbaed71ca70cddb6eb5c33630f06f86"
+  },
+  "/ja/motivational-quotes-for-a-friend/": {
+    "lastmod": "2026-11-18",
+    "sig": "834bcbf81584b63fa127503fdbf37281b19712a5b605946cca8ef90f86c66d4b"
+  },
+  "/ja/motivational-wallpapers/": {
+    "lastmod": "2026-11-18",
+    "sig": "487195903fb123a261bbb6e9d5f706fa50874e6c0d1962564026d43f410825b9"
+  },
+  "/ja/positive-quotes-lock-screen/": {
+    "lastmod": "2026-11-18",
+    "sig": "cea7db5f9f870e8dc4ae9154e05000617c6e3e261795bb864cfdcd97ab58c2ed"
+  },
+  "/ja/words-of-encouragement/": {
+    "lastmod": "2026-11-18",
+    "sig": "581dab9371deae2cb1688294f4df68b4b452a1eba921723a357e2f553ec1c15c"
+  },
+  "/love-quotes-for-your-partner/": {
+    "lastmod": "2026-11-18",
+    "sig": "f721a91f32fdb8071ed82a04a2e032cf018da3642662463e0847d1ceb5f27016"
+  },
+  "/motivational-quotes-for-a-friend/": {
+    "lastmod": "2026-11-18",
+    "sig": "d4722b59e6ee33a7c3a1e52aa959b1e20184039e13b89a4e241031b1a8218de2"
+  },
+  "/motivational-wallpapers/": {
+    "lastmod": "2026-11-18",
+    "sig": "05e6b2fb828924c056a71c81374399c7c30117daf2b97542c3e12a6751d7bdcc"
+  },
+  "/positive-quotes-lock-screen/": {
+    "lastmod": "2026-11-18",
+    "sig": "c2997aaa43c0737db4328634db9df0a0774d1307c56e67f3d8d063dbcc06aeb8"
+  },
   "/press/": {
     "lastmod": "2026-11-16",
     "sig": "ac2df0ea50ba6443d0ba338a4b19223ff1f255df9992ad0c190a15ef98ff37af"
   },
   "/privacy/": {
-    "lastmod": "2026-11-12",
-    "sig": "278babc2035105cd8767be2de7aaf1aeb71be74c969f3a46bec146b64b3de266"
+    "lastmod": "2026-11-18",
+    "sig": "a44d572e99cf9af9c01f1a2750ce08d84e616dd275f23015f83848fe06ce9941"
   },
   "/pt/": {
-    "lastmod": "2026-11-16",
-    "sig": "cdb7e558a6fc7ff2364ac6cae4163adac91ac7bad7a96ac4be6e1a2a51fc1cb1"
+    "lastmod": "2026-11-18",
+    "sig": "80dcef3fec92133d02dbfc0135c88c57c306f5b4c93d53ed624869363d70ed62"
   },
   "/pt/ajuda/": {
     "lastmod": "2026-11-13",
@@ -1287,6 +1423,26 @@
     "lastmod": "2026-11-16",
     "sig": "e7c1e72aef980e9e81e9101841b088505fc564b08e34794fa0a5352ff33baf22"
   },
+  "/pt/frases-de-amor-para-enviar/": {
+    "lastmod": "2026-11-18",
+    "sig": "aca2f83b78f4ccc030717a717806c8e39394c489d5d4ba175db2fd94b3764b7a"
+  },
+  "/pt/frases-de-bom-dia/": {
+    "lastmod": "2026-11-18",
+    "sig": "c21579c94c42c46d4d98342a40099d702d99c25051496e5e90ee51f626dbecb0"
+  },
+  "/pt/frases-inspiradoras-tela-bloqueada/": {
+    "lastmod": "2026-11-18",
+    "sig": "f3f9d250c68d17f26fe1ea24448a2fc0eb1190250b2a9f6995bbd2eed2e95df0"
+  },
+  "/pt/frases-motivacionais-para-enviar/": {
+    "lastmod": "2026-11-18",
+    "sig": "0ab4ad4850fc97938100b954cd36984630ee80fe41e8180d5d322c116ebeb547"
+  },
+  "/pt/frases-positivas-tela-bloqueada/": {
+    "lastmod": "2026-11-18",
+    "sig": "b65dbcdf173283fe8c4baa6eed47ff1a2ec4179268bee8766f113e14e1be3293"
+  },
   "/pt/guias/": {
     "lastmod": "2026-11-16",
     "sig": "22a4e535d3b9dfb136389c6207999600f0e9175d9b50bced4ce322ea8c89a5ce"
@@ -1379,6 +1535,14 @@
     "lastmod": "2026-11-16",
     "sig": "b3f523ac6ad31af64e0ece66dd5f20188c90900c50eda50ca9d7d955ee4534a9"
   },
+  "/pt/palavras-de-incentivo/": {
+    "lastmod": "2026-11-18",
+    "sig": "fee581952f373b436c81c955b9aa9862db55e561a622b42b5663e7067fda8a8b"
+  },
+  "/pt/papeis-de-parede-motivacionais/": {
+    "lastmod": "2026-11-18",
+    "sig": "c93ee1c7b7113b0764a7039fd9aed7a18f608347eeccf4e4f63071865e7fcc07"
+  },
   "/pt/sobre/": {
     "lastmod": "2026-11-16",
     "sig": "4c1e246ec9622aaeb67149d9a5a08ab94ba48987e8caa668614506457a2e35e0"
@@ -1386,5 +1550,9 @@
   "/terms/": {
     "lastmod": "2026-11-12",
     "sig": "7508f7eebbe7f1e7b824e677dc32c2ae74243644cd1ffd54ad7168a31de13dbf"
+  },
+  "/words-of-encouragement/": {
+    "lastmod": "2026-11-18",
+    "sig": "4114777ca43d8bb923d17858fdba314358f60961f9d2b5bafd0455579fd30f8a"
   }
 }

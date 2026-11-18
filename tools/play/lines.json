@@ -1,0 +1,3591 @@
+{
+ "wallpapers": {
+  "motivation": [
+   {
+    "id": "cef264a2-255a-4c47-8eef-e3d1563fbba0",
+    "source": "internal",
+    "text": {
+     "en": "A year of small steps can surprise you.",
+     "es": "Un año de pasos pequeños puede sorprenderte.",
+     "pt": "Um ano de pequenos passos pode te surpreender.",
+     "fr": "Une année de petits pas peut te surprendre.",
+     "de": "Ein Jahr voller kleiner Schritte kann dich überraschen.",
+     "ja": "小さな一歩を重ねた1年が、あなたを驚かせることもある。"
+    },
+    "author": null
+   },
+   {
+    "id": "0f29a8d2-7f50-4423-bc53-daaeef4ee8b2",
+    "source": "internal",
+    "text": {
+     "en": "Keep your dream close and your feet moving.",
+     "es": "Mantén tu sueño cerca y tus pies en movimiento.",
+     "pt": "Mantenha seu sonho por perto e seus pés em movimento.",
+     "fr": "Garde ton rêve près de toi, et tes pieds en mouvement.",
+     "de": "Halte deinen Traum nah und deine Füße in Bewegung.",
+     "ja": "夢をそばに置いて、足は止めずにいよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "cc2fa545-74a5-4622-90fa-c69a994c87a6",
+    "source": "internal",
+    "text": {
+     "en": "Stay the course. You were made for the long road.",
+     "es": "Mantén el rumbo. Tienes lo que pide el camino largo.",
+     "pt": "Mantenha o rumo. Você tem o que a estrada longa pede.",
+     "fr": "Garde le cap. Tu as tout ce qu'il faut pour la longue route.",
+     "de": "Bleib auf Kurs. Du bist für den langen Weg gemacht.",
+     "ja": "このまま進もう。あなたは長い道のりを歩ける人だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "d5ddf734-a3f3-43ac-8b55-0f7e8e2f769a",
+    "source": "internal",
+    "text": {
+     "en": "Do the version you can do tired.",
+     "es": "Haz la versión que puedes hacer con cansancio.",
+     "pt": "Faça a versão que você consegue fazer mesmo com cansaço.",
+     "fr": "Fais la version qui passe même avec la fatigue.",
+     "de": "Mach die Version, die du auch müde schaffst.",
+     "ja": "疲れていてもできるやり方でやろう。"
+    },
+    "author": null
+   },
+   {
+    "id": "084c4276-dc85-491f-a758-416acf5ac563",
+    "source": "internal",
+    "text": {
+     "en": "You began something worth finishing.",
+     "es": "Empezaste algo que vale la pena terminar.",
+     "pt": "Você começou algo que vale a pena terminar.",
+     "fr": "Tu as commencé quelque chose qui mérite d'être terminé.",
+     "de": "Du hast etwas angefangen, das sich zu beenden lohnt.",
+     "ja": "あなたは、やり遂げる価値のあることを始めた。"
+    },
+    "author": null
+   },
+   {
+    "id": "fad7c00c-094b-41f0-a73c-728fc155e2c6",
+    "source": "Gutenberg",
+    "text": {
+     "en": "Difficulties are meant to rouse, not discourage.",
+     "es": "Las dificultades están para despertar, no para desanimar.",
+     "pt": "As dificuldades existem para despertar, não para desanimar.",
+     "fr": "Les difficultés sont faites pour réveiller, non pour décourager.",
+     "de": "Schwierigkeiten sollen aufrütteln, nicht entmutigen.",
+     "ja": "困難は人を奮い立たせるためにあり、くじけさせるためにあるのではない。"
+    },
+    "author": {
+     "en": "William Ellery Channing",
+     "es": "William Ellery Channing",
+     "pt": "William Ellery Channing",
+     "fr": "William Ellery Channing",
+     "de": "William Ellery Channing",
+     "ja": "ウィリアム・エラリー・チャニング"
+    }
+   },
+   {
+    "id": "d52fbda8-1475-42f1-b705-340c9ff2b0ca",
+    "source": "internal",
+    "text": {
+     "en": "One more try is always within your reach.",
+     "es": "Un intento más siempre está a tu alcance.",
+     "pt": "Mais uma tentativa está sempre ao seu alcance.",
+     "fr": "Un essai de plus est toujours à ta portée.",
+     "de": "Ein Versuch mehr ist immer drin.",
+     "ja": "もう一度挑戦することは、いつだってできる。"
+    },
+    "author": null
+   },
+   {
+    "id": "649b2885-01f0-48c9-81b0-8dc71fa4be83",
+    "source": "internal",
+    "text": {
+     "en": "Starting small is still starting, and it counts.",
+     "es": "Empezar en pequeño sigue siendo empezar, y cuenta.",
+     "pt": "Começar pequeno ainda é começar, e conta.",
+     "fr": "Commencer petit, c'est quand même commencer, et ça compte.",
+     "de": "Klein anfangen ist auch anfangen, und es zählt.",
+     "ja": "小さく始めても、始めたことに変わりはない。ちゃんと意味がある。"
+    },
+    "author": null
+   }
+  ],
+  "confidence": [
+   {
+    "id": "a60e4cf5-1f01-4b40-86eb-e3f8be01b86c",
+    "source": "internal",
+    "text": {
+     "en": "You have come too far to doubt yourself now.",
+     "es": "Has llegado demasiado lejos para dudar de ti ahora.",
+     "pt": "Você chegou longe demais para duvidar de si agora.",
+     "fr": "Tu as fait trop de chemin pour douter de toi maintenant.",
+     "de": "Du bist zu weit gekommen, um jetzt an dir zu zweifeln.",
+     "ja": "ここまで来たのだから、今さら自分を疑う必要はない。"
+    },
+    "author": null
+   },
+   {
+    "id": "25cc51e4-5bea-4db8-8474-93694daf0cc5",
+    "source": "internal",
+    "text": {
+     "en": "A shaky voice can still say a brave thing.",
+     "es": "Una voz temblorosa también puede decir algo valiente.",
+     "pt": "Uma voz trêmula ainda pode dizer algo corajoso.",
+     "fr": "Une voix qui tremble peut quand même dire quelque chose de courageux.",
+     "de": "Auch mit zitternder Stimme kann man etwas Mutiges sagen.",
+     "ja": "震える声でも、勇気あることは言える。"
+    },
+    "author": null
+   },
+   {
+    "id": "1ac11a15-5b60-4a5e-86f7-aa2eddef6499",
+    "source": "gutenberg-primary",
+    "text": {
+     "en": "Let no one shake your faith in yourself.",
+     "es": "Que nadie sacuda la fe que tienes en ti.",
+     "pt": "Não deixe ninguém abalar a sua fé em você.",
+     "fr": "Ne laisse personne ébranler la foi que tu as en toi.",
+     "de": "Lass dir von niemandem den Glauben an dich selbst erschüttern.",
+     "ja": "自分を信じる心を、誰にも揺るがせてはならない。"
+    },
+    "author": {
+     "en": "Orison Swett Marden",
+     "es": "Orison Swett Marden",
+     "pt": "Orison Swett Marden",
+     "fr": "Orison Swett Marden",
+     "de": "Orison Swett Marden",
+     "ja": "オリソン・スウェット・マーデン"
+    }
+   },
+   {
+    "id": "cfd3d699-3103-4399-a638-4eb29d5fc6ea",
+    "source": "internal",
+    "text": {
+     "en": "The quietest part of you is not the weakest part.",
+     "es": "La parte más callada de ti no es la más débil.",
+     "pt": "A parte mais quieta de você não é a mais fraca.",
+     "fr": "La part la plus silencieuse de toi n'est pas la plus faible.",
+     "de": "Der leiseste Teil von dir ist nicht der schwächste.",
+     "ja": "自分の中のいちばん静かな部分は、いちばん弱い部分ではない。"
+    },
+    "author": null
+   },
+   {
+    "id": "12473d89-9018-4b9d-a9f9-911fcca285aa",
+    "source": "internal",
+    "text": {
+     "en": "Believe in the things you are building quietly.",
+     "es": "Cree en lo que estás construyendo en silencio.",
+     "pt": "Acredite no que você está construindo em silêncio.",
+     "fr": "Crois en ce que tu construis en silence.",
+     "de": "Glaub an das, was du im Stillen aufbaust.",
+     "ja": "静かに積み上げているものを、信じよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "83b34f74-c7f4-4887-95c7-777f05b7d707",
+    "source": "internal",
+    "text": {
+     "en": "Every time you speak up, your voice grows steadier.",
+     "es": "Cada vez que te animas a hablar, tu voz se vuelve más firme.",
+     "pt": "Cada vez que você fala o que pensa, sua voz fica mais firme.",
+     "fr": "Chaque fois que tu prends la parole, ta voix devient plus assurée.",
+     "de": "Jedes Mal, wenn du dich zu Wort meldest, wird deine Stimme fester.",
+     "ja": "声を上げるたびに、あなたの声は確かになっていく。"
+    },
+    "author": null
+   },
+   {
+    "id": "9f3a4fde-03fa-46f0-ab32-4c46e57a1c14",
+    "source": "internal",
+    "text": {
+     "en": "Put yourself out there. The world deserves to meet you.",
+     "es": "Date a conocer. El mundo merece conocerte.",
+     "pt": "Se jogue. O mundo merece conhecer você.",
+     "fr": "Montre-toi. Le monde mérite de te rencontrer.",
+     "de": "Zeig dich. Die Welt verdient es, dich kennenzulernen.",
+     "ja": "思い切って外に出よう。世界はあなたに出会うべきだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "cdf9905d-0718-45fb-928f-1ee021fb18ee",
+    "source": "internal",
+    "text": {
+     "en": "You are learning to trust yourself, and it shows.",
+     "es": "Estás aprendiendo a confiar en ti, y se nota.",
+     "pt": "Você está aprendendo a confiar em si, e isso aparece.",
+     "fr": "Tu apprends à te faire confiance, et ça se voit.",
+     "de": "Du lernst, dir selbst zu vertrauen, und das sieht man.",
+     "ja": "あなたは自分を信じられるようになってきている。それは周りにも伝わっている。"
+    },
+    "author": null
+   }
+  ],
+  "calm": [
+   {
+    "id": "4401da64-f9fd-45c4-9d7a-9618020f9756",
+    "source": "internal",
+    "text": {
+     "en": "The night exaggerates. That is what it does.",
+     "es": "La noche exagera. Eso es lo que hace.",
+     "pt": "A noite exagera. É isso que ela faz.",
+     "fr": "La nuit exagère. C'est ce qu'elle fait.",
+     "de": "Die Nacht übertreibt. Das ist ihre Art.",
+     "ja": "夜は大げさにする。夜とはそういうものだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "7cfd87e6-84b5-4291-9ee7-5dab0c848e59",
+    "source": "internal",
+    "text": {
+     "en": "Give today your best, and let that be enough.",
+     "es": "Da lo mejor de ti hoy, y deja que eso baste.",
+     "pt": "Dê o seu melhor hoje, e deixe que isso baste.",
+     "fr": "Donne le meilleur de toi aujourd'hui, et que ça suffise.",
+     "de": "Gib heute dein Bestes, und lass das genug sein.",
+     "ja": "今日に全力を尽くそう。そして、それで十分だとしよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "24ba409c-bbad-4c7d-b06f-82748d6397f3",
+    "source": "internal",
+    "text": {
+     "en": "A calm mind makes braver plans.",
+     "es": "Una mente en calma hace planes más valientes.",
+     "pt": "Uma mente calma faz planos mais corajosos.",
+     "fr": "Un esprit calme fait des projets plus audacieux.",
+     "de": "Ein ruhiger Kopf schmiedet mutigere Pläne.",
+     "ja": "落ち着いた心は、より大胆な計画を立てる。"
+    },
+    "author": null
+   },
+   {
+    "id": "ca58b455-fe15-434c-916b-1929042ec215",
+    "source": "internal",
+    "text": {
+     "en": "Enough is a decision, not an amount.",
+     "es": "Suficiente es una decisión, no una cantidad.",
+     "pt": "Suficiente é uma decisão, não uma quantidade.",
+     "fr": "Assez, c'est une décision, pas une quantité.",
+     "de": "Genug ist eine Entscheidung, keine Menge.",
+     "ja": "「これで十分」は量ではなく、決断だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "12a5ef78-5468-4ffa-a658-7af9026fe38e",
+    "source": "internal",
+    "text": {
+     "en": "Give the worry an appointment rather than the whole day.",
+     "es": "Dale una cita a la preocupación en vez del día entero.",
+     "pt": "Marque um horário para a preocupação em vez de dar o dia inteiro a ela.",
+     "fr": "Donne un rendez-vous à l'inquiétude plutôt que toute la journée.",
+     "de": "Gib der Sorge einen Termin statt den ganzen Tag.",
+     "ja": "心配ごとには、一日全部ではなく、予約した時間だけをあげよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "6fa6930b-1456-43f7-8447-5e89361f7653",
+    "source": "internal",
+    "text": {
+     "en": "Begin again, gently. There is no rush.",
+     "es": "Vuelve a empezar, con suavidad. No hay prisa.",
+     "pt": "Recomece, com calma. Não há pressa.",
+     "fr": "Recommence, en douceur. Rien ne presse.",
+     "de": "Fang noch mal an, ganz sanft. Es eilt nicht.",
+     "ja": "やさしく、もう一度始めよう。急ぐことはない。"
+    },
+    "author": null
+   },
+   {
+    "id": "85455451-f8e7-4afc-b8eb-16e23a46af5d",
+    "source": "internal",
+    "text": {
+     "en": "There is room in your life for ease.",
+     "es": "En tu vida hay espacio para la tranquilidad.",
+     "pt": "Há espaço na sua vida para a leveza.",
+     "fr": "Il y a de la place dans ta vie pour un peu de légèreté.",
+     "de": "In deinem Leben ist Platz für Leichtigkeit.",
+     "ja": "あなたの人生には、ゆとりの入る場所がある。"
+    },
+    "author": null
+   },
+   {
+    "id": "c5be67af-237e-4238-8567-0b991a6ce93a",
+    "source": "native-voices",
+    "text": {
+     "en": "Lovely sky, lovely sun, lovely day.",
+     "es": "Hermoso cielo, hermoso sol, hermoso día.",
+     "pt": "Belo céu, belo sol, belo dia.",
+     "fr": "Beau ciel, beau soleil, beau jour.",
+     "de": "Schöner Himmel, schöne Sonne, schöner Tag.",
+     "ja": "美しい空、美しい太陽、美しい一日。"
+    },
+    "author": {
+     "en": "Eugénie de Guérin",
+     "es": "Eugénie de Guérin",
+     "pt": "Eugénie de Guérin",
+     "fr": "Eugénie de Guérin",
+     "de": "Eugénie de Guérin",
+     "ja": "ウージェニー・ド・ゲラン"
+    }
+   }
+  ],
+  "selflove": [
+   {
+    "id": "e35f76b3-32fc-4488-a154-53b6dc5e869c",
+    "source": "internal",
+    "text": {
+     "en": "Be on your own side today.",
+     "es": "Hoy ponte de tu lado.",
+     "pt": "Fique do seu próprio lado hoje.",
+     "fr": "Aujourd'hui, prends ton propre parti.",
+     "de": "Steh heute auf deiner eigenen Seite.",
+     "ja": "今日は、自分の味方でいよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "148ae79e-81b2-4241-9f92-029a5056c6b9",
+    "source": "internal",
+    "text": {
+     "en": "You never need to shrink to be loved.",
+     "es": "No tienes que achicarte para que te quieran.",
+     "pt": "Você nunca precisa se diminuir para receber amor.",
+     "fr": "Tu n'as jamais besoin de t'effacer pour qu'on t'aime.",
+     "de": "Du musst dich nie kleiner machen, um geliebt zu werden.",
+     "ja": "愛されるために、自分を小さくする必要はない。"
+    },
+    "author": null
+   },
+   {
+    "id": "4f8139cc-e5c0-43e0-9f67-ff7132ba41e6",
+    "source": "internal",
+    "text": {
+     "en": "Give yourself the same faith you give your friends.",
+     "es": "Ten en ti la misma fe que tienes en tus amistades.",
+     "pt": "Dê a você a mesma confiança que dá aos seus amigos.",
+     "fr": "Accorde-toi la même confiance que tu accordes à tes amis.",
+     "de": "Glaub so an dich, wie du an deine Freunde glaubst.",
+     "ja": "友達に向けるのと同じ信頼を、自分にも向けよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "43de4de0-36b3-4107-9a57-7264854f3953",
+    "source": "internal",
+    "text": {
+     "en": "Your timing is your own.",
+     "es": "Tus tiempos son tuyos.",
+     "pt": "O seu tempo é só seu.",
+     "fr": "Ton rythme n'appartient qu'à toi.",
+     "de": "Du bestimmst deinen eigenen Zeitpunkt.",
+     "ja": "あなたのタイミングは、あなただけのものだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "79f6074a-06d6-4f69-8b7d-83679bc79306",
+    "source": "internal",
+    "text": {
+     "en": "Your life is a home to make lovely, not a ladder to climb.",
+     "es": "Tu vida es una casa que embellecer, no una escalera que subir.",
+     "pt": "Sua vida é um lar para deixar bonito, não uma escada para subir.",
+     "fr": "Ta vie est une maison à embellir, pas une échelle à gravir.",
+     "de": "Dein Leben ist ein Zuhause, das du schön machst, keine Leiter zum Hinaufsteigen.",
+     "ja": "あなたの人生は、上るためのはしごではなく、すてきに整えていく家だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "347ce3c7-daba-4961-bdff-fb0a3430a457",
+    "source": "internal",
+    "text": {
+     "en": "Your feelings make sense, even the complicated ones.",
+     "es": "Tus emociones tienen sentido, incluso las complicadas.",
+     "pt": "Seus sentimentos fazem sentido, até os complicados.",
+     "fr": "Tes émotions ont du sens, même les plus compliquées.",
+     "de": "Deine Gefühle sind nachvollziehbar, auch die komplizierten.",
+     "ja": "あなたの気持ちには、複雑なものも含めて、ちゃんと理由がある。"
+    },
+    "author": null
+   },
+   {
+    "id": "7136dbff-2c88-4c79-b20d-f018bc7efe4f",
+    "source": "internal",
+    "text": {
+     "en": "Resolve looks beautiful on you.",
+     "es": "La determinación te queda muy bien.",
+     "pt": "A determinação fica linda em você.",
+     "fr": "La détermination te va à merveille.",
+     "de": "Entschlossenheit steht dir gut.",
+     "ja": "決意は、あなたにとてもよく似合っている。"
+    },
+    "author": null
+   },
+   {
+    "id": "0a72eecf-bda7-4821-8f3b-86d039d044be",
+    "source": "internal",
+    "text": {
+     "en": "You are worth waiting for, working for and fighting for.",
+     "es": "Vale la pena esperarte, esforzarse por ti y luchar por ti.",
+     "pt": "Vale a pena esperar por você, trabalhar por você e lutar por você.",
+     "fr": "Tu vaux qu'on t'attende, qu'on travaille et qu'on se batte pour toi.",
+     "de": "Du bist es wert, dass man auf dich wartet, für dich arbeitet und für dich kämpft.",
+     "ja": "あなたは、待つ価値も、努力する価値も、戦う価値もある人だ。"
+    },
+    "author": null
+   }
+  ],
+  "fresh": [
+   {
+    "id": "68fd8007-261e-45a4-8d10-f8dfd95639a8",
+    "source": "internal",
+    "text": {
+     "en": "You are allowed to outgrow old plans.",
+     "es": "Tienes derecho a dejar atrás planes viejos.",
+     "pt": "Você tem o direito de deixar planos antigos para trás.",
+     "fr": "Tu as le droit de dépasser tes anciens projets.",
+     "de": "Du darfst aus alten Plänen herauswachsen.",
+     "ja": "古い計画を卒業してもいい。"
+    },
+    "author": null
+   },
+   {
+    "id": "692dd4bb-173e-40a8-92a8-23170ebaef66",
+    "source": "internal",
+    "text": {
+     "en": "The next chapter can look nothing like the last one.",
+     "es": "El próximo capítulo puede no parecerse en nada al anterior.",
+     "pt": "O próximo capítulo pode não se parecer em nada com o anterior.",
+     "fr": "Le prochain chapitre peut ne ressembler en rien au précédent.",
+     "de": "Das nächste Kapitel muss dem letzten kein bisschen ähneln.",
+     "ja": "次の章は、前の章とまったく違っていてもいい。"
+    },
+    "author": null
+   },
+   {
+    "id": "1de0a34d-7abc-4e42-a28e-5f2144844492",
+    "source": "internal",
+    "text": {
+     "en": "Every good habit started as a single brave day.",
+     "es": "Todo buen hábito empezó con un solo día valiente.",
+     "pt": "Todo bom hábito começou como um único dia de coragem.",
+     "fr": "Toute bonne habitude a commencé par une seule journée de courage.",
+     "de": "Jede gute Gewohnheit begann als ein einziger mutiger Tag.",
+     "ja": "どんないい習慣も、勇気を出したある一日から始まった。"
+    },
+    "author": null
+   },
+   {
+    "id": "47cff8eb-83bb-4d99-bff7-cb555d9044d2",
+    "source": "native-voices",
+    "text": {
+     "en": "We are always beginning to live again.",
+     "es": "Siempre volvemos a empezar a vivir.",
+     "pt": "Sempre recomeçamos a viver.",
+     "fr": "Nous recommençons toujours à vivre.",
+     "de": "Wir fangen immer wieder an zu leben.",
+     "ja": "私たちはいつも、新たに生き始める。"
+    },
+    "author": {
+     "en": "Montaigne",
+     "es": "Montaigne",
+     "pt": "Montaigne",
+     "fr": "Montaigne",
+     "de": "Montaigne",
+     "ja": "モンテーニュ"
+    }
+   },
+   {
+    "id": "9caf69e8-30bd-48f8-a17a-e47ec4e25bd4",
+    "source": "internal",
+    "text": {
+     "en": "A fresh start can be quiet. No one else has to see it.",
+     "es": "Un nuevo comienzo puede ser silencioso. Nadie más tiene que verlo.",
+     "pt": "Um recomeço pode ser silencioso. Ninguém mais precisa ver.",
+     "fr": "Un nouveau départ peut se faire en silence. Personne d'autre n'a besoin de le voir.",
+     "de": "Ein Neuanfang darf leise sein. Niemand sonst muss ihn sehen.",
+     "ja": "新しい始まりは静かでいい。誰かに見せる必要はない。"
+    },
+    "author": null
+   },
+   {
+    "id": "985437cc-8952-40ae-ab02-bfe5ccb9020d",
+    "source": "internal",
+    "text": {
+     "en": "Direction matters more than speed.",
+     "es": "La dirección importa más que la velocidad.",
+     "pt": "A direção importa mais do que a velocidade.",
+     "fr": "La direction compte plus que la vitesse.",
+     "de": "Die Richtung zählt mehr als das Tempo.",
+     "ja": "速さより方向が大切だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "33941390-6a5a-4d0e-8ee0-0ed1f561f6c9",
+    "source": "internal",
+    "text": {
+     "en": "Even a little hope is enough to begin.",
+     "es": "Hasta un poco de esperanza basta para empezar.",
+     "pt": "Até um pouco de esperança basta para começar.",
+     "fr": "Même un peu d'espoir suffit pour commencer.",
+     "de": "Schon ein bisschen Hoffnung reicht, um anzufangen.",
+     "ja": "ほんの少しの希望でも、始めるには十分だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "41d3fb32-eca3-4e6f-8b10-6dab0e876f27",
+    "source": "native-voices",
+    "text": {
+     "en": "Every beginning is small.",
+     "es": "Todo comienzo es pequeño.",
+     "pt": "Todo começo é pequeno.",
+     "fr": "Tout commencement est petit.",
+     "de": "Jeder Anfang ist klein.",
+     "ja": "どんな始まりも小さい。"
+    },
+    "author": {
+     "en": "Joseph Joubert",
+     "es": "Joseph Joubert",
+     "pt": "Joseph Joubert",
+     "fr": "Joseph Joubert",
+     "de": "Joseph Joubert",
+     "ja": "ジョゼフ・ジュベール"
+    }
+   }
+  ]
+ },
+ "encouragement": {
+  "hard": [
+   {
+    "id": "46677955-693b-41f4-afcb-aa7b77072e59",
+    "source": "internal",
+    "text": {
+     "en": "Look at what you have lived through, and still you hope.",
+     "es": "Mira todo lo que has vivido, y aun así tienes esperanza.",
+     "pt": "Olhe para tudo o que você já viveu, e ainda assim você tem esperança.",
+     "fr": "Regarde tout ce que tu as traversé, et tu espères encore.",
+     "de": "Schau, was du alles durchgestanden hast, und trotzdem hoffst du noch.",
+     "ja": "これまで乗り越えてきたことを見てみよう。それでも、希望を持ち続けている。"
+    },
+    "author": null
+   },
+   {
+    "id": "15fa0221-df83-4ea4-829a-07105b10ea81",
+    "source": "internal",
+    "text": {
+     "en": "Hard things have shown you how capable you are.",
+     "es": "Las cosas difíciles te han mostrado de todo lo que eres capaz.",
+     "pt": "As coisas difíceis mostraram a você do que você é capaz.",
+     "fr": "Les épreuves t'ont montré à quel point tu es capable.",
+     "de": "Das Schwere hat dir gezeigt, wie viel du kannst.",
+     "ja": "つらい経験が、あなたにどれほどの力があるかを教えてくれた。"
+    },
+    "author": null
+   },
+   {
+    "id": "15b14640-15b4-4260-8505-fd5b48a39e31",
+    "source": "internal",
+    "text": {
+     "en": "You have taken every hard turn and kept your heart.",
+     "es": "Has tomado cada curva difícil sin perder tu corazón.",
+     "pt": "Você passou por cada curva difícil e não perdeu o seu coração.",
+     "fr": "Tu as pris chaque virage difficile, et ton cœur est resté entier.",
+     "de": "Du hast jede schwere Kurve genommen und dein Herz behalten.",
+     "ja": "どんなにつらい曲がり角でも、あなたは心を失わずに進んできた。"
+    },
+    "author": null
+   },
+   {
+    "id": "06e85e86-5b06-4e4c-a18e-993846989b70",
+    "source": "internal",
+    "text": {
+     "en": "You can expect less of yourself today and still be proud.",
+     "es": "Hoy puedes exigirte menos y aun así sentir orgullo.",
+     "pt": "Você pode exigir menos de si hoje e ainda ter orgulho.",
+     "fr": "Tu peux exiger moins de toi aujourd'hui sans rien perdre de ta fierté.",
+     "de": "Du darfst heute weniger von dir erwarten und trotzdem stolz sein.",
+     "ja": "今日は自分への期待を下げても、誇りを持っていい。"
+    },
+    "author": null
+   },
+   {
+    "id": "8d681e0d-6e44-4c61-8a95-1a2881a543f6",
+    "source": "internal",
+    "text": {
+     "en": "You will not feel like yourself for a while. That is not permanent.",
+     "es": "No te vas a sentir como tú por un tiempo. Eso no es permanente.",
+     "pt": "Por um tempo, você não vai se reconhecer. Isso não é permanente.",
+     "fr": "Tu ne te reconnaîtras pas pendant un temps. Ce n'est pas permanent.",
+     "de": "Du wirst dich eine Weile nicht wie du selbst fühlen. Das bleibt nicht so.",
+     "ja": "しばらくは自分らしく感じられないだろう。でも、ずっとではない。"
+    },
+    "author": null
+   },
+   {
+    "id": "8f78d386-a9f6-47e5-9a54-e75561aaddb1",
+    "source": "internal",
+    "text": {
+     "en": "You will look back on this week from somewhere you cannot imagine yet.",
+     "es": "Vas a mirar esta semana desde un lugar que todavía no puedes imaginar.",
+     "pt": "Você vai olhar para esta semana de um lugar que ainda nem consegue imaginar.",
+     "fr": "Tu repenseras à cette semaine depuis un endroit que tu ne peux pas encore imaginer.",
+     "de": "Du wirst auf diese Woche zurückblicken, von einem Ort aus, den du dir noch nicht vorstellen kannst.",
+     "ja": "今はまだ想像もできない場所から、この1週間を振り返る日が来る。"
+    },
+    "author": null
+   },
+   {
+    "id": "881cdf38-3512-4f66-85f3-2a9d2c19635d",
+    "source": "internal",
+    "text": {
+     "en": "Every hill you have climbed made the next one a little easier.",
+     "es": "Cada cuesta que subiste hizo la siguiente un poco más fácil.",
+     "pt": "Cada subida que você enfrentou deixou a próxima um pouco mais fácil.",
+     "fr": "Chaque côte que tu as gravie a rendu la suivante un peu plus facile.",
+     "de": "Jede Steigung, die du geschafft hast, hat die nächste ein wenig leichter gemacht.",
+     "ja": "登ってきた坂のひとつひとつが、次の坂を少し楽にしてくれた。"
+    },
+    "author": null
+   },
+   {
+    "id": "770f9058-d942-49c0-b80e-f2d9546b8c81",
+    "source": "internal",
+    "text": {
+     "en": "You are allowed to feel hopeful before you know how it ends.",
+     "es": "Puedes tener esperanza antes de saber cómo termina.",
+     "pt": "Você pode ter esperança antes de saber como termina.",
+     "fr": "Tu as le droit d'avoir de l'espoir avant de savoir comment ça finit.",
+     "de": "Du darfst hoffen, bevor du weißt, wie es ausgeht.",
+     "ja": "どう終わるかわからなくても、希望を持っていい。"
+    },
+    "author": null
+   }
+  ],
+  "big": [
+   {
+    "id": "11648385-5e96-4386-abc4-2449943f35b3",
+    "source": "internal",
+    "text": {
+     "en": "Today you get to be bold.",
+     "es": "Hoy te toca atreverte.",
+     "pt": "Hoje você pode ousar.",
+     "fr": "Aujourd'hui, tu as le droit d'oser.",
+     "de": "Heute darfst du dich trauen.",
+     "ja": "今日は、思い切って大胆になっていい日だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "d0058d53-eee1-4c2f-8efd-240010454033",
+    "source": "internal",
+    "text": {
+     "en": "Trust yourself to figure it out as you go.",
+     "es": "Confía en que lo vas a ir resolviendo sobre la marcha.",
+     "pt": "Confie que você vai resolver isso no caminho.",
+     "fr": "Fais-toi confiance pour trouver la solution en avançant.",
+     "de": "Trau dir zu, es unterwegs herauszufinden.",
+     "ja": "進みながら答えを見つけていける自分を信じよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "957ae901-985d-4bd3-b1f9-46b7f10fbf39",
+    "source": "internal",
+    "text": {
+     "en": "You can take a risk with a steady heart.",
+     "es": "Puedes arriesgarte con el corazón tranquilo.",
+     "pt": "Você pode correr um risco com o coração firme.",
+     "fr": "Tu peux prendre un risque le cœur tranquille.",
+     "de": "Du kannst ein Risiko mit ruhigem Herzen eingehen.",
+     "ja": "落ち着いた心のまま、リスクをとることもできる。"
+    },
+    "author": null
+   },
+   {
+    "id": "c48347cd-36c4-4020-8042-8a0ddda44c92",
+    "source": "internal",
+    "text": {
+     "en": "Your friends are not surprised when you do well. They saw it coming.",
+     "es": "A tus amistades no les sorprende que te vaya bien. Ya lo veían venir.",
+     "pt": "Seus amigos não se surpreendem quando você se dá bem. Eles já sabiam que ia acontecer.",
+     "fr": "Tes amis ne sont pas surpris quand tu réussis. Ils l'avaient vu venir.",
+     "de": "Deine Freunde sind nicht überrascht, wenn es bei dir gut läuft. Sie haben es kommen sehen.",
+     "ja": "あなたがうまくいっても、友だちは驚かない。そうなるとわかっていたから。"
+    },
+    "author": null
+   },
+   {
+    "id": "c14615e2-2e28-4679-87a1-e0bba085cf20",
+    "source": "internal",
+    "text": {
+     "en": "Other people trust your judgment. You can trust it too.",
+     "es": "Otras personas confían en tu criterio. Tú también puedes confiar en él.",
+     "pt": "Outras pessoas confiam no seu julgamento. Você também pode confiar.",
+     "fr": "Les autres font confiance à ton jugement. Tu peux lui faire confiance aussi.",
+     "de": "Andere vertrauen deinem Urteil. Du darfst ihm auch vertrauen.",
+     "ja": "周りの人はあなたの判断を信頼している。あなたも信じていい。"
+    },
+    "author": null
+   },
+   {
+    "id": "c52ed2c9-3c0a-4f2b-a657-24d90c25688f",
+    "source": "internal",
+    "text": {
+     "en": "Your mind is sharp, and it keeps getting sharper.",
+     "es": "Tu mente es aguda, y cada vez lo es más.",
+     "pt": "Sua mente é afiada, e fica cada vez mais afiada.",
+     "fr": "Tu as l'esprit vif, et il l'est de plus en plus.",
+     "de": "Dein Verstand ist scharf, und er wird immer schärfer.",
+     "ja": "あなたの思考は鋭く、さらに鋭くなっている。"
+    },
+    "author": null
+   },
+   {
+    "id": "2a519a6d-0b16-4c12-b931-26a8fbd6ab61",
+    "source": "internal",
+    "text": {
+     "en": "Let today be the day you believe a little bigger.",
+     "es": "Que hoy sea el día en que creas un poco más en grande.",
+     "pt": "Que hoje seja o dia em que você acredita um pouco mais.",
+     "fr": "Qu'aujourd'hui soit le jour où tu vois un peu plus grand.",
+     "de": "Lass heute den Tag sein, an dem du ein bisschen größer glaubst.",
+     "ja": "今日は、いつもより少し大きく自分を信じてみよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "c7afcae1-b205-47de-8d82-9fea46dc89c2",
+    "source": "internal",
+    "text": {
+     "en": "You have strengths you use so often you forget they are strengths.",
+     "es": "Tienes fortalezas que usas tan seguido que olvidas que lo son.",
+     "pt": "Você tem qualidades que usa tanto que até esquece que são qualidades.",
+     "fr": "Tu as des forces que tu utilises si souvent que tu oublies que ce sont des forces.",
+     "de": "Du hast Stärken, die du so oft nutzt, dass du vergisst, dass es Stärken sind.",
+     "ja": "いつも使いすぎて、強みだということを忘れている強みがある。"
+    },
+    "author": null
+   }
+  ],
+  "fresh": [
+   {
+    "id": "692dd4bb-173e-40a8-92a8-23170ebaef66",
+    "source": "internal",
+    "text": {
+     "en": "The next chapter can look nothing like the last one.",
+     "es": "El próximo capítulo puede no parecerse en nada al anterior.",
+     "pt": "O próximo capítulo pode não se parecer em nada com o anterior.",
+     "fr": "Le prochain chapitre peut ne ressembler en rien au précédent.",
+     "de": "Das nächste Kapitel muss dem letzten kein bisschen ähneln.",
+     "ja": "次の章は、前の章とまったく違っていてもいい。"
+    },
+    "author": null
+   },
+   {
+    "id": "07ee2a14-7396-4048-9759-de7997018f5c",
+    "source": "internal",
+    "text": {
+     "en": "You can grow roots in a new place.",
+     "es": "Puedes echar raíces en un lugar nuevo.",
+     "pt": "Você pode criar raízes num lugar novo.",
+     "fr": "Tu peux prendre racine dans un nouvel endroit.",
+     "de": "Du kannst an einem neuen Ort Wurzeln schlagen.",
+     "ja": "新しい場所にも、根を張ることはできる。"
+    },
+    "author": null
+   },
+   {
+    "id": "4bc1049e-a516-42bc-9867-e655c77abdc1",
+    "source": "internal",
+    "text": {
+     "en": "You have faced bigger unknowns and found your feet.",
+     "es": "Ya enfrentaste incertidumbres más grandes y saliste adelante.",
+     "pt": "Você já enfrentou incertezas maiores e reencontrou o equilíbrio.",
+     "fr": "Tu as déjà affronté de plus grandes inconnues, et tu as trouvé tes marques.",
+     "de": "Du hast schon größeren Ungewissheiten gegenübergestanden und Halt gefunden.",
+     "ja": "もっと大きな未知に向き合っても、自分の足で立ってきた。"
+    },
+    "author": null
+   },
+   {
+    "id": "c342f235-41f3-4068-94f7-f692c596b6f8",
+    "source": "internal",
+    "text": {
+     "en": "You are someone who rebuilds, and rebuilds well.",
+     "es": "Eres alguien que reconstruye, y reconstruye bien.",
+     "pt": "Você é alguém que reconstrói, e reconstrói bem.",
+     "fr": "Tu es quelqu'un qui reconstruit, et qui reconstruit bien.",
+     "de": "Du baust wieder auf, und du baust gut.",
+     "ja": "あなたは何度でも立て直せる人だ。しかも、上手に。"
+    },
+    "author": null
+   },
+   {
+    "id": "7dafee5d-3a42-475f-ac19-ac58cdbd3403",
+    "source": "internal",
+    "text": {
+     "en": "Being new means everything is still ahead of you.",
+     "es": "Estar empezando significa que todo lo tienes por delante.",
+     "pt": "Estar no começo significa que tudo ainda está à sua frente.",
+     "fr": "Débuter, c'est avoir encore tout devant soi.",
+     "de": "Wenn du neu bist, liegt noch alles vor dir.",
+     "ja": "始めたばかりなら、すべてはまだこれからだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "a0f39f09-af32-42c2-a271-6443b4d1fc96",
+    "source": "internal",
+    "text": {
+     "en": "What you begin now can grow for years.",
+     "es": "Lo que empiezas ahora puede crecer durante años.",
+     "pt": "O que você começa agora pode crescer por anos.",
+     "fr": "Ce que tu commences aujourd'hui peut grandir pendant des années.",
+     "de": "Was du jetzt beginnst, kann über Jahre wachsen.",
+     "ja": "今始めることは、この先何年も育っていく。"
+    },
+    "author": null
+   },
+   {
+    "id": "e83b65a4-c7f9-4f7f-9251-5f23362cbc9a",
+    "source": "internal",
+    "text": {
+     "en": "The day ahead is open. Step into it with hope.",
+     "es": "El día que viene está abierto. Entra en él con esperanza.",
+     "pt": "O dia que começa está aberto. Entre nele com esperança.",
+     "fr": "La journée qui commence est ouverte. Entres-y avec espoir.",
+     "de": "Der Tag vor dir ist offen. Geh mit Hoffnung hinein.",
+     "ja": "これからの一日は、まだ何も決まっていない。希望を持って踏み出そう。"
+    },
+    "author": null
+   },
+   {
+    "id": "5c37b83d-a8d8-432e-88ae-a65eb0fa298a",
+    "source": "internal",
+    "text": {
+     "en": "There are kinds of happiness you have not tried yet.",
+     "es": "Hay formas de felicidad que todavía no has probado.",
+     "pt": "Existem tipos de felicidade que você ainda não experimentou.",
+     "fr": "Il existe des formes de bonheur que tu n'as pas encore essayées.",
+     "de": "Es gibt Arten von Glück, die du noch gar nicht ausprobiert hast.",
+     "ja": "まだ味わったことのない種類の幸せがある。"
+    },
+    "author": null
+   }
+  ],
+  "friend": [
+   {
+    "id": "0ec3a78a-7de6-404a-a844-d26a1aef5c81",
+    "source": "internal",
+    "text": {
+     "en": "Your people are lucky to have you in their corner.",
+     "es": "Tu gente tiene suerte de que estés de su lado.",
+     "pt": "As pessoas que você ama têm sorte de contar com você.",
+     "fr": "Tes proches ont de la chance de t'avoir à leurs côtés.",
+     "de": "Die Menschen, die zu dir gehören, können froh sein, dich auf ihrer Seite zu haben.",
+     "ja": "あなたという味方がいて、大切な人たちは幸運だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "83ff912d-573f-4afc-a9ad-92c2cd13c55a",
+    "source": "internal",
+    "text": {
+     "en": "Your kindness leaves a mark that lasts.",
+     "es": "Tu bondad deja una huella que perdura.",
+     "pt": "Sua gentileza deixa uma marca que dura.",
+     "fr": "Ta gentillesse laisse une trace qui dure.",
+     "de": "Deine Güte hinterlässt Spuren, die bleiben.",
+     "ja": "あなたの優しさは、いつまでも消えない跡を残す。"
+    },
+    "author": null
+   },
+   {
+    "id": "dbbd7668-bc2c-4cac-a84f-fca1d65d47ad",
+    "source": "internal",
+    "text": {
+     "en": "There is something good in you that no one can take away.",
+     "es": "Hay algo bueno en ti que nadie te puede quitar.",
+     "pt": "Existe algo de bom em você que ninguém pode tirar.",
+     "fr": "Il y a en toi quelque chose de bon que personne ne peut t'enlever.",
+     "de": "In dir ist etwas Gutes, das dir niemand nehmen kann.",
+     "ja": "あなたの中には、誰にも奪えない良いものがある。"
+    },
+    "author": null
+   },
+   {
+    "id": "b805d80e-7a78-4669-b967-8ff8628d0eea",
+    "source": "internal",
+    "text": {
+     "en": "There is a lot to admire in the way you live.",
+     "es": "Hay mucho que admirar en tu forma de vivir.",
+     "pt": "Há muito o que admirar no seu jeito de viver.",
+     "fr": "Il y a beaucoup à admirer dans ta façon de vivre.",
+     "de": "An der Art, wie du lebst, gibt es viel zu bewundern.",
+     "ja": "あなたの生き方には、尊敬できるところがたくさんある。"
+    },
+    "author": null
+   },
+   {
+    "id": "0fff4e47-b527-4d77-90cd-2f735eff4069",
+    "source": "internal",
+    "text": {
+     "en": "You have helped someone feel less alone.",
+     "es": "Has ayudado a alguien a sentir menos soledad.",
+     "pt": "Você já ajudou alguém a se sentir menos só.",
+     "fr": "Tu as aidé quelqu'un à se sentir moins seul.",
+     "de": "Du hast jemandem geholfen, sich weniger allein zu fühlen.",
+     "ja": "あなたは、誰かの孤独を少し和らげたことがある。"
+    },
+    "author": null
+   },
+   {
+    "id": "7d3c14b9-03d0-47fa-9b3f-678628760598",
+    "source": "internal",
+    "text": {
+     "en": "The world is better for your way of seeing it.",
+     "es": "El mundo es mejor gracias a tu forma de verlo.",
+     "pt": "O mundo é melhor com o seu jeito de vê-lo.",
+     "fr": "Le monde est meilleur grâce à ta façon de le voir.",
+     "de": "Die Welt ist besser dank deiner Art, sie zu sehen.",
+     "ja": "あなたのものの見方があるから、世界は少しよくなっている。"
+    },
+    "author": null
+   },
+   {
+    "id": "997be90c-80a8-4dd3-b593-41b932c8a588",
+    "source": "native-voices",
+    "text": {
+     "en": "Many, as they head into the forest, will be comforted by your light.",
+     "es": "Muchos, al internarse en la selva, se sentirán confortados por tu luz.",
+     "pt": "Muitos, ao entrarem na selva, se sentirão confortados pela sua luz.",
+     "fr": "Beaucoup, en s'enfonçant dans la forêt, se sentiront réconfortés par ta lumière.",
+     "de": "Viele, die sich in den Wald hineinwagen, werden von deinem Licht getröstet sein.",
+     "ja": "多くの人が、森の奥へ入っていくとき、あなたの光に励まされるだろう。"
+    },
+    "author": {
+     "en": "Amado Nervo",
+     "es": "Amado Nervo",
+     "pt": "Amado Nervo",
+     "fr": "Amado Nervo",
+     "de": "Amado Nervo",
+     "ja": "アマード・ネルボ"
+    }
+   },
+   {
+    "id": "b9344670-42c4-4179-99ba-f8d5d1982e3b",
+    "source": "internal",
+    "text": {
+     "en": "What you are doing takes real strength. Notice it.",
+     "es": "Lo que estás haciendo requiere mucha fuerza. Date cuenta.",
+     "pt": "O que você está fazendo exige muita força. Perceba isso.",
+     "fr": "Ce que tu fais demande une vraie force. Prends-en conscience.",
+     "de": "Was du gerade tust, braucht echte Kraft. Nimm das wahr.",
+     "ja": "あなたがしていることには、本当の強さがいる。そのことに気づこう。"
+    },
+    "author": null
+   }
+  ],
+  "named": [
+   {
+    "id": "c8e3d4bf-4ed0-4306-80c6-93e341be6f14",
+    "source": "internal",
+    "text": {
+     "en": "You are not behind, {name}.",
+     "es": "No te has quedado atrás, {name}.",
+     "pt": "Você não ficou para trás, {name}.",
+     "fr": "Tu n'es pas en retard, {name}.",
+     "de": "Du hängst nicht hinterher, {name}.",
+     "ja": "{name}さん、遅れてなどいない。"
+    },
+    "author": null
+   },
+   {
+    "id": "61c9fdaa-797b-47a0-a284-ece0fd0cfc31",
+    "source": "internal",
+    "text": {
+     "en": "You are allowed to rest, {name}.",
+     "es": "Tienes permiso de descansar, {name}.",
+     "pt": "Você tem permissão para descansar, {name}.",
+     "fr": "Tu as le droit de te reposer, {name}.",
+     "de": "Du darfst dich ausruhen, {name}.",
+     "ja": "{name}さん、休んでいい。"
+    },
+    "author": null
+   },
+   {
+    "id": "78c819d8-b29f-4e14-9e9d-c01f8aacaa82",
+    "source": "internal",
+    "text": {
+     "en": "{name}, you are early, not late.",
+     "es": "Vas temprano, no tarde, {name}.",
+     "pt": "{name}, você chegou cedo, não tarde.",
+     "fr": "{name}, tu es en avance, pas en retard.",
+     "de": "{name}, du bist früh dran, nicht spät.",
+     "ja": "{name}さん、遅れているのではない。早いのだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "c3f5df9d-cd41-4d81-9ee6-8ae50daeb9ec",
+    "source": "internal",
+    "text": {
+     "en": "You are further along than you feel, {name}.",
+     "es": "Vas más adelante de lo que sientes, {name}.",
+     "pt": "Você já avançou mais do que sente, {name}.",
+     "fr": "Tu as fait plus de chemin que tu ne le sens, {name}.",
+     "de": "Du bist weiter, als es sich anfühlt, {name}.",
+     "ja": "{name}さん、思っているより先まで来ている。"
+    },
+    "author": null
+   },
+   {
+    "id": "0a18924d-9789-4a5a-a2d7-c6b2562f2029",
+    "source": "internal",
+    "text": {
+     "en": "You did what you could with the day you had, {name}.",
+     "es": "Hiciste lo que pudiste con el día que tenías, {name}.",
+     "pt": "Você fez o que pôde com o dia que teve, {name}.",
+     "fr": "Tu as fait ce que tu as pu avec la journée que tu avais, {name}.",
+     "de": "Du hast aus dem Tag gemacht, was du konntest, {name}.",
+     "ja": "{name}さん、与えられた一日で、できることをやった。"
+    },
+    "author": null
+   },
+   {
+    "id": "2d88ef0e-97f1-4e7f-8a29-53231cf03c81",
+    "source": "internal",
+    "text": {
+     "en": "{name}, you are building a decade, not a result.",
+     "es": "{name}, estás construyendo una década, no un resultado.",
+     "pt": "{name}, você está construindo uma década, não um resultado.",
+     "fr": "{name}, tu construis une décennie, pas un résultat.",
+     "de": "{name}, du baust ein Jahrzehnt, kein Ergebnis.",
+     "ja": "{name}さん、作っているのは結果ではなく、これからの10年だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "6fe1fe8a-45e4-43d9-a9ed-80661aef370a",
+    "source": "internal",
+    "text": {
+     "en": "You are allowed a mediocre Tuesday, {name}.",
+     "es": "Tienes permiso de tener un martes mediocre, {name}.",
+     "pt": "Você tem direito a uma terça-feira medíocre, {name}.",
+     "fr": "Tu as droit à un mardi médiocre, {name}.",
+     "de": "Du darfst einen mittelmäßigen Dienstag haben, {name}.",
+     "ja": "{name}さん、ぱっとしない火曜日があってもいい。"
+    },
+    "author": null
+   },
+   {
+    "id": "1260dcb4-dbac-47f9-8096-e4a65aecbb5c",
+    "source": "internal",
+    "text": {
+     "en": "Take the afternoon, {name}. The world will manage.",
+     "es": "Tómate la tarde, {name}. El mundo se las va a arreglar.",
+     "pt": "Tire a tarde de folga, {name}. O mundo vai se virar.",
+     "fr": "Prends ton après-midi, {name}. Le monde se débrouillera.",
+     "de": "Nimm dir den Nachmittag frei, {name}. Die Welt kommt zurecht.",
+     "ja": "{name}さん、午後は休もう。世界はなんとかなる。"
+    },
+    "author": null
+   },
+   {
+    "id": "205cbf99-cd23-4e6b-9127-4ed5a0da2679",
+    "source": "internal",
+    "text": {
+     "en": "Go outside, {name}. It is nearly always the answer.",
+     "es": "Sal afuera, {name}. Casi siempre es la respuesta.",
+     "pt": "Saia de casa, {name}. Quase sempre é a resposta.",
+     "fr": "Sors, {name}. C'est presque toujours la réponse.",
+     "de": "Geh raus, {name}. Das ist fast immer die Antwort.",
+     "ja": "{name}さん、外に出よう。たいてい、それが答えだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "7a6de2cb-026b-424c-b663-3d7b849a6e41",
+    "source": "internal",
+    "text": {
+     "en": "Begin again, {name}.",
+     "es": "Empieza otra vez, {name}.",
+     "pt": "Recomece, {name}.",
+     "fr": "Recommence, {name}.",
+     "de": "Fang neu an, {name}.",
+     "ja": "{name}さん、もう一度始めよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "cde2afe7-6204-41e6-9445-8a1da1077d1f",
+    "source": "internal",
+    "text": {
+     "en": "You have not lost the progress, {name}. You have paused.",
+     "es": "No has perdido el avance, {name}. Lo pausaste.",
+     "pt": "Você não perdeu o progresso, {name}. Você deu uma pausa.",
+     "fr": "Tu n'as pas perdu tes progrès, {name}. Tu as fait une pause.",
+     "de": "Du hast den Fortschritt nicht verloren, {name}. Du hast pausiert.",
+     "ja": "{name}さん、進歩を失ったわけではない。立ち止まっているだけだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "0144d36a-581b-4829-8a3a-9b343dd90cd6",
+    "source": "internal",
+    "text": {
+     "en": "You can be unprepared and still be all right, {name}.",
+     "es": "Puedes llegar sin preparación, {name}, y aun así estar bien.",
+     "pt": "Você pode chegar sem preparo, {name}, e ainda assim ficar bem.",
+     "fr": "Tu peux manquer de préparation, et ça ira quand même, {name}.",
+     "de": "Du kannst unvorbereitet sein, {name}, und trotzdem klarkommen.",
+     "ja": "{name}さん、準備ができていなくても、大丈夫でいられる。"
+    },
+    "author": null
+   }
+  ]
+ },
+ "inspirational": {
+  "hope": [
+   {
+    "id": "bad8a509-3502-4b7d-ab33-32691c65738d",
+    "source": "internal",
+    "text": {
+     "en": "Keep the hope, keep the dream, keep going.",
+     "es": "Conserva la esperanza, conserva el sueño, sigue adelante.",
+     "pt": "Mantenha a esperança, mantenha o sonho, siga em frente.",
+     "fr": "Garde l'espoir, garde le rêve, continue.",
+     "de": "Behalte die Hoffnung, behalte den Traum, mach weiter.",
+     "ja": "希望を持ち続け、夢を持ち続け、歩き続けよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "1b2ec6b9-6e59-4926-bf81-4c52a8c293bf",
+    "source": "internal",
+    "text": {
+     "en": "Your hope can lead the way while your courage catches up.",
+     "es": "Tu esperanza puede ir adelante mientras tu valor la alcanza.",
+     "pt": "Sua esperança pode ir na frente enquanto a coragem vem chegando.",
+     "fr": "Ton espoir peut ouvrir la voie pendant que ton courage le rattrape.",
+     "de": "Deine Hoffnung darf vorangehen, während dein Mut noch aufholt.",
+     "ja": "勇気が追いつくまで、希望に道案内をしてもらえばいい。"
+    },
+    "author": null
+   },
+   {
+    "id": "8297bf7e-12d9-4c8b-8065-04441af16af1",
+    "source": "internal",
+    "text": {
+     "en": "A door that stayed shut today can still open another day.",
+     "es": "Una puerta que hoy siguió cerrada puede abrirse otro día.",
+     "pt": "Uma porta que ficou fechada hoje ainda pode se abrir outro dia.",
+     "fr": "Une porte restée fermée aujourd'hui peut encore s'ouvrir un autre jour.",
+     "de": "Eine Tür, die heute zu blieb, kann sich an einem anderen Tag noch öffnen.",
+     "ja": "今日は閉じたままだった扉も、いつか別の日に開くかもしれない。"
+    },
+    "author": null
+   },
+   {
+    "id": "90c2e4a5-906c-4309-bc60-a342b85074b3",
+    "source": "internal",
+    "text": {
+     "en": "Patience is trust in your own future.",
+     "es": "La paciencia es confiar en tu propio futuro.",
+     "pt": "Paciência é confiar no seu próprio futuro.",
+     "fr": "La patience, c'est faire confiance à ton propre avenir.",
+     "de": "Geduld ist Vertrauen in deine eigene Zukunft.",
+     "ja": "忍耐とは、自分の未来を信じることだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "5b0d7baf-ed55-4936-9bdd-71f8b88e60ec",
+    "source": "internal",
+    "text": {
+     "en": "You are allowed to be excited about your life again.",
+     "es": "Tienes derecho a volver a emocionarte con tu vida.",
+     "pt": "Você tem o direito de voltar a se empolgar com a sua vida.",
+     "fr": "Tu as le droit de t'enthousiasmer à nouveau pour ta vie.",
+     "de": "Du darfst dich wieder für dein Leben begeistern.",
+     "ja": "もう一度、自分の人生にわくわくしてもいい。"
+    },
+    "author": null
+   },
+   {
+    "id": "33d6f3c1-0f07-447f-80b7-90f9e56512d0",
+    "source": "internal",
+    "text": {
+     "en": "You can be grateful for this chapter and ready for the next.",
+     "es": "Puedes agradecer este capítulo y tener ganas del siguiente.",
+     "pt": "Você pode agradecer por este capítulo e já abraçar o próximo.",
+     "fr": "Tu peux dire merci à ce chapitre et avoir envie du suivant.",
+     "de": "Du kannst für dieses Kapitel dankbar und für das nächste bereit sein.",
+     "ja": "今のこの章に感謝しながら、次の章への準備もできる。"
+    },
+    "author": null
+   },
+   {
+    "id": "204f5a5c-8588-4dc3-848c-aa4b40cebb0a",
+    "source": "internal",
+    "text": {
+     "en": "A hopeful mind sees paths that fear cannot.",
+     "es": "Una mente con esperanza ve caminos que el miedo no ve.",
+     "pt": "Uma mente esperançosa vê caminhos que o medo não vê.",
+     "fr": "Un esprit plein d'espoir voit des chemins que la peur ne voit pas.",
+     "de": "Ein hoffnungsvoller Kopf sieht Wege, die die Angst nicht sieht.",
+     "ja": "希望を持つ心には、恐れには見えない道が見える。"
+    },
+    "author": null
+   },
+   {
+    "id": "b805aa3f-2886-4592-b520-08bc9354d5db",
+    "source": "internal",
+    "text": {
+     "en": "Carry your history with grace and your future with hope.",
+     "es": "Lleva tu historia con dignidad y tu futuro con esperanza.",
+     "pt": "Carregue sua história com leveza e seu futuro com esperança.",
+     "fr": "Porte ton histoire avec grâce et ton avenir avec espoir.",
+     "de": "Trag deine Geschichte mit Würde und deine Zukunft mit Hoffnung.",
+     "ja": "これまでの日々は気品をもって、これからの日々は希望をもって抱えていこう。"
+    },
+    "author": null
+   }
+  ],
+  "courage": [
+   {
+    "id": "1d64c9c5-8b40-4c57-9024-833aadf81cec",
+    "source": "internal",
+    "text": {
+     "en": "The courage to start is really the courage to believe in tomorrow.",
+     "es": "El valor para empezar es, en el fondo, el valor de creer en el mañana.",
+     "pt": "A coragem de começar é, no fundo, a coragem de acreditar no amanhã.",
+     "fr": "Le courage de commencer, c'est au fond le courage de croire en demain.",
+     "de": "Der Mut, anzufangen, ist eigentlich der Mut, an morgen zu glauben.",
+     "ja": "始める勇気とは、本当は明日を信じる勇気だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "76f62de9-be73-4f94-bf8a-f4c589a49af1",
+    "source": "internal",
+    "text": {
+     "en": "Every path worth walking has a few hills.",
+     "es": "Todo camino que vale la pena tiene algunas cuestas.",
+     "pt": "Todo caminho que vale a pena tem algumas subidas.",
+     "fr": "Tout chemin qui vaut la peine a quelques côtes.",
+     "de": "Jeder Weg, der sich lohnt, hat ein paar Steigungen.",
+     "ja": "歩く価値のある道には、いくつか坂がある。"
+    },
+    "author": null
+   },
+   {
+    "id": "2b1148d7-f30f-4fb3-ab76-ae5b1faf0c90",
+    "source": "internal",
+    "text": {
+     "en": "A brave choice can be made in a quiet voice.",
+     "es": "Una decisión valiente puede tomarse en voz baja.",
+     "pt": "Uma escolha corajosa pode ser feita em voz baixa.",
+     "fr": "Un choix courageux peut se faire à voix basse.",
+     "de": "Eine mutige Entscheidung kann man auch mit leiser Stimme treffen.",
+     "ja": "勇気ある選択は、小さな声でもできる。"
+    },
+    "author": null
+   },
+   {
+    "id": "66287f12-ee0d-4fe5-8a37-5d1aacdb33b5",
+    "source": "internal",
+    "text": {
+     "en": "A single brave moment can carry you further than years of waiting.",
+     "es": "Un solo momento de valor puede llevarte más lejos que años de espera.",
+     "pt": "Um único momento de coragem pode levar você mais longe que anos de espera.",
+     "fr": "Un seul moment de courage peut te mener plus loin que des années d'attente.",
+     "de": "Ein einziger mutiger Moment kann dich weiter bringen als Jahre des Wartens.",
+     "ja": "勇気を出した一瞬が、何年も待つより遠くへ運んでくれることがある。"
+    },
+    "author": null
+   },
+   {
+    "id": "de9c12c0-7a85-4fd8-a5a2-3ea4a4cd7edd",
+    "source": "native-voices",
+    "text": {
+     "en": "Only courage can set the course of a life.",
+     "es": "Solo al valor le corresponde gobernar la vida.",
+     "pt": "Só à coragem cabe reger a vida.",
+     "fr": "Il n'appartient qu'au courage de régler la vie.",
+     "de": "Nur dem Mut kommt es zu, das Leben zu lenken.",
+     "ja": "人生を律することができるのは、勇気だけだ。"
+    },
+    "author": {
+     "en": "Vauvenargues",
+     "es": "Vauvenargues",
+     "pt": "Vauvenargues",
+     "fr": "Vauvenargues",
+     "de": "Vauvenargues",
+     "ja": "ヴォーヴナルグ"
+    }
+   },
+   {
+    "id": "fd1c05d4-7347-423a-96c9-bc925ee57fba",
+    "source": "native-voices",
+    "text": {
+     "en": "Rewards come only to those who dare.",
+     "es": "Solo hay recompensa para quienes se atreven.",
+     "pt": "Só há recompensa para quem ousa.",
+     "fr": "Il n'y a de récompense que pour ceux qui osent.",
+     "de": "Belohnung gibt es nur für die, die etwas wagen.",
+     "ja": "報いがあるのは、思いきって挑む人だけだ。"
+    },
+    "author": {
+     "en": "Ernest Renan",
+     "es": "Ernest Renan",
+     "pt": "Ernest Renan",
+     "fr": "Ernest Renan",
+     "de": "Ernest Renan",
+     "ja": "エルネスト・ルナン"
+    }
+   },
+   {
+    "id": "f7172a0c-197b-463e-be68-67bb7d8fceaa",
+    "source": "internal",
+    "text": {
+     "en": "Each act of courage writes something new into your life.",
+     "es": "Cada acto de valor escribe algo nuevo en tu vida.",
+     "pt": "Cada ato de coragem escreve algo novo na sua vida.",
+     "fr": "Chaque acte de courage écrit quelque chose de nouveau dans ta vie.",
+     "de": "Jede mutige Tat schreibt etwas Neues in dein Leben.",
+     "ja": "勇気ある行動の一つひとつが、あなたの人生に新しい何かを書き込む。"
+    },
+    "author": null
+   },
+   {
+    "id": "2f3de6b0-96b9-46ae-973c-9d9b0091b4cc",
+    "source": "internal",
+    "text": {
+     "en": "New chapters are written by people brave enough to start them.",
+     "es": "Los capítulos nuevos los escriben quienes se atreven a empezarlos.",
+     "pt": "Novos capítulos são escritos por quem tem coragem de começá-los.",
+     "fr": "Les nouveaux chapitres sont écrits par les gens qui osent les commencer.",
+     "de": "Neue Kapitel schreibt, wer den Mut hat, sie zu beginnen.",
+     "ja": "新しい章を書くのは、それを始める勇気を持った人だ。"
+    },
+    "author": null
+   }
+  ],
+  "wonder": [
+   {
+    "id": "54dd76f5-c3da-4962-8dbf-bd94300ddb1b",
+    "source": "native-voices",
+    "text": {
+     "en": "We walk in the miraculous, we breathe in the miraculous.",
+     "es": "Caminamos en el milagro, respiramos en el milagro.",
+     "pt": "Caminhamos no milagre, respiramos no milagre.",
+     "fr": "Nous marchons dans le miracle, nous respirons dans le miracle.",
+     "de": "Wir gehen im Wunder, wir atmen im Wunder.",
+     "ja": "私たちは奇跡の中を歩き、奇跡の中で息をしている。"
+    },
+    "author": {
+     "en": "Remy de Gourmont",
+     "es": "Remy de Gourmont",
+     "pt": "Remy de Gourmont",
+     "fr": "Remy de Gourmont",
+     "de": "Remy de Gourmont",
+     "ja": "レミ・ド・グールモン"
+    }
+   },
+   {
+    "id": "e650b437-5059-454e-b106-7fb7b5f15fff",
+    "source": "native-voices",
+    "text": {
+     "en": "The most beautiful things are anonymous.",
+     "es": "Las cosas más bellas son anónimas.",
+     "pt": "As coisas mais belas são anônimas.",
+     "fr": "Les plus belles choses sont anonymes.",
+     "de": "Die schönsten Dinge sind namenlos.",
+     "ja": "もっとも美しいものは、名もないものだ。"
+    },
+    "author": {
+     "en": "Ernest Renan",
+     "es": "Ernest Renan",
+     "pt": "Ernest Renan",
+     "fr": "Ernest Renan",
+     "de": "Ernest Renan",
+     "ja": "エルネスト・ルナン"
+    }
+   },
+   {
+    "id": "0177e7f7-ff00-4b9c-8d81-5b7f5225c10f",
+    "source": "native-voices",
+    "text": {
+     "en": "Everything in nature is song, because everything is a voice.",
+     "es": "Todo es canto en la naturaleza, porque todo es voz.",
+     "pt": "Tudo é canto na natureza, porque tudo é voz.",
+     "fr": "Tout est chant dans la nature, parce que tout est voix.",
+     "de": "Alles ist Gesang in der Natur, weil alles Stimme ist.",
+     "ja": "自然の中では、すべてが歌だ。すべてが声なのだから。"
+    },
+    "author": {
+     "en": "Alphonse de Lamartine",
+     "es": "Alphonse de Lamartine",
+     "pt": "Alphonse de Lamartine",
+     "fr": "Alphonse de Lamartine",
+     "de": "Alphonse de Lamartine",
+     "ja": "アルフォンス・ド・ラマルティーヌ"
+    }
+   },
+   {
+    "id": "bcf3be7e-a39d-4415-9dc8-b21f2754170b",
+    "source": "native-voices",
+    "text": {
+     "en": "Eyes raised to the sky are always beautiful, whoever they belong to.",
+     "es": "Unos ojos alzados al cielo siempre son bellos, sean como sean.",
+     "pt": "Olhos erguidos para o céu são sempre belos, sejam eles quais forem.",
+     "fr": "Des yeux levés au ciel sont toujours beaux, quels qu'ils soient.",
+     "de": "Zum Himmel erhobene Augen sind immer schön, wie sie auch sein mögen.",
+     "ja": "天を仰ぐ目は、誰の目であっても、いつも美しい。"
+    },
+    "author": {
+     "en": "Joseph Joubert",
+     "es": "Joseph Joubert",
+     "pt": "Joseph Joubert",
+     "fr": "Joseph Joubert",
+     "de": "Joseph Joubert",
+     "ja": "ジョゼフ・ジュベール"
+    }
+   },
+   {
+    "id": "74a7a09e-a344-422d-a633-f9982dcc3f8d",
+    "source": "native-voices",
+    "text": {
+     "en": "What we call endless time may be a minute between two miracles.",
+     "es": "Lo que llamamos el tiempo infinito quizá sea un minuto entre dos milagros.",
+     "pt": "O que chamamos de tempo infinito talvez seja um minuto entre dois milagres.",
+     "fr": "Ce que nous appelons le temps infini est peut-être une minute entre deux miracles.",
+     "de": "Was wir die unendliche Zeit nennen, ist vielleicht eine Minute zwischen zwei Wundern.",
+     "ja": "私たちが果てしない時間と呼ぶものは、二つの奇跡のあいだの一分にすぎないのかもしれない。"
+    },
+    "author": {
+     "en": "Ernest Renan",
+     "es": "Ernest Renan",
+     "pt": "Ernest Renan",
+     "fr": "Ernest Renan",
+     "de": "Ernest Renan",
+     "ja": "エルネスト・ルナン"
+    }
+   },
+   {
+    "id": "31beb6b1-e856-40a2-b1b8-c8be9fa9ee86",
+    "source": "native-voices",
+    "text": {
+     "en": "For a poetic soul, each day's sun is a new sun.",
+     "es": "Para un alma poética el sol de cada día es un nuevo sol.",
+     "pt": "Para uma alma poética, o sol de cada dia é um novo sol.",
+     "fr": "Pour une âme poétique, le soleil de chaque jour est un soleil nouveau.",
+     "de": "Für eine dichterische Seele ist die Sonne jedes Tages eine neue Sonne.",
+     "ja": "詩的な魂にとって、毎日の太陽は新しい太陽だ。"
+    },
+    "author": {
+     "en": "Miguel de Unamuno",
+     "es": "Miguel de Unamuno",
+     "pt": "Miguel de Unamuno",
+     "fr": "Miguel de Unamuno",
+     "de": "Miguel de Unamuno",
+     "ja": "ミゲル・デ・ウナムーノ"
+    }
+   },
+   {
+    "id": "fc43e0a0-150f-4f5e-b597-0c2ba8005113",
+    "source": "native-voices",
+    "text": {
+     "en": "The good of the world rests in the smallest, most particular things.",
+     "es": "En lo más singular y lo más pequeño reside la salvación del mundo.",
+     "pt": "No menor e mais singular está a salvação do mundo.",
+     "fr": "C'est dans ce qui est le plus singulier et le plus petit que repose le salut du monde.",
+     "de": "Im Einzelnsten und Kleinsten ruht das Heil der Welt.",
+     "ja": "世界の救いは、いちばん小さな一つひとつのものの中にある。"
+    },
+    "author": {
+     "en": "Ernst von Feuchtersleben",
+     "es": "Ernst von Feuchtersleben",
+     "pt": "Ernst von Feuchtersleben",
+     "fr": "Ernst von Feuchtersleben",
+     "de": "Ernst von Feuchtersleben",
+     "ja": "エルンスト・フォン・フォイヒタースレーベン"
+    }
+   },
+   {
+    "id": "d1a6f57f-2e3a-46b6-a262-3f353b074a19",
+    "source": "native-voices",
+    "text": {
+     "en": "Beautiful things are lovable; they adorn life.",
+     "es": "Las cosas bellas son amables; adornan la vida.",
+     "pt": "As coisas belas são amáveis; elas enfeitam a vida.",
+     "fr": "Les belles choses sont aimables ; elles ornent la vie.",
+     "de": "Die schönen Dinge sind liebenswert; sie schmücken das Leben.",
+     "ja": "美しいものは愛らしい。人生を飾ってくれる。"
+    },
+    "author": {
+     "en": "Anatole France",
+     "es": "Anatole France",
+     "pt": "Anatole France",
+     "fr": "Anatole France",
+     "de": "Anatole France",
+     "ja": "アナトール・フランス"
+    }
+   }
+  ],
+  "purpose": [
+   {
+    "id": "91518ad6-617f-41a8-a1f4-bc5387dd9a5e",
+    "source": "gutenberg-primary",
+    "text": {
+     "en": "Nothing that we do, is done in vain.",
+     "es": "Nada de lo que hacemos se hace en vano.",
+     "pt": "Nada do que fazemos é feito em vão.",
+     "fr": "Rien de ce que nous faisons n'est fait en vain.",
+     "de": "Nichts, was wir tun, ist vergebens getan.",
+     "ja": "私たちのすることに、無駄なことは何ひとつない。"
+    },
+    "author": {
+     "en": "Charles Dickens",
+     "es": "Charles Dickens",
+     "pt": "Charles Dickens",
+     "fr": "Charles Dickens",
+     "de": "Charles Dickens",
+     "ja": "チャールズ・ディケンズ"
+    }
+   },
+   {
+    "id": "95e5a41e-e906-4dd9-89bd-4bbf228421d4",
+    "source": "native-voices",
+    "text": {
+     "en": "Every good deed done for humankind echoes down the centuries.",
+     "es": "Cada obra buena realizada en beneficio de la especie repercute en los siglos.",
+     "pt": "Cada boa obra realizada em benefício da espécie repercute pelos séculos.",
+     "fr": "Chaque bonne œuvre accomplie au bénéfice de l'espèce se répercute à travers les siècles.",
+     "de": "Jedes gute Werk, das zum Wohl der Menschheit getan wird, hallt durch die Jahrhunderte.",
+     "ja": "人類のためになされた善い行いはすべて、何世紀にもわたって響き続ける。"
+    },
+    "author": {
+     "en": "Almafuerte",
+     "es": "Almafuerte",
+     "pt": "Almafuerte",
+     "fr": "Almafuerte",
+     "de": "Almafuerte",
+     "ja": "アルマフエルテ"
+    }
+   },
+   {
+    "id": "17eb474f-0b15-482b-8413-d97788923b05",
+    "source": "internal",
+    "text": {
+     "en": "Believe you are meant for meaningful things.",
+     "es": "Cree que naciste para cosas que importan.",
+     "pt": "Acredite que você nasceu para coisas que importam.",
+     "fr": "Crois que des choses qui ont du sens t'attendent.",
+     "de": "Glaub daran, dass du für Bedeutsames bestimmt bist.",
+     "ja": "自分は意味のあることをするために生まれてきたと信じよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "6b6fcc16-d8c6-4d93-b522-418fac9cd7cd",
+    "source": "internal",
+    "text": {
+     "en": "You are not preparing for life. This is some of it.",
+     "es": "No te estás preparando para la vida. Esto es parte de ella.",
+     "pt": "Você não está se preparando para a vida. Isto já é parte dela.",
+     "fr": "Tu ne te prépares pas à la vie. Ça en fait partie.",
+     "de": "Du bereitest dich nicht aufs Leben vor. Das hier ist ein Teil davon.",
+     "ja": "人生の準備をしているのではない。これも人生の一部だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "b68ff56d-9127-48f8-a024-139a12f2b594",
+    "source": "internal",
+    "text": {
+     "en": "Stay close to what matters, day after day.",
+     "es": "Mantente cerca de lo que importa, día tras día.",
+     "pt": "Fique perto do que importa, dia após dia.",
+     "fr": "Reste proche de ce qui compte, jour après jour.",
+     "de": "Bleib nah an dem, was zählt, Tag für Tag.",
+     "ja": "来る日も来る日も、大切なもののそばにいよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "534d666c-e0db-4bb9-a3cc-eeda7cd6306e",
+    "source": "internal",
+    "text": {
+     "en": "Notice what you are curious about. That is where you will go furthest.",
+     "es": "Nota qué te da curiosidad. Ahí es donde vas a llegar más lejos.",
+     "pt": "Repare no que desperta a sua curiosidade. É ali que você vai mais longe.",
+     "fr": "Remarque ce qui éveille ta curiosité. C'est là que tu iras le plus loin.",
+     "de": "Achte darauf, was dich neugierig macht. Dort kommst du am weitesten.",
+     "ja": "自分が何に興味を持っているかに気づこう。いちばん遠くまで行けるのはそこだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "31e3994d-5f5d-46d1-a4f8-4da675c3144e",
+    "source": "gutenberg-primary",
+    "text": {
+     "en": "In almost any subject your passion for the subject will save you.",
+     "es": "En casi cualquier materia, tu pasión por ella te va a salvar.",
+     "pt": "Em quase qualquer assunto, sua paixão por ele vai salvar você.",
+     "fr": "Dans presque n'importe quelle matière, ta passion pour le sujet te sauvera.",
+     "de": "In fast jedem Fach wird dich deine Leidenschaft für das Fach retten.",
+     "ja": "ほとんどどんな分野でも、その分野への情熱が救ってくれる。"
+    },
+    "author": {
+     "en": "William James",
+     "es": "William James",
+     "pt": "William James",
+     "fr": "William James",
+     "de": "William James",
+     "ja": "ウィリアム・ジェームズ"
+    }
+   },
+   {
+    "id": "f13c8894-b34d-4d6f-a7e2-ad1cbbec3ee6",
+    "source": "native-voices",
+    "text": {
+     "en": "Let us make our whole life into a kind of verse.",
+     "es": "Hagamos de toda nuestra vida a modo de una estrofa.",
+     "pt": "Façamos de toda a nossa vida uma espécie de estrofe.",
+     "fr": "Faisons de toute notre vie une sorte de strophe.",
+     "de": "Machen wir unser ganzes Leben zu einer Art Strophe.",
+     "ja": "私たちの人生をまるごと、ひとつの詩の一節のようにしよう。"
+    },
+    "author": {
+     "en": "Ramón del Valle-Inclán",
+     "es": "Ramón del Valle-Inclán",
+     "pt": "Ramón del Valle-Inclán",
+     "fr": "Ramón del Valle-Inclán",
+     "de": "Ramón del Valle-Inclán",
+     "ja": "ラモン・デル・バリェ・インクラン"
+    }
+   }
+  ]
+ },
+ "positive": {
+  "gooddays": [
+   {
+    "id": "71936bef-ff90-4902-9011-04ef79d9d82e",
+    "source": "internal",
+    "text": {
+     "en": "You can make today one of the good days.",
+     "es": "Puedes hacer de hoy uno de los días buenos.",
+     "pt": "Você pode fazer de hoje um dos dias bons.",
+     "fr": "Tu peux faire d'aujourd'hui l'un des beaux jours.",
+     "de": "Du kannst heute zu einem der guten Tage machen.",
+     "ja": "今日を、いい日のひとつにすることができる。"
+    },
+    "author": null
+   },
+   {
+    "id": "65a7ae35-1898-42c2-960e-1692e3abc192",
+    "source": "internal",
+    "text": {
+     "en": "Let the good parts of today sink all the way in.",
+     "es": "Deja que lo bueno de hoy cale hasta el fondo.",
+     "pt": "Deixe as partes boas de hoje entrarem fundo em você.",
+     "fr": "Laisse les bons moments d'aujourd'hui pénétrer jusqu'au fond de toi.",
+     "de": "Lass das Schöne an diesem Tag ganz bei dir ankommen.",
+     "ja": "今日のいいところを、心の奥までしみこませよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "9f3dcc54-f9b2-4da6-8c10-8abe9e0f7dc9",
+    "source": "internal",
+    "text": {
+     "en": "A good step can happen on a messy day.",
+     "es": "Un buen paso puede darse en un día caótico.",
+     "pt": "Um bom passo pode acontecer num dia bagunçado.",
+     "fr": "Même un jour chaotique peut apporter un bon pas en avant.",
+     "de": "Auch an einem chaotischen Tag ist ein guter Schritt möglich.",
+     "ja": "散らかった一日にも、いい一歩は踏み出せる。"
+    },
+    "author": null
+   },
+   {
+    "id": "dd01b36a-e8b6-46a0-b9a2-c52b799b3ab4",
+    "source": "internal",
+    "text": {
+     "en": "Right here is a good place to begin again.",
+     "es": "Aquí mismo es un buen lugar para empezar de nuevo.",
+     "pt": "Aqui mesmo é um bom lugar para recomeçar.",
+     "fr": "Ici même, c'est un bon endroit pour recommencer.",
+     "de": "Genau hier ist ein guter Ort, um neu anzufangen.",
+     "ja": "今いるここが、もう一度始めるのにいい場所だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "04c2a8f4-3fdc-4167-aa27-74dcd7438da0",
+    "source": "internal",
+    "text": {
+     "en": "Where you are is a good place to grow from.",
+     "es": "Donde estás es un buen lugar para empezar a crecer.",
+     "pt": "Onde você está é um bom lugar para crescer.",
+     "fr": "Là où tu es, c'est un bon endroit pour grandir.",
+     "de": "Wo du gerade stehst, ist ein guter Ort, um zu wachsen.",
+     "ja": "今いる場所は、成長を始めるのにいい場所だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "23bb3d5a-ed2b-4cb5-a8d9-6a43f2f9d697",
+    "source": "internal",
+    "text": {
+     "en": "There is enough time for the things that matter most.",
+     "es": "Hay tiempo suficiente para lo que más importa.",
+     "pt": "Há tempo suficiente para as coisas que mais importam.",
+     "fr": "Il y a assez de temps pour ce qui compte le plus.",
+     "de": "Für die Dinge, die am meisten zählen, ist genug Zeit da.",
+     "ja": "本当に大切なことのための時間は、十分にある。"
+    },
+    "author": null
+   },
+   {
+    "id": "a20b801a-6674-468b-a259-2a57c0d604be",
+    "source": "internal",
+    "text": {
+     "en": "There is enough. There has always been enough.",
+     "es": "Hay suficiente. Siempre ha habido suficiente.",
+     "pt": "Há o suficiente. Sempre houve o suficiente.",
+     "fr": "Il y en a assez. Il y en a toujours eu assez.",
+     "de": "Es ist genug da. Es war immer genug da.",
+     "ja": "足りている。いつだって足りていた。"
+    },
+    "author": null
+   },
+   {
+    "id": "2ffd006b-05c0-40fe-8a5b-ebb306e8388d",
+    "source": "internal",
+    "text": {
+     "en": "A good choice does not need to be a perfect one.",
+     "es": "Una buena decisión no tiene que ser perfecta.",
+     "pt": "Uma boa escolha não precisa ser perfeita.",
+     "fr": "Un bon choix n'a pas besoin d'être parfait.",
+     "de": "Eine gute Entscheidung muss keine perfekte sein.",
+     "ja": "いい選択は、完璧な選択でなくていい。"
+    },
+    "author": null
+   }
+  ],
+  "joy": [
+   {
+    "id": "15db043a-eb34-4641-b851-d327eba1a7bf",
+    "source": "native-voices",
+    "text": {
+     "en": "Above all, be as happy as you can.",
+     "es": "Ante todo, sé feliz en la medida de lo posible.",
+     "pt": "Antes de tudo, seja feliz o quanto puder.",
+     "fr": "Avant tout, soyez heureux autant que faire se peut.",
+     "de": "Sei vor allem glücklich, so gut es geht.",
+     "ja": "何よりもまず、できるかぎり幸せでいよう。"
+    },
+    "author": {
+     "en": "George Sand",
+     "es": "George Sand",
+     "pt": "George Sand",
+     "fr": "George Sand",
+     "de": "George Sand",
+     "ja": "ジョルジュ・サンド"
+    }
+   },
+   {
+    "id": "b898898c-4c9c-4eb1-9feb-1dbd1db0892d",
+    "source": "native-voices",
+    "text": {
+     "en": "The first of the virtues is joy.",
+     "es": "La primera de las virtudes es la alegría.",
+     "pt": "A primeira das virtudes é a alegria.",
+     "fr": "La première des vertus, c'est la joie.",
+     "de": "Die erste der Tugenden ist die Freude.",
+     "ja": "美徳の第一は、喜びだ。"
+    },
+    "author": {
+     "en": "Romain Rolland",
+     "es": "Romain Rolland",
+     "pt": "Romain Rolland",
+     "fr": "Romain Rolland",
+     "de": "Romain Rolland",
+     "ja": "ロマン・ロラン"
+    }
+   },
+   {
+    "id": "0b71f038-7dc3-4643-a89e-a167547247a3",
+    "source": "internal",
+    "text": {
+     "en": "There is courage in letting yourself be happy.",
+     "es": "Hay valentía en permitirte ser feliz.",
+     "pt": "Existe coragem em se permitir ser feliz.",
+     "fr": "S'autoriser le bonheur demande du courage.",
+     "de": "Es liegt Mut darin, dir Glück zu erlauben.",
+     "ja": "自分が幸せになることを許すのにも、勇気がいる。"
+    },
+    "author": null
+   },
+   {
+    "id": "194fdf34-77be-4eb6-9c82-83554ba4b769",
+    "source": "native-voices",
+    "text": {
+     "en": "A light heart is a life jacket for the river of life.",
+     "es": "La despreocupación es un salvavidas en la corriente de la vida.",
+     "pt": "A despreocupação é um cinto salva-vidas no rio da vida.",
+     "fr": "L'insouciance est une bouée pour le fleuve de la vie.",
+     "de": "Der Leichtsinn ist ein Schwimmgürtel für den Strom des Lebens.",
+     "ja": "気楽さは、人生の流れを泳ぐための浮き輪だ。"
+    },
+    "author": {
+     "en": "Ludwig Börne",
+     "es": "Ludwig Börne",
+     "pt": "Ludwig Börne",
+     "fr": "Ludwig Börne",
+     "de": "Ludwig Börne",
+     "ja": "ルートヴィヒ・ベルネ"
+    }
+   },
+   {
+    "id": "0d8ebf48-c7a3-4ec9-8232-f88b4b3d9ba8",
+    "source": "internal",
+    "text": {
+     "en": "Hold your course with a light heart.",
+     "es": "Mantén el rumbo con el corazón ligero.",
+     "pt": "Mantenha o rumo com o coração leve.",
+     "fr": "Garde le cap, le cœur léger.",
+     "de": "Halte deinen Kurs, mit leichtem Herzen.",
+     "ja": "軽やかな心で、進路を守ろう。"
+    },
+    "author": null
+   },
+   {
+    "id": "ebf65465-dd1f-4243-b479-e570f850fc7f",
+    "source": "native-voices",
+    "text": {
+     "en": "If you go looking for joy, bring some joy with you first.",
+     "es": "Y si vas a buscar la alegría, primero haz provisión de alegría.",
+     "pt": "E se você for em busca da alegria, abasteça-se primeiro de alegria.",
+     "fr": "Et si vous allez quêter la joie, faites d'abord provision de joie.",
+     "de": "Und wenn du auf die Suche nach Freude gehst, versorge dich zuerst mit Freude.",
+     "ja": "喜びを探しに行くなら、まず喜びを用意していこう。"
+    },
+    "author": {
+     "en": "Alain",
+     "es": "Alain",
+     "pt": "Alain",
+     "fr": "Alain",
+     "de": "Alain",
+     "ja": "アラン"
+    }
+   },
+   {
+    "id": "290602cb-44da-4279-8c09-92f54dbe3f6d",
+    "source": "native-voices",
+    "text": {
+     "en": "Oh well, life is short, so at least let it be good.",
+     "es": "¡Bah! La vida es corta; al menos, que sea buena.",
+     "pt": "Bah! A vida é curta; que ao menos seja boa.",
+     "fr": "Bah ! la vie est courte, au moins qu'elle soit bonne.",
+     "de": "Ach was! Das Leben ist kurz, dann soll es wenigstens gut sein.",
+     "ja": "まあいい！人生は短い。せめてよいものであってほしい。"
+    },
+    "author": {
+     "en": "Colette",
+     "es": "Colette",
+     "pt": "Colette",
+     "fr": "Colette",
+     "de": "Colette",
+     "ja": "コレット"
+    }
+   },
+   {
+    "id": "617af309-de4a-4a43-a482-179e70e44f98",
+    "source": "native-voices",
+    "text": {
+     "en": "Usually it is not happiness we lack, but the knack of it.",
+     "es": "Por lo común, no es la felicidad lo que nos falta, sino la ciencia de la felicidad.",
+     "pt": "Em geral, não é a felicidade que nos falta, é a ciência da felicidade.",
+     "fr": "D'ordinaire, ce n'est pas le bonheur qui nous manque, c'est la science du bonheur.",
+     "de": "Meist fehlt uns nicht das Glück, sondern das Wissen vom Glück.",
+     "ja": "ふだん私たちに足りないのは、幸せそのものではなく、幸せになるすべだ。"
+    },
+    "author": {
+     "en": "Maurice Maeterlinck",
+     "es": "Maurice Maeterlinck",
+     "pt": "Maurice Maeterlinck",
+     "fr": "Maurice Maeterlinck",
+     "de": "Maurice Maeterlinck",
+     "ja": "モーリス・メーテルリンク"
+    }
+   }
+  ],
+  "believe": [
+   {
+    "id": "4676579e-3da7-4374-90be-a74fb012a486",
+    "source": "internal",
+    "text": {
+     "en": "You are good at more things than you remember.",
+     "es": "Tienes talento para más cosas de las que recuerdas.",
+     "pt": "Você faz bem muito mais coisas do que se lembra.",
+     "fr": "Tu as plus de talents que tu ne t'en souviens.",
+     "de": "Du kannst mehr, als dir gerade einfällt.",
+     "ja": "あなたが得意なことは、自分で覚えているよりも多い。"
+    },
+    "author": null
+   },
+   {
+    "id": "0f1dec22-a5a8-4136-bde7-aca4059f3a55",
+    "source": "internal",
+    "text": {
+     "en": "Believing in yourself is a kind thing to do.",
+     "es": "Creer en ti es un acto de cariño.",
+     "pt": "Acreditar em si é um gesto de carinho.",
+     "fr": "Croire en toi, c'est un geste de bienveillance.",
+     "de": "An dich zu glauben ist etwas Liebevolles.",
+     "ja": "自分を信じるのは、自分へのやさしさだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "adeb1d31-383a-4ebc-a364-b9520d8c7e6c",
+    "source": "internal",
+    "text": {
+     "en": "You have your own rhythm, and it is a good one.",
+     "es": "Tienes tu propio ritmo, y es un buen ritmo.",
+     "pt": "Você tem seu próprio ritmo, e ele é bom.",
+     "fr": "Tu as ton propre rythme, et c'est un bon rythme.",
+     "de": "Du hast deinen eigenen Rhythmus, und er ist gut.",
+     "ja": "あなたにはあなたのリズムがある。それは、いいリズムだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "1169f5aa-72f4-4c51-8b33-d8036c1a2823",
+    "source": "internal",
+    "text": {
+     "en": "Your enthusiasm is a beautiful thing. Keep it.",
+     "es": "Tu entusiasmo es algo hermoso. Consérvalo.",
+     "pt": "Seu entusiasmo é algo lindo. Não perca isso.",
+     "fr": "Ton enthousiasme est une très belle chose. Garde-le.",
+     "de": "Deine Begeisterung ist etwas Wunderschönes. Behalte sie.",
+     "ja": "あなたの熱意は美しい。なくさずにいよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "1c655f95-88bc-40f5-95b4-fe679cbf9fc6",
+    "source": "internal",
+    "text": {
+     "en": "Picking yourself back up is a beautiful thing.",
+     "es": "Levantarse de nuevo es algo hermoso.",
+     "pt": "Levantar-se de novo é algo lindo.",
+     "fr": "Se relever, c'est quelque chose de beau.",
+     "de": "Sich wieder aufzurappeln ist etwas Schönes.",
+     "ja": "自分の力でもう一度立ち上がるのは、美しいことだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "ae8827e8-c5c2-4d42-9079-aead57716cf3",
+    "source": "internal",
+    "text": {
+     "en": "The person you were five years ago would be glad to see you.",
+     "es": "La persona que eras hace cinco años se alegraría de verte.",
+     "pt": "A pessoa que você era há cinco anos ficaria feliz em ver você.",
+     "fr": "La personne que tu étais il y a cinq ans serait heureuse de te voir.",
+     "de": "Der Mensch, der du vor fünf Jahren warst, würde sich freuen, dich zu sehen.",
+     "ja": "5年前の自分が今の姿を見たら、きっと喜ぶ。"
+    },
+    "author": null
+   },
+   {
+    "id": "07ddf46f-ff09-407b-99de-2489198c1b32",
+    "source": "internal",
+    "text": {
+     "en": "You are allowed to keep the good things that come to you.",
+     "es": "Tienes derecho a quedarte con lo bueno que te llega.",
+     "pt": "Você tem o direito de ficar com as coisas boas que chegam até você.",
+     "fr": "Tu as le droit de garder les bonnes choses qui t'arrivent.",
+     "de": "Du darfst das Gute behalten, das zu dir kommt.",
+     "ja": "あなたのもとに届いたいいものは、手放さずに持っていていい。"
+    },
+    "author": null
+   },
+   {
+    "id": "5cd12519-b3a0-475a-aad4-c1ca3e0bb371",
+    "source": "internal",
+    "text": {
+     "en": "Your sensitivity is a kind of intelligence.",
+     "es": "Tu sensibilidad es una forma de inteligencia.",
+     "pt": "Sua sensibilidade é um tipo de inteligência.",
+     "fr": "Ta sensibilité est une forme d'intelligence.",
+     "de": "Deine Sensibilität ist eine Form von Intelligenz.",
+     "ja": "あなたの繊細さは、ひとつの知性だ。"
+    },
+    "author": null
+   }
+  ],
+  "people": [
+   {
+    "id": "a99a8d79-8da9-45f5-85a1-b065632e6fdf",
+    "source": "internal",
+    "text": {
+     "en": "You notice what is good in people. That is a rare talent.",
+     "es": "Notas lo bueno de las personas. Es un talento poco común.",
+     "pt": "Você percebe o que há de bom nas pessoas. É um talento raro.",
+     "fr": "Tu remarques ce qu'il y a de bon chez les gens. C'est un talent rare.",
+     "de": "Du siehst das Gute in Menschen. Das ist ein seltenes Talent.",
+     "ja": "あなたは人の良いところに気づく。それは、めったにない才能だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "7b2af81e-5c96-4b28-8ff9-d375d03d8bdc",
+    "source": "internal",
+    "text": {
+     "en": "You have a lovely way of making people feel at ease.",
+     "es": "Tienes una manera muy linda de hacer que la gente se sienta a gusto.",
+     "pt": "Você tem um jeito lindo de deixar as pessoas à vontade.",
+     "fr": "Tu as une belle façon de mettre les gens à l'aise.",
+     "de": "Du hast eine wunderbare Art, anderen die Anspannung zu nehmen.",
+     "ja": "あなたには、人をほっとさせるすてきな力がある。"
+    },
+    "author": null
+   },
+   {
+    "id": "2daf9804-0239-4877-8352-6e6edb085f30",
+    "source": "internal",
+    "text": {
+     "en": "Somebody knows your laugh by heart.",
+     "es": "Alguien se sabe tu risa de memoria.",
+     "pt": "Alguém conhece a sua risada de cor.",
+     "fr": "Quelqu'un connaît ton rire par cœur.",
+     "de": "Jemand kennt dein Lachen auswendig.",
+     "ja": "あなたの笑い声を、すっかり覚えている人がいる。"
+    },
+    "author": null
+   },
+   {
+    "id": "b3a267d7-9270-42c1-b427-4fbd587b39b8",
+    "source": "internal",
+    "text": {
+     "en": "The people who love you have good reasons.",
+     "es": "Las personas que te quieren tienen buenas razones.",
+     "pt": "As pessoas que amam você têm bons motivos.",
+     "fr": "Les gens qui t'aiment ont de bonnes raisons.",
+     "de": "Die Menschen, die dich lieben, haben gute Gründe dafür.",
+     "ja": "あなたを愛する人には、ちゃんと理由がある。"
+    },
+    "author": null
+   },
+   {
+    "id": "3105f640-f17b-4cd0-a8d7-4c9480f48a8c",
+    "source": "internal",
+    "text": {
+     "en": "Good company is something you deserve.",
+     "es": "Mereces buena compañía.",
+     "pt": "Você merece estar em boa companhia.",
+     "fr": "Tu mérites d'être en bonne compagnie.",
+     "de": "Gute Gesellschaft hast du verdient.",
+     "ja": "あなたには、よい仲間に囲まれる価値がある。"
+    },
+    "author": null
+   },
+   {
+    "id": "b1d1b3ac-e0a8-4bf2-8217-06295144bb0d",
+    "source": "internal",
+    "text": {
+     "en": "You are the kind of friend people are glad they found.",
+     "es": "Eres de esas amistades que la gente se alegra de haber encontrado.",
+     "pt": "Você é o tipo de amizade que as pessoas agradecem por ter encontrado.",
+     "fr": "Ton amitié est de celles que les gens sont heureux d'avoir trouvées.",
+     "de": "Wer mit dir befreundet ist, ist froh, dich gefunden zu haben.",
+     "ja": "あなたは、出会えてよかったと思われる友だちだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "2ff8baac-0ace-4851-b4d6-b858d80e9e2f",
+    "source": "native-voices",
+    "text": {
+     "en": "Beautiful feelings make us beautiful.",
+     "es": "Los sentimientos bellos embellecen.",
+     "pt": "Os belos sentimentos embelezam.",
+     "fr": "Les beaux sentiments embellissent.",
+     "de": "Schöne Gefühle machen schön.",
+     "ja": "美しい感情は、人を美しくする。"
+    },
+    "author": {
+     "en": "Joseph Joubert",
+     "es": "Joseph Joubert",
+     "pt": "Joseph Joubert",
+     "fr": "Joseph Joubert",
+     "de": "Joseph Joubert",
+     "ja": "ジョゼフ・ジュベール"
+    }
+   },
+   {
+    "id": "032d5ea9-76ff-46da-9569-4e7f73744b99",
+    "source": "native-voices",
+    "text": {
+     "en": "A contented look always suits a good person.",
+     "es": "Un aire de contento siempre le sienta bien a la persona de bien.",
+     "pt": "Um ar contente sempre fica bem na pessoa de bem.",
+     "fr": "L'air content sied toujours à l'homme de bien.",
+     "de": "Eine zufriedene Miene steht dem rechtschaffenen Menschen immer gut.",
+     "ja": "満ち足りた表情は、善良な人にいつもよく似合う。"
+    },
+    "author": {
+     "en": "Joseph Joubert",
+     "es": "Joseph Joubert",
+     "pt": "Joseph Joubert",
+     "fr": "Joseph Joubert",
+     "de": "Joseph Joubert",
+     "ja": "ジョゼフ・ジュベール"
+    }
+   }
+  ]
+ },
+ "friend": {
+  "keepgoing": [
+   {
+    "id": "e616fae0-91a2-4cf8-9c2f-a3a83b465ca7",
+    "source": "internal",
+    "text": {
+     "en": "Look at you, still going.",
+     "es": "Mírate, sigues adelante.",
+     "pt": "Olha só você, seguindo em frente.",
+     "fr": "Regarde-toi : tu es toujours en route.",
+     "de": "Schau dich an, du machst immer noch weiter.",
+     "ja": "ほら、あなたはまだ歩き続けている。"
+    },
+    "author": null
+   },
+   {
+    "id": "e52e9dd9-811c-4ee4-8216-c7f2993266d2",
+    "source": "internal",
+    "text": {
+     "en": "You have already proved you can show up. Today you get to do it again.",
+     "es": "Ya demostraste que puedes cumplir. Hoy te toca hacerlo de nuevo.",
+     "pt": "Você já provou que consegue se fazer presente. Hoje é dia de fazer de novo.",
+     "fr": "Tu as déjà prouvé que tu savais répondre présent. Aujourd'hui, tu as l'occasion de recommencer.",
+     "de": "Du hast schon bewiesen, dass du zur Stelle bist. Heute darfst du es wieder sein.",
+     "ja": "毎日ちゃんと取り組めることは、もう証明済みだ。今日もまた、それができる。"
+    },
+    "author": null
+   },
+   {
+    "id": "72569ca0-9406-4871-a558-2e6316a78bac",
+    "source": "internal",
+    "text": {
+     "en": "Your past is full of proof that you find a way.",
+     "es": "Tu pasado está lleno de pruebas de que encuentras la manera.",
+     "pt": "Seu passado está cheio de provas de que você sempre encontra um jeito.",
+     "fr": "Ton passé est plein de preuves que tu finis toujours par trouver un moyen.",
+     "de": "Deine Vergangenheit ist voller Beweise, dass du einen Weg findest.",
+     "ja": "あなたの過去は、道を見つけてきた証でいっぱいだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "ecfae703-1676-44a9-bd95-e38e56e15007",
+    "source": "internal",
+    "text": {
+     "en": "You keep finding the way forward. Trust that.",
+     "es": "Sigues encontrando el camino hacia adelante. Confía en eso.",
+     "pt": "Você continua encontrando o caminho adiante. Confie nisso.",
+     "fr": "Tu finis toujours par trouver comment avancer. Fie-toi à ça.",
+     "de": "Du findest immer wieder einen Weg nach vorn. Vertrau darauf.",
+     "ja": "あなたは、前に進む道をいつも見つけてきた。そのことを信じよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "a287052a-d4de-46d4-ae39-f786783e2611",
+    "source": "internal",
+    "text": {
+     "en": "The way you keep trying is quietly inspiring.",
+     "es": "La forma en que sigues intentándolo es una inspiración silenciosa.",
+     "pt": "O jeito como você não para de tentar inspira, mesmo em silêncio.",
+     "fr": "Ta persévérance est une inspiration discrète.",
+     "de": "Wie du es immer wieder versuchst, ist auf leise Art inspirierend.",
+     "ja": "挑戦し続けるあなたの姿は、静かに人を励ましている。"
+    },
+    "author": null
+   },
+   {
+    "id": "8ba8265b-0ea9-45e8-aa4e-322b1c744f8a",
+    "source": "internal",
+    "text": {
+     "en": "You are more solid than any passing doubt.",
+     "es": "Tienes más firmeza que cualquier duda pasajera.",
+     "pt": "Você tem mais firmeza que qualquer dúvida passageira.",
+     "fr": "Tu es plus solide que n'importe quel doute passager.",
+     "de": "Du stehst fester als jeder flüchtige Zweifel.",
+     "ja": "一時の迷いなどより、あなたはずっと揺るぎない。"
+    },
+    "author": null
+   },
+   {
+    "id": "cd8f1493-08ff-420f-b770-21ee826ad9a3",
+    "source": "internal",
+    "text": {
+     "en": "Believe in the strength of your own two feet.",
+     "es": "Cree en que puedes sostenerte sobre tus propios pies.",
+     "pt": "Acredite na força das suas próprias pernas.",
+     "fr": "Crois en ta capacité à tenir sur tes deux pieds.",
+     "de": "Glaub an die Kraft deiner eigenen zwei Füße.",
+     "ja": "自分の両足の力を信じよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "4e56b4ff-145d-4ce6-ac3f-b1262892166d",
+    "source": "internal",
+    "text": {
+     "en": "You have a strong spirit, and it shows.",
+     "es": "Tienes un espíritu fuerte, y se nota.",
+     "pt": "Você tem um espírito forte, e dá para ver.",
+     "fr": "Tu as une âme solide, et ça se voit.",
+     "de": "Du hast einen starken Geist, und man merkt es.",
+     "ja": "あなたには強い心がある。それは、はっきり伝わっている。"
+    },
+    "author": null
+   }
+  ],
+  "believe": [
+   {
+    "id": "de827362-fbfd-40e3-be82-6372ed62c813",
+    "source": "internal",
+    "text": {
+     "en": "Believe you are worthy of your biggest hopes.",
+     "es": "Cree que mereces tus esperanzas más grandes.",
+     "pt": "Acredite que você merece realizar suas maiores esperanças.",
+     "fr": "Crois que tu es digne de tes plus grands espoirs.",
+     "de": "Glaub daran, dass du deine größten Hoffnungen verdienst.",
+     "ja": "自分のいちばん大きな希望に、自分はふさわしいと信じよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "376efd7a-d3b1-4b16-958f-71f4b1e39e40",
+    "source": "internal",
+    "text": {
+     "en": "You are good enough for the things you want.",
+     "es": "Estás a la altura de lo que quieres.",
+     "pt": "Você está à altura das coisas que deseja.",
+     "fr": "Tu es à la hauteur de ce que tu désires.",
+     "de": "Du bist gut genug für die Dinge, die du dir wünschst.",
+     "ja": "あなたは、望むものにふさわしい人だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "fd695ea8-a387-4ea4-bb73-2672e493194f",
+    "source": "internal",
+    "text": {
+     "en": "You still have gifts the world has not seen yet.",
+     "es": "Todavía tienes dones que el mundo no ha visto.",
+     "pt": "Você ainda tem dons que o mundo não viu.",
+     "fr": "Tu as encore des talents que le monde n'a jamais vus.",
+     "de": "In dir stecken Gaben, die die Welt noch nicht gesehen hat.",
+     "ja": "あなたには、世界がまだ見ていない才能がある。"
+    },
+    "author": null
+   },
+   {
+    "id": "1aea8668-5b29-4766-98e3-9810401393cb",
+    "source": "internal",
+    "text": {
+     "en": "No one is better suited to live your life than you.",
+     "es": "Nadie puede vivir tu vida mejor que tú.",
+     "pt": "Ninguém pode viver a sua vida melhor do que você.",
+     "fr": "Personne n'est mieux placé que toi pour vivre ta vie.",
+     "de": "Niemand kann dein Leben besser leben als du.",
+     "ja": "あなたの人生を生きるのに、あなた以上にふさわしい人はいない。"
+    },
+    "author": null
+   },
+   {
+    "id": "938a6422-a420-4240-8591-da78390ad0c9",
+    "source": "internal",
+    "text": {
+     "en": "Your perspective fills a gap no one else can.",
+     "es": "Tu mirada llena un hueco que nadie más puede llenar.",
+     "pt": "Seu olhar preenche um espaço que mais ninguém consegue preencher.",
+     "fr": "Ton regard comble un vide que personne d'autre ne peut combler.",
+     "de": "Dein Blickwinkel füllt eine Lücke, die sonst niemand füllt.",
+     "ja": "あなたの視点は、ほかの誰にも埋められないすき間を埋める。"
+    },
+    "author": null
+   },
+   {
+    "id": "d092ecb6-1452-4963-8845-5ebb0f63d3e8",
+    "source": "internal",
+    "text": {
+     "en": "Hold your head up. You have every reason to.",
+     "es": "Levanta la cabeza. Tienes todos los motivos para hacerlo.",
+     "pt": "Erga a cabeça. Você tem todos os motivos para isso.",
+     "fr": "Garde la tête haute. Tu as toutes les raisons de le faire.",
+     "de": "Kopf hoch. Du hast allen Grund dazu.",
+     "ja": "顔を上げよう。そうしていい理由は十分にある。"
+    },
+    "author": null
+   },
+   {
+    "id": "1f921e34-ee3b-4633-85fa-68520a6ea2c4",
+    "source": "internal",
+    "text": {
+     "en": "You are still growing, and that is a beautiful thing.",
+     "es": "Sigues creciendo, y eso es algo hermoso.",
+     "pt": "Você continua crescendo, e isso é algo lindo.",
+     "fr": "Tu grandis encore, et c'est une belle chose.",
+     "de": "Du wächst noch immer, und das ist etwas Schönes.",
+     "ja": "あなたは今も成長している。それは、美しいことだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "790d57e2-9633-4e83-a6ec-15e85351f20b",
+    "source": "internal",
+    "text": {
+     "en": "You are part of a future that needs you.",
+     "es": "Eres parte de un futuro que te necesita.",
+     "pt": "Você faz parte de um futuro que precisa de você.",
+     "fr": "Tu fais partie d'un avenir qui a besoin de toi.",
+     "de": "Du bist Teil einer Zukunft, die dich braucht.",
+     "ja": "あなたは、あなたを必要とする未来の一部だ。"
+    },
+    "author": null
+   }
+  ],
+  "goforit": [
+   {
+    "id": "82920185-650c-47b0-b5ef-9464068aa4b5",
+    "source": "internal",
+    "text": {
+     "en": "Make the call. You have thought this through.",
+     "es": "Toma la decisión. Ya lo pensaste bien.",
+     "pt": "Tome a decisão. Você já pensou bem nisso.",
+     "fr": "Décide. Tu y as bien réfléchi.",
+     "de": "Entscheide dich. Du hast das gut durchdacht.",
+     "ja": "決めよう。もう十分に考えたのだから。"
+    },
+    "author": null
+   },
+   {
+    "id": "0c1b822a-d884-4361-911e-93b449b88acf",
+    "source": "native-voices",
+    "text": {
+     "en": "How many great things should you dream of? All of them!",
+     "es": "¿Cuántas grandezas hay que soñar? ¡Todas!",
+     "pt": "O número de grandezas que se deve sonhar é: todas!",
+     "fr": "Le nombre de grandeurs qu'il faut rêver, c'est toutes !",
+     "de": "Wie viel Großes man erträumen muss? Alles!",
+     "ja": "夢見るべき偉大なものはいくつか。そのすべてだ！"
+    },
+    "author": {
+     "en": "Edmond Rostand",
+     "es": "Edmond Rostand",
+     "pt": "Edmond Rostand",
+     "fr": "Edmond Rostand",
+     "de": "Edmond Rostand",
+     "ja": "エドモン・ロスタン"
+    }
+   },
+   {
+    "id": "baee5718-2881-41c3-af1b-857d93c1289a",
+    "source": "internal",
+    "text": {
+     "en": "Keep a little daring in your heart.",
+     "es": "Guarda un poco de audacia en tu corazón.",
+     "pt": "Guarde um pouco de ousadia no coração.",
+     "fr": "Garde un peu d'audace dans ton cœur.",
+     "de": "Bewahr dir ein bisschen Wagemut im Herzen.",
+     "ja": "心に、少しの冒険心を持ち続けよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "7e65b466-daab-4f2d-9fc7-a4ca03d778f8",
+    "source": "internal",
+    "text": {
+     "en": "Choose the path that lights you up.",
+     "es": "Elige el camino que te llena de vida.",
+     "pt": "Escolha o caminho que faz seus olhos brilharem.",
+     "fr": "Choisis le chemin qui te fait briller les yeux.",
+     "de": "Wähl den Weg, der dich zum Leuchten bringt.",
+     "ja": "自分が輝ける道を選ぼう。"
+    },
+    "author": null
+   },
+   {
+    "id": "024b3732-345a-4906-9226-93876193b2a4",
+    "source": "internal",
+    "text": {
+     "en": "The day is young, and so is your chance to make it great.",
+     "es": "El día apenas empieza, y también tu oportunidad de hacerlo grandioso.",
+     "pt": "O dia está só começando, e a sua chance de fazê-lo incrível também.",
+     "fr": "La journée ne fait que commencer, et ta chance de la rendre belle aussi.",
+     "de": "Der Tag ist jung, und deine Chance, ihn großartig zu machen, auch.",
+     "ja": "一日はまだ始まったばかりだ。素晴らしい日にするチャンスも、まだたっぷりある。"
+    },
+    "author": null
+   },
+   {
+    "id": "ba50ef85-443c-4ce2-a53d-b0d9dbbcd5e1",
+    "source": "internal",
+    "text": {
+     "en": "You can start becoming who you want to be today.",
+     "es": "Hoy puedes empezar a convertirte en quien quieres ser.",
+     "pt": "Você pode começar hoje a se tornar quem quer ser.",
+     "fr": "Tu peux commencer dès aujourd'hui à devenir qui tu veux être.",
+     "de": "Du kannst heute anfangen, der Mensch zu werden, der du sein willst.",
+     "ja": "なりたい自分には、今日からなり始められる。"
+    },
+    "author": null
+   },
+   {
+    "id": "da2c6cf9-45b4-452f-9b5b-f6bf4d2b64f2",
+    "source": "internal",
+    "text": {
+     "en": "The future does not ask you to be perfect, only willing.",
+     "es": "El futuro no te pide perfección, solo ganas.",
+     "pt": "O futuro não pede perfeição, só disposição.",
+     "fr": "L'avenir ne te demande pas la perfection, juste de la bonne volonté.",
+     "de": "Die Zukunft verlangt nicht, dass du perfekt bist, nur dass du bereit bist.",
+     "ja": "未来が求めるのは完璧さではない。やってみる気持ちだけだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "c47f3839-c9af-4f42-8c71-9f1fa5d43984",
+    "source": "internal",
+    "text": {
+     "en": "The idea you keep coming back to is the one.",
+     "es": "La idea a la que sigues volviendo es la buena.",
+     "pt": "A ideia à qual você sempre volta é a certa.",
+     "fr": "L'idée à laquelle tu reviens sans cesse, c'est la bonne.",
+     "de": "Die Idee, zu der du immer zurückkommst, ist die richtige.",
+     "ja": "何度も立ち返るそのアイデアこそが、本命だ。"
+    },
+    "author": null
+   }
+  ],
+  "proud": [
+   {
+    "id": "d5a0856c-321e-4980-87bd-731f6d1df094",
+    "source": "internal",
+    "text": {
+     "en": "You bring hope to people without even trying.",
+     "es": "Llevas esperanza a la gente sin siquiera intentarlo.",
+     "pt": "Você leva esperança às pessoas sem nem tentar.",
+     "fr": "Tu donnes de l'espoir aux gens sans même essayer.",
+     "de": "Du schenkst Menschen Hoffnung, ohne es überhaupt zu versuchen.",
+     "ja": "あなたは意識しなくても、人に希望を届けている。"
+    },
+    "author": null
+   },
+   {
+    "id": "e7723e29-4044-4b8d-8f8b-7830e39c9fff",
+    "source": "gutenberg-primary",
+    "text": {
+     "en": "There are darknesses in life, and there are lights; you are one of the lights.",
+     "es": "Hay oscuridades en la vida y hay luces; tú eres una de las luces.",
+     "pt": "Há escuridões na vida, e há luzes; você é uma das luzes.",
+     "fr": "Il y a des ténèbres dans la vie, et il y a des lumières ; tu es l'une des lumières.",
+     "de": "Es gibt Dunkelheiten im Leben, und es gibt Lichter; du bist eines der Lichter.",
+     "ja": "人生には闇もあれば光もある。あなたはその光のひとつだ。"
+    },
+    "author": {
+     "en": "Bram Stoker",
+     "es": "Bram Stoker",
+     "pt": "Bram Stoker",
+     "fr": "Bram Stoker",
+     "de": "Bram Stoker",
+     "ja": "ブラム・ストーカー"
+    }
+   },
+   {
+    "id": "8a4aab16-3c92-4978-87aa-51583fc58a89",
+    "source": "internal",
+    "text": {
+     "en": "More good has come from you than you know.",
+     "es": "De ti ha salido más bien del que imaginas.",
+     "pt": "Já saiu de você mais coisa boa do que você imagina.",
+     "fr": "Il est sorti de toi plus de bien que tu ne le crois.",
+     "de": "Von dir ist mehr Gutes ausgegangen, als du ahnst.",
+     "ja": "あなたから生まれた良いことは、あなたが思っているより多い。"
+    },
+    "author": null
+   },
+   {
+    "id": "e579c1e2-54b7-46ed-a24b-4eee27c8ac5b",
+    "source": "internal",
+    "text": {
+     "en": "You have been someone's reason to smile.",
+     "es": "Has sido el motivo de la sonrisa de alguien.",
+     "pt": "Você já foi o motivo do sorriso de alguém.",
+     "fr": "Tu as été la raison du sourire de quelqu'un.",
+     "de": "Du warst schon für jemanden der Grund zu lächeln.",
+     "ja": "あなたは、誰かが笑顔になる理由だったことがある。"
+    },
+    "author": null
+   },
+   {
+    "id": "cd32771f-3445-4bb9-9f68-7b4d459d92dc",
+    "source": "internal",
+    "text": {
+     "en": "Somebody somewhere has a happy memory with you in it.",
+     "es": "En algún lugar, alguien tiene un recuerdo feliz en el que apareces tú.",
+     "pt": "Em algum lugar, alguém guarda uma lembrança feliz com você nela.",
+     "fr": "Quelque part, quelqu'un garde un souvenir heureux dont tu fais partie.",
+     "de": "Irgendwo hat jemand eine schöne Erinnerung, in der du vorkommst.",
+     "ja": "どこかの誰かの幸せな思い出の中に、あなたがいる。"
+    },
+    "author": null
+   },
+   {
+    "id": "1cc79e07-5173-46db-a515-da188d0063ba",
+    "source": "internal",
+    "text": {
+     "en": "You have a wonderful laugh. Let people hear it.",
+     "es": "Tienes una risa maravillosa. Deja que la gente la oiga.",
+     "pt": "Você tem uma risada maravilhosa. Deixe as pessoas ouvirem.",
+     "fr": "Tu as un rire merveilleux. Laisse les gens l'entendre.",
+     "de": "Du hast ein wunderbares Lachen. Lass es die Leute hören.",
+     "ja": "あなたの笑い声はすてきだ。みんなに聞かせてあげよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "3081758d-b45e-4b24-9721-7527680bf7b3",
+    "source": "internal",
+    "text": {
+     "en": "Your ideas deserve a place in the conversation.",
+     "es": "Tus ideas merecen un lugar en la conversación.",
+     "pt": "Suas ideias merecem um lugar na conversa.",
+     "fr": "Tes idées méritent leur place dans la conversation.",
+     "de": "Deine Ideen verdienen es, gehört zu werden.",
+     "ja": "あなたのアイデアは、話し合いの場に出す価値がある。"
+    },
+    "author": null
+   },
+   {
+    "id": "b73829bf-2fe5-47af-aba9-336a87613ad8",
+    "source": "internal",
+    "text": {
+     "en": "Look back and see how brave you were.",
+     "es": "Mira hacia atrás y ve cuánto valor tuviste.",
+     "pt": "Olhe para trás e veja quanta coragem você teve.",
+     "fr": "Regarde en arrière et vois tout le courage que tu as eu.",
+     "de": "Schau zurück und sieh, wie mutig du warst.",
+     "ja": "振り返ってみよう。あなたは、こんなに勇敢だった。"
+    },
+    "author": null
+   }
+  ]
+ },
+ "love": {
+  "iloveyou": [
+   {
+    "id": "2364d2db-28ea-4730-b874-68a5e4570b83",
+    "source": "native-voices",
+    "text": {
+     "en": "When you love, you love everything and are put off by nothing.",
+     "es": "Cuando se ama, se ama todo, y nada nos hace retroceder.",
+     "pt": "Quando se ama, ama-se tudo, e nada nos desanima.",
+     "fr": "Quand on aime, on aime tout, et on ne se rebute de rien.",
+     "de": "Wenn man liebt, liebt man alles, und nichts schreckt einen ab.",
+     "ja": "愛するときは、何もかもを愛し、何ひとつ嫌にならない。"
+    },
+    "author": {
+     "en": "George Sand",
+     "es": "George Sand",
+     "pt": "George Sand",
+     "fr": "George Sand",
+     "de": "George Sand",
+     "ja": "ジョルジュ・サンド"
+    }
+   },
+   {
+    "id": "088aab16-7e64-4409-9d54-e906f4931ea3",
+    "source": "native-voices",
+    "text": {
+     "en": "What joy in the world is worth that of making someone you love happy?",
+     "es": "¿Qué alegría en el mundo vale lo que la de hacer feliz a quien se ama?",
+     "pt": "Que alegria no mundo vale a de fazer feliz quem a gente ama?",
+     "fr": "Quelle joie au monde vaut celle de rendre heureux celui qu'on aime ?",
+     "de": "Welche Freude der Welt kommt der gleich, einen geliebten Menschen glücklich zu machen?",
+     "ja": "愛する人を幸せにする喜びに匹敵する喜びが、この世にあるだろうか。"
+    },
+    "author": {
+     "en": "Romain Rolland",
+     "es": "Romain Rolland",
+     "pt": "Romain Rolland",
+     "fr": "Romain Rolland",
+     "de": "Romain Rolland",
+     "ja": "ロマン・ロラン"
+    }
+   },
+   {
+    "id": "8647d21a-829c-4548-8c0d-ff086ec16578",
+    "source": "native-voices",
+    "text": {
+     "en": "When you hear the voices you love, you do not need to understand their words.",
+     "es": "Cuando se oyen las voces que se aman, no hace falta entender las palabras que dicen.",
+     "pt": "Quando ouvimos as vozes que amamos, não precisamos compreender as palavras que elas dizem.",
+     "fr": "Quand on entend les voix qu'on aime, on n'a pas besoin de comprendre les mots qu'elles disent.",
+     "de": "Wenn man die Stimmen hört, die man liebt, muss man die Worte nicht verstehen, die sie sagen.",
+     "ja": "愛する人の声を聞くとき、その言葉の意味がわからなくてもいい。"
+    },
+    "author": {
+     "en": "Victor Hugo",
+     "es": "Victor Hugo",
+     "pt": "Victor Hugo",
+     "fr": "Victor Hugo",
+     "de": "Victor Hugo",
+     "ja": "ヴィクトル・ユーゴー"
+    }
+   },
+   {
+    "id": "d40083a4-145f-407b-9be8-c4be0f5ccbcd",
+    "source": "native-voices",
+    "text": {
+     "en": "Love is when you sit down on a Sunday evening and all of it is enough.",
+     "es": "El amor es cuando te sientas el domingo por la noche y todo eso te basta.",
+     "pt": "O amor é quando a gente se senta no domingo à noite e tudo aquilo basta.",
+     "fr": "L'amour, c'est lorsqu'on s'assied le dimanche soir et que tout cela vous suffit.",
+     "de": "Liebe ist, wenn man sich am Sonntagabend hinsetzt und einem all das genügt.",
+     "ja": "愛とは、日曜の夜に腰を下ろし、そこにあるすべてで満ち足りることだ。"
+    },
+    "author": {
+     "en": "Charles-Louis Philippe",
+     "es": "Charles-Louis Philippe",
+     "pt": "Charles-Louis Philippe",
+     "fr": "Charles-Louis Philippe",
+     "de": "Charles-Louis Philippe",
+     "ja": "シャルル・ルイ・フィリップ"
+    }
+   },
+   {
+    "id": "169ede4b-888d-4cde-a583-ba3b93b0c813",
+    "source": "native-voices",
+    "text": {
+     "en": "Nothing is sweeter than traveling with the one you love!",
+     "es": "¡No hay nada tan dulce como viajar con quien amas!",
+     "pt": "Não há nada tão doce quanto viajar com quem se ama!",
+     "fr": "Il n'y a rien de si doux que de voyager avec ce qu'on aime !",
+     "de": "Nichts ist so süß, wie mit einem geliebten Menschen zu reisen!",
+     "ja": "愛する人と旅をすることほど、心地よいことはない！"
+    },
+    "author": {
+     "en": "Madame de Staël",
+     "es": "Madame de Staël",
+     "pt": "Madame de Staël",
+     "fr": "Madame de Staël",
+     "de": "Madame de Staël",
+     "ja": "スタール夫人"
+    }
+   },
+   {
+    "id": "6947522d-ba4d-4bcf-900e-269aa4481b68",
+    "source": "native-voices",
+    "text": {
+     "en": "The good dinner is the one you have with the people you love.",
+     "es": "La buena cena es la que se comparte con quienes amamos.",
+     "pt": "O bom jantar é aquele que se faz com quem se ama.",
+     "fr": "Le bon dîner est celui qu'on fait avec ceux qu'on aime.",
+     "de": "Das gute Abendessen ist das, das man mit denen isst, die man liebt.",
+     "ja": "よい夕食とは、愛する人たちととる夕食のことだ。"
+    },
+    "author": {
+     "en": "Denis Diderot",
+     "es": "Denis Diderot",
+     "pt": "Denis Diderot",
+     "fr": "Denis Diderot",
+     "de": "Denis Diderot",
+     "ja": "ドゥニ・ディドロ"
+    }
+   },
+   {
+    "id": "b993c34d-98df-427a-a12b-e0d2dcd2fd48",
+    "source": "internal",
+    "text": {
+     "en": "Love is built a little at a time, and you are building it beautifully.",
+     "es": "El amor se construye poco a poco, y lo estás construyendo de una forma hermosa.",
+     "pt": "O amor se constrói aos poucos, e você está construindo o seu de um jeito lindo.",
+     "fr": "L'amour se construit petit à petit, et tu le construis magnifiquement.",
+     "de": "Liebe entsteht Stück für Stück, und du baust sie wunderschön auf.",
+     "ja": "愛は少しずつ築かれていく。そしてあなたは、それを見事に築いている。"
+    },
+    "author": null
+   },
+   {
+    "id": "dd14f37f-830a-40dc-9300-ba280f2c8943",
+    "source": "internal",
+    "text": {
+     "en": "The way you love is a rare and beautiful thing.",
+     "es": "Tu manera de amar es algo único y hermoso.",
+     "pt": "Seu jeito de amar é algo raro e lindo.",
+     "fr": "Ta façon d'aimer est quelque chose de rare et de beau.",
+     "de": "Die Art, wie du liebst, ist etwas Seltenes und Schönes.",
+     "ja": "あなたの愛し方は、めったにない美しいものだ。"
+    },
+    "author": null
+   }
+  ],
+  "missing": [
+   {
+    "id": "fa2b1966-158c-4bfc-9c43-949ca2763773",
+    "source": "native-voices",
+    "text": {
+     "en": "Go, then, trusting my steady heart: however far away you are, you will never be apart from me.",
+     "es": "Partid, en fin, confiado en mi voluntad constante de que aunque estéis muy distante, nunca estaréis apartado.",
+     "pt": "Parta, enfim, com confiança em minha vontade constante: por mais distante que você esteja, nunca haverá separação.",
+     "fr": "Pars donc, en te fiant à ma volonté constante  : si loin que tu ailles, jamais tu ne seras loin de moi.",
+     "de": "Geh also, im Vertrauen auf meinen beständigen Willen, dass du, auch wenn du sehr fern bist, nie von mir getrennt sein wirst.",
+     "ja": "だから、行ってほしい。変わらない私の心を信じて。どんなに遠く離れても、決して私から離れはしない。"
+    },
+    "author": {
+     "en": "Sor Juana Inés de la Cruz",
+     "es": "Sor Juana Inés de la Cruz",
+     "pt": "Sor Juana Inés de la Cruz",
+     "fr": "Sor Juana Inés de la Cruz",
+     "de": "Sor Juana Inés de la Cruz",
+     "ja": "ソル・フアナ・イネス・デ・ラ・クルス"
+    }
+   },
+   {
+    "id": "a031b275-2c64-4b8a-ac34-d53c561217d0",
+    "source": "native-voices",
+    "text": {
+     "en": "Since love is union, for love no two ends are ever far apart.",
+     "es": "Como el amor es unión, no hay para él extremos distantes.",
+     "pt": "Como o amor é união, não há para ele extremos distantes.",
+     "fr": "Comme l'amour est union, il n'est pas pour lui d'extrêmes éloignés.",
+     "de": "Da die Liebe Vereinigung ist, gibt es für sie keine fernen Enden.",
+     "ja": "愛は結びつきなのだから、愛にとって遠すぎる隔たりなどない。"
+    },
+    "author": {
+     "en": "Sor Juana Inés de la Cruz",
+     "es": "Sor Juana Inés de la Cruz",
+     "pt": "Sor Juana Inés de la Cruz",
+     "fr": "Sor Juana Inés de la Cruz",
+     "de": "Sor Juana Inés de la Cruz",
+     "ja": "ソル・フアナ・イネス・デ・ラ・クルス"
+    }
+   },
+   {
+    "id": "c06e850f-1b92-4a69-b5a2-0a39acd336f2",
+    "source": "native-voices",
+    "text": {
+     "en": "It is silly not to live next door to the people you love.",
+     "es": "Es una tontería no vivir puerta con puerta con quienes amamos.",
+     "pt": "É bobagem não morar porta com porta com quem a gente ama.",
+     "fr": "C'est bête de ne pas vivre porte à porte avec ceux qu'on aime.",
+     "de": "Es ist dumm, nicht Tür an Tür mit denen zu wohnen, die man liebt.",
+     "ja": "愛する人たちと隣り合って暮らさないなんて、ばかげている。"
+    },
+    "author": {
+     "en": "George Sand",
+     "es": "George Sand",
+     "pt": "George Sand",
+     "fr": "George Sand",
+     "de": "George Sand",
+     "ja": "ジョルジュ・サンド"
+    }
+   },
+   {
+    "id": "23dbe191-bde3-4c49-b328-5ddbcd797567",
+    "source": "internal",
+    "text": {
+     "en": "Saying \"I miss you\" is brave and kind, and people love to hear it.",
+     "es": "Decir «te extraño» es valiente y amable, y a la gente le encanta oírlo.",
+     "pt": "Dizer “estou com saudade” é corajoso e gentil, e as pessoas adoram ouvir.",
+     "fr": "Dire « tu me manques », c'est courageux et tendre, et les gens adorent l'entendre.",
+     "de": "„Ich vermisse dich“ zu sagen ist mutig und liebevoll, und man hört es so gern.",
+     "ja": "「会いたい」と言うのは勇気がいる優しいことで、言われた人はうれしいものだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "481954dc-80c5-4ccb-9a8d-b3fc803e9c48",
+    "source": "native-voices",
+    "text": {
+     "en": "Keep loving me, that will be very good of you; but tell me now and then.",
+     "es": "Ámame siempre, harás muy bien; pero dímelo de vez en cuando.",
+     "pt": "Ame-me sempre, e fará muito bem; mas me diga isso de vez em quando.",
+     "fr": "Aimez-moi toujours, ce sera fort bien fait : mais dites-le-moi quelquefois.",
+     "de": "Liebe mich weiter, daran tust du sehr gut: Aber sag es mir ab und zu.",
+     "ja": "ずっと愛していてほしい。それはとてもいいことだ。でも、ときどきはそう言ってほしい。"
+    },
+    "author": {
+     "en": "Denis Diderot",
+     "es": "Denis Diderot",
+     "pt": "Denis Diderot",
+     "fr": "Denis Diderot",
+     "de": "Denis Diderot",
+     "ja": "ドゥニ・ディドロ"
+    }
+   },
+   {
+    "id": "57e11018-06b1-4ee6-9de4-62bc18b9054b",
+    "source": "native-voices",
+    "text": {
+     "en": "Nothing is far from you.",
+     "es": "Nada está lejos de ti.",
+     "pt": "Nada está longe de você.",
+     "fr": "Rien n'est loin de toi.",
+     "de": "Nichts ist fern von dir.",
+     "ja": "あなたから遠いものは、何もない。"
+    },
+    "author": {
+     "en": "Amado Nervo",
+     "es": "Amado Nervo",
+     "pt": "Amado Nervo",
+     "fr": "Amado Nervo",
+     "de": "Amado Nervo",
+     "ja": "アマード・ネルボ"
+    }
+   },
+   {
+    "id": "d571cc2b-9f36-408d-abcc-7c93655ecfd7",
+    "source": "native-voices",
+    "text": {
+     "en": "We are sure of your heart, but that is not always enough: we need signs.",
+     "es": "No dudamos de tu corazón; pero no siempre basta: hacen falta señales.",
+     "pt": "Temos certeza do seu coração; mas nem sempre basta, precisamos de sinais.",
+     "fr": "On est sûr de votre cœur ; mais ce n'est pas toujours assez, il faut des signifiances.",
+     "de": "Man ist sich deines Herzens sicher; aber das ist nicht immer genug, man braucht Zeichen.",
+     "ja": "あなたの心を疑ってはいない。けれど、それだけでは足りないこともある。しるしが必要なのだ。"
+    },
+    "author": {
+     "en": "Madame de Sévigné",
+     "es": "Madame de Sévigné",
+     "pt": "Madame de Sévigné",
+     "fr": "Madame de Sévigné",
+     "de": "Madame de Sévigné",
+     "ja": "セヴィニェ夫人"
+    }
+   },
+   {
+    "id": "4fe61022-5752-4e5d-88be-70786f9ffb63",
+    "source": "native-voices",
+    "text": {
+     "en": "Hope and memory share the same prism: distance.",
+     "es": "La esperanza y el recuerdo tienen el mismo prisma: la distancia.",
+     "pt": "A esperança e a lembrança têm o mesmo prisma: a distância.",
+     "fr": "L'espérance et le souvenir ont le même prisme : l'éloignement.",
+     "de": "Hoffnung und Erinnerung haben dasselbe Prisma: die Entfernung.",
+     "ja": "希望と思い出は、同じプリズムを通して見える。遠さというプリズムだ。"
+    },
+    "author": {
+     "en": "Alphonse Karr",
+     "es": "Alphonse Karr",
+     "pt": "Alphonse Karr",
+     "fr": "Alphonse Karr",
+     "de": "Alphonse Karr",
+     "ja": "アルフォンス・カール"
+    }
+   }
+  ],
+  "thanks": [
+   {
+    "id": "9c570ed8-9b21-4cdf-87c7-5522c817c585",
+    "source": "internal",
+    "text": {
+     "en": "Your love has made someone's life steadier than they could ever put into words.",
+     "es": "Tu amor le ha dado a alguien más estabilidad de la que podría explicar con palabras.",
+     "pt": "Seu amor deu a alguém uma vida mais estável do que essa pessoa conseguiria dizer em palavras.",
+     "fr": "Ton amour a apporté à la vie de quelqu'un une stabilité que les mots ne sauraient dire.",
+     "de": "Deine Liebe hat einem Menschen mehr Halt gegeben, als er je in Worte fassen könnte.",
+     "ja": "あなたの愛のおかげで、誰かの人生は、本人にも言葉にできないほど安定している。"
+    },
+    "author": null
+   },
+   {
+    "id": "c126875d-8d68-49f7-9701-eb4effd23a52",
+    "source": "internal",
+    "text": {
+     "en": "Your attention is one of the most loving things you can give.",
+     "es": "Tu atención es una de las cosas más amorosas que puedes dar.",
+     "pt": "Sua atenção é uma das coisas mais amorosas que você pode dar.",
+     "fr": "Ton attention est l'un des plus beaux gestes d'amour que tu puisses offrir.",
+     "de": "Deine Aufmerksamkeit gehört zum Liebevollsten, was du schenken kannst.",
+     "ja": "心を向けることは、あなたが贈れるいちばん愛のこもったものの1つだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "eeee26ee-411c-4886-9a8c-dc256a07ea78",
+    "source": "internal",
+    "text": {
+     "en": "You are someone people are lucky to know.",
+     "es": "La gente que te conoce tiene suerte.",
+     "pt": "Você é alguém que as pessoas têm sorte de conhecer.",
+     "fr": "Les gens ont de la chance de te connaître.",
+     "de": "Wer dich kennt, kann sich glücklich schätzen.",
+     "ja": "あなたと知り合えた人は、幸運だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "0b574d09-3011-4095-b712-d5d508941a52",
+    "source": "internal",
+    "text": {
+     "en": "There are good things in the world that exist only because of you.",
+     "es": "Hay cosas buenas en el mundo que existen solo gracias a ti.",
+     "pt": "Existem coisas boas no mundo que só existem por sua causa.",
+     "fr": "Il y a dans le monde de belles choses qui n'existent que grâce à toi.",
+     "de": "Es gibt gute Dinge auf der Welt, die es nur deinetwegen gibt.",
+     "ja": "世界には、あなたがいたからこそ存在する良いものがある。"
+    },
+    "author": null
+   },
+   {
+    "id": "381e7a2a-0c2d-48d3-9ce9-ae97f589a80f",
+    "source": "internal",
+    "text": {
+     "en": "The people who love you are not keeping count. They are just glad you are here.",
+     "es": "Quienes te quieren no llevan la cuenta. Solo se alegran de que estés aquí.",
+     "pt": "As pessoas que te amam não estão contando pontos. Elas só estão felizes por você estar aqui.",
+     "fr": "Les gens qui t'aiment ne tiennent pas de comptes. Ils sont simplement heureux que tu sois là.",
+     "de": "Die Menschen, die dich lieben, führen keine Strichliste. Sie freuen sich einfach, dass du da bist.",
+     "ja": "あなたを愛する人たちは、貸し借りを数えたりしない。ただ、あなたがここにいることがうれしいのだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "0dfe02c1-8e10-430b-8c4f-6a75aa56e69d",
+    "source": "internal",
+    "text": {
+     "en": "The people who love you are not waiting for a better version. They love this one.",
+     "es": "Las personas que te quieren no están esperando una versión mejor de ti. Quieren a la de ahora.",
+     "pt": "As pessoas que amam você não estão esperando uma versão melhor. Elas amam esta.",
+     "fr": "Les gens qui t'aiment n'attendent pas une meilleure version de toi. C'est celle-ci qu'ils aiment.",
+     "de": "Die Menschen, die dich lieben, warten nicht auf eine bessere Version. Sie lieben diese hier.",
+     "ja": "あなたを愛する人たちは、もっと良いあなたを待っているわけではない。今のあなたを愛している。"
+    },
+    "author": null
+   },
+   {
+    "id": "bd3a94be-573f-488e-8d9f-ddcf2f3d4661",
+    "source": "internal",
+    "text": {
+     "en": "Love asks for courage and patience, and you have both.",
+     "es": "El amor pide valor y paciencia, y tú tienes las dos cosas.",
+     "pt": "O amor pede coragem e paciência, e você tem as duas.",
+     "fr": "L'amour demande du courage et de la patience, et tu as les deux.",
+     "de": "Liebe verlangt Mut und Geduld, und du hast beides.",
+     "ja": "愛には勇気と忍耐がいる。そしてあなたは、その両方を持っている。"
+    },
+    "author": null
+   },
+   {
+    "id": "6222468d-0f14-4473-aab7-54ebb8895697",
+    "source": "internal",
+    "text": {
+     "en": "Some of the people you love are braver because you believed in them.",
+     "es": "Algunas de las personas que quieres son más valientes porque creíste en ellas.",
+     "pt": "Algumas das pessoas que você ama têm mais coragem porque você acreditou nelas.",
+     "fr": "Certaines des personnes que tu aimes sont plus courageuses parce que tu as cru en elles.",
+     "de": "Manche der Menschen, die du liebst, sind mutiger, weil du an sie geglaubt hast.",
+     "ja": "あなたが信じたから、前より勇敢になれた大切な人がいる。"
+    },
+    "author": null
+   }
+  ],
+  "always": [
+   {
+    "id": "e54f5b6d-0fd8-4e43-82bb-d3373d88656a",
+    "source": "internal",
+    "text": {
+     "en": "You will be just as worth loving at eighty as you are today.",
+     "es": "A los ochenta merecerás tanto amor como hoy.",
+     "pt": "Você vai merecer tanto amor aos oitenta quanto merece hoje.",
+     "fr": "À quatre-vingts ans, tu mériteras tout autant l'amour qu'aujourd'hui.",
+     "de": "Mit achtzig wirst du genauso liebenswert sein wie heute.",
+     "ja": "80歳になっても、あなたは今日と同じように愛される価値がある。"
+    },
+    "author": null
+   },
+   {
+    "id": "6b16fd2d-29f9-45f9-a284-215e259984c1",
+    "source": "native-voices",
+    "text": {
+     "en": "You may change your mind; you should not change your heart.",
+     "es": "Se puede cambiar de opinión; no se debe cambiar de corazón.",
+     "pt": "Podemos mudar de ideia; não devemos mudar de coração.",
+     "fr": "On peut changer d'esprit, on ne doit pas changer de cœur.",
+     "de": "Man darf seine Meinung ändern, nicht aber sein Herz.",
+     "ja": "考えを変えるのはいい。だが、心を変えてはならない。"
+    },
+    "author": {
+     "en": "Alphonse de Lamartine",
+     "es": "Alphonse de Lamartine",
+     "pt": "Alphonse de Lamartine",
+     "fr": "Alphonse de Lamartine",
+     "de": "Alphonse de Lamartine",
+     "ja": "アルフォンス・ド・ラマルティーヌ"
+    }
+   },
+   {
+    "id": "145b1726-1099-47f7-ae87-232c9a7961b6",
+    "source": "internal",
+    "text": {
+     "en": "Love is a practice, not a feeling you wait to arrive.",
+     "es": "El amor es una práctica, no un sentimiento que esperas que llegue.",
+     "pt": "O amor é uma prática, não um sentimento que você espera chegar.",
+     "fr": "L'amour est une pratique, pas un sentiment dont tu attends l'arrivée.",
+     "de": "Liebe ist eine Übung, kein Gefühl, auf das du wartest.",
+     "ja": "愛は、訪れるのを待つ感情ではなく、実践だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "9266f8c6-733e-4246-b3cc-bdbbfcd7ecaa",
+    "source": "internal",
+    "text": {
+     "en": "The love you want is allowed to be quiet, gentle and ordinary.",
+     "es": "El amor que quieres puede ser tranquilo, tierno y cotidiano.",
+     "pt": "O amor que você quer pode ser tranquilo, gentil e comum.",
+     "fr": "L'amour que tu souhaites a le droit d'être discret, doux et ordinaire.",
+     "de": "Die Liebe, die du dir wünschst, darf leise, sanft und alltäglich sein.",
+     "ja": "望む愛が、静かで、やさしくて、ありふれたものであってもいい。"
+    },
+    "author": null
+   },
+   {
+    "id": "6fc54b11-2cb2-4108-bbf0-8cfed9b3045d",
+    "source": "internal",
+    "text": {
+     "en": "Whatever your love looks like, it is real and it counts.",
+     "es": "Sea como sea tu amor, es real y cuenta.",
+     "pt": "Do jeito que for, o seu amor é real e conta.",
+     "fr": "Quelle que soit la forme de ton amour, il est réel et il compte.",
+     "de": "Wie deine Liebe auch aussieht, sie ist echt und sie zählt.",
+     "ja": "どんなかたちの愛でも、それは本物で、意味がある。"
+    },
+    "author": null
+   },
+   {
+    "id": "525cebed-87cb-4890-adf8-2432fa80d76a",
+    "source": "gutenberg-primary",
+    "text": {
+     "en": "Love simply loves and asks nothing in return.",
+     "es": "El amor simplemente ama y no pide nada a cambio.",
+     "pt": "O amor simplesmente ama e não pede nada em troca.",
+     "fr": "L'amour aime, tout simplement, et ne demande rien en retour.",
+     "de": "Die Liebe liebt einfach und verlangt nichts zurück.",
+     "ja": "愛はただ愛し、見返りを何も求めない。"
+    },
+    "author": {
+     "en": "Orison Swett Marden",
+     "es": "Orison Swett Marden",
+     "pt": "Orison Swett Marden",
+     "fr": "Orison Swett Marden",
+     "de": "Orison Swett Marden",
+     "ja": "オリソン・スウェット・マーデン"
+    }
+   },
+   {
+    "id": "b1c54559-fdd8-4920-a95f-485b2302daf2",
+    "source": "native-voices",
+    "text": {
+     "en": "Whenever there is an empty space in your life, fill it with love.",
+     "es": "Siempre que haya un hueco en tu vida, llénalo de amor.",
+     "pt": "Sempre que houver um vazio na sua vida, encha-o de amor.",
+     "fr": "Chaque fois qu'il y a un vide dans ta vie, remplis-le d'amour.",
+     "de": "Immer wenn es eine Lücke in deinem Leben gibt, füll sie mit Liebe.",
+     "ja": "人生にすき間ができたら、いつでもそこを愛で満たそう。"
+    },
+    "author": {
+     "en": "Amado Nervo",
+     "es": "Amado Nervo",
+     "pt": "Amado Nervo",
+     "fr": "Amado Nervo",
+     "de": "Amado Nervo",
+     "ja": "アマード・ネルボ"
+    }
+   },
+   {
+    "id": "a8a9b5c5-938a-45e7-ba09-1fa275cba810",
+    "source": "native-voices",
+    "text": {
+     "en": "Where there is no love, put love, and you will draw love out.",
+     "es": "Adonde no hay amor, ponga amor, y sacará amor.",
+     "pt": "Onde não há amor, ponha amor, e colherá amor.",
+     "fr": "Là où il n'y a pas d'amour, mets de l'amour, et tu récolteras de l'amour.",
+     "de": "Wo keine Liebe ist, da lege Liebe hinein, und du wirst Liebe herausholen.",
+     "ja": "愛のないところに、愛を置こう。そうすれば、愛を引き出せる。"
+    },
+    "author": {
+     "en": "Saint John of the Cross",
+     "es": "San Juan de la Cruz",
+     "pt": "São João da Cruz",
+     "fr": "Saint Jean de la Croix",
+     "de": "Johannes vom Kreuz",
+     "ja": "十字架の聖ヨハネ"
+    }
+   }
+  ]
+ },
+ "morning": {
+  "goodmorning": [
+   {
+    "id": "a1ae5b30-0d0d-465f-a15a-6b1228404997",
+    "source": "internal",
+    "text": {
+     "en": "Get up and meet this day. It has something for you.",
+     "es": "Levántate y sal al encuentro de este día. Tiene algo para ti.",
+     "pt": "Levante e vá ao encontro deste dia. Ele tem algo para você.",
+     "fr": "Lève-toi et va au-devant de cette journée. Elle a quelque chose pour toi.",
+     "de": "Steh auf und geh diesem Tag entgegen. Er hat etwas für dich.",
+     "ja": "起きて、この一日に会いに行こう。今日は、あなたに何かを用意している。"
+    },
+    "author": null
+   },
+   {
+    "id": "c40795d3-2f08-443c-aecd-f5a836250f1a",
+    "source": "internal",
+    "text": {
+     "en": "Rise to meet this day. You are ready for it.",
+     "es": "Sal al encuentro de este día. Estás a la altura.",
+     "pt": "Vá ao encontro deste dia. Você está à altura dele.",
+     "fr": "Lève-toi pour accueillir cette journée. Tu es à la hauteur.",
+     "de": "Steh auf und begegne diesem Tag. Du bist bereit dafür.",
+     "ja": "立ち上がって、今日を迎えよう。準備はできている。"
+    },
+    "author": null
+   },
+   {
+    "id": "181133e9-bfbc-4094-a6f8-faa3bb4772cf",
+    "source": "internal",
+    "text": {
+     "en": "This day is still unwritten. Make it yours.",
+     "es": "Este día todavía no está escrito. Hazlo tuyo.",
+     "pt": "Este dia ainda não foi escrito. Faça dele o seu.",
+     "fr": "Cette journée n'est pas encore écrite. Fais-en la tienne.",
+     "de": "Dieser Tag ist noch ungeschrieben. Mach ihn zu deinem.",
+     "ja": "今日という日は、まだ何も書かれていない。自分のものにしよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "f9b4f526-c0fc-46b8-8e01-ce21af9c9a73",
+    "source": "internal",
+    "text": {
+     "en": "The morning is a quiet offer to try once more.",
+     "es": "La mañana es una invitación callada a intentarlo una vez más.",
+     "pt": "A manhã é um convite silencioso para tentar mais uma vez.",
+     "fr": "Le matin est une invitation discrète à essayer encore une fois.",
+     "de": "Der Morgen ist ein leises Angebot, es noch einmal zu versuchen.",
+     "ja": "朝は、もう一度やってみようという静かな誘いだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "1ee7d70e-5d4e-43c8-b592-63e720b95a9a",
+    "source": "internal",
+    "text": {
+     "en": "Hope is not a forecast. It is a decision you get to make each morning.",
+     "es": "La esperanza no es un pronóstico. Es una decisión que puedes tomar cada mañana.",
+     "pt": "Esperança não é previsão. É uma decisão que você pode tomar toda manhã.",
+     "fr": "L'espoir n'est pas une prévision. C'est une décision que tu peux prendre chaque matin.",
+     "de": "Hoffnung ist keine Prognose. Sie ist eine Entscheidung, die du jeden Morgen treffen darfst.",
+     "ja": "希望は予報ではない。毎朝、自分で選べる決断だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "cf0359e4-7423-4739-ac16-7a8f476d55dd",
+    "source": "native-voices",
+    "text": {
+     "en": "The sun always has the dawn to go ahead of it.",
+     "es": "El sol siempre tiene al alba como precursora.",
+     "pt": "O sol sempre tem a aurora como precursora.",
+     "fr": "Le soleil a toujours l'aube pour précurseur.",
+     "de": "Die Sonne hat immer die Morgendämmerung als Vorbotin.",
+     "ja": "太陽には、いつも夜明けという先触れがある。"
+    },
+    "author": {
+     "en": "Victor Hugo",
+     "es": "Victor Hugo",
+     "pt": "Victor Hugo",
+     "fr": "Victor Hugo",
+     "de": "Victor Hugo",
+     "ja": "ヴィクトル・ユーゴー"
+    }
+   },
+   {
+    "id": "97f0362f-8518-4689-a715-56db87321c9c",
+    "source": "native-voices",
+    "text": {
+     "en": "Today is worth more than a thousand centuries not yet born.",
+     "es": "El día de hoy vale más que mil / Siglos que no han nacido.",
+     "pt": "O dia presente vale mais que mil / Séculos ainda por nascer.",
+     "fr": "Le jour présent vaut mieux que mille / Des siècles qui ne sont pas nés.",
+     "de": "Der heutige Tag ist mehr wert als tausend / Jahrhunderte, die noch nicht geboren sind.",
+     "ja": "今日という一日は、まだ生まれていない / 千の世紀よりも尊い。"
+    },
+    "author": {
+     "en": "Alphonse de Lamartine",
+     "es": "Alphonse de Lamartine",
+     "pt": "Alphonse de Lamartine",
+     "fr": "Alphonse de Lamartine",
+     "de": "Alphonse de Lamartine",
+     "ja": "アルフォンス・ド・ラマルティーヌ"
+    }
+   },
+   {
+    "id": "19f66478-f3f6-4035-b44d-59fb008fda66",
+    "source": "internal",
+    "text": {
+     "en": "There was no guarantee of today and it turned up anyway.",
+     "es": "No había garantía de hoy y llegó de todos modos.",
+     "pt": "O dia de hoje não estava garantido, e chegou mesmo assim.",
+     "fr": "Aujourd'hui n'avait rien de garanti, et il est venu quand même.",
+     "de": "Es gab keine Garantie für heute, und der Tag ist trotzdem gekommen.",
+     "ja": "今日が来る保証はなかった。それでも、今日はやってきた。"
+    },
+    "author": null
+   }
+  ],
+  "bigday": [
+   {
+    "id": "b6f7a092-1886-4091-8ee9-3a00dcf6f51a",
+    "source": "internal",
+    "text": {
+     "en": "Show up for this day with everything you have.",
+     "es": "Dale a este día todo lo que tienes.",
+     "pt": "Entregue a este dia tudo o que você tem.",
+     "fr": "Donne à cette journée tout ce que tu as.",
+     "de": "Gib diesem Tag alles, was du hast.",
+     "ja": "持てるすべてで、この一日に向き合おう。"
+    },
+    "author": null
+   },
+   {
+    "id": "5a733e73-e8b1-43f1-a1f6-ccb0ec9320c6",
+    "source": "internal",
+    "text": {
+     "en": "You are as capable today as you were on your best day.",
+     "es": "Hoy eres tan capaz como en tu mejor día.",
+     "pt": "Você é tão capaz hoje quanto no seu melhor dia.",
+     "fr": "Tu es aussi capable aujourd'hui que lors de ton meilleur jour.",
+     "de": "Du bist heute genauso fähig wie an deinem besten Tag.",
+     "ja": "最高だった日と同じ力が、今日の自分にもある。"
+    },
+    "author": null
+   },
+   {
+    "id": "d141694c-d935-49b6-beaf-81aa291ba57f",
+    "source": "internal",
+    "text": {
+     "en": "There is a braver version of today available to you.",
+     "es": "Hoy tienes a tu alcance una versión más valiente del día.",
+     "pt": "Existe uma versão mais corajosa do dia de hoje ao seu alcance.",
+     "fr": "Une version plus courageuse de cette journée est à ta portée.",
+     "de": "Es gibt eine mutigere Version dieses Tages, und sie steht dir offen.",
+     "ja": "もっと勇気ある今日を、選ぶことができる。"
+    },
+    "author": null
+   },
+   {
+    "id": "6ad1fcc3-38f8-410f-898f-28b1194ecf05",
+    "source": "internal",
+    "text": {
+     "en": "Take one brave step today. It is enough.",
+     "es": "Da hoy un paso valiente. Es suficiente.",
+     "pt": "Dê hoje um passo corajoso. Já basta.",
+     "fr": "Fais un pas courageux aujourd'hui. Ça suffit.",
+     "de": "Geh heute einen mutigen Schritt. Das reicht.",
+     "ja": "今日は、勇気ある一歩をひとつだけ。それで十分だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "942b65ee-a299-45eb-903f-d4d8e1bc8833",
+    "source": "internal",
+    "text": {
+     "en": "Wake up and remember what you are working toward.",
+     "es": "Despierta y recuerda aquello por lo que trabajas.",
+     "pt": "Acorde e lembre-se do que você está construindo.",
+     "fr": "Réveille-toi et rappelle-toi ce vers quoi tu avances.",
+     "de": "Wach auf und denk daran, worauf du hinarbeitest.",
+     "ja": "目を覚ましたら、自分が何に向かっているかを思い出そう。"
+    },
+    "author": null
+   },
+   {
+    "id": "ead281e2-712a-4004-8cbc-7ecec72dcc76",
+    "source": "internal",
+    "text": {
+     "en": "The confidence you feel today is yours to keep.",
+     "es": "La confianza que sientes hoy es tuya, y te la puedes quedar.",
+     "pt": "A confiança que você sente hoje é sua, e fica com você.",
+     "fr": "La confiance que tu ressens aujourd'hui est à toi, pour de bon.",
+     "de": "Die Zuversicht, die du heute spürst, darfst du behalten.",
+     "ja": "今日感じている自信は、ずっとあなたのものだ。"
+    },
+    "author": null
+   },
+   {
+    "id": "87c9ff48-87a4-4bdd-8454-7a0e05b7ddce",
+    "source": "internal",
+    "text": {
+     "en": "Today holds possibilities you have not noticed yet.",
+     "es": "Hoy trae posibilidades que todavía no has notado.",
+     "pt": "O dia de hoje guarda possibilidades que você ainda não notou.",
+     "fr": "Aujourd'hui recèle des possibilités que tu n'as pas encore remarquées.",
+     "de": "Der Tag heute hält Möglichkeiten bereit, die du noch nicht siehst.",
+     "ja": "今日には、まだ気づいていない可能性が詰まっている。"
+    },
+    "author": null
+   },
+   {
+    "id": "00894d22-83ca-444a-9e7e-24a28452650b",
+    "source": "internal",
+    "text": {
+     "en": "Look at yourself today and see someone worth believing in.",
+     "es": "Mírate hoy y ve a alguien en quien vale la pena creer.",
+     "pt": "Olhe para você hoje e veja alguém em quem vale a pena acreditar.",
+     "fr": "Regarde-toi aujourd'hui et vois quelqu'un en qui il vaut la peine de croire.",
+     "de": "Sieh dich heute an und erkenne einen Menschen, an den es sich zu glauben lohnt.",
+     "ja": "今日の自分を見てみよう。そこにいるのは、信じるに値する人だ。"
+    },
+    "author": null
+   }
+  ],
+  "gentle": [
+   {
+    "id": "c7e15c18-d51f-41a0-913a-1b8b8dd6e567",
+    "source": "internal",
+    "text": {
+     "en": "Today only asks for a little. You have a little.",
+     "es": "Hoy solo te pide un poco. Y un poco tienes.",
+     "pt": "Hoje só pede um pouco. E um pouco você tem.",
+     "fr": "Aujourd'hui ne te demande qu'un petit peu. Ce petit peu, tu l'as.",
+     "de": "Der heutige Tag verlangt nur ein wenig. Und ein wenig hast du.",
+     "ja": "今日求められているのは、ほんの少しだけ。その少しなら、あなたにある。"
+    },
+    "author": null
+   },
+   {
+    "id": "2e9dd8b8-9de0-4f7f-9349-71a17e4d8ce3",
+    "source": "internal",
+    "text": {
+     "en": "You can let today be simple.",
+     "es": "Puedes dejar que hoy sea sencillo.",
+     "pt": "Você pode deixar o dia de hoje ser simples.",
+     "fr": "Tu as le droit de faire simple aujourd'hui.",
+     "de": "Heute darf alles ganz einfach sein.",
+     "ja": "今日は、シンプルな一日にしていい。"
+    },
+    "author": null
+   },
+   {
+    "id": "3e71ed1c-4baf-4d82-a120-00f0ac5695bf",
+    "source": "internal",
+    "text": {
+     "en": "You do not have to be strong today.",
+     "es": "Hoy no tienes que ser fuerte.",
+     "pt": "Você não precisa ser forte hoje.",
+     "fr": "Tu n'as pas à être solide aujourd'hui.",
+     "de": "Du musst heute nicht stark sein.",
+     "ja": "今日は、強くなくていい。"
+    },
+    "author": null
+   },
+   {
+    "id": "5bb42fa3-45ed-4283-a8c8-377ffc02d65f",
+    "source": "internal",
+    "text": {
+     "en": "May you find one moment of quiet in this day and may it be enough.",
+     "es": "Que encuentres un momento de calma en este día y que sea suficiente.",
+     "pt": "Que você encontre um momento de silêncio neste dia, e que ele seja suficiente.",
+     "fr": "Que tu trouves un moment de calme dans cette journée, et qu'il suffise.",
+     "de": "Mögest du heute einen Moment der Ruhe finden, und möge er genügen.",
+     "ja": "今日という日に一瞬の静けさが見つかり、それで足りるように。"
+    },
+    "author": null
+   },
+   {
+    "id": "142dad02-56ee-4dca-bbe1-0b8cdff872ec",
+    "source": "internal",
+    "text": {
+     "en": "You get to live in this body. Let today be a kind day in it.",
+     "es": "Tienes la suerte de vivir en este cuerpo. Que hoy sea un día amable con él.",
+     "pt": "Você mora neste corpo. Que hoje seja um dia de gentileza com ele.",
+     "fr": "Tu as la chance de vivre dans ce corps. Fais d'aujourd'hui une journée douce pour lui.",
+     "de": "Du darfst in diesem Körper leben. Sei heute freundlich zu ihm.",
+     "ja": "この体で生きられる。今日は、この体にやさしい一日にしよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "8f9a8fb4-3ef5-4c47-b784-797b77022f0c",
+    "source": "internal",
+    "text": {
+     "en": "Let it be enough for today. Tomorrow will want its own answer.",
+     "es": "Que baste por hoy. Mañana va a querer su propia respuesta.",
+     "pt": "Deixe que isso baste por hoje. O amanhã vai querer a própria resposta.",
+     "fr": "Que ça suffise pour aujourd'hui. Demain voudra sa propre réponse.",
+     "de": "Lass es für heute genug sein. Morgen will seine eigene Antwort.",
+     "ja": "今日はこれで十分としよう。明日には明日の答えが要る。"
+    },
+    "author": null
+   },
+   {
+    "id": "d4e02cae-d6b4-4446-b68d-2a821f6244a7",
+    "source": "internal",
+    "text": {
+     "en": "Three things today. Not eleven. You have never once done eleven.",
+     "es": "Tres cosas hoy. No once. Nunca has hecho once.",
+     "pt": "Três coisas hoje. Não onze. Você nunca, nem uma vez, fez onze.",
+     "fr": "Trois choses aujourd'hui. Pas onze. Tu n'en as jamais fait onze.",
+     "de": "Drei Dinge heute. Nicht elf. Du hast noch nie elf geschafft.",
+     "ja": "今日は3つ。11ではない。11もやれた日なんて一度もないのだから。"
+    },
+    "author": null
+   },
+   {
+    "id": "fe5c0d31-99c3-48a7-8aaf-2a7fe4d0d0cb",
+    "source": "internal",
+    "text": {
+     "en": "May you know today that you are loved, and not because of anything you did.",
+     "es": "Que sepas hoy que Él te ama, y no por nada que hayas hecho.",
+     "pt": "Que você saiba hoje que Ele ama você, e não por algo que você tenha feito.",
+     "fr": "Puisses-tu savoir aujourd'hui qu'on t'aime, et pas pour ce que tu as fait.",
+     "de": "Mögest du heute wissen, dass du geliebt wirst, und nicht wegen etwas, das du getan hast.",
+     "ja": "何かをしたからではなく、あなたが愛されていることを、今日知ることができますように。"
+    },
+    "author": null
+   }
+  ],
+  "newday": [
+   {
+    "id": "b20a489a-a71a-4deb-b33a-8ac50e99e65a",
+    "source": "internal",
+    "text": {
+     "en": "You can begin today and decide the rest later.",
+     "es": "Puedes empezar hoy y decidir el resto después.",
+     "pt": "Você pode começar hoje e decidir o resto depois.",
+     "fr": "Tu peux commencer aujourd'hui et décider du reste plus tard.",
+     "de": "Du kannst heute anfangen und den Rest später entscheiden.",
+     "ja": "今日始めて、残りはあとで決めればいい。"
+    },
+    "author": null
+   },
+   {
+    "id": "6e43ca71-dbe3-44cb-a4ef-6342a4d6d5f0",
+    "source": "internal",
+    "text": {
+     "en": "Start where you are, with what you have, today.",
+     "es": "Empieza donde estás, con lo que tienes, hoy.",
+     "pt": "Comece onde você está, com o que você tem, hoje.",
+     "fr": "Commence là où tu es, avec ce que tu as, aujourd'hui.",
+     "de": "Fang an, wo du bist, mit dem, was du hast, heute.",
+     "ja": "今いる場所から、今あるもので、今日始めよう。"
+    },
+    "author": null
+   },
+   {
+    "id": "ac55939a-e259-42f4-80f1-edc5476d9c46",
+    "source": "internal",
+    "text": {
+     "en": "Today is a seed for the life you will have.",
+     "es": "Hoy es una semilla de la vida que vas a tener.",
+     "pt": "Hoje é uma semente da vida que você vai ter.",
+     "fr": "Aujourd'hui est une graine de la vie que tu auras.",
+     "de": "Heute ist ein Samen für das Leben, das du haben wirst.",
+     "ja": "今日は、これからの人生の種だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "d3ec20ab-1b78-4606-8bd0-e052eca97f85",
+    "source": "internal",
+    "text": {
+     "en": "Today's small step belongs to a much bigger story.",
+     "es": "El pequeño paso de hoy es parte de una historia mucho más grande.",
+     "pt": "O pequeno passo de hoje faz parte de uma história muito maior.",
+     "fr": "Le petit pas d'aujourd'hui fait partie d'une histoire bien plus grande.",
+     "de": "Dein kleiner Schritt heute gehört zu einer viel größeren Geschichte.",
+     "ja": "今日の小さな一歩は、ずっと大きな物語の一部だ。"
+    },
+    "author": null
+   },
+   {
+    "id": "84d6f092-fd91-40c5-bf3b-8cbf4db17cff",
+    "source": "internal",
+    "text": {
+     "en": "Somebody has been exactly where you are and got up in the morning.",
+     "es": "Alguien ha estado exactamente donde estás y se levantó por la mañana.",
+     "pt": "Alguém já esteve exatamente onde você está, e levantou de manhã.",
+     "fr": "Quelqu'un a été exactement là où tu es, et s'est levé le lendemain matin.",
+     "de": "Jemand war schon genau da, wo du jetzt bist, und ist morgens trotzdem aufgestanden.",
+     "ja": "今のあなたとまったく同じ場所にいて、それでも朝起き上がった人がいる。"
+    },
+    "author": null
+   },
+   {
+    "id": "6a258b67-1a2a-4e7c-97f7-ae36549188ec",
+    "source": "internal",
+    "text": {
+     "en": "The people you admire are unsure most mornings.",
+     "es": "La gente que admiras duda casi todas las mañanas.",
+     "pt": "As pessoas que você admira duvidam de si na maioria das manhãs.",
+     "fr": "Les gens que tu admires doutent presque tous les matins.",
+     "de": "Deine Vorbilder zweifeln fast jeden Morgen.",
+     "ja": "あなたが憧れる人たちも、たいていの朝は自信がない。"
+    },
+    "author": null
+   },
+   {
+    "id": "106a1eaf-ef47-4c2b-8519-7b4bcaf8e2dd",
+    "source": "internal",
+    "text": {
+     "en": "You were worth believing in long before today.",
+     "es": "Valía la pena creer en ti mucho antes de hoy.",
+     "pt": "Valia a pena acreditar em você muito antes de hoje.",
+     "fr": "Tu méritais qu'on croie en toi bien avant aujourd'hui.",
+     "de": "Es hat sich schon lange vor heute gelohnt, an dich zu glauben.",
+     "ja": "今日よりずっと前から、あなたは信じるに値する人だった。"
+    },
+    "author": null
+   },
+   {
+    "id": "cc1e768c-61c0-4248-bcc3-f856ea572d29",
+    "source": "internal",
+    "text": {
+     "en": "You can feel proud today without waiting for a reason.",
+     "es": "Hoy puedes sentir orgullo sin esperar un motivo.",
+     "pt": "Você pode sentir orgulho hoje sem esperar um motivo.",
+     "fr": "Tu peux ressentir de la fierté aujourd'hui sans attendre de raison.",
+     "de": "Du darfst heute stolz sein, ohne auf einen Grund zu warten.",
+     "ja": "理由を待たなくても、今日は自分を誇りに思っていい。"
+    },
+    "author": null
+   }
+  ]
+ }
+}

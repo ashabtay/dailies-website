@@ -325,6 +325,55 @@ footer .social{display:flex; align-items:center; gap:6px; margin:-6px auto -6px 
 footer .social a{display:flex; padding:6px}
 footer .social svg{width:16px; height:16px; fill:currentColor}
 
+/* ============ FREE TO TRY ============
+   The wallpaper makers and the envelope pages, between the hero and the
+   app's screenshots. Each card is a picture you can tap, a line of what you
+   get, the topics as their own links (each is its own page), and a button. */
+.free{padding-top:clamp(40px,5vw,64px)}
+.free-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(16px,2.4vw,28px); margin-top:clamp(22px,3vw,34px)}
+.free-card{display:flex; flex-direction:column; border:1px solid var(--rule-soft); border-radius:26px; overflow:hidden;
+  background:linear-gradient(var(--chip),var(--chip)),var(--ground); box-shadow:0 14px 40px rgba(0,0,0,.10)}
+.free-art{position:relative; display:block; height:clamp(210px,24vw,270px); overflow:hidden}
+.free-wall .free-art{background:radial-gradient(120% 120% at 50% 0%,#3b4a38,#141917)}
+.free-env .free-art{background:radial-gradient(120% 120% at 50% 0%,#c8b48d,#8f7550)}
+.free-phone{position:absolute; bottom:-26%; width:30%; aspect-ratio:9/19.5; border-radius:18px; overflow:hidden;
+  border:5px solid #0b0d0c; box-shadow:0 14px 34px rgba(0,0,0,.45); transition:transform .3s}
+.free-phone img{width:100%; height:100%; object-fit:cover; display:block}
+.free-phone:nth-child(1){left:8%; transform:rotate(-8deg) translateY(10px)}
+.free-phone:nth-child(2){left:35%; bottom:-14%; z-index:2}
+.free-phone:nth-child(3){left:62%; transform:rotate(8deg) translateY(10px)}
+.free-wall .free-art:hover .free-phone:nth-child(1){transform:rotate(-10deg) translateY(0)}
+.free-wall .free-art:hover .free-phone:nth-child(3){transform:rotate(10deg) translateY(0)}
+.free-wall .free-art:hover .free-phone:nth-child(2){transform:translateY(-8px)}
+.free-envelope{position:absolute; left:50%; top:54%; width:min(62%,280px); aspect-ratio:1.5; transform:translate(-50%,-50%) rotate(-4deg);
+  transition:transform .3s; filter:drop-shadow(0 18px 30px rgba(40,28,10,.35))}
+.free-env .free-art:hover .free-envelope{transform:translate(-50%,-54%) rotate(-2deg)}
+.free-envelope i{position:absolute; display:block}
+.free-envelope .fe-back{inset:0; border-radius:12px; background:#b99c6c}
+.free-envelope .fe-letter{left:8%; right:8%; top:-18%; height:70%; border-radius:6px; background:#fffaf0; padding:10% 9% 0;
+  font:400 13px/1.35 var(--f-display); color:#3e372d; text-align:center; font-style:normal; overflow:hidden}
+.free-envelope .fe-pocket{inset:0; border-radius:12px; background:linear-gradient(170deg,#efdfbf,#ddc59a); clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%)}
+.free-envelope .fe-seal{left:50%; top:57%; width:44px; height:44px; margin:-22px 0 0 -22px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#c0493f,#86251f 72%); color:#f6e2cf; display:grid; place-items:center;
+  font:500 19px/1 var(--f-display); font-style:normal; box-shadow:0 3px 8px rgba(0,0,0,.3)}
+.free-body{display:flex; flex-direction:column; gap:12px; padding:clamp(20px,2.4vw,28px)}
+.free-body h3{font-family:var(--f-display); font-weight:400; font-size:clamp(23px,2.2vw,28px); line-height:1.15; letter-spacing:-.01em}
+.free-body h3 a{color:inherit; text-decoration:none}
+.free-body p{color:var(--text-dim); font-size:16px; line-height:1.45}
+.free-pick{display:flex; flex-direction:column; gap:10px; margin-top:4px}
+.free-pick-label{font-size:15px; font-weight:600; color:var(--text)}
+.free-topics{display:flex; flex-wrap:wrap; gap:8px}
+.free-topics a{display:inline-flex; align-items:center; gap:4px; padding:8px 10px 8px 14px; border-radius:999px;
+  border:1.5px solid var(--accent-dim); background:var(--chip-on); color:var(--text); font-size:14.5px; font-weight:600;
+  text-decoration:none; transition:background .15s, border-color .15s, transform .15s}
+.free-topics a svg{width:15px; height:15px; color:var(--accent); flex:none}
+.free-topics a:hover{border-color:var(--accent); transform:translateY(-1px)}
+.free-cta{align-self:flex-start; display:inline-flex; align-items:center; gap:8px; margin-top:4px; padding:12px 20px; border-radius:999px;
+  background:var(--accent); color:var(--ground); font-weight:600; font-size:15.5px; text-decoration:none; transition:filter .15s, transform .15s}
+.free-cta:hover{filter:brightness(1.08); transform:translateX(2px)}
+.free-cta svg{width:18px; height:18px}
+@media (max-width:820px){ .free-grid{grid-template-columns:1fr} }
+
 /* ============ RESPONSIVE ============ */
 @media (max-width:940px){
   .hero-in{grid-template-columns:1fr; gap:30px}
@@ -465,6 +514,34 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
   }
 })();
 </script>
+    </div>
+  </section>
+
+  <!-- FREE TO TRY -->
+  <section class="band free" id="free">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Free to try, right here</div>
+        <h2>Make one for you. Send one to someone.</h2>
+      </div>
+      <div class="free-grid">
+        <div class="free-card free-wall">
+          <a class="free-art" href="/motivational-wallpapers/" aria-hidden="true" tabindex="-1"><span class="free-phone"><img src="/img/wallpapers/en/a-year-of-small-steps-can-surprise-you.jpg" width="540" height="1170" alt="" loading="lazy"></span><span class="free-phone"><img src="/img/wallpapers/en/keep-the-hope-keep-the-dream-keep-going.jpg" width="540" height="1170" alt="" loading="lazy"></span><span class="free-phone"><img src="/img/wallpapers/en/you-can-make-today-one-of-the-good.jpg" width="540" height="1170" alt="" loading="lazy"></span></a>
+          <div class="free-body">
+            <h3><a href="/motivational-wallpapers/">Quote wallpapers for your Lock Screen</a></h3>
+            <p>Pick a line and a background, and save it in seconds.</p>
+            <div class="free-pick"><span class="free-pick-label">Make a wallpaper</span><div class="free-topics"><a href="/motivational-wallpapers/">Motivational<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/inspirational-quotes-lock-screen/">Inspirational<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/positive-quotes-lock-screen/">Positive<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a></div></div>
+          </div>
+        </div>
+        <div class="free-card free-env">
+          <a class="free-art" href="/words-of-encouragement/" aria-hidden="true" tabindex="-1"><span class="free-envelope"><i class="fe-back"></i><i class="fe-letter">Look at what you have lived through, and still you hope.</i><i class="fe-pocket"></i><i class="fe-seal">D</i></span></a>
+          <div class="free-body">
+            <h3><a href="/words-of-encouragement/">Send someone a few kind words</a></h3>
+            <p>They get a little envelope that opens to your line. No app needed.</p>
+            <div class="free-pick"><span class="free-pick-label">Send an envelope</span><div class="free-topics"><a href="/words-of-encouragement/">Encouragement<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/motivational-quotes-for-a-friend/">For a friend<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/love-quotes-for-your-partner/">Love<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/good-morning-quotes/">Good morning<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a></div></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
