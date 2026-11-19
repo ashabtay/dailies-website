@@ -301,6 +301,48 @@
     else if (held.length < 20) held.push([event, clean]);
   }
 
+  /* ------------------------------------------- envelopes sealed in the app */
+  /* /sealed/ is where a friend opens a line somebody sealed for them in the
+     app, and sealed.js reports through dailiesAnalytics.envelope(). These are
+     kept apart from the envelope_* events above, which are the
+     words-of-encouragement page's own funnel on /e/: the two envelopes start
+     in different places and are read as two numbers.
+
+       app_envelope_viewed   the sealed envelope was shown
+       app_envelope_opened   ...and opened; `ms_to_open` is how long they looked first
+       app_envelope_cta      a button on it: `action` is send_back, pass_on,
+                             get_app, report, web_sealed or web_sent (with
+                             `destination`: share, whatsapp, messages or copy)
+       app_envelope_invalid  the link did not decode; `reason` is empty,
+                             decode, version or field
+
+     Same rules as above: names and words never get through, only these keys
+     with slug-like or numeric values, and events from before the banner is
+     answered are held in memory and sent only if analytics is then allowed. */
+
+  var APP_ENVELOPE_EVENTS = {
+    viewed: 'app_envelope_viewed',
+    opened: 'app_envelope_opened',
+    cta: 'app_envelope_cta',
+    invalid: 'app_envelope_invalid'
+  };
+  var APP_ENVELOPE_KEYS = ['own', 'has_author', 'text_length', 'quote_id', 'thread_n', 'open_when',
+    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason'];
+
+  function envelope(kind, props) {
+    var event = APP_ENVELOPE_EVENTS[kind];
+    if (!event) return;
+    var clean = {};
+    APP_ENVELOPE_KEYS.forEach(function (k) {
+      if (!props || !(k in props)) return;
+      var v = props[k];
+      if (v === null || typeof v === 'boolean' || (typeof v === 'number' && isFinite(v))) clean[k] = v;
+      else if (typeof v === 'string' && SAFE_STRING.test(v)) clean[k] = v;
+    });
+    if (window.posthog && window.posthog.capture) track(event, clean);
+    else if (held.length < 20) held.push([event, clean]);
+  }
+
   function releaseHeld(state) {
     var list = held;
     held = [];
@@ -319,6 +361,7 @@
   window.dailiesAnalytics = {
     track: track,
     play: play,
+    envelope: envelope,
     consentDecided: function (state, choice) {
       track('consent_decided', {
         choice: choice,

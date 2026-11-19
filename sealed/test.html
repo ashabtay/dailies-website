@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Envelope tests</title>
+<!--
+  Checks for the pure functions in /sealed.js. Open /sealed/test.html over
+  ./serve.sh; every line should read "ok". Also runnable headless:
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+      --virtual-time-budget=5000 --dump-dom http://localhost:8000/sealed/test.html | grep -E 'SUMMARY|FAIL'
+-->
+<style>
+  body{font:14px/1.5 ui-monospace,Menlo,monospace; background:#191c1d; color:#f0e6d2; margin:24px}
+  .ok{color:#9db081} .fail{color:#e0806a; font-weight:700}
+  #summary{font-size:16px; margin-bottom:16px}
+</style>
+</head>
+<body>
+<div id="summary">running</div>
+<ol id="out"></ol>
+<script src="/sealed.js"></script>
+<script>
+(function () {
+  var E = window.DailiesEnvelope;
+  var out = document.getElementById('out');
+  var pass = 0, fail = 0;
+
+  function show(ok, name, detail) {
+    var li = document.createElement('li');
+    li.className = ok ? 'ok' : 'fail';
+    li.textContent = (ok ? 'ok   ' : 'FAIL ') + name + (ok || detail === undefined ? '' : '  -> ' + detail);
+    out.appendChild(li);
+    ok ? pass++ : fail++;
+    (ok ? console.log : console.error)((ok ? 'ok   ' : 'FAIL ') + name);
+  }
+  function eq(name, got, want) {
+    var g = JSON.stringify(got), w = JSON.stringify(want);
+    show(g === w, name, 'got ' + g + ', want ' + w);
+  }
+  // Encodes an arbitrary JS value the way the app does: JSON, UTF-8, base64url, no padding.
+  function raw(v) {
+    var bytes = new TextEncoder().encode(typeof v === 'string' ? v : JSON.stringify(v));
+    var bin = '';
+    bytes.forEach(function (b) { bin += String.fromCharCode(b); });
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+
+  var good = {
+    v: 1, to: 'Dana', from: 'Amit', t: 'You are doing better than you think, Dana.',
+    a: null, q: 'd3b6119c-cf07-42a8-9a65-d3d073ee6a2a', o: false,
+    p: 'You are doing better than you think, {name}.', n: 3, w: 'hard', l: 'en', b: 'mtn_peak_dawn'
+  };
+
+  // ---- round trips
+  eq('round trip, ascii', E.decode(E.encode(good)), good);
+  var intl = { v: 1, to: 'דנה', from: 'José', t: 'דנה, tú puedes.\nLine two — café 🌿', a: 'José Martí', q: null, o: true };
+  eq('round trip, Hebrew and accented names, emoji, newline', E.decode(E.encode(intl)), intl);
+  eq('encode is base64url without padding', /^[A-Za-z0-9_-]+$/.test(E.encode(intl)), true);
+  eq('decode accepts a leading #', E.decode('#' + E.encode(good)).to, 'Dana');
+  eq('decode tolerates stray padding', E.decode(E.encode(good) + '==').from, 'Amit');
+  eq('names are trimmed', E.decode(raw(Object.assign({}, good, { to: '  Dana  ' }))).to, 'Dana');
+  eq('older link without the prototype fields', E.decode(raw({ v: 1, to: 'A', from: 'B', t: 'Hi', a: null, q: null, o: false })),
+    { v: 1, to: 'A', from: 'B', t: 'Hi', a: null, q: null, o: false });
+  eq('unknown keys are ignored', E.decode(raw(Object.assign({ zz: 9 }, good))).zz, undefined);
+  eq('unknown open-when key is ignored, not fatal', E.decode(raw(Object.assign({}, good, { w: 'monday' }))).w, undefined);
+  eq('unknown language is ignored, not fatal', E.decode(raw(Object.assign({}, good, { l: 'fr' }))).l, undefined);
+  eq('40-character name is fine', E.decode(raw(Object.assign({}, good, { to: 'x'.repeat(40) }))).to.length, 40);
+  eq('600-character text is fine', E.decode(raw(Object.assign({}, good, { t: 'y'.repeat(600) }))).t.length, 600);
+
+  // ---- the sender's look: b and c are checked, and a bad one is dropped, never fatal
+  function look(extra) { return E.decode(raw(Object.assign({}, good, { b: undefined }, extra))); }
+  eq('b: an app background id is kept', look({ b: 'night_aurora' }).b, 'night_aurora');
+  eq('b: a well-formed id the site lacks is kept', look({ b: 'mtn_new_one' }).b, 'mtn_new_one');
+  eq('b: capitals are dropped', look({ b: 'Mtn_Peak_Dawn' }).b, undefined);
+  eq('b: hyphens are dropped', look({ b: 'mtn-peak-dawn' }).b, undefined);
+  eq('b: a path is dropped', look({ b: '../house' }).b, undefined);
+  eq('b: 41 characters is dropped', look({ b: 'a'.repeat(41) }).b, undefined);
+  eq('b: empty is dropped', look({ b: '' }).b, undefined);
+  eq('b: a number is dropped', look({ b: 7 }).b, undefined);
+  eq('b: a bad one still opens the envelope', look({ b: 'Not Valid!' }).to, 'Dana');
+  eq('c: #rrggbb is kept', look({ c: '#335577' }).c, '#335577');
+  eq('c: capitals are fine', look({ c: '#AABBCC' }).c, '#AABBCC');
+  eq('c: three digits are dropped', look({ c: '#357' }).c, undefined);
+  eq('c: no # is dropped', look({ c: '335577' }).c, undefined);
+  eq('c: a color name is dropped', look({ c: 'red' }).c, undefined);
+  eq('c: css is dropped', look({ c: '#335577;background:url(x)' }).c, undefined);
+  eq('c: a number is dropped', look({ c: 3355 }).c, undefined);
+  eq('c: a bad one still opens the envelope', look({ c: 'nope' }).from, 'Amit');
+
+  // ---- m: the short line under the name, tidied; a bad one is dropped, never fatal
+  eq('m: kept', look({ m: 'for the hard Mondays' }).m, 'for the hard Mondays');
+  eq('m: whitespace folded to one line', look({ m: '  for the\nhard   Mondays ' }).m, 'for the hard Mondays');
+  eq('m: 60 characters is fine', look({ m: '\u00e9'.repeat(60) }).m, '\u00e9'.repeat(60));
+  eq('m: 61 characters is dropped', look({ m: 'a'.repeat(61) }).m, undefined);
+  eq('m: blank is dropped', look({ m: '   ' }).m, undefined);
+  eq('m: a number is dropped', look({ m: 7 }).m, undefined);
+  eq('m: a bad one still opens the envelope', look({ m: 7 }).from, 'Amit');
+
+  // ---- which picture the letter, card and stamp are printed with
+  var HOUSE = { src: '/sealed/house.jpg', color: null };
+  eq('lookFor: a background the site carries',
+    E.lookFor({ b: 'mtn_peak_dawn' }), { src: '/img/wallpapers/bg/mtn-peak-dawn.jpg', color: null });
+  eq('lookFor: underscores become hyphens throughout',
+    E.lookFor({ b: 'night_stars_over_pines' }).src, '/img/wallpapers/bg/night-stars-over-pines.jpg');
+  eq('lookFor: a background the site lacks falls back to the house photo', E.lookFor({ b: 'mtn_new_one' }), HOUSE);
+  eq('lookFor: a flat color', E.lookFor({ c: '#335577' }), { src: null, color: '#335577' });
+  eq('lookFor: an unknown photo with a color uses the color', E.lookFor({ b: 'mtn_new_one', c: '#335577' }).color, '#335577');
+  eq('lookFor: a known photo wins over a color', E.lookFor({ b: 'desert_dusk', c: '#335577' }).src, '/img/wallpapers/bg/desert-dusk.jpg');
+  eq('lookFor: neither falls back to the house photo', E.lookFor({}), HOUSE);
+  eq('lookFor: a decoded link without b or c', E.lookFor(E.decode(raw({ v: 1, to: 'A', from: 'B', t: 'Hi', a: null, q: null, o: false }))), HOUSE);
+  eq('lookFor: a decoded link with a bad c', E.lookFor(look({ c: 'red' })), HOUSE);
+  eq('lookFor: a decoded link with b', E.lookFor(E.decode(E.encode(good))).src, '/img/wallpapers/bg/mtn-peak-dawn.jpg');
+  eq('backgrounds: sixteen', E.BACKGROUNDS.length, 16);
+  eq('backgrounds: every id is app-shaped', E.BACKGROUNDS.every(function (b) { return /^[a-z0-9_]{1,40}$/.test(b); }), true);
+  eq('backgrounds: every one resolves under /img/wallpapers/bg/',
+    E.BACKGROUNDS.every(function (b) { return /^\/img\/wallpapers\/bg\/[a-z0-9-]+\.jpg$/.test(E.lookFor({ b: b }).src); }), true);
+
+  // ---- the text message a link sealed on the page travels in
+  var link = 'https://mydailies.app/sealed/#abc';
+  eq('message en', E.messageFor('Dana', link, 'en'), 'Dana, I thought of you when I read this.\n' + link);
+  eq('message es', E.messageFor('Dana', link, 'es'), 'Dana, pensé en ti cuando leí esto.\n' + link);
+  eq('message: an unknown language speaks English', E.messageFor('Dana', link, 'fr'), E.messageFor('Dana', link, 'en'));
+  eq('message: a name that looks like a pattern', E.messageFor('$& $1', link, 'en').split('\n')[0], '$& $1, I thought of you when I read this.');
+  eq('message: never says envelope', /envelope/i.test(E.messageFor('Dana', link, 'en')) || /sobre/i.test(E.messageFor('Dana', link, 'es')), false);
+  eq('message: the link on the line after', E.messageFor('Dana', link, 'es').split('\n')[1], link);
+  eq('composer: no open-when chips left', ['en', 'es'].some(function (l) { return 'chips' in E.STRINGS[l] || 'whenLabel' in E.STRINGS[l]; }), false);
+
+  // ---- every invalid reason
+  function reason(frag) { return E.decode(frag).error; }
+  eq('empty: nothing after #', reason(''), 'empty');
+  eq('empty: only #', reason('#'), 'empty');
+  eq('decode: not base64url', reason('not*base64!'), 'decode');
+  eq('decode: impossible length', reason('abcde'), 'decode');
+  eq('decode: not JSON', reason(raw('hello there')), 'decode');
+  eq('decode: invalid UTF-8', reason(btoa('\xff\xfe\xfd').replace(/\//g, '_').replace(/\+/g, '-').replace(/=+$/, '')), 'decode');
+  eq('decode: truncated link', reason(E.encode(good).slice(0, 40)), 'decode');
+  eq('version: v 2', reason(raw(Object.assign({}, good, { v: 2 }))), 'version');
+  eq('version: v missing', reason(raw({ to: 'A', from: 'B', t: 'x' })), 'version');
+  eq('version: v as string', reason(raw(Object.assign({}, good, { v: '1' }))), 'version');
+  eq('field: JSON array', reason(raw([1, 2])), 'field');
+  eq('field: to missing', reason(raw(Object.assign({}, good, { to: undefined }))), 'field');
+  eq('field: to blank', reason(raw(Object.assign({}, good, { to: '   ' }))), 'field');
+  eq('field: to 41 characters', reason(raw(Object.assign({}, good, { to: 'x'.repeat(41) }))), 'field');
+  eq('field: from not a string', reason(raw(Object.assign({}, good, { from: 7 }))), 'field');
+  eq('field: name with a newline', reason(raw(Object.assign({}, good, { from: 'A\nB' }))), 'field');
+  eq('field: t empty', reason(raw(Object.assign({}, good, { t: '' }))), 'field');
+  eq('field: t 601 characters', reason(raw(Object.assign({}, good, { t: 'y'.repeat(601) }))), 'field');
+  eq('field: a is a number', reason(raw(Object.assign({}, good, { a: 5 }))), 'field');
+  eq('field: q not a uuid', reason(raw(Object.assign({}, good, { q: 'abc' }))), 'field');
+  eq('field: o not boolean', reason(raw(Object.assign({}, good, { o: 'yes' }))), 'field');
+  eq('field: p not a string', reason(raw(Object.assign({}, good, { p: 3 }))), 'field');
+  eq('field: n zero', reason(raw(Object.assign({}, good, { n: 0 }))), 'field');
+  eq('field: n fractional', reason(raw(Object.assign({}, good, { n: 2.5 }))), 'field');
+  eq('field: l not a string', reason(raw(Object.assign({}, good, { l: 1 }))), 'field');
+
+  // ---- text size steps (px on a 402px card)
+  eq('textSize 1', E.textSize(1), 33);
+  eq('textSize 80', E.textSize(80), 33);
+  eq('textSize 81', E.textSize(81), 27);
+  eq('textSize 160', E.textSize(160), 27);
+  eq('textSize 161', E.textSize(161), 22);
+  eq('textSize 260', E.textSize(260), 22);
+  eq('textSize 261', E.textSize(261), 18);
+  eq('textSize 600', E.textSize(600), 18);
+
+  // ---- ordinals
+  eq('ordinal 1 en', E.ordinal(1, 'en'), 'first');
+  eq('ordinal 3 en', E.ordinal(3, 'en'), 'third');
+  eq('ordinal 10 en', E.ordinal(10, 'en'), 'tenth');
+  eq('ordinal 11 en', E.ordinal(11, 'en'), 'No. 11');
+  eq('ordinal 14 en', E.ordinal(14, 'en'), 'No. 14');
+  eq('ordinal 1 es', E.ordinal(1, 'es'), 'primer');
+  eq('ordinal 3 es', E.ordinal(3, 'es'), 'tercer');
+  eq('ordinal 10 es', E.ordinal(10, 'es'), 'décimo');
+  eq('ordinal 14 es', E.ordinal(14, 'es'), 'N.º 14');
+
+  // ---- personalize
+  eq('personalize, name at the end', E.personalize('You are not behind, {name}.', 'Dana'), 'You are not behind, Dana.');
+  eq('personalize, name first', E.personalize('{name}, you are early, not late.', 'José'), 'José, you are early, not late.');
+  eq('personalize, Hebrew name', E.personalize('You are allowed to rest, {name}.', 'דנה'), 'You are allowed to rest, דנה.');
+  eq('personalize, no token leaves the line alone', E.personalize('A line with no name.', 'Dana'), 'A line with no name.');
+  eq('personalize, a name that looks like a pattern', E.personalize('Hi {name}.', '$& $1'), 'Hi $& $1.');
+
+  // ---- the house lines
+  eq('house lines: fourteen', E.LINES.length, 14);
+  eq('house lines: every template carries {name} in both languages',
+    E.LINES.every(function (l) { return l[1].indexOf('{name}') !== -1 && l[2].indexOf('{name}') !== -1; }), true);
+  eq('house lines: ids are uuids',
+    E.LINES.every(function (l) { return /^[0-9a-f-]{36}$/.test(l[0]); }), true);
+  var noDash = true;
+  ['en', 'es'].forEach(function (lang) {
+    var S = E.STRINGS[lang];
+    JSON.stringify(S).replace(/\\u2014|—|!/g, function () { noDash = false; });
+  });
+  eq('copy has no em-dash and no exclamation mark', noDash, true);
+
+  function summary() {
+    var s = document.getElementById('summary');
+    s.textContent = 'SUMMARY ' + pass + ' passed, ' + fail + ' failed';
+    s.className = fail ? 'fail' : 'ok';
+  }
+  summary();
+
+  // ---- every listed background is really on the site (over http only)
+  if (location.protocol.indexOf('http') === 0 && window.fetch) {
+    Promise.all(E.BACKGROUNDS.concat(['house']).map(function (b) {
+      var src = b === 'house' ? '/sealed/house.jpg' : E.lookFor({ b: b }).src;
+      return fetch(src, { method: 'HEAD', cache: 'no-store' }).then(function (r) { return r.ok; }, function () { return false; })
+        .then(function (ok) { show(ok, 'served: ' + src); });
+    })).then(summary);
+  }
+})();
+</script>
+</body>
+</html>
