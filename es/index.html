@@ -6,7 +6,7 @@
 <meta name="apple-itunes-app" content="app-id=6804210416">
 <meta name="p:domain_verify" content="801c54653c023cddcd5ceb462975cf7e">
 <title>Dailies: frases motivadoras en tu pantalla de bloqueo</title>
-<meta name="description" content="Dailies te manda frases motivadoras cortas a la pantalla de bloqueo y al widget de la pantalla de inicio. Elige tus temas y tus horarios, y sigue con tu día.">
+<meta name="description" content="Dailies te manda frases motivadoras cortas a la pantalla de bloqueo y al widget de la pantalla de inicio, en un momento distinto cada día. Elige tus temas y tus horarios, y sigue con tu día. Sin anuncios, sin iniciar sesión.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dailies: frases motivadoras en tu pantalla de bloqueo">
 <meta property="og:description" content="Hay días en que necesitas un empujón. Hay días en que necesitas reírte, concentrarte mejor o darte permiso de ser más amable contigo.">
@@ -313,6 +313,55 @@ footer .social{display:flex; align-items:center; gap:6px; margin:-6px auto -6px 
 footer .social a{display:flex; padding:6px}
 footer .social svg{width:16px; height:16px; fill:currentColor}
 
+/* ============ FREE TO TRY ============
+   The wallpaper makers and the envelope pages, between the hero and the
+   app's screenshots. Each card is a picture you can tap, a line of what you
+   get, the topics as their own links (each is its own page), and a button. */
+.free{padding-top:clamp(40px,5vw,64px)}
+.free-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(16px,2.4vw,28px); margin-top:clamp(22px,3vw,34px)}
+.free-card{display:flex; flex-direction:column; border:1px solid var(--rule-soft); border-radius:26px; overflow:hidden;
+  background:linear-gradient(var(--chip),var(--chip)),var(--ground); box-shadow:0 14px 40px rgba(0,0,0,.10)}
+.free-art{position:relative; display:block; height:clamp(210px,24vw,270px); overflow:hidden}
+.free-wall .free-art{background:radial-gradient(120% 120% at 50% 0%,#3b4a38,#141917)}
+.free-env .free-art{background:radial-gradient(120% 120% at 50% 0%,#c8b48d,#8f7550)}
+.free-phone{position:absolute; bottom:-26%; width:30%; aspect-ratio:9/19.5; border-radius:18px; overflow:hidden;
+  border:5px solid #0b0d0c; box-shadow:0 14px 34px rgba(0,0,0,.45); transition:transform .3s}
+.free-phone img{width:100%; height:100%; object-fit:cover; display:block}
+.free-phone:nth-child(1){left:8%; transform:rotate(-8deg) translateY(10px)}
+.free-phone:nth-child(2){left:35%; bottom:-14%; z-index:2}
+.free-phone:nth-child(3){left:62%; transform:rotate(8deg) translateY(10px)}
+.free-wall .free-art:hover .free-phone:nth-child(1){transform:rotate(-10deg) translateY(0)}
+.free-wall .free-art:hover .free-phone:nth-child(3){transform:rotate(10deg) translateY(0)}
+.free-wall .free-art:hover .free-phone:nth-child(2){transform:translateY(-8px)}
+.free-envelope{position:absolute; left:50%; top:54%; width:min(62%,280px); aspect-ratio:1.5; transform:translate(-50%,-50%) rotate(-4deg);
+  transition:transform .3s; filter:drop-shadow(0 18px 30px rgba(40,28,10,.35))}
+.free-env .free-art:hover .free-envelope{transform:translate(-50%,-54%) rotate(-2deg)}
+.free-envelope i{position:absolute; display:block}
+.free-envelope .fe-back{inset:0; border-radius:12px; background:#b99c6c}
+.free-envelope .fe-letter{left:8%; right:8%; top:-18%; height:70%; border-radius:6px; background:#fffaf0; padding:10% 9% 0;
+  font:400 13px/1.35 var(--f-display); color:#3e372d; text-align:center; font-style:normal; overflow:hidden}
+.free-envelope .fe-pocket{inset:0; border-radius:12px; background:linear-gradient(170deg,#efdfbf,#ddc59a); clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%)}
+.free-envelope .fe-seal{left:50%; top:57%; width:44px; height:44px; margin:-22px 0 0 -22px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#c0493f,#86251f 72%); color:#f6e2cf; display:grid; place-items:center;
+  font:500 19px/1 var(--f-display); font-style:normal; box-shadow:0 3px 8px rgba(0,0,0,.3)}
+.free-body{display:flex; flex-direction:column; gap:12px; padding:clamp(20px,2.4vw,28px)}
+.free-body h3{font-family:var(--f-display); font-weight:400; font-size:clamp(23px,2.2vw,28px); line-height:1.15; letter-spacing:-.01em}
+.free-body h3 a{color:inherit; text-decoration:none}
+.free-body p{color:var(--text-dim); font-size:16px; line-height:1.45}
+.free-pick{display:flex; flex-direction:column; gap:10px; margin-top:4px}
+.free-pick-label{font-size:15px; font-weight:600; color:var(--text)}
+.free-topics{display:flex; flex-wrap:wrap; gap:8px}
+.free-topics a{display:inline-flex; align-items:center; gap:4px; padding:8px 10px 8px 14px; border-radius:999px;
+  border:1.5px solid var(--accent-dim); background:var(--chip-on); color:var(--text); font-size:14.5px; font-weight:600;
+  text-decoration:none; transition:background .15s, border-color .15s, transform .15s}
+.free-topics a svg{width:15px; height:15px; color:var(--accent); flex:none}
+.free-topics a:hover{border-color:var(--accent); transform:translateY(-1px)}
+.free-cta{align-self:flex-start; display:inline-flex; align-items:center; gap:8px; margin-top:4px; padding:12px 20px; border-radius:999px;
+  background:var(--accent); color:var(--ground); font-weight:600; font-size:15.5px; text-decoration:none; transition:filter .15s, transform .15s}
+.free-cta:hover{filter:brightness(1.08); transform:translateX(2px)}
+.free-cta svg{width:18px; height:18px}
+@media (max-width:820px){ .free-grid{grid-template-columns:1fr} }
+
 /* ============ RESPONSIVE ============ */
 @media (max-width:940px){
   .hero-in{grid-template-columns:1fr; gap:30px}
@@ -381,21 +430,21 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - motivational quotes","description":"Dailies te manda frases motivadoras cortas a la pantalla de bloqueo y al widget de la pantalla de inicio. Elige tus temas y tus horarios, y sigue con tu día.","url":"https://mydailies.app/es/","inLanguage":"es","operatingSystem":"iOS","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/app/id6804210416","downloadUrl":"https://apps.apple.com/app/id6804210416","sameAs":["https://apps.apple.com/app/id6804210416"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/es/lock-screen.jpg","https://mydailies.app/img/app/es/home-screen.jpg","https://mydailies.app/img/app/es/topics.jpg","https://mydailies.app/img/app/es/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
+{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - motivational quotes","description":"Dailies te manda frases motivadoras cortas a la pantalla de bloqueo y al widget de la pantalla de inicio, en un momento distinto cada día. Elige tus temas y tus horarios, y sigue con tu día. Sin anuncios, sin iniciar sesión.","url":"https://mydailies.app/es/","inLanguage":"es","operatingSystem":"iOS","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/es/lock-screen.jpg","https://mydailies.app/img/app/es/home-screen.jpg","https://mydailies.app/img/app/es/topics.jpg","https://mydailies.app/img/app/es/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies pone frases motivadoras cortas en la pantalla de bloqueo y en la pantalla de inicio.","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/app/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
+{"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies pone frases motivadoras cortas en la pantalla de bloqueo y en la pantalla de inicio.","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"¿Qué es Dailies?","acceptedAnswer":{"@type":"Answer","text":"Dailies es una app de motivación diaria. Te manda frases motivadoras cortas a lo largo del día, elegidas según los temas que sigues, y pone una en tu pantalla de bloqueo y en tu pantalla de inicio. Cuando quieres más, hay un feed para deslizar, y nada que mantener al día."}},
+{"@type":"Question","name":"¿Qué es Dailies?","acceptedAnswer":{"@type":"Answer","text":"Dailies es una app de motivación diaria. Te manda frases motivadoras cortas de los temas que sigues, en un momento distinto cada día dentro de las horas que eliges, y pone una en tu pantalla de bloqueo y en tu pantalla de inicio. No tiene anuncios ni hace falta iniciar sesión. Cuando quieres más, hay un feed para deslizar, y nada que mantener al día."}},
 {"@type":"Question","name":"¿Para quién es Dailies?","acceptedAnswer":{"@type":"Answer","text":"Para quien quiere un empujoncito constante sin sumar otro hábito que cuidar: una frase en la pantalla de bloqueo entre juntas, una tranquila en la noche, una graciosa cuando el día se hace largo."}},
 {"@type":"Question","name":"¿Tengo que abrir la app para recibir mi motivación diaria?","acceptedAnswer":{"@type":"Answer","text":"No. Las frases llegan como notificaciones, y una nueva te espera en la pantalla de bloqueo y en el widget de la pantalla de inicio. Abre la app cuando quieras seguir leyendo, volver a las que guardaste o escribir las tuyas."}},
 {"@type":"Question","name":"¿Puedo elegir qué frases motivadoras recibo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Sigues los temas que te importan (calma, confianza, humor, trabajo, salud, fe, creatividad y más), y Dailies elige entre esos. Cámbialos cuando quieras, junto con cada cuánto sabes de nosotros y las horas en que te parece bien que te lleguen."}},
 {"@type":"Question","name":"¿Dailies puede mandarme frases a horas aleatorias?","acceptedAnswer":{"@type":"Answer","text":"Sí. Elige cuántas frases al día quieres, y las horas y los días en que te parece bien que te lleguen, y Dailies las reparte en ese horario, a horas distintas cada día. Una frase que no esperabas es una frase que de verdad lees. Más en cómo recibir frases motivadoras a horas aleatorias."}},
 {"@type":"Question","name":"¿Puedo tener versículos de la Biblia, filosofía o frases graciosas en mi widget?","acceptedAnswer":{"@type":"Answer","text":"Sí. Sigue los temas de Fe para versículos de la Biblia, los de Sentido y Calma para frases de Marco Aurelio, Lao-Tsé y Montaigne, o los de Humor para frases ingeniosas y amables. Tu widget y tus notificaciones toman de lo que sigues."}},
 {"@type":"Question","name":"¿Dailies funciona en la pantalla de bloqueo del iPhone?","acceptedAnswer":{"@type":"Answer","text":"Sí. Dailies tiene un widget para la pantalla de bloqueo y otro para la pantalla de inicio, así que hay una frase ahí en cuanto tomas el teléfono, sin desbloquear ni abrir nada. Paso a paso: cómo poner frases en la pantalla de bloqueo de tu iPhone y cómo agregar un widget a tu pantalla de inicio."}},
-{"@type":"Question","name":"¿Qué hace diferente a Dailies de otras apps de frases?","acceptedAnswer":{"@type":"Answer","text":"Las frases llegan en momentos distintos dentro de las horas que eliges, en lugar de una vez a la misma hora cada día, así que siguen llamando tu atención. Sigues temas concretos, no categorías amplias, y cada frase dice quién la escribió. Y puedes hacer tuyo el widget, con fotografías, tipografías y efectos sutiles detrás de las palabras. No hay nada que mantener al día: lee una cuando llega, y listo."}},
+{"@type":"Question","name":"¿Qué hace diferente a Dailies de otras apps de frases?","acceptedAnswer":{"@type":"Answer","text":"Las frases llegan en momentos distintos dentro de las horas que eliges, en lugar de una vez a la misma hora cada día, así que siguen llamando tu atención. Sigues temas concretos, no categorías amplias, y cada frase dice quién la escribió. Y puedes hacer tuyo el widget, con fotografías, tipografías y efectos sutiles detrás de las palabras, que se mueven en el widget de la pantalla de inicio. No hay anuncios en ningún nivel ni cuenta que crear. No hay nada que mantener al día: lee una cuando llega, y listo."}},
 {"@type":"Question","name":"¿Qué alternativa hay a la app Motivation?","acceptedAnswer":{"@type":"Answer","text":"Si te gusta Motivation pero quieres temas más concretos, más formas de darle estilo a tu widget o frases que llegan en momentos que Dailies elige dentro de tu horario en lugar de a una hora fija, prueba Dailies. La comparación completa: Dailies vs Motivation."}},
 {"@type":"Question","name":"¿Puedo guardar frases, o escribir las mías?","acceptedAnswer":{"@type":"Answer","text":"Las dos cosas. Dale corazón a las que te lleguen y se guardan en Frases favoritas, y puedes escribir tus propias frases en Mis frases. Con Premium, Dailies te devuelve unas y otras junto con las demás. Lo que escribes y las frases a las que les diste corazón se respaldan en tu cuenta de iCloud, así que no se pierden si cambias de teléfono o lo borras."}},
 {"@type":"Question","name":"¿Dailies es gratis?","acceptedAnswer":{"@type":"Answer","text":"Sí, hay una versión gratis con una selección de temas, fondos y tipografías para elegir. Dailies Premium es una suscripción anual opcional que abre toda la biblioteca: todos los temas, tus Frases favoritas y Mis frases como feeds propios, todos los fondos, todas las tipografías y efectos, tus propias fotos y colores detrás de tus frases, y sin la marca de Dailies en las imágenes que compartes."}},
@@ -428,7 +477,7 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
         <h1>Motivación diaria,<br>directo en tu <em>pantalla de bloqueo.</em></h1>
         <p class="lede">Hay días en que necesitas un empujón. Hay días en que necesitas reírte, concentrarte mejor o darte permiso de ser más amable contigo.</p>
         <div class="cta-row">
-          <a class="store-badge" href="https://apps.apple.com/app/id6804210416?pt=129347926&amp;ct=web-home-es&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-es.svg" width="156" height="52" alt="Descárgalo en el App Store"></a>
+          <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-es&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-es.svg" width="156" height="52" alt="Descárgalo en el App Store"></a>
           <div class="qr">
             <div class="qr-chip"><img src="/img/home/qr-es.svg" alt="Código QR que lleva a Dailies en el App Store"></div>
             <p class="qr-note">Escanéalo con la cámara de tu iPhone para descargar Dailies</p>
@@ -453,6 +502,34 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
   }
 })();
 </script>
+    </div>
+  </section>
+
+  <!-- FREE TO TRY -->
+  <section class="band free" id="free">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Gratis, aquí mismo</div>
+        <h2>Haz uno para ti. Manda uno a alguien.</h2>
+      </div>
+      <div class="free-grid">
+        <div class="free-card free-wall">
+          <a class="free-art" href="/es/fondos-de-pantalla-motivadores/" aria-hidden="true" tabindex="-1"><span class="free-phone"><img src="/img/wallpapers/es/un-ano-de-pasos-pequenos-puede-sorprenderte.jpg" width="540" height="1170" alt="" loading="lazy"></span><span class="free-phone"><img src="/img/wallpapers/es/conserva-la-esperanza-conserva-el-sueno-sigue-adelante.jpg" width="540" height="1170" alt="" loading="lazy"></span><span class="free-phone"><img src="/img/wallpapers/es/puedes-hacer-de-hoy-uno-de-los-dias.jpg" width="540" height="1170" alt="" loading="lazy"></span></a>
+          <div class="free-body">
+            <h3><a href="/es/fondos-de-pantalla-motivadores/">Fondos de pantalla con frases</a></h3>
+            <p>Elige una frase y un fondo, y guárdalo en segundos.</p>
+            <div class="free-pick"><span class="free-pick-label">Crear un fondo</span><div class="free-topics"><a href="/es/fondos-de-pantalla-motivadores/">Motivadoras<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/es/frases-inspiradoras-pantalla-de-bloqueo/">Inspiradoras<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/es/frases-positivas-pantalla-de-bloqueo/">Positivas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a></div></div>
+          </div>
+        </div>
+        <div class="free-card free-env">
+          <a class="free-art" href="/es/palabras-de-aliento/" aria-hidden="true" tabindex="-1"><span class="free-envelope"><i class="fe-back"></i><i class="fe-letter">Mira todo lo que has vivido, y aun así tienes esperanza.</i><i class="fe-pocket"></i><i class="fe-seal">D</i></span></a>
+          <div class="free-body">
+            <h3><a href="/es/palabras-de-aliento/">Manda unas palabras bonitas</a></h3>
+            <p>Le llega un sobre que se abre con tu frase. Sin app.</p>
+            <div class="free-pick"><span class="free-pick-label">Mandar un sobre</span><div class="free-topics"><a href="/es/palabras-de-aliento/">Aliento<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/es/frases-motivadoras-para-enviar/">Para alguien especial<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/es/frases-de-amor-para-tu-pareja/">Amor<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/es/frases-de-buenos-dias/">Buenos días<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a></div></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -542,7 +619,7 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
       <div class="head"><h2>Preguntas.</h2></div>
       <div class="faq">
         <details open><summary>¿Qué es Dailies?</summary>
-          <p>Dailies es una app de motivación diaria. Te manda frases motivadoras cortas a lo largo del día, elegidas según los temas que sigues, y pone una en tu pantalla de bloqueo y en tu pantalla de inicio. Cuando quieres más, hay un feed para deslizar, y nada que mantener al día.</p></details>
+          <p>Dailies es una app de motivación diaria. Te manda frases motivadoras cortas de los temas que sigues, en un momento distinto cada día dentro de las horas que eliges, y pone una en tu pantalla de bloqueo y en tu pantalla de inicio. No tiene anuncios ni hace falta iniciar sesión. Cuando quieres más, hay un feed para deslizar, y nada que mantener al día.</p></details>
         <details><summary>¿Para quién es Dailies?</summary>
           <p>Para quien quiere un empujoncito constante sin sumar otro hábito que cuidar: una frase en la pantalla de bloqueo entre juntas, una tranquila en la noche, una graciosa cuando el día se hace largo.</p></details>
         <details><summary>¿Tengo que abrir la app para recibir mi motivación diaria?</summary>
@@ -556,7 +633,7 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
         <details><summary>¿Dailies funciona en la pantalla de bloqueo del iPhone?</summary>
           <p>Sí. Dailies tiene un widget para la pantalla de bloqueo y otro para la pantalla de inicio, así que hay una frase ahí en cuanto tomas el teléfono, sin desbloquear ni abrir nada. Paso a paso: <a href="/es/guias/frases-en-la-pantalla-de-bloqueo-del-iphone/">cómo poner frases en la pantalla de bloqueo de tu iPhone</a> y <a href="/es/guias/agregar-un-widget-a-la-pantalla-de-inicio/">cómo agregar un widget a tu pantalla de inicio</a>.</p></details>
         <details><summary>¿Qué hace diferente a Dailies de otras apps de frases?</summary>
-          <p>Las frases llegan en momentos distintos dentro de las horas que eliges, en lugar de una vez a la misma hora cada día, así que siguen llamando tu atención. Sigues temas concretos, no categorías amplias, y cada frase dice quién la escribió. Y puedes hacer tuyo el widget, con fotografías, tipografías y efectos sutiles detrás de las palabras. No hay nada que mantener al día: lee una cuando llega, y listo.</p></details>
+          <p>Las frases llegan en momentos distintos dentro de las horas que eliges, en lugar de una vez a la misma hora cada día, así que siguen llamando tu atención. Sigues temas concretos, no categorías amplias, y cada frase dice quién la escribió. Y puedes hacer tuyo el widget, con fotografías, tipografías y efectos sutiles detrás de las palabras, que se mueven en el widget de la pantalla de inicio. No hay anuncios en ningún nivel ni cuenta que crear. No hay nada que mantener al día: lee una cuando llega, y listo.</p></details>
         <details><summary>¿Qué alternativa hay a la app Motivation?</summary>
           <p>Si te gusta Motivation pero quieres temas más concretos, más formas de darle estilo a tu widget o frases que llegan en momentos que Dailies elige dentro de tu horario en lugar de a una hora fija, prueba Dailies. La comparación completa: <a href="/es/comparar/dailies-vs-motivation/">Dailies vs Motivation</a>.</p></details>
         <details><summary>¿Puedo guardar frases, o escribir las mías?</summary>
@@ -574,7 +651,7 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
     <div class="wrap final-in">
       <h2>Empieza hoy con algo bueno.</h2>
       <p class="lede">Configúralo una vez. Dailies se encarga del resto.</p>
-      <a class="store-badge" href="https://apps.apple.com/app/id6804210416?pt=129347926&amp;ct=web-home-es&amp;mt=8" data-download="final"><img src="/img/app-store-badge-es.svg" width="156" height="52" alt="Descárgalo en el App Store"></a>
+      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-es&amp;mt=8" data-download="final"><img src="/img/app-store-badge-es.svg" width="156" height="52" alt="Descárgalo en el App Store"></a>
       <div class="qr">
         <div class="qr-chip"><img src="/img/home/qr-es.svg" alt="Código QR que lleva a Dailies en el App Store"></div>
         <p class="qr-note">Escanéalo con la cámara de tu iPhone para abrir el App Store</p>
