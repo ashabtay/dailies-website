@@ -33,6 +33,7 @@ echo "  /compare    comparison pages"
 echo "  /guides     how-to guides"
 echo "  /blog       motivation posts and quote collections"
 echo "  /about      about page"
+echo "  /sealed/#…  an envelope sealed in the app (needs a link from the app)"
 echo "  /es/  /pt/  the same site in Spanish and Portuguese"
 echo "  /anything   the custom 404"
 echo

@@ -44,6 +44,7 @@ The website for the Dailies app — https://mydailies.app
 | `/inspirational-quotes-lock-screen`, `/positive-quotes-lock-screen` | their `index.html` | Two more wallpaper makers, each with its own lines, in six languages. Same section |
 | `/motivational-quotes-for-a-friend`, `/love-quotes-for-your-partner`, `/good-morning-quotes` | their `index.html` | Three more envelope pages, each with its own lines, in six languages. Same section |
 | `/e/#…` | `e/index.html` | Where a friend opens an envelope. One page for every language, `noindex`, not in the sitemap. Same section |
+| `/sealed/#…` | `sealed/index.html` | Where a friend opens an envelope sealed **in the app** (dailies#185, not live in the app yet). Separate from `/e/`: its own script (`sealed.js`), photo, share card and `app_envelope_*` events. `noindex`, not in the sitemap. See [Envelopes from the app](#envelopes-from-the-app) |
 | `/compare` | `compare/index.html` | Comparison hub, linking the twelve articles below |
 | `/compare/best-motivational-quote-apps` | `compare/best-motivational-quote-apps/index.html` | The best motivational quote apps for iPhone: the five biggest side by side |
 | `/compare/dailies-vs-motivation` | `compare/dailies-vs-motivation/index.html` | Dailies vs Motivation (Monkey Taps) |
@@ -1110,3 +1111,25 @@ Only Safari on iPhone and iPad draws it, and Apple fills in the icon, name,
 rating and View/Open button from the listing, so there is nothing to style.
 Taps on it go straight to Apple and never reach `analytics.js`; App Store
 Connect counts the downloads they lead to as web referrals.
+
+## Envelopes from the app
+
+The app's envelope (dailies#185) seals a line from the reader's own feed and
+sends a link to `https://mydailies.app/sealed/#<base64url(JSON)>`. It is a
+different envelope from the website's own on `/e/`, and the two never touch:
+
+| | `/e/` (the website's envelope) | `/sealed/` (the app's envelope) |
+|---|---|---|
+| Sealed on | the words-of-encouragement pages | the app |
+| Link carries | a site line by id, or own words | the line as text (app version 1 payload: `v`, `to`, `from`, `t`, `a`, `q`, `o`, plus optional `p`, `n`, `w`, `l`) |
+| Script | `envelope.js`, `play.js`, `play-lines.js` | `sealed.js` |
+| Send one back | the encouragement page, names swapped | `dailies://envelope?v=1&e=` into the app, falling back to a small composer on the page |
+| Events | `envelope_*` through `dailiesAnalytics.play()` | `app_envelope_*` through `dailiesAnalytics.envelope()` |
+
+Both use the same `data-consent="deferred"` and `data-analytics="private"`
+switches in `consent.js`, so the names never reach analytics and no ad tag
+loads. The field list and the reasoning are at the top of `sealed.js`; its
+pure functions are checked by `/sealed/test.html` (open it over `./serve.sh`).
+The share card `sealed/og.png` is rendered from `tools/sealed-og.html` with
+the command in its header.
+
