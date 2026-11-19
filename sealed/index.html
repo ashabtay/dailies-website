@@ -277,18 +277,19 @@ h1,h2,p{margin:0}
 }
 .qc-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 34%}
 .qc.flat .qc-img{display:none}
-.qc-scrim{position:absolute; inset:0; background:linear-gradient(180deg,rgba(10,12,10,0) 20%,rgba(10,12,10,.22) 44%,rgba(10,12,10,.66) 72%,rgba(10,12,10,.86) 100%)}
+/* The words sit in the middle now, so the shade is even, a little deeper low. */
+.qc-scrim{position:absolute; inset:0; background:linear-gradient(180deg,rgba(10,12,10,.28) 0%,rgba(10,12,10,.48) 40%,rgba(10,12,10,.6) 100%)}
 /* Longer lines climb into the bright sky, so the scrim climbs with them. */
 .qc[data-fs="22"] .qc-scrim{background:linear-gradient(180deg,rgba(10,12,10,.05) 8%,rgba(10,12,10,.42) 34%,rgba(10,12,10,.74) 60%,rgba(10,12,10,.88) 100%)}
 .qc[data-fs="18"] .qc-scrim{background:linear-gradient(180deg,rgba(10,12,10,.18) 0%,rgba(10,12,10,.6) 22%,rgba(10,12,10,.8) 50%,rgba(10,12,10,.9) 100%)}
-.qc-body{position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:0 8cqw 6.4cqw}
+.qc-body{position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; padding:8cqw 8cqw 6.4cqw}
 .qc-text{
   margin:0; font-family:var(--f-display); font-optical-sizing:auto; font-weight:400;
   font-size:calc(var(--fs,27) * 100cqw / 402); line-height:1.22; letter-spacing:-.012em;
   white-space:pre-line; text-wrap:pretty; overflow-wrap:break-word; text-shadow:0 1px 20px rgba(0,0,0,.5);
 }
 .qc-by{margin-top:3.6cqw; font-family:var(--f-mono); font-size:calc(13.5 * 100cqw / 402); letter-spacing:.04em; color:rgba(246,239,225,.8)}
-.qc-foot{margin-top:6.4cqw; display:flex}
+.qc-foot{position:absolute; left:8cqw; bottom:6.4cqw; display:flex}
 .qc-mark{display:inline-flex; align-items:center; gap:1.8cqw; padding:1.5cqw 3.2cqw 1.5cqw 1.6cqw; border-radius:99px;
   background:rgba(246,239,225,.14); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
   font:600 calc(12.5 * 100cqw / 402)/1 var(--f-body); letter-spacing:-.005em; color:#F6EFE1}
@@ -297,7 +298,7 @@ h1,h2,p{margin:0}
 .qc.land .qc-img{object-position:50% 62%}
 .qc.land .qc-body{padding:0 6.5cqw 5.5cqw}
 .qc.land .qc-text{font-size:calc(var(--fs,27) * 100cqw / 402 * .86); display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden}
-.qc.land .qc-foot{margin-top:4cqw}
+.qc.land .qc-foot{bottom:5.5cqw; left:6.5cqw}
 
 /* =============================================================== INVALID */
 .invalid{display:flex; flex-direction:column; align-items:center; text-align:center}
@@ -510,7 +511,6 @@ h1,h2,p{margin:0}
       </div>
       <div class="o-actions">
         <button class="btn btn-primary btn-big" id="sendBack" type="button"><span id="sendBackLabel"></span></button>
-        <button class="btn btn-ghost btn-big" id="passOn" type="button" data-s="passOn"></button>
         <a class="textlink" data-get-app target="_blank" rel="noopener" data-s="getApp"></a>
         <p class="get-note" hidden data-s="getNote"></p>
         <a class="report" id="report" data-s="report"></a>

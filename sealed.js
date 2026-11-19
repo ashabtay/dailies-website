@@ -129,7 +129,6 @@
       threadNo: 'Envelope No. {n} with {from}',
       ordinals: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth'],
       sendBack: 'Send one back to {from}',
-      passOn: 'Pass it on',
       getApp: 'Get Dailies',
       getNote: 'Once Dailies is installed, come back to this envelope and tap Send one back.',
       report: 'Something wrong with this envelope?',
@@ -142,7 +141,6 @@
       noscript: 'This envelope needs JavaScript to open.',
       // composer
       backTitle: 'Send one back',
-      passTitle: 'Pass it on',
       close: 'Close',
       toLabel: 'To',
       theirName: 'Their name',
@@ -190,7 +188,6 @@
       threadNo: 'Sobre n.º {n} con {from}',
       ordinals: ['primer', 'segundo', 'tercer', 'cuarto', 'quinto', 'sexto', 'séptimo', 'octavo', 'noveno', 'décimo'],
       sendBack: 'Mándale uno a {from}',
-      passOn: 'Pásalo a alguien',
       getApp: 'Descarga Dailies',
       getNote: 'Cuando tengas Dailies, vuelve a este sobre y toca Mándale uno.',
       report: '¿Algo anda mal con este sobre?',
@@ -202,7 +199,6 @@
       badBody: 'Pídele a quien te lo mandó que lo envíe de nuevo, o descarga la app y sella uno tú.',
       noscript: 'Este sobre necesita JavaScript para abrirse.',
       backTitle: 'Mándale uno',
-      passTitle: 'Pásalo a alguien',
       close: 'Cerrar',
       toLabel: 'Para',
       theirName: 'Su nombre',
@@ -409,7 +405,7 @@
   if (!root) return; // loaded by the test page: pure functions only
 
   var params = new URLSearchParams(location.search);
-  var AUTO = params.get('auto'); // debug: 1 opens, compose / pass open the composer
+  var AUTO = params.get('auto'); // debug: 1 opens, compose opens the composer
   var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var PLATFORM = platformGuess();
   var RAW = location.hash.replace(/^#/, '');
@@ -945,7 +941,6 @@
     // A beat to read the line before anything else asks for attention.
     setTimeout(releaseConsent, reduceMotion ? 1200 : 1600);
     if (AUTO === 'compose') openComposer('back');
-    if (AUTO === 'pass') openComposer('pass');
   }
 
   // The whole envelope is a tap target for pointers; keyboard and screen
@@ -1008,8 +1003,9 @@
     if (handoff || sheetIsOpen()) return;
     cta('send_back');
     if (PLATFORM === 'ios' && PAYLOAD_RE.test(RAW)) {
-      // The app decodes `e` itself, records the envelope it received and
-      // opens its own composer with the reply prefilled.
+      // The app only opens: it puts the line on the Home Screen widget for
+      // a day and shows nothing. If it is not there, the page's own
+      // composer takes over.
       handoff = { blurred: false, refocus: 0, timer: setTimeout(handoffFallback, 1200) };
       window.addEventListener('blur', onHandoffBlur);
       window.addEventListener('focus', onHandoffFocus);
@@ -1019,10 +1015,6 @@
       return;
     }
     openComposer('back');
-  });
-  $('#passOn').addEventListener('click', function () {
-    cta('pass_on');
-    openComposer('pass');
   });
 
   /* ============================================================ composer */
@@ -1079,12 +1071,9 @@
     lines = lines.filter(function (l) { return l.id !== ENV.q; });
     var start = Math.floor(Math.random() * lines.length);
     lines = lines.slice(start).concat(lines.slice(0, start));
-    if (mode === 'pass') {
-      lines.unshift({ id: ENV.q, p: ENV.p || null, t: ENV.t, a: ENV.a });
-    }
     C = { mode: mode, lines: lines, idx: 0, sealed: false };
 
-    text($('#sheetTitle'), mode === 'back' ? S.backTitle : S.passTitle);
+    text($('#sheetTitle'), S.backTitle);
     if (mode === 'back') {
       toInput.hidden = true;
       toStatic.hidden = false;
@@ -1117,7 +1106,7 @@
     });
     lastFocus = document.activeElement;
     setTimeout(function () {
-      var f = mode === 'pass' ? toInput : $('#changeLine');
+      var f = $('#changeLine');
       try { f.focus({ preventScroll: true }); } catch (e) {}
     }, reduceMotion ? 0 : 380);
   }
@@ -1298,7 +1287,7 @@
 
   /* ----------------------------------------------------------------- go */
 
-  if (AUTO === 'opened' || AUTO === 'compose' || AUTO === 'pass') {
+  if (AUTO === 'opened' || AUTO === 'compose') {
     reduceMotion = true;
     openEnvelope('debug');
   } else if (AUTO === '1') {
