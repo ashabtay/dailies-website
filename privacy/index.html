@@ -88,7 +88,7 @@
         <ul>
           <li><strong>No account.</strong> You never make one, so there is no email address or password on file.</li>
           <li><strong>Your name and your photos stay on the device.</strong> Only the <em>length</em> of your name is ever sent, to tell a real answer from a keyboard mash.</li>
-          <li><strong>You can switch the app's analytics off</strong> (one switch under Profile → Additional Info), and the website asks before it measures anything. The same switch stops what goes to Meta. On iPhone and iPad, Apple's tracking prompt, shown once during setup, decides whether anything goes to Meta at all: unless you allow it, nothing does. The Android app has no Meta software in it and no tracking prompt.</li>
+          <li><strong>You can switch the app's analytics off</strong> (one switch under Profile → Additional Info), and the website asks before it measures anything. The same switch stops what goes to Meta. On iPhone and iPad, Apple's tracking prompt, shown once during setup, decides whether the app sends anything to Meta: unless you allow it, the app sends nothing. Apple's own anonymous attribution, described in section 4, works either way. The Android app has no Meta software in it and no tracking prompt.</li>
         </ul>
       </section>
 
@@ -166,18 +166,22 @@
         <p><strong>On iPhone and iPad, the app contains Meta's measurement software</strong> (the Facebook SDK), so that when a Facebook or Instagram ad leads to an install we can tell which one. The app shows no ads.</p>
         <p><strong>The Android app does not contain it.</strong> It has no Meta software, asks for no advertising identifier, shows no tracking prompt, and sends Meta nothing. Everything below about Meta and about Apple's search ads applies to iPhone and iPad only.</p>
         <h3>What Meta receives</h3>
-        <p><strong>Only if you allowed Apple's tracking prompt.</strong> If you chose <strong>Ask App Not to Track</strong>, the app sends Meta nothing at all. Apple's own anonymous attribution may still tell Meta that one of its ads led to an install, with nothing about you or your device.</p>
+        <p><strong>Only if you allowed Apple's tracking prompt.</strong> If you chose <strong>Ask App Not to Track</strong>, the app sends Meta nothing at all. Apple's own anonymous attribution, described below, may still tell Meta that one of its ads led to an install and how far that install got, with nothing about you or your device.</p>
         <ul>
           <li><strong>That the app was installed and opened</strong>, with the technical context in section 3 (device model, iOS version, app version, language, and an approximate location derived from your IP address).</li>
+          <li><strong>Four steps, once each, the first time they happen</strong>: that the trial page was shown, that its button was pressed, that a Home Screen widget was added, and that the introduction was finished. Only that the step happened, with no detail about it.</li>
           <li><strong>That a free trial started, or a subscription was bought</strong>, and which plan. Not the price, and not a restored purchase.</li>
           <li><strong>Your device's advertising identifier.</strong> With it, Meta can connect the install to the ad you tapped and to your Meta account.</li>
         </ul>
-        <p>Nothing else from the app goes to Meta: not which screens you use, which quotes you read or heart, your topics, your name, your photos, or anything you type.</p>
+        <p>Nothing else from the app goes to Meta: not which other screens you use, which quotes you read or heart, your topics, your answers in the introduction, your name, your photos, or anything you type.</p>
+        <h3>Apple's anonymous attribution</h3>
+        <p><strong>This works whatever you answered to the tracking prompt.</strong> When an ad on Facebook or Instagram leads to an install, iOS itself can confirm that to Meta, through an Apple system built for this (SKAdNetwork). For it to work, the iPhone and iPad app tells iOS how far the install got, each step once: that the app was opened, that the trial page was shown, that its button was pressed, that a Home Screen widget was added, that the introduction was finished, and that a free trial started. iOS keeps only the furthest of these.</p>
+        <p>The app sends nothing to Meta for this, and Meta's software is not started. A day or more later, your iPhone or iPad sends Meta a short message saying that an install of Dailies came from one of its campaigns and, only when enough other people did the same, the furthest of those steps. The message carries no advertising identifier, no name, no account and nothing else about you or your device, so Meta cannot connect it to you. Apple does not treat this as tracking.</p>
         <h3>Apple's search ads</h3>
         <p>We also advertise in App Store search results. Once per install, the iPhone and iPad app asks Apple whether it was installed from one of those ads, and if so which campaign and search keyword it came from. Apple answers with the ad's details, not yours, and the app records that answer in our analytics (section 3) beside the install identifier, so we can see which ads lead to people actually using the app. This uses Apple's own attribution service, involves no advertising identifier and no tracking, and nothing about it goes to Meta or anyone else.</p>
         <h3>When it starts, and how to switch it off</h3>
-        <p>The same rule as analytics: nothing is sent until you press <strong>Get started</strong> under the line that points to this policy. On iPhone and iPad, the next screen is where iOS shows <strong>Apple's tracking prompt</strong>; choosing <strong>Ask App Not to Track</strong> means the app sends nothing to Meta, and you can change that answer at any time in iOS Settings → Privacy &amp; Security → Tracking.</p>
-        <p>To stop the iPhone or iPad app sending anything to Meta, turn off <strong>Share usage analytics</strong> under <strong>Profile → Additional Info</strong>. It is one switch for both PostHog and Meta; from that moment nothing more is sent to either.</p>
+        <p>The same rule as analytics: nothing is sent until you press <strong>Get started</strong> under the line that points to this policy. On iPhone and iPad, the next screen is where iOS shows <strong>Apple's tracking prompt</strong>; choosing <strong>Ask App Not to Track</strong> means the app sends nothing to Meta (Apple's anonymous attribution above still works), and you can change that answer at any time in iOS Settings → Privacy &amp; Security → Tracking.</p>
+        <p>To stop the iPhone or iPad app sending anything to Meta, turn off <strong>Share usage analytics</strong> under <strong>Profile → Additional Info</strong>. It is one switch for both PostHog and Meta; from that moment nothing more is sent to either, and the app no longer tells iOS about any further step for Apple's anonymous attribution.</p>
         <p>The website carries advertising measurement too, and only behind the cookie banner (see section 5).</p>
       </section>
 
