@@ -498,7 +498,12 @@ def page_wall(page, lang):
                      {"@type": "ListItem", "position": i + 1, "item": {
                          "@type": "ImageObject", "contentUrl": BASE + gallery_file(it, lang),
                          "caption": it["text"][lang], "width": 540, "height": 1170,
-                         "creditText": "Dailies", "creator": {"@type": "Organization", "name": "Dailies"}}}
+                         "creditText": "Dailies", "creator": {"@type": "Organization", "name": "Dailies"},
+                         # Google's image metadata fields. The Terms (English only) say these
+                         # pictures may be shared for personal, non-commercial use; this page
+                         # is where anyone gets them, free.
+                         "license": BASE + "/terms/#sharing", "acquireLicensePage": BASE + url,
+                         "copyrightNotice": "© 2026 Dailies"}}
                      for i, it in enumerate([it for it in its if gallery_pick(it, page)])]}}
 
     body = f"""<body>
