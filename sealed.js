@@ -146,6 +146,8 @@
       close: 'Close',
       toLabel: 'To',
       theirName: 'Their name',
+      noteLabel: 'A short line',
+      noteHint: 'Optional, under their name',
       yourName: 'Your name',
       someone: 'someone',
       changeLine: 'Change line',
@@ -204,6 +206,8 @@
       close: 'Cerrar',
       toLabel: 'Para',
       theirName: 'Su nombre',
+      noteLabel: 'Una frase corta',
+      noteHint: 'Opcional, bajo su nombre',
       yourName: 'Tu nombre',
       someone: 'alguien',
       changeLine: 'Cambiar frase',
@@ -308,7 +312,20 @@
     // never the envelope.
     if (typeof obj.b === 'string' && BG_ID.test(obj.b)) env.b = obj.b;
     if (typeof obj.c === 'string' && HEX.test(obj.c)) env.c = obj.c;
+    var m = cleanNote(obj.m);
+    if (m) env.m = m;
     return env;
+  }
+
+  /* A short line written under the name: one line, at most MAX_NOTE
+     characters, or nothing. Decoration, so a bad one is dropped, never the
+     envelope. The app's EnvelopePayload.cleanNote does the same. */
+  var MAX_NOTE = 60;
+  function cleanNote(raw) {
+    if (typeof raw !== 'string') return null;
+    var s = raw.replace(/\s+/g, ' ').trim();
+    if (!s || chars(s) > MAX_NOTE) return null;
+    return s;
   }
 
   /* The fragment (without the #) to an envelope, or {error: reason}. */
@@ -566,8 +583,17 @@
   function paintName(el, to) {
     fill(el, S.forName, { to: to });
     var n = chars(S.forName.replace('{to}', '').trim()) + 1 + chars(to);
-    var size = Math.max(5.5, Math.min(10.3, 80 / (0.37 * n)));
+    var size = Math.max(5.5, Math.min(9.5, 84 / (0.37 * n)));
     el.style.setProperty('--nfs', size.toFixed(2) + 'cqw');
+  }
+
+  /* The short line under the name, shrunk the same way. */
+  function paintNote(el, note) {
+    if (!note) { el.hidden = true; return; }
+    text(el, note);
+    var size = Math.max(3.6, Math.min(6, 84 / (0.37 * chars(note))));
+    el.style.setProperty('--mfs', size.toFixed(2) + 'cqw');
+    el.hidden = false;
   }
 
   function paintPostmark(pm, n) {
@@ -593,12 +619,8 @@
   $('#seal').setAttribute('aria-label', S.sealAria);
 
   paintName($('.env-for', env), ENV.to);
-  if (ENV.w) {
-    var note = $('.env-note', env);
-    text(note, S.when[ENV.w]);
-    note.hidden = false;
-    env.classList.add('has-note');
-  }
+  // The sender's own line, or, on an older link, its "open when".
+  paintNote($('.env-note', env), ENV.m || (ENV.w ? S.when[ENV.w] : null));
   paintStamp($('.stamp', env), LOOK);
   paintPostmark($('.postmark', env), ENV.n || 1);
 
@@ -897,6 +919,7 @@
   var toInput = $('#toInput');
   var toStatic = $('#toStatic');
   var fromInput = $('#fromInput');
+  var noteInput = $('#noteInput');
   var sealBtn = $('#sealBtn');
   var bigSeal = $('#bigSeal');
   var C = null; // the composer's state
@@ -957,6 +980,7 @@
       toInput.value = '';
     }
     fromInput.value = ENV.to;
+    noteInput.value = '';
 
     sheet.setAttribute('data-step', 'compose');
     mini.classList.remove('is-sealed');
@@ -1007,6 +1031,7 @@
     var to = validName(currentTo());
     paintName($('.env-for', mini), to || S.someone);
     $('.env-for', mini).classList.toggle('placeholder', !to);
+    paintNote($('.env-note', mini), cleanNote(noteInput.value));
     paintPostmark($('.postmark', mini), C.mode === 'back' ? (ENV.n || 1) + 1 : 1);
 
     var line = currentLine();
@@ -1021,6 +1046,7 @@
 
   toInput.addEventListener('input', paintComposer);
   fromInput.addEventListener('input', paintComposer);
+  noteInput.addEventListener('input', paintComposer);
 
   $('#changeLine').addEventListener('click', function () {
     if (!C || C.sealed) return;
@@ -1053,6 +1079,8 @@
     if (line.p) obj.p = line.p;
     obj.n = C.mode === 'back' ? (ENV.n || 1) + 1 : 1;
     obj.l = LANG;
+    var note = cleanNote(noteInput.value);
+    if (note) obj.m = note;
     var check = validate(obj);
     if (check.error) return null;
     var link = location.origin + '/sealed/#' + encode(obj);

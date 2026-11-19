@@ -1121,7 +1121,7 @@ different envelope from the website's own on `/e/`, and the two never touch:
 | | `/e/` (the website's envelope) | `/sealed/` (the app's envelope) |
 |---|---|---|
 | Sealed on | the words-of-encouragement pages | the app |
-| Link carries | a site line by id, or own words | the line as text (app version 1 payload: `v`, `to`, `from`, `t`, `a`, `q`, `o`, plus optional `p`, `n`, `w` (older links), `l`, `b`, `c`) |
+| Link carries | a site line by id, or own words | the line as text (app version 1 payload: `v`, `to`, `from`, `t`, `a`, `q`, `o`, plus optional `p`, `n`, `w` (older links), `l`, `b`, `c`, `m`) |
 | Script | `envelope.js`, `play.js`, `play-lines.js` | `sealed.js` |
 | Send one back | the encouragement page, names swapped | `dailies://envelope?v=1&e=` into the app, falling back to a small composer on the page |
 | Events | `envelope_*` through `dailiesAnalytics.play()` | `app_envelope_*` through `dailiesAnalytics.envelope()` |

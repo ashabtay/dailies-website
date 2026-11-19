@@ -89,6 +89,15 @@
   eq('c: a number is dropped', look({ c: 3355 }).c, undefined);
   eq('c: a bad one still opens the envelope', look({ c: 'nope' }).from, 'Amit');
 
+  // ---- m: the short line under the name, tidied; a bad one is dropped, never fatal
+  eq('m: kept', look({ m: 'for the hard Mondays' }).m, 'for the hard Mondays');
+  eq('m: whitespace folded to one line', look({ m: '  for the\nhard   Mondays ' }).m, 'for the hard Mondays');
+  eq('m: 60 characters is fine', look({ m: '\u00e9'.repeat(60) }).m, '\u00e9'.repeat(60));
+  eq('m: 61 characters is dropped', look({ m: 'a'.repeat(61) }).m, undefined);
+  eq('m: blank is dropped', look({ m: '   ' }).m, undefined);
+  eq('m: a number is dropped', look({ m: 7 }).m, undefined);
+  eq('m: a bad one still opens the envelope', look({ m: 7 }).from, 'Amit');
+
   // ---- which picture the letter, card and stamp are printed with
   var HOUSE = { src: '/sealed/house.jpg', color: null };
   eq('lookFor: a background the site carries',
