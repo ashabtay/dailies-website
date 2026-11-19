@@ -55,12 +55,9 @@
 (function () {
   'use strict';
 
-  // Where every "Get Dailies" goes: the App Store, with this page's own
-  // campaign token so its installs read apart from /e/'s `web-envelope`.
+  // Where every App Store badge goes, with this page's own campaign token
+  // so its installs read apart from /e/'s `web-envelope`.
   var APP_URL = 'https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&ct=web-app-envelope&mt=8';
-
-  // The address the site's help and about pages use.
-  var SUPPORT = 'help@mydailies.app';
 
   var MAX_NAME = 40;
   var MAX_TEXT = 600;
@@ -129,11 +126,8 @@
       threadNo: 'Envelope No. {n} with {from}',
       ordinals: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth'],
       sendBack: 'Send one back to {from}',
-      getApp: 'Get Dailies',
+      badgeAlt: 'Download on the App Store',
       getNote: 'Once Dailies is installed, come back to this envelope and tap Send one back.',
-      report: 'Something wrong with this envelope?',
-      reportSubject: 'Something wrong with an envelope',
-      reportBody: 'This envelope did not look right:',
       privacy: 'Privacy',
       cookies: 'Cookie settings',
       badTitle: 'This envelope didn’t survive the trip.',
@@ -149,9 +143,12 @@
       yourName: 'Your name',
       someone: 'someone',
       changeLine: 'Change line',
-      sealIt: 'Seal it',
-      sealHint: 'Or press and hold the seal',
-      needNames: 'Add both names to seal it',
+      writeOwn: 'Write your own',
+      useLine: 'Use a line',
+      ownHint: 'Write your own words',
+      holdToSeal: 'Hold to seal',
+      sealHint: 'Press and hold the wax to seal it.',
+      needNames: 'Add both names, then hold the wax to seal it.',
       sealedTitle: 'Sealed. Now send it.',
       share: 'Share',
       whatsapp: 'WhatsApp',
@@ -188,11 +185,8 @@
       threadNo: 'Sobre n.º {n} con {from}',
       ordinals: ['primer', 'segundo', 'tercer', 'cuarto', 'quinto', 'sexto', 'séptimo', 'octavo', 'noveno', 'décimo'],
       sendBack: 'Mándale uno a {from}',
-      getApp: 'Descarga Dailies',
+      badgeAlt: 'Descárgalo en el App Store',
       getNote: 'Cuando tengas Dailies, vuelve a este sobre y toca Mándale uno.',
-      report: '¿Algo anda mal con este sobre?',
-      reportSubject: 'Algo anda mal con un sobre',
-      reportBody: 'Este sobre no se veía bien:',
       privacy: 'Privacidad',
       cookies: 'Cookies',
       badTitle: 'Este sobre no sobrevivió el viaje.',
@@ -207,9 +201,12 @@
       yourName: 'Tu nombre',
       someone: 'alguien',
       changeLine: 'Cambiar frase',
-      sealIt: 'Sellar',
-      sealHint: 'O mantén presionado el sello',
-      needNames: 'Escribe los dos nombres para sellarlo',
+      writeOwn: 'Escribe la tuya',
+      useLine: 'Usar una frase',
+      ownHint: 'Escribe tus propias palabras',
+      holdToSeal: 'Mantén presionado para sellar',
+      sealHint: 'Mantén presionada la cera para sellarlo.',
+      needNames: 'Escribe los dos nombres y mantén presionada la cera para sellarlo.',
       sealedTitle: 'Listo, está sellado. Ahora envíalo.',
       share: 'Compartir',
       whatsapp: 'WhatsApp',
@@ -485,8 +482,14 @@
   $all('[data-s-aria]').forEach(function (el) { el.setAttribute('aria-label', S[el.getAttribute('data-s-aria')]); });
   $all('[data-s-placeholder]').forEach(function (el) { el.setAttribute('placeholder', S[el.getAttribute('data-s-placeholder')]); });
 
+  // Apple's badge, in the page's language, as play.js draws it elsewhere.
   function wireGetApp(a) {
     a.href = APP_URL;
+    var img = $('img', a);
+    if (img) {
+      img.src = '/img/app-store-badge' + (LANG === 'en' ? '' : '-' + LANG) + '.svg';
+      img.alt = S.badgeAlt;
+    }
     a.addEventListener('click', function () {
       cta('get_app');
       $all('.get-note').forEach(function (n) { n.hidden = false; });
@@ -634,12 +637,6 @@
   }
   fill($('#sendBackLabel'), S.sendBack, { from: ENV.from });
 
-  var report = $('#report');
-  report.href = 'mailto:' + SUPPORT +
-    '?subject=' + encodeURIComponent(S.reportSubject) +
-    '&body=' + encodeURIComponent(S.reportBody + '\n\n' + location.href + '\n');
-  report.addEventListener('click', function () { cta('report'); });
-
   track('viewed', baseProps());
 
   /* ---------------------------------------------------- hold on the seal */
@@ -650,30 +647,39 @@
 
   var HOLD_MS = 600;
 
-  function holdable(sealEl, onDone, onTap) {
+  /* opts (all optional): ms, how long the hold takes; progress(p), called
+     every frame of a hold with 0..1; release(p), a hold let go before the
+     end, with how far it got. */
+  function holdable(sealEl, onDone, onTap, opts) {
+    opts = opts || {};
+    var ms = opts.ms || HOLD_MS;
     var ring = $('.seal-ring', sealEl);
     var arc = ring && $('.ring-arc', ring);
-    var raf = 0, start = 0, active = false, pid = null;
+    var raf = 0, start = 0, active = false, pid = null, last = 0;
 
     function paint(p) {
+      last = p;
       if (arc) arc.style.strokeDashoffset = String(100 - p * 100);
+      if (opts.progress) opts.progress(p);
     }
     function stop() {
       active = false;
       cancelAnimationFrame(raf);
       sealEl.classList.remove('holding');
+      var got = last;
       paint(0);
+      if (opts.release) opts.release(got);
     }
     function frame(now) {
       if (!active) return;
-      var p = Math.min(1, (now - start) / HOLD_MS);
+      var p = Math.min(1, (now - start) / ms);
       paint(p);
       if (p >= 1) {
         active = false;
         sealEl.classList.remove('holding');
         sealEl.classList.add('held');
         try { if (navigator.vibrate) navigator.vibrate(20); } catch (e) {}
-        onDone();
+        onDone('hold');
         return;
       }
       raf = requestAnimationFrame(frame);
@@ -681,6 +687,10 @@
     sealEl.addEventListener('pointerdown', function (e) {
       if (sealEl.disabled || (e.button !== undefined && e.button > 0)) return;
       e.preventDefault();
+      // A name still being typed: let the keyboard go, so the envelope is
+      // in full view while it closes.
+      var ae = document.activeElement;
+      if (ae && ae !== sealEl && ae.blur && /INPUT|TEXTAREA/.test(ae.tagName)) ae.blur();
       pid = e.pointerId;
       try { sealEl.setPointerCapture(pid); } catch (err) {}
       active = true;
@@ -701,7 +711,7 @@
     // it would open a second time.
     sealEl.addEventListener('click', function (e) {
       e.stopPropagation();
-      if (e.detail === 0) onDone(); // keyboard
+      if (e.detail === 0) onDone('key'); // keyboard
     });
     sealEl.addEventListener('contextmenu', function (e) { e.preventDefault(); });
   }
@@ -975,13 +985,14 @@
     clearTimeout(handoff.refocus);
     window.removeEventListener('blur', onHandoffBlur);
     window.removeEventListener('focus', onHandoffFocus);
-    window.removeEventListener('pagehide', endHandoff);
+    window.removeEventListener('pagehide', onHandoffVisibility);
     document.removeEventListener('visibilitychange', onHandoffVisibility);
     handoff = null;
   }
   function handoffFallback() {
     if (!handoff || document.visibilityState !== 'visible') return;
     endHandoff();
+    cta('handoff_web');
     openComposer('back');
   }
   function onHandoffBlur() {
@@ -996,7 +1007,11 @@
     handoff.refocus = setTimeout(handoffFallback, 600);
   }
   function onHandoffVisibility() {
-    if (document.visibilityState === 'hidden') endHandoff();
+    if (document.visibilityState !== 'hidden' || !handoff) return;
+    // The app took over. Sent as the page hides, so a slow network can
+    // lose a few of these: read handoff_web as the firmer number.
+    cta('handoff_app');
+    endHandoff();
   }
 
   $('#sendBack').addEventListener('click', function () {
@@ -1009,7 +1024,7 @@
       handoff = { blurred: false, refocus: 0, timer: setTimeout(handoffFallback, 1200) };
       window.addEventListener('blur', onHandoffBlur);
       window.addEventListener('focus', onHandoffFocus);
-      window.addEventListener('pagehide', endHandoff);
+      window.addEventListener('pagehide', onHandoffVisibility);
       document.addEventListener('visibilitychange', onHandoffVisibility);
       location.href = 'dailies://envelope?v=1&e=' + RAW;
       return;
@@ -1018,18 +1033,26 @@
   });
 
   /* ============================================================ composer */
+  /* The app's composer, small: the letter stands in an open envelope, the
+     names are typed under it, and the wax on the flap's tip is the one way
+     to seal - press and hold, and the letter goes in and the flap comes
+     over as the ring fills (lib/screens/envelope_screen.dart). The letter is
+     one of the house lines, or the writer's own words. */
 
   var sheet = $('#sheet');
   var scrim = $('#scrim');
   var mini = $('#miniEnv');
   var miniCard = $('#miniCard');
+  var miniSeal = $('#miniSeal');
+  var ownInput = $('#ownInput');
   var toInput = $('#toInput');
   var toStatic = $('#toStatic');
   var fromInput = $('#fromInput');
   var noteInput = $('#noteInput');
-  var sealBtn = $('#sealBtn');
-  var bigSeal = $('#bigSeal');
+  var holdArc = $('.hold-arc', mini);
+  var holdText = $('#holdText');
   var C = null; // the composer's state
+  var SEAL_MS = 1000; // the app's hold
 
   // An envelope sealed here carries no look of its own - the person writing
   // it has none - so the small one is printed with the house photograph,
@@ -1042,12 +1065,30 @@
     var house = { src: HOUSE, color: null };
     paintLook(miniCard, house);
     paintStamp($('.stamp', mini), house);
+    fitHoldText();
+  }
+
+  /* "Hold to seal" round the lower edge of the wax, never more than about
+     two thirds of the way round, as the app sets it. */
+  function fitHoldText() {
+    text(holdText, S.holdToSeal.toUpperCase());
+    try {
+      var most = Math.PI * 60.3 * 1.15;
+      var len = holdText.getComputedTextLength();
+      if (len > most) {
+        var k = most / len;
+        holdText.parentNode.style.fontSize = (13 * k).toFixed(2) + 'px';
+        holdText.parentNode.style.letterSpacing = (2 * k).toFixed(2) + 'px';
+      }
+    } catch (e) {}
   }
 
   function currentTo() { return C.mode === 'back' ? ENV.from : toInput.value.trim(); }
   function currentFrom() { return fromInput.value.trim(); }
+  function ownText() { return ownInput.value.replace(/\s+/g, ' ').trim(); }
 
   function currentLine() {
+    if (C.own) return { id: null, p: null, a: null, text: ownText(), own: true };
     var line = C.lines[C.idx];
     // No name typed yet: the line shows a gap where it will go.
     var to = validName(currentTo()) || '___';
@@ -1055,7 +1096,8 @@
       id: line.id,
       p: line.p,
       a: line.a,
-      text: line.p ? personalize(line.p, to) : line.t
+      text: line.p ? personalize(line.p, to) : line.t,
+      own: false
     };
   }
 
@@ -1071,7 +1113,7 @@
     lines = lines.filter(function (l) { return l.id !== ENV.q; });
     var start = Math.floor(Math.random() * lines.length);
     lines = lines.slice(start).concat(lines.slice(0, start));
-    C = { mode: mode, lines: lines, idx: 0, sealed: false };
+    C = { mode: mode, lines: lines, idx: 0, sealed: false, own: false, swapping: false, step: 'compose', sent: false };
 
     text($('#sheetTitle'), S.backTitle);
     if (mode === 'back') {
@@ -1085,15 +1127,15 @@
     }
     fromInput.value = ENV.to;
     noteInput.value = '';
+    ownInput.value = '';
+    miniCard.classList.remove('writing');
 
     sheet.setAttribute('data-step', 'compose');
-    mini.classList.remove('is-sealed');
+    mini.classList.remove('is-sealed', 'held', 'past', 'holding', 'spring');
     mini.classList.add('is-open');
-    $('.seal', mini).style.opacity = '';
-    bigSeal.classList.remove('held');
-    bigSeal.disabled = false;
     $('#copyBtn .lbl').textContent = S.copy;
     paintComposer();
+    cta('composer_opened', { mode: mode });
 
     scrim.hidden = false;
     sheet.hidden = false;
@@ -1113,6 +1155,11 @@
 
   var lastFocus = null;
   function closeComposer() {
+    if (sheet.hidden) return;
+    if (C && !C.closed) {
+      C.closed = true;
+      cta('composer_closed', { step: C.sent ? 'sent' : C.step, mode: C.own ? 'own' : 'line' });
+    }
     sheet.classList.remove('on');
     scrim.classList.remove('on');
     document.documentElement.classList.remove('sheet-open');
@@ -1130,6 +1177,11 @@
     if (e.key === 'Escape' && !sheet.hidden) closeComposer();
   });
 
+  function ready() {
+    var line = currentLine();
+    return !!(validName(currentTo()) && validName(currentFrom()) && line.text);
+  }
+
   function paintComposer() {
     if (!C) return;
     var to = validName(currentTo());
@@ -1139,31 +1191,93 @@
     paintPostmark($('.postmark', mini), C.mode === 'back' ? (ENV.n || 1) + 1 : 1);
 
     var line = currentLine();
-    buildCard(miniCard, line.text, line.a);
+    if (C.own) sizeOwn();
+    else buildCard(miniCard, line.text, line.a);
 
-    var ok = !!(to && validName(currentFrom()));
-    sealBtn.disabled = !ok;
-    bigSeal.disabled = !ok;
-    bigSeal.classList.toggle('ready', ok);
-    text($('#sealHint'), ok ? S.sealHint : S.needNames);
+    $('#changeLine').hidden = C.own;
+    text($('#ownToggleLabel'), C.own ? S.useLine : S.writeOwn);
+
+    var ok = ready();
+    var was = mini.classList.contains('ready');
+    mini.classList.toggle('ready', ok);
+    miniSeal.disabled = !ok;
+    var say = $('#sealHint');
+    text(say, ok ? S.sealHint : C.own && !line.text ? S.ownHint : S.needNames);
+    say.classList.toggle('ready', ok);
+    // The wax arriving, with a glint.
+    if (ok && !was && !C.sealed) {
+      setTimeout(function () {
+        if (!C || !mini.classList.contains('ready')) return;
+        var g = centerOf($('.seal-ghost', mini));
+        sparkles.burst(g.x, g.y, { count: 12, speed: 100, size: 14, life: 0.9 });
+      }, 260);
+    }
+  }
+
+  /* The own words set the size the letter would set them at, and the box
+     grows with them. */
+  function sizeOwn() {
+    var n = chars(ownText()) || chars(S.ownHint);
+    miniCard.style.setProperty('--fs', textSize(n));
+    ownInput.style.height = 'auto';
+    ownInput.style.height = ownInput.scrollHeight + 'px';
   }
 
   toInput.addEventListener('input', paintComposer);
   fromInput.addEventListener('input', paintComposer);
   noteInput.addEventListener('input', paintComposer);
+  ownInput.addEventListener('input', paintComposer);
+  // A line, not a letter: return moves on.
+  ownInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      var next = C && C.mode !== 'back' && !toInput.value.trim() ? toInput : fromInput;
+      try { next.focus(); } catch (err) {}
+    }
+  });
+
+  /* The letter goes down into the envelope, [swap] changes it, and it comes
+     back up with a little dust - the app's letter rising out of its pocket.
+     Taps while it is moving are ignored. */
+  function swapLetter(swap, then) {
+    if (!C || C.sealed || C.swapping) return;
+    if (reduceMotion || !miniCard.animate) { swap(); paintComposer(); if (then) then(); return; }
+    C.swapping = true;
+    anim(miniCard, [{ transform: 'translateY(0)' }, { transform: 'translateY(96%)' }],
+      { duration: 230, easing: 'cubic-bezier(.5,0,.75,0)', fill: 'forwards' }).then(function () {
+      swap();
+      paintComposer();
+      var m = mini.getBoundingClientRect();
+      sparkles.dust(m.left + m.width / 2, m.top + 4, { count: 10, jitter: m.width * 0.3, jitterY: 4, dy: -70, size: 14, life: 1.2 });
+      return anim(miniCard, [
+        { transform: 'translateY(96%)' },
+        { transform: 'translateY(-3%)', offset: 0.75 },
+        { transform: 'translateY(0)' }
+      ], { duration: 460, easing: 'cubic-bezier(.2,.75,.3,1)', fill: 'forwards' });
+    }).then(function () {
+      try { miniCard.getAnimations().forEach(function (a) { a.cancel(); }); } catch (e) {}
+      if (C) C.swapping = false;
+      if (then) then();
+    });
+  }
 
   $('#changeLine').addEventListener('click', function () {
-    if (!C || C.sealed) return;
-    C.idx = (C.idx + 1) % C.lines.length;
-    var card = miniCard;
-    if (!reduceMotion && card.animate) {
-      anim(card, [{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(6px)' }],
-        { duration: 140, easing: 'ease-in' }).then(function () {
-        paintComposer();
-        anim(card, [{ opacity: 0, transform: 'translateY(-6px)' }, { opacity: 1, transform: 'translateY(0)' }],
-          { duration: 220, easing: 'ease-out' });
-      });
-    } else paintComposer();
+    if (!C || C.sealed || C.swapping) return;
+    cta('change_line');
+    swapLetter(function () { C.idx = (C.idx + 1) % C.lines.length; });
+  });
+
+  $('#ownToggle').addEventListener('click', function () {
+    if (!C || C.sealed || C.swapping) return;
+    var toOwn = !C.own;
+    cta(toOwn ? 'write_own' : 'use_line');
+    swapLetter(function () {
+      C.own = toOwn;
+      miniCard.classList.toggle('writing', toOwn);
+      if (!toOwn) miniCard.style.removeProperty('--fs');
+    }, function () {
+      if (toOwn) try { ownInput.focus({ preventScroll: true }); } catch (e) {}
+    });
   });
 
   /* The new envelope, exactly as the app would build it. */
@@ -1178,7 +1292,7 @@
       t: line.text,
       a: line.a || null,
       q: line.id || null,
-      o: false
+      o: !!line.own
     };
     if (line.p) obj.p = line.p;
     obj.n = C.mode === 'back' ? (ENV.n || 1) + 1 : 1;
@@ -1191,13 +1305,55 @@
     return { link: link, message: messageFor(to, link, LANG), to: to };
   }
 
-  function sealIt() {
+  /* -------------------------------------------------- the hold on the wax */
+
+  function ease(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+  function clamp01(t) { return Math.max(0, Math.min(1, t)); }
+
+  function holdProgress(p) {
+    if (!C || C.sealed) return;
+    mini.classList.toggle('holding', p > 0);
+    // Holding draws the letter down into the pocket and then folds the
+    // flap over it, as in the app.
+    var fold = ease(clamp01((p - 0.3) / 0.7));
+    mini.style.setProperty('--down', ease(clamp01(p / 0.45)).toFixed(4));
+    mini.style.setProperty('--fold', fold.toFixed(4));
+    mini.style.setProperty('--press', p.toFixed(4));
+    mini.classList.toggle('past', fold > 0.5);
+    holdArc.style.strokeDashoffset = String(100 - p * 100);
+    holdText.parentNode.style.opacity = String(1 - clamp01(p * 4));
+    // Heat coming off the wax while it is held.
+    if (p > 0.05 && !reduceMotion && Math.random() < 0.3 + 0.4 * p) {
+      var g = centerOf($('.seal-ghost', mini));
+      var a = Math.random() * 6.283, r = g.r.width * 0.42;
+      sparkles.dust(g.x + Math.cos(a) * r, g.y + Math.sin(a) * r, { count: 1, jitter: 2, dy: -40, size: 10 + 8 * p, life: 0.8 });
+    }
+  }
+
+  function holdReleased(p) {
+    if (!C || C.sealed) return;
+    if (p > 0 && p < 1) {
+      cta('hold_released', { progress: Math.round(p * 100) / 100 });
+      // Let go too soon: the paper springs back open.
+      mini.classList.add('spring');
+      setTimeout(function () { mini.classList.remove('spring'); }, 450);
+    }
+    mini.classList.remove('holding', 'past');
+    mini.style.removeProperty('--down');
+    mini.style.removeProperty('--fold');
+    mini.style.removeProperty('--press');
+    holdArc.style.strokeDashoffset = '100';
+    holdText.parentNode.style.opacity = '';
+  }
+
+  function sealIt(how) {
     if (!C || C.sealed) return;
     var built = buildLink();
-    if (!built) { paintComposer(); return; }
+    if (!built) { holdReleased(0); paintComposer(); return; }
     C.sealed = true;
     C.built = built;
-    cta('web_sealed');
+    C.step = 'sealed';
+    cta('web_sealed', { mode: C.own ? 'own' : 'line', how: how === 'hold' ? 'hold' : 'key' });
     try { if (navigator.vibrate) navigator.vibrate(20); } catch (e) {}
 
     var wa = $('#waBtn');
@@ -1207,41 +1363,68 @@
     sms.hidden = !(PLATFORM === 'ios' || PLATFORM === 'android' || /Macintosh/.test(navigator.userAgent));
     $('#shareBtn').hidden = !navigator.share;
     $('#sentBlock').hidden = true;
+    if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
 
-    mini.classList.remove('is-open');
+    var held = how === 'hold';
+    // After a hold the letter is already in and the flap already over, so
+    // the wax lands at once; from the keyboard the envelope closes first.
+    mini.classList.toggle('held', held);
+    mini.classList.remove('is-open', 'holding', 'past');
     mini.classList.add('is-sealed');
-    bigSeal.classList.add('held');
-    bigSeal.disabled = true;
+    mini.style.removeProperty('--down');
+    mini.style.removeProperty('--fold');
+    mini.style.removeProperty('--press');
+    holdArc.style.strokeDashoffset = '100';
+    holdText.parentNode.style.opacity = '';
     sheet.setAttribute('data-step', 'sealed');
+
+    var delay = held ? 0 : 640;
     var ms = $('.seal', mini);
     setTimeout(function () {
       var mc = centerOf(ms);
-      sparkles.burst(mc.x, mc.y, { count: 26, speed: 200, size: 22 });
-    }, 640);
+      sparkles.burst(mc.x, mc.y, { count: 40, speed: 260, size: 26, life: 1.3 });
+      sparkles.burst(mc.x, mc.y, { count: 12, speed: 110, size: 12, life: 0.8, ember: true });
+      if (reduceMotion) return;
+      anim($('.impact', mini), [
+        { transform: 'translate(-50%,-50%) scale(1)', opacity: 1 },
+        { transform: 'translate(-50%,-50%) scale(3.6)', opacity: 0 }
+      ], { duration: 820, easing: 'cubic-bezier(.2,.7,.3,1)' });
+      anim($('.sheen', mini), [
+        { opacity: 1, transform: 'translateX(-100%)' },
+        { opacity: 1, transform: 'translateX(100%)' }
+      ], { duration: 900, delay: 280, easing: 'ease-in-out' });
+    }, delay);
     if (!reduceMotion && ms.animate) {
-      anim(ms, [
+      // The app's wax: in large, pressed down, a small elastic settle.
+      anim(ms, held ? [
+        { transform: 'translate(-50%,-50%) scale(1.45)', opacity: 0 },
+        { transform: 'translate(-50%,-50%) scale(.95)', opacity: 1, offset: 0.35 },
+        { transform: 'translate(-50%,-50%) scale(1.02)', opacity: 1, offset: 0.7 },
+        { transform: 'translate(-50%,-50%) scale(1)', opacity: 1 }
+      ] : [
         { transform: 'translate(-50%,-50%) scale(1.9)', opacity: 0 },
         { transform: 'translate(-50%,-50%) scale(1.9)', opacity: 0, offset: 0.45 },
         { transform: 'translate(-50%,-50%) scale(.9)', opacity: 1, offset: 0.8 },
         { transform: 'translate(-50%,-50%) scale(1)', opacity: 1 }
-      ], { duration: 820, easing: 'cubic-bezier(.3,0,.3,1)' });
+      ], { duration: held ? 520 : 820, easing: 'cubic-bezier(.3,0,.3,1)' });
     }
   }
-  sealBtn.addEventListener('click', sealIt);
-  holdable(bigSeal, sealIt, null);
+  holdable(miniSeal, sealIt, null, { ms: SEAL_MS, progress: holdProgress, release: holdReleased });
 
   $('#editBtn').addEventListener('click', function () {
     if (!C) return;
+    cta('edit');
     C.sealed = false;
+    C.step = 'compose';
     sheet.setAttribute('data-step', 'compose');
-    mini.classList.remove('is-sealed');
+    mini.classList.remove('is-sealed', 'held');
     mini.classList.add('is-open');
-    bigSeal.classList.remove('held');
     paintComposer();
   });
 
   function markSent(dest) {
-    cta('web_sent', { destination: dest });
+    if (C) C.sent = true;
+    cta('web_sent', { destination: dest, mode: C && C.own ? 'own' : 'line' });
     var sb = $('#sentBlock');
     if (sb.hidden) {
       sb.hidden = false;
