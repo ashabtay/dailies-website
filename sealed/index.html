@@ -138,6 +138,10 @@ h1,h2,p{margin:0}
 .flap-in{background-image:var(--i-flap-in); opacity:0}
 .env-inside{position:absolute; inset:0; z-index:3; clip-path:inset(-400% 0 0 0)}
 .letter{position:absolute; left:8%; width:84%; top:6%}
+/* Light from inside the envelope, as the letter rises out of it. */
+.env-glow{position:absolute; left:-30%; right:-30%; top:-70%; height:120%; z-index:2; opacity:0; pointer-events:none;
+  background:radial-gradient(closest-side at 50% 62%,rgba(255,226,168,.8),rgba(255,184,102,.33) 45%,rgba(255,154,64,0) 100%)}
+.sparkles{position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:90}
 .letter .qc{box-shadow:0 -1px 8px rgba(40,30,20,.18)}
 /* The pocket: side flaps and bottom flap, with the shadow its lip throws on
    whatever is inside, all in the picture. */
@@ -433,6 +437,7 @@ h1,h2,p{margin:0}
           <div class="env" id="env">
             <div class="env-back"></div>
             <div class="env-flap"><div class="flap-out"></div><div class="flap-in"></div></div>
+            <div class="env-glow" aria-hidden="true"></div>
             <div class="env-inside">
               <div class="letter">
                 <figure class="qc" id="letterCard" aria-hidden="true">

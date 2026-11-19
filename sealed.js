@@ -710,6 +710,109 @@
     sealEl.addEventListener('contextmenu', function (e) { e.preventDefault(); });
   }
 
+  /* ------------------------------------------------------------ sparkles */
+  /* The app's star flare (img/envelope/sparkle.webp), thrown and drifted on
+     a canvas over the page: a burst when the seal breaks, dust as the
+     letter rises, a twinkle when it lands. The same motion as the app's
+     widgets/sparkles.dart. Nothing at all under reduced motion. */
+  var sparkles = (function () {
+    var none = { burst: function () {}, dust: function () {} };
+    if (!window.requestAnimationFrame || !document.createElement('canvas').getContext) return none;
+    var img = new Image();
+    img.src = '/img/envelope/sparkle.webp';
+    var cv = null, ctx = null, dpr = 1, ps = [], running = false, last = 0, tints = {};
+    function setup() {
+      if (cv) return true;
+      cv = document.createElement('canvas');
+      cv.className = 'sparkles';
+      cv.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(cv);
+      ctx = cv.getContext('2d');
+      size();
+      window.addEventListener('resize', size);
+      return !!ctx;
+    }
+    function size() {
+      dpr = Math.min(2, window.devicePixelRatio || 1);
+      cv.width = Math.round(innerWidth * dpr);
+      cv.height = Math.round(innerHeight * dpr);
+    }
+    function tinted(color) {
+      if (tints[color]) return tints[color];
+      if (!img.complete || !img.naturalWidth) return null;
+      var c = document.createElement('canvas');
+      c.width = img.naturalWidth; c.height = img.naturalHeight;
+      var x = c.getContext('2d');
+      x.drawImage(img, 0, 0);
+      x.globalCompositeOperation = 'source-in';
+      x.fillStyle = color;
+      x.fillRect(0, 0, c.width, c.height);
+      return (tints[color] = c);
+    }
+    function add(x, y, vx, vy, life, sz, color, rise) {
+      ps.push({ x: x, y: y, vx: vx, vy: vy, age: 0, life: life, size: sz, rot: Math.random() * Math.PI,
+        spin: (Math.random() - 0.5) * 2, color: color, tw: Math.random() * 6.283, rise: rise });
+      if (ps.length > 400) ps.shift();
+      if (!running) { running = true; last = performance.now(); requestAnimationFrame(tick); }
+    }
+    function tick(now) {
+      var dt = Math.min(0.05, (now - last) / 1000), t0 = now / 1000;
+      last = now;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var drag = Math.pow(0.08, dt);
+      for (var i = ps.length - 1; i >= 0; i--) {
+        var p = ps[i];
+        p.age += dt;
+        if (p.age >= p.life) { ps.splice(i, 1); continue; }
+        p.vx *= drag;
+        p.vy = p.vy * drag - p.rise * dt;
+        p.x += p.vx * dt; p.y += p.vy * dt; p.rot += p.spin * dt;
+        var t = p.age / p.life;
+        var fade = t < 0.12 ? t / 0.12 : 1 - (t - 0.12) / 0.88;
+        var tw = 0.65 + 0.35 * Math.sin(p.tw + t0 * 14);
+        var sz = p.size * (0.7 + 0.3 * tw) * (1.1 - 0.4 * t);
+        var sp = tinted(p.color);
+        if (!sp) continue;
+        ctx.globalAlpha = Math.max(0, fade * tw);
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+        ctx.drawImage(sp, -sz / 2, -sz / 2, sz, sz);
+        ctx.restore();
+      }
+      ctx.globalAlpha = 1;
+      if (ps.length) requestAnimationFrame(tick);
+      else { running = false; ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height); }
+    }
+    var GOLD = '#FFD48A', EMBER = '#FF9A5C';
+    return {
+      burst: function (x, y, o) {
+        if (reduceMotion || !setup()) return;
+        o = o || {};
+        for (var i = 0, n = o.count || 28; i < n; i++) {
+          var a = Math.random() * 6.283, v = (o.speed || 220) * (0.35 + Math.random() * 0.75);
+          add(x, y, Math.cos(a) * v, Math.sin(a) * v, (o.life || 1.1) * (0.6 + Math.random() * 0.6),
+            (o.size || 22) * (0.4 + Math.random() * 0.8), o.ember ? EMBER : GOLD, 30);
+        }
+      },
+      dust: function (x, y, o) {
+        if (reduceMotion || !setup()) return;
+        o = o || {};
+        var j = o.jitter || 10, dx = o.dx || 0, dy = o.dy || 0;
+        for (var i = 0, n = o.count || 2; i < n; i++) {
+          add(x + (Math.random() - 0.5) * 2 * j, y + (Math.random() - 0.5) * 2 * (o.jitterY || j),
+            dx + (Math.random() - 0.5) * 40, dy + (Math.random() - 0.5) * 40,
+            (o.life || 1.3) * (0.6 + Math.random() * 0.7), (o.size || 16) * (0.35 + Math.random() * 0.85), GOLD, 18);
+        }
+      }
+    };
+  })();
+
+  function centerOf(el) {
+    var r = el.getBoundingClientRect();
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2, r: r };
+  }
+
   /* --------------------------------------------------------- the opening */
 
   var isOpen = false;
@@ -761,8 +864,11 @@
         { duration: 260, easing: 'ease-in', fill: 'forwards' });
     });
 
-    // 1. The seal cracks and falls away.
+    // 1. The seal cracks and falls away, in a flash of gold.
     var ease = 'cubic-bezier(.2,.7,.2,1)';
+    var sc = centerOf(seal);
+    sparkles.burst(sc.x, sc.y, { count: 44, speed: 300, size: 30, life: 1.3 });
+    sparkles.burst(sc.x, sc.y, { count: 12, speed: 120, size: 14, life: 0.8, ember: true });
     anim(halves[0], [
       { transform: 'none', opacity: 1 },
       { transform: 'translate(-5%, 1%) rotate(-7deg)', opacity: 1, offset: 0.22 },
@@ -785,7 +891,12 @@
       ], { duration: 420, easing: 'cubic-bezier(.45,0,.3,1)', fill: 'forwards' });
     }).then(function () {
       flap.style.zIndex = 2;
-      // 3. The letter rises; the envelope drops away underneath it.
+      // 3. The letter rises in light from inside, with dust coming up with
+      //    it; the envelope drops away underneath it.
+      var glow = $('.env-glow', env);
+      if (glow) anim(glow, [{ opacity: 0 }, { opacity: 1, offset: 0.35 }, { opacity: 0 }], { duration: 1100, easing: 'ease-out' });
+      var ec = centerOf(env);
+      sparkles.dust(ec.x, ec.r.top + 6, { count: 26, jitter: ec.r.width * 0.32, jitterY: 6, dy: -90, size: 20, life: 1.7 });
       anim(letter, [{ transform: 'translateY(0)' }, { transform: 'translateY(-46%)' }],
         { duration: 560, easing: ease, fill: 'forwards' });
       return wait(140).then(function () {
@@ -818,6 +929,10 @@
         { transform: 'none' }
       ], { duration: 520, easing: 'cubic-bezier(.2,.8,.2,1)' });
     }).then(function () {
+      // 5. A twinkle as the card settles.
+      var cr = $('#card').getBoundingClientRect();
+      sparkles.dust(cr.left + cr.width / 2, cr.top + cr.height * 0.45,
+        { count: 20, jitter: cr.width * 0.45, jitterY: cr.height * 0.45, size: 18, life: 1.4 });
       sealed.hidden = true;
       root.setAttribute('data-state', 'opened');
       opened.classList.remove('arriving');
@@ -1110,6 +1225,10 @@
     bigSeal.disabled = true;
     sheet.setAttribute('data-step', 'sealed');
     var ms = $('.seal', mini);
+    setTimeout(function () {
+      var mc = centerOf(ms);
+      sparkles.burst(mc.x, mc.y, { count: 26, speed: 200, size: 22 });
+    }, 640);
     if (!reduceMotion && ms.animate) {
       anim(ms, [
         { transform: 'translate(-50%,-50%) scale(1.9)', opacity: 0 },
