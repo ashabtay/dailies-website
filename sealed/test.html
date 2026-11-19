@@ -203,6 +203,24 @@
   }
   summary();
 
+  // ---- short links
+  eq('short: id.key matches', E.SHORT_RE.test('x7Kp2m9a.AAECAwQFBgcICQoLDA0ODw'), true);
+  eq('short: a long payload never matches', E.SHORT_RE.test(E.encode({ v: 1, to: 'Dana', from: 'Amit', t: 'Hi', a: null, q: null, o: false })), false);
+  if (window.crypto && crypto.subtle) {
+    // Sealed by the app (test/envelope_links_test.dart, fixed key and nonce).
+    var VECTOR = 'ZGVmZ2hpamtsbW5vYUA4h-EzlNjvUXUqpI5KglGqVN3027I31lWT1tGbg9GW3iYGsTpv-Kh0BSevuCpyt_ExUewke0a24m1x7vFHWgL7fn7Jyuj2FxEB0PjBTE55g3pBGGI';
+    var json = '{"v":1,"to":"Dana","from":"Amit","t":"Hi","a":null,"q":null,"o":false}';
+    Promise.all([
+      E.openBox(VECTOR, 'AAECAwQFBgcICQoLDA0ODw').then(function (j) { eq('short: opens a box the app sealed', j, json); }),
+      E.openBox(VECTOR, 'AQECAwQFBgcICQoLDA0ODw').then(function () { eq('short: a wrong key fails', 'opened', 'refused'); },
+        function () { eq('short: a wrong key fails', 'refused', 'refused'); }),
+      E.sealBox('{"v":1,"to":"Noa"}').then(function (b) {
+        eq('short: a new key is 22 characters', /^[A-Za-z0-9_-]{22}$/.test(b.key), true);
+        return E.openBox(b.box, b.key).then(function (j) { eq('short: seal then open', j, '{"v":1,"to":"Noa"}'); });
+      })
+    ]).then(summary, function (e) { show(false, 'short: crypto threw', String(e)); summary(); });
+  }
+
   // ---- every listed background is really on the site (over http only)
   if (location.protocol.indexOf('http') === 0 && window.fetch) {
     Promise.all(E.BACKGROUNDS.concat(['house']).map(function (b) {
