@@ -310,9 +310,27 @@
 
        app_envelope_viewed   the sealed envelope was shown
        app_envelope_opened   ...and opened; `ms_to_open` is how long they looked first
-       app_envelope_cta      a button on it: `action` is send_back, pass_on,
-                             get_app, report, web_sealed or web_sent (with
-                             `destination`: share, whatsapp, messages or copy)
+       app_envelope_cta      something done with it; `action` is one of
+                               send_back        Send one back tapped
+                               handoff_app      ...and the app took over (iPhone)
+                               handoff_web      ...or it did not, and the
+                                                page's own composer opened
+                               get_app          an App Store badge tapped
+                               composer_opened  the page's composer, `mode`
+                                                back (a reply) or new
+                               change_line      the next house line
+                               write_own        own words on the letter
+                               use_line         back to the house lines
+                               hold_released    the wax let go early;
+                                                `progress` 0 to 1
+                               web_sealed       sealed; `mode` own or line,
+                                                `how` hold or key
+                               edit             Change something, after sealing
+                               web_sent         sent; `destination` share,
+                                                whatsapp, messages or copy,
+                                                `mode` own or line
+                               composer_closed  the composer closed; `step`
+                                                compose, sealed or sent
        app_envelope_invalid  the link did not decode; `reason` is empty,
                              decode, version or field
 
@@ -327,7 +345,7 @@
     invalid: 'app_envelope_invalid'
   };
   var APP_ENVELOPE_KEYS = ['own', 'has_author', 'text_length', 'quote_id', 'thread_n', 'open_when',
-    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason'];
+    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason', 'mode', 'how', 'step', 'progress'];
 
   function envelope(kind, props) {
     var event = APP_ENVELOPE_EVENTS[kind];

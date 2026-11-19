@@ -83,10 +83,11 @@ h1,h2,p{margin:0}
 
 .page{min-height:100vh; min-height:100svh; display:flex; flex-direction:column; padding:0 16px; padding-top:env(safe-area-inset-top)}
 
-.top{display:flex; justify-content:center; padding:12px 0 2px}
-.brand{display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:600; font-size:14.5px; letter-spacing:-.01em; color:var(--text-dim); transition:color .2s}
-.brand:hover{color:var(--text)}
-.brand img{width:22px; height:22px; border-radius:6px}
+/* The site's own nav brand (doc.css .brand), on the left like every page. */
+.top{display:flex; justify-content:flex-start; width:min(100%,1100px); margin-inline:auto; padding:13px 0 2px}
+.brand{display:inline-flex; align-items:center; gap:11px; text-decoration:none; font-weight:600; font-size:18px; letter-spacing:-.02em; color:var(--text)}
+.brand img{width:33px; height:33px; border-radius:9px}
+@media (min-width:561px){ .page{padding-inline:22px} }
 
 .stage{flex:1; display:grid; place-items:center; padding:8px 0 14px}
 .stage > section{grid-area:1/1; width:100%}
@@ -116,6 +117,10 @@ h1,h2,p{margin:0}
   color:var(--text-dim); text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px;
 }
 .textlink:hover{color:var(--text)}
+/* Apple's badge, as on the rest of the site (doc.css .store-badge). */
+.store-badge{display:inline-block; line-height:0; border-radius:9px; transition:transform .18s, box-shadow .18s}
+.store-badge:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.store-badge img{height:52px; width:auto}
 .get-note{font-size:14px; color:var(--text-dim); text-align:center; max-width:34ch; margin:4px auto 0; text-wrap:balance}
 
 /* ================================================================ ENVELOPE */
@@ -249,8 +254,6 @@ h1,h2,p{margin:0}
 .o-card{grid-area:card; width:min(100%,402px,calc((100svh - 420px) * .8)); min-width:min(100%,250px)}
 .o-actions{grid-area:actions; width:100%; display:flex; flex-direction:column; align-items:center; gap:10px}
 .o-actions .textlink{padding:4px}
-.report{margin-top:6px; font-size:13px; color:var(--text-faint); text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px}
-.report:hover{color:var(--text-dim)}
 .opened.arriving .o-head,.opened.arriving .o-actions{opacity:0}
 .opened.arrived .o-head{animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
 .opened.arrived .o-actions{animation:rise .55s .12s cubic-bezier(.2,.8,.2,1) both}
@@ -267,7 +270,7 @@ h1,h2,p{margin:0}
   .o-head{align-self:end; text-align:left; align-items:flex-start}
   .picked{font-size:31px}
   .o-actions{align-self:start; align-items:stretch}
-  .o-actions .textlink,.o-actions .report{align-self:flex-start}
+  .o-actions .store-badge{align-self:flex-start}
   .o-actions .get-note{text-align:left; margin:0}
 }
 
@@ -313,7 +316,7 @@ h1,h2,p{margin:0}
   filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
 .invalid h1{font-family:var(--f-display); font-optical-sizing:auto; font-weight:400; font-size:clamp(27px,7.4vw,36px); line-height:1.12; letter-spacing:-.015em; max-width:17ch; text-wrap:balance}
 .invalid p.sub{margin-top:14px; color:var(--text-dim); max-width:34ch; text-wrap:balance}
-.invalid .btn{margin-top:30px; min-width:220px}
+.invalid .store-badge{margin-top:30px}
 
 /* ================================================================ FOOTER */
 .foot{display:flex; justify-content:center; gap:22px; padding:10px 0 calc(18px + env(safe-area-inset-bottom));
@@ -343,29 +346,92 @@ h1,h2,p{margin:0}
 .x{width:38px; height:38px; border-radius:50%; border:1px solid var(--rule-soft); background:var(--chip); display:grid; place-items:center; cursor:pointer; color:var(--text-dim); flex:none}
 .x:hover{color:var(--text)}
 
-.mini-stage{position:relative; width:min(72%,250px); margin:4px auto 0; padding-top:46%; transition:padding-top .5s cubic-bezier(.4,0,.2,1)}
+/* The small envelope is the composer's whole stage, as in the app: the
+   letter stands in it, and the wax on it is the one way to seal. --down
+   (the letter going in) and --fold (the flap coming over) run 0 to 1; a hold
+   drives them from sealed.js, .is-sealed sets both to 1, and the transitions
+   below are for every other way they change. */
+.mini-stage{position:relative; width:min(80%,300px); margin:4px auto 0; padding-top:46%; transition:padding-top .5s cubic-bezier(.4,0,.2,1)}
 .mini-stage:has(.is-sealed){padding-top:6%; transition-delay:.35s}
-.mini .letter{top:6%; left:8%; width:84%; transform:translateY(-90%); transition:transform .5s cubic-bezier(.3,.7,.2,1) .34s}
-.mini .env-flap{transform:perspective(700px) rotateX(180deg); z-index:2; transition:transform .45s cubic-bezier(.45,0,.3,1), z-index 0s linear .22s}
+.mini{--down:0; --fold:0}
+.mini.is-sealed{--down:1; --fold:1}
+.mini .letter{top:6%; left:8%; width:84%; transform:translateY(calc(-90% * (1 - var(--down)))); transition:transform .5s cubic-bezier(.3,.7,.2,1) .34s}
+.mini .env-flap{transform:perspective(700px) rotateX(calc(180deg * (1 - var(--fold)))); z-index:2; transition:transform .45s cubic-bezier(.45,0,.3,1), z-index 0s linear .22s}
 .mini .flap-in{opacity:1; transition:opacity 0s linear .22s}
 .mini .seal{opacity:0; pointer-events:none; cursor:default}
-.mini .seal-ghost{transition:opacity .25s}
 .mini .env-back{box-shadow:0 18px 34px -12px rgba(0,0,0,.6), 0 2px 5px rgba(0,0,0,.25)}
+/* Past upright, the flap shows its outside and lies over the letter. */
+.mini.past .env-flap{z-index:5}
+.mini.past .flap-in{opacity:0}
+.mini.holding .letter,.mini.holding .env-flap,.mini.holding .flap-in{transition:none}
+/* Let go too soon: the paper springs back open. */
+.mini.spring .letter,.mini.spring .env-flap{transition:transform .38s cubic-bezier(.3,1.45,.5,1)}
+.mini.spring .flap-in{transition:none}
 /* Stamp and postmark go on once it is sealed, the way the app sticks them. */
 .mini .stamp{opacity:0; transform:rotate(4deg) scale(1.35); transition:opacity .2s, transform .2s}
 .mini .postmark{opacity:0; transition:opacity .2s}
-.mini.is-sealed .letter{transform:none; transition:transform .42s cubic-bezier(.5,0,.4,1)}
-.mini.is-sealed .env-flap{transform:perspective(700px) rotateX(0deg); z-index:5; transition:transform .5s cubic-bezier(.3,0,.2,1) .3s, z-index 0s linear .55s}
+.mini.is-sealed .letter{transition:transform .42s cubic-bezier(.5,0,.4,1)}
+.mini.is-sealed .env-flap{z-index:5; transition:transform .5s cubic-bezier(.3,0,.2,1) .3s, z-index 0s linear .55s}
 .mini.is-sealed .flap-in{opacity:0; transition:opacity 0s linear .55s}
 .mini.is-sealed .seal{opacity:1}
+.mini.is-sealed .stamp{opacity:1; transform:rotate(4deg); transition:opacity .25s .7s, transform .5s cubic-bezier(.3,1.5,.5,1) .7s}
+.mini.is-sealed .postmark{opacity:1; transition:opacity .3s 1s}
+.mini.held.is-sealed .stamp{transition-delay:.45s}
+.mini.held.is-sealed .postmark{transition-delay:.75s}
+
+/* The wax waiting on the flap's tip: the app's drop, "Hold to seal" set
+   round it, two ripples while it is ready and a ring that fills as it is
+   held (lib/widgets/envelope_card.dart _HoldRing). It only arrives once
+   there is something to seal and somebody to seal it for. The label's box
+   is half the envelope's width, so one unit of its viewBox is one app unit. */
+.mini .seal-ghost{transform:translate(-50%,-50%) scale(calc(var(--drop,1) * (1 - .07 * var(--press,0)))); opacity:1;
+  transition:transform .5s cubic-bezier(.3,1.6,.5,1), opacity .25s}
+.mini:not(.ready) .seal-ghost{--drop:.25; opacity:0}
+.mini.ready:not(.holding):not(.is-sealed) .seal-ghost{animation:breathe 2.4s ease-in-out infinite}
+.mini.holding .seal-ghost{transition:none}
+@keyframes breathe{0%,100%{transform:translate(-50%,-50%) scale(1)} 30%{transform:translate(-50%,-50%) scale(1.025)} 60%{transform:translate(-50%,-50%) scale(1)}}
 .mini.is-sealed .seal-ghost{opacity:0; transition-duration:.15s}
-.mini.is-sealed .stamp{opacity:1; transform:rotate(4deg); transition:opacity .25s .95s, transform .5s cubic-bezier(.3,1.5,.5,1) .95s}
-.mini.is-sealed .postmark{opacity:1; transition:opacity .3s 1.25s}
-.line-row{display:flex; justify-content:center; margin:14px 0 4px}
+.seal-label{position:absolute; left:25%; top:50%; width:50%; aspect-ratio:1; transform:translateY(-50%); z-index:6;
+  overflow:visible; pointer-events:none; opacity:1; transition:opacity .3s}
+.mini:not(.ready) .seal-label,.mini.is-sealed .seal-label{opacity:0}
+.seal-label .ripple{fill:none; stroke:var(--wax); opacity:0; transform-box:fill-box; transform-origin:center}
+.mini.ready:not(.holding) .seal-label .ripple{animation:ripple 2.4s cubic-bezier(.2,.6,.4,1) infinite}
+.mini.ready:not(.holding) .seal-label .ripple.r2{animation-delay:.5s}
+@keyframes ripple{0%{transform:scale(1); opacity:.9; stroke-width:3} 60%,100%{transform:scale(1.52); opacity:0; stroke-width:1.05}}
+.seal-label .hold-track{fill:none; stroke:var(--wax-deep); stroke-opacity:.4; stroke-width:2}
+.seal-label .hold-arc{fill:none; stroke:var(--wax); stroke-width:3.2; stroke-linecap:round; stroke-dasharray:100; stroke-dashoffset:100;
+  transform:rotate(-90deg); transform-origin:100px 100px}
+.seal-label .hold-text{font-family:var(--f-body); font-weight:700; font-size:13px; letter-spacing:2px; fill:#4A0F08; text-transform:uppercase}
+/* The one way to seal: a press and hold on the wax. */
+.seal-hit{position:absolute; left:50%; top:50%; width:29%; aspect-ratio:1; transform:translate(-50%,-50%); z-index:8;
+  border:0; padding:0; background:none; border-radius:50%; cursor:pointer; touch-action:none;
+  -webkit-tap-highlight-color:transparent; -webkit-touch-callout:none; user-select:none; -webkit-user-select:none}
+.seal-hit:disabled{cursor:default}
+.mini:not(.ready) .seal-hit,.mini.is-sealed .seal-hit{pointer-events:none}
+/* The wax set: a warm bloom, a ring of light running out, and a sheen
+   across the paper (envelope_card.dart _Impact and the sheen). */
+.impact{position:absolute; left:50%; top:50%; width:18%; aspect-ratio:1; z-index:7; pointer-events:none; opacity:0;
+  transform:translate(-50%,-50%); border-radius:50%;
+  background:radial-gradient(closest-side,rgba(255,230,184,.75),rgba(255,176,112,.25) 40%,rgba(255,176,112,0)); }
+.impact::after{content:""; position:absolute; inset:-4%; border-radius:50%; border:2px solid rgba(255,243,220,.8)}
+.sheen{position:absolute; inset:0; z-index:7; pointer-events:none; border-radius:1cqw; overflow:hidden; opacity:0}
+.sheen::before{content:""; position:absolute; inset:0 -60%; background:linear-gradient(115deg,transparent 38%,rgba(255,246,226,.42) 50%,transparent 62%)}
+
+.seal-say{margin:12px auto 0; max-width:34ch; text-align:center; font-size:14.5px; color:var(--text-dim); text-wrap:balance; min-height:1.55em; transition:color .25s}
+.seal-say.ready{color:#FFD48A; font-weight:700}
+.line-row{display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin:14px 0 4px}
 .change{display:inline-flex; align-items:center; gap:8px; background:var(--chip); border:1px solid var(--rule); color:var(--text-dim);
   font-family:var(--f-mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; padding:9px 15px; border-radius:999px; cursor:pointer; transition:color .2s,border-color .2s}
 .change:hover{color:var(--accent); border-color:var(--accent-dim)}
 .change svg{width:14px; height:14px}
+
+/* Your own words, written straight onto the letter. */
+.own-input{display:block; width:100%; margin:0; padding:0; border:0; outline:none; resize:none; overflow:hidden; background:none;
+  color:#F6EFE1; font-family:var(--f-display); font-optical-sizing:auto; font-weight:400; line-height:1.22; letter-spacing:-.012em;
+  font-size:max(16px, calc(var(--fs,27) * 100cqw / 402 * .86)); text-shadow:0 1px 20px rgba(0,0,0,.5); caret-color:#fff}
+.own-input::placeholder{color:rgba(246,239,225,.6)}
+.qc.writing .qc-text,.qc.writing .qc-by{display:none}
+.qc:not(.writing) .own-input{display:none}
 
 .fields{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px}
 .field{display:flex; flex-direction:column; gap:6px; min-width:0}
@@ -378,18 +444,10 @@ h1,h2,p{margin:0}
 .field input:focus{border-color:var(--accent-dim)}
 .field input::placeholder{color:var(--text-faint)}
 .static{background:transparent; border-style:dashed; color:var(--text-dim); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
-.seal-row{display:flex; align-items:center; gap:18px; margin-top:22px}
-.seal.big{position:relative; left:auto; top:auto; transform:none; width:66px; flex:none; opacity:.55; transition:opacity .25s}
-.seal.big.ready{opacity:1}
-.seal.big:disabled{cursor:not-allowed}
-.seal.big.ready .seal-body{animation:nudge 3.2s ease-in-out infinite}
-.seal.big.holding .seal-body,.seal.big.held .seal-body{animation:none}
-@keyframes nudge{0%,86%,100%{transform:none} 90%{transform:rotate(-7deg) scale(1.03)} 95%{transform:rotate(5deg) scale(1.03)}}
-.seal-cta{flex:1; display:flex; flex-direction:column; gap:7px; min-width:0}
-.hint{font-size:13px; color:var(--text-faint); text-align:center}
 
 .sheet[data-step="compose"] .dest{display:none}
 .sheet[data-step="sealed"] .compose{display:none}
+.sheet[data-step="sealed"] .seal-say{display:none}
 .dest{margin-top:18px}
 .dest-title{text-align:center; font-family:var(--f-display); font-size:20px; letter-spacing:-.01em}
 .dest-grid{display:flex; gap:8px; margin-top:16px}
@@ -405,14 +463,13 @@ h1,h2,p{margin:0}
 .sent-mark{display:inline-flex; align-items:center; gap:8px; font-family:var(--f-mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent)}
 .sent-mark svg{width:16px; height:16px}
 .nudge{margin-top:10px; font-family:var(--f-display); font-size:18px; line-height:1.3; letter-spacing:-.008em; text-wrap:balance}
-.sent-row{display:flex; gap:9px; margin-top:16px}
-.sent-row .btn{flex:1}
+.sent-row{display:flex; align-items:center; justify-content:center; gap:12px; margin-top:16px; flex-wrap:wrap}
+.sent-row .btn{min-height:52px; padding-block:0}
 
 .nojs{max-width:30ch; margin:30vh auto 0; text-align:center; color:var(--text-dim)}
 
 @media (max-width:370px){
   .fields{grid-template-columns:1fr}
-  .seal.big{width:56px}
 }
 @media (max-height:700px){
   .sealed .eyebrow{margin-bottom:20px}
@@ -511,9 +568,8 @@ h1,h2,p{margin:0}
       </div>
       <div class="o-actions">
         <button class="btn btn-primary btn-big" id="sendBack" type="button"><span id="sendBackLabel"></span></button>
-        <a class="textlink" data-get-app target="_blank" rel="noopener" data-s="getApp"></a>
+        <a class="store-badge" data-get-app target="_blank" rel="noopener"><img alt="" width="156" height="52"></a>
         <p class="get-note" hidden data-s="getNote"></p>
-        <a class="report" id="report" data-s="report"></a>
       </div>
     </section>
 
@@ -535,7 +591,7 @@ h1,h2,p{margin:0}
       </div>
       <h1 data-s="badTitle"></h1>
       <p class="sub" data-s="badBody"></p>
-      <a class="btn btn-primary btn-big" data-get-app target="_blank" rel="noopener" data-s="getApp"></a>
+      <a class="store-badge" data-get-app target="_blank" rel="noopener"><img alt="" width="156" height="52"></a>
       <p class="get-note" hidden data-s="getNote"></p>
     </section>
 
@@ -560,7 +616,7 @@ h1,h2,p{margin:0}
   </header>
 
   <div class="mini-stage">
-    <div class="env mini is-open" id="miniEnv" aria-hidden="true">
+    <div class="env mini is-open" id="miniEnv">
       <div class="env-back"></div>
       <div class="env-flap"><div class="flap-out"></div><div class="flap-in"></div></div>
       <div class="env-inside">
@@ -571,6 +627,7 @@ h1,h2,p{margin:0}
             <div class="qc-body">
               <p class="qc-text" dir="auto"></p>
               <p class="qc-by" dir="auto" hidden></p>
+              <textarea class="own-input" id="ownInput" rows="1" maxlength="200" dir="auto" autocapitalize="sentences" data-s-placeholder="ownHint" data-s-aria="writeOwn"></textarea>
             </div>
           </figure>
         </div>
@@ -598,21 +655,37 @@ h1,h2,p{margin:0}
         <p class="env-for" dir="auto"></p>
         <p class="env-note" dir="auto" hidden></p>
       </div>
-      <span class="seal-ghost">&#8221;</span>
-      <span class="seal">
+      <span class="seal-ghost" aria-hidden="true">&#8221;</span>
+      <svg class="seal-label" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <defs><path id="sealArc" d="M39.7,100 A60.3,60.3 0 0,0 160.3,100"/></defs>
+        <circle class="ripple" cx="100" cy="100" r="38.7"/>
+        <circle class="ripple r2" cx="100" cy="100" r="38.7"/>
+        <circle class="hold-track" cx="100" cy="100" r="44.7"/>
+        <circle class="hold-arc" cx="100" cy="100" r="44.7" pathLength="100"/>
+        <text class="hold-text"><textPath href="#sealArc" startOffset="50%" text-anchor="middle" id="holdText"></textPath></text>
+      </svg>
+      <span class="seal" aria-hidden="true">
         <span class="seal-body">
           <span class="seal-half l"><img src="/img/envelope/seal.webp" alt="" draggable="false"></span>
           <span class="seal-half r"><img src="/img/envelope/seal.webp" alt="" draggable="false"></span>
         </span>
       </span>
+      <span class="impact"></span>
+      <span class="sheen"></span>
+      <button class="seal-hit" id="miniSeal" type="button" data-s-aria="holdToSeal"></button>
     </div>
   </div>
+  <p class="seal-say" id="sealHint" aria-live="polite"></p>
 
   <div class="compose">
     <div class="line-row">
       <button class="change" id="changeLine" type="button">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 6.5A5.6 5.6 0 0 0 3 5M2.5 9.5A5.6 5.6 0 0 0 13 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3 1.8V5h3.2M13 14.2V11H9.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span data-s="changeLine"></span>
+      </button>
+      <button class="change" id="ownToggle" type="button">
+        <svg viewBox="0 0 16 16" aria-hidden="true" class="i-own"><path d="M10.6 2.6l2.8 2.8-7.6 7.6-3.4.6.6-3.4z M9.2 4l2.8 2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span id="ownToggleLabel"></span>
       </button>
     </div>
     <div class="fields">
@@ -629,19 +702,6 @@ h1,h2,p{margin:0}
         <span class="field-label" data-s="noteLabel"></span>
         <input id="noteInput" type="text" maxlength="60" autocomplete="off" autocapitalize="sentences" dir="auto" data-s-placeholder="noteHint">
       </label>
-    </div>
-    <div class="seal-row">
-      <button class="seal big" id="bigSeal" type="button" data-s-aria="sealIt">
-        <svg class="seal-ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-track" cx="60" cy="60" r="56" pathLength="100"/><circle class="ring-arc" cx="60" cy="60" r="56" pathLength="100"/></svg>
-        <span class="seal-body" aria-hidden="true">
-          <span class="seal-half l"><img src="/img/envelope/seal.webp" alt="" draggable="false"></span>
-          <span class="seal-half r"><img src="/img/envelope/seal.webp" alt="" draggable="false"></span>
-        </span>
-      </button>
-      <div class="seal-cta">
-        <button class="btn btn-primary btn-big" id="sealBtn" type="button" data-s="sealIt"></button>
-        <p class="hint" id="sealHint"></p>
-      </div>
     </div>
   </div>
 
@@ -670,7 +730,7 @@ h1,h2,p{margin:0}
       <p class="sent-mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span data-s="sent"></span></p>
       <p class="nudge" data-s="nudge"></p>
       <div class="sent-row">
-        <a class="btn btn-primary" data-get-app target="_blank" rel="noopener" data-s="getApp"></a>
+        <a class="store-badge" data-get-app target="_blank" rel="noopener"><img alt="" width="156" height="52"></a>
         <button class="btn btn-ghost" id="doneBtn" type="button" data-s="done"></button>
       </div>
       <p class="get-note" hidden data-s="getNote"></p>
