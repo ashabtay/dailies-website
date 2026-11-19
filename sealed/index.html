@@ -13,7 +13,7 @@
 <meta property="og:image" content="https://mydailies.app/sealed/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="A sealed envelope with a wax seal, addressed For you">
+<meta property="og:image:alt" content="A sealed envelope with a wax seal and a stamp, addressed For you">
 <meta property="og:site_name" content="Dailies">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#191c1d">
@@ -21,8 +21,7 @@
 <link rel="icon" href="/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
-<link rel="preload" as="image" href="/sealed/house.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&family=Caveat:wght@400;500&display=swap">
 <!--
   The envelope page. Everything a visitor sees is built by /sealed.js from
   the link's #fragment, which never reaches a server. Styles live here rather
@@ -38,15 +37,19 @@
   --rule:rgba(240,230,210,.13); --rule-soft:rgba(240,230,210,.07);
   --text:#f0e6d2; --text-dim:#aeaa9c; --text-faint:#888c81;
   --accent:#9db081; --accent-dim:#7d8f63; --hill:#4f5d3c; --hill-deep:#3b462d;
-  --chip:rgba(240,230,210,.05); --chip-on:rgba(157,176,129,.14);
+  --chip:rgba(240,230,210,.05);
   --f-display:Fraunces,Georgia,"Times New Roman",serif;
   --f-body:Figtree,ui-sans-serif,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"Courier Prime",ui-monospace,"SFMono-Regular",Menlo,monospace;
 
-  /* the envelope */
-  --paper:#FBF5EA; --paper-2:#F5ECDC; --paper-3:#F8F0E2;
-  --flap:#EFE3CC; --inside:#DCCAA9;
-  --wax:#C67139; --ink:#2C3550; --ink-brown:rgba(74,54,38,.62);
+  --f-hand:Caveat,"Bradley Hand","Segoe Print",cursive;
+
+  /* the envelope: the app's EnvelopeColors */
+  --e-paper:#FBF6EC; --e-paper-2:#F0E4CF; --e-flap:#F7EFE1; --e-flap-2:#EADCC2;
+  --e-inside:#E6D6B8; --e-inside-2:#D9C6A2; --e-ink:#2E2B25; --e-pencil:#6A6153;
+  --wax:#C67139; --wax-light:#E39A62; --wax-deep:#8E4419; --e-postmark:#B2622D;
+  /* Paper grain: sparse light and dark flecks from a thresholded noise. */
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='l' x='0' y='0' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 -.2'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='0 .9'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cfilter id='d' x='0' y='0' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.17 0 0 0 0 0.15 1 0 0 0 -.2'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='0 .12'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23l)'/%3E%3Crect width='100%25' height='100%25' filter='url(%23d)'/%3E%3C/svg%3E");
   color-scheme:dark;
 }
 
@@ -105,55 +108,70 @@ h1,h2,p{margin:0}
 .get-note{font-size:14px; color:var(--text-dim); text-align:center; max-width:34ch; margin:4px auto 0; text-wrap:balance}
 
 /* ================================================================ ENVELOPE */
+/* Drawn after the app's envelope (lib/widgets/envelope_card.dart in the app
+   repo): 1.6 wide to 1 tall, and one app unit is 1/330 of the width, so
+   1u = .303cqw. Everything inside .env is sized in cqw of the envelope. */
 .env{
-  position:relative; width:100%; aspect-ratio:1.45; container-type:inline-size;
-  border-radius:6px; -webkit-tap-highlight-color:transparent; user-select:none; -webkit-user-select:none;
+  position:relative; width:100%; aspect-ratio:1.6; container-type:inline-size;
+  -webkit-tap-highlight-color:transparent; user-select:none; -webkit-user-select:none;
 }
 .env-back{
-  position:absolute; inset:0; z-index:1; border-radius:6px;
-  background:linear-gradient(180deg,#C9B593 0%,#D8C6A5 30%,#E4D4B7 70%);
-  box-shadow:0 30px 60px -18px rgba(0,0,0,.7), 0 10px 22px rgba(0,0,0,.28);
+  position:absolute; inset:0; z-index:1; border-radius:2.12cqw;
+  background:linear-gradient(180deg,var(--e-inside-2) 0%,var(--e-inside) 100%);
+  box-shadow:0 5cqw 12cqw -2cqw rgba(0,0,0,.62), 0 .6cqw 1.6cqw rgba(0,0,0,.26);
 }
+/* The flap: from the two top corners to a softened tip at half height. Its
+   corners are the paper's own rounded ones (border-radius clips the
+   background; the clip-path cuts the V). */
 .env-flap{position:absolute; inset:0; z-index:5; transform-origin:50% 0; pointer-events:none;
-  filter:drop-shadow(0 1.5px 1.2px rgba(96,66,36,.28)) drop-shadow(0 5px 7px rgba(96,66,36,.12))}
-.flap-out,.flap-in{position:absolute; inset:0; clip-path:polygon(0 0,100% 0,100% .5%,53.5% 56%,50% 58.5%,46.5% 56%,0 .5%); border-radius:6px 6px 0 0}
-.flap-out{background:linear-gradient(176deg,#F4EAD7 0%,#EFE3CC 45%,#E9DBC0 100%)}
-.flap-in{background:linear-gradient(0deg,#E6D6B8 0%,#D9C6A3 100%); opacity:0}
+  filter:drop-shadow(0 .9cqw 1.4cqw rgba(0,0,0,.16)) drop-shadow(0 .1cqw .12cqw rgba(46,43,37,.16))}
+.flap-out,.flap-in{position:absolute; inset:0; border-radius:2.12cqw 2.12cqw 0 0;
+  clip-path:polygon(0 0,100% 0,54.85% 45.15%,53.64% 46.42%,52.43% 47.33%,51.21% 47.88%,50% 48.06%,48.79% 47.88%,47.58% 47.33%,46.36% 46.42%,45.15% 45.15%)}
+.flap-out{background:var(--grain),linear-gradient(180deg,var(--e-flap) 0%,var(--e-flap-2) 50%)}
+.flap-in{background:linear-gradient(180deg,var(--e-inside-2) 0%,var(--e-inside) 50%); opacity:0}
 .env-inside{position:absolute; inset:0; z-index:3; clip-path:inset(-400% 0 0 0)}
-.letter{position:absolute; left:10%; width:80%; top:6%}
+.letter{position:absolute; left:10%; width:80%; top:8%}
 .letter .qc{box-shadow:0 -1px 8px rgba(40,30,20,.18)}
-.env-pocket{position:absolute; inset:0; z-index:4; pointer-events:none; border-radius:6px; overflow:hidden}
-.pocket-svg{position:absolute; inset:0; width:100%; height:100%; display:block; filter:drop-shadow(0 -1px 1.5px rgba(80,55,30,.22))}
-.p-left{fill:#F3E9D7}
-.p-right{fill:#F6EEDF}
-.p-bottom{fill:url(#gBottom)}
-.p-line{fill:none; stroke:rgba(112,82,52,.2); stroke-width:1; vector-effect:non-scaling-stroke}
-.p-line.soft{stroke:rgba(112,82,52,.1)}
+/* The pocket: the whole front but a V-shaped mouth that stops short of the
+   flap's tip, so a shut flap overlaps it the way paper does. */
+.env-pocket{position:absolute; inset:0; z-index:4; pointer-events:none; border-radius:2.12cqw; overflow:hidden}
+.pocket{position:absolute; inset:0; clip-path:polygon(0 0,50% 42%,100% 0,100% 100%,0 100%);
+  background:var(--grain),linear-gradient(to bottom right,var(--e-paper) 0%,var(--e-paper-2) 100%)}
+.pocket-svg{position:absolute; inset:0; width:100%; height:100%; display:block}
+.p-bottom{fill:#fff; fill-opacity:.18}
+.p-crease{fill:none; stroke:var(--e-ink); stroke-opacity:.1; stroke-width:.49}
+.p-mouth{fill:none; stroke:var(--e-ink); stroke-opacity:.12; stroke-width:.58}
 
-.env-note{
-  position:absolute; left:8%; right:8%; bottom:8.5%; margin:0; text-align:center;
-  font-family:var(--f-display); font-style:italic; font-weight:400; font-optical-sizing:auto;
-  font-size:5.6cqw; line-height:1.2; color:var(--ink); opacity:.88;
-  transform:rotate(-2.2deg); letter-spacing:.005em; text-wrap:balance;
-}
+/* What is written and stuck on the front: the name, the stamp, the postmark.
+   Above the flap, as in the app, and never a tap target. */
+.env-front{position:absolute; inset:0; z-index:7; pointer-events:none}
 .env-for{
-  position:absolute; left:8%; right:8%; bottom:10%; margin:0; text-align:center;
-  font-family:var(--f-display); font-style:italic; font-size:8cqw; line-height:1.1; color:var(--ink);
-  transform:rotate(-1.6deg); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  position:absolute; left:9%; right:9%; top:75.2%; transform:translateY(-50%); margin:0; text-align:center;
+  font-family:var(--f-hand); font-weight:500; font-size:var(--nfs,10.3cqw); line-height:1.05; color:var(--e-ink);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
 .env-for.placeholder .nm{opacity:.35}
-.postmark{position:absolute; right:3.5%; top:47%; width:30%; color:var(--ink-brown); transform:rotate(-11deg); mix-blend-mode:multiply}
+.env-note{
+  position:absolute; left:8%; right:8%; bottom:4.5%; margin:0; text-align:center;
+  font-family:var(--f-hand); font-weight:400; font-size:5.4cqw; line-height:1.1; color:var(--e-pencil);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.has-note .env-for{top:72%}
+.stamp{position:absolute; right:7%; top:9%; width:15%; aspect-ratio:100/122; transform:rotate(4deg);
+  filter:drop-shadow(0 1.5px 1.6px rgba(0,0,0,.24))}
+.stamp svg{display:block; width:100%; height:100%}
+.postmark{position:absolute; left:55.5%; top:20%; width:30.3%; color:var(--e-postmark);
+  transform:rotate(-11.5deg); transform-origin:78.67% 50%; mix-blend-mode:multiply}
 .postmark svg{display:block; width:100%; height:auto; overflow:visible}
-.postmark .pm-wave{fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round}
-.postmark .pm-ring{fill:none; stroke:currentColor; stroke-width:2.2}
-.postmark .pm-ring2{fill:none; stroke:currentColor; stroke-width:.8}
-.postmark text{fill:currentColor; font-family:var(--f-mono)}
-.postmark .pm-top{font-size:6.6px; letter-spacing:1.4px}
-.postmark .pm-n{font-size:11px; font-weight:700; letter-spacing:0}
+.postmark .pm-wave{fill:none; stroke:currentColor; stroke-opacity:.45; stroke-width:1.8; stroke-linecap:round}
+.postmark .pm-ring{fill:none; stroke:currentColor; stroke-opacity:.6; stroke-width:2.1}
+.postmark .pm-ring2{fill:none; stroke:currentColor; stroke-opacity:.6; stroke-width:1.2}
+.postmark text{fill:currentColor; fill-opacity:.78; font-family:var(--f-body); font-weight:700; font-size:13.5px}
 
 /* ------------------------------------------------------------------ seal */
+/* Centered on the flap's tip, about a fifth of the envelope's width. */
 .seal{
-  position:absolute; left:50%; top:54%; width:23%; aspect-ratio:1; z-index:6;
+  position:absolute; left:50%; top:50%; width:19.5%; aspect-ratio:1; z-index:6;
   transform:translate(-50%,-50%); padding:0; border:0; background:none; cursor:pointer;
   container-type:inline-size; -webkit-tap-highlight-color:transparent; touch-action:none;
   border-radius:50%;
@@ -165,7 +183,7 @@ h1,h2,p{margin:0}
 .seal-half.l{clip-path:polygon(-20% -20%,53% -20%,53% 2%,46% 17%,55% 31%,45% 47%,54% 63%,47% 79%,52% 98%,52% 120%,-20% 120%)}
 .seal-half.r{clip-path:polygon(53% -20%,120% -20%,120% 120%,52% 120%,52% 98%,47% 79%,54% 63%,45% 47%,55% 31%,46% 17%,53% 2%)}
 .wax{position:absolute; inset:0; border-radius:49% 51% 46% 54% / 53% 46% 54% 47%;
-  background:radial-gradient(circle at 34% 28%,#E9A471 0%,#D17D45 22%,var(--wax) 44%,#A9582A 78%,#8A431E 100%);
+  background:radial-gradient(circle at 34% 28%,var(--wax-light) 0%,#D17D45 22%,var(--wax) 44%,#A9582A 78%,var(--wax-deep) 100%);
   box-shadow:inset 0 -3px 5px rgba(90,30,5,.45), inset 0 2px 3px rgba(255,214,176,.45)}
 .wax::before{content:""; position:absolute; inset:-5% -3% -4% -6%; z-index:-1; border-radius:55% 45% 52% 48% / 44% 56% 46% 54%;
   background:radial-gradient(circle at 40% 30%,#C8733B,#9A4C22 80%)}
@@ -179,14 +197,19 @@ h1,h2,p{margin:0}
 .seal-ring circle{fill:none; stroke-width:3.2}
 .ring-track{stroke:rgba(251,245,234,.18)}
 .ring-arc{stroke:#FBF5EA; stroke-dasharray:100; stroke-dashoffset:100; stroke-linecap:round}
+/* Where the seal will go, before there is one: the app's dashed ring. */
+.seal-ghost{position:absolute; left:50%; top:50%; width:16.4%; aspect-ratio:1; z-index:6; transform:translate(-50%,-50%);
+  border-radius:50%; border:.55cqw dashed rgba(198,113,57,.85); background:rgba(198,113,57,.12);
+  display:grid; place-items:center; font-family:var(--f-display); font-weight:500; font-size:12cqw; line-height:1;
+  color:rgba(198,113,57,.6); padding-top:4.6cqw; pointer-events:none}
 
 /* ================================================================ SEALED */
 .sealed{display:flex; flex-direction:column; align-items:center; text-align:center}
 .sealed .eyebrow{margin-bottom:clamp(26px,5svh,44px)}
-.env-stage{position:relative; width:min(100%,400px)}
+.env-stage{position:relative; width:min(100%,420px)}
 .env-float{position:relative}
 .env-stage.idle .env-float{animation:float 6.5s ease-in-out infinite}
-.env-ground{position:absolute; left:10%; right:10%; bottom:-14%; height:14%; border-radius:50%;
+.env-ground{position:absolute; left:10%; right:10%; bottom:-15%; height:15%; border-radius:50%;
   background:radial-gradient(closest-side,rgba(0,0,0,.5),transparent); filter:blur(4px); pointer-events:none}
 .env-stage.idle .env-ground{animation:ground 6.5s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0) rotate(-.7deg)} 50%{transform:translateY(-7px) rotate(.5deg)}}
@@ -194,10 +217,12 @@ h1,h2,p{margin:0}
 #env{cursor:pointer}
 #env:focus-visible{outline-offset:10px}
 .sealed .env:hover .seal-body{transform:scale(1.03)}
-.for{margin-top:clamp(34px,6svh,54px); font-family:var(--f-display); font-optical-sizing:auto; font-weight:400;
-  font-size:clamp(38px,11vw,54px); line-height:1.05; letter-spacing:-.02em; max-width:100%; overflow-wrap:anywhere}
+/* The name is on the envelope, so the heading says who sealed it. Screen
+   readers get the whole sentence from the hidden half. */
+.for{margin-top:clamp(36px,6.5svh,58px); font-family:var(--f-display); font-optical-sizing:auto; font-weight:400;
+  font-size:clamp(30px,8.6vw,42px); line-height:1.1; letter-spacing:-.018em; max-width:100%; overflow-wrap:anywhere; text-wrap:balance}
 .for .nm{font-style:italic}
-.by{margin-top:10px; font-size:15.5px; color:var(--text-dim)}
+.vh{position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
 .open-row{margin-top:clamp(24px,4.5svh,38px); width:min(100%,320px); display:flex; flex-direction:column; align-items:center; gap:12px}
 .note{font-size:13.5px; color:var(--text-faint)}
 
@@ -242,6 +267,7 @@ h1,h2,p{margin:0}
   box-shadow:0 30px 70px -20px rgba(0,0,0,.75), 0 10px 24px rgba(0,0,0,.3);
 }
 .qc-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 34%}
+.qc.flat .qc-img{display:none}
 .qc-scrim{position:absolute; inset:0; background:linear-gradient(180deg,rgba(10,12,10,0) 20%,rgba(10,12,10,.22) 44%,rgba(10,12,10,.66) 72%,rgba(10,12,10,.86) 100%)}
 /* Longer lines climb into the bright sky, so the scrim climbs with them. */
 .qc[data-fs="22"] .qc-scrim{background:linear-gradient(180deg,rgba(10,12,10,.05) 8%,rgba(10,12,10,.42) 34%,rgba(10,12,10,.74) 60%,rgba(10,12,10,.88) 100%)}
@@ -267,10 +293,10 @@ h1,h2,p{margin:0}
 /* =============================================================== INVALID */
 .invalid{display:flex; flex-direction:column; align-items:center; text-align:center}
 .torn-stage{width:min(78%,300px); margin:18px 0 44px; transform:rotate(-4deg)}
-.env.torn .env-back{background:linear-gradient(180deg,#bfae8e,#d8c8aa)}
+.env.torn .env-back{background:linear-gradient(180deg,#c9b693,var(--e-inside))}
 .env.torn .env-pocket{overflow:visible; clip-path:polygon(0 11%,6% 15%,11% 12%,17% 20%,24% 17%,30% 26%,37% 22%,44% 31%,50% 27%,57% 36%,63% 31%,70% 39%,77% 33%,84% 41%,91% 36%,100% 44%,100% 100%,0 100%)}
 .torn-flap{position:absolute; left:-4%; top:-27%; width:62%; height:46%; z-index:5;
-  background:linear-gradient(170deg,#F2E7D2,#E3D3B5); transform:rotate(-17deg); transform-origin:100% 100%;
+  background:var(--grain),linear-gradient(170deg,var(--e-flap),var(--e-flap-2)); transform:rotate(-17deg); transform-origin:100% 100%;
   clip-path:polygon(0 100%,4% 70%,12% 76%,20% 52%,31% 60%,42% 28%,52% 38%,64% 8%,72% 22%,82% 14%,100% 100%);
   filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
 .invalid h1{font-family:var(--f-display); font-optical-sizing:auto; font-weight:400; font-size:clamp(27px,7.4vw,36px); line-height:1.12; letter-spacing:-.015em; max-width:17ch; text-wrap:balance}
@@ -310,14 +336,19 @@ h1,h2,p{margin:0}
 .mini .letter{top:7%; left:9%; width:82%; transform:translateY(-90%); transition:transform .5s cubic-bezier(.3,.7,.2,1) .34s}
 .mini .env-flap{transform:perspective(700px) rotateX(180deg); z-index:2; transition:transform .45s cubic-bezier(.45,0,.3,1), z-index 0s linear .22s}
 .mini .flap-in{opacity:1; transition:opacity 0s linear .22s}
-.mini .seal{opacity:0; width:19%; top:50%; pointer-events:none; cursor:default}
-.mini .env-note{bottom:6%; font-size:4.8cqw}
-.mini .env-for.with-note{bottom:18%; font-size:6.6cqw}
-.mini .env-back{box-shadow:0 18px 34px -12px rgba(0,0,0,.6)}
+.mini .seal{opacity:0; pointer-events:none; cursor:default}
+.mini .seal-ghost{transition:opacity .25s}
+.mini .env-back{box-shadow:0 18px 34px -12px rgba(0,0,0,.6), 0 2px 5px rgba(0,0,0,.25)}
+/* Stamp and postmark go on once it is sealed, the way the app sticks them. */
+.mini .stamp{opacity:0; transform:rotate(4deg) scale(1.35); transition:opacity .2s, transform .2s}
+.mini .postmark{opacity:0; transition:opacity .2s}
 .mini.is-sealed .letter{transform:none; transition:transform .42s cubic-bezier(.5,0,.4,1)}
 .mini.is-sealed .env-flap{transform:perspective(700px) rotateX(0deg); z-index:5; transition:transform .5s cubic-bezier(.3,0,.2,1) .3s, z-index 0s linear .55s}
 .mini.is-sealed .flap-in{opacity:0; transition:opacity 0s linear .55s}
 .mini.is-sealed .seal{opacity:1}
+.mini.is-sealed .seal-ghost{opacity:0; transition-duration:.15s}
+.mini.is-sealed .stamp{opacity:1; transform:rotate(4deg); transition:opacity .25s .95s, transform .5s cubic-bezier(.3,1.5,.5,1) .95s}
+.mini.is-sealed .postmark{opacity:1; transition:opacity .3s 1.25s}
 .line-row{display:flex; justify-content:center; margin:14px 0 4px}
 .change{display:inline-flex; align-items:center; gap:8px; background:var(--chip); border:1px solid var(--rule); color:var(--text-dim);
   font-family:var(--f-mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; padding:9px 15px; border-radius:999px; cursor:pointer; transition:color .2s,border-color .2s}
@@ -334,11 +365,6 @@ h1,h2,p{margin:0}
 .field input:focus{border-color:var(--accent-dim)}
 .field input::placeholder{color:var(--text-faint)}
 .static{background:transparent; border-style:dashed; color:var(--text-dim); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
-.when{margin-top:16px}
-.wchips{display:flex; flex-wrap:wrap; gap:7px; margin-top:8px}
-.wchip{font:500 14px/1 var(--f-body); padding:10px 13px; border-radius:999px; cursor:pointer; background:var(--chip); color:var(--text-dim); border:1px solid var(--rule-soft); transition:background .2s,color .2s,border-color .2s}
-.wchip:hover{color:var(--text)}
-.wchip[aria-pressed="true"]{background:var(--chip-on); color:var(--text); border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
 .seal-row{display:flex; align-items:center; gap:18px; margin-top:22px}
 .seal.big{position:relative; left:auto; top:auto; transform:none; width:66px; flex:none; opacity:.55; transition:opacity .25s}
 .seal.big.ready{opacity:1}
@@ -387,16 +413,6 @@ h1,h2,p{margin:0}
 </head>
 <body data-consent="deferred" data-analytics="private">
 
-<!-- Shared SVG paint for the envelopes. -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="gBottom" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FDF9F1"/>
-      <stop offset="1" stop-color="#F7EEDF"/>
-    </linearGradient>
-  </defs>
-</svg>
-
 <div class="page" id="envelope-page" data-state="loading">
   <header class="top"><a class="brand" href="/"><img src="/icon.png" alt=""><span>Dailies</span></a></header>
 
@@ -414,7 +430,7 @@ h1,h2,p{margin:0}
             <div class="env-inside">
               <div class="letter">
                 <figure class="qc" id="letterCard" aria-hidden="true">
-                  <img class="qc-img" src="/sealed/house.jpg" alt="" decoding="async">
+                  <img class="qc-img" alt="" decoding="async">
                   <div class="qc-scrim"></div>
                   <div class="qc-body">
                     <p class="qc-text" dir="auto"></p>
@@ -425,25 +441,26 @@ h1,h2,p{margin:0}
               </div>
             </div>
             <div class="env-pocket">
-              <svg class="pocket-svg" viewBox="0 0 145 100" preserveAspectRatio="none" aria-hidden="true">
-                <path class="p-left" d="M0 0 L72.5 50 L0 100 Z"/>
-                <path class="p-right" d="M145 0 L72.5 50 L145 100 Z"/>
-                <path class="p-bottom" d="M0 100 L65 49 Q72.5 44 80 49 L145 100 Z"/>
-                <path class="p-line" d="M0 100 L65 49 Q72.5 44 80 49 L145 100"/>
-                <path class="p-line soft" d="M0 0 L72.5 50 L145 0"/>
+              <div class="pocket"></div>
+              <svg class="pocket-svg" viewBox="0 0 160 100" preserveAspectRatio="none" aria-hidden="true">
+                <path class="p-bottom" d="M0 100 L80 50 L160 100 Z"/>
+                <path class="p-crease" d="M1 99 L70.4 60 M159 99 L89.6 60"/>
+                <path class="p-mouth" d="M1.7 1 L80 42 L158.3 1"/>
               </svg>
+            </div>
+            <div class="env-front">
+              <div class="stamp" hidden></div>
               <div class="postmark" hidden>
-                <svg viewBox="0 0 130 64" aria-hidden="true">
-                  <defs><path id="pmArcA" d="M71.5 32 a22.5 22.5 0 0 1 45 0"/></defs>
-                  <path class="pm-wave" d="M-2 20 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0"/>
-                  <path class="pm-wave" d="M-2 32 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0"/>
-                  <path class="pm-wave" d="M-2 44 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0"/>
-                  <circle class="pm-ring" cx="94" cy="32" r="30"/>
-                  <circle class="pm-ring2" cx="94" cy="32" r="20"/>
-                  <text class="pm-top"><textPath href="#pmArcA" startOffset="50%" text-anchor="middle">DAILIES</textPath></text>
-                  <text class="pm-n" x="94" y="36.5" text-anchor="middle"></text>
+                <svg viewBox="0 0 150 64" aria-hidden="true">
+                  <path class="pm-wave" d="M82 23 q-4.5 -4.5 -9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0"/>
+                  <path class="pm-wave" d="M82 32 q-4.5 -4.5 -9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0"/>
+                  <path class="pm-wave" d="M82 41 q-4.5 -4.5 -9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0"/>
+                  <circle class="pm-ring" cx="118" cy="32" r="30"/>
+                  <circle class="pm-ring2" cx="118" cy="32" r="24.75"/>
+                  <text class="pm-n" x="118" y="36.7" text-anchor="middle"></text>
                 </svg>
               </div>
+              <p class="env-for" dir="auto"></p>
               <p class="env-note" dir="auto" hidden></p>
             </div>
             <button class="seal" id="seal" type="button">
@@ -456,8 +473,7 @@ h1,h2,p{margin:0}
           </div>
         </div>
       </div>
-      <h1 class="for sealed-copy" id="forName" dir="auto"></h1>
-      <p class="by sealed-copy" id="sealedBy"></p>
+      <h1 class="for sealed-copy" id="sealedHead"><span class="vh" id="sealedA11y"></span><span aria-hidden="true" id="sealedBy"></span></h1>
       <div class="open-row sealed-copy">
         <button class="btn btn-primary btn-big" id="openBtn" type="button" data-s="openIt"></button>
         <p class="note" data-s="openNote"></p>
@@ -472,7 +488,7 @@ h1,h2,p{margin:0}
       </div>
       <div class="o-card">
         <figure class="qc" id="card">
-          <img class="qc-img" src="/sealed/house.jpg" alt="" decoding="async">
+          <img class="qc-img" alt="" decoding="async">
           <div class="qc-scrim"></div>
           <div class="qc-body">
             <blockquote class="qc-text" dir="auto"></blockquote>
@@ -497,11 +513,11 @@ h1,h2,p{margin:0}
           <div class="env-back"></div>
           <div class="torn-flap"></div>
           <div class="env-pocket">
-            <svg class="pocket-svg" viewBox="0 0 145 100" preserveAspectRatio="none">
-              <path class="p-left" d="M0 0 L72.5 50 L0 100 Z"/>
-              <path class="p-right" d="M145 0 L72.5 50 L145 100 Z"/>
-              <path class="p-bottom" d="M0 100 L65 49 Q72.5 44 80 49 L145 100 Z"/>
-              <path class="p-line" d="M0 100 L65 49 Q72.5 44 80 49 L145 100"/>
+            <div class="pocket"></div>
+            <svg class="pocket-svg" viewBox="0 0 160 100" preserveAspectRatio="none" aria-hidden="true">
+              <path class="p-bottom" d="M0 100 L80 50 L160 100 Z"/>
+              <path class="p-crease" d="M1 99 L70.4 60 M159 99 L89.6 60"/>
+              <path class="p-mouth" d="M1.7 1 L80 42 L158.3 1"/>
             </svg>
           </div>
         </div>
@@ -539,7 +555,7 @@ h1,h2,p{margin:0}
       <div class="env-inside">
         <div class="letter">
           <figure class="qc land" id="miniCard">
-            <img class="qc-img" src="/sealed/house.jpg" alt="" decoding="async">
+            <img class="qc-img" alt="" decoding="async">
             <div class="qc-scrim"></div>
             <div class="qc-body">
               <p class="qc-text" dir="auto"></p>
@@ -549,28 +565,28 @@ h1,h2,p{margin:0}
         </div>
       </div>
       <div class="env-pocket">
-        <svg class="pocket-svg" viewBox="0 0 145 100" preserveAspectRatio="none">
-          <path class="p-left" d="M0 0 L72.5 50 L0 100 Z"/>
-          <path class="p-right" d="M145 0 L72.5 50 L145 100 Z"/>
-          <path class="p-bottom" d="M0 100 L65 49 Q72.5 44 80 49 L145 100 Z"/>
-          <path class="p-line" d="M0 100 L65 49 Q72.5 44 80 49 L145 100"/>
-          <path class="p-line soft" d="M0 0 L72.5 50 L145 0"/>
+        <div class="pocket"></div>
+        <svg class="pocket-svg" viewBox="0 0 160 100" preserveAspectRatio="none" aria-hidden="true">
+          <path class="p-bottom" d="M0 100 L80 50 L160 100 Z"/>
+          <path class="p-crease" d="M1 99 L70.4 60 M159 99 L89.6 60"/>
+          <path class="p-mouth" d="M1.7 1 L80 42 L158.3 1"/>
         </svg>
+      </div>
+      <div class="env-front">
+        <div class="stamp"></div>
         <div class="postmark" hidden>
-          <svg viewBox="0 0 130 64">
-            <defs><path id="pmArcB" d="M71.5 32 a22.5 22.5 0 0 1 45 0"/></defs>
-            <path class="pm-wave" d="M-2 20 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0"/>
-            <path class="pm-wave" d="M-2 32 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0"/>
-            <path class="pm-wave" d="M-2 44 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0"/>
-            <circle class="pm-ring" cx="94" cy="32" r="30"/>
-            <circle class="pm-ring2" cx="94" cy="32" r="20"/>
-            <text class="pm-top"><textPath href="#pmArcB" startOffset="50%" text-anchor="middle">DAILIES</textPath></text>
-            <text class="pm-n" x="94" y="36.5" text-anchor="middle"></text>
+          <svg viewBox="0 0 150 64" aria-hidden="true">
+            <path class="pm-wave" d="M82 23 q-4.5 -4.5 -9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0"/>
+            <path class="pm-wave" d="M82 32 q-4.5 -4.5 -9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0"/>
+            <path class="pm-wave" d="M82 41 q-4.5 -4.5 -9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0 t-9 0"/>
+            <circle class="pm-ring" cx="118" cy="32" r="30"/>
+            <circle class="pm-ring2" cx="118" cy="32" r="24.75"/>
+            <text class="pm-n" x="118" y="36.7" text-anchor="middle"></text>
           </svg>
         </div>
         <p class="env-for" dir="auto"></p>
-        <p class="env-note" dir="auto" hidden></p>
       </div>
+      <span class="seal-ghost">&#8220;</span>
       <span class="seal">
         <span class="seal-body">
           <span class="seal-half l"><span class="wax"></span><span class="ring"></span><span class="glyph">&#8220;</span></span>
@@ -597,10 +613,6 @@ h1,h2,p{margin:0}
         <span class="field-label" data-s="yourName"></span>
         <input id="fromInput" type="text" maxlength="40" autocomplete="given-name" autocapitalize="words" spellcheck="false" dir="auto">
       </label>
-    </div>
-    <div class="when">
-      <span class="field-label" data-s="whenLabel"></span>
-      <div class="wchips" id="whenChips"></div>
     </div>
     <div class="seal-row">
       <button class="seal big" id="bigSeal" type="button" data-s-aria="sealIt">

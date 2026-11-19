@@ -23,8 +23,17 @@
      o     true when the sender wrote the line themselves
      p     optional: the line with a {name} token, so it can be passed on
      n     optional: this envelope's place in the back-and-forth (1 = first)
-     w     optional: "open when" key - hard, doubt, night, win, friend
+     w     optional: "open when" key - hard, doubt, night, win, friend.
+           Older links only: neither the app nor the web composer below
+           sends it any more, but a link that carries it still shows it.
      l     optional: the sender's app language, en or es
+     b     optional: the sender's background, by the app's id
+           (mtn_peak_dawn), when it is one of the bundled photographs
+     c     optional: the sender's background when it is a flat color, #rrggbb
+
+   A malformed b or c is dropped, not fatal: the envelope still opens on the
+   house photograph. The background shows on the letter, the opened card and
+   the postage stamp; only ids in BACKGROUNDS below are ever requested.
 
    ---------------------------------------------------------------------------
    Rules this file keeps
@@ -40,7 +49,8 @@
      with a `dailies:consent-ready` event once the opening has finished.
 
    The pure functions (decode, encode, validate, textSize, personalize,
-   ordinal) are exposed on window.DailiesEnvelope for /sealed/test.html.
+   ordinal, lookFor, messageFor) are exposed on window.DailiesEnvelope for
+   /sealed/test.html.
    ========================================================================= */
 (function () {
   'use strict';
@@ -55,6 +65,19 @@
   var MAX_NAME = 40;
   var MAX_TEXT = 600;
   var WHEN_KEYS = ['hard', 'doubt', 'night', 'win', 'friend'];
+
+  /* The app's backgrounds this site also carries, at
+     /img/wallpapers/bg/<id with hyphens>.jpg. A `b` outside this list (a
+     newer photo, the sender's own picture) gets the house photograph. */
+  var BACKGROUNDS = [
+    'desert_dusk', 'field_valley_dawn', 'forest_crossing', 'forest_fog_canopy',
+    'mtn_blue_ridges', 'mtn_fjord', 'mtn_peak_dawn', 'night_aurora',
+    'night_lake', 'night_milky_way', 'night_starlit_peaks', 'night_stars_over_pines',
+    'sea_sunset_surf', 'sky_cloud_line', 'sky_storm_front', 'zen_misty_pier'
+  ];
+  var HOUSE = '/sealed/house.jpg';
+  var BG_ID = /^[a-z0-9_]{1,40}$/;
+  var HEX = /^#[0-9a-fA-F]{6}$/;
 
   /* ------------------------------------------------------------ the lines */
   /* The house lines the web composer offers. Each has a personalized form;
@@ -88,7 +111,8 @@
       title: 'An envelope for you',
       label: 'Someone thought of you',
       forName: 'For {to}',
-      sealedBy: 'sealed by {from}',
+      sealedBy: 'Sealed by {from}',
+      sealedA11y: 'An envelope for {to}, sealed by {from}',
       openIt: 'Open it',
       openNote: 'No app needed. It takes a second.',
       sealAria: 'Press and hold the seal to break it',
@@ -125,8 +149,6 @@
       yourName: 'Your name',
       someone: 'someone',
       changeLine: 'Change line',
-      whenLabel: 'Open when',
-      chips: { none: 'Anytime', hard: 'A hard day', doubt: 'Self-doubt', night: 'Can’t sleep', win: 'Good news', friend: 'Need a friend' },
       sealIt: 'Seal it',
       sealHint: 'Or press and hold the seal',
       needNames: 'Add both names to seal it',
@@ -140,13 +162,16 @@
       sent: 'Sent',
       nudge: 'Dailies can put a line like this on your Lock Screen every day, some with your name in them.',
       done: 'Done',
-      message: '{to}, there’s an envelope for you from {from}.'
+      // The text message the link rides in: the words /e/ sends (play.js
+      // msgRead), so neither envelope says "envelope" before it is opened.
+      message: '{to}, I thought of you when I read this.'
     },
     es: {
       title: 'Un sobre para ti',
       label: 'Alguien pensó en ti',
       forName: 'Para {to}',
-      sealedBy: 'sellado por {from}',
+      sealedBy: 'Sellado por {from}',
+      sealedA11y: 'Un sobre para {to}, sellado por {from}',
       openIt: 'Ábrelo',
       openNote: 'No necesitas la app. Toma un segundo.',
       sealAria: 'Mantén presionado el sello para romperlo',
@@ -182,8 +207,6 @@
       yourName: 'Tu nombre',
       someone: 'alguien',
       changeLine: 'Cambiar frase',
-      whenLabel: 'Para qué momento',
-      chips: { none: 'Cuando sea', hard: 'Día difícil', doubt: 'Dudas', night: 'Insomnio', win: 'Buenas noticias', friend: 'Compañía' },
       sealIt: 'Sellar',
       sealHint: 'O mantén presionado el sello',
       needNames: 'Escribe los dos nombres para sellarlo',
@@ -197,7 +220,7 @@
       sent: 'Enviado',
       nudge: 'Dailies puede poner una frase así en tu pantalla bloqueada cada día, algunas con tu nombre.',
       done: 'Listo',
-      message: '{to}, hay un sobre para ti de parte de {from}.'
+      message: '{to}, pensé en ti cuando leí esto.'
     }
   };
 
@@ -281,6 +304,10 @@
       if (typeof obj.l !== 'string') return { error: 'field' };
       if (obj.l === 'en' || obj.l === 'es') env.l = obj.l;
     }
+    // The sender's look. Decoration, so a bad value drops the field and
+    // never the envelope.
+    if (typeof obj.b === 'string' && BG_ID.test(obj.b)) env.b = obj.b;
+    if (typeof obj.c === 'string' && HEX.test(obj.c)) env.c = obj.c;
     return env;
   }
 
@@ -320,6 +347,24 @@
     return S.postmark.replace('{n}', String(n));
   }
 
+  /* What the letter, the card and the stamp are printed with: the sender's
+     photograph when the site has it, else their flat color, else the house
+     photograph. {src} for a picture, {color} for a flat color. */
+  function lookFor(env) {
+    if (env && env.b && BACKGROUNDS.indexOf(env.b) !== -1) {
+      return { src: '/img/wallpapers/bg/' + env.b.replace(/_/g, '-') + '.jpg', color: null };
+    }
+    if (env && env.c && HEX.test(env.c)) return { src: null, color: env.c };
+    return { src: HOUSE, color: null };
+  }
+
+  /* The text message a link sealed on this page travels in. split/join, not
+     replace, so a name like "$&" stays a name. */
+  function messageFor(to, link, lang) {
+    var S = STRINGS[lang] || STRINGS.en;
+    return S.message.split('{to}').join(to) + '\n' + link;
+  }
+
   function platformGuess() {
     var ua = navigator.userAgent || '';
     if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return 'ios';
@@ -334,6 +379,9 @@
     textSize: textSize,
     personalize: personalize,
     ordinal: ordinal,
+    lookFor: lookFor,
+    messageFor: messageFor,
+    BACKGROUNDS: BACKGROUNDS,
     LINES: LINES,
     STRINGS: STRINGS
   };
@@ -456,6 +504,79 @@
     else { by.textContent = ''; by.hidden = true; }
   }
 
+  /* ------------------------------------------------------ the envelope */
+
+  /* The sender's background on a quote card: a photograph, or a flat color
+     under the same scrim (the words are always white). */
+  function paintLook(card, look) {
+    var img = $('.qc-img', card);
+    if (look.color) {
+      card.classList.add('flat');
+      card.style.backgroundColor = look.color;
+      img.removeAttribute('src');
+    } else {
+      card.classList.remove('flat');
+      card.style.backgroundColor = '';
+      img.src = look.src;
+    }
+  }
+
+  /* The postage stamp: a white perforated edge round the same background.
+     Built here because each needs its own mask id. */
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  var stamps = 0;
+  function svgEl(name, attrs, parent) {
+    var el = document.createElementNS(SVG_NS, name);
+    for (var k in attrs) el.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(el);
+    return el;
+  }
+  function paintStamp(box, look) {
+    var W = 100, H = 122, R = 4.5, id = 'perf' + (++stamps);
+    box.textContent = '';
+    var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, 'aria-hidden': 'true', focusable: 'false' }, box);
+    var mask = svgEl('mask', { id: id }, svgEl('defs', {}, svg));
+    svgEl('rect', { width: W, height: H, fill: '#fff' }, mask);
+    var nx = Math.round(W / (R * 2.6)), ny = Math.round(H / (R * 2.6)), i;
+    for (i = 0; i < nx; i++) {
+      var x = ((i + 0.5) * W / nx).toFixed(2);
+      svgEl('circle', { cx: x, cy: 0, r: R, fill: '#000' }, mask);
+      svgEl('circle', { cx: x, cy: H, r: R, fill: '#000' }, mask);
+    }
+    for (i = 0; i < ny; i++) {
+      var y = ((i + 0.5) * H / ny).toFixed(2);
+      svgEl('circle', { cx: 0, cy: y, r: R, fill: '#000' }, mask);
+      svgEl('circle', { cx: W, cy: y, r: R, fill: '#000' }, mask);
+    }
+    svgEl('rect', { width: W, height: H, fill: '#fff', mask: 'url(#' + id + ')' }, svg);
+    var inner = { x: 10, y: 10, width: W - 20, height: H - 20 };
+    if (look.color) {
+      inner.fill = look.color;
+      svgEl('rect', inner, svg);
+    } else {
+      inner.href = look.src;
+      inner.preserveAspectRatio = 'xMidYMid slice';
+      svgEl('image', inner, svg);
+    }
+    box.hidden = false;
+  }
+
+  /* "For Dana", in the hand, shrunk for a long name so it stays on the
+     paper (and ellipsized past that). */
+  function paintName(el, to) {
+    fill(el, S.forName, { to: to });
+    var n = chars(S.forName.replace('{to}', '').trim()) + 1 + chars(to);
+    var size = Math.max(5.5, Math.min(10.3, 80 / (0.37 * n)));
+    el.style.setProperty('--nfs', size.toFixed(2) + 'cqw');
+  }
+
+  function paintPostmark(pm, n) {
+    if (n >= 2) {
+      text($('.pm-n', pm), S.postmark.replace('{n}', String(n)));
+      pm.hidden = false;
+    } else pm.hidden = true;
+  }
+
   /* --------------------------------------------------------------- sealed */
 
   var env = $('#env');
@@ -465,23 +586,26 @@
   root.setAttribute('data-state', 'sealed');
   sealed.hidden = false;
 
-  fill($('#forName'), S.forName, { to: ENV.to });
+  var LOOK = lookFor(ENV);
+
   fill($('#sealedBy'), S.sealedBy, { from: ENV.from });
+  fill($('#sealedA11y'), S.sealedA11y, { to: ENV.to, from: ENV.from });
   $('#seal').setAttribute('aria-label', S.sealAria);
 
+  paintName($('.env-for', env), ENV.to);
   if (ENV.w) {
     var note = $('.env-note', env);
     text(note, S.when[ENV.w]);
     note.hidden = false;
+    env.classList.add('has-note');
   }
-  if (ENV.n && ENV.n >= 2) {
-    var pm = $('.postmark', env);
-    text($('.pm-n', pm), S.postmark.replace('{n}', String(ENV.n)));
-    pm.hidden = false;
-  }
+  paintStamp($('.stamp', env), LOOK);
+  paintPostmark($('.postmark', env), ENV.n || 1);
 
   buildCard($('#letterCard'), ENV.t, ENV.a);
   buildCard($('#card'), ENV.t, ENV.a);
+  paintLook($('#letterCard'), LOOK);
+  paintLook($('#card'), LOOK);
 
   fill($('#picked'), S.picked, { from: ENV.from });
   if (ENV.n && ENV.n >= 2) {
@@ -601,7 +725,7 @@
     var halves = $all('.seal-half', seal);
     var flap = $('.env-flap', env);
     var flapIn = $('.flap-in', env);
-    var body = $all('.env-back, .env-pocket, .env-shadow', env);
+    var body = $all('.env-back, .env-pocket, .env-front', env);
     var letter = $('.letter', env);
     var inside = $('.env-inside', env);
     var chrome = $all('.sealed-copy', sealed);
@@ -777,24 +901,18 @@
   var bigSeal = $('#bigSeal');
   var C = null; // the composer's state
 
-  // Chips.
-  var chipBox = $('#whenChips');
-  ['none'].concat(WHEN_KEYS).forEach(function (k) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'wchip';
-    b.setAttribute('data-when', k);
-    b.setAttribute('aria-pressed', k === 'none' ? 'true' : 'false');
-    b.textContent = S.chips[k];
-    chipBox.appendChild(b);
-  });
-  chipBox.addEventListener('click', function (e) {
-    var b = e.target.closest('.wchip');
-    if (!b || !C || C.sealed) return;
-    C.w = b.getAttribute('data-when') === 'none' ? null : b.getAttribute('data-when');
-    $all('.wchip', chipBox).forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-    paintComposer();
-  });
+  // An envelope sealed here carries no look of its own - the person writing
+  // it has none - so the small one is printed with the house photograph,
+  // which is what its reader will see. Painted on first open, so a page
+  // showing the sender's photo never fetches the house one for nothing.
+  var miniPainted = false;
+  function paintMini() {
+    if (miniPainted) return;
+    miniPainted = true;
+    var house = { src: HOUSE, color: null };
+    paintLook(miniCard, house);
+    paintStamp($('.stamp', mini), house);
+  }
 
   function currentTo() { return C.mode === 'back' ? ENV.from : toInput.value.trim(); }
   function currentFrom() { return fromInput.value.trim(); }
@@ -817,6 +935,7 @@
   }
 
   function openComposer(mode) {
+    paintMini();
     var lines = houseLines();
     // Start somewhere fresh, never on the line that just arrived.
     lines = lines.filter(function (l) { return l.id !== ENV.q; });
@@ -825,7 +944,7 @@
     if (mode === 'pass') {
       lines.unshift({ id: ENV.q, p: ENV.p || null, t: ENV.t, a: ENV.a });
     }
-    C = { mode: mode, lines: lines, idx: 0, w: null, sealed: false };
+    C = { mode: mode, lines: lines, idx: 0, sealed: false };
 
     text($('#sheetTitle'), mode === 'back' ? S.backTitle : S.passTitle);
     if (mode === 'back') {
@@ -838,7 +957,6 @@
       toInput.value = '';
     }
     fromInput.value = ENV.to;
-    $all('.wchip', chipBox).forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-when') === 'none' ? 'true' : 'false'); });
 
     sheet.setAttribute('data-step', 'compose');
     mini.classList.remove('is-sealed');
@@ -887,16 +1005,9 @@
   function paintComposer() {
     if (!C) return;
     var to = validName(currentTo());
-    fill($('.env-for', mini), S.forName, { to: to || S.someone });
+    paintName($('.env-for', mini), to || S.someone);
     $('.env-for', mini).classList.toggle('placeholder', !to);
-    var note = $('.env-note', mini);
-    if (C.w) { text(note, S.when[C.w]); note.hidden = false; }
-    else note.hidden = true;
-    $('.env-for', mini).classList.toggle('with-note', !!C.w);
-    var n = C.mode === 'back' ? (ENV.n || 1) + 1 : 1;
-    var pm = $('.postmark', mini);
-    if (n >= 2) { text($('.pm-n', pm), S.postmark.replace('{n}', String(n))); pm.hidden = false; }
-    else pm.hidden = true;
+    paintPostmark($('.postmark', mini), C.mode === 'back' ? (ENV.n || 1) + 1 : 1);
 
     var line = currentLine();
     buildCard(miniCard, line.text, line.a);
@@ -941,13 +1052,11 @@
     };
     if (line.p) obj.p = line.p;
     obj.n = C.mode === 'back' ? (ENV.n || 1) + 1 : 1;
-    if (C.w) obj.w = C.w;
     obj.l = LANG;
     var check = validate(obj);
     if (check.error) return null;
     var link = location.origin + '/sealed/#' + encode(obj);
-    var msg = S.message.replace('{to}', to).replace('{from}', from) + '\n' + link;
-    return { link: link, message: msg, to: to };
+    return { link: link, message: messageFor(to, link, LANG), to: to };
   }
 
   function sealIt() {

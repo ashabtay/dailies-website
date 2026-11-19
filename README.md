@@ -1121,14 +1121,19 @@ different envelope from the website's own on `/e/`, and the two never touch:
 | | `/e/` (the website's envelope) | `/sealed/` (the app's envelope) |
 |---|---|---|
 | Sealed on | the words-of-encouragement pages | the app |
-| Link carries | a site line by id, or own words | the line as text (app version 1 payload: `v`, `to`, `from`, `t`, `a`, `q`, `o`, plus optional `p`, `n`, `w`, `l`) |
+| Link carries | a site line by id, or own words | the line as text (app version 1 payload: `v`, `to`, `from`, `t`, `a`, `q`, `o`, plus optional `p`, `n`, `w` (older links), `l`, `b`, `c`) |
 | Script | `envelope.js`, `play.js`, `play-lines.js` | `sealed.js` |
 | Send one back | the encouragement page, names swapped | `dailies://envelope?v=1&e=` into the app, falling back to a small composer on the page |
 | Events | `envelope_*` through `dailiesAnalytics.play()` | `app_envelope_*` through `dailiesAnalytics.envelope()` |
 
 Both use the same `data-consent="deferred"` and `data-analytics="private"`
 switches in `consent.js`, so the names never reach analytics and no ad tag
-loads. The field list and the reasoning are at the top of `sealed.js`; its
+loads. The envelope is drawn after the app's (palette, stamp, handwritten
+name), and the sender's background prints the letter, the opened card and the
+stamp: `b` is an app background id and resolves only to the sixteen pictures
+in `img/wallpapers/bg/` (listed in `sealed.js`), `c` is a flat color, and
+anything else gets `sealed/house.jpg`. The field list and the reasoning are at
+the top of `sealed.js`; its
 pure functions are checked by `/sealed/test.html` (open it over `./serve.sh`).
 The share card `sealed/og.png` is rendered from `tools/sealed-og.html` with
 the command in its header.

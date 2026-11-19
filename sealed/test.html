@@ -9,7 +9,7 @@
   Checks for the pure functions in /sealed.js. Open /sealed/test.html over
   ./serve.sh; every line should read "ok". Also runnable headless:
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
-      --dump-dom http://localhost:8000/sealed/test.html | grep -E 'SUMMARY|FAIL'
+      --virtual-time-budget=5000 --dump-dom http://localhost:8000/sealed/test.html | grep -E 'SUMMARY|FAIL'
 -->
 <style>
   body{font:14px/1.5 ui-monospace,Menlo,monospace; background:#191c1d; color:#f0e6d2; margin:24px}
@@ -50,7 +50,7 @@
   var good = {
     v: 1, to: 'Dana', from: 'Amit', t: 'You are doing better than you think, Dana.',
     a: null, q: 'd3b6119c-cf07-42a8-9a65-d3d073ee6a2a', o: false,
-    p: 'You are doing better than you think, {name}.', n: 3, w: 'hard', l: 'en'
+    p: 'You are doing better than you think, {name}.', n: 3, w: 'hard', l: 'en', b: 'mtn_peak_dawn'
   };
 
   // ---- round trips
@@ -68,6 +68,55 @@
   eq('unknown language is ignored, not fatal', E.decode(raw(Object.assign({}, good, { l: 'fr' }))).l, undefined);
   eq('40-character name is fine', E.decode(raw(Object.assign({}, good, { to: 'x'.repeat(40) }))).to.length, 40);
   eq('600-character text is fine', E.decode(raw(Object.assign({}, good, { t: 'y'.repeat(600) }))).t.length, 600);
+
+  // ---- the sender's look: b and c are checked, and a bad one is dropped, never fatal
+  function look(extra) { return E.decode(raw(Object.assign({}, good, { b: undefined }, extra))); }
+  eq('b: an app background id is kept', look({ b: 'night_aurora' }).b, 'night_aurora');
+  eq('b: a well-formed id the site lacks is kept', look({ b: 'mtn_new_one' }).b, 'mtn_new_one');
+  eq('b: capitals are dropped', look({ b: 'Mtn_Peak_Dawn' }).b, undefined);
+  eq('b: hyphens are dropped', look({ b: 'mtn-peak-dawn' }).b, undefined);
+  eq('b: a path is dropped', look({ b: '../house' }).b, undefined);
+  eq('b: 41 characters is dropped', look({ b: 'a'.repeat(41) }).b, undefined);
+  eq('b: empty is dropped', look({ b: '' }).b, undefined);
+  eq('b: a number is dropped', look({ b: 7 }).b, undefined);
+  eq('b: a bad one still opens the envelope', look({ b: 'Not Valid!' }).to, 'Dana');
+  eq('c: #rrggbb is kept', look({ c: '#335577' }).c, '#335577');
+  eq('c: capitals are fine', look({ c: '#AABBCC' }).c, '#AABBCC');
+  eq('c: three digits are dropped', look({ c: '#357' }).c, undefined);
+  eq('c: no # is dropped', look({ c: '335577' }).c, undefined);
+  eq('c: a color name is dropped', look({ c: 'red' }).c, undefined);
+  eq('c: css is dropped', look({ c: '#335577;background:url(x)' }).c, undefined);
+  eq('c: a number is dropped', look({ c: 3355 }).c, undefined);
+  eq('c: a bad one still opens the envelope', look({ c: 'nope' }).from, 'Amit');
+
+  // ---- which picture the letter, card and stamp are printed with
+  var HOUSE = { src: '/sealed/house.jpg', color: null };
+  eq('lookFor: a background the site carries',
+    E.lookFor({ b: 'mtn_peak_dawn' }), { src: '/img/wallpapers/bg/mtn-peak-dawn.jpg', color: null });
+  eq('lookFor: underscores become hyphens throughout',
+    E.lookFor({ b: 'night_stars_over_pines' }).src, '/img/wallpapers/bg/night-stars-over-pines.jpg');
+  eq('lookFor: a background the site lacks falls back to the house photo', E.lookFor({ b: 'mtn_new_one' }), HOUSE);
+  eq('lookFor: a flat color', E.lookFor({ c: '#335577' }), { src: null, color: '#335577' });
+  eq('lookFor: an unknown photo with a color uses the color', E.lookFor({ b: 'mtn_new_one', c: '#335577' }).color, '#335577');
+  eq('lookFor: a known photo wins over a color', E.lookFor({ b: 'desert_dusk', c: '#335577' }).src, '/img/wallpapers/bg/desert-dusk.jpg');
+  eq('lookFor: neither falls back to the house photo', E.lookFor({}), HOUSE);
+  eq('lookFor: a decoded link without b or c', E.lookFor(E.decode(raw({ v: 1, to: 'A', from: 'B', t: 'Hi', a: null, q: null, o: false }))), HOUSE);
+  eq('lookFor: a decoded link with a bad c', E.lookFor(look({ c: 'red' })), HOUSE);
+  eq('lookFor: a decoded link with b', E.lookFor(E.decode(E.encode(good))).src, '/img/wallpapers/bg/mtn-peak-dawn.jpg');
+  eq('backgrounds: sixteen', E.BACKGROUNDS.length, 16);
+  eq('backgrounds: every id is app-shaped', E.BACKGROUNDS.every(function (b) { return /^[a-z0-9_]{1,40}$/.test(b); }), true);
+  eq('backgrounds: every one resolves under /img/wallpapers/bg/',
+    E.BACKGROUNDS.every(function (b) { return /^\/img\/wallpapers\/bg\/[a-z0-9-]+\.jpg$/.test(E.lookFor({ b: b }).src); }), true);
+
+  // ---- the text message a link sealed on the page travels in
+  var link = 'https://mydailies.app/sealed/#abc';
+  eq('message en', E.messageFor('Dana', link, 'en'), 'Dana, I thought of you when I read this.\n' + link);
+  eq('message es', E.messageFor('Dana', link, 'es'), 'Dana, pensé en ti cuando leí esto.\n' + link);
+  eq('message: an unknown language speaks English', E.messageFor('Dana', link, 'fr'), E.messageFor('Dana', link, 'en'));
+  eq('message: a name that looks like a pattern', E.messageFor('$& $1', link, 'en').split('\n')[0], '$& $1, I thought of you when I read this.');
+  eq('message: never says envelope', /envelope/i.test(E.messageFor('Dana', link, 'en')) || /sobre/i.test(E.messageFor('Dana', link, 'es')), false);
+  eq('message: the link on the line after', E.messageFor('Dana', link, 'es').split('\n')[1], link);
+  eq('composer: no open-when chips left', ['en', 'es'].some(function (l) { return 'chips' in E.STRINGS[l] || 'whenLabel' in E.STRINGS[l]; }), false);
 
   // ---- every invalid reason
   function reason(frag) { return E.decode(frag).error; }
@@ -138,9 +187,21 @@
   });
   eq('copy has no em-dash and no exclamation mark', noDash, true);
 
-  var s = document.getElementById('summary');
-  s.textContent = 'SUMMARY ' + pass + ' passed, ' + fail + ' failed';
-  s.className = fail ? 'fail' : 'ok';
+  function summary() {
+    var s = document.getElementById('summary');
+    s.textContent = 'SUMMARY ' + pass + ' passed, ' + fail + ' failed';
+    s.className = fail ? 'fail' : 'ok';
+  }
+  summary();
+
+  // ---- every listed background is really on the site (over http only)
+  if (location.protocol.indexOf('http') === 0 && window.fetch) {
+    Promise.all(E.BACKGROUNDS.concat(['house']).map(function (b) {
+      var src = b === 'house' ? '/sealed/house.jpg' : E.lookFor({ b: b }).src;
+      return fetch(src, { method: 'HEAD', cache: 'no-store' }).then(function (r) { return r.ok; }, function () { return false; })
+        .then(function (ok) { show(ok, 'served: ' + src); });
+    })).then(summary);
+  }
 })();
 </script>
 </body>
