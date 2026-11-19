@@ -328,11 +328,18 @@
                                edit             Change something, after sealing
                                web_sent         sent; `destination` share,
                                                 whatsapp, messages or copy,
-                                                `mode` own or line
+                                                `mode` own or line,
+                                                `sent_short`
                                composer_closed  the composer closed; `step`
                                                 compose, sealed or sent
        app_envelope_invalid  the link did not decode; `reason` is empty,
-                             decode, version or field
+                             decode, version or field, and for a short link
+                             missing (no such id), fetch (the store did not
+                             answer) or decrypt (the key does not open it)
+
+     Every app_envelope_* event carries `short`: true when the link that was
+     opened was a short one (#<id>.<key>), fetched from the envelope store.
+     web_sent also carries `sent_short`: the reply went out as a short link.
 
      Same rules as above: names and words never get through, only these keys
      with slug-like or numeric values, and events from before the banner is
@@ -345,7 +352,7 @@
     invalid: 'app_envelope_invalid'
   };
   var APP_ENVELOPE_KEYS = ['own', 'has_author', 'text_length', 'quote_id', 'thread_n', 'open_when',
-    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason', 'mode', 'how', 'step', 'progress'];
+    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason', 'mode', 'how', 'step', 'progress', 'short', 'sent_short'];
 
   function envelope(kind, props) {
     var event = APP_ENVELOPE_EVENTS[kind];

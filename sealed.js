@@ -10,9 +10,20 @@
    ---------------------------------------------------------------------------
    The link
    ---------------------------------------------------------------------------
-   https://mydailies.app/sealed/#<base64url(JSON)>, padding stripped. Everything is
-   in the fragment, and a browser never sends the fragment to a server, so no
-   server - ours included - ever sees the names or the quote. The fields:
+   Two shapes, both entirely in the fragment, which a browser never sends to
+   a server:
+
+     long   https://mydailies.app/sealed/#<base64url(JSON)>, padding stripped:
+            the whole envelope in the link.
+     short  https://mydailies.app/sealed/#<id>.<key>: an 8-character id and a
+            22-character AES-GCM key. The envelope's JSON, encrypted with that
+            key on the sender's device, is stored by id at STORE
+            (server/envelope-links in the app repo). This page fetches it and
+            opens it with the key, so the store holds envelopes it cannot
+            read. A dot never appears in base64url, so the two cannot be
+            confused.
+
+   The JSON's fields:
 
      v     1                      (anything else: invalid, reason `version`)
      to    receiver name          1-40 characters
@@ -321,6 +332,95 @@
     return s;
   }
 
+  /* ------------------------------------------------------- short links */
+
+  var STORE = 'https://envelope-links.hi-569.workers.dev/v1/envelopes';
+  var SHORT_RE = /^[A-Za-z0-9_-]{8}\.[A-Za-z0-9_-]{22}$/;
+
+  function b64urlBytes(s) {
+    var b64 = s.replace(/-/g, '+').replace(/_/g, '/');
+    while (b64.length % 4) b64 += '=';
+    var bin = atob(b64);
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return bytes;
+  }
+  function bytesB64url(bytes) {
+    var bin = '';
+    for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+
+  /* The JSON in a stored box: a 12-byte nonce, then AES-GCM ciphertext and
+     tag, all base64url. Rejects when the key does not open it. */
+  function openBox(box, key) {
+    var b = b64urlBytes(box);
+    return crypto.subtle.importKey('raw', b64urlBytes(key), 'AES-GCM', false, ['decrypt'])
+      .then(function (k) { return crypto.subtle.decrypt({ name: 'AES-GCM', iv: b.slice(0, 12) }, k, b.slice(12)); })
+      .then(function (plain) { return new TextDecoder('utf-8', { fatal: true }).decode(plain); });
+  }
+
+  /* Locks a JSON string with a new key: {box, key}, as the app does. */
+  function sealBox(json) {
+    var key = crypto.getRandomValues(new Uint8Array(16));
+    var iv = crypto.getRandomValues(new Uint8Array(12));
+    return crypto.subtle.importKey('raw', key, 'AES-GCM', false, ['encrypt'])
+      .then(function (k) { return crypto.subtle.encrypt({ name: 'AES-GCM', iv: iv }, k, new TextEncoder().encode(json)); })
+      .then(function (ct) {
+        var all = new Uint8Array(12 + ct.byteLength);
+        all.set(iv, 0);
+        all.set(new Uint8Array(ct), 12);
+        return { box: bytesB64url(all), key: bytesB64url(key) };
+      });
+  }
+
+  function withTimeout(promise, ms) {
+    return new Promise(function (resolve, reject) {
+      var t = setTimeout(function () { reject(new Error('timeout')); }, ms);
+      promise.then(function (v) { clearTimeout(t); resolve(v); }, function (e) { clearTimeout(t); reject(e); });
+    });
+  }
+
+  /* A short fragment to {raw, env}: raw is the envelope as a long payload
+     (what the app's dailies:// link takes). Rejects with a reason: missing
+     (no such id), fetch (no answer) or decrypt (the key does not open it). */
+  function fetchShort(fragment) {
+    var dot = fragment.indexOf('.');
+    var id = fragment.slice(0, dot), key = fragment.slice(dot + 1);
+    if (!window.crypto || !crypto.subtle) return Promise.reject('decrypt');
+    return withTimeout(fetch(STORE + '/' + id), 10000).then(function (r) {
+      if (r.status === 404) throw 'missing';
+      if (!r.ok) throw 'fetch';
+      return r.json();
+    }, function () { throw 'fetch'; }).then(function (j) {
+      return openBox(j.box, key).catch(function () { throw 'decrypt'; });
+    }).then(function (json) {
+      var obj;
+      try { obj = JSON.parse(json); } catch (e) { throw 'decode'; }
+      var env = validate(obj);
+      if (env.error) throw env.error;
+      return { raw: b64urlEncode(json), env: env };
+    });
+  }
+
+  /* Stores a JSON envelope and gives its short link, or rejects. */
+  function shorten(json, origin) {
+    return sealBox(json).then(function (s) {
+      return withTimeout(fetch(STORE, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ box: s.box })
+      }), 6000).then(function (r) {
+        if (r.status !== 201) throw new Error('http_' + r.status);
+        return r.json();
+      }).then(function (j) {
+        var frag = j.id + '.' + s.key;
+        if (!SHORT_RE.test(frag)) throw new Error('bad_reply');
+        return origin + '/sealed/#' + frag;
+      });
+    });
+  }
+
   /* The fragment (without the #) to an envelope, or {error: reason}. */
   function decode(fragment) {
     var s = (fragment || '').replace(/^#/, '').replace(/\s+/g, '').replace(/=+$/, '');
@@ -391,6 +491,9 @@
     ordinal: ordinal,
     lookFor: lookFor,
     messageFor: messageFor,
+    openBox: openBox,
+    sealBox: sealBox,
+    SHORT_RE: SHORT_RE,
     BACKGROUNDS: BACKGROUNDS,
     LINES: LINES,
     STRINGS: STRINGS
@@ -401,12 +504,24 @@
   var root = document.getElementById('envelope-page');
   if (!root) return; // loaded by the test page: pure functions only
 
+  // A short link is fetched and opened first; a long one decodes at once.
+  var HASH = location.hash.replace(/^#/, '');
+  if (SHORT_RE.test(HASH)) {
+    fetchShort(HASH).then(function (r) { boot(HASH, r.raw, r.env, true); },
+      function (reason) { boot(HASH, '', { error: typeof reason === 'string' ? reason : 'fetch' }, true); });
+  } else {
+    boot(HASH, HASH, decode(HASH), false);
+  }
+
+  /* The page itself, once the envelope is known. RAW is the envelope as a
+     long payload (for the app's dailies:// link). Not re-indented, to keep
+     its history readable. */
+  function boot(HASH, RAW, ENV, SHORT) {
+
   var params = new URLSearchParams(location.search);
   var AUTO = params.get('auto'); // debug: 1 opens, compose opens the composer
   var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var PLATFORM = platformGuess();
-  var RAW = location.hash.replace(/^#/, '');
-  var ENV = decode(RAW);
   var LANG = (ENV && ENV.l) || ((navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
   var S = STRINGS[LANG];
   var shownAt = Date.now();
@@ -451,12 +566,13 @@
       text_length: chars(ENV.t),
       quote_id: ENV.q || null,
       thread_n: ENV.n || null,
-      open_when: ENV.w || null
+      open_when: ENV.w || null,
+      short: SHORT
     };
   }
 
   function cta(action, extra) {
-    var p = { action: action, platform_guess: PLATFORM };
+    var p = { action: action, platform_guess: PLATFORM, short: SHORT };
     if (extra) for (var k in extra) p[k] = extra[k];
     track('cta', p);
   }
@@ -502,7 +618,7 @@
   if (ENV.error) {
     $('#invalid').hidden = false;
     root.setAttribute('data-state', 'invalid');
-    track('invalid', { reason: ENV.error });
+    track('invalid', { reason: ENV.error, short: SHORT });
     setTimeout(releaseConsent, 1400);
     return;
   }
@@ -1302,7 +1418,7 @@
     var check = validate(obj);
     if (check.error) return null;
     var link = location.origin + '/sealed/#' + encode(obj);
-    return { link: link, message: messageFor(to, link, LANG), to: to };
+    return { link: link, message: messageFor(to, link, LANG), to: to, json: JSON.stringify(obj), short: false };
   }
 
   /* -------------------------------------------------- the hold on the wax */
@@ -1356,10 +1472,22 @@
     cta('web_sealed', { mode: C.own ? 'own' : 'line', how: how === 'hold' ? 'hold' : 'key' });
     try { if (navigator.vibrate) navigator.vibrate(20); } catch (e) {}
 
-    var wa = $('#waBtn');
-    wa.href = 'https://wa.me/?text=' + encodeURIComponent(built.message);
+    function setTargets(b) {
+      $('#waBtn').href = 'https://wa.me/?text=' + encodeURIComponent(b.message);
+      $('#smsBtn').href = (PLATFORM === 'android' ? 'sms:?body=' : 'sms:&body=') + encodeURIComponent(b.message);
+    }
+    setTargets(built);
+    // The short link replaces the long one as soon as it is stored; until
+    // then, and if storing fails, the long one goes.
+    var sealedC = C;
+    shorten(built.json, location.origin).then(function (link) {
+      if (C !== sealedC || C.built !== built) return;
+      built.link = link;
+      built.message = messageFor(built.to, link, LANG);
+      built.short = true;
+      setTargets(built);
+    }, function () {});
     var sms = $('#smsBtn');
-    sms.href = (PLATFORM === 'android' ? 'sms:?body=' : 'sms:&body=') + encodeURIComponent(built.message);
     sms.hidden = !(PLATFORM === 'ios' || PLATFORM === 'android' || /Macintosh/.test(navigator.userAgent));
     $('#shareBtn').hidden = !navigator.share;
     $('#sentBlock').hidden = true;
@@ -1424,7 +1552,7 @@
 
   function markSent(dest) {
     if (C) C.sent = true;
-    cta('web_sent', { destination: dest, mode: C && C.own ? 'own' : 'line' });
+    cta('web_sent', { destination: dest, mode: C && C.own ? 'own' : 'line', sent_short: !!(C && C.built && C.built.short) });
     var sb = $('#sentBlock');
     if (sb.hidden) {
       sb.hidden = false;
@@ -1478,4 +1606,5 @@
   } else {
     env.classList.add('idle');
   }
+  } // boot
 })();
