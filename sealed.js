@@ -74,15 +74,39 @@
   var MAX_TEXT = 600;
   var WHEN_KEYS = ['hard', 'doubt', 'night', 'win', 'friend'];
 
-  /* The app's backgrounds this site also carries, at
-     /img/wallpapers/bg/<id with hyphens>.jpg. A `b` outside this list (a
-     newer photo, the sender's own picture) gets the house photograph. */
+  /* Every background the app offers, so an envelope is printed with exactly
+     what its sender sees. Photographs live at /img/wallpapers/bg/<id with
+     hyphens>.jpg, copied from the app's assets/backgrounds/ (the same
+     1080x1920 files). Gradients are drawn here from the app's own two colors
+     (lib/models/backgrounds.dart), running from a quarter in at the top to
+     three quarters in at the bottom, as Flutter's Alignment(-0.5,-1) to
+     (0.5,1) does. An id outside both lists, from a newer app, gets the house
+     photograph. Keep these in step with the app when a background is added. */
   var BACKGROUNDS = [
-    'desert_dusk', 'field_valley_dawn', 'forest_crossing', 'forest_fog_canopy',
-    'mtn_blue_ridges', 'mtn_fjord', 'mtn_peak_dawn', 'night_aurora',
-    'night_lake', 'night_milky_way', 'night_starlit_peaks', 'night_stars_over_pines',
-    'sea_sunset_surf', 'sky_cloud_line', 'sky_storm_front', 'zen_misty_pier'
+    'desert_cactus', 'desert_dune_ridge', 'desert_dusk', 'desert_from_above',
+    'desert_red_dune', 'desert_red_rock', 'field_dandelions', 'field_first_light',
+    'field_grass_trail', 'field_storm', 'field_valley_dawn', 'field_wheatfield',
+    'forest_autumn_wood', 'forest_crossing', 'forest_fog_canopy', 'forest_mirror_lake',
+    'forest_river', 'forest_trail', 'mtn_alpine_peak', 'mtn_alpine_ridge',
+    'mtn_blue_ridges', 'mtn_fjord', 'mtn_peak_dawn', 'mtn_valley',
+    'night_aurora', 'night_boathouse', 'night_lake', 'night_milky_way',
+    'night_starlit_peaks', 'night_stars_over_pines', 'sea_black_sand', 'sea_boardwalk',
+    'sea_glass_water', 'sea_steps_down', 'sea_sunset_surf', 'sea_under_pier',
+    'sil_confidence', 'sil_in_profile', 'sil_looking_up', 'sky_above_the_clouds',
+    'sky_cloud_line', 'sky_cloud_over_pines', 'sky_fog_roll', 'sky_storm_front',
+    'sky_thunderhead', 'zen_bench', 'zen_misty_pier', 'zen_stone_in_water'
   ];
+  var GRADIENTS = {
+    plain_dusk: ['#8c491a', '#402310'],
+    plain_slate: ['#4a5560', '#171d23'],
+    plain_navy: ['#26364f', '#0b111b'],
+    plain_charcoal: ['#3a3a3a', '#151515'],
+    plain_moss: ['#3d4c34', '#121a0f'],
+    plain_indigo: ['#2f3059', '#0d0e1c']
+  };
+  // Ids the app has retired, and what stands in their place (the app's
+  // kRetiredBackgroundIds).
+  var RETIRED = { sea_turquoise_bay: 'sea_glass_water' };
   var HOUSE = '/sealed/house.jpg';
   var BG_ID = /^[a-z0-9_]{1,40}$/;
   var HEX = /^#[0-9a-fA-F]{6}$/;
@@ -458,14 +482,32 @@
   }
 
   /* What the letter, the card and the stamp are printed with: the sender's
-     photograph when the site has it, else their flat color, else the house
-     photograph. {src} for a picture, {color} for a flat color. */
+     photograph or gradient, else their flat color, else the house
+     photograph. {src} for a picture, {gradient: [top, bottom]} for a
+     gradient, {color} for a flat color. */
   function lookFor(env) {
-    if (env && env.b && BACKGROUNDS.indexOf(env.b) !== -1) {
-      return { src: '/img/wallpapers/bg/' + env.b.replace(/_/g, '-') + '.jpg', color: null };
+    var b = env && env.b ? (RETIRED[env.b] || env.b) : null;
+    if (b && BACKGROUNDS.indexOf(b) !== -1) {
+      return { src: '/img/wallpapers/bg/' + b.replace(/_/g, '-') + '.jpg', color: null };
     }
+    if (b && GRADIENTS[b]) return { src: null, color: null, gradient: GRADIENTS[b] };
     if (env && env.c && HEX.test(env.c)) return { src: null, color: env.c };
     return { src: HOUSE, color: null };
+  }
+
+  /* A gradient as Flutter paints LinearGradient(begin: Alignment(-0.5, -1),
+     end: Alignment(0.5, 1)) on a box w wide and h tall: the colors run
+     between those two points, at right angles to the line through them.
+     CSS measures its gradient line differently, so the angle and the two
+     stops are worked out from the box's shape. */
+  function gradientCss(colors, w, h) {
+    var dx = 0.5 * w, dy = h, d = Math.sqrt(dx * dx + dy * dy);
+    var ang = Math.atan2(dx, -dy);
+    var L = Math.abs(w * Math.sin(ang)) + Math.abs(h * Math.cos(ang));
+    var half = 0.5 * d / L;
+    return 'linear-gradient(' + (ang * 180 / Math.PI).toFixed(2) + 'deg, ' +
+      colors[0] + ' ' + ((0.5 - half) * 100).toFixed(2) + '%, ' +
+      colors[1] + ' ' + ((0.5 + half) * 100).toFixed(2) + '%)';
   }
 
   /* The text message a link sealed on this page travels in. split/join, not
@@ -490,6 +532,8 @@
     personalize: personalize,
     ordinal: ordinal,
     lookFor: lookFor,
+    gradientCss: gradientCss,
+    GRADIENTS: GRADIENTS,
     messageFor: messageFor,
     openBox: openBox,
     sealBox: sealBox,
@@ -642,15 +686,17 @@
      under the same scrim (the words are always white). */
   function paintLook(card, look) {
     var img = $('.qc-img', card);
-    if (look.color) {
-      card.classList.add('flat');
-      card.style.backgroundColor = look.color;
-      img.removeAttribute('src');
-    } else {
-      card.classList.remove('flat');
-      card.style.backgroundColor = '';
-      img.src = look.src;
+    card.classList.toggle('flat', !!look.color);
+    card.classList.toggle('grad', !!look.gradient);
+    card.style.backgroundColor = look.color || '';
+    card.style.backgroundImage = '';
+    if (look.gradient) {
+      // The card's own shape: 4:5, or 4:3 for the small one in the composer.
+      var land = card.classList.contains('land');
+      card.style.backgroundImage = gradientCss(look.gradient, 4, land ? 3 : 5);
     }
+    if (look.src) img.src = look.src;
+    else img.removeAttribute('src');
   }
 
   /* The postage stamp: a white perforated edge round the same background.
@@ -682,7 +728,16 @@
     }
     svgEl('rect', { width: W, height: H, fill: '#fff', mask: 'url(#' + id + ')' }, svg);
     var inner = { x: 10, y: 10, width: W - 20, height: H - 20 };
-    if (look.color) {
+    if (look.gradient) {
+      // In the stamp's own units, so it runs exactly as the app's does.
+      var gid = 'grad' + stamps;
+      var lg = svgEl('linearGradient', { id: gid, gradientUnits: 'userSpaceOnUse',
+        x1: inner.x + inner.width * 0.25, y1: inner.y, x2: inner.x + inner.width * 0.75, y2: inner.y + inner.height }, $('defs', svg));
+      svgEl('stop', { offset: 0, 'stop-color': look.gradient[0] }, lg);
+      svgEl('stop', { offset: 1, 'stop-color': look.gradient[1] }, lg);
+      inner.fill = 'url(#' + gid + ')';
+      svgEl('rect', inner, svg);
+    } else if (look.color) {
       inner.fill = look.color;
       svgEl('rect', inner, svg);
     } else {
