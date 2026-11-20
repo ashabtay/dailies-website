@@ -112,7 +112,15 @@
   eq('lookFor: a decoded link without b or c', E.lookFor(E.decode(raw({ v: 1, to: 'A', from: 'B', t: 'Hi', a: null, q: null, o: false }))), HOUSE);
   eq('lookFor: a decoded link with a bad c', E.lookFor(look({ c: 'red' })), HOUSE);
   eq('lookFor: a decoded link with b', E.lookFor(E.decode(E.encode(good))).src, '/img/wallpapers/bg/mtn-peak-dawn.jpg');
-  eq('backgrounds: sixteen', E.BACKGROUNDS.length, 16);
+  eq('backgrounds: every photo the app has (48)', E.BACKGROUNDS.length, 48);
+  eq('backgrounds: silhouettes are there', E.lookFor({ b: 'sil_looking_up' }).src, '/img/wallpapers/bg/sil-looking-up.jpg');
+  eq('backgrounds: a retired id follows its replacement', E.lookFor({ b: 'sea_turquoise_bay' }).src, '/img/wallpapers/bg/sea-glass-water.jpg');
+  eq('gradients: the app\'s six', Object.keys(E.GRADIENTS).sort(), ['plain_charcoal', 'plain_dusk', 'plain_indigo', 'plain_moss', 'plain_navy', 'plain_slate']);
+  eq('gradients: by id', E.lookFor({ b: 'plain_dusk' }), { src: null, color: null, gradient: ['#8c491a', '#402310'] });
+  eq('gradients: a gradient wins over a color', E.lookFor({ b: 'plain_navy', c: '#335577' }).gradient, ['#26364f', '#0b111b']);
+  // A square box: the line from (w/4, 0) to (3w/4, h) and CSS's own line.
+  eq('gradients: as Flutter draws them, square', E.gradientCss(['#000000', '#ffffff'], 1, 1), 'linear-gradient(153.43deg, #000000 8.33%, #ffffff 91.67%)');
+  eq('gradients: as Flutter draws them, 4:5', E.gradientCss(['#000000', '#ffffff'], 4, 5), 'linear-gradient(158.20deg, #000000 6.06%, #ffffff 93.94%)');
   eq('backgrounds: every id is app-shaped', E.BACKGROUNDS.every(function (b) { return /^[a-z0-9_]{1,40}$/.test(b); }), true);
   eq('backgrounds: every one resolves under /img/wallpapers/bg/',
     E.BACKGROUNDS.every(function (b) { return /^\/img\/wallpapers\/bg\/[a-z0-9-]+\.jpg$/.test(E.lookFor({ b: b }).src); }), true);
