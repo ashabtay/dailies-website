@@ -112,7 +112,14 @@
   eq('lookFor: a decoded link without b or c', E.lookFor(E.decode(raw({ v: 1, to: 'A', from: 'B', t: 'Hi', a: null, q: null, o: false }))), HOUSE);
   eq('lookFor: a decoded link with a bad c', E.lookFor(look({ c: 'red' })), HOUSE);
   eq('lookFor: a decoded link with b', E.lookFor(E.decode(E.encode(good))).src, '/img/wallpapers/bg/mtn-peak-dawn.jpg');
-  eq('backgrounds: sixteen', E.BACKGROUNDS.length, 16);
+  eq('backgrounds: every bundled photograph in the app', E.BACKGROUNDS.length, 48);
+  eq('backgrounds: the Silhouettes travel', E.lookFor({ b: 'sil_looking_up' }).src, '/img/wallpapers/bg/sil-looking-up.jpg');
+  eq('lookFor: a gradient', E.lookFor({ b: 'plain_dusk' }), { src: null, color: '#663615', gradient: ['#8c491a', '#402310'] });
+  eq('lookFor: a gradient wins over its fallback color', E.lookFor({ b: 'plain_navy', c: '#123456' }).gradient, ['#26364f', '#0b111b']);
+  eq('lookFor: an unknown gradient falls back to its color', E.lookFor({ b: 'plain_new', c: '#123456' }), { src: null, color: '#123456' });
+  eq('lookFor: an inherited name is not a gradient', E.lookFor({ b: 'constructor' }), HOUSE);
+  eq('gradients: six, each two colors', Object.keys(E.GRADIENTS).length === 6 &&
+    Object.keys(E.GRADIENTS).every(function (k) { var g = E.GRADIENTS[k]; return g.length === 2 && /^#[0-9a-f]{6}$/.test(g[0]) && /^#[0-9a-f]{6}$/.test(g[1]); }), true);
   eq('backgrounds: every id is app-shaped', E.BACKGROUNDS.every(function (b) { return /^[a-z0-9_]{1,40}$/.test(b); }), true);
   eq('backgrounds: every one resolves under /img/wallpapers/bg/',
     E.BACKGROUNDS.every(function (b) { return /^\/img\/wallpapers\/bg\/[a-z0-9-]+\.jpg$/.test(E.lookFor({ b: b }).src); }), true);

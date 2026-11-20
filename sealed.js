@@ -38,9 +38,11 @@
            Older links only: neither the app nor the web composer below
            sends it any more, but a link that carries it still shows it.
      l     optional: the sender's app language, en or es
-     b     optional: the sender's background, by the app's id
-           (mtn_peak_dawn), when it is one of the bundled photographs
-     c     optional: the sender's background when it is a flat color, #rrggbb
+     b     optional: the sender's background, by the app's id, when it is
+           one of the bundled photographs (mtn_peak_dawn) or gradients
+           (plain_dusk)
+     c     optional: the sender's background when it is a flat color, #rrggbb;
+           with a gradient's b, its middle color, for a page without it
 
    A malformed b or c is dropped, not fatal: the envelope still opens on the
    house photograph. The background shows on the letter, the opened card and
@@ -74,15 +76,38 @@
   var MAX_TEXT = 600;
   var WHEN_KEYS = ['hard', 'doubt', 'night', 'win', 'friend'];
 
-  /* The app's backgrounds this site also carries, at
-     /img/wallpapers/bg/<id with hyphens>.jpg. A `b` outside this list (a
-     newer photo, the sender's own picture) gets the house photograph. */
+  /* Every photograph the app bundles, at /img/wallpapers/bg/<id with
+     hyphens>.jpg (the same 1080x1920 files). A `b` outside this list (a
+     photo added to the app after this page, or the sender's own picture)
+     gets the house photograph, or their color when the link carries one. */
   var BACKGROUNDS = [
-    'desert_dusk', 'field_valley_dawn', 'forest_crossing', 'forest_fog_canopy',
-    'mtn_blue_ridges', 'mtn_fjord', 'mtn_peak_dawn', 'night_aurora',
-    'night_lake', 'night_milky_way', 'night_starlit_peaks', 'night_stars_over_pines',
-    'sea_sunset_surf', 'sky_cloud_line', 'sky_storm_front', 'zen_misty_pier'
+    'desert_cactus', 'desert_dune_ridge', 'desert_dusk', 'desert_from_above',
+    'desert_red_dune', 'desert_red_rock', 'field_dandelions', 'field_first_light',
+    'field_grass_trail', 'field_storm', 'field_valley_dawn', 'field_wheatfield',
+    'forest_autumn_wood', 'forest_crossing', 'forest_fog_canopy',
+    'forest_mirror_lake', 'forest_river', 'forest_trail', 'mtn_alpine_peak',
+    'mtn_alpine_ridge', 'mtn_blue_ridges', 'mtn_fjord', 'mtn_peak_dawn',
+    'mtn_valley', 'night_aurora', 'night_boathouse', 'night_lake',
+    'night_milky_way', 'night_starlit_peaks', 'night_stars_over_pines',
+    'sea_black_sand', 'sea_boardwalk', 'sea_glass_water', 'sea_steps_down',
+    'sea_sunset_surf', 'sea_under_pier', 'sil_confidence', 'sil_in_profile',
+    'sil_looking_up', 'sky_above_the_clouds', 'sky_cloud_line',
+    'sky_cloud_over_pines', 'sky_fog_roll', 'sky_storm_front', 'sky_thunderhead',
+    'zen_bench', 'zen_misty_pier', 'zen_stone_in_water'
   ];
+
+  /* The app's "Plain & gradients" backgrounds, painted here rather than
+     carried as pictures: top color, bottom color, as in
+     lib/models/backgrounds.dart, where each runs from Alignment(-0.5, -1)
+     to Alignment(0.5, 1). */
+  var GRADIENTS = {
+    plain_dusk: ['#8c491a', '#402310'],
+    plain_slate: ['#4a5560', '#171d23'],
+    plain_navy: ['#26364f', '#0b111b'],
+    plain_charcoal: ['#3a3a3a', '#151515'],
+    plain_moss: ['#3d4c34', '#121a0f'],
+    plain_indigo: ['#2f3059', '#0d0e1c']
+  };
   var HOUSE = '/sealed/house.jpg';
   var BG_ID = /^[a-z0-9_]{1,40}$/;
   var HEX = /^#[0-9a-fA-F]{6}$/;
@@ -458,14 +483,36 @@
   }
 
   /* What the letter, the card and the stamp are printed with: the sender's
-     photograph when the site has it, else their flat color, else the house
-     photograph. {src} for a picture, {color} for a flat color. */
+     photograph or gradient when the site knows it, else their flat color,
+     else the house photograph. {src} for a picture, {color} for a flat
+     color, and {gradient} (top, bottom) with {color} as its middle. */
   function lookFor(env) {
     if (env && env.b && BACKGROUNDS.indexOf(env.b) !== -1) {
       return { src: '/img/wallpapers/bg/' + env.b.replace(/_/g, '-') + '.jpg', color: null };
     }
+    if (env && env.b && Object.prototype.hasOwnProperty.call(GRADIENTS, env.b)) {
+      var g = GRADIENTS[env.b];
+      return { src: null, color: mix(g[0], g[1]), gradient: g.slice() };
+    }
     if (env && env.c && HEX.test(env.c)) return { src: null, color: env.c };
     return { src: HOUSE, color: null };
+  }
+
+  /* The color halfway between two #rrggbb colors. */
+  function mix(a, b) {
+    var out = '#';
+    for (var i = 1; i < 7; i += 2) {
+      var v = Math.round((parseInt(a.substr(i, 2), 16) + parseInt(b.substr(i, 2), 16)) / 2);
+      out += (v < 16 ? '0' : '') + v.toString(16);
+    }
+    return out;
+  }
+
+  /* The CSS for a gradient look on a 4:5 card: the angle and stops that put
+     the app's begin and end points, Alignment(-0.5, -1) and (0.5, 1), where
+     they fall on the app's card. */
+  function gradientCss(g) {
+    return 'linear-gradient(158deg, ' + g[0] + ' 6%, ' + g[1] + ' 94%)';
   }
 
   /* The text message a link sealed on this page travels in. split/join, not
@@ -495,6 +542,7 @@
     sealBox: sealBox,
     SHORT_RE: SHORT_RE,
     BACKGROUNDS: BACKGROUNDS,
+    GRADIENTS: GRADIENTS,
     LINES: LINES,
     STRINGS: STRINGS
   };
@@ -645,10 +693,12 @@
     if (look.color) {
       card.classList.add('flat');
       card.style.backgroundColor = look.color;
+      card.style.backgroundImage = look.gradient ? gradientCss(look.gradient) : '';
       img.removeAttribute('src');
     } else {
       card.classList.remove('flat');
       card.style.backgroundColor = '';
+      card.style.backgroundImage = '';
       img.src = look.src;
     }
   }
@@ -667,7 +717,8 @@
     var W = 100, H = 122, R = 4.5, id = 'perf' + (++stamps);
     box.textContent = '';
     var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, 'aria-hidden': 'true', focusable: 'false' }, box);
-    var mask = svgEl('mask', { id: id }, svgEl('defs', {}, svg));
+    var defs = svgEl('defs', {}, svg);
+    var mask = svgEl('mask', { id: id }, defs);
     svgEl('rect', { width: W, height: H, fill: '#fff' }, mask);
     var nx = Math.round(W / (R * 2.6)), ny = Math.round(H / (R * 2.6)), i;
     for (i = 0; i < nx; i++) {
@@ -682,7 +733,14 @@
     }
     svgEl('rect', { width: W, height: H, fill: '#fff', mask: 'url(#' + id + ')' }, svg);
     var inner = { x: 10, y: 10, width: W - 20, height: H - 20 };
-    if (look.color) {
+    if (look.gradient) {
+      // The app's begin and end points, in the stamp's own box.
+      var lg = svgEl('linearGradient', { id: id + 'g', x1: 0.25, y1: 0, x2: 0.75, y2: 1 }, defs);
+      svgEl('stop', { offset: 0, 'stop-color': look.gradient[0] }, lg);
+      svgEl('stop', { offset: 1, 'stop-color': look.gradient[1] }, lg);
+      inner.fill = 'url(#' + id + 'g)';
+      svgEl('rect', inner, svg);
+    } else if (look.color) {
       inner.fill = look.color;
       svgEl('rect', inner, svg);
     } else {
