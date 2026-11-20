@@ -41,6 +41,10 @@
      b     optional: the sender's background, by the app's id
            (mtn_peak_dawn), when it is one of the bundled photographs
      c     optional: the sender's background when it is a flat color, #rrggbb
+     i     optional, short links only: the id of the sender's own photo (their
+           background), stored next to the envelope and locked with the same
+           key. Fetched and opened here; if it cannot be, the house
+           photograph stands in.
 
    A malformed b or c is dropped, not fatal: the envelope still opens on the
    house photograph. The background shows on the letter, the opened card and
@@ -342,6 +346,7 @@
     if (typeof obj.c === 'string' && HEX.test(obj.c)) env.c = obj.c;
     var m = cleanNote(obj.m);
     if (m) env.m = m;
+    if (typeof obj.i === 'string' && PHOTO_ID.test(obj.i)) env.i = obj.i;
     return env;
   }
 
@@ -359,6 +364,8 @@
   /* ------------------------------------------------------- short links */
 
   var STORE = 'https://envelope-links.hi-569.workers.dev/v1/envelopes';
+  var PHOTOS = 'https://envelope-links.hi-569.workers.dev/v1/photos';
+  var PHOTO_ID = /^[A-Za-z0-9_-]{8}$/;
   var SHORT_RE = /^[A-Za-z0-9_-]{8}\.[A-Za-z0-9_-]{22}$/;
 
   function b64urlBytes(s) {
@@ -377,11 +384,26 @@
 
   /* The JSON in a stored box: a 12-byte nonce, then AES-GCM ciphertext and
      tag, all base64url. Rejects when the key does not open it. */
-  function openBox(box, key) {
-    var b = b64urlBytes(box);
+  function openBytes(b, key) {
     return crypto.subtle.importKey('raw', b64urlBytes(key), 'AES-GCM', false, ['decrypt'])
-      .then(function (k) { return crypto.subtle.decrypt({ name: 'AES-GCM', iv: b.slice(0, 12) }, k, b.slice(12)); })
+      .then(function (k) { return crypto.subtle.decrypt({ name: 'AES-GCM', iv: b.slice(0, 12) }, k, b.slice(12)); });
+  }
+  function openBox(box, key) {
+    return openBytes(b64urlBytes(box), key)
       .then(function (plain) { return new TextDecoder('utf-8', { fatal: true }).decode(plain); });
+  }
+
+  /* The sender's own photo, as an object URL for <img> and the stamp, or
+     null when it cannot be fetched or opened (the house photograph then). */
+  function fetchPhoto(id, key) {
+    return withTimeout(fetch(PHOTOS + '/' + id), 10000).then(function (r) {
+      if (!r.ok) throw new Error('photo ' + r.status);
+      return r.arrayBuffer();
+    }).then(function (buf) {
+      return openBytes(new Uint8Array(buf), key);
+    }).then(function (jpeg) {
+      return URL.createObjectURL(new Blob([jpeg], { type: 'image/jpeg' }));
+    }).catch(function () { return null; });
   }
 
   /* Locks a JSON string with a new key: {box, key}, as the app does. */
@@ -423,7 +445,9 @@
       try { obj = JSON.parse(json); } catch (e) { throw 'decode'; }
       var env = validate(obj);
       if (env.error) throw env.error;
-      return { raw: b64urlEncode(json), env: env };
+      var done = { raw: b64urlEncode(json), env: env, photo: null };
+      if (!env.i) return done;
+      return fetchPhoto(env.i, key).then(function (url) { done.photo = url; return done; });
     });
   }
 
@@ -536,6 +560,7 @@
     GRADIENTS: GRADIENTS,
     messageFor: messageFor,
     openBox: openBox,
+    openBytes: openBytes,
     sealBox: sealBox,
     SHORT_RE: SHORT_RE,
     BACKGROUNDS: BACKGROUNDS,
@@ -551,16 +576,16 @@
   // A short link is fetched and opened first; a long one decodes at once.
   var HASH = location.hash.replace(/^#/, '');
   if (SHORT_RE.test(HASH)) {
-    fetchShort(HASH).then(function (r) { boot(HASH, r.raw, r.env, true); },
-      function (reason) { boot(HASH, '', { error: typeof reason === 'string' ? reason : 'fetch' }, true); });
+    fetchShort(HASH).then(function (r) { boot(HASH, r.raw, r.env, true, r.photo); },
+      function (reason) { boot(HASH, '', { error: typeof reason === 'string' ? reason : 'fetch' }, true, null); });
   } else {
-    boot(HASH, HASH, decode(HASH), false);
+    boot(HASH, HASH, decode(HASH), false, null);
   }
 
   /* The page itself, once the envelope is known. RAW is the envelope as a
      long payload (for the app's dailies:// link). Not re-indented, to keep
      its history readable. */
-  function boot(HASH, RAW, ENV, SHORT) {
+  function boot(HASH, RAW, ENV, SHORT, PHOTO) {
 
   var params = new URLSearchParams(location.search);
   var AUTO = params.get('auto'); // debug: 1 opens, compose opens the composer
@@ -611,7 +636,9 @@
       quote_id: ENV.q || null,
       thread_n: ENV.n || null,
       open_when: ENV.w || null,
-      short: SHORT
+      short: SHORT,
+      // The sender's own photo: shown, or named but not fetched or opened.
+      photo: ENV.i ? (PHOTO ? 'shown' : 'failed') : null
     };
   }
 
@@ -782,7 +809,7 @@
   root.setAttribute('data-state', 'sealed');
   sealed.hidden = false;
 
-  var LOOK = lookFor(ENV);
+  var LOOK = PHOTO ? { src: PHOTO, color: null } : lookFor(ENV);
 
   fill($('#sealedBy'), S.sealedBy, { from: ENV.from });
   fill($('#sealedA11y'), S.sealedA11y, { to: ENV.to, from: ENV.from });
