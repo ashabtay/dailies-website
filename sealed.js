@@ -47,8 +47,9 @@
            photograph stands in.
 
    A malformed b or c is dropped, not fatal: the envelope still opens on the
-   house photograph. The background shows on the letter, the opened card and
-   the postage stamp; only ids in BACKGROUNDS below are ever requested.
+   house photograph. The background shows on the letter and the opened card
+   (the postage stamp is the same Dailies stamp on every envelope); only ids
+   in BACKGROUNDS below are ever requested.
 
    ---------------------------------------------------------------------------
    Rules this file keeps
@@ -726,9 +727,10 @@
     else img.removeAttribute('src');
   }
 
-  /* The postage stamp: a white perforated edge round the same background.
+  /* The postage stamp: a white perforated edge round the Dailies face.
      Built here because each needs its own mask id. */
   var SVG_NS = 'http://www.w3.org/2000/svg';
+  var STAMP_MARK = 'M0.1722 0.9272L0.0828 0.8609Q0.1192 0.8146 0.1589 0.7285Q0.1987 0.6424 0.2235 0.5381Q0.2483 0.4338 0.2351 0.3344Q0.2119 0.3444 0.1921 0.3493Q0.1722 0.3543 0.1523 0.3543Q0.0894 0.3543 0.0447 0.3079Q0.0000 0.2616 0.0000 0.1921Q0.0000 0.0993 0.0546 0.0497Q0.1093 0.0000 0.1821 0.0000Q0.2980 0.0000 0.3576 0.0877Q0.4172 0.1755 0.4172 0.3013Q0.4172 0.3841 0.3858 0.5033Q0.3543 0.6225 0.2997 0.7368Q0.2450 0.8510 0.1722 0.9272ZM0.7550 0.9272L0.6656 0.8609Q0.7020 0.8146 0.7417 0.7285Q0.7815 0.6424 0.8063 0.5381Q0.8311 0.4338 0.8179 0.3344Q0.7947 0.3444 0.7748 0.3493Q0.7550 0.3543 0.7351 0.3543Q0.6722 0.3543 0.6275 0.3079Q0.5828 0.2616 0.5828 0.1921Q0.5828 0.0993 0.6374 0.0497Q0.6921 0.0000 0.7649 0.0000Q0.8808 0.0000 0.9404 0.0877Q1.0000 0.1755 1.0000 0.3013Q1.0000 0.3841 0.9685 0.5033Q0.9371 0.6225 0.8825 0.7368Q0.8278 0.8510 0.7550 0.9272Z';
   var stamps = 0;
   function svgEl(name, attrs, parent) {
     var el = document.createElementNS(SVG_NS, name);
@@ -736,7 +738,7 @@
     if (parent) parent.appendChild(el);
     return el;
   }
-  function paintStamp(box, look) {
+  function paintStamp(box) {
     var W = 100, H = 122, R = 4.5, id = 'perf' + (++stamps);
     box.textContent = '';
     var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, 'aria-hidden': 'true', focusable: 'false' }, box);
@@ -754,24 +756,18 @@
       svgEl('circle', { cx: W, cy: y, r: R, fill: '#000' }, mask);
     }
     svgEl('rect', { width: W, height: H, fill: '#fff', mask: 'url(#' + id + ')' }, svg);
-    var inner = { x: 10, y: 10, width: W - 20, height: H - 20 };
-    if (look.gradient) {
-      // In the stamp's own units, so it runs exactly as the app's does.
-      var gid = 'grad' + stamps;
-      var lg = svgEl('linearGradient', { id: gid, gradientUnits: 'userSpaceOnUse',
-        x1: inner.x + inner.width * 0.25, y1: inner.y, x2: inner.x + inner.width * 0.75, y2: inner.y + inner.height }, $('defs', svg));
-      svgEl('stop', { offset: 0, 'stop-color': look.gradient[0] }, lg);
-      svgEl('stop', { offset: 1, 'stop-color': look.gradient[1] }, lg);
-      inner.fill = 'url(#' + gid + ')';
-      svgEl('rect', inner, svg);
-    } else if (look.color) {
-      inner.fill = look.color;
-      svgEl('rect', inner, svg);
-    } else {
-      inner.href = look.src;
-      inner.preserveAspectRatio = 'xMidYMid slice';
-      svgEl('image', inner, svg);
-    }
+    // The face is the same on every envelope, never the sender's
+    // background: the lining's navy, a thin old-gold frame and the lining's
+    // gold closing quote mark (Lora's outline, scaled to a width of 1). The
+    // app's _StampFace draws the same.
+    var ix = 10, iy = 10, iw = W - 20, ih = H - 20;
+    svgEl('rect', { x: ix, y: iy, width: iw, height: ih, fill: '#1E2942' }, svg);
+    var inset = iw * 0.07, sw = iw * 0.025;
+    svgEl('rect', { x: ix + inset, y: iy + inset, width: iw - 2 * inset, height: ih - 2 * inset,
+      fill: 'none', stroke: '#C4A062', 'stroke-opacity': 0.85, 'stroke-width': sw }, svg);
+    var mw = iw * 0.46, mh = mw * 0.9272;
+    svgEl('path', { d: STAMP_MARK, fill: '#C4A062',
+      transform: 'translate(' + (ix + (iw - mw) / 2).toFixed(2) + ' ' + (iy + (ih - mh) / 2 - ih * 0.02).toFixed(2) + ') scale(' + mw.toFixed(3) + ')' }, svg);
     box.hidden = false;
   }
 
@@ -818,7 +814,7 @@
   paintName($('.env-for', env), ENV.to);
   // The sender's own line, or, on an older link, its "open when".
   paintNote($('.env-note', env), ENV.m || (ENV.w ? S.when[ENV.w] : null));
-  paintStamp($('.stamp', env), LOOK);
+  paintStamp($('.stamp', env));
   paintPostmark($('.postmark', env), ENV.n || 1);
 
   buildCard($('#letterCard'), ENV.t, ENV.a);
@@ -1262,7 +1258,7 @@
     miniPainted = true;
     var house = { src: HOUSE, color: null };
     paintLook(miniCard, house);
-    paintStamp($('.stamp', mini), house);
+    paintStamp($('.stamp', mini));
     fitHoldText();
   }
 
