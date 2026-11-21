@@ -31,7 +31,7 @@
 <link rel="icon" href="/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
 
 <style>
 /* ============ TOKENS: dark-first (the app icon is a night scene) ============ */
@@ -138,12 +138,43 @@ p{margin:0}
 .nav-links .lang-menu a:hover{background:var(--chip); color:var(--text)}
 .nav-links .lang-menu a[aria-current="true"]{color:var(--text); background:var(--chip-on)}
 
-/* ============ HERO ============ */
-.hero{position:relative; overflow:hidden; padding:clamp(50px,6.5vw,84px) 0 clamp(128px,15vw,196px)}
-.hero-ridge{position:absolute; inset:auto 0 0 0; height:min(31vw,300px); z-index:0; pointer-events:none}
-.hero-ridge canvas{width:100%; height:100%; display:block}
-.hero-in{position:relative; z-index:2; display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); gap:clamp(30px,4vw,60px); align-items:center}
-.hero-copy{display:flex; flex-direction:column; gap:24px; align-items:flex-start}
+/* While the hero is on screen the nav takes the field's own night color in
+   both themes, so the top of the page is one dark piece. Redefining the
+   tokens here recolors the links, the language menu and the button too. The
+   script after the hero takes the class off once the field scrolls away. */
+.nav.on-field{
+  --ground:#0b0c0b; --panel:#1b1d1b; --text:#f3ecdc; --text-dim:#b4ad9c;
+  --rule:rgba(243,236,220,.13); --rule-soft:rgba(243,236,220,.07);
+  --chip:rgba(243,236,220,.06); --chip-on:rgba(157,176,129,.16);
+  background:#0b0c0b; border-bottom-color:transparent; color:var(--text)}
+.nav{transition:background-color .3s, border-color .3s}
+
+/* ============ HERO: a field of floating quotes ============ */
+/* Always night, in both themes: the cards are photographs, and the headline
+   reads on dark. Twelve cards (eight on a phone) hang at different depths;
+   the far ones are smaller, dimmer and blurred. A veil darkens the middle so
+   the headline stays legible over them. Each card's line sits where the app
+   puts it, a little above the middle, left-aligned. */
+.field{position:relative; overflow:hidden; height:calc(100svh - 72px); min-height:600px; max-height:980px; background:#0b0c0b; color:#f3ecdc}
+.field-cards{position:absolute; inset:0}
+.fc{position:absolute; left:var(--x); top:var(--y); width:var(--w); aspect-ratio:9/13; margin:0; border-radius:18px; overflow:hidden;
+  filter:blur(var(--b)) brightness(var(--br)); transform:translate(-50%,-50%) rotate(var(--r));
+  animation:float var(--t) ease-in-out infinite alternate; box-shadow:0 30px 60px rgba(0,0,0,.5); transition:margin .5s ease-out}
+.fc img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.fc::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.42) 36%,rgba(0,0,0,.42) 64%,rgba(0,0,0,.18))}
+.fc span{position:absolute; z-index:2; left:12%; right:10%; top:36%; font-family:var(--f-display); font-size:calc(var(--w) * .08); line-height:1.25; color:#f4ecdc; text-shadow:0 1px 10px rgba(0,0,0,.45)}
+@keyframes float{to{translate:0 -18px}}
+.field-veil{position:absolute; inset:0; pointer-events:none; background:radial-gradient(42% 46% at 50% 50%,rgba(11,12,11,.92),rgba(11,12,11,.55) 60%,rgba(11,12,11,.1))}
+.field-copy{position:relative; z-index:2; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:22px; padding:0 18px}
+.field h1{font-weight:300; font-size:clamp(44px,6.4vw,92px); line-height:1; letter-spacing:-.02em; max-width:12ch; color:#f3ecdc}
+.field h1 em{font-weight:400; color:#c9dca8}
+.field .lede{color:#bdb5a4; max-width:46ch}
+/* The App Store star rating. Typed in by hand: update it when the listing's
+   rating changes (see the README). Never a count of ratings. */
+.rating{display:flex; align-items:center; gap:10px; font-size:15px; color:#cfc7b5}
+.rating b{color:#f3ecdc; font-weight:600}
+.rating-stars{display:inline-flex; gap:2px}
+.rating-stars svg{display:block; width:16px; height:16px}
 h1 em{font-style:italic; color:var(--accent)}
 .cta-row{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
 .qr{display:flex; align-items:center; gap:14px}
@@ -152,40 +183,12 @@ h1 em{font-style:italic; color:var(--accent)}
 .qr-chip img{display:block; width:100%; height:100%}
 .qr-note{font-size:12.5px; line-height:1.35; color:var(--text-faint); max-width:15ch}
 
-.deck{position:relative; height:clamp(320px,33vw,410px)}
-.qcard{
-  position:absolute; width:clamp(130px,10.9vw,146px); aspect-ratio:9/12.4; border-radius:19px; overflow:hidden;
-  box-shadow:var(--card-shadow); background:#2a2a26;
-  display:flex; align-items:flex-end; padding:17px; animation:drift 14s ease-in-out infinite;
-}
-.qcard::after{content:""; position:absolute; inset:0; background:linear-gradient(178deg,rgba(12,14,12,.10) 26%,rgba(12,14,12,.78) 100%)}
-.qcard img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
-.qcard span{
-  position:relative; z-index:2; font-family:var(--f-display); font-size:calc(14.5px * var(--fit,1)); line-height:1.32;
-  color:#f4ecdc; text-shadow:0 1px 14px rgba(0,0,0,.55);
-}
-.qcard span i{display:block; margin-top:7px; font-style:normal; font-size:.78em; opacity:.8}
-.qc1{left:0;   top:16%; transform:rotate(-5.5deg); animation-delay:-1s; z-index:1}
-.qc2{left:50%; top:0;   transform:translateX(-50%) rotate(2deg); animation-delay:-6s; z-index:2}
-.qc3{right:0;  top:19%; transform:rotate(5.5deg);  animation-delay:-3s; z-index:3}
-@keyframes drift{0%,100%{translate:0 0}50%{translate:0 -12px}}
-
 /* ============ APP STORE BADGE ============ */
 /* Apple's official badge artwork (img/app-store-badge.svg, from Apple's
    marketing tools), unmodified. Apple asks for at least 40px of height. */
 .store-badge{display:inline-block; line-height:0; border-radius:9px; transition:transform .18s, box-shadow .18s}
 .store-badge:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.28)}
 .store-badge img{height:52px; width:auto}
-
-/* ============ STARS ============ */
-/* The app icon is a night scene, so the dark hero gets its sky: a few dozen
-   specks drifting down and twinkling. Hidden in the light (dawn) theme. */
-.hero-stars{position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden}
-.hero-stars i{position:absolute; top:-4%; border-radius:50%; background:#f0e6d2; animation:fall linear infinite, twinkle ease-in-out infinite alternate}
-@keyframes fall{to{transform:translateY(110vh)}}
-@keyframes twinkle{from{opacity:.15}to{opacity:.85}}
-@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]) .hero-stars{display:none} }
-:root[data-theme="light"] .hero-stars{display:none}
 
 /* ============ SECTION SHELL ============ */
 section{position:relative}
@@ -364,8 +367,6 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
 
 /* ============ RESPONSIVE ============ */
 @media (max-width:940px){
-  .hero-in{grid-template-columns:1fr; gap:30px}
-  .deck{order:2}
   .picker{grid-template-columns:1fr}
   .chips{flex-direction:row; flex-wrap:wrap}
   .chip{flex:1 1 auto; font-size:15px; padding:12px 15px}
@@ -381,27 +382,16 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
   .brand{flex-direction:column; gap:3px; font-size:12.5px; font-weight:500; letter-spacing:0}
   .brand img{width:30px; height:30px; border-radius:8px}
   .nav-in{padding:10px 0}
-  /* The hero becomes one centered statement with the quote cards straight
-     under it, so a phone's first screen has the photographs in it too. It
-     used to fill the whole first screen by itself, which left a phone
-     looking at words on a blank page until somebody scrolled. */
-  .hero{padding-top:0}
-  .hero-copy{align-items:center; text-align:center; justify-content:center; padding:36px 0 0; gap:24px}
-  .hero-copy .eyebrow{display:none}
-  .hero h1{font-size:clamp(42px,11.5vw,58px); line-height:1.04}
-  .hero .lede{text-align:center; margin-inline:auto}
-  .cta-row{justify-content:center}
   .store-badge img{height:58px}
 }
-/* Three cards cannot sit side by side under ~520px without covering each
-   other's quote, so the narrow layout shows two. */
-@media (max-width:520px){
-  .deck{height:clamp(262px,70vw,320px)}
-  .qc3{display:none}
-  .qcard{width:clamp(126px,37vw,158px); padding:14px}
-  .qcard span{font-size:calc(13.5px * var(--fit,1))}
-  .qc1{left:0; top:12%; transform:rotate(-6deg)}
-  .qc2{left:auto; right:0; top:0; transform:rotate(5.5deg)}
+/* On a phone the field keeps eight cards, moved out to the edges so the
+   headline has the middle to itself. */
+@media (max-width:700px){
+  .field{height:calc(100svh - 74px); min-height:640px}
+  .fc{left:var(--mx); top:var(--my); width:var(--mw)}
+  .fc span{font-size:calc(var(--mw) * .08)}
+  .fc.wide{display:none}
+  .field h1{font-size:clamp(40px,11vw,56px)}
 }
 @media (max-width:560px){
   body{font-size:16.5px}
@@ -453,7 +443,7 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
 </script>
 </head>
 <body>
-<nav class="nav">
+<nav class="nav on-field">
   <div class="wrap nav-in">
     <a class="brand" href="#top"><img src="/icon.png" alt=""><span>Dailies</span></a>
     <div class="nav-links">
@@ -468,41 +458,51 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
 
 <main id="top">
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-stars" id="stars" aria-hidden="true"></div>
-    <div class="hero-ridge" aria-hidden="true"><canvas id="ridge"></canvas></div>
-    <div class="wrap hero-in">
-      <div class="hero-copy">
-        <div class="eyebrow">Jeden Tag ein kleines bisschen</div>
-        <h1>Tägliche Motivation,<br>direkt auf deinen <em>Sperrbildschirm.</em></h1>
-        <p class="lede">An manchen Tagen brauchst du einen Schubs. An anderen ein Lachen, mehr Fokus oder die Erlaubnis, freundlicher zu dir selbst zu sein.</p>
-        <div class="cta-row">
-          <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-de&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-de.svg" width="156" height="52" alt="Laden im App Store"></a>
-          <div class="qr">
-            <div class="qr-chip"><img src="/img/home/qr-de.svg" alt="QR-Code, der zu Dailies im App Store führt"></div>
-            <p class="qr-note">Scanne ihn mit der Kamera deines iPhone, um Dailies zu laden</p>
-          </div>
-        </div>
-      </div>
-      <div class="deck" aria-hidden="true">
-        <figure class="qcard qc1"><img src="/img/home/card-1.jpg" alt="" fetchpriority="high"><span>Mach dich nicht klein, damit es jemand anderes bequem hat.</span></figure>
-        <figure class="qcard qc2"><img src="/img/home/card-2.jpg" alt="" fetchpriority="high"><span>Nicht alles braucht heute eine Antwort.</span></figure>
-        <figure class="qcard qc3"><img src="/img/home/card-3.jpg" alt="" fetchpriority="high"><span>Jedes kleine Ziel, das du erreichst, ist ein Sprungbrett zum nächsten.</span></figure>
-      </div>
-<script>/* The hero cards: three of the 30 quotes the app's curated start deals a new reader (kCuratedRandom30 in lib/data/curated_start_sets.dart, the dailies repo), drawn fresh on every visit. The cards' own text is the first three, for anyone without scripts. */
+  <section class="field">
+    <div class="field-cards" id="field-cards" aria-hidden="true">
+      <figure class="fc" style="--x:9%;--y:20%;--w:110px;--b:3.2px;--br:0.45;--r:-3deg;--t:6s;--mx:12%;--my:16%;--mw:70px" data-z="0.0"><img src="/img/home/field/night-lake.jpg" width="360" height="520" alt="" decoding="async"><span>Mach dich nicht klein, damit es jemand anderes bequem hat.</span></figure>
+      <figure class="fc" style="--x:24%;--y:74%;--w:194px;--b:1.0px;--br:0.8;--r:4deg;--t:7s;--mx:88%;--my:14%;--mw:112px" data-z="0.7"><img src="/img/home/field/mtn-peak-dawn.jpg" width="360" height="520" alt="" decoding="async"><span>Nicht alles braucht heute eine Antwort.</span></figure>
+      <figure class="fc" style="--x:38%;--y:12%;--w:158px;--b:1.9px;--br:0.65;--r:-5deg;--t:8s;--mx:8%;--my:52%;--mw:94px" data-z="0.4"><img src="/img/home/field/sea-sunset-surf.jpg" width="360" height="520" alt="" decoding="async"><span>Jedes kleine Ziel, das du erreichst, ist ein Sprungbrett zum nächsten.</span></figure>
+      <figure class="fc" style="--x:63%;--y:10%;--w:122px;--b:2.9px;--br:0.5;--r:6deg;--t:9s;--mx:92%;--my:50%;--mw:76px" data-z="0.1"><img src="/img/home/field/field-first-light.jpg" width="360" height="520" alt="" decoding="async"><span>Die Richtung zählt mehr als das Tempo.</span></figure>
+      <figure class="fc" style="--x:78%;--y:26%;--w:206px;--b:0.6px;--br:0.85;--r:-7deg;--t:10s;--mx:18%;--my:88%;--mw:118px" data-z="0.8"><img src="/img/home/field/forest-fog-canopy.jpg" width="360" height="520" alt="" decoding="async"><span>Sei nützlich, nicht verfügbar.</span></figure>
+      <figure class="fc" style="--x:91%;--y:62%;--w:170px;--b:1.6px;--br:0.7;--r:3deg;--t:6s;--mx:84%;--my:90%;--mw:100px" data-z="0.5"><img src="/img/home/field/sky-above-the-clouds.jpg" width="360" height="520" alt="" decoding="async"><span>Deine Bereitschaft zu lernen ist schon eine Fähigkeit für sich.</span></figure>
+      <figure class="fc" style="--x:72%;--y:86%;--w:134px;--b:2.6px;--br:0.55;--r:-4deg;--t:7s;--mx:50%;--my:8%;--mw:82px" data-z="0.2"><img src="/img/home/field/zen-misty-pier.jpg" width="360" height="520" alt="" decoding="async"><span>Manches, was dir heute leichtfällt, war einmal das Schwerste für dich.</span></figure>
+      <figure class="fc" style="--x:6%;--y:58%;--w:218px;--b:0.3px;--br:0.9;--r:5deg;--t:8s;--mx:50%;--my:96%;--mw:124px" data-z="0.9"><img src="/img/home/field/desert-dusk.jpg" width="360" height="520" alt="" decoding="async"><span>Auch wacklige Schritte bringen dich voran.</span></figure>
+      <figure class="fc wide" style="--x:30%;--y:44%;--w:182px;--b:1.3px;--br:0.75;--r:-6deg;--t:9s" data-z="0.6"><img src="/img/home/field/mtn-blue-ridges.jpg" width="360" height="520" alt="" decoding="async"><span>Jedes Kapitel, das du beendest, macht das nächste leichter.</span></figure>
+      <figure class="fc wide" style="--x:86%;--y:8%;--w:146px;--b:2.2px;--br:0.6;--r:7deg;--t:10s" data-z="0.3"><img src="/img/home/field/night-aurora.jpg" width="360" height="520" alt="" decoding="async"><span>Du kannst mehr, als dir gerade einfällt.</span></figure>
+      <figure class="fc wide" style="--x:50%;--y:92%;--w:110px;--b:3.2px;--br:0.45;--r:-3deg;--t:6s" data-z="0.0"><img src="/img/home/field/field-dandelions.jpg" width="360" height="520" alt="" decoding="async"><span>Die Natur liebt Geduld: Denk immer daran.</span></figure>
+      <figure class="fc wide" style="--x:96%;--y:90%;--w:194px;--b:1.0px;--br:0.8;--r:4deg;--t:7s" data-z="0.7"><img src="/img/home/field/sky-cloud-line.jpg" width="360" height="520" alt="" decoding="async"><span>Die Stärke, die du im Stillen aufgebaut hast, wird dir überall nützen.</span></figure>
+    </div>
+    <div class="field-veil"></div>
+    <div class="field-copy">
+      <p class="rating"><span class="rating-stars" role="img" aria-label="4,7 von 5 Sternen"><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><defs><linearGradient id="star-part"><stop offset=".7" stop-color="#f2b632"/><stop offset=".7" stop-color="rgba(243,236,220,.25)"/></linearGradient></defs><path fill="url(#star-part)" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg></span><span><b>4,7</b> im App Store</span></p>
+      <h1>Tägliche Motivation, direkt auf deinen <em>Sperrbildschirm.</em></h1>
+      <p class="lede">Kurze motivierende Zitate auf deinem Sperrbildschirm und im Home-Bildschirm-Widget, jeden Tag zu anderen Momenten. Wähl deine Themen und deine Uhrzeiten, und dann geht dein Tag einfach weiter.</p>
+      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-de&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-de.svg" width="156" height="52" alt="Laden im App Store"></a>
+    </div>
+<script>/* The field's cards: short lines (under 72 characters) from the 30 quotes the app's curated start dealt a new reader (kCuratedRandom30 in lib/data/curated_start_sets.dart, the dailies repo), shuffled on every visit. The markup carries the first twelve, for anyone without scripts. While the field is on screen the nav and the browser bar take its color. On a desktop the cards drift a little with the mouse, the near ones more. */
 (function(){
   var Q=[{"t":"Mach dich nicht klein, damit es jemand anderes bequem hat."},{"t":"Nicht alles braucht heute eine Antwort."},{"t":"Jedes kleine Ziel, das du erreichst, ist ein Sprungbrett zum nächsten."},{"t":"Die Richtung zählt mehr als das Tempo."},{"t":"Sei nützlich, nicht verfügbar."},{"t":"Deine Bereitschaft zu lernen ist schon eine Fähigkeit für sich."},{"t":"Manches, was dir heute leichtfällt, war einmal das Schwerste für dich."},{"t":"Die Schritte hinter dir beweisen, dass die Schritte vor dir möglich sind."},{"t":"Auch wacklige Schritte bringen dich voran."},{"t":"Jedes Kapitel, das du beendest, macht das nächste leichter."},{"t":"Was dir nicht zugeteilt ist, kann die Hand nicht erreichen, und was dir zugeteilt ist, findet dich, wo immer du bist.","a":"Saadi"},{"t":"Du kannst mehr, als dir gerade einfällt."},{"t":"Die Natur liebt Geduld: Denk immer daran.","a":"Nikolai Gogol"},{"t":"Die Stärke, die du im Stillen aufgebaut hast, wird dir überall nützen."},{"t":"Man muss das Gute tun, ohne sich darum zu kümmern, ob jemand davon erfahren wird.","a":"Ernest Renan"},{"t":"Ruhm ist der Schatten der Leidenschaft, die im Licht steht.","a":"Khalil Gibran"},{"t":"Die Menschen in deinem Leben sind besser dran, weil sie dich kennen."},{"t":"Sich zu irren, ist der einzige Weg, auf dem je jemand etwas gelernt hat."},{"t":"In dir stecken ein starkes Herz und ein klarer Kopf."},{"t":"Sei streng bei deinen Zielen, aber flexibel bei deinen Plänen.","a":"Steve Pavlina"},{"t":"Mutige Entscheidungen führen zu einem größeren Leben."},{"t":"Beständigkeit heißt einfach, deinem Traum zu zeigen, dass du es ernst meinst."},{"t":"Was sind Genie oder Mut ohne ein Herz?","a":"Oliver Goldsmith"},{"t":"Geduld lässt dich sehen, was die Eile übersehen würde."},{"t":"Die Bedeutung des Menschen liegt nicht in dem, was er erreicht, sondern vielmehr in dem, was er zu erreichen ersehnt.","a":"Khalil Gibran"},{"t":"Bleib auf Kurs. Du bist für den langen Weg gemacht."},{"t":"So wie es Muskeln braucht, um Muskeln aufzubauen, braucht es Selbstdisziplin, um Selbstdisziplin aufzubauen.","a":"Steve Pavlina"},{"t":"Jedes Ja zu etwas Neuem macht deine Welt ein bisschen weiter."},{"t":"Jede gute Gewohnheit begann als ein einziger mutiger Tag."},{"t":"Wachsen ist in jeder Lebensphase möglich."}];
-  var s=document.querySelectorAll('.deck .qcard span');
-  for(var i=0;i<s.length;i++){
-    var j=i+Math.floor(Math.random()*(Q.length-i)), t=Q[i]; Q[i]=Q[j]; Q[j]=t;
-    var q=Q[i], n=q.t.length;
-    s[i].textContent=q.t;
-    s[i].style.setProperty('--fit', n>95 ? .78 : n>70 ? .88 : 1);
-    if(q.a){ var a=document.createElement('i'); a.textContent='\u2014 '+q.a; s[i].appendChild(a); }
+  var nav=document.querySelector('.nav'), field=document.querySelector('.field'),
+      tc=[].slice.call(document.querySelectorAll('meta[name="theme-color"]')),
+      tc0=tc.map(function(m){return m.content});
+  function onField(on){
+    nav.classList.toggle('on-field',on);
+    tc.forEach(function(m,i){m.content=on?'#0b0c0b':tc0[i]});
   }
+  onField(true);
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){onField(e[0].isIntersecting)},{rootMargin:'-80px 0px 0px 0px'}).observe(field);
+  var q=Q.filter(function(x){return x.t.length<72});
+  for(var i=q.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=q[i];q[i]=q[j];q[j]=t}
+  var c=document.querySelectorAll('#field-cards .fc');
+  for(var k=0;k<c.length;k++) c[k].querySelector('span').textContent=q[k%q.length].t;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!matchMedia('(hover: hover)').matches) return;
+  addEventListener('mousemove',function(e){
+    var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+    for(var k=0;k<c.length;k++){var z=+c[k].dataset.z+.2;c[k].style.marginLeft=(-x*60*z)+'px';c[k].style.marginTop=(-y*40*z)+'px'}
+  });
 })();
 </script>
-    </div>
   </section>
 
   <!-- FREE TO TRY -->
@@ -681,60 +681,6 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
 </main>
 
 <script>
-/* ---------- Contour ridge: the app icon's motif, drawn live ---------- */
-(function(){
-  const cv = document.getElementById('ridge');
-  if(!cv) return;
-  const ctx = cv.getContext('2d');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let W=0, H=0, hill='#4f5d3c', line='#191c1d';
-
-  function readColors(){
-    const cs = getComputedStyle(document.documentElement);
-    hill = cs.getPropertyValue('--hill').trim() || hill;
-    line = cs.getPropertyValue('--ground').trim() || line;
-  }
-  function size(){
-    const r = cv.parentElement.getBoundingClientRect();
-    const dpr = Math.min(devicePixelRatio||1, 2);
-    W = r.width; H = r.height;
-    cv.width = Math.max(1,W*dpr); cv.height = Math.max(1,H*dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  }
-  function ridgeY(x, k, t){
-    const u = x / Math.max(W,1);
-    const crest = H*0.32 + k*(H*0.055);
-    return crest
-      + Math.sin(u*4.1 + t*0.19 + k*0.30) * (H*0.085)
-      + Math.sin(u*7.6 - t*0.13 + k*0.17) * (H*0.038)
-      + Math.sin(u*1.7 + t*0.08)          * (H*0.045);
-  }
-  function draw(t){
-    ctx.clearRect(0,0,W,H);
-    ctx.beginPath();
-    ctx.moveTo(0, ridgeY(0,0,t));
-    for(let x=0; x<=W; x+=6) ctx.lineTo(x, ridgeY(x,0,t));
-    ctx.lineTo(W,H); ctx.lineTo(0,H); ctx.closePath();
-    ctx.fillStyle = hill; ctx.fill();
-    ctx.strokeStyle = line; ctx.globalAlpha = .34; ctx.lineWidth = 1.2;
-    for(let k=1; k<26; k++){
-      ctx.beginPath();
-      for(let x=0; x<=W; x+=6){
-        const y = ridgeY(x,k,t);
-        x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
-      }
-      ctx.stroke();
-    }
-    ctx.globalAlpha = 1;
-  }
-  let raf=null, t0=performance.now();
-  function loop(now){ draw((now-t0)/1000); raf=requestAnimationFrame(loop); }
-  readColors(); size();
-  if(reduce){ draw(0); } else { raf=requestAnimationFrame(loop); }
-  addEventListener('resize', ()=>{ readColors(); size(); if(reduce) draw(0); });
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', readColors);
-})();
-
 /* ---------- Taste picker: real quotes from the app's own library ---------- */
 (function(){
   const SETS = [{"id": "believe", "label": "Selbstvertrauen", "set": "confidence", "quotes": [{"t": "Niemand war gut in etwas, ohne vorher öffentlich schlecht darin gewesen zu sein.", "a": null}, {"t": "Du bist nicht langsam. Du lernst etwas wirklich Schweres.", "a": null}, {"t": "Du hast den Fortschritt nicht verloren. Du hast pausiert.", "a": null}]}, {"id": "laugh", "label": "Humor", "set": "humor", "quotes": [{"t": "Tupperdosen und Deckel wohnen getrennt und weigern sich, einander zu sehen.", "a": null}, {"t": "Meine Knie sagen Regen zuverlässiger voraus als jede App.", "a": null}, {"t": "Ich habe noch nie einen Laden nur mit dem verlassen, wofür ich reingegangen bin.", "a": null}]}, {"id": "direction", "label": "Richtung", "set": "direction", "quotes": [{"t": "Schütze deine besten Stunden vor den Wünschen anderer.", "a": null}, {"t": "Das Wichtige kommt fast nie mit dem Vermerk „dringend“.", "a": null}, {"t": "Ein anderes Leben lässt sich nicht herbeidenken.", "a": null}]}, {"id": "calm", "label": "Ruhe", "set": "calm", "quotes": [{"t": "Gib der Sorge einen Termin statt den ganzen Tag.", "a": null}, {"t": "Setz dich für eine Tasse Tee nach draußen.", "a": null}, {"t": "Du darfst eine schlechte Woche haben, ohne dass sie etwas bedeutet.", "a": null}]}, {"id": "work", "label": "Arbeit", "set": "work", "quotes": [{"t": "Jedes Ja kostet einen Abend. Kalkulier richtig.", "a": null}, {"t": "Beschäftigt sein ist nicht dasselbe wie nützlich sein, und es fühlt sich fast genauso an.", "a": null}, {"t": "Deine Arbeit muss nicht berühmt sein, um Bedeutung zu haben.", "a": null}]}, {"id": "kind-to-self", "label": "Gut zu dir sein", "set": "self_kindness", "quotes": [{"t": "Du hast aus dem Tag gemacht, was du konntest.", "a": null}, {"t": "Beweg dich, weil es dir guttut, nicht weil du jemandem eine Figur schuldest.", "a": null}, {"t": "Wer mühelos wirkt, hat das meistens schon woanders gemacht.", "a": null}]}];
@@ -779,22 +725,5 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
 </script>
 <script src="/analytics.js"></script>
 <script src="/consent.js"></script>
-<script>
-/* Hero starfield: built here rather than in the markup so the page carries
-   one empty div instead of sixty spans. Skipped for reduced motion. */
-(function(){
-  var box=document.getElementById('stars');
-  if(!box||matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  for(var i=0;i<60;i++){
-    var s=document.createElement('i'), d=Math.random()*1.8+0.8;
-    s.style.left=(Math.random()*100)+'%';
-    s.style.width=s.style.height=d+'px';
-    var fall=18+Math.random()*26;
-    s.style.animationDuration=fall+'s,'+(1.5+Math.random()*3)+'s';
-    s.style.animationDelay=(-Math.random()*fall)+'s,'+(-Math.random()*3)+'s';
-    box.appendChild(s);
-  }
-})();
-</script>
 </body>
 </html>

@@ -219,7 +219,8 @@ images inlined the home page was 280KB, 83% of it base64). It links the app
 icon (`icon.png`), the App Store badge (`img/app-store-badge.svg`), the QR code
 (`img/home/qr.svg`, and `qr-es.svg` and so on per language, since each carries
 its own `ct`), the hero quote-card photographs (`img/home/card-1.jpg` to
-`card-3.jpg`, shared by every language, marked `fetchpriority="high"`), the
+`card-3.jpg`, no longer used; the hero's floating cards are the twelve
+photographs in `img/home/field/`, shared by every language), the
 other photographs in `img/home/` (the pull quote's background and the three "How
 it works" steps), and the blog thumbnails in `img/blog/` for its "From the
 blog" section. Do not inline images again.
@@ -751,8 +752,9 @@ python3 tools/make-og.py
 The script needs Pillow. It fetches Fraunces, Figtree and Courier Prime from the
 Google Fonts repo into `~/.cache/dailies-og-fonts` on first run, so no font file
 is checked in. **Its colors are the same tokens `doc.css` declares, and its
-ridge is a transcription of the contour curve `index.html` draws live on its
-hero canvas.** Change a token in the CSS and change it in the script too, the
+ridge is a transcription of the contour curve the home pages used to draw
+live on their hero canvas** (until November 2026, when the hero became the
+field of floating quotes, see [The hero cards](#the-hero-cards)). Change a token in the CSS and change it in the script too, the
 same way `doc.css` and `index.html` have to stay in step — otherwise the card
 slowly stops looking like the site it is advertising.
 
@@ -1079,23 +1081,50 @@ sips -s format jpeg -s formatOptions 78 --resampleWidth 600 <dailies>/appstore/s
 
 ## The hero cards
 
-The three cards beside the headline (two on a phone) show quotes from the app's
-curated start: the 30 that were `kCuratedRandom30` in `lib/data/curated_start_sets.dart`
-in the `dailies` repo, the most-hearted lines new readers were dealt first. (The
-app went back to its 10, `kCuratedRandom10`, on 9 November 2026; the site
-still carries the 30, which are all still in the corpus.) A
-script right after the cards draws three at random on every visit, in the page's
-language, and adds the author under a bylined line. The text written into the
-cards is the first three of the list, for anyone without scripts.
+**Every home page (since November 2026) opens on a field of floating quotes.**
+The hero is always dark, in both themes: twelve quote cards (eight on a phone)
+hang at different depths around the headline, the far ones smaller, dimmer and
+blurred, with a veil darkening the middle so the headline reads. Each card's
+line sits where the app puts it, a little above the middle (`top:36%`),
+left-aligned. The cards are written into the markup with their positions as
+CSS variables (`--x`, `--y`, `--w` for a desktop, `--mx`, `--my`, `--mw` for a
+phone, where the text is sized from `--mw`; the four marked `wide` are desktop
+only). Their photographs are 360x520 crops of the app's backgrounds in
+`img/home/field/`, shared by every language, made from `img/wallpapers/bg/`
+with Pillow (`ImageOps.fit`, centered a little low, quality 74), so the twelve
+weigh about 200KB together; do not point the cards at the full wallpapers.
+The old hero's photographs, `img/home/card-1.jpg` to `card-3.jpg`, are no
+longer used by any page.
 
-The list is copied into each home page, so a change to the app's curated start does
-not reach the site by itself: export the 30 again from `assets/quotes.db`
-(`text`, `textEs`, `textPt`, `textFr`, `textDe`, `textJa`, with the author's `name` in the
-same language) and replace the `var Q=` array on all six pages. Long lines get
-a smaller size (`--fit`: 0.88 over 70 characters, 0.78 over 95); the longest
-of the 30, 117 characters in German, fits a phone card. The Japanese page
-counts a kana or kanji as two and the byline too, and steps down sooner (0.88
-over 60, 0.78 over 74), since a kanji is twice as wide as a letter.
+The lines come from the app's curated start: the 30 that were
+`kCuratedRandom30` in `lib/data/curated_start_sets.dart` in the `dailies` repo,
+the most-hearted lines new readers were dealt first. (The app went back to its
+10, `kCuratedRandom10`, on 9 November 2026; the site still carries the 30,
+which are all still in the corpus.) A script right after the cards shuffles
+the short ones into the cards on every visit, in the page's language: under 70
+characters in English, 72 in Spanish, Portuguese, French and German, and 34 on
+the Japanese page, where a kana or kanji is twice as wide as a letter. The
+text written into the cards is the first twelve short lines, for anyone
+without scripts. On a desktop the same script moves the cards a little with
+the mouse, the near ones more. Reduced motion stops the floating and the
+parallax.
+
+The list is copied into each home page, so a change to the app's curated start
+does not reach the site by itself: export the 30 again from `assets/quotes.db`
+(`text`, `textEs`, `textPt`, `textFr`, `textDe`, `textJa`, with the author's
+`name` in the same language) and replace the `var Q=` array on all six pages.
+
+While the field is on screen the nav carries the class `on-field`, which
+gives it the field's own color (`#0b0c0b`) in both themes, and the
+`theme-color` metas are set to the same color so Safari's bar matches. The
+script after the field takes both back once the field scrolls away.
+
+**The star rating above the headline is typed in by hand** on all six pages:
+"4.7 on the App Store" (4,7 in Spanish, Portuguese, French and German), with
+the fifth star filled to the decimal (the `offset` of the `star-part`
+gradient, 0.7 for 4.7). Check the listing's rating now and then and change
+both on every page when it moves. Never show a count of ratings, and do not
+say which platform it comes from beyond "the App Store".
 
 Do not add an `aggregateRating`: it would have to match the App Store's, and a
 number copied in by hand goes stale.
