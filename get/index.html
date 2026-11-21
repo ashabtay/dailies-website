@@ -24,8 +24,8 @@
   of an Android sender landed on Google Play and the other way round. This page
   picks it from the READER's phone instead:
 
-    iPhone, iPad   -> the App Store, with the campaign as `ct`
-    Android        -> Google Play, with the campaign in the install referrer
+    iPhone, iPad   -> stays here and offers the App Store badge alone, to tap
+    Android        -> Google Play straight away, campaign in the install referrer
     anything else  -> stays here and offers both
 
   `c` is the campaign token (lib/app_config.dart ShareCampaign in the app
@@ -34,9 +34,19 @@
   and Play Console keep counting the same buckets. A missing or malformed `c`
   becomes `web-get`.
 
-  The redirect runs in <head>, before anything paints, with location.replace
-  so Back does not land here again. No analytics, no cookies, so no consent
-  banner: the store does the counting.
+  Why an iPhone is not sent on automatically: when an iPhone LOADS an
+  apps.apple.com link (a script redirect, location.replace), Apple answers with
+  a 301 to itms-appss://...?mt=8 and drops pt and ct, so the install counts as
+  an untagged web referral. Every form of the link does it (checked with curl
+  on 21 Nov 2026; the same trap cost web-chatgpt its numbers, see "Visitors
+  from ChatGPT" in the README). A link the reader TAPS opens the App Store app
+  directly, as a universal link, and keeps ct, which is why the home page's
+  web-home campaign counts. So on an iPhone the page waits for that one tap.
+
+  Google Play has no such step: the referrer stays in the URL the Play app
+  opens, so Android is sent on in <head>, before anything paints, with
+  location.replace so Back does not land here again. No analytics, no cookies,
+  so no consent banner: the store does the counting.
 -->
 <script>
 (function () {
@@ -56,9 +66,10 @@
     /Android/i.test(ua) ? 'android' : 'other';
 
   window.DailiesGet = { campaign: c, ios: ios, android: android, platform: platform };
+  document.documentElement.className = 'is-' + platform;
 
-  if (platform === 'ios') location.replace(ios);
-  else if (platform === 'android') location.replace(android);
+  // Android only: an iPhone has to tap the badge for ct to survive (above).
+  if (platform === 'android') location.replace(android);
 })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,6 +98,10 @@ p{color:var(--text-dim); font-size:17px; line-height:1.5; margin:0 0 28px}
 .stores{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; align-items:center}
 .stores a{display:inline-flex; align-items:center; justify-content:center; height:52px}
 .stores img{display:block; height:52px; width:auto}
+/* An iPhone or iPad gets the App Store badge alone, a little larger: it is
+   the one thing on the page to tap. */
+.is-ios #play{display:none}
+.is-ios .stores img{height:60px}
 .play{
   padding:0 22px; border:1px solid var(--rule); border-radius:10px;
   color:var(--text); text-decoration:none; font-size:17px; font-weight:600;
