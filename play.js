@@ -337,20 +337,43 @@
       ct(base) + '&mt=8';
   }
 
-  /* Apple's badge in the page's language, the same artwork and sizes the
-     pages' own badges use. `where` becomes data-download, which analytics.js
-     reports as download_clicked. */
+  /* The Google Play listing, with the campaign in Play's install referrer:
+     one URL-encoded value that Play Console's acquisition reports read
+     utm_* out of. The campaign is the same token the App Store link carries. */
+  function playUrl(base) {
+    return 'https://play.google.com/store/apps/details?id=com.ashabtay.dailies&referrer=' +
+      encodeURIComponent('utm_source=mydailies.app&utm_medium=web&utm_campaign=' + ct(base));
+  }
+
+  var PLAY_ALT = {
+    en: 'Get it on Google Play', es: 'Disponible en Google Play', pt: 'Disponível no Google Play',
+    fr: 'Disponible sur Google Play', de: 'Jetzt bei Google Play', ja: 'Google Play で手に入れよう',
+    it: 'Disponibile su Google Play', ko: '다운로드하기 Google Play', 'zh-hant': 'Google Play 立即下載'
+  };
+
+  /* Both stores' badges in the page's language, the same artwork and sizes
+     the pages' own badges use; doc.css shows a phone only its own store's
+     (html.is-ios / is-android, set in <head>). `where` becomes data-download,
+     which analytics.js reports as download_clicked. */
   function badge(base, where) {
-    var a = h('a', 'store-badge');
-    a.href = storeUrl(base);
-    a.setAttribute('data-download', where);
-    var img = document.createElement('img');
-    img.src = '/img/app-store-badge' + (lang === 'en' ? '' : '-' + lang) + '.svg';
-    img.width = { fr: 164, ja: 142, ko: 169, 'zh-hant': 142 }[lang] || 156;
-    img.height = 52;
-    img.alt = S().badgeAlt;
-    a.appendChild(img);
-    return a;
+    var wrap = h('span', 'store-badges');
+    var sfx = lang === 'en' ? '' : '-' + lang;
+    [['apple-badge', storeUrl(base), '/img/app-store-badge' + sfx + '.svg', S().badgeAlt,
+       { fr: 164, ja: 142, ko: 169, 'zh-hant': 142 }[lang] || 156],
+     ['play-badge', playUrl(base), '/img/google-play-badge' + sfx + '.png', PLAY_ALT[lang] || PLAY_ALT.en, 175]
+    ].forEach(function (b) {
+      var a = h('a', 'store-badge ' + b[0]);
+      a.href = b[1];
+      a.setAttribute('data-download', where);
+      var img = document.createElement('img');
+      img.src = b[2];
+      img.width = b[4];
+      img.height = 52;
+      img.alt = b[3];
+      a.appendChild(img);
+      wrap.appendChild(a);
+    });
+    return wrap;
   }
 
   var CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';

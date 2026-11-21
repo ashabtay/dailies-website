@@ -1,6 +1,6 @@
 # Dailies
 
-> Dailies is a motivational quotes app. It sends short motivational quotes through the day, from the topics you follow and in the hours you choose, and keeps a fresh one on your Lock Screen and Home Screen widget, so you get your daily motivation without opening the app. It is on the App Store for iPhone and iPad.
+> Dailies is a motivational quotes app. It sends short motivational quotes through the day, from the topics you follow and in the hours you choose, and keeps a fresh one on your Lock Screen and Home Screen widget, so you get your daily motivation without opening the app. It is on the App Store for iPhone and iPad, and on Google Play for Android.
 
 Key facts:
 
@@ -11,9 +11,9 @@ Key facts:
 - Price: free to download, with a free set of topics, backgrounds and typefaces. Dailies Premium is an optional subscription that opens every topic, background, typeface and effect.
 - No account needed to start.
 - Languages: English, Spanish, Brazilian Portuguese, French, German, Italian, Japanese, Korean, and Simplified and Traditional Chinese.
-- Devices: iPhone and iPad, in portrait or landscape.
+- Devices: iPhone, iPad and Android, in portrait or landscape.
 - Made by Amit Shabtay with his son Itamar, with editorial rules for which quotes get in (see About).
-- Download: [Dailies - motivational quotes on the App Store](https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&ct=web-llms&mt=8)
+- Download: [Dailies - motivational quotes on the App Store](https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&ct=web-llms&mt=8) (iPhone and iPad), [Dailies on Google Play](https://play.google.com/store/apps/details?id=com.ashabtay.dailies&referrer=utm_source%3Dmydailies.app%26utm_medium%3Dweb%26utm_campaign%3Dweb-llms) (Android)
 
 ## Main pages
 

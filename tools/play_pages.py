@@ -60,6 +60,41 @@ BADGE = {
     "ko": ("/img/app-store-badge-ko.svg", 169, "App Store에서 다운로드하기"),
     "zh-hant": ("/img/app-store-badge-zh-hant.svg", 142, "在 App Store 下載"),
 }
+# Google's badge, in each language (img/google-play-badge*.png, Google's own
+# artwork with its clear space trimmed so it stands as tall as Apple's). The
+# width is read off the file.
+PLAY = "https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Dmydailies.app%26utm_medium%3Dweb%26utm_campaign%3D{ct}"
+PLAY_ALT = {
+    "en": "Get it on Google Play",
+    "es": "Disponible en Google Play",
+    "pt": "Disponível no Google Play",
+    "fr": "Disponible sur Google Play",
+    "de": "Jetzt bei Google Play",
+    "ja": "Google Play で手に入れよう",
+    "it": "Disponibile su Google Play",
+    "ko": "다운로드하기 Google Play",
+    "zh-hant": "Google Play 立即下載",
+}
+
+
+def play_badge_file(lang):
+    return "/img/google-play-badge%s.png" % ("" if lang == "en" else "-" + lang)
+
+
+def play_badge_width(lang):
+    path = ROOT + play_badge_file(lang)
+    if not os.path.exists(path):
+        return 175  # every trimmed badge so far is 175 x 52
+    w, h = Image.open(path).size
+    return round(52 * w / h)
+
+
+# A phone sees only its own store's badge (doc.css hides the other one), and
+# anything else sees both. It runs in <head> so the badge is right on first paint.
+DEVICE_SCRIPT = ("<script>/* Store badges: a phone sees its own store's, anything else sees both. */"
+                 "(function(u,e){if(/Android/i.test(u))e.className+=' is-android';"
+                 "else if(/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1))"
+                 "e.className+=' is-ios'})(navigator.userAgent,document.documentElement)</script>")
 HTML_LANG = {"en": "en", "es": "es-MX", "pt": "pt-BR", "fr": "fr-FR", "de": "de-DE", "ja": "ja",
              "it": "it", "ko": "ko", "zh-hant": "zh-Hant-TW"}
 HUB = {"en": "guides", "es": "es/guias", "pt": "pt/guias", "fr": "fr/guides", "de": "de/anleitungen", "ja": "ja/guides",
@@ -385,8 +420,12 @@ def chrome(lang):
 def badge(lang, ct, where):
     src, w, alt = BADGE[lang]
     token = ct if lang == "en" else ct + "-" + lang
-    return ('<a class="store-badge" href="%s" data-download="%s"><img src="%s" width="%d" height="52" alt="%s"></a>'
-            % (STORE.format(ct=token), where, src, w, esc(alt)))
+    return ('<span class="store-badges">'
+            '<a class="store-badge apple-badge" href="%s" data-download="%s"><img src="%s" width="%d" height="52" alt="%s"></a>'
+            '<a class="store-badge play-badge" href="%s" data-download="%s"><img src="%s" width="%d" height="52" alt="%s"></a>'
+            '</span>'
+            % (STORE.format(ct=token), where, src, w, esc(alt),
+               PLAY.format(ct=token), where, play_badge_file(lang), play_badge_width(lang), esc(PLAY_ALT[lang])))
 
 
 def head(lang, title, desc, url, og_title, og_desc, og_img, og_alt, extra_fonts="", extra_css=""):
@@ -416,7 +455,8 @@ def head(lang, title, desc, url, og_title, og_desc, og_img, og_alt, extra_fonts=
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400{extra_fonts}&display=swap">
 <link rel="stylesheet" href="/doc.css">
-{extra_css}</head>
+{extra_css}{DEVICE_SCRIPT}
+</head>
 """
 
 
