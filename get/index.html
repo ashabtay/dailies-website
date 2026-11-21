@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dailies: Daily Motivation on Your Lock Screen</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Some days you need a push. Some days you need a laugh, better focus or permission to be kinder to yourself.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dailies: Daily Motivation on Your Lock Screen">
+<meta property="og:description" content="Some days you need a push. Some days you need a laugh, better focus or permission to be kinder to yourself.">
+<!-- No og:url and no canonical link, on purpose: the campaign rides in the
+     query string, and a preview card that opens og:url would drop it. -->
+<meta property="og:image" content="https://mydailies.app/og.png">
+<meta property="og:site_name" content="Dailies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/icon.png">
+<!--
+  The link the app shares: https://mydailies.app/get/?c=<campaign>.
+
+  The app used to pick the store from the SENDER's phone, so an iPhone friend
+  of an Android sender landed on Google Play and the other way round. This page
+  picks it from the READER's phone instead:
+
+    iPhone, iPad   -> the App Store, with the campaign as `ct`
+    Android        -> Google Play, with the campaign in the install referrer
+    anything else  -> stays here and offers both
+
+  `c` is the campaign token (lib/app_config.dart ShareCampaign in the app
+  repo: whatsapp_share, messages_share, more_share, invite). It is passed on
+  exactly as the app used to put it in the store link itself, so App Analytics
+  and Play Console keep counting the same buckets. A missing or malformed `c`
+  becomes `web-get`.
+
+  The redirect runs in <head>, before anything paints, with location.replace
+  so Back does not land here again. No analytics, no cookies, so no consent
+  banner: the store does the counting.
+-->
+<script>
+(function () {
+  'use strict';
+  var PLAY = 'https://play.google.com/store/apps/details?id=com.ashabtay.dailies';
+
+  var c = '';
+  try { c = new URLSearchParams(location.search).get('c') || ''; } catch (e) {}
+  if (!/^[a-z0-9_-]{1,40}$/.test(c)) c = 'web-get';
+
+  var ios = 'https://apps.apple.com/app/id6804210416?pt=129347926&ct=' + c + '&mt=8';
+  var android = PLAY + '&referrer=' + encodeURIComponent('utm_source=dailies&utm_campaign=' + c);
+
+  var ua = navigator.userAgent || '';
+  var platform =
+    /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) ? 'ios' :
+    /Android/i.test(ua) ? 'android' : 'other';
+
+  window.DailiesGet = { campaign: c, ios: ios, android: android, platform: platform };
+
+  if (platform === 'ios') location.replace(ios);
+  else if (platform === 'android') location.replace(android);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Figtree:wght@400;600&display=swap">
+<style>
+:root{
+  --ground:#191c1d; --text:#f0e6d2; --text-dim:#aeaa9c;
+  --rule:rgba(240,230,210,.25);
+  --f-display:Fraunces,Georgia,"Times New Roman",serif;
+  --f-body:Figtree,ui-sans-serif,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; min-height:100vh; min-height:100dvh;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--ground); color:var(--text); font-family:var(--f-body);
+  padding:32px 24px; text-align:center;
+}
+main{max-width:420px}
+.icon{width:96px; height:96px; border-radius:22px; display:block; margin:0 auto 20px}
+h1{font-family:var(--f-display); font-weight:500; font-size:34px; margin:0 0 12px}
+p{color:var(--text-dim); font-size:17px; line-height:1.5; margin:0 0 28px}
+.stores{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; align-items:center}
+.stores a{display:inline-flex; align-items:center; justify-content:center; height:52px}
+.stores img{display:block; height:52px; width:auto}
+.play{
+  padding:0 22px; border:1px solid var(--rule); border-radius:10px;
+  color:var(--text); text-decoration:none; font-size:17px; font-weight:600;
+}
+.play:hover,.play:focus-visible{border-color:var(--text)}
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="/icon.png" width="96" height="96" alt="">
+  <h1>Dailies</h1>
+  <p id="line">Some days you need a push. Some days you need a laugh, better focus or permission to be kinder to yourself.</p>
+  <div class="stores" id="stores">
+    <a id="appStore" href="https://apps.apple.com/app/id6804210416?pt=129347926&amp;ct=web-get&amp;mt=8"><img id="badge" src="/img/app-store-badge.svg" width="156" height="52" alt="Download on the App Store"></a>
+    <a id="play" class="play" href="https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Ddailies%26utm_campaign%3Dweb-get">Google Play</a>
+  </div>
+</main>
+<script>
+(function () {
+  'use strict';
+  var G = window.DailiesGet;
+  if (!G) return;
+
+  /* The line and the badge in the reader's language: each is the home
+     page's own text for that language (og:description and the badge's alt),
+     so nothing here is translated afresh. */
+  var STRINGS = {
+    en: { line: 'Some days you need a push. Some days you need a laugh, better focus or permission to be kinder to yourself.', alt: 'Download on the App Store', w: 156 },
+    es: { line: 'Hay días en que necesitas un empujón. Hay días en que necesitas reírte, concentrarte mejor o darte permiso de ser más amable contigo.', alt: 'Descárgalo en el App Store', w: 156 },
+    pt: { line: 'Tem dias em que você precisa de um empurrão. Tem dias em que precisa dar risada, ganhar foco ou se permitir ser mais gentil consigo.', alt: 'Baixar na App Store', w: 156 },
+    fr: { line: 'Certains jours, il te faut un coup de pouce. D’autres, il te faut rire, mieux te concentrer, ou t’accorder un peu plus de douceur.', alt: 'Télécharger dans l’App Store', w: 164 },
+    de: { line: 'An manchen Tagen brauchst du einen Schubs. An anderen ein Lachen, mehr Fokus oder die Erlaubnis, freundlicher zu dir selbst zu sein.', alt: 'Laden im App Store', w: 156 },
+    ja: { line: '背中を押してほしい日があります。笑いたい日、集中したい日、自分にもう少しやさしくしていいと思いたい日もあります。', alt: 'App Store からダウンロード', w: 142 }
+  };
+  var lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+  if (!STRINGS[lang]) lang = 'en';
+  var S = STRINGS[lang];
+  document.documentElement.lang = lang;
+
+  document.getElementById('line').textContent = S.line;
+  var badge = document.getElementById('badge');
+  badge.src = '/img/app-store-badge' + (lang === 'en' ? '' : '-' + lang) + '.svg';
+  badge.alt = S.alt;
+  badge.width = S.w;
+
+  document.getElementById('appStore').href = G.ios;
+  var play = document.getElementById('play');
+  play.href = G.android;
+
+  /* If the hand-off to the store did not happen (an in-app browser that
+     keeps the page), the reader's own store comes first. */
+  if (G.platform === 'android') {
+    var stores = document.getElementById('stores');
+    stores.insertBefore(play, stores.firstChild);
+  }
+})();
+</script>
+</body>
+</html>
