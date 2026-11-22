@@ -1,36 +1,24 @@
 /* ============================================================================
-   The reveal: an envelope opening, as a video.
+   Film yourself opening it.
 
-   Two ways to keep the moment a friend opens an envelope:
+   On /sealed/, before opening an envelope, the receiver can turn the front
+   camera on. The page records them, with the same opening drawn under
+   their face, from the moment they turn it on until a few seconds after
+   they have read the letter (or they tap Done). Then they can send it to
+   whoever sealed it, post it, or delete it.
 
-   1. Post it to your Story. After opening, the receiver gets an 8 second
-      vertical video (1080x1920) of the opening: the sealed envelope with
-      the sender's initial in the wax, the seal cracking in a flash of gold,
-      the flap lifting, the letter rising out of it with their line on it,
-      with a soft paper-and-wax sound. "{from} sealed this for me" on top,
-      unless they turn the name off. The phone's share sheet takes it to
-      Instagram, TikTok, WhatsApp; where there is none it is a download.
-
-   2. Film yourself opening it. Before opening, the receiver can turn the
-      front camera on. The page records them, and the same opening drawn
-      under their face, from a moment before they open it until a few
-      seconds after they have read it. Then they can send it to whoever
-      sealed it, post it, or delete it.
-
-   Nothing leaves the phone. Both videos are drawn on a canvas here and
+   Nothing leaves the phone. The video is drawn on a canvas here and
    recorded here (MediaRecorder: MP4 in Safari and recent Chrome), and only
-   go anywhere through the share sheet. The camera stops as soon as the
-   recording does.
+   goes anywhere through the share sheet. A small picture of the receiver
+   with a red dot stays on screen the whole time the camera is on, and the
+   camera stops as soon as the recording does.
 
    The opening is drawn from the same pictures as the page (img/envelope/),
-   timed like sealed.js openEnvelope(), so the video is the opening they saw.
-   Instagram covers about the top 250 and the bottom 340 pixels of a Story
-   with its own controls, so nothing that matters is drawn there.
+   timed like sealed.js openEnvelope(), so the video shows the opening they
+   saw, with a soft sound made here: a crack, paper, a shimmer, a twinkle.
 
-     DailiesReveal.button(o)     the "Post it to your Story" button
-     DailiesReveal.open(o)       the same, without the button
-     DailiesReveal.canFilm()     whether this browser can film the receiver
-     DailiesReveal.film(o)       { arm(), opened(), stop(), cancel(), active() }
+     DailiesFilm.canFilm()     whether this browser can film the receiver
+     DailiesFilm.film(o)       { arm(), opened(), stop(), cancel(), active() }
 
    o: {
      to, from, text, author,      the envelope, names and line as shown
@@ -40,11 +28,11 @@
      note,                        the short line under the name, or null
      postmark,                    "No. 3", or null for a first envelope
      stamp,                       the page's stamp <svg>, or null
-     onEvent(action, props),      reveal_* and film_* (see analytics.js)
-     onDone()                     film only: the receiver is finished with it
+     onEvent(action, props),      film_* (see analytics.js)
+     onDone()                     the receiver is finished with it
    }
 
-   Needs /envelope-seal.js for the wax, and /envelope-reveal.css.
+   Needs /envelope-seal.js for the wax, and /envelope-film.css.
    ========================================================================= */
 (function () {
   'use strict';
@@ -52,43 +40,37 @@
   var W = 1080, H = 1920;
 
   var STRINGS = {
-    en: { button: 'Post it to your Story', headFrom: '{from} sealed this for me', headSomeone: 'Someone sealed this for me',
-      showFrom: 'Show who sent it', share: 'Share', save: 'Save video', close: 'Close', making: 'Making your video',
+    en: { save: 'Save video', close: 'Close',
       film: 'Film yourself opening it', filmHint: 'Recording. Open it when you’re ready.',
       filmPrivate: 'Only you have this video until you share it.', filmDone: 'Done', filmCancel: 'Stop filming',
       filmNoCamera: 'The camera didn’t start, so it opens without filming.', recording: 'Recording',
       reaction: 'Your reaction', sendTo: 'Send it to {from}', sendIt: 'Send it', toStory: 'Post it to your Story',
       del: 'Delete', soundOn: 'Turn the sound on', soundOff: 'Turn the sound off' },
-    es: { button: 'Publícalo en tu historia', headFrom: '{from} selló esto para mí', headSomeone: 'Alguien selló esto para mí',
-      showFrom: 'Mostrar quién lo mandó', share: 'Compartir', save: 'Guardar video', close: 'Cerrar', making: 'Preparando tu video',
+    es: { save: 'Guardar video', close: 'Cerrar',
       film: 'Grábate al abrirlo', filmHint: 'Grabando. Ábrelo cuando quieras.',
       filmPrivate: 'Solo tú tienes este video hasta que lo compartas.', filmDone: 'Listo', filmCancel: 'Dejar de grabar',
       filmNoCamera: 'La cámara no se encendió, así que se abre sin grabar.', recording: 'Grabando',
       reaction: 'Tu reacción', sendTo: 'Envíaselo a {from}', sendIt: 'Envíalo', toStory: 'Publícalo en tu historia',
       del: 'Borrar', soundOn: 'Activar el sonido', soundOff: 'Silenciar' },
-    pt: { button: 'Poste nos seus stories', headFrom: '{from} selou isto para mim', headSomeone: 'Alguém selou isto para mim',
-      showFrom: 'Mostrar quem enviou', share: 'Compartilhar', save: 'Salvar vídeo', close: 'Fechar', making: 'Preparando seu vídeo',
+    pt: { save: 'Salvar vídeo', close: 'Fechar',
       film: 'Grave você abrindo', filmHint: 'Gravando. Abra quando quiser.',
       filmPrivate: 'Só você tem este vídeo até compartilhar.', filmDone: 'Pronto', filmCancel: 'Parar de gravar',
       filmNoCamera: 'A câmera não ligou, então ele abre sem gravar.', recording: 'Gravando',
       reaction: 'Sua reação', sendTo: 'Envie para {from}', sendIt: 'Enviar', toStory: 'Poste nos seus stories',
       del: 'Apagar', soundOn: 'Ativar o som', soundOff: 'Desativar o som' },
-    fr: { button: 'Publie-la en story', headFrom: '{from} a scellé ceci pour moi', headSomeone: 'Quelqu’un a scellé ceci pour moi',
-      showFrom: 'Montrer qui l’a envoyée', share: 'Partager', save: 'Enregistrer la vidéo', close: 'Fermer', making: 'Préparation de ta vidéo',
+    fr: { save: 'Enregistrer la vidéo', close: 'Fermer',
       film: 'Filme-toi en l’ouvrant', filmHint: 'Ça tourne. Ouvre-la quand tu veux.',
       filmPrivate: 'Cette vidéo reste sur ton téléphone tant que tu ne la partages pas.', filmDone: 'Terminé', filmCancel: 'Arrêter de filmer',
       filmNoCamera: 'La caméra ne s’est pas lancée, l’enveloppe s’ouvre donc sans filmer.', recording: 'Enregistrement',
       reaction: 'Ta réaction', sendTo: 'Envoie-la à {from}', sendIt: 'Envoie-la', toStory: 'Publie-la en story',
       del: 'Supprimer', soundOn: 'Activer le son', soundOff: 'Couper le son' },
-    de: { button: 'In deiner Story posten', headFrom: '{from} hat das für mich versiegelt', headSomeone: 'Jemand hat das für mich versiegelt',
-      showFrom: 'Zeigen, wer es geschickt hat', share: 'Teilen', save: 'Video speichern', close: 'Schließen', making: 'Dein Video wird erstellt',
+    de: { save: 'Video speichern', close: 'Schließen',
       film: 'Film dich beim Öffnen', filmHint: 'Die Aufnahme läuft. Öffne ihn, wenn du so weit bist.',
       filmPrivate: 'Nur du hast dieses Video, bis du es teilst.', filmDone: 'Fertig', filmCancel: 'Aufnahme beenden',
       filmNoCamera: 'Die Kamera ist nicht angegangen, also öffnet er sich ohne Aufnahme.', recording: 'Aufnahme läuft',
       reaction: 'Deine Reaktion', sendTo: 'An {from} schicken', sendIt: 'Schicken', toStory: 'In deiner Story posten',
       del: 'Löschen', soundOn: 'Ton an', soundOff: 'Ton aus' },
-    ja: { button: 'ストーリーズに投稿する', headFrom: '{from}さんから届きました', headSomeone: 'だれかから届きました',
-      showFrom: '送り主の名前を表示', share: '共有', save: '動画を保存', close: '閉じる', making: '動画を作成しています',
+    ja: { save: '動画を保存', close: '閉じる',
       film: '開ける瞬間を撮影する', filmHint: '撮影中です。準備ができたら開けてください。',
       filmPrivate: 'この動画は、共有するまであなたの手元にだけあります。', filmDone: '完了', filmCancel: '撮影をやめる',
       filmNoCamera: 'カメラを起動できなかったため、撮影せずに開きます。', recording: '撮影中',
@@ -102,8 +84,9 @@
   var F_MONO = '"Courier Prime", "Courier New", monospace';
   var INK = '#1F2A44', CREAM = '#F6EFE1';
 
-  /* The opening, in seconds: sealed.js openEnvelope() step by step, with a
-     beat before it to see the envelope sealed, and the time to read after. */
+  /* The opening, in seconds: sealed.js openEnvelope() step by step. The
+     video sits at 1.0 (sealed, floating) until the tap, which is the crack;
+     `end` is the reading time after it. */
   var T = {
     crack: 1.5,                  // the seal breaks
     flap: 1.7, flapEnd: 2.12,    // the flap lifts (200ms later, 420ms)
@@ -441,20 +424,15 @@
     });
   }
 
-  /* ---------------------------------------------------------------- layouts */
+  /* ----------------------------------------------------------------- layout */
 
-  /* Where everything goes, on a 1080x1920 frame. "story": the opening fills
-     the frame, with the headline over it. "film": the receiver's face on
+  /* Where everything goes, on a 1080x1920 frame: the receiver's face on
      top, the opening under it. */
-  var LAYOUTS = {
-    story: { y0: 0, y1: H, EW: 800, cy: 1080, cardW: 720, cardY: 1000, head: 300, brand: 1545 },
-    film: { y0: 900, y1: H, EW: 700, cy: 1265, cardW: 540, cardY: 1250, face: [0, 0, W, 900], brand: 840 }
-  };
+  var LAYOUT = { y0: 900, y1: H, EW: 700, cy: 1265, cardW: 540, cardY: 1250, face: [0, 0, W, 900], brand: 840 };
 
   /* ------------------------------------------------------------------ scene */
 
-  function makeScene(A, o, L, showFrom) {
-    var S = stringsFor(o.lang);
+  function makeScene(A, o, L) {
     var EW = L.EW, EH = EW / 1.36, k = EW / 420, cx = W / 2;
     var bg = backdropCanvas(A, o, W, L.y1 - L.y0);
     var front = frontCanvas(A, o, EW);
@@ -462,15 +440,11 @@
     var flapH = EH * 0.5893;
     var cw = EW * 0.84, ch = cw * 1.25;
     var sealSize = EW * 0.24;
-    var head = L.head != null ? (showFrom && o.from ? S.headFrom.split('{from}').join(o.from) : S.headSomeone) : null;
     var parts = particles(L, EW, EH, k);
 
     function draw(ctx, t, now) {
       ctx.drawImage(bg, 0, L.y0);
 
-      // The way in: a fade and a little growth (the story only; the film
-      // starts on the envelope already there).
-      var pin = easeOut(seg(t, 0, 0.7));
       // Floating while it waits, as on the page; still from the crack.
       var still = seg(t, T.crack - 0.25, T.crack);
       var fl = (1 - still) * Math.sin(now / 1000 * Math.PI * 2 / 6.5) * 7 * k;
@@ -478,9 +452,6 @@
       var pd = easeIn(seg(t, T.drop, T.dropEnd)), bodyDy = 90 * k * pd, bodyA = 1 - pd;
 
       ctx.save();
-      ctx.translate(cx, L.cy);
-      ctx.scale(lerp(0.94, 1, pin), lerp(0.94, 1, pin));
-      ctx.translate(-cx, -L.cy);
 
       // The ground shadow under it.
       if (bodyA > 0) {
@@ -607,77 +578,34 @@
 
       drawParticles(ctx, parts, t, A, ey - (L.cy - EH / 2));
 
-      // The way in, from dark (layers faded one by one would show the letter
-      // through the envelope).
-      if (pin < 1) {
-        ctx.fillStyle = 'rgba(8,10,14,' + (1 - pin).toFixed(3) + ')';
-        ctx.fillRect(0, L.y0, W, L.y1 - L.y0);
-      }
-
-      // The headline: the brag.
-      if (head) {
-        var ha = easeOut(seg(t, 0.25, 1.0));
-        ctx.save();
-        ctx.globalAlpha = ha;
-        ctx.fillStyle = CREAM;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'alphabetic';
-        ctx.shadowColor = 'rgba(0,0,0,0.35)';
-        ctx.shadowBlur = 24;
-        ctx.font = '400 74px ' + F_DISPLAY;
-        var hl = wrap(ctx, head, W - 200);
-        if (hl.length > 2) { ctx.font = '400 58px ' + F_DISPLAY; hl = wrap(ctx, head, W - 200).slice(0, 2); }
-        var lh = parseFloat(ctx.font.match(/([\d.]+)px/)[1]) * 1.16;
-        var hy = L.head + (1 - ha) * 14 - (hl.length - 1) * lh / 2;
-        hl.forEach(function (l, i) { ctx.fillText(l, W / 2, hy + i * lh); });
-        ctx.restore();
-      }
-
       // Where it came from.
-      var ba = L.face ? 1 : easeOut(seg(t, T.glideEnd + 0.2, T.glideEnd + 0.9));
-      if (ba > 0) brand(ctx, A, L, ba);
+      brand(ctx, A, L);
     }
 
     return { draw: draw };
   }
 
-  function brand(ctx, A, L, alpha) {
+  /* Where it came from: a pill in the corner of the face. */
+  function brand(ctx, A, L) {
+    var label = 'mydailies.app';
     ctx.save();
-    ctx.globalAlpha = alpha;
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'left';
-    var label = 'mydailies.app';
-    if (L.face) {
-      // A pill in the corner of the face.
-      ctx.font = '600 28px ' + F_BODY;
-      var isz = 40, gap = 12, lw = ctx.measureText(label).width, pw = 16 + isz + gap + lw + 22, ph = 60;
-      var px = 36, py = L.brand - ph;
-      roundRect(ctx, px, py, pw, ph, ph / 2, ph / 2);
-      ctx.fillStyle = 'rgba(12,16,28,0.55)';
-      ctx.fill();
-      if (A.icon) {
-        ctx.save();
-        roundRect(ctx, px + 12, py + 10, isz, isz, isz * 0.23, isz * 0.23);
-        ctx.clip();
-        ctx.drawImage(A.icon, px + 12, py + 10, isz, isz);
-        ctx.restore();
-      }
-      ctx.fillStyle = 'rgba(246,239,225,0.95)';
-      ctx.fillText(label, px + 12 + isz + gap, py + ph / 2 + 1);
-    } else {
-      ctx.font = '600 34px ' + F_BODY;
-      var lw2 = ctx.measureText(label).width, sz = 52, g2 = 16;
-      var bx = (W - (sz + g2 + lw2)) / 2;
-      if (A.icon) {
-        ctx.save();
-        roundRect(ctx, bx, L.brand - sz / 2, sz, sz, sz * 0.23, sz * 0.23);
-        ctx.clip();
-        ctx.drawImage(A.icon, bx, L.brand - sz / 2, sz, sz);
-        ctx.restore();
-      } else bx -= (sz + g2) / 2;
-      ctx.fillStyle = 'rgba(246,239,225,0.92)';
-      ctx.fillText(label, bx + sz + g2, L.brand + 1);
+    ctx.font = '600 28px ' + F_BODY;
+    var isz = 40, gap = 12, lw = ctx.measureText(label).width, pw = 16 + isz + gap + lw + 22, ph = 60;
+    var px = 36, py = L.brand - ph;
+    roundRect(ctx, px, py, pw, ph, ph / 2, ph / 2);
+    ctx.fillStyle = 'rgba(12,16,28,0.55)';
+    ctx.fill();
+    if (A.icon) {
+      ctx.save();
+      roundRect(ctx, px + 12, py + 10, isz, isz, isz * 0.23, isz * 0.23);
+      ctx.clip();
+      ctx.drawImage(A.icon, px + 12, py + 10, isz, isz);
+      ctx.restore();
     }
+    ctx.fillStyle = 'rgba(246,239,225,0.95)';
+    ctx.fillText(label, px + 12 + isz + gap, py + ph / 2 + 1);
     ctx.restore();
   }
 
@@ -744,11 +672,12 @@
   }
 
   /* ----------------------------------------------------------------- sound */
-  /* Made here, not played from a file: a crack and a low thump when the
-     seal breaks, paper as the flap lifts, a soft shimmer as the letter
-     rises and a twinkle when it lands, over a quiet warm note. */
+  /* Made here, not played from a file, and only into the recording (the
+     microphone hears the room): a crack and a low thump when the seal
+     breaks, paper as the flap lifts, a soft shimmer as the letter rises and
+     a twinkle when it lands. */
 
-  function audioKit(outLoud) {
+  function audioKit() {
     var AC = window.AudioContext || window.webkitAudioContext;
     if (!AC) return null;
     try {
@@ -758,11 +687,9 @@
       var master = ctx.createGain();
       master.gain.value = 0.9;
       master.connect(dest);
-      var speaker = null;
-      if (outLoud) { speaker = ctx.createGain(); speaker.gain.value = 0.7; master.connect(speaker); speaker.connect(ctx.destination); }
       var nb = ctx.createBuffer(1, ctx.sampleRate, ctx.sampleRate), d = nb.getChannelData(0), r = rand(5);
       for (var i = 0; i < d.length; i++) d[i] = r() * 2 - 1;
-      return { ctx: ctx, dest: dest, master: master, noise: nb, speaker: speaker };
+      return { ctx: ctx, dest: dest, master: master, noise: nb };
     } catch (e) { return null; }
   }
 
@@ -789,7 +716,7 @@
   }
 
   /* The opening's sounds, with the crack at ctx time `at`. */
-  function score(kit, at, withBed) {
+  function score(kit, at) {
     var c0 = at, base = at - T.crack;
     // The crack.
     env(noise(kit, c0, 0.12, 'highpass', 1800), c0, 0.9, 0.003, 0.08);
@@ -816,19 +743,6 @@
     wg.gain.linearRampToValueAtTime(0.0001, base + T.glide + 0.55);
     // The twinkle as it lands.
     [2637, 3136, 3951].forEach(function (f, j) { tone(kit, base + T.glideEnd + j * 0.09, f, 'sine', 0.045, 0.005, 0.9); });
-    // A warm note under the reading.
-    if (withBed) {
-      [196, 293.66, 392].forEach(function (f, j) {
-        var o = kit.ctx.createOscillator(), g = kit.ctx.createGain();
-        o.type = 'sine'; o.frequency.value = f;
-        o.connect(g); g.connect(kit.master);
-        g.gain.setValueAtTime(0.0001, base + T.rise);
-        g.gain.linearRampToValueAtTime(0.03 / (j + 1), base + T.glideEnd);
-        g.gain.setValueAtTime(0.03 / (j + 1), base + T.end - 1.2);
-        g.gain.linearRampToValueAtTime(0.0001, base + T.end);
-        o.start(base + T.rise); o.stop(base + T.end + 0.1);
-      });
-    }
   }
 
   /* ----------------------------------------------------------- recording */
@@ -908,30 +822,28 @@
   /* The overlay both sheets use: a close button, a 9:16 frame and a place
      for the buttons. Escape and a tap outside close it. */
   function sheet(S, label, onClose) {
-    var wrapEl = h('div', 'rv-wrap');
+    var wrapEl = h('div', 'fm-wrap');
     wrapEl.setAttribute('role', 'dialog');
     wrapEl.setAttribute('aria-modal', 'true');
     wrapEl.setAttribute('aria-label', label);
-    var x = h('button', 'rv-x');
+    var x = h('button', 'fm-x');
     x.type = 'button';
     x.setAttribute('aria-label', S.close);
     x.innerHTML = X_ICON;
-    var frame = h('div', 'rv-frame');
-    var wait = h('p', 'rv-wait', S.making);
-    frame.appendChild(wait);
-    var actions = h('div', 'rv-actions');
+    var frame = h('div', 'fm-frame');
+    var actions = h('div', 'fm-actions');
     wrapEl.appendChild(x);
     wrapEl.appendChild(frame);
     wrapEl.appendChild(actions);
     document.body.appendChild(wrapEl);
-    document.documentElement.classList.add('rv-open');
+    document.documentElement.classList.add('fm-open');
     requestAnimationFrame(function () { wrapEl.classList.add('is-in'); });
     var closed = false;
     function close() {
       if (closed) return;
       closed = true;
       wrapEl.classList.remove('is-in');
-      document.documentElement.classList.remove('rv-open');
+      document.documentElement.classList.remove('fm-open');
       document.removeEventListener('keydown', onKey);
       setTimeout(function () { wrapEl.remove(); }, 260);
       onClose();
@@ -946,8 +858,7 @@
 
   /* A finished video in the frame, looping, muted until asked. */
   function showVideo(frame, url, S) {
-    Array.prototype.slice.call(frame.querySelectorAll('canvas,video,.rv-sound')).forEach(function (n) { n.remove(); });
-    var v = h('video', 'rv-media');
+    var v = h('video', 'fm-media');
     v.muted = true;
     v.loop = true;
     v.autoplay = true;
@@ -957,7 +868,7 @@
     frame.insertBefore(v, frame.firstChild);
     var p = v.play();
     if (p && p.catch) p.catch(function () {});
-    var snd = h('button', 'rv-sound');
+    var snd = h('button', 'fm-sound');
     snd.type = 'button';
     function paint() {
       snd.innerHTML = v.muted ? SOUND_OFF : SOUND_ON;
@@ -996,141 +907,7 @@
     return b;
   }
 
-  /* ------------------------------------------- 1. Post it to your Story */
-
-  var openSheet = null;
-
-  function open(o) {
-    if (openSheet) return;
-    var S = stringsFor(o.lang);
-    var ev = o.onEvent || function () {};
-    var showFrom = !!o.from, file = null, url = null, gen = 0, take = null, shared = false;
-    var kit = canRecord() ? audioKit(true) : null; // inside the tap, so it may play
-
-    var sh = sheet(S, S.button, function () {
-      openSheet = null;
-      gen++;
-      if (take) take.abort();
-      if (url) URL.revokeObjectURL(url);
-      if (kit) try { kit.ctx.close(); } catch (e) {}
-      ev('reveal_closed', { from_shown: showFrom, shared: shared });
-      if (o.returnFocus && o.returnFocus.focus) o.returnFocus.focus();
-    });
-    openSheet = sh;
-
-    var row = h('label', 'rv-toggle');
-    var cb = h('input');
-    cb.type = 'checkbox';
-    cb.checked = true;
-    row.appendChild(cb);
-    row.appendChild(h('span', 'rv-switch'));
-    row.appendChild(h('span', null, S.showFrom));
-    if (!o.from) row.hidden = true;
-
-    var go = shareButton('btn btn-primary btn-big rv-go', S.share, S.save, function () { return file; }, function (how) {
-      shared = true;
-      ev('reveal_shared', { destination: how, from_shown: showFrom, format: file && /mp4/.test(file.type) ? 'mp4' : file && /webm/.test(file.type) ? 'webm' : 'jpg' });
-    });
-    go.textContent = S.making;
-    sh.actions.appendChild(row);
-    sh.actions.appendChild(go);
-
-    function make() {
-      var mine = ++gen;
-      if (take) take.abort();
-      file = null;
-      sh.frame.classList.add('is-making');
-      go.setAttribute('aria-disabled', 'true');
-      go.textContent = S.making;
-      loadAssets(o).then(function (A) {
-        if (mine !== gen) return;
-        var scene = makeScene(A, o, LAYOUTS.story, showFrom);
-        if (!canRecord()) return still(scene, mine);
-        take = playTake(scene, mine);
-      });
-    }
-
-    // No recorder: the last frame, as a picture.
-    function still(scene, mine) {
-      var cv = canvas(W, H), ctx = cv.getContext('2d');
-      scene.draw(ctx, T.end, 0);
-      cv.toBlob(function (b) {
-        if (mine !== gen || !b) return;
-        done(b);
-        if (url) URL.revokeObjectURL(url);
-        url = URL.createObjectURL(b);
-        var img = h('img', 'rv-media');
-        img.alt = '';
-        img.src = url;
-        Array.prototype.slice.call(sh.frame.querySelectorAll('canvas,video,img')).forEach(function (n) { n.remove(); });
-        sh.frame.insertBefore(img, sh.frame.firstChild);
-      }, 'image/jpeg', 0.92);
-    }
-
-    function done(blob) {
-      file = fileFor(blob, 'dailies-envelope');
-      go.relabel(file);
-      go.removeAttribute('aria-disabled');
-      sh.frame.classList.remove('is-making');
-    }
-
-    /* Plays the opening into the frame while recording it: the take is the
-       preview. */
-    function playTake(scene, mine) {
-      var cv = canvas(W, H), ctx = cv.getContext('2d');
-      cv.className = 'rv-media';
-      Array.prototype.slice.call(sh.frame.querySelectorAll('canvas,video,img,.rv-sound')).forEach(function (n) { n.remove(); });
-      sh.frame.insertBefore(cv, sh.frame.firstChild);
-      var t0 = performance.now() + 60, raf = 0, stopped = false;
-      scene.draw(ctx, 0, t0);
-      if (kit) { try { kit.ctx.resume(); } catch (e) {} score(kit, kit.ctx.currentTime + 0.06 + T.crack, true); }
-      var rec = startRecorder(cv, kit && kit.dest.stream, 8000000);
-      function frame(now) {
-        if (stopped) return;
-        var t = Math.max(0, (now - t0) / 1000);
-        scene.draw(ctx, t, now);
-        if (t >= T.end) { stopped = true; rec.stop(); return; }
-        raf = requestAnimationFrame(frame);
-      }
-      raf = requestAnimationFrame(frame);
-      rec.done.then(function (blob) {
-        if (mine !== gen || !blob) return;
-        done(blob);
-        if (url) URL.revokeObjectURL(url);
-        url = URL.createObjectURL(blob);
-        showVideo(sh.frame, url, S);
-      });
-      return { abort: function () { stopped = true; cancelAnimationFrame(raf); rec.stop(); } };
-    }
-
-    cb.addEventListener('change', function () {
-      showFrom = cb.checked;
-      if (kit) try { kit.ctx.close(); } catch (e) {}
-      kit = canRecord() ? audioKit(true) : null;
-      make();
-    });
-
-    ev('reveal_opened', {});
-    make();
-  }
-
-  /* The button for the page, already labelled; the page places it.
-     o.className styles it like the page's own buttons. */
-  function button(o) {
-    var S = stringsFor(o.lang);
-    var b = h('button', o.className || 'btn btn-ghost rv-cta');
-    b.type = 'button';
-    b.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="3.2"/><path d="M10.5 9.2v5.6l4.6-2.8z"/></svg>';
-    b.appendChild(h('span', null, S.button));
-    b.addEventListener('click', function () {
-      var opts = typeof o.get === 'function' ? o.get() : o;
-      opts.returnFocus = b;
-      open(opts);
-    });
-    return b;
-  }
-
-  /* ----------------------------------- 2. Film yourself opening it */
+  /* ------------------------------------------------------------- filming */
 
   var MAX_MS = 60000;              // never longer than a minute in all
   var AFTER_S = T.end - T.crack + 2; // filming goes on this long after the tap
@@ -1146,7 +923,7 @@
     function arm() {
       if (state !== 'idle') return Promise.resolve(false);
       state = 'arming';
-      kit = audioKit(false);
+      kit = audioKit();
       if (kit) try { kit.ctx.resume(); } catch (e) {}
       return navigator.mediaDevices.getUserMedia({
         video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 720 } },
@@ -1164,7 +941,7 @@
         video.srcObject = stream;
         return Promise.all([video.play().catch(function () {}), loadAssets(o)]).then(function (r) {
           if (state !== 'arming') return false;
-          scene = makeScene(r[1], o, LAYOUTS.film, true);
+          scene = makeScene(r[1], o, LAYOUT);
           if (kit && cam.getAudioTracks().length) {
             var mic = kit.ctx.createMediaStreamSource(cam);
             var mg = kit.ctx.createGain();
@@ -1201,7 +978,7 @@
       ctx.setTransform(Q, 0, 0, Q, 0, 0);
       var t = tapAt ? T.crack - 0.05 + (now - tapAt) / 1000 : 1.0;
       // The face, mirrored as a selfie is, over the top of the frame.
-      var F = LAYOUTS.film.face;
+      var F = LAYOUT.face;
       ctx.save();
       ctx.beginPath();
       ctx.rect(F[0], F[1], F[2], F[3]);
@@ -1237,7 +1014,7 @@
       if (state !== 'armed') return;
       state = 'opened';
       tapAt = performance.now();
-      if (kit) score(kit, kit.ctx.currentTime + 0.05, false);
+      if (kit) score(kit, kit.ctx.currentTime + 0.05);
       if (bubble) {
         bubble.classList.add('is-opened');
         doneBtn.hidden = false;
@@ -1282,20 +1059,20 @@
 
     /* The receiver's own picture while it records, so they always know. */
     function showBubble() {
-      bubble = h('div', 'rv-bubble');
+      bubble = h('div', 'fm-bubble');
       bubble.setAttribute('role', 'status');
       // The same video the recording draws from: Safari may stop updating
       // one that is not on the page.
       var live = video;
-      live.className = 'rv-bubble-cam';
-      var dot = h('span', 'rv-rec');
+      live.className = 'fm-bubble-cam';
+      var dot = h('span', 'fm-rec');
       dot.appendChild(h('span', 'vh', S.recording));
-      var x = h('button', 'rv-bubble-x');
+      var x = h('button', 'fm-bubble-x');
       x.type = 'button';
       x.setAttribute('aria-label', S.filmCancel);
       x.innerHTML = X_ICON;
       x.addEventListener('click', cancel);
-      doneBtn = h('button', 'rv-bubble-done', S.filmDone);
+      doneBtn = h('button', 'fm-bubble-done', S.filmDone);
       doneBtn.type = 'button';
       doneBtn.hidden = true;
       doneBtn.addEventListener('click', stop);
@@ -1316,24 +1093,23 @@
         ev('film_closed', { shared: shared });
         if (o.onDone) o.onDone();
       });
-      sh.el.classList.add('rv-review');
-      sh.frame.classList.remove('is-making');
+      sh.el.classList.add('fm-review');
       showVideo(sh.frame, url, S);
-      var title = h('p', 'rv-title', S.reaction);
+      var title = h('p', 'fm-title', S.reaction);
       sh.el.insertBefore(title, sh.frame);
       var share = canShare(file.type);
       function done(dest) { return function (how) { shared = true; ev('film_shared', { destination: how === 'download' ? 'download' : dest }); }; }
-      var toSender = shareButton('btn btn-primary btn-big rv-go', o.from ? S.sendTo.split('{from}').join(o.from) : S.sendIt, S.save,
+      var toSender = shareButton('btn btn-primary btn-big fm-go', o.from ? S.sendTo.split('{from}').join(o.from) : S.sendIt, S.save,
         function () { return file; }, done('sender'));
       toSender.relabel(file);
       toSender.removeAttribute('aria-disabled');
       sh.actions.appendChild(toSender);
       if (share) {
-        var toStory = shareButton('btn btn-ghost rv-second', S.toStory, S.save, function () { return file; }, done('story'));
+        var toStory = shareButton('btn btn-ghost fm-second', S.toStory, S.save, function () { return file; }, done('story'));
         toStory.removeAttribute('aria-disabled');
         sh.actions.appendChild(toStory);
       }
-      var del = h('button', 'rv-del', S.del);
+      var del = h('button', 'fm-del', S.del);
       del.type = 'button';
       del.addEventListener('click', function () { ev('film_deleted', {}); shared = true; sh.close(); });
       sh.actions.appendChild(del);
@@ -1349,12 +1125,12 @@
     };
   }
 
-  window.DailiesReveal = {
-    open: open, button: button, film: film, canFilm: canFilm, canRecord: canRecord,
+  window.DailiesFilm = {
+    film: film, canFilm: canFilm,
     STRINGS: STRINGS, T: T,
     // For tests and the page's own checks.
-    _scene: function (o, layout, showFrom) {
-      return loadAssets(o).then(function (A) { return makeScene(A, o, LAYOUTS[layout || 'story'], showFrom !== false); });
+    _scene: function (o) {
+      return loadAssets(o).then(function (A) { return makeScene(A, o, LAYOUT); });
     }
   };
 })();

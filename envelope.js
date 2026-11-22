@@ -41,7 +41,6 @@
   relabelFooter();
 
   if (!env) { invalid(res.reason); return; }
-  var stampSvg = null; // the envelope's stamp, for the Story video once it is opened
   sealed();
 
   /* ------------------------------------------------------------- sealed */
@@ -62,7 +61,6 @@
     // The sender's initial pressed into the wax (the quote mark without a
     // name, or when the name does not start with a letter).
     if (window.DailiesSeal) window.DailiesSeal.apply(parts.el, env.f);
-    stampSvg = parts.stamp && parts.stamp.querySelector('svg');
     float.appendChild(parts.el);
     stage.appendChild(float);
     box.appendChild(stage);
@@ -156,26 +154,6 @@
     wall.href = P.wallLink(env, lang);
     wall.addEventListener('click', function () { P.ev('envelope_cta', { action: 'wallpaper' }); });
     row.appendChild(wall);
-    // The opening as a video for a Story (envelope-reveal.js).
-    if (window.DailiesReveal) {
-      row.appendChild(window.DailiesReveal.button({
-        lang: lang,
-        className: 'pl-btn env-reveal',
-        get: function () {
-          return {
-            to: env.to || '', from: env.f || '',
-            text: P.envText(env, lang), author: P.envAuthor(env, lang),
-            look: { src: P.bgUrl(env.k) }, lang: lang,
-            forName: env.to ? s.forName : s.forYou,
-            stamp: stampSvg,
-            onEvent: function (action, props) {
-              P.ev('envelope_cta', { action: action, method: props && props.destination,
-                from: props && 'from_shown' in props ? (props.from_shown ? 'shown' : 'hidden') : undefined });
-            }
-          };
-        }
-      }));
-    }
     box.appendChild(row);
 
     var ml = P.moreLink(env, lang);

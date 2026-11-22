@@ -256,10 +256,7 @@
        envelope_viewed   /e/ showed a sealed envelope
        envelope_opened   ...and it was opened; `ms_to_open` is how long they looked first
        envelope_cta      a button on an opened envelope: `action` is send_back,
-                         wallpaper, read_more, or the Story video:
-                         reveal_opened, reveal_shared (`method` share or
-                         download, `from` shown or hidden: whether it names
-                         the sender) or reveal_closed
+                         wallpaper or read_more
        envelope_invalid  the link did not decode; `reason` is empty, decode or field
        wallpaper_changed the maker: `change` is mood, line, bg or own (the first
                          three of each per page)
@@ -335,15 +332,6 @@
                                                 `sent_short`
                                composer_closed  the composer closed; `step`
                                                 compose, sealed or sent
-                               reveal_opened    Post it to your Story tapped:
-                                                the opening is being recorded
-                               reveal_shared    ...and handed on; `destination`
-                                                share (the share sheet) or
-                                                download, `from_shown` whether
-                                                it names the sender, `format`
-                                                mp4, webm or jpg (no recorder)
-                               reveal_closed    the video closed; `from_shown`,
-                                                `shared`
                                film_started     Film yourself opening it: the
                                                 camera is on; `mic` false when
                                                 it films without sound
@@ -382,7 +370,7 @@
   };
   var APP_ENVELOPE_KEYS = ['own', 'has_author', 'text_length', 'quote_id', 'thread_n', 'open_when',
     'ms_to_open', 'action', 'platform_guess', 'destination', 'reason', 'mode', 'how', 'step', 'progress', 'short', 'sent_short', 'photo', 'seal',
-    'filmed', 'from_shown', 'format', 'shared', 'mic', 'seconds'];
+    'filmed', 'shared', 'mic', 'seconds'];
 
   function envelope(kind, props) {
     var event = APP_ENVELOPE_EVENTS[kind];

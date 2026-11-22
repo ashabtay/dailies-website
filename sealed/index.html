@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&family=Caveat:wght@400;500&family=Yeseva+One&display=swap">
-<link rel="stylesheet" href="/envelope-reveal.css">
+<link rel="stylesheet" href="/envelope-film.css">
 <!--
   The envelope page. Everything a visitor sees is built by /sealed.js from
   the link's #fragment, which never reaches a server. Styles live here rather
@@ -237,12 +237,11 @@ h1,h2,p{margin:0}
 .for .nm{font-style:italic}
 .vh{position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
 .open-row{margin-top:clamp(24px,4.5svh,38px); width:min(100%,320px); display:flex; flex-direction:column; align-items:center; gap:12px}
-/* Film yourself opening it (envelope-reveal.js): a quiet link under Open it. */
+/* Film yourself opening it (envelope-film.js): a quiet link under Open it. */
 .film-link{display:inline-flex; align-items:center; gap:8px}
 .film-link svg{flex:none}
 .film-link[hidden],.film-note[hidden]{display:none}
 .film-note{margin:0; font-size:14px; color:var(--text-dim); text-align:center; max-width:34ch; text-wrap:balance}
-.reveal-slot{width:100%}
 
 /* ================================================================ OPENED */
 .opened{
@@ -575,7 +574,6 @@ h1,h2,p{margin:0}
       </div>
       <div class="o-actions">
         <button class="btn btn-primary btn-big" id="sendBack" type="button"><span id="sendBackLabel"></span></button>
-        <div class="reveal-slot" id="revealSlot" hidden></div>
         <a class="textlink" data-get-app target="_blank" rel="noopener" data-s="getApp"></a>
         <p class="get-note" hidden data-s="getNote"></p>
       </div>
@@ -748,7 +746,7 @@ h1,h2,p{margin:0}
 <script src="/analytics.js"></script>
 <script src="/consent.js"></script>
 <script src="/envelope-seal.js"></script>
-<script src="/envelope-reveal.js"></script>
+<script src="/envelope-film.js"></script>
 <script src="/sealed.js"></script>
 </body>
 </html>

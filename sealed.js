@@ -830,10 +830,10 @@
   }
   fill($('#sendBackLabel'), S.sendBack, { from: ENV.from });
 
-  /* The reveal (envelope-reveal.js): the opening as a video for a Story,
-     and the receiver filming themselves opening it. */
-  var R = window.DailiesReveal, filming = null, holdConsent = false;
-  function revealOpts() {
+  /* Film yourself opening it (envelope-film.js): the receiver's face and
+     the opening, recorded on the phone, to send back or post. */
+  var R = window.DailiesFilm, filming = null, holdConsent = false;
+  function filmOpts() {
     return {
       to: ENV.to, from: ENV.from, text: ENV.t, author: ENV.a, look: LOOK, lang: LANG,
       forName: S.forName,
@@ -843,10 +843,6 @@
       onEvent: function (action, props) { cta(action, props); }
     };
   }
-  if (R) {
-    $('#revealSlot').appendChild(R.button({ lang: LANG, get: revealOpts }));
-    $('#revealSlot').hidden = false;
-  }
   if (R && R.canFilm()) {
     var FS = R.STRINGS[LANG] || R.STRINGS.en;
     var filmBtn = $('#filmBtn'), filmNote = $('#filmNote');
@@ -855,7 +851,7 @@
     filmBtn.addEventListener('click', function () {
       if (filming || isOpen) return;
       filmBtn.disabled = true;
-      var o = revealOpts();
+      var o = filmOpts();
       o.onDone = function () {
         filming = null;
         if (!isOpen) { filmBtn.hidden = false; filmBtn.disabled = false; filmNote.hidden = true; }
