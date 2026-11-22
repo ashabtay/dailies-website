@@ -84,7 +84,11 @@
 /* The letter stands in the open envelope. --down (the letter going in) and
    --fold (the flap coming over) run 0 to 1; a hold drives them, .is-sealed
    sets both to 1, and the transitions are for every other way they change. */
-.ea-room{position:relative; width:min(84%,400px); margin:0 auto; padding-top:46%; transition:padding-top .5s cubic-bezier(.4,0,.2,1)}
+/* The room above it is what the letter needs when it stands up (about 0.52
+   of the envelope's width). On a short screen the envelope shrinks, so the
+   whole composer fits without scrolling. */
+.ea-room{position:relative; width:min(84%,400px,calc((100vh - 440px) / 1.275)); min-width:min(84%,240px); margin:0 auto}
+.ea-room::before{content:""; display:block; padding-top:54%}
 .ea-compose{--down:0; --fold:0}
 .ea-compose .ea-glow{display:none}
 .ea-compose.is-sealed{--down:1; --fold:1}

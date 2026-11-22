@@ -667,12 +667,14 @@ def page_enc(page, lang):
         <div class="en-stage">
           <figure class="pl-card en-card"><img src="/img/wallpapers/bg/{BGS[first["k"]]["file"]}" width="1080" height="1920" alt="" fetchpriority="high"><blockquote class="pl-card-q"><p dir="auto">{esc(first["text"][lang])}</p>{('<cite>%s</cite>' % esc(a0)) if a0 else ''}</blockquote></figure>
         </div>
-        <p class="pl-hint" aria-live="polite"></p>
-        <textarea class="pl-own" rows="3" maxlength="200" aria-label="{esc(c["own_label"])}" placeholder="{esc(c["own_ph"])}" dir="auto" hidden></textarea>
-        <div class="pl-linenav">
-          <button type="button" class="pl-btn pl-step" data-step="-1" aria-label="{esc(c["prev"])}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg><span>{esc(c["prev_t"])}</span></button>
-          <button type="button" class="pl-btn pl-step" data-step="1" aria-label="{esc(c["next"])}"><span>{esc(c["next_t"])}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></button>
+        <div class="en-under">
+          <div class="pl-linenav">
+            <button type="button" class="pl-btn pl-step" data-step="-1" aria-label="{esc(c["prev"])}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg><span>{esc(c["prev_t"])}</span></button>
+            <button type="button" class="pl-btn pl-step" data-step="1" aria-label="{esc(c["next"])}"><span>{esc(c["next_t"])}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></button>
+          </div>
+          <p class="pl-hint" aria-live="polite"></p>
         </div>
+        <textarea class="pl-own" rows="3" maxlength="200" aria-label="{esc(c["own_label"])}" placeholder="{esc(c["own_ph"])}" dir="auto" hidden></textarea>
         <div class="en-fields">
           <label class="pl-field"><span>{esc(c["their"])}</span><input type="text" name="to" maxlength="40" autocapitalize="words" spellcheck="false" dir="auto"></label>
           <label class="pl-field"><span>{esc(c["yours"])}</span><input type="text" name="from" maxlength="40" autocapitalize="words" spellcheck="false" dir="auto"></label>

@@ -451,6 +451,7 @@ html.pl-locked, html.pl-locked body{overflow:hidden}
 .pl-link{margin-top:12px; font:12px/1.4 var(--f-mono); color:var(--text-dim)}
 .pl-bridge{display:grid; gap:12px; justify-items:start; margin-top:20px; padding-top:16px; border-top:1px solid var(--rule)}
 .pl-bridge p{color:var(--text-dim); font-size:15px}
+.pl-get{min-height:44px; padding:11px 22px; font-size:15px}
 
 .pl-card-small{max-width:210px; margin-bottom:16px}
 
@@ -526,10 +527,22 @@ html.pl-locked, html.pl-locked body{overflow:hidden}
 .en-steps span{flex:none; width:22px; height:22px; display:grid; place-items:center; border-radius:50%; background:var(--chip-on); color:var(--text); font:600 12px/1 var(--f-body)}
 @media (max-width:600px){ .en-steps{flex-direction:column; gap:6px; margin-top:12px; font-size:14.5px} }
 .en-fields{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-/* Under the envelope: what it needs, then what the wax is for. */
-.en-composer .pl-hint{text-align:center; min-height:1.45em; margin:-4px 0 0; font-size:14px; color:var(--text-dim); transition:color .25s}
+/* Under the envelope, one row: Back, what the wax needs or is for, Next
+   line. On a phone the words go above the two buttons. */
+.en-under{display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:10px 12px; margin-top:-4px}
+.en-under .pl-linenav{display:contents}
+.en-under .pl-linenav[hidden]{display:none}
+.en-under [data-step="-1"]{grid-column:1; grid-row:1}
+.en-under [data-step="1"]{grid-column:3; grid-row:1}
+.en-composer .pl-hint{grid-column:2; grid-row:1; text-align:center; min-height:1.45em; margin:0; font-size:14px; line-height:1.35;
+  color:var(--text-dim); text-wrap:balance; transition:color .25s}
 .en-composer .pl-hint.is-ready{color:var(--accent); font-weight:600}
-.en-stage{padding-top:4px}
+@media (max-width:600px){
+  .en-under{grid-template-columns:1fr 1fr}
+  .en-composer .pl-hint{grid-column:1/-1}
+  .en-under [data-step="-1"]{grid-column:1; grid-row:2}
+  .en-under [data-step="1"]{grid-column:2; grid-row:2}
+}
 .en-name{display:inline-block; padding:0 .3em; border-radius:6px; background:rgba(244,236,220,.2); border-bottom:1px dashed rgba(244,236,220,.7)}
 .en-list .en-name{background:var(--chip-on); border-bottom-color:var(--accent-dim)}
 
