@@ -426,15 +426,28 @@
 
   /* ----------------------------------------------------------------- layout */
 
-  /* Where everything goes, on a 1080x1920 frame: the receiver's face on
-     top, the opening under it. */
-  var LAYOUT = { y0: 900, y1: H, EW: 700, cy: 1265, cardW: 540, cardY: 1250, face: [0, 0, W, 900], brand: 840 };
+  /* Where everything goes, on a 1080x1920 frame. The receiver's face fills
+     the frame's full width, 1440 tall (a phone's front camera is 3:4, so
+     all of it); the opening is drawn over the lower part, its background
+     fading in from `fade` so the face carries on behind it. */
+  var LAYOUT = { y0: 860, fade: 380, y1: H, EW: 680, cy: 1470, cardW: 480, cardY: 1340, face: [0, 0, W, 1440], brand: [36, 260] };
 
   /* ------------------------------------------------------------------ scene */
 
   function makeScene(A, o, L) {
     var EW = L.EW, EH = EW / 1.36, k = EW / 420, cx = W / 2;
     var bg = backdropCanvas(A, o, W, L.y1 - L.y0);
+    if (L.fade) {
+      // Clear at the top, so the face shows through, solid by `fade`.
+      var bx = bg.getContext('2d'), fg = bx.createLinearGradient(0, 0, 0, L.fade);
+      fg.addColorStop(0, 'rgba(0,0,0,0)');
+      fg.addColorStop(1, 'rgba(0,0,0,1)');
+      bx.globalCompositeOperation = 'destination-in';
+      bx.fillStyle = fg;
+      // All of it: destination-in clears whatever the fill does not cover.
+      bx.fillRect(0, 0, W, bg.height);
+      bx.globalCompositeOperation = 'source-over';
+    }
     var front = frontCanvas(A, o, EW);
     var card = cardCanvas(A, o, L.cardW);
     var flapH = EH * 0.5893;
@@ -585,7 +598,8 @@
     return { draw: draw };
   }
 
-  /* Where it came from: a pill in the corner of the face. */
+  /* Where it came from: a pill over the face, just below the strip at the
+     top that Instagram covers in a Story. */
   function brand(ctx, A, L) {
     var label = 'mydailies.app';
     ctx.save();
@@ -593,7 +607,7 @@
     ctx.textAlign = 'left';
     ctx.font = '600 28px ' + F_BODY;
     var isz = 40, gap = 12, lw = ctx.measureText(label).width, pw = 16 + isz + gap + lw + 22, ph = 60;
-    var px = 36, py = L.brand - ph;
+    var px = L.brand[0], py = L.brand[1];
     roundRect(ctx, px, py, pw, ph, ph / 2, ph / 2);
     ctx.fillStyle = 'rgba(12,16,28,0.55)';
     ctx.fill();
@@ -926,11 +940,12 @@
       kit = audioKit();
       if (kit) try { kit.ctx.resume(); } catch (e) {}
       return navigator.mediaDevices.getUserMedia({
-        video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 720 } },
+        // 4:3, the front camera's whole picture: 16:9 would crop it in.
+        video: { facingMode: 'user', width: { ideal: 1440 }, height: { ideal: 1080 } },
         audio: { echoCancellation: true, noiseSuppression: true }
       }).catch(function () {
         // No microphone (or not allowed): the face without the sound.
-        return navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } });
+        return navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user', width: { ideal: 1440 }, height: { ideal: 1080 } } });
       }).then(function (stream) {
         if (state !== 'arming') { stream.getTracks().forEach(function (t) { t.stop(); }); return false; }
         cam = stream;
@@ -977,29 +992,20 @@
     function drawFrame(now) {
       ctx.setTransform(Q, 0, 0, Q, 0, 0);
       var t = tapAt ? T.crack - 0.05 + (now - tapAt) / 1000 : 1.0;
-      // The face, mirrored as a selfie is, over the top of the frame.
+      // The face, mirrored as a selfie is, across the whole width.
       var F = LAYOUT.face;
-      ctx.save();
-      ctx.beginPath();
-      ctx.rect(F[0], F[1], F[2], F[3]);
-      ctx.clip();
       ctx.fillStyle = '#111';
-      ctx.fillRect(F[0], F[1], F[2], F[3]);
+      ctx.fillRect(0, 0, W, H);
       if (video && video.videoWidth) {
         var s = Math.max(F[2] / video.videoWidth, F[3] / video.videoHeight);
         var dw = video.videoWidth * s, dh = video.videoHeight * s;
+        ctx.save();
         ctx.translate(F[0] + F[2], F[1]);
         ctx.scale(-1, 1);
         ctx.drawImage(video, (F[2] - dw) / 2, (F[3] - dh) / 2, dw, dh);
+        ctx.restore();
       }
-      ctx.restore();
-      // A soft edge where the face meets the envelope.
-      var g = ctx.createLinearGradient(0, F[3] - 90, 0, F[3]);
-      g.addColorStop(0, 'rgba(10,12,18,0)');
-      g.addColorStop(1, 'rgba(10,12,18,0.55)');
-      ctx.fillStyle = g;
-      ctx.fillRect(0, F[3] - 90, W, 90);
-      // The opening under it; the letter may rise over the face.
+      // The opening over its lower part; the letter rises over the face.
       scene.draw(ctx, t, now);
     }
 

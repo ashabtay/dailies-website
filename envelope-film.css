@@ -44,9 +44,10 @@ html.fm-open{overflow:hidden}
   text-decoration:underline; text-underline-offset:3px}
 
 /* Filming: the receiver's own picture in the corner, with a red dot, so
-   it is never a secret that the camera is on. */
+   it is never a secret that the camera is on. At the bottom: Safari's
+   "camera allowed" banner covers the top of the page. */
 .fm-bubble{
-  position:fixed; z-index:115; top:max(14px,env(safe-area-inset-top)); right:14px; width:96px; aspect-ratio:3/4;
+  position:fixed; z-index:115; bottom:max(16px,calc(env(safe-area-inset-bottom) + 10px)); right:14px; width:108px; aspect-ratio:3/4;
   border-radius:18px; overflow:hidden; background:#111; box-shadow:0 12px 30px -8px rgba(0,0,0,.7), 0 0 0 2px rgba(240,230,210,.22);
   animation:fm-pop .35s cubic-bezier(.3,1.4,.5,1) both;
 }

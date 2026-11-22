@@ -237,10 +237,10 @@ h1,h2,p{margin:0}
 .for .nm{font-style:italic}
 .vh{position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
 .open-row{margin-top:clamp(24px,4.5svh,38px); width:min(100%,320px); display:flex; flex-direction:column; align-items:center; gap:12px}
-/* Film yourself opening it (envelope-film.js): a quiet link under Open it. */
-.film-link{display:inline-flex; align-items:center; gap:8px}
-.film-link svg{flex:none}
-.film-link[hidden],.film-note[hidden]{display:none}
+/* Film yourself opening it (envelope-film.js): a second way to open it,
+   the same size as Open it. */
+.film-btn svg{flex:none}
+.film-btn[hidden],.film-note[hidden]{display:none}
 .film-note{margin:0; font-size:14px; color:var(--text-dim); text-align:center; max-width:34ch; text-wrap:balance}
 
 /* ================================================================ OPENED */
@@ -551,7 +551,7 @@ h1,h2,p{margin:0}
       <h1 class="for sealed-copy" id="sealedHead"><span class="vh" id="sealedA11y"></span><span aria-hidden="true" id="sealedBy"></span></h1>
       <div class="open-row sealed-copy">
         <button class="btn btn-primary btn-big" id="openBtn" type="button" data-s="openIt"></button>
-        <button class="textlink film-link" id="filmBtn" type="button" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6.5" width="13" height="11" rx="2.6"/><path d="M15.5 10.5l6-3.2v9.4l-6-3.2"/></svg><span class="film-label"></span></button>
+        <button class="btn btn-ghost btn-big film-btn" id="filmBtn" type="button" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6.5" width="13" height="11" rx="2.6"/><path d="M15.5 10.5l6-3.2v9.4l-6-3.2"/></svg><span class="film-label"></span></button>
         <p class="film-note" id="filmNote" role="status" hidden></p>
       </div>
     </section>
