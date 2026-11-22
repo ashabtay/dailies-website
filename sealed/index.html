@@ -117,10 +117,6 @@ h1,h2,p{margin:0}
   color:var(--text-dim); text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px;
 }
 .textlink:hover{color:var(--text)}
-/* Apple's badge, as on the rest of the site (doc.css .store-badge). */
-.store-badge{display:inline-block; line-height:0; border-radius:9px; transition:transform .18s, box-shadow .18s}
-.store-badge:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.28)}
-.store-badge img{height:52px; width:auto}
 .get-note{font-size:14px; color:var(--text-dim); text-align:center; max-width:34ch; margin:4px auto 0; text-wrap:balance}
 
 /* ================================================================ ENVELOPE */
@@ -240,7 +236,6 @@ h1,h2,p{margin:0}
 .for .nm{font-style:italic}
 .vh{position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
 .open-row{margin-top:clamp(24px,4.5svh,38px); width:min(100%,320px); display:flex; flex-direction:column; align-items:center; gap:12px}
-.note{font-size:13.5px; color:var(--text-faint)}
 
 /* ================================================================ OPENED */
 .opened{
@@ -270,7 +265,7 @@ h1,h2,p{margin:0}
   .o-head{align-self:end; text-align:left; align-items:flex-start}
   .picked{font-size:31px}
   .o-actions{align-self:start; align-items:stretch}
-  .o-actions .store-badge{align-self:flex-start}
+  .o-actions .textlink{align-self:flex-start}
   .o-actions .get-note{text-align:left; margin:0}
 }
 
@@ -321,7 +316,7 @@ h1,h2,p{margin:0}
   filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
 .invalid h1{font-family:var(--f-display); font-optical-sizing:auto; font-weight:400; font-size:clamp(27px,7.4vw,36px); line-height:1.12; letter-spacing:-.015em; max-width:17ch; text-wrap:balance}
 .invalid p.sub{margin-top:14px; color:var(--text-dim); max-width:34ch; text-wrap:balance}
-.invalid .store-badge{margin-top:30px}
+.invalid .textlink{display:inline-block; margin-top:26px}
 
 /* ================================================================ FOOTER */
 .foot{display:flex; justify-content:center; gap:22px; padding:10px 0 calc(18px + env(safe-area-inset-bottom));
@@ -551,7 +546,6 @@ h1,h2,p{margin:0}
       <h1 class="for sealed-copy" id="sealedHead"><span class="vh" id="sealedA11y"></span><span aria-hidden="true" id="sealedBy"></span></h1>
       <div class="open-row sealed-copy">
         <button class="btn btn-primary btn-big" id="openBtn" type="button" data-s="openIt"></button>
-        <p class="note" data-s="openNote"></p>
       </div>
     </section>
 
@@ -573,7 +567,7 @@ h1,h2,p{margin:0}
       </div>
       <div class="o-actions">
         <button class="btn btn-primary btn-big" id="sendBack" type="button"><span id="sendBackLabel"></span></button>
-        <a class="store-badge" data-get-app target="_blank" rel="noopener"><img alt="" width="156" height="52"></a>
+        <a class="textlink" data-get-app target="_blank" rel="noopener" data-s="getApp"></a>
         <p class="get-note" hidden data-s="getNote"></p>
       </div>
     </section>
@@ -596,7 +590,7 @@ h1,h2,p{margin:0}
       </div>
       <h1 data-s="badTitle"></h1>
       <p class="sub" data-s="badBody"></p>
-      <a class="store-badge" data-get-app target="_blank" rel="noopener"><img alt="" width="156" height="52"></a>
+      <a class="textlink" data-get-app target="_blank" rel="noopener" data-s="getApp"></a>
       <p class="get-note" hidden data-s="getNote"></p>
     </section>
 
@@ -735,7 +729,7 @@ h1,h2,p{margin:0}
       <p class="sent-mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span data-s="sent"></span></p>
       <p class="nudge" data-s="nudge"></p>
       <div class="sent-row">
-        <a class="store-badge" data-get-app target="_blank" rel="noopener"><img alt="" width="156" height="52"></a>
+        <a class="textlink" data-get-app target="_blank" rel="noopener" data-s="getApp"></a>
         <button class="btn btn-ghost" id="doneBtn" type="button" data-s="done"></button>
       </div>
       <p class="get-note" hidden data-s="getNote"></p>
