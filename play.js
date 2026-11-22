@@ -60,6 +60,8 @@
 
   var STRINGS = {
     en: {
+      getApp: 'Get Dailies',
+      holdToSeal: 'Hold to seal', sealHint: 'Press and hold the wax to seal it.',
       msgRead: '{to}, I thought of you when I read this.', msgReadNone: 'I thought of you when I read this.', msgOwn: '{to}, I wrote something for you.', msgOwnNone: 'I wrote something for you.', subject: 'I thought of you',
       message: 'Message', wrote: '{from} wrote this for you.', wroteNoName: 'Someone wrote this for you.',
       makeWall: 'Make it a wallpaper',
@@ -81,6 +83,8 @@
       badgeAlt: 'Download on the App Store', privacy: 'Privacy', cookies: 'Cookie settings'
     },
     es: {
+      getApp: 'Descarga Dailies',
+      holdToSeal: 'Mantén presionado para sellar', sealHint: 'Mantén presionada la cera para sellarlo.',
       msgRead: '{to}, pensé en ti cuando leí esto.', msgReadNone: 'Pensé en ti cuando leí esto.', msgOwn: '{to}, escribí algo para ti.', msgOwnNone: 'Escribí algo para ti.', subject: 'Pensé en ti',
       message: 'Mensaje', wrote: '{from} escribió esto para ti.', wroteNoName: 'Alguien escribió esto para ti.',
       makeWall: 'Hazla fondo de pantalla',
@@ -102,6 +106,8 @@
       badgeAlt: 'Descárgalo en el App Store', privacy: 'Privacidad', cookies: 'Configuración de cookies'
     },
     pt: {
+      getApp: 'Baixe o Dailies',
+      holdToSeal: 'Segure para selar', sealHint: 'Segure a cera para selar.',
       msgRead: '{to}, pensei em você quando li isto.', msgReadNone: 'Pensei em você quando li isto.', msgOwn: '{to}, escrevi uma coisa para você.', msgOwnNone: 'Escrevi uma coisa para você.', subject: 'Pensei em você',
       message: 'Mensagem', wrote: '{from} escreveu isto para você.', wroteNoName: 'Alguém escreveu isto para você.',
       makeWall: 'Transformar em papel de parede',
@@ -123,6 +129,8 @@
       badgeAlt: 'Baixar na App Store', privacy: 'Privacidade', cookies: 'Configurações de cookies'
     },
     fr: {
+      getApp: 'Télécharger Dailies',
+      holdToSeal: 'Maintiens pour sceller', sealHint: 'Maintiens la cire pour sceller.',
       msgRead: '{to}, j’ai pensé à toi en lisant ceci.', msgReadNone: 'J’ai pensé à toi en lisant ceci.', msgOwn: '{to}, j’ai écrit quelque chose pour toi.', msgOwnNone: 'J’ai écrit quelque chose pour toi.', subject: 'J’ai pensé à toi',
       message: 'Message', wrote: '{from} a écrit ceci pour toi.', wroteNoName: 'Quelqu’un a écrit ceci pour toi.',
       makeWall: 'En faire un fond d’écran',
@@ -144,6 +152,8 @@
       badgeAlt: 'Télécharger dans l’App Store', privacy: 'Confidentialité', cookies: 'Paramètres des cookies'
     },
     de: {
+      getApp: 'Dailies laden',
+      holdToSeal: 'Zum Versiegeln gedrückt halten', sealHint: 'Halte das Wachs gedrückt, um zu versiegeln.',
       msgRead: '{to}, ich musste an dich denken, als ich das gelesen habe.', msgReadNone: 'Ich musste an dich denken, als ich das gelesen habe.', msgOwn: '{to}, ich habe dir etwas geschrieben.', msgOwnNone: 'Ich habe dir etwas geschrieben.', subject: 'Ich habe an dich gedacht',
       message: 'Nachricht', wrote: '{from} hat das für dich geschrieben.', wroteNoName: 'Jemand hat das für dich geschrieben.',
       makeWall: 'Als Hintergrundbild',
@@ -165,6 +175,8 @@
       badgeAlt: 'Laden im App Store', privacy: 'Datenschutz', cookies: 'Cookie-Einstellungen'
     },
     ja: {
+      getApp: 'Dailies を入手',
+      holdToSeal: '長押しで封をする', sealHint: '封蝋を長押しして封をしましょう。',
       msgRead: '{to}さん、これを読んで、あなたのことを思い出しました。', msgReadNone: 'これを読んで、あなたのことを思い出しました。', msgOwn: '{to}さん、あなたに書いたものがあります。', msgOwnNone: 'あなたに書いたものがあります。', subject: 'あなたのことを思い出して',
       message: 'メッセージ', wrote: '{from}さんが、あなたのために書きました。', wroteNoName: '誰かが、あなたのために書きました。',
       makeWall: '壁紙にする',
@@ -373,7 +385,7 @@
 
   var open = null;
 
-  function sheet(titleText, cls) {
+  function sheet(titleText, cls, onClose) {
     closeSheet();
     var scrim = h('div', 'pl-scrim');
     var box = h('div', 'pl-sheet ph-no-capture' + (cls ? ' ' + cls : ''));
@@ -397,7 +409,7 @@
     scrim.addEventListener('click', function (e) { if (e.target === scrim) closeSheet(); });
     document.body.appendChild(scrim);
     document.documentElement.classList.add('pl-locked');
-    open = { scrim: scrim, box: box, body: body, title: title, back: document.activeElement };
+    open = { scrim: scrim, box: box, body: body, title: title, back: document.activeElement, onClose: onClose };
     document.addEventListener('keydown', onKey);
     requestAnimationFrame(function () { scrim.classList.add('is-in'); });
     setTimeout(function () { x.focus(); }, 30);
@@ -423,6 +435,7 @@
     document.documentElement.classList.remove('pl-locked');
     o.scrim.remove();
     if (o.back && o.back.focus) o.back.focus();
+    if (o.onClose) o.onClose();
   }
 
   /* ----------------------------------------------------------- the card */
@@ -456,10 +469,11 @@
   /* After sealing: the ways to send it, then the one line about the app.
      `o` is an open sheet; with none, one is opened. The phone's own share
      sheet first where there is one, then Message (phones only), WhatsApp and
-     email. */
-  function sent(o, env, mode) {
+     email. onClose, if given, runs when the sheet closes (the composer
+     opens its envelope again). */
+  function sent(o, env, mode, onClose) {
     var s = S();
-    if (!o) o = sheet(s.sealTitle, 'pl-compose');
+    if (!o) o = sheet(s.sealTitle, 'pl-compose', onClose);
     var url = linkFor(env);
     var msg = message(env);
     var body = msg + '\n' + url;
@@ -503,7 +517,12 @@
 
     var bridge = h('div', 'pl-bridge');
     bridge.appendChild(h('p', null, s.bridgeSent));
-    bridge.appendChild(badge('web-envelope', 'envelope-sent'));
+    // A plain button, as in the site's header, not the App Store badge:
+    // the same App Store link and campaign token.
+    var get = h('a', 'btn btn-primary pl-get', s.getApp);
+    get.href = storeUrl('web-envelope');
+    get.setAttribute('data-download', 'envelope-sent');
+    bridge.appendChild(get);
     o.body.appendChild(bridge);
   }
 

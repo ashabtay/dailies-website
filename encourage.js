@@ -4,9 +4,13 @@
    Like the wallpaper page, the page stands without this file: every line is
    in the HTML under its occasion's heading. This wires up the composer at the
    top (the occasion chips, Back and Next line, "Write your own", the two
-   names, Seal it) and the "Send this one" button beside every line below,
-   which opens that line in the composer. Sealing hands over to play.js, which
-   shows the ways to send the link and the App Store badge.
+   names) and the "Send this one" button beside every line below, which opens
+   that line in the composer.
+
+   The preview is the app's envelope (envelope-art.js): the line stands in it
+   as a letter, their name is written on the front, and holding the wax seals
+   it, as in the app. Once the wax has landed, play.js shows the ways to send
+   the link and the App Store badge; closing that opens the envelope again.
 
    An opened envelope's "Send one back" arrives here as #to=<name>&from=<name>
    (the names swapped round), fills them in, and clears them from the address.
@@ -15,9 +19,10 @@
   'use strict';
 
   var P = window.DailiesPlay;
+  var A = window.DailiesEnvelopeArt;
   var form = document.getElementById('composer');
   var stringsEl = document.getElementById('play-strings');
-  if (!P || !form || !stringsEl) return;
+  if (!P || !A || !form || !stringsEl) return;
   var D = P.data;
   var S = JSON.parse(stringsEl.textContent);
   var lang = form.getAttribute('data-lang') || 'en';
@@ -27,15 +32,33 @@
   var G = D.sets[pageKey].groups;
 
   var state = { occ: Object.keys(G)[0], i: 0, q: form.getAttribute('data-q'), k: +form.getAttribute('data-k') || 0 };
-  var card = form.querySelector('.en-card');
-  var cardImg = card.querySelector('img');
-  var cardP = card.querySelector('blockquote p');
-  var cardQ = card.querySelector('blockquote');
+  var PS = P.strings();
+  // The envelope takes the place of the plain card the page is written with.
+  var stage = form.querySelector('.en-stage');
+  var parts = A.build('compose', { holdLabel: PS.holdToSeal });
+  var room = P.h('div', 'ea-room');
+  room.appendChild(parts.el);
+  stage.textContent = '';
+  stage.appendChild(room);
+  var card = P.h('figure', 'ea-card');
+  card.setAttribute('aria-hidden', 'true');
+  var cardImg = document.createElement('img');
+  cardImg.alt = '';
+  card.appendChild(cardImg);
+  var cardQ = P.h('blockquote');
+  var cardP = P.h('p');
+  cardP.setAttribute('dir', 'auto');
+  cardQ.appendChild(cardP);
+  card.appendChild(cardQ);
+  parts.letter.appendChild(card);
+  var env = A.composer(parts, {
+    holdLabel: PS.holdToSeal,
+    onSeal: send
+  });
   var own = form.querySelector('.pl-own');
   var nav = form.querySelector('.pl-linenav');
   var to = form.querySelector('input[name="to"]');
   var from = form.querySelector('input[name="from"]');
-  var seal = form.querySelector('.en-seal');
   var hint = form.querySelector('.pl-hint');
   var chips = Array.prototype.slice.call(form.querySelectorAll('.pl-chip'));
 
@@ -91,7 +114,9 @@
         cardP.appendChild(document.createTextNode(raw[1] || ''));
       } else cardP.textContent = t;
     }
-    P.sizeText(cardP, t.length);
+    card.style.setProperty('--fs', A.textSize(A.chars(t)));
+    if (name) A.paintName(parts.name, fillName(name), false);
+    else A.paintName(parts.name, PS.forYou, false);
     var cite = cardQ.querySelector('cite');
     if (a) {
       if (!cite) { cite = P.h('cite'); cardQ.appendChild(cite); }
@@ -99,9 +124,17 @@
     } else if (cite) cite.remove();
     chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.getAttribute('data-occ') === state.occ)); });
     var ok = mine ? !!ownText() : (!P.isNamed(state.q) || !!name);
-    seal.disabled = !ok;
-    hint.textContent = ok || mine ? '' : S.need;
+    env.setReady(ok);
+    hint.textContent = ok ? PS.sealHint : mine ? '' : S.need;
+    hint.classList.toggle('is-ready', ok);
   }
+
+  // "For Dana", as /e/ will show it.
+  function fillName(name) { return PS.forName.split('{to}').join(name); }
+
+  // A new line: the letter drops into the envelope and comes back up with
+  // it. Typing (a name, your own words) just redraws.
+  function redraw() { env.swap(draw); }
 
   function set(entry) { state.q = entry[0]; state.k = entry[1]; }
 
@@ -112,7 +145,7 @@
       state.i = 0;
       if (!isOwn()) set(G[state.occ][0]);
       if (++counts <= 3) P.ev('envelope_picked', { from: isOwn() ? 'own' : 'occasion' });
-      draw();
+      redraw();
       if (isOwn()) own.focus();
     });
   });
@@ -122,7 +155,7 @@
       var list = G[state.occ];
       state.i = (state.i + (+b.getAttribute('data-step')) + list.length) % list.length;
       set(list[state.i]);
-      draw();
+      redraw();
     });
   });
 
@@ -137,20 +170,34 @@
       locate(state.q);
       P.ev('envelope_picked', { from: 'list' });
       draw();
+      if (env.state.sealed) env.unseal();
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       form.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
       setTimeout(function () { to.focus({ preventScroll: true }); }, reduce ? 0 : 450);
     });
   });
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (seal.disabled) { (isOwn() ? own : to).focus(); return; }
-    var env = { to: P.clean(to.value, P.MAX_NAME), f: P.clean(from.value, P.MAX_NAME), l: lang, k: state.k, p: pageKey };
-    if (isOwn()) env.t = ownText(); else env.q = state.q;
-    P.ev('envelope_sealed', { mode: isOwn() ? 'own' : 'page', has_to: !!env.to, has_from: !!env.f });
-    P.sent(null, env, isOwn() ? 'own' : 'page');
+  // Return in a name field seals it the way the keyboard does on the wax:
+  // the envelope closes, then the wax lands. (The form has no submit
+  // button; the wax is the one way to seal.)
+  form.addEventListener('submit', function (e) { e.preventDefault(); });
+  [to, from].forEach(function (input) {
+    input.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' || e.isComposing) return;
+      e.preventDefault();
+      if (env.state.sealed) return;
+      if (!env.state.ready) { (isOwn() ? own : to).focus(); return; }
+      env.seal('key');
+    });
   });
+
+  // The wax has landed: the link, and the ways to send it.
+  function send() {
+    var e = { to: P.clean(to.value, P.MAX_NAME), f: P.clean(from.value, P.MAX_NAME), l: lang, k: state.k, p: pageKey };
+    if (isOwn()) e.t = ownText(); else e.q = state.q;
+    P.ev('envelope_sealed', { mode: isOwn() ? 'own' : 'page', has_to: !!e.to, has_from: !!e.f });
+    P.sent(null, e, isOwn() ? 'own' : 'page', function () { env.unseal(); });
+  }
 
   draw();
 })();

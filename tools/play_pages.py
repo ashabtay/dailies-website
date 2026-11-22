@@ -366,7 +366,7 @@ def badge(lang, ct, where):
             % (STORE.format(ct=token), where, src, w, esc(alt)))
 
 
-def head(lang, title, desc, url, og_title, og_desc, og_img, og_alt, extra_fonts=""):
+def head(lang, title, desc, url, og_title, og_desc, og_img, og_alt, extra_fonts="", extra_css=""):
     return f"""<!DOCTYPE html>
 <html lang="{HTML_LANG[lang]}">
 <head>
@@ -393,7 +393,7 @@ def head(lang, title, desc, url, og_title, og_desc, og_img, og_alt, extra_fonts=
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400{extra_fonts}&display=swap">
 <link rel="stylesheet" href="/doc.css">
-</head>
+{extra_css}</head>
 """
 
 
@@ -617,8 +617,11 @@ def page_enc(page, lang):
     nav, foot = chrome(lang)
     its = items(page)
     first = its[0]
+    # The composer's envelope: the app's own (envelope-art.css/.js), with
+    # the name written on it in Caveat, as on /sealed/.
     h = head(lang, c["title"], c["desc"], url, c["og_title"], c["og_desc"],
-             og_file(page, lang), c["og_alt"])
+             og_file(page, lang), c["og_alt"], extra_fonts="&family=Caveat:wght@400",
+             extra_css='<link rel="stylesheet" href="/envelope-art.css">\n')
 
     chips = "\n".join('            <button type="button" class="pl-chip" data-occ="%s" aria-pressed="%s">%s</button>'
                       % (o, "true" if i == 0 else "false", esc(c["occ"][o])) for i, o in enumerate(page["groups"]))
@@ -664,17 +667,18 @@ def page_enc(page, lang):
         <div class="en-stage">
           <figure class="pl-card en-card"><img src="/img/wallpapers/bg/{BGS[first["k"]]["file"]}" width="1080" height="1920" alt="" fetchpriority="high"><blockquote class="pl-card-q"><p dir="auto">{esc(first["text"][lang])}</p>{('<cite>%s</cite>' % esc(a0)) if a0 else ''}</blockquote></figure>
         </div>
-        <textarea class="pl-own" rows="3" maxlength="200" aria-label="{esc(c["own_label"])}" placeholder="{esc(c["own_ph"])}" dir="auto" hidden></textarea>
-        <div class="pl-linenav">
-          <button type="button" class="pl-btn pl-step" data-step="-1" aria-label="{esc(c["prev"])}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg><span>{esc(c["prev_t"])}</span></button>
-          <button type="button" class="pl-btn pl-step" data-step="1" aria-label="{esc(c["next"])}"><span>{esc(c["next_t"])}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></button>
+        <div class="en-under">
+          <div class="pl-linenav">
+            <button type="button" class="pl-btn pl-step" data-step="-1" aria-label="{esc(c["prev"])}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg><span>{esc(c["prev_t"])}</span></button>
+            <button type="button" class="pl-btn pl-step" data-step="1" aria-label="{esc(c["next"])}"><span>{esc(c["next_t"])}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></button>
+          </div>
+          <p class="pl-hint" aria-live="polite"></p>
         </div>
+        <textarea class="pl-own" rows="3" maxlength="200" aria-label="{esc(c["own_label"])}" placeholder="{esc(c["own_ph"])}" dir="auto" hidden></textarea>
         <div class="en-fields">
           <label class="pl-field"><span>{esc(c["their"])}</span><input type="text" name="to" maxlength="40" autocapitalize="words" spellcheck="false" dir="auto"></label>
           <label class="pl-field"><span>{esc(c["yours"])}</span><input type="text" name="from" maxlength="40" autocapitalize="words" spellcheck="false" dir="auto"></label>
         </div>
-        <button type="submit" class="pl-primary en-seal">{esc(c["seal"])}</button>
-        <p class="pl-hint" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -715,6 +719,7 @@ def page_enc(page, lang):
 
 <script src="/play-lines.js" defer></script>
 <script src="/play.js" defer></script>
+<script src="/envelope-art.js" defer></script>
 <script src="/encourage.js" defer></script>
 <script src="/analytics.js"></script>
 <script src="/consent.js"></script>

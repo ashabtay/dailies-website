@@ -3,9 +3,10 @@
    words-of-encouragement page
 
    Reads the link (see play.js for its fields), shows the sealed envelope with
-   the friend's name on it, opens it (the seal lifts, the flap folds back, the
-   letter rises out with the line on it), and then shows the line on one of
-   the app's backgrounds, with the ways onward:
+   the friend's name on it - the app's own envelope, as on /sealed/
+   (envelope-art.js) - and opens it the way /sealed/ does: the seal cracks in
+   a burst of gold, the flap lifts, the letter rises out in light and becomes
+   the card, the line on one of the app's backgrounds. Then the ways onward:
 
      Send one back       - the encouragement page, the names already swapped
                            round, so they pick a line (or write their own) for
@@ -22,8 +23,9 @@
   'use strict';
 
   var P = window.DailiesPlay;
+  var A = window.DailiesEnvelopeArt;
   var root = document.getElementById('env');
-  if (!P || !root) return;
+  if (!P || !A || !root) return;
   var h = P.h;
 
   var HOMES = { en: '/', es: '/es/', pt: '/pt/', fr: '/fr/', de: '/de/', ja: '/ja/' };
@@ -32,7 +34,6 @@
   var lang = env ? env.l : P.pickLang(navigator.language);
   P.setLang(lang);
   var s = P.strings();
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   document.title = s.eTitle + ' | Dailies';
   var home = document.getElementById('env-home');
@@ -48,32 +49,34 @@
     var t0 = Date.now();
     var box = h('section', 'env-sealed');
 
-    var envl = h('button', 'env-envelope');
-    envl.type = 'button';
-    envl.setAttribute('aria-label', s.openIt);
-    envl.appendChild(h('span', 'env-back'));
-    var letter = h('span', 'env-letter');
-    var words = h('span', 'env-letter-in', P.envText(env, lang));
-    words.setAttribute('dir', 'auto');
-    letter.appendChild(words);
-    envl.appendChild(letter);
-    envl.appendChild(h('span', 'env-pocket'));
-    envl.appendChild(h('span', 'env-flap'));
-    var seal = h('span', 'env-seal', 'D');
-    seal.setAttribute('aria-hidden', 'true');
-    envl.appendChild(seal);
-    box.appendChild(envl);
+    // The envelope, floating, with their name on the front and the line
+    // already inside it on the letter.
+    var stage = h('div', 'ea-stage is-idle');
+    stage.appendChild(h('div', 'ea-ground'));
+    var float = h('div', 'ea-float');
+    var parts = A.build('sealed');
+    parts.el.setAttribute('aria-hidden', 'true');
+    A.paintName(parts.name, env.to ? s.forName.split('{to}').join(env.to) : s.forYou, false);
+    parts.letter.appendChild(letterCard());
+    float.appendChild(parts.el);
+    stage.appendChild(float);
+    box.appendChild(stage);
 
-    var forLine = h('h1', 'env-for');
-    if (env.to) P.fill(forLine, s.forName, { to: env.to });
-    else forLine.textContent = s.forYou;
-    box.appendChild(forLine);
-    if (env.f) box.appendChild(P.fill(h('p', 'env-from'), s.fromName, { from: env.f }));
+    var title = h('h1', 'env-for', s.eTitle);
+    box.appendChild(title);
+    var chrome = [title];
+    if (env.f) {
+      var by = P.fill(h('p', 'env-from'), s.fromName, { from: env.f });
+      box.appendChild(by);
+      chrome.push(by);
+    }
 
     var openBtn = h('button', 'pl-primary env-openbtn', s.openIt);
     openBtn.type = 'button';
     box.appendChild(openBtn);
-    box.appendChild(h('p', 'env-note', s.openNote));
+    var note = h('p', 'env-note', s.openNote);
+    box.appendChild(note);
+    chrome.push(openBtn, note);
     root.appendChild(box);
 
     P.ev('envelope_viewed', { has_to: !!env.to, has_from: !!env.f });
@@ -82,30 +85,50 @@
     function openIt() {
       if (done) return;
       done = true;
+      openBtn.disabled = true;
       P.ev('envelope_opened', { ms_to_open: Date.now() - t0 });
-      // The seal lifts, the flap folds back, the letter rises (doc.css,
-      // .is-opening); then the scene fades and the open card takes over.
-      box.classList.add('is-opening');
-      setTimeout(function () { box.classList.add('is-leaving'); }, reduce ? 0 : 1550);
-      setTimeout(function () {
-        root.textContent = '';
-        opened();
+      A.open(parts, stage, chrome, function () {
+        // The letter is measured; now the open card takes its place.
+        box.remove();
         window.scrollTo(0, 0);
+        return opened(!A.reduce);
+      }).then(function () {
         // The cookie question comes once the line has had a moment to be
         // read, not on top of it the instant it appears.
         setTimeout(function () {
           document.dispatchEvent(new CustomEvent('dailies:consent-ready'));
         }, 2500);
-      }, reduce ? 0 : 1850);
+      });
     }
-    envl.addEventListener('click', openIt);
+    parts.el.addEventListener('click', openIt);
     openBtn.addEventListener('click', openIt);
+  }
+
+  /* The letter in the envelope: the card the friend will see once it is
+     open, the same shape, so it can become that card. */
+  function letterCard() {
+    var t = P.envText(env, lang), a = P.envAuthor(env, lang);
+    var c = h('figure', 'ea-card is-tall');
+    var img = document.createElement('img');
+    img.src = P.bgUrl(env.k);
+    img.alt = '';
+    c.appendChild(img);
+    var q = h('blockquote');
+    var p = h('p', null, t);
+    p.setAttribute('dir', 'auto');
+    q.appendChild(p);
+    if (a) q.appendChild(h('cite', null, a));
+    c.appendChild(q);
+    c.style.setProperty('--fs', A.textSize(A.chars(t)));
+    return c;
   }
 
   /* ------------------------------------------------------------- opened */
 
-  function opened() {
-    var box = h('section', 'env-opened');
+  /* arriving: the card is about to glide in from the letter, so it shows at
+     once and only the rest rises in. Returns the card. */
+  function opened(arriving) {
+    var box = h('section', 'env-opened' + (arriving ? ' is-arriving' : ''));
     var c = P.card(P.envText(env, lang), P.envAuthor(env, lang), env.k);
     c.classList.add('env-card');
     box.appendChild(c);
@@ -143,6 +166,7 @@
     box.appendChild(bridge);
 
     root.appendChild(box);
+    return c;
   }
 
   /* ------------------------------------------------------------ invalid */
