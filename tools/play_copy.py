@@ -434,7 +434,7 @@ EN = {
         "occ": {"hard": "A hard day", "big": "A big day", "fresh": "A fresh start", "friend": "Just because", "named": "With their name"},
         "occ_label": "Occasion",
         "their": "Their name", "yours": "Your name (optional)",
-        "seal": "Seal it", "need": "Add their name for this one",
+        "need": "Add their name for this one",
         "prev": "Previous line", "next": "Next line",
         "h2": {
             "hard": "Words of encouragement for a hard day",
@@ -484,7 +484,7 @@ EN = {
         "occ": {"hard": "Un día difícil", "big": "Un día importante", "fresh": "Un nuevo comienzo", "friend": "Porque sí", "named": "Con su nombre"},
         "occ_label": "Ocasión",
         "their": "Su nombre", "yours": "Tu nombre (opcional)",
-        "seal": "Sellar", "need": "Escribe su nombre para esta",
+        "need": "Escribe su nombre para esta",
         "prev": "Frase anterior", "next": "Frase siguiente",
         "h2": {
             "hard": "Palabras de aliento para un día difícil",
@@ -534,7 +534,7 @@ EN = {
         "occ": {"hard": "Um dia difícil", "big": "Um grande dia", "fresh": "Um recomeço", "friend": "Só porque sim", "named": "Com o nome"},
         "occ_label": "Ocasião",
         "their": "Nome da pessoa", "yours": "Seu nome (opcional)",
-        "seal": "Selar", "need": "Escreva o nome da pessoa para esta",
+        "need": "Escreva o nome da pessoa para esta",
         "prev": "Frase anterior", "next": "Próxima frase",
         "h2": {
             "hard": "Palavras de incentivo para um dia difícil",
@@ -584,7 +584,7 @@ EN = {
         "occ": {"hard": "Un jour difficile", "big": "Un grand jour", "fresh": "Un nouveau départ", "friend": "Juste comme ça", "named": "Avec son prénom"},
         "occ_label": "Occasion",
         "their": "Son prénom", "yours": "Ton prénom (facultatif)",
-        "seal": "Sceller", "need": "Écris son prénom pour celle-ci",
+        "need": "Écris son prénom pour celle-ci",
         "prev": "Phrase précédente", "next": "Phrase suivante",
         "h2": {
             "hard": "Mots d’encouragement pour une journée difficile",
@@ -634,7 +634,7 @@ EN = {
         "occ": {"hard": "Ein schwerer Tag", "big": "Ein großer Tag", "fresh": "Ein Neuanfang", "friend": "Einfach so", "named": "Mit Namen"},
         "occ_label": "Anlass",
         "their": "Name der Person", "yours": "Dein Name (optional)",
-        "seal": "Versiegeln", "need": "Schreib für diesen Satz den Namen dazu",
+        "need": "Schreib für diesen Satz den Namen dazu",
         "prev": "Vorheriger Satz", "next": "Nächster Satz",
         "h2": {
             "hard": "Aufmunternde Worte für einen schweren Tag",
@@ -684,7 +684,7 @@ EN = {
         "occ": {"hard": "つらい日に", "big": "大事な日に", "fresh": "新しいスタートに", "friend": "なんでもない日に", "named": "名前入り"},
         "occ_label": "場面",
         "their": "相手の名前", "yours": "あなたの名前（任意）",
-        "seal": "封をする", "need": "この言葉には相手の名前が必要です",
+        "need": "この言葉には相手の名前が必要です",
         "prev": "前の言葉", "next": "次の言葉",
         "h2": {
             "hard": "つらい日に贈る励ましの言葉",

@@ -29,8 +29,9 @@
 <link rel="icon" href="/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&family=Caveat:wght@400&display=swap">
 <link rel="stylesheet" href="/doc.css">
+<link rel="stylesheet" href="/envelope-art.css">
 </head>
 <body>
 
@@ -70,6 +71,7 @@
         <div class="en-stage">
           <figure class="pl-card en-card"><img src="/img/wallpapers/bg/sea-sunset-surf.jpg" width="1080" height="1920" alt="" fetchpriority="high"><blockquote class="pl-card-q"><p dir="auto">Wenn man liebt, liebt man alles, und nichts schreckt einen ab.</p><cite>George Sand</cite></blockquote></figure>
         </div>
+        <p class="pl-hint" aria-live="polite"></p>
         <textarea class="pl-own" rows="3" maxlength="200" aria-label="Dein Satz" placeholder="Schreib deinen eigenen Satz" dir="auto" hidden></textarea>
         <div class="pl-linenav">
           <button type="button" class="pl-btn pl-step" data-step="-1" aria-label="Vorheriger Satz"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg><span>Zurück</span></button>
@@ -79,8 +81,6 @@
           <label class="pl-field"><span>Name der Person</span><input type="text" name="to" maxlength="40" autocapitalize="words" spellcheck="false" dir="auto"></label>
           <label class="pl-field"><span>Dein Name (optional)</span><input type="text" name="from" maxlength="40" autocapitalize="words" spellcheck="false" dir="auto"></label>
         </div>
-        <button type="submit" class="pl-primary en-seal">Versiegeln</button>
-        <p class="pl-hint" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -215,6 +215,7 @@
 
 <script src="/play-lines.js" defer></script>
 <script src="/play.js" defer></script>
+<script src="/envelope-art.js" defer></script>
 <script src="/encourage.js" defer></script>
 <script src="/analytics.js"></script>
 <script src="/consent.js"></script>

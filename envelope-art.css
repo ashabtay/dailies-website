@@ -1,0 +1,151 @@
+/* ============================================================================
+   The app's envelope, for the envelope pages (/words-of-encouragement/ and
+   the other three, in every language) and /e/, where one is opened.
+
+   The same rendered pictures and the same motion as /sealed/ (the page an
+   envelope sealed in the app opens on) and the app's own envelope_card.dart:
+   the letter stands in the open envelope, holding the wax draws it down and
+   folds the flap over, the wax lands with a flash and the stamp goes on; on
+   /e/ the seal cracks, the flap lifts and the letter rises out in light.
+   envelope-art.js builds the markup and drives it.
+
+   Every class starts ea- so nothing here touches the rest of the site. The
+   envelope is 1.36 wide to 1 tall, and everything inside it is sized in cqw
+   of its width, as on /sealed/.
+   ========================================================================= */
+
+.ea{
+  --e-ink:#1F2A44; --wax:#A82E1E; --wax-deep:#6E1A10;
+  --f-hand:Caveat,"Bradley Hand","Segoe Print",cursive;
+  position:relative; width:100%; aspect-ratio:1.36; container-type:inline-size;
+  -webkit-tap-highlight-color:transparent; user-select:none; -webkit-user-select:none;
+}
+.ea-back{position:absolute; inset:0; z-index:1; border-radius:1cqw;
+  background:url("/img/envelope/back.webp") 0 0/100% 100% no-repeat;
+  box-shadow:0 5cqw 8.5cqw -1cqw rgba(0,0,0,.5), 0 .5cqw 1cqw rgba(0,0,0,.22)}
+/* The flap: a picture of it with its own shadow, hinged on the top edge. */
+.ea-flap{position:absolute; inset:0; z-index:5; transform-origin:50% 0; pointer-events:none}
+.ea-flap-out,.ea-flap-in{position:absolute; left:0; top:0; width:100%; height:58.93%; background-size:100% 100%; background-repeat:no-repeat}
+.ea-flap-out{background-image:url("/img/envelope/flap_out.webp")}
+.ea-flap-in{background-image:url("/img/envelope/flap_in.webp"); opacity:0}
+.ea-inside{position:absolute; inset:0; z-index:3; clip-path:inset(-400% 0 0 0)}
+.ea-letter{position:absolute; left:8%; width:84%; top:6%}
+.ea-glow{position:absolute; left:-30%; right:-30%; top:-70%; height:120%; z-index:2; opacity:0; pointer-events:none;
+  background:radial-gradient(closest-side at 50% 62%,rgba(255,226,168,.8),rgba(255,184,102,.33) 45%,rgba(255,154,64,0) 100%)}
+.ea-pocket{position:absolute; inset:0; z-index:4; pointer-events:none; background:url("/img/envelope/pocket.webp") 0 0/100% 100% no-repeat}
+.ea-front{position:absolute; inset:0; z-index:7; pointer-events:none}
+.ea-for{position:absolute; left:7%; right:7%; top:78.5%; transform:translateY(-50%); margin:0; text-align:center;
+  font-family:var(--f-hand); font-weight:400; font-style:normal; font-size:var(--nfs,9.5cqw); line-height:1.1; color:var(--e-ink);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; letter-spacing:0}
+.ea-for.is-placeholder{opacity:.4}
+.ea-stamp{position:absolute; right:6.5%; top:7.5%; width:13.5%; aspect-ratio:100/122; transform:rotate(4deg);
+  filter:drop-shadow(0 1.5px 1.6px rgba(0,0,0,.24))}
+.ea-stamp svg{display:block; width:100%; height:100%}
+.sparkles{position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:90}
+
+/* ------------------------------------------------------------- the letter */
+/* The line on one of the app's backgrounds, the size of a letter. Text is
+   sized in cqw of the card, so it reads the same at any width. */
+.ea-card{position:relative; margin:0; width:100%; aspect-ratio:4/3; overflow:hidden; isolation:isolate; border-radius:5.5% / 7.3%;
+  background:#2b302c; container-type:inline-size; color:#F6EFE1; box-shadow:0 -1px 8px rgba(40,30,20,.18)}
+.ea-card.is-tall{aspect-ratio:4/5; border-radius:5.2% / 4.16%}
+.ea-card img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 50%}
+.ea-card::after{content:""; position:absolute; inset:0; background:radial-gradient(120% 90% at 50% 50%,rgba(10,12,10,.55),rgba(10,12,10,.32))}
+.ea-card blockquote{position:absolute; z-index:2; inset:0; margin:0; padding:0 7cqw; border:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center}
+.ea-card blockquote p{margin:0; font-family:var(--f-display); font-weight:400; font-size:calc(var(--fs,27) * 100cqw / 402 * .86); line-height:1.24;
+  letter-spacing:-.01em; color:#F6EFE1; text-shadow:0 1px 16px rgba(0,0,0,.5); overflow-wrap:break-word; text-wrap:pretty}
+.ea-card.is-tall blockquote p{font-size:calc(var(--fs,27) * 100cqw / 402)}
+.ea-card blockquote p.is-placeholder{opacity:.6; font-style:italic}
+.ea-card cite{display:block; margin-top:3cqw; font-style:normal; font-family:var(--f-mono); font-size:max(11px,3.3cqw); letter-spacing:.03em; color:rgba(246,239,225,.82)}
+.ea-card .en-name{opacity:.6; font-style:italic}
+
+/* ---------------------------------------------------------------- the seal */
+.ea-seal{position:absolute; left:50%; top:50%; width:24%; aspect-ratio:1; z-index:6; transform:translate(-50%,-50%); pointer-events:none}
+.ea-seal-body{position:absolute; inset:0}
+.ea-half{position:absolute; inset:0}
+.ea-half img{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; -webkit-user-drag:none}
+.ea-half.l{clip-path:polygon(-20% -20%,53% -20%,53% 2%,46% 17%,55% 31%,45% 47%,54% 63%,47% 79%,52% 98%,52% 120%,-20% 120%)}
+.ea-half.r{clip-path:polygon(53% -20%,120% -20%,120% 120%,52% 120%,52% 98%,47% 79%,54% 63%,45% 47%,55% 31%,46% 17%,53% 2%)}
+
+/* ============================================================== SEALED (/e/) */
+.ea-sealed .ea-flap{z-index:5}
+.ea-float{position:relative}
+.ea-stage{position:relative; width:min(100%,420px); margin:0 auto}
+.ea-stage.is-idle .ea-float{animation:ea-float 6.5s ease-in-out infinite}
+.ea-ground{position:absolute; left:10%; right:10%; bottom:-15%; height:15%; border-radius:50%;
+  background:radial-gradient(closest-side,rgba(0,0,0,.4),transparent); filter:blur(4px); pointer-events:none}
+.ea-stage.is-idle .ea-ground{animation:ea-ground 6.5s ease-in-out infinite}
+@keyframes ea-float{0%,100%{transform:translateY(0) rotate(-.7deg)} 50%{transform:translateY(-7px) rotate(.5deg)}}
+@keyframes ea-ground{0%,100%{transform:scale(1); opacity:1} 50%{transform:scale(.94); opacity:.8}}
+.ea-stage .ea{cursor:pointer}
+.ea-stage .ea:hover .ea-seal-body{transform:scale(1.03); transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+
+/* ============================================================ COMPOSE (pages) */
+/* The letter stands in the open envelope. --down (the letter going in) and
+   --fold (the flap coming over) run 0 to 1; a hold drives them, .is-sealed
+   sets both to 1, and the transitions are for every other way they change. */
+.ea-room{position:relative; width:min(84%,400px); margin:0 auto; padding-top:46%; transition:padding-top .5s cubic-bezier(.4,0,.2,1)}
+.ea-compose{--down:0; --fold:0}
+.ea-compose .ea-glow{display:none}
+.ea-compose.is-sealed{--down:1; --fold:1}
+.ea-compose .ea-letter{transform:translateY(calc(-90% * (1 - var(--down)))); transition:transform .5s cubic-bezier(.3,.7,.2,1) .34s}
+.ea-compose .ea-flap{transform:perspective(700px) rotateX(calc(180deg * (1 - var(--fold)))); z-index:2; transition:transform .45s cubic-bezier(.45,0,.3,1), z-index 0s linear .22s}
+.ea-compose .ea-flap-in{opacity:1; transition:opacity 0s linear .22s}
+.ea-compose .ea-seal{opacity:0}
+.ea-compose .ea-back{box-shadow:0 18px 34px -12px rgba(0,0,0,.5), 0 2px 5px rgba(0,0,0,.22)}
+/* Past upright, the flap shows its outside and lies over the letter. */
+.ea-compose.is-past .ea-flap{z-index:5}
+.ea-compose.is-past .ea-flap-in{opacity:0}
+.ea-compose.is-holding .ea-letter,.ea-compose.is-holding .ea-flap,.ea-compose.is-holding .ea-flap-in{transition:none}
+/* Let go too soon: the paper springs back open. */
+.ea-compose.is-spring .ea-letter,.ea-compose.is-spring .ea-flap{transition:transform .38s cubic-bezier(.3,1.45,.5,1)}
+.ea-compose.is-spring .ea-flap-in{transition:none}
+/* The stamp goes on once it is sealed, the way the app sticks it. */
+.ea-compose .ea-stamp{opacity:0; transform:rotate(4deg) scale(1.35); transition:opacity .2s, transform .2s}
+.ea-compose.is-sealed .ea-letter{transition:transform .42s cubic-bezier(.5,0,.4,1)}
+.ea-compose.is-sealed .ea-flap{z-index:5; transition:transform .5s cubic-bezier(.3,0,.2,1) .3s, z-index 0s linear .55s}
+.ea-compose.is-sealed .ea-flap-in{opacity:0; transition:opacity 0s linear .55s}
+.ea-compose.is-sealed .ea-seal{opacity:1}
+.ea-compose.is-sealed .ea-stamp{opacity:1; transform:rotate(4deg); transition:opacity .25s .7s, transform .5s cubic-bezier(.3,1.5,.5,1) .7s}
+.ea-compose.is-held.is-sealed .ea-stamp{transition-delay:.45s}
+
+/* The wax waiting on the flap's tip: the app's drop, "Hold to seal" set
+   round it, two ripples while it is ready and a ring that fills as it is
+   held. It only arrives once there is something to seal. */
+.ea-ghost{position:absolute; left:50%; top:50%; width:24%; aspect-ratio:1; z-index:6; pointer-events:none;
+  background:url("/img/envelope/seal_drop.webp") center/100% 100% no-repeat;
+  transform:translate(-50%,-50%) scale(calc(var(--drop,1) * (1 - .07 * var(--press,0)))); opacity:1;
+  transition:transform .5s cubic-bezier(.3,1.6,.5,1), opacity .25s}
+.ea-compose:not(.is-ready) .ea-ghost{--drop:.25; opacity:0}
+.ea-compose.is-ready:not(.is-holding):not(.is-sealed) .ea-ghost{animation:ea-breathe 2.4s ease-in-out infinite}
+.ea-compose.is-holding .ea-ghost{transition:none}
+@keyframes ea-breathe{0%,100%{transform:translate(-50%,-50%) scale(1)} 30%{transform:translate(-50%,-50%) scale(1.025)} 60%{transform:translate(-50%,-50%) scale(1)}}
+.ea-compose.is-sealed .ea-ghost{opacity:0; transition-duration:.15s}
+.ea-label{position:absolute; left:25%; top:50%; width:50%; aspect-ratio:1; transform:translateY(-50%); z-index:6;
+  overflow:visible; pointer-events:none; opacity:1; transition:opacity .3s}
+.ea-compose:not(.is-ready) .ea-label,.ea-compose.is-sealed .ea-label{opacity:0}
+.ea-label .ea-ripple{fill:none; stroke:var(--wax); opacity:0; transform-box:fill-box; transform-origin:center}
+.ea-compose.is-ready:not(.is-holding) .ea-label .ea-ripple{animation:ea-ripple 2.4s cubic-bezier(.2,.6,.4,1) infinite}
+.ea-compose.is-ready:not(.is-holding) .ea-label .ea-ripple.r2{animation-delay:.5s}
+@keyframes ea-ripple{0%{transform:scale(1); opacity:.9; stroke-width:3} 60%,100%{transform:scale(1.52); opacity:0; stroke-width:1.05}}
+.ea-label .ea-track{fill:none; stroke:var(--wax-deep); stroke-opacity:.4; stroke-width:2}
+.ea-label .ea-arc{fill:none; stroke:var(--wax); stroke-width:3.2; stroke-linecap:round; stroke-dasharray:100; stroke-dashoffset:100;
+  transform:rotate(-90deg); transform-origin:100px 100px}
+.ea-label text{font-family:var(--f-body); font-weight:700; font-size:13px; letter-spacing:2px; fill:#4A0F08; text-transform:uppercase}
+/* The one way to seal: a press and hold on the wax. */
+.ea-hit{position:absolute; left:50%; top:50%; width:29%; aspect-ratio:1; transform:translate(-50%,-50%); z-index:8;
+  border:0; padding:0; margin:0; background:none; border-radius:50%; cursor:pointer; touch-action:none;
+  -webkit-tap-highlight-color:transparent; -webkit-touch-callout:none; user-select:none; -webkit-user-select:none}
+.ea-hit:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+.ea-compose:not(.is-ready) .ea-hit,.ea-compose.is-sealed .ea-hit{pointer-events:none; cursor:default}
+/* The wax set: a warm bloom, a ring of light running out, and a sheen. */
+.ea-impact{position:absolute; left:50%; top:50%; width:18%; aspect-ratio:1; z-index:7; pointer-events:none; opacity:0;
+  transform:translate(-50%,-50%); border-radius:50%;
+  background:radial-gradient(closest-side,rgba(255,230,184,.75),rgba(255,176,112,.25) 40%,rgba(255,176,112,0))}
+.ea-impact::after{content:""; position:absolute; inset:-4%; border-radius:50%; border:2px solid rgba(255,243,220,.8)}
+.ea-sheen{position:absolute; inset:0; z-index:7; pointer-events:none; border-radius:1cqw; overflow:hidden; opacity:0}
+.ea-sheen::before{content:""; position:absolute; inset:0 -60%; background:linear-gradient(115deg,transparent 38%,rgba(255,246,226,.42) 50%,transparent 62%)}
+
+@media (prefers-reduced-motion:reduce){
+  .ea,.ea *,.ea-stage,.ea-stage *,.ea-room{animation:none !important; transition:none !important}
+}

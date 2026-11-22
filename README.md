@@ -1152,9 +1152,15 @@ different envelope from the website's own on `/e/`, and the two never touch:
 |---|---|---|
 | Sealed on | the words-of-encouragement pages | the app |
 | Link carries | a site line by id, or own words | the line as text (app version 1 payload: `v`, `to`, `from`, `t`, `a`, `q`, `o`, plus optional `p`, `n`, `w` (older links), `l`, `b`, `c`, `m`) |
-| Script | `envelope.js`, `play.js`, `play-lines.js` | `sealed.js` |
+| Script | `envelope.js`, `play.js`, `play-lines.js`, `envelope-art.js` | `sealed.js` |
 | Send one back | the encouragement page, names swapped | `dailies://envelope?v=1&e=` into the app, falling back to a small composer on the page |
 | Events | `envelope_*` through `dailiesAnalytics.play()` | `app_envelope_*` through `dailiesAnalytics.envelope()` |
+
+Both now look and move the same: `envelope-art.js` and `envelope-art.css`
+carry the app's rendered envelope (`img/envelope/`), the hold on the wax to
+seal it, the sparkles and the opening, ported from `sealed.js` for the
+encouragement pages' composer (`encourage.js`) and `/e/` (`envelope.js`).
+`sealed.js` keeps its own copy, so a change to the motion goes in both.
 
 Both use the same `data-consent="deferred"` and `data-analytics="private"`
 switches in `consent.js`, so the names never reach analytics and no ad tag
