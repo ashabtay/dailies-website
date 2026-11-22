@@ -437,13 +437,12 @@ h1,h2,p{margin:0}
 .field{display:flex; flex-direction:column; gap:6px; min-width:0}
 .field.wide{grid-column:1/-1}
 .field-label{font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-faint)}
-.field input,.static{
+.field input{
   width:100%; font:500 16px/1.2 var(--f-body); color:var(--text); background:var(--ground-deep);
   border:1px solid var(--rule); border-radius:13px; padding:13px 14px; min-height:48px; outline:none; transition:border-color .2s;
 }
 .field input:focus{border-color:var(--accent-dim)}
 .field input::placeholder{color:var(--text-faint)}
-.static{background:transparent; border-style:dashed; color:var(--text-dim); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
 
 .sheet[data-step="compose"] .dest{display:none}
 .sheet[data-step="sealed"] .compose{display:none}
@@ -691,7 +690,6 @@ h1,h2,p{margin:0}
       <label class="field">
         <span class="field-label" data-s="toLabel"></span>
         <input id="toInput" type="text" maxlength="40" autocomplete="off" autocapitalize="words" spellcheck="false" dir="auto" data-s-placeholder="theirName">
-        <span class="static" id="toStatic" dir="auto" hidden></span>
       </label>
       <label class="field">
         <span class="field-label" data-s="yourName"></span>

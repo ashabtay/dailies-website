@@ -1233,7 +1233,6 @@
   var miniSeal = $('#miniSeal');
   var ownInput = $('#ownInput');
   var toInput = $('#toInput');
-  var toStatic = $('#toStatic');
   var fromInput = $('#fromInput');
   var noteInput = $('#noteInput');
   var holdArc = $('.hold-arc', mini);
@@ -1270,7 +1269,16 @@
     } catch (e) {}
   }
 
-  function currentTo() { return C.mode === 'back' ? ENV.from : toInput.value.trim(); }
+  function currentTo() { return toInput.value.trim(); }
+  /* A reply keeps the thread's count only while it goes back to the sender;
+     renamed to someone else, it is a new envelope. */
+  function threadNo() {
+    var back = C.mode === 'back' && sameName(currentTo(), ENV.from);
+    return back ? (ENV.n || 1) + 1 : 1;
+  }
+  function sameName(a, b) {
+    return String(a || '').trim().toLocaleLowerCase() === String(b || '').trim().toLocaleLowerCase();
+  }
   function currentFrom() { return fromInput.value.trim(); }
   function ownText() { return ownInput.value.replace(/\s+/g, ' ').trim(); }
 
@@ -1303,15 +1311,9 @@
     C = { mode: mode, lines: lines, idx: 0, sealed: false, own: false, swapping: false, step: 'compose', sent: false };
 
     text($('#sheetTitle'), S.backTitle);
-    if (mode === 'back') {
-      toInput.hidden = true;
-      toStatic.hidden = false;
-      text(toStatic, ENV.from);
-    } else {
-      toInput.hidden = false;
-      toStatic.hidden = true;
-      toInput.value = '';
-    }
+    // Sending one back starts with the sender's name, and it can be changed
+    // to send this one to someone else.
+    toInput.value = mode === 'back' ? ENV.from : '';
     fromInput.value = ENV.to;
     noteInput.value = '';
     ownInput.value = '';
@@ -1375,7 +1377,7 @@
     paintName($('.env-for', mini), to || S.someone);
     $('.env-for', mini).classList.toggle('placeholder', !to);
     paintNote($('.env-note', mini), cleanNote(noteInput.value));
-    paintPostmark($('.postmark', mini), C.mode === 'back' ? (ENV.n || 1) + 1 : 1);
+    paintPostmark($('.postmark', mini), threadNo());
 
     var line = currentLine();
     if (C.own) sizeOwn();
@@ -1418,7 +1420,7 @@
   ownInput.addEventListener('keydown', function (e) {
     if (e.key === 'Enter') {
       e.preventDefault();
-      var next = C && C.mode !== 'back' && !toInput.value.trim() ? toInput : fromInput;
+      var next = C && !toInput.value.trim() ? toInput : fromInput;
       try { next.focus(); } catch (err) {}
     }
   });
@@ -1482,7 +1484,7 @@
       o: !!line.own
     };
     if (line.p) obj.p = line.p;
-    obj.n = C.mode === 'back' ? (ENV.n || 1) + 1 : 1;
+    obj.n = threadNo();
     obj.l = LANG;
     var note = cleanNote(noteInput.value);
     if (note) obj.m = note;
