@@ -58,6 +58,9 @@
     parts.el.setAttribute('aria-hidden', 'true');
     A.paintName(parts.name, env.to ? s.forName.split('{to}').join(env.to) : s.forYou, false);
     parts.letter.appendChild(letterCard());
+    // The sender's initial pressed into the wax (the quote mark without a
+    // name, or when the name does not start with a letter).
+    if (window.DailiesSeal) window.DailiesSeal.apply(parts.el, env.f);
     float.appendChild(parts.el);
     stage.appendChild(float);
     box.appendChild(stage);
@@ -151,7 +154,28 @@
     wall.href = P.wallLink(env, lang);
     wall.addEventListener('click', function () { P.ev('envelope_cta', { action: 'wallpaper' }); });
     row.appendChild(wall);
+    // Show what you got: the opened envelope as a picture for a Story.
+    if (window.DailiesStory) {
+      var story = window.DailiesStory.button({
+        lang: lang,
+        className: 'pl-btn env-story',
+        get: function () {
+          return {
+            to: env.to || '', from: env.f || '',
+            text: P.envText(env, lang), author: P.envAuthor(env, lang),
+            look: { src: P.bgUrl(env.k) }, lang: lang,
+            forName: env.to ? s.forName : s.forYou,
+            onEvent: function (action, props) {
+              P.ev('envelope_cta', { action: action, method: props && props.destination, from: props && 'from_shown' in props ? (props.from_shown ? 'shown' : 'hidden') : undefined });
+            }
+          };
+        }
+      });
+      row.appendChild(story);
+    }
     box.appendChild(row);
+
+
 
     var ml = P.moreLink(env, lang);
     var more = h('a', 'env-more', ml.label);

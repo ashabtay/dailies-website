@@ -256,7 +256,10 @@
        envelope_viewed   /e/ showed a sealed envelope
        envelope_opened   ...and it was opened; `ms_to_open` is how long they looked first
        envelope_cta      a button on an opened envelope: `action` is send_back,
-                         wallpaper or read_more
+                         wallpaper, read_more, or the Story picture:
+                         story_opened, story_shared (`method` share or
+                         download, `from` shown or hidden: whether it names
+                         the sender) or story_closed
        envelope_invalid  the link did not decode; `reason` is empty, decode or field
        wallpaper_changed the maker: `change` is mood, line, bg or own (the first
                          three of each per page)
@@ -332,6 +335,13 @@
                                                 `sent_short`
                                composer_closed  the composer closed; `step`
                                                 compose, sealed or sent
+                               story_opened     Post it to your Story tapped:
+                                                the picture is being made
+                               story_shared     ...and handed on; `destination`
+                                                share (the share sheet) or
+                                                download, `from_shown`
+                                                whether it names the sender
+                               story_closed     the picture closed, `from_shown`
        app_envelope_invalid  the link did not decode; `reason` is empty,
                              decode, version or field, and for a short link
                              missing (no such id), fetch (the store did not
@@ -342,7 +352,8 @@
      web_sent also carries `sent_short`: the reply went out as a short link.
      app_envelope_viewed and app_envelope_opened carry `photo` when the
      envelope names the sender's own photo: shown, or failed (the house
-     photograph stood in).
+     photograph stood in), and `seal`: initial when the sender's initial is
+     pressed into the wax, mark when it is the quote mark.
 
      Same rules as above: names and words never get through, only these keys
      with slug-like or numeric values, and events from before the banner is
@@ -355,7 +366,7 @@
     invalid: 'app_envelope_invalid'
   };
   var APP_ENVELOPE_KEYS = ['own', 'has_author', 'text_length', 'quote_id', 'thread_n', 'open_when',
-    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason', 'mode', 'how', 'step', 'progress', 'short', 'sent_short', 'photo'];
+    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason', 'mode', 'how', 'step', 'progress', 'short', 'sent_short', 'photo', 'seal', 'from_shown'];
 
   function envelope(kind, props) {
     var event = APP_ENVELOPE_EVENTS[kind];

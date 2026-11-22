@@ -620,7 +620,7 @@ def page_enc(page, lang):
     # The composer's envelope: the app's own (envelope-art.css/.js), with
     # the name written on it in Caveat, as on /sealed/.
     h = head(lang, c["title"], c["desc"], url, c["og_title"], c["og_desc"],
-             og_file(page, lang), c["og_alt"], extra_fonts="&family=Caveat:wght@400",
+             og_file(page, lang), c["og_alt"], extra_fonts="&family=Caveat:wght@400&family=Yeseva+One",
              extra_css='<link rel="stylesheet" href="/envelope-art.css">\n')
 
     chips = "\n".join('            <button type="button" class="pl-chip" data-occ="%s" aria-pressed="%s">%s</button>'
@@ -720,6 +720,7 @@ def page_enc(page, lang):
 <script src="/play-lines.js" defer></script>
 <script src="/play.js" defer></script>
 <script src="/envelope-art.js" defer></script>
+<script src="/envelope-seal.js" defer></script>
 <script src="/encourage.js" defer></script>
 <script src="/analytics.js"></script>
 <script src="/consent.js"></script>

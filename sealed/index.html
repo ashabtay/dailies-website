@@ -27,7 +27,8 @@
 <link rel="preload" as="image" href="/img/envelope/seal.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&family=Caveat:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&family=Caveat:wght@400;500&family=Yeseva+One&display=swap">
+<link rel="stylesheet" href="/envelope-story.css">
 <!--
   The envelope page. Everything a visitor sees is built by /sealed.js from
   the link's #fragment, which never reaches a server. Styles live here rather
@@ -249,6 +250,7 @@ h1,h2,p{margin:0}
 .o-card{grid-area:card; width:min(100%,402px,calc((100svh - 420px) * .8)); min-width:min(100%,250px)}
 .o-actions{grid-area:actions; width:100%; display:flex; flex-direction:column; align-items:center; gap:10px}
 .o-actions .textlink{padding:4px}
+.story-slot{width:100%}
 .opened.arriving .o-head,.opened.arriving .o-actions{opacity:0}
 .opened.arrived .o-head{animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
 .opened.arrived .o-actions{animation:rise .55s .12s cubic-bezier(.2,.8,.2,1) both}
@@ -567,6 +569,7 @@ h1,h2,p{margin:0}
       </div>
       <div class="o-actions">
         <button class="btn btn-primary btn-big" id="sendBack" type="button"><span id="sendBackLabel"></span></button>
+        <div class="story-slot" id="storySlot" hidden></div>
         <a class="textlink" data-get-app target="_blank" rel="noopener" data-s="getApp"></a>
         <p class="get-note" hidden data-s="getNote"></p>
       </div>
@@ -739,6 +742,8 @@ h1,h2,p{margin:0}
 
 <script src="/analytics.js"></script>
 <script src="/consent.js"></script>
+<script src="/envelope-seal.js"></script>
+<script src="/envelope-story.js"></script>
 <script src="/sealed.js"></script>
 </body>
 </html>
