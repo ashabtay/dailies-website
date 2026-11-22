@@ -637,7 +637,9 @@
       open_when: ENV.w || null,
       short: SHORT,
       // The sender's own photo: shown, or named but not fetched or opened.
-      photo: ENV.i ? (PHOTO ? 'shown' : 'failed') : null
+      photo: ENV.i ? (PHOTO ? 'shown' : 'failed') : null,
+      // The wax: the sender's initial, or the quote mark.
+      seal: window.DailiesSeal && window.DailiesSeal.initialOf(ENV.from) ? 'initial' : 'mark'
     };
   }
 
@@ -809,6 +811,10 @@
   paintNote($('.env-note', env), ENV.m || (ENV.w ? S.when[ENV.w] : null));
   paintStamp($('.stamp', env));
   paintPostmark($('.postmark', env), ENV.n || 1);
+  // The sender's initial pressed into the wax (the quote mark when their
+  // name does not start with a letter). Nothing new travels in the link:
+  // the initial comes from the name the envelope already carries.
+  if (window.DailiesSeal) window.DailiesSeal.apply(env, ENV.from);
 
   buildCard($('#letterCard'), ENV.t, ENV.a);
   buildCard($('#card'), ENV.t, ENV.a);
@@ -1376,6 +1382,8 @@
     var to = validName(currentTo());
     paintName($('.env-for', mini), to || S.someone);
     $('.env-for', mini).classList.toggle('placeholder', !to);
+    // The wax takes the initial of whoever is sealing it, as they type.
+    if (window.DailiesSeal) window.DailiesSeal.apply(mini, currentFrom());
     paintNote($('.env-note', mini), cleanNote(noteInput.value));
     paintPostmark($('.postmark', mini), threadNo());
 
