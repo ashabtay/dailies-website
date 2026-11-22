@@ -151,7 +151,6 @@
       sealedBy: 'Sealed by {from}',
       sealedA11y: 'An envelope for {to}, sealed by {from}',
       openIt: 'Open it',
-      openNote: 'No app needed. It takes a second.',
       sealAria: 'Press and hold the seal to break it',
       when: {
         hard: 'Open when it’s a hard day',
@@ -166,7 +165,7 @@
       threadNo: 'Envelope No. {n} with {from}',
       ordinals: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth'],
       sendBack: 'Send one back to {from}',
-      badgeAlt: 'Download on the App Store',
+      getApp: 'Get Dailies',
       getNote: 'Once Dailies is installed, come back to this envelope and tap Send one back.',
       privacy: 'Privacy',
       cookies: 'Cookie settings',
@@ -210,7 +209,6 @@
       sealedBy: 'Sellado por {from}',
       sealedA11y: 'Un sobre para {to}, sellado por {from}',
       openIt: 'Ábrelo',
-      openNote: 'No necesitas la app. Toma un segundo.',
       sealAria: 'Mantén presionado el sello para romperlo',
       when: {
         hard: 'Ábrelo en un día difícil',
@@ -225,7 +223,7 @@
       threadNo: 'Sobre n.º {n} con {from}',
       ordinals: ['primer', 'segundo', 'tercer', 'cuarto', 'quinto', 'sexto', 'séptimo', 'octavo', 'noveno', 'décimo'],
       sendBack: 'Mándale uno a {from}',
-      badgeAlt: 'Descárgalo en el App Store',
+      getApp: 'Descarga Dailies',
       getNote: 'Cuando tengas Dailies, vuelve a este sobre y toca Mándale uno.',
       privacy: 'Privacidad',
       cookies: 'Cookies',
@@ -670,14 +668,9 @@
   $all('[data-s-aria]').forEach(function (el) { el.setAttribute('aria-label', S[el.getAttribute('data-s-aria')]); });
   $all('[data-s-placeholder]').forEach(function (el) { el.setAttribute('placeholder', S[el.getAttribute('data-s-placeholder')]); });
 
-  // Apple's badge, in the page's language, as play.js draws it elsewhere.
+  // A quiet "Get Dailies" link, so it never competes with Send one back.
   function wireGetApp(a) {
     a.href = APP_URL;
-    var img = $('img', a);
-    if (img) {
-      img.src = '/img/app-store-badge' + (LANG === 'en' ? '' : '-' + LANG) + '.svg';
-      img.alt = S.badgeAlt;
-    }
     a.addEventListener('click', function () {
       cta('get_app');
       $all('.get-note').forEach(function (n) { n.hidden = false; });
