@@ -1,0 +1,89 @@
+/* ============================================================================
+   The reveal (envelope-reveal.js): the sheet that makes and shares the
+   video, the sheet that shows a receiver what they filmed, and the little
+   picture of them while it records. Dark on every page, like the envelope
+   pages. Every class starts rv- so nothing here touches the rest of the site.
+   ========================================================================= */
+
+html.rv-open{overflow:hidden}
+.rv-cta{width:100%; min-height:52px; gap:10px}
+.rv-cta svg{flex:none; opacity:.9}
+
+.rv-wrap{
+  position:fixed; inset:0; z-index:120; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:18px; padding:max(16px,env(safe-area-inset-top)) 18px max(18px,env(safe-area-inset-bottom));
+  background:rgba(8,10,12,.88); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  color:#f0e6d2; font-family:Figtree,-apple-system,"Segoe UI",sans-serif;
+  opacity:0; transition:opacity .24s ease;
+}
+.rv-wrap.is-in{opacity:1}
+
+.rv-x{
+  position:absolute; top:max(14px,env(safe-area-inset-top)); right:14px; width:40px; height:40px; border-radius:50%;
+  display:grid; place-items:center; border:1px solid rgba(240,230,210,.18); background:rgba(240,230,210,.06);
+  color:#f0e6d2; cursor:pointer; -webkit-tap-highlight-color:transparent;
+}
+.rv-x:hover{background:rgba(240,230,210,.12)}
+
+.rv-title{margin:0; font-family:Fraunces,Georgia,serif; font-size:22px; letter-spacing:-.01em}
+
+/* The video, as big as the screen allows, at 9:16. */
+.rv-frame{
+  position:relative; height:min(64vh, calc((100vw - 36px) * 16 / 9)); height:min(64svh, calc((100vw - 36px) * 16 / 9));
+  aspect-ratio:9/16; border-radius:18px; overflow:hidden; background:#14181a; flex:none;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.7), 0 0 0 1px rgba(240,230,210,.08);
+  transform:translateY(10px) scale(.97); transition:transform .4s cubic-bezier(.2,.8,.2,1);
+}
+.rv-review .rv-frame{height:min(56vh, calc((100vw - 36px) * 16 / 9)); height:min(56svh, calc((100vw - 36px) * 16 / 9))}
+.rv-wrap.is-in .rv-frame{transform:none}
+.rv-media{display:block; width:100%; height:100%; object-fit:cover}
+.rv-wait{position:absolute; left:0; right:0; bottom:14px; margin:0; text-align:center; font-size:13px; letter-spacing:.02em;
+  color:rgba(240,230,210,.75); opacity:0; pointer-events:none; transition:opacity .2s; text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.rv-frame.is-making .rv-wait{opacity:1}
+.rv-sound{position:absolute; right:10px; bottom:10px; width:38px; height:38px; border-radius:50%; border:0; display:grid; place-items:center;
+  background:rgba(10,12,16,.55); color:#f0e6d2; cursor:pointer; -webkit-tap-highlight-color:transparent}
+
+.rv-actions{width:min(100%,360px); display:flex; flex-direction:column; align-items:center; gap:12px}
+.rv-go{width:100%; min-height:54px; background:#f0e6d2; color:#191c1d; border:0}
+.rv-go[aria-disabled="true"]{opacity:.5; pointer-events:none}
+.rv-second{width:100%; min-height:50px}
+.rv-del{border:0; background:none; color:rgba(240,230,210,.7); font:inherit; font-size:15px; padding:6px 10px; cursor:pointer;
+  text-decoration:underline; text-underline-offset:3px}
+
+/* "Show who sent it": a switch, on by default. */
+.rv-toggle{display:flex; align-items:center; justify-content:center; gap:11px; cursor:pointer; font-size:15px; color:rgba(240,230,210,.85);
+  -webkit-tap-highlight-color:transparent; user-select:none; -webkit-user-select:none}
+.rv-toggle[hidden]{display:none}
+.rv-toggle input{position:absolute; opacity:0; width:1px; height:1px}
+.rv-switch{position:relative; width:44px; height:26px; flex:none; border-radius:999px; background:rgba(240,230,210,.2); transition:background .2s}
+.rv-switch::after{content:""; position:absolute; top:3px; left:3px; width:20px; height:20px; border-radius:50%; background:#f0e6d2;
+  box-shadow:0 1px 3px rgba(0,0,0,.3); transition:transform .22s cubic-bezier(.3,1.4,.5,1)}
+.rv-toggle input:checked + .rv-switch{background:#9db081}
+.rv-toggle input:checked + .rv-switch::after{transform:translateX(18px)}
+.rv-toggle input:focus-visible + .rv-switch{outline:2px solid #9db081; outline-offset:3px}
+
+/* Filming: the receiver's own picture in the corner, with a red dot, so
+   it is never a secret that the camera is on. */
+.rv-bubble{
+  position:fixed; z-index:115; top:max(14px,env(safe-area-inset-top)); right:14px; width:96px; aspect-ratio:3/4;
+  border-radius:18px; overflow:hidden; background:#111; box-shadow:0 12px 30px -8px rgba(0,0,0,.7), 0 0 0 2px rgba(240,230,210,.22);
+  animation:rv-pop .35s cubic-bezier(.3,1.4,.5,1) both;
+}
+.rv-bubble-cam{width:100%; height:100%; object-fit:cover; transform:scaleX(-1); display:block}
+.rv-rec{position:absolute; left:9px; top:9px; width:10px; height:10px; border-radius:50%; background:#ff3b30;
+  box-shadow:0 0 0 2px rgba(0,0,0,.25); animation:rv-blink 1.2s ease-in-out infinite}
+.rv-bubble-x{position:absolute; right:5px; top:5px; width:26px; height:26px; border-radius:50%; border:0; display:grid; place-items:center;
+  background:rgba(10,12,16,.6); color:#f0e6d2; cursor:pointer; padding:0}
+.rv-bubble-x svg{width:10px; height:10px}
+.rv-bubble.is-opened .rv-bubble-x{display:none}
+.rv-bubble-done{position:absolute; left:6px; right:6px; bottom:6px; min-height:30px; border:0; border-radius:999px;
+  background:#f0e6d2; color:#191c1d; font:700 13px Figtree,-apple-system,sans-serif; cursor:pointer}
+.rv-bubble-done[hidden]{display:none}
+.rv-wrap .vh,.rv-bubble .vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+@keyframes rv-pop{from{opacity:0; transform:scale(.6)}to{opacity:1; transform:none}}
+@keyframes rv-blink{50%{opacity:.35}}
+
+@media (prefers-reduced-motion: reduce){
+  .rv-wrap,.rv-frame,.rv-switch::after{transition:none}
+  .rv-bubble,.rv-rec{animation:none}
+}

@@ -21,6 +21,7 @@
 <div id="summary">running</div>
 <ol id="out"></ol>
 <script src="/envelope-seal.js"></script>
+<script src="/envelope-reveal.js"></script>
 <script src="/sealed.js"></script>
 <script>
 (function () {
@@ -219,6 +220,22 @@
   eq('seal: a digit first gives no initial', I('2Pac'), null);
   eq('seal: empty gives no initial', I(''), null);
   eq('seal: no name gives no initial', I(undefined), null);
+
+  // The reveal's words: every language the envelope pages speak, every
+  // key, the names where they go, and the house rules.
+  var RS = window.DailiesReveal.STRINGS, rkeys = Object.keys(RS.en), revealOk = true;
+  ['en', 'es', 'pt', 'fr', 'de', 'ja'].forEach(function (lang) {
+    rkeys.forEach(function (k) { if (!RS[lang] || !RS[lang][k]) revealOk = false; });
+    if (RS[lang].headFrom.indexOf('{from}') === -1 || RS[lang].sendTo.indexOf('{from}') === -1) revealOk = false;
+    JSON.stringify(RS[lang]).replace(/\\u2014|—|!/g, function () { revealOk = false; });
+  });
+  eq('reveal: every language has every line, no em-dash, no exclamation mark', revealOk, true);
+  eq('reveal: six languages', Object.keys(RS).length, 6);
+  // The opening, in the order sealed.js plays it.
+  var RT = window.DailiesReveal.T;
+  eq('reveal: the timeline runs in order', RT.crack < RT.flap && RT.flap < RT.flapEnd && RT.rise <= RT.riseEnd &&
+    RT.drop < RT.dropEnd && RT.riseEnd < RT.glide && RT.glide < RT.glideEnd && RT.glideEnd < RT.end, true);
+  eq('reveal: canFilm and canRecord answer yes or no', typeof window.DailiesReveal.canFilm() + typeof window.DailiesReveal.canRecord(), 'booleanboolean');
 
   function summary() {
     var s = document.getElementById('summary');

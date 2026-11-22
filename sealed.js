@@ -830,6 +830,47 @@
   }
   fill($('#sendBackLabel'), S.sendBack, { from: ENV.from });
 
+  /* The reveal (envelope-reveal.js): the opening as a video for a Story,
+     and the receiver filming themselves opening it. */
+  var R = window.DailiesReveal, filming = null, holdConsent = false;
+  function revealOpts() {
+    return {
+      to: ENV.to, from: ENV.from, text: ENV.t, author: ENV.a, look: LOOK, lang: LANG,
+      forName: S.forName,
+      note: ENV.m || (ENV.w ? S.when[ENV.w] : null),
+      postmark: ENV.n >= 2 ? S.postmark.replace('{n}', String(ENV.n)) : null,
+      stamp: $('.stamp svg', env),
+      onEvent: function (action, props) { cta(action, props); }
+    };
+  }
+  if (R) {
+    $('#revealSlot').appendChild(R.button({ lang: LANG, get: revealOpts }));
+    $('#revealSlot').hidden = false;
+  }
+  if (R && R.canFilm()) {
+    var FS = R.STRINGS[LANG] || R.STRINGS.en;
+    var filmBtn = $('#filmBtn'), filmNote = $('#filmNote');
+    text($('.film-label', filmBtn), FS.film);
+    filmBtn.hidden = false;
+    filmBtn.addEventListener('click', function () {
+      if (filming || isOpen) return;
+      filmBtn.disabled = true;
+      var o = revealOpts();
+      o.onDone = function () {
+        filming = null;
+        if (!isOpen) { filmBtn.hidden = false; filmBtn.disabled = false; filmNote.hidden = true; }
+        if (holdConsent) { holdConsent = false; releaseConsent(); }
+      };
+      filming = R.film(o);
+      filming.arm().then(function (ok) {
+        filmBtn.hidden = true;
+        filmNote.textContent = ok ? FS.filmHint + ' ' + FS.filmPrivate : FS.filmNoCamera;
+        filmNote.hidden = false;
+        if (!ok) filming = null;
+      });
+    });
+  }
+
   track('viewed', baseProps());
 
   /* ---------------------------------------------------- hold on the seal */
@@ -1036,7 +1077,9 @@
     var ms = Date.now() - shownAt;
     var p = baseProps();
     p.ms_to_open = ms;
+    p.filmed = !!filming;
     track('opened', p);
+    if (filming) filming.opened();
     env.classList.remove('idle');
 
     if (reduceMotion || !env.animate) {
@@ -1142,7 +1185,11 @@
 
   function afterOpen() {
     // A beat to read the line before anything else asks for attention.
-    setTimeout(releaseConsent, reduceMotion ? 1200 : 1600);
+    // While they film themselves, the banner waits until they are done.
+    setTimeout(function () {
+      if (filming && filming.active()) holdConsent = true;
+      else releaseConsent();
+    }, reduceMotion ? 1200 : 1600);
     if (AUTO === 'compose') openComposer('back');
   }
 

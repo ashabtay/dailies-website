@@ -256,7 +256,10 @@
        envelope_viewed   /e/ showed a sealed envelope
        envelope_opened   ...and it was opened; `ms_to_open` is how long they looked first
        envelope_cta      a button on an opened envelope: `action` is send_back,
-                         wallpaper or read_more
+                         wallpaper, read_more, or the Story video:
+                         reveal_opened, reveal_shared (`method` share or
+                         download, `from` shown or hidden: whether it names
+                         the sender) or reveal_closed
        envelope_invalid  the link did not decode; `reason` is empty, decode or field
        wallpaper_changed the maker: `change` is mood, line, bg or own (the first
                          three of each per page)
@@ -332,6 +335,26 @@
                                                 `sent_short`
                                composer_closed  the composer closed; `step`
                                                 compose, sealed or sent
+                               reveal_opened    Post it to your Story tapped:
+                                                the opening is being recorded
+                               reveal_shared    ...and handed on; `destination`
+                                                share (the share sheet) or
+                                                download, `from_shown` whether
+                                                it names the sender, `format`
+                                                mp4, webm or jpg (no recorder)
+                               reveal_closed    the video closed; `from_shown`,
+                                                `shared`
+                               film_started     Film yourself opening it: the
+                                                camera is on; `mic` false when
+                                                it films without sound
+                               film_failed      ...or it did not start;
+                                                `reason` denied or camera
+                               film_cancelled   stopped before it was opened
+                               film_recorded    the reaction is made; `seconds`
+                               film_shared      ...and handed on; `destination`
+                                                sender, story or download
+                               film_deleted     ...or deleted
+                               film_closed      the reaction closed; `shared`
        app_envelope_invalid  the link did not decode; `reason` is empty,
                              decode, version or field, and for a short link
                              missing (no such id), fetch (the store did not
@@ -344,6 +367,8 @@
      envelope names the sender's own photo: shown, or failed (the house
      photograph stood in), and `seal`: initial when the sender's initial is
      pressed into the wax, mark when it is the quote mark.
+     app_envelope_opened carries `filmed`: the receiver was filming
+     themselves as they opened it.
 
      Same rules as above: names and words never get through, only these keys
      with slug-like or numeric values, and events from before the banner is
@@ -356,7 +381,8 @@
     invalid: 'app_envelope_invalid'
   };
   var APP_ENVELOPE_KEYS = ['own', 'has_author', 'text_length', 'quote_id', 'thread_n', 'open_when',
-    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason', 'mode', 'how', 'step', 'progress', 'short', 'sent_short', 'photo', 'seal'];
+    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason', 'mode', 'how', 'step', 'progress', 'short', 'sent_short', 'photo', 'seal',
+    'filmed', 'from_shown', 'format', 'shared', 'mic', 'seconds'];
 
   function envelope(kind, props) {
     var event = APP_ENVELOPE_EVENTS[kind];
