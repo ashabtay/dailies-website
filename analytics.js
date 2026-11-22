@@ -342,7 +342,8 @@
      web_sent also carries `sent_short`: the reply went out as a short link.
      app_envelope_viewed and app_envelope_opened carry `photo` when the
      envelope names the sender's own photo: shown, or failed (the house
-     photograph stood in).
+     photograph stood in), and `seal`: initial when the sender's initial is
+     pressed into the wax, mark when it is the quote mark.
 
      Same rules as above: names and words never get through, only these keys
      with slug-like or numeric values, and events from before the banner is
@@ -355,7 +356,7 @@
     invalid: 'app_envelope_invalid'
   };
   var APP_ENVELOPE_KEYS = ['own', 'has_author', 'text_length', 'quote_id', 'thread_n', 'open_when',
-    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason', 'mode', 'how', 'step', 'progress', 'short', 'sent_short', 'photo'];
+    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason', 'mode', 'how', 'step', 'progress', 'short', 'sent_short', 'photo', 'seal'];
 
   function envelope(kind, props) {
     var event = APP_ENVELOPE_EVENTS[kind];

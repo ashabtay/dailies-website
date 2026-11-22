@@ -20,6 +20,7 @@
 <body>
 <div id="summary">running</div>
 <ol id="out"></ol>
+<script src="/envelope-seal.js"></script>
 <script src="/sealed.js"></script>
 <script>
 (function () {
@@ -206,6 +207,18 @@
     JSON.stringify(S).replace(/\\u2014|—|!/g, function () { noDash = false; });
   });
   eq('copy has no em-dash and no exclamation mark', noDash, true);
+
+  // The sender's own seal: the first letter of their name, or nothing.
+  var I = window.DailiesSeal.initialOf;
+  eq('seal: a name gives its capital', I('dana'), 'D');
+  eq('seal: spaces round the name are skipped', I('  maya '), 'M');
+  eq('seal: an accented letter stays accented', I('élodie'), 'É');
+  eq('seal: Hebrew', I('שירה'), 'ש');
+  eq('seal: Japanese', I('山田'), '山');
+  eq('seal: an emoji first gives no initial', I('🙂 Sam'), null);
+  eq('seal: a digit first gives no initial', I('2Pac'), null);
+  eq('seal: empty gives no initial', I(''), null);
+  eq('seal: no name gives no initial', I(undefined), null);
 
   function summary() {
     var s = document.getElementById('summary');

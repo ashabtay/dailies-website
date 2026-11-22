@@ -160,6 +160,10 @@
   });
 
   to.addEventListener('input', draw);
+  // The wax takes the initial of whoever is sealing it, as they type.
+  function pressSeal() { if (window.DailiesSeal) window.DailiesSeal.apply(parts.el, from.value); }
+  from.addEventListener('input', pressSeal);
+  pressSeal();
   own.addEventListener('input', draw);
 
   Array.prototype.forEach.call(document.querySelectorAll('.en-send'), function (b) {

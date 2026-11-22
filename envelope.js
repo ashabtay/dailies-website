@@ -58,6 +58,9 @@
     parts.el.setAttribute('aria-hidden', 'true');
     A.paintName(parts.name, env.to ? s.forName.split('{to}').join(env.to) : s.forYou, false);
     parts.letter.appendChild(letterCard());
+    // The sender's initial pressed into the wax (the quote mark without a
+    // name, or when the name does not start with a letter).
+    if (window.DailiesSeal) window.DailiesSeal.apply(parts.el, env.f);
     float.appendChild(parts.el);
     stage.appendChild(float);
     box.appendChild(stage);
