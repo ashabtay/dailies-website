@@ -19,8 +19,9 @@
                lifts, the letter rises in light, the envelope drops away and
                the letter becomes the card.
 
-   Pictures: /img/envelope/*.webp, rendered by tool/envelope/render_envelope.py
-   in the app repo (the same files /sealed/ uses). Styles: envelope-art.css.
+   Pictures: /img/envelope/*.webp, rendered by tool/envelope/render_paper.py
+   (the paper) and render_envelope.py (the wax) in the app repo (the same
+   files /sealed/ uses). Styles: envelope-art.css.
    Nothing moves under prefers-reduced-motion: each step just happens.
 
    Text from a link or a visitor only ever goes in with textContent.
