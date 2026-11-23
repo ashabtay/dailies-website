@@ -814,6 +814,7 @@
   // The sender's initial pressed into the wax (the quote mark when their
   // name does not start with a letter). Nothing new travels in the link:
   // the initial comes from the name the envelope already carries.
+  buildShards($('#seal'));
   if (window.DailiesSeal) window.DailiesSeal.apply(env, ENV.from);
 
   buildCard($('#letterCard'), ENV.t, ENV.a);
@@ -831,6 +832,88 @@
   fill($('#sendBackLabel'), S.sendBack, { from: ENV.from });
 
   track('viewed', baseProps());
+
+  /* ------------------------------------------------------ the cracking */
+  /* The seal breaks along five cracks, made by
+     tool/envelope/render_envelope.py in the app's repo with the wax's own
+     lighting: seal_crack.webp is CRACK_FRAMES pictures of them growing, and
+     shardOutlines() are the pieces cut along the same lines (its --crack prints
+     them). Each piece carries its own copy of the wax and of the cracks, so
+     a crack goes with the piece it is on. Holding the seal grows the cracks;
+     a tap runs them through quickly before the wax comes apart. */
+
+  var CRACK_FRAMES = 12;
+  // A function, not a var: the page is built before this line is reached.
+  function shardOutlines() {
+    return [
+        "51.8% 48.6%, 49.5% 47.2%, 45.5% 46.2%, 41.7% 46.1%, 38.5% 43.0%, 35.0% 40.3%, 32.5% 38.4%, 28.9% 38.9%, 25.9% 37.4%, 23.2% 35.6%, 19.3% 35.0%, 15.7% 33.6%, 11.9% 32.2%, 8.1% 30.2%, 5.1% 27.7%, 1.4% 27.1%, -3.2% 26.2%, -59.5% 1.0%, -44.6% -23.9%, -24.1% -44.4%, 0.7% -59.4%, 28.5% -68.0%, 57.4% -69.8%, 53.6% -8.7%, 52.5% -5.9%, 52.0% -1.4%, 53.6% 1.7%, 54.0% 4.5%, 52.2% 8.7%, 53.2% 12.6%, 54.3% 16.2%, 55.1% 19.2%, 53.8% 22.8%, 52.5% 26.4%, 51.3% 30.6%, 52.8% 33.8%, 52.1% 37.4%, 52.5% 41.3%, 51.3% 44.0%, 51.8% 48.6%",
+        "51.8% 48.6%, 51.3% 44.0%, 52.5% 41.3%, 52.1% 37.4%, 52.8% 33.8%, 51.3% 30.6%, 52.5% 26.4%, 53.8% 22.8%, 55.1% 19.2%, 54.3% 16.2%, 53.2% 12.6%, 52.2% 8.7%, 54.0% 4.5%, 53.6% 1.7%, 52.0% -1.4%, 52.5% -5.9%, 53.6% -8.7%, 57.4% -69.8%, 88.9% -63.5%, 117.5% -49.2%, 141.4% -27.8%, 158.7% -0.8%, 168.3% 29.7%, 107.8% 40.1%, 105.1% 39.7%, 101.0% 38.3%, 98.4% 40.3%, 95.4% 39.2%, 90.9% 38.9%, 88.2% 40.3%, 85.3% 42.0%, 81.7% 43.4%, 78.7% 41.7%, 75.0% 43.6%, 70.3% 44.0%, 68.0% 45.6%, 64.2% 47.3%, 60.4% 46.2%, 57.6% 47.0%, 54.8% 48.4%, 51.8% 48.6%",
+        "51.8% 48.6%, 54.8% 48.4%, 57.6% 47.0%, 60.4% 46.2%, 64.2% 47.3%, 68.0% 45.6%, 70.3% 44.0%, 75.0% 43.6%, 78.7% 41.7%, 81.7% 43.4%, 85.3% 42.0%, 88.2% 40.3%, 90.9% 38.9%, 95.4% 39.2%, 98.4% 40.3%, 101.0% 38.3%, 105.1% 39.7%, 107.8% 40.1%, 168.3% 29.7%, 169.8% 57.6%, 164.8% 85.1%, 153.6% 110.6%, 136.7% 132.9%, 115.2% 150.7%, 81.5% 98.6%, 81.2% 94.7%, 78.3% 91.9%, 74.4% 89.0%, 72.9% 85.2%, 71.5% 81.7%, 70.6% 77.2%, 68.5% 74.5%, 65.4% 73.3%, 64.5% 70.1%, 62.4% 67.6%, 62.0% 62.4%, 60.2% 59.8%, 57.4% 56.4%, 55.3% 52.9%, 53.6% 50.9%, 51.8% 48.6%",
+        "51.8% 48.6%, 53.6% 50.9%, 55.3% 52.9%, 57.4% 56.4%, 60.2% 59.8%, 62.0% 62.4%, 62.4% 67.6%, 64.5% 70.1%, 65.4% 73.3%, 68.5% 74.5%, 70.6% 77.2%, 71.5% 81.7%, 72.9% 85.2%, 74.4% 89.0%, 78.3% 91.9%, 81.2% 94.7%, 81.5% 98.6%, 115.2% 150.7%, 86.3% 164.4%, 54.8% 169.9%, 23.0% 166.9%, -6.9% 155.6%, -32.8% 136.9%, 12.4% 89.4%, 15.6% 86.3%, 19.7% 85.0%, 20.2% 81.7%, 24.0% 80.6%, 25.8% 78.4%, 28.4% 75.5%, 30.7% 72.4%, 33.3% 70.9%, 34.0% 67.5%, 36.2% 65.9%, 38.2% 63.9%, 42.1% 61.4%, 43.1% 57.9%, 43.9% 54.7%, 47.0% 53.7%, 48.5% 51.6%, 51.8% 48.6%",
+        "51.8% 48.6%, 48.5% 51.6%, 47.0% 53.7%, 43.9% 54.7%, 43.1% 57.9%, 42.1% 61.4%, 38.2% 63.9%, 36.2% 65.9%, 34.0% 67.5%, 33.3% 70.9%, 30.7% 72.4%, 28.4% 75.5%, 25.8% 78.4%, 24.0% 80.6%, 20.2% 81.7%, 19.7% 85.0%, 15.6% 86.3%, 12.4% 89.4%, -32.8% 136.9%, -51.4% 114.1%, -64.0% 87.5%, -69.7% 58.6%, -68.2% 29.2%, -59.5% 1.0%, -3.2% 26.2%, 1.4% 27.1%, 5.1% 27.7%, 8.1% 30.2%, 11.9% 32.2%, 15.7% 33.6%, 19.3% 35.0%, 23.2% 35.6%, 25.9% 37.4%, 28.9% 38.9%, 32.5% 38.4%, 35.0% 40.3%, 38.5% 43.0%, 41.7% 46.1%, 45.5% 46.2%, 49.5% 47.2%, 51.8% 48.6%"
+    ];
+  }
+
+  function buildShards(sealEl) {
+    var body = sealEl && $('.seal-body', sealEl);
+    if (!body) return;
+    $all('.seal-half', body).forEach(function (h) { body.removeChild(h); });
+    shardOutlines().forEach(function (poly) {
+      var s = document.createElement('span');
+      s.className = 'seal-half shard';
+      s.style.webkitClipPath = s.style.clipPath = 'polygon(' + poly + ')';
+      // Which way the piece falls: out from the break, through its middle.
+      var xy = poly.split(',').map(function (pt) {
+        var v = pt.trim().split(/%\s*/);
+        return [Math.max(0, Math.min(100, parseFloat(v[0]))), Math.max(0, Math.min(100, parseFloat(v[1])))];
+      });
+      var cx = 0, cy = 0;
+      xy.forEach(function (q) { cx += q[0]; cy += q[1]; });
+      cx = cx / xy.length - 51.8;
+      cy = cy / xy.length - 48.6;
+      var len = Math.sqrt(cx * cx + cy * cy) || 1;
+      s.setAttribute('data-dx', (cx / len).toFixed(3));
+      s.setAttribute('data-dy', (cy / len).toFixed(3));
+      var img = document.createElement('img');
+      img.src = '/img/envelope/seal.webp';
+      img.alt = '';
+      img.draggable = false;
+      var crack = document.createElement('span');
+      crack.className = 'seal-crack';
+      s.appendChild(img);
+      s.appendChild(crack);
+      body.appendChild(s);
+    });
+    // The pieces meet edge to edge, and two soft clip edges let the paper
+    // through as a hairline. Until it breaks, an unbroken copy lies over
+    // them, cracks and all.
+    var whole = document.createElement('span');
+    whole.className = 'seal-whole';
+    whole.innerHTML = '<img src="/img/envelope/seal.webp" alt="" draggable="false"><span class="seal-crack"></span>';
+    body.appendChild(whole);
+  }
+
+  function crackTo(p) {
+    var i = Math.round(Math.max(0, Math.min(1, p)) * (CRACK_FRAMES - 1));
+    $all('#seal .seal-crack').forEach(function (c) {
+      c.style.backgroundPosition = (i / (CRACK_FRAMES - 1) * 100) + '% 0';
+      c.style.opacity = i ? 1 : 0;
+    });
+  }
+
+  /* The cracks the rest of the way: at once after a hold (they are already
+     there), in a quick run after a tap. */
+  function crackThrough(ms) {
+    return new Promise(function (done) {
+      var start = performance.now();
+      (function step(now) {
+        var p = ms > 0 ? Math.min(1, (now - start) / ms) : 1;
+        crackTo(p * p);
+        if (p < 1) requestAnimationFrame(step);
+        else done();
+      })(start);
+    });
+  }
 
   /* ---------------------------------------------------- hold on the seal */
   /* A tap anywhere on the envelope opens it. Holding the seal fills a ring
@@ -1063,23 +1146,28 @@
         { duration: 260, easing: 'ease-in', fill: 'forwards' });
     });
 
-    // 1. The seal cracks and falls away, in a flash of gold.
+    // 1. The seal cracks through and comes apart along its cracks, in a
+    //    flash of gold.
     var ease = 'cubic-bezier(.2,.7,.2,1)';
     var sc = centerOf(seal);
-    sparkles.burst(sc.x, sc.y, { count: 44, speed: 300, size: 30, life: 1.3 });
-    sparkles.burst(sc.x, sc.y, { count: 12, speed: 120, size: 14, life: 0.8, ember: true });
-    anim(halves[0], [
-      { transform: 'none', opacity: 1 },
-      { transform: 'translate(-5%, 1%) rotate(-7deg)', opacity: 1, offset: 0.22 },
-      { transform: 'translate(-38%, 160%) rotate(-38deg)', opacity: 0 }
-    ], { duration: 620, easing: 'cubic-bezier(.5,0,.75,.4)', fill: 'forwards' });
-    anim(halves[1], [
-      { transform: 'none', opacity: 1 },
-      { transform: 'translate(5%, 0) rotate(6deg)', opacity: 1, offset: 0.22 },
-      { transform: 'translate(34%, 150%) rotate(32deg)', opacity: 0 }
-    ], { duration: 620, easing: 'cubic-bezier(.5,0,.75,.4)', fill: 'forwards' });
+    var broken = crackThrough(how === 'hold' ? 0 : 240).then(function () {
+      sparkles.burst(sc.x, sc.y, { count: 44, speed: 300, size: 30, life: 1.3 });
+      sparkles.burst(sc.x, sc.y, { count: 12, speed: 120, size: 14, life: 0.8, ember: true });
+      var whole = $('.seal-whole', seal);
+      if (whole) whole.style.visibility = 'hidden';
+      halves.forEach(function (h, i) {
+        var dx = parseFloat(h.getAttribute('data-dx')) || (i % 2 ? 1 : -1);
+        var dy = parseFloat(h.getAttribute('data-dy')) || 0;
+        var spin = (dx < 0 ? -1 : 1) * (24 + (i * 37) % 22);
+        anim(h, [
+          { transform: 'none', opacity: 1 },
+          { transform: 'translate(' + (dx * 7) + '%,' + (dy * 7) + '%) rotate(' + (spin * 0.15) + 'deg)', opacity: 1, offset: 0.2 },
+          { transform: 'translate(' + (dx * 60) + '%,' + (dy * 30 + 150) + '%) rotate(' + spin + 'deg)', opacity: 0 }
+        ], { duration: 680, delay: (i * 23) % 60, easing: 'cubic-bezier(.5,0,.75,.4)', fill: 'forwards' });
+      });
+    });
 
-    return wait(200).then(function () {
+    return broken.then(function () { return wait(200); }).then(function () {
       // 2. The flap lifts. Its outside turns into its inside as it passes
       //    upright, then it drops behind the letter.
       anim(flapIn, [{ opacity: 0 }, { opacity: 0, offset: 0.5 }, { opacity: 1, offset: 0.5 }, { opacity: 1 }],
@@ -1150,7 +1238,8 @@
   // reader users have the Open it button and the seal, both real buttons.
   env.addEventListener('click', function () { openEnvelope('tap'); });
   $('#openBtn').addEventListener('click', function () { openEnvelope('button'); });
-  holdable($('#seal'), function () { openEnvelope('hold'); }, function () { openEnvelope('tap'); });
+  holdable($('#seal'), function () { openEnvelope('hold'); }, function () { openEnvelope('tap'); },
+    { progress: crackTo, release: function () { crackTo(0); } });
 
   /* ------------------------------------------------------ send one back */
 
