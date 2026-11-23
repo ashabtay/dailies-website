@@ -147,6 +147,21 @@ h1,h2,p{margin:0}
   background:radial-gradient(closest-side at 50% 62%,rgba(255,226,168,.8),rgba(255,184,102,.33) 45%,rgba(255,154,64,0) 100%)}
 .sparkles{position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:90}
 .letter .qc{box-shadow:0 -1px 8px rgba(40,30,20,.18)}
+/* In the envelope the letter is folded in three: what rises is the plain
+   back of its top third. sealed.js unfolds it into the card (foldRig). */
+#letterCard{aspect-ratio:12/5; border-radius:4px}
+#letterCard > *{display:none}
+#letterCard,.fold-back{background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,0) 40%,rgba(90,64,32,.10)),
+  #EFE6D3 url("/img/envelope/paper.webp") 0 0/220px auto}
+.fold-rig{position:fixed; z-index:40; perspective:1500px; pointer-events:none; transform-origin:50% 50%}
+.fold-panel{position:absolute; left:0; width:100%; transform-style:preserve-3d}
+.fold-panel.p0{transform-origin:50% 100%; z-index:3}
+.fold-panel.p1{z-index:1; box-shadow:0 30px 70px -20px rgba(0,0,0,.75), 0 10px 24px rgba(0,0,0,.3)}
+.fold-panel.p2{transform-origin:50% 0; z-index:2}
+.fold-face,.fold-back{position:absolute; inset:0; overflow:hidden; -webkit-backface-visibility:hidden; backface-visibility:hidden}
+.fold-back{transform:rotateX(180deg); border-radius:4px}
+.fold-face .qc{position:absolute; left:0; box-shadow:none}
+.fold-shade{position:absolute; inset:0; background:#000; opacity:0}
 /* The pocket: side flaps and bottom flap, with the shadow its lip throws on
    whatever is inside, all in the picture. */
 .env-pocket{position:absolute; inset:0; z-index:4; pointer-events:none}

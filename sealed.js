@@ -819,7 +819,6 @@
 
   buildCard($('#letterCard'), ENV.t, ENV.a);
   buildCard($('#card'), ENV.t, ENV.a);
-  paintLook($('#letterCard'), LOOK);
   paintLook($('#card'), LOOK);
 
   fill($('#picked'), S.picked, { from: ENV.from });
@@ -1106,6 +1105,59 @@
   }
   function wait(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
 
+  /* The card as a letter folded in three, over where the card will be: the
+     bottom third folded up over the middle, the top third down over both,
+     so what shows is the plain back of the top third - the paper that rose
+     out of the envelope. open() unfolds it, top first. Each third holds a
+     copy of the card cut to its part, with the paper on its back. */
+  function foldRig(card, r) {
+    var h = r.height / 3;
+    var el = document.createElement('div');
+    el.className = 'fold-rig';
+    el.setAttribute('aria-hidden', 'true');
+    el.style.left = r.left + 'px';
+    el.style.top = r.top + 'px';
+    el.style.width = r.width + 'px';
+    el.style.height = r.height + 'px';
+    var panels = [0, 1, 2].map(function (i) {
+      var p = document.createElement('div');
+      p.className = 'fold-panel p' + i;
+      p.style.top = (i * h) + 'px';
+      p.style.height = h + 'px';
+      var face = document.createElement('div');
+      face.className = 'fold-face';
+      var c = card.cloneNode(true);
+      c.removeAttribute('id');
+      c.style.width = r.width + 'px';
+      c.style.top = (-i * h) + 'px';
+      face.appendChild(c);
+      var shade = document.createElement('div');
+      shade.className = 'fold-shade';
+      face.appendChild(shade);
+      var back = document.createElement('div');
+      back.className = 'fold-back';
+      p.appendChild(face);
+      p.appendChild(back);
+      el.appendChild(p);
+      return p;
+    });
+    var FOLDED = ['rotateX(-180deg)', 'none', 'rotateX(180deg)'];
+    panels.forEach(function (p, i) { p.style.transform = FOLDED[i]; });
+    document.body.appendChild(el);
+
+    function unfold(i) {
+      var swing = { duration: 600, easing: 'cubic-bezier(.45,.05,.2,1)', fill: 'forwards' };
+      anim($('.fold-shade', panels[i]), [{ opacity: 0.5 }, { opacity: 0 }], swing);
+      return anim(panels[i], [{ transform: FOLDED[i] }, { transform: 'rotateX(0deg)' }], swing);
+    }
+    return {
+      el: el,
+      open: function () {
+        return unfold(0).then(function () { return wait(40); }).then(function () { return unfold(2); });
+      }
+    };
+  }
+
   function showOpenedInstant() {
     sealed.hidden = true;
     opened.classList.add('arrived');
@@ -1184,7 +1236,9 @@
       if (glow) anim(glow, [{ opacity: 0 }, { opacity: 1, offset: 0.35 }, { opacity: 0 }], { duration: 1100, easing: 'ease-out' });
       var ec = centerOf(env);
       sparkles.dust(ec.x, ec.r.top + 6, { count: 26, jitter: ec.r.width * 0.32, jitterY: 6, dy: -90, size: 20, life: 1.7 });
-      anim(letter, [{ transform: 'translateY(0)' }, { transform: 'translateY(-46%)' }],
+      // Folded in three, so it is a third of the card's height and comes
+      // further out to clear the pocket.
+      anim(letter, [{ transform: 'translateY(0)' }, { transform: 'translateY(-118%)' }],
         { duration: 560, easing: ease, fill: 'forwards' });
       return wait(140).then(function () {
         return Promise.all([
@@ -1200,21 +1254,30 @@
         })));
       });
     }).then(function () {
-      // 4. The letter becomes the card: measure both, swap, and glide.
+      // 4. The folded letter comes to the middle of the page and opens: the
+      //    top third swings up, then the bottom third swings down, and the
+      //    quote is there.
       inside.style.clipPath = 'none';
       var from = letter.getBoundingClientRect();
       opened.hidden = false;
       opened.classList.add('arriving');
       var card = $('#card');
       var to = card.getBoundingClientRect();
+      var rig = foldRig(card, to);
+      card.style.visibility = 'hidden';
       sealed.classList.add('gone');
       var dx = (from.left + from.width / 2) - (to.left + to.width / 2);
       var dy = (from.top + from.height / 2) - (to.top + to.height / 2);
       var s = from.width / to.width;
-      return anim(card, [
+      return anim(rig.el, [
         { transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + s + ')' },
         { transform: 'none' }
-      ], { duration: 520, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      ], { duration: 520, easing: 'cubic-bezier(.2,.8,.2,1)' }).then(function () {
+        return rig.open();
+      }).then(function () {
+        card.style.visibility = '';
+        rig.el.parentNode.removeChild(rig.el);
+      });
     }).then(function () {
       // 5. A twinkle as the card settles.
       var cr = $('#card').getBoundingClientRect();
