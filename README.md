@@ -404,6 +404,11 @@ anywhere inside an existing `<div class="faq">`:
 - **The search box needs nothing.** It reads the visible text of every
   `<details>` on the page at load, so a new entry is searchable the moment you
   save. Do not register it anywhere.
+- **The structured data needs one command.** Each Help page carries a
+  `FAQPage` JSON-LD block built from its `<details>`, so search engines and AI
+  assistants can tell which answer belongs to which question. Do not edit it
+  by hand: after any change to the questions, in any language, run
+  `python3 tools/structured_data.py`. It rebuilds the block from the page.
 - Adding a whole new section means adding a `<section id="...">` with its own
   `<div class="faq">`, plus a line in the `<aside class="toc">` sidebar.
 - The three cards at the top are hand-picked shortcuts, not generated. They are
@@ -440,6 +445,9 @@ nothing new to learn to edit one. Four things to keep true:
    when they were last checked against a real phone. iOS moves the buttons every
    few releases — the `+` in the Home Screen editor became `Edit → Add Widget` —
    so re-walk them when a major version ships and move the date when you do.
+   Then run `python3 tools/structured_data.py`: it copies that date into the
+   `HowTo` block as `dateModified` (reading it in any of the six languages),
+   and adds `datePublished`, the day git first saw the file, once.
 
 **The images.** The guides use real photographs, not the app's backgrounds:
 each opens on an Unsplash photo (free for commercial use under the Unsplash
@@ -554,7 +562,8 @@ blog hub.
 
 Adding a guide: copy the closest existing one, give it a hero, thumb and og image,
 then add its card to `guides/index.html`, to `PAGES` in `tools/sitemap.py`, and to
-the help entry it is the long version of.
+the help entry it is the long version of, then run `python3 tools/structured_data.py` to date its
+`HowTo` block.
 
 ## The blog
 
