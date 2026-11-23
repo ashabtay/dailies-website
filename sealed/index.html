@@ -59,7 +59,7 @@
      both in the app repo. */
   --i-back:url("/img/envelope/back.webp"); --i-pocket:url("/img/envelope/pocket.webp");
   --i-flap-out:url("/img/envelope/flap_out.webp"); --i-flap-in:url("/img/envelope/flap_in.webp");
-  --i-paper:url("/img/envelope/paper.webp");
+  --i-linen:url("/img/envelope/linen.webp");
   /* Paper grain: sparse light and dark flecks from a thresholded noise. */
   --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='l' x='0' y='0' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 -.2'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='0 .9'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cfilter id='d' x='0' y='0' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.17 0 0 0 0 0.15 1 0 0 0 -.2'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='0 .12'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23l)'/%3E%3Crect width='100%25' height='100%25' filter='url(%23d)'/%3E%3C/svg%3E");
   color-scheme:dark;
@@ -312,7 +312,7 @@ h1,h2,p{margin:0}
 .env.torn .env-back{filter:brightness(.9)}
 .env.torn .env-pocket{overflow:visible; clip-path:polygon(0 11%,6% 15%,11% 12%,17% 20%,24% 17%,30% 26%,37% 22%,44% 31%,50% 27%,57% 36%,63% 31%,70% 39%,77% 33%,84% 41%,91% 36%,100% 44%,100% 100%,0 100%)}
 .torn-flap{position:absolute; left:-4%; top:-27%; width:62%; height:46%; z-index:5;
-  background:var(--i-paper) 0 0/60% auto repeat; transform:rotate(-17deg); transform-origin:100% 100%;
+  background:var(--i-linen) center/cover no-repeat; transform:rotate(-17deg); transform-origin:100% 100%;
   clip-path:polygon(0 100%,4% 70%,12% 76%,20% 52%,31% 60%,42% 28%,52% 38%,64% 8%,72% 22%,82% 14%,100% 100%);
   filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
 .invalid h1{font-family:var(--f-display); font-optical-sizing:auto; font-weight:400; font-size:clamp(27px,7.4vw,36px); line-height:1.12; letter-spacing:-.015em; max-width:17ch; text-wrap:balance}
