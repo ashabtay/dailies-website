@@ -9,11 +9,15 @@
   },
   "/blog/": {
     "lastmod": "2026-11-26",
-    "sig": "c3f1e513eb11fc9f454878ae7432f520e91a1a23335cf6d072b314e8021b998a"
+    "sig": "705f56ae637d6ef691be9bb24c9b713b17813c246e5e51b61665669370650951"
   },
   "/blog/christmas-quotes/": {
     "lastmod": "2026-11-26",
     "sig": "39c8dd66e9ace052e67b5eeb024681d24d01e5687d2808c2b9c9ab9ce6696290"
+  },
+  "/blog/daily-affirmations/": {
+    "lastmod": "2026-11-26",
+    "sig": "36a780c31399d3215f2883bdcdaa71fa7548c36eb806529f180e2e6f4d2401bd"
   },
   "/blog/discipline-and-consistency-quotes/": {
     "lastmod": "2026-11-26",
@@ -21,7 +25,7 @@
   },
   "/blog/do-affirmations-work/": {
     "lastmod": "2026-11-26",
-    "sig": "231f114d82406b05b07b26307ca66e81537814cd4df304b8690818e7f3ff9e05"
+    "sig": "0ab9dc2642e02ab371f167c6ea0ed672992ef579e2a05ce03dec810bb2022332"
   },
   "/blog/feeling-trapped-quotes/": {
     "lastmod": "2026-11-26",
@@ -89,7 +93,7 @@
   },
   "/blog/quotes-about-starting-over/": {
     "lastmod": "2026-11-26",
-    "sig": "378e1e872bf36837a676fa3f285158a6d190572d8c2ce7ac2a636de6a7ad0dc4"
+    "sig": "b940f05a2072a2722e383a9b151a5bf76f370ca80f94af3f2c4b70774784daad"
   },
   "/blog/quotes-about-strength-to-keep-going/": {
     "lastmod": "2026-11-26",
@@ -102,6 +106,10 @@
   "/blog/quotes-for-self-doubt/": {
     "lastmod": "2026-11-26",
     "sig": "04c837264ec5413b6d31f48e84f508c5358705337fac1e1121c4c1720d4a297d"
+  },
+  "/blog/quotes-for-starting-over-after-losing-your-job/": {
+    "lastmod": "2026-11-26",
+    "sig": "35389e24dd08309688d98e4b6d4628bb4a56b19340dd3001ae816547e297febf"
   },
   "/blog/quotes-for-when-you-feel-stuck/": {
     "lastmod": "2026-11-26",
@@ -277,7 +285,7 @@
   },
   "/de/blog/": {
     "lastmod": "2026-11-26",
-    "sig": "5fb93c4c696f182e43f685eb18976de478bd5d5b677b7bf949fca2d23bdf33ed"
+    "sig": "47b247589995505648d9bd9cc219f4cc8ce3b9fb1d455e3608337476e722ff85"
   },
   "/de/blog/aufhoeren-zu-gruebeln/": {
     "lastmod": "2026-11-26",
@@ -289,7 +297,7 @@
   },
   "/de/blog/funktionieren-affirmationen/": {
     "lastmod": "2026-11-26",
-    "sig": "18ec659b1335aed3d84f89a39870c4ddae97b8ea2ac18469ba80d10d213e6534"
+    "sig": "349eef89ab2f49930af3f418e9d33765d011d66956c3e1f1d907eafc8fa727be"
   },
   "/de/blog/gute-vorsaetze-fuer-das-neue-jahr/": {
     "lastmod": "2026-11-26",
@@ -323,6 +331,10 @@
     "lastmod": "2026-11-26",
     "sig": "58ec565ba6eac3e79a639fe0672324a7048e274201fdeaf6030152eaacfa0a13"
   },
+  "/de/blog/sprueche-fuer-den-neuanfang-nach-jobverlust/": {
+    "lastmod": "2026-11-26",
+    "sig": "c9ab20447ee37bfa3301bcaab656c1d71df64929706d6d8d1087ac85095a20c2"
+  },
   "/de/blog/sprueche-fuer-kraft-zum-weitermachen/": {
     "lastmod": "2026-11-26",
     "sig": "a0fdbfd16136aac881203416d94a4ee8322c34ab2d90c1f20bf57a3373c7e9ee"
@@ -330,6 +342,10 @@
   "/de/blog/sprueche-wenn-man-sich-gefangen-fuehlt/": {
     "lastmod": "2026-11-26",
     "sig": "fd96922a466e1fc16364abe8e03eb5dc6b07b004b18e06d95829a912a14b3f4a"
+  },
+  "/de/blog/taegliche-affirmationen/": {
+    "lastmod": "2026-11-26",
+    "sig": "e9726ba662fa787798fcc322519233bbc751d7803e85b37cd675fb37b73271c8"
   },
   "/de/blog/weihnachtssprueche/": {
     "lastmod": "2026-11-26",
@@ -353,7 +369,7 @@
   },
   "/de/blog/zitate-ueber-den-neuanfang/": {
     "lastmod": "2026-11-26",
-    "sig": "3b56d3135119d0e4f99c7f5da0ce7864286c5031c2c868bcc34168cf18db6409"
+    "sig": "e55080dfbc1a06c2f4cbdae92134181dc85df4b847935c9d1675e121f5c2a050"
   },
   "/de/blog/zitate-ueber-disziplin-und-bestaendigkeit/": {
     "lastmod": "2026-11-26",
@@ -461,7 +477,11 @@
   },
   "/es/blog/": {
     "lastmod": "2026-11-26",
-    "sig": "cb698f6d9564827429f8849234859ea12a45e76fa6f116892eb02e4e1e140ff3"
+    "sig": "895d133d2e5b105efb29d15ec37995586bed49611c0838116f5e4a62f77feace"
+  },
+  "/es/blog/afirmaciones-diarias/": {
+    "lastmod": "2026-11-26",
+    "sig": "eee182a7e2235ffd3f58604389568feb893040fea098f706a47fb523cadd9203"
   },
   "/es/blog/como-dejar-de-procrastinar/": {
     "lastmod": "2026-11-26",
@@ -527,9 +547,13 @@
     "lastmod": "2026-11-26",
     "sig": "55198b806c0ab127a6239fb945ab258822b257289134594530764fbb8ff7da58"
   },
+  "/es/blog/frases-para-empezar-de-nuevo-despues-de-perder-el-trabajo/": {
+    "lastmod": "2026-11-26",
+    "sig": "4d169a14a31ada8e7e8be2315e9522aefed4c79b1b97effd5b7ac6d699dae9c0"
+  },
   "/es/blog/frases-para-empezar-de-nuevo/": {
     "lastmod": "2026-11-26",
-    "sig": "a15da8e4c2edeb14c180a6a6a6bf06581fbd5c1f717bc6eb1328e735373ab0ed"
+    "sig": "96eb2faadac9f1ae1d1065d99ced0334dc9ca8c6a7f247c0316f3efb76dcf84c"
   },
   "/es/blog/frases-para-la-ansiedad-y-el-sobrepensamiento/": {
     "lastmod": "2026-11-26",
@@ -541,7 +565,7 @@
   },
   "/es/blog/funcionan-las-afirmaciones/": {
     "lastmod": "2026-11-26",
-    "sig": "41a8cc70e44cc8e9c9ade70d3896d968b93da8c9624cbb6f203f588ad9af4881"
+    "sig": "a5aeb4c5cc5f5e0dffc7ab987210f497041229ca99cc2ed78d0d6180d79decf2"
   },
   "/es/blog/motivacion-vs-disciplina/": {
     "lastmod": "2026-11-26",
@@ -741,7 +765,11 @@
   },
   "/fr/blog/": {
     "lastmod": "2026-11-26",
-    "sig": "afbf2fe39346498a9f4c769f126eecb6dee3de098ba42a5bf3198653ff3e2e14"
+    "sig": "ec8220271f4a4fbbdd6e2e1cc886a774fad9c0db6e68903f25a34a1be4167b97"
+  },
+  "/fr/blog/affirmations-positives-quotidiennes/": {
+    "lastmod": "2026-11-26",
+    "sig": "2d88d216959cbef29f6b1989e8c9a6606d8818a021effd52412fe32f9c042bdb"
   },
   "/fr/blog/citations-contre-l-anxiete-et-la-rumination/": {
     "lastmod": "2026-11-26",
@@ -771,9 +799,13 @@
     "lastmod": "2026-11-26",
     "sig": "6c63201b309e53f05e631a20be77359e68421e063aded852e74e90a0655f9df9"
   },
+  "/fr/blog/citations-pour-rebondir-apres-la-perte-d-un-emploi/": {
+    "lastmod": "2026-11-26",
+    "sig": "04b335786e169ca02dd6af5ddb3a09d4b6408b9bd07831746e3920ebc3819bce"
+  },
   "/fr/blog/citations-pour-recommencer/": {
     "lastmod": "2026-11-26",
-    "sig": "bd82cddabafb98a902fa9e7b9a78bdc0c529ae0e72bfd920be9bab7d2a78f16a"
+    "sig": "4d86775d658626aebb6f1552a08506b2b7b00fbbe37e178d5e62d386d409ba40"
   },
   "/fr/blog/citations-quand-on-se-sent-dans-une-impasse/": {
     "lastmod": "2026-11-26",
@@ -813,7 +845,7 @@
   },
   "/fr/blog/les-affirmations-fonctionnent-elles/": {
     "lastmod": "2026-11-26",
-    "sig": "f0a21b99c1d82452497fa6ca7d02cec30b2bb3f84f8e12a00ec27db93d4f6fe8"
+    "sig": "09f06d55fc2f27725d6a72135210019a9a786cc6c0c9504cb414efe455281683"
   },
   "/fr/blog/moins-utiliser-son-telephone/": {
     "lastmod": "2026-11-26",
@@ -1121,7 +1153,11 @@
   },
   "/it/blog/": {
     "lastmod": "2026-11-26",
-    "sig": "808ea166372cef69aaec5c5623687a40c1a900d2d4101d9ef986648185b59809"
+    "sig": "2953d81187e4c460722941904df4ee067e2dd38a6131437d5416386e38e1e85f"
+  },
+  "/it/blog/affermazioni-quotidiane/": {
+    "lastmod": "2026-11-26",
+    "sig": "7ff5c8db5b1fa558a46254134103fd2d9a9748931da0b6f96746eef9dbddbed4"
   },
   "/it/blog/buoni-propositi-per-il-nuovo-anno/": {
     "lastmod": "2026-11-26",
@@ -1183,9 +1219,13 @@
     "lastmod": "2026-11-26",
     "sig": "1e91df4b9d903c4e76541028a8659ddfbfb000063cebfaae0e8b655f37fc91a6"
   },
+  "/it/blog/frasi-per-ricominciare-dopo-aver-perso-il-lavoro/": {
+    "lastmod": "2026-11-26",
+    "sig": "b9c485bc9cd94a6cdee0d0f49a8bb594cd71e407fbe851a95c9ca9d6f24e66e0"
+  },
   "/it/blog/frasi-per-ricominciare/": {
     "lastmod": "2026-11-26",
-    "sig": "8bafc7b152df3ef4815c30b26fa5f368f440a9f57f531c882fec20d734f5b727"
+    "sig": "ddcecb16e1069ee91ba1eee0ec13b6dd8cae44390f54f715bc956d8618a6981f"
   },
   "/it/blog/frasi-su-disciplina-e-costanza/": {
     "lastmod": "2026-11-26",
@@ -1197,7 +1237,7 @@
   },
   "/it/blog/le-affermazioni-funzionano/": {
     "lastmod": "2026-11-26",
-    "sig": "5c772611f3b7cbea79315182cf29ac9d6655d163c02cba91b9b5a64bb83d9dbf"
+    "sig": "027e4af4c329c2343d57ecf9a4dcb659935c447dbb9c752b0ceed7fd05c9dbae"
   },
   "/it/blog/motivazione-o-disciplina/": {
     "lastmod": "2026-11-26",
@@ -1397,11 +1437,15 @@
   },
   "/ja/blog/": {
     "lastmod": "2026-11-26",
-    "sig": "8e5e0d273331b8e07cb6a75ab801ee387c987ec005109f9eb530d9bb0ace87cb"
+    "sig": "36cfb961a8ad151b3baef7709ec23b8dd475543c25e4f75777bb73f7bee1a5a2"
   },
   "/ja/blog/christmas-quotes/": {
     "lastmod": "2026-11-26",
     "sig": "779dcf01a2046e034ff38bd91b5a812bdcff32a2e01928bc3bbde08f0fd09dc6"
+  },
+  "/ja/blog/daily-affirmations/": {
+    "lastmod": "2026-11-26",
+    "sig": "1c3b41dcdee02d035c2040262537f795c76f431d253bccee34a85f41edfc8ef9"
   },
   "/ja/blog/discipline-and-consistency-quotes/": {
     "lastmod": "2026-11-26",
@@ -1409,7 +1453,7 @@
   },
   "/ja/blog/do-affirmations-work/": {
     "lastmod": "2026-11-26",
-    "sig": "d38e74576602acbf4a189bab7812d3fead58325ae029418928073f8e84caf13b"
+    "sig": "4dfa8fc0474b7c13004360e4eb80ce12e05bd765c6c86eac9694d1b5a3dad883"
   },
   "/ja/blog/feeling-trapped-quotes/": {
     "lastmod": "2026-11-26",
@@ -1461,7 +1505,7 @@
   },
   "/ja/blog/quotes-about-starting-over/": {
     "lastmod": "2026-11-26",
-    "sig": "af3b4adbe35177e3ea383fa9e6a984b55620aabfd42a4e9ee659200ed2218d29"
+    "sig": "8f6e4670514c52c377e7f2fcc2e3c081f7dc34f6b963970fc74cdd2389d9e1de"
   },
   "/ja/blog/quotes-about-strength-to-keep-going/": {
     "lastmod": "2026-11-26",
@@ -1474,6 +1518,10 @@
   "/ja/blog/quotes-for-self-doubt/": {
     "lastmod": "2026-11-26",
     "sig": "029c6217affa23ea95a9ff682c17347151bca5a0604f1166ca5c2999a43ef60d"
+  },
+  "/ja/blog/quotes-for-starting-over-after-losing-your-job/": {
+    "lastmod": "2026-11-26",
+    "sig": "f73980d358b8598797c9633c1b47d73000ca1f995580dd9863d9bc78f3fb33f6"
   },
   "/ja/blog/quotes-for-when-you-feel-stuck/": {
     "lastmod": "2026-11-26",
@@ -1673,11 +1721,15 @@
   },
   "/ko/blog/": {
     "lastmod": "2026-11-26",
-    "sig": "e20c0344a374cb1f0226f5ebc05d28aca64b51cb282a8aec21a3f0230a39e700"
+    "sig": "d08e50efb5d25748d2167452e9616deef744c082373761b1dcb0e9f10e52ebc1"
   },
   "/ko/blog/christmas-quotes/": {
     "lastmod": "2026-11-26",
     "sig": "d190aa187fb56092ba46bdc9d6528bcdc5e26386b6dfb2f3c2f738dc20948c9f"
+  },
+  "/ko/blog/daily-affirmations/": {
+    "lastmod": "2026-11-26",
+    "sig": "8804371f6c70c99a368422f02e11f32bb57fca5f8e0192d89bc19f2642bbc7c3"
   },
   "/ko/blog/discipline-and-consistency-quotes/": {
     "lastmod": "2026-11-26",
@@ -1685,7 +1737,7 @@
   },
   "/ko/blog/do-affirmations-work/": {
     "lastmod": "2026-11-26",
-    "sig": "1a8a050a6cd9b6e0b1206298c87b23693c4e56d9c2d26aeea912959db85012d7"
+    "sig": "ff25bddee80e97a86488c62855a0257376a826639e6834de8a6f8c9bf397bba3"
   },
   "/ko/blog/feeling-trapped-quotes/": {
     "lastmod": "2026-11-26",
@@ -1737,7 +1789,7 @@
   },
   "/ko/blog/quotes-about-starting-over/": {
     "lastmod": "2026-11-26",
-    "sig": "c8e8dc4f96a7733d71dfcaee7710bd3f4f7d61e6ca7f147022543ef39cf944b7"
+    "sig": "d18c71fa20ed167869beb54d8d6523f4dd9b17b8c5a6febcd552a55fdff760d6"
   },
   "/ko/blog/quotes-about-strength-to-keep-going/": {
     "lastmod": "2026-11-26",
@@ -1750,6 +1802,10 @@
   "/ko/blog/quotes-for-self-doubt/": {
     "lastmod": "2026-11-26",
     "sig": "f98e71bd6f7fd9173933b317f4076f1a3c763aacedafc57f75265878685c36e7"
+  },
+  "/ko/blog/quotes-for-starting-over-after-losing-your-job/": {
+    "lastmod": "2026-11-26",
+    "sig": "c5079c32bd7510a4bad7fc4ad2c3bf663ab4b85986a9f71ca422380b98ce4d44"
   },
   "/ko/blog/quotes-for-when-you-feel-stuck/": {
     "lastmod": "2026-11-26",
@@ -1973,11 +2029,15 @@
   },
   "/pt/blog/": {
     "lastmod": "2026-11-26",
-    "sig": "ecb13f7ea4d8bededbe53e11fe8f35c081eea149cb3c2d18be38a02b25eb0c92"
+    "sig": "7f387567b1813de696be25f539162163b56c136645d44d8e7bcdd7cbe836687b"
+  },
+  "/pt/blog/afirmacoes-diarias/": {
+    "lastmod": "2026-11-26",
+    "sig": "44173cee8d430a8433ab49e2c45cb7f0dd3b3b928b01738474e3cf5c4f24ff5b"
   },
   "/pt/blog/afirmacoes-funcionam/": {
     "lastmod": "2026-11-26",
-    "sig": "031253bd800137ecdeffff772537e860f81cc419c380b8d8939d50f74e0b937f"
+    "sig": "970d4e49ab18828dfc94b550b7ec39dcaef49653ec83eadc5cadea96d0504e78"
   },
   "/pt/blog/como-manter-a-motivacao/": {
     "lastmod": "2026-11-26",
@@ -2047,9 +2107,13 @@
     "lastmod": "2026-11-26",
     "sig": "de3512a3345e2e586a4f33f9fb14fbb4e6169036f62963d04e15c1843a0a5398"
   },
+  "/pt/blog/frases-para-recomecar-depois-de-perder-o-emprego/": {
+    "lastmod": "2026-11-26",
+    "sig": "9e57cd9863a3c611954ec0f04d1d8f7810ba7f846a184c2f6b16a9c38799e252"
+  },
   "/pt/blog/frases-para-recomecar/": {
     "lastmod": "2026-11-26",
-    "sig": "5331cfe02f688c802c9cf1d42cff19953ccc15d1de3eb690cce83e4493ec5a26"
+    "sig": "ffa309aea7a414433e96b04642e17f6a4998979f6737177cf7160accc88cfa90"
   },
   "/pt/blog/motivacao-vs-disciplina/": {
     "lastmod": "2026-11-26",
@@ -2261,11 +2325,15 @@
   },
   "/zh-hant/blog/": {
     "lastmod": "2026-11-26",
-    "sig": "7940652a7421f02e24f8ec32f8b8460d492da19df15aabc05aad15f95d887f09"
+    "sig": "adcd44983daa31fcc7c586fc36bdfa3a7b00cb804b774f958717f98f34ba9540"
   },
   "/zh-hant/blog/christmas-quotes/": {
     "lastmod": "2026-11-26",
     "sig": "d44a1aa7b40e77033cba1cc0faad21460e75e0c1162f5b3b157a0e59bd94d1f7"
+  },
+  "/zh-hant/blog/daily-affirmations/": {
+    "lastmod": "2026-11-26",
+    "sig": "8b1d7853b3dfb8af93e227cb311d0653f04053e8a3a427151fadb6df697dd612"
   },
   "/zh-hant/blog/discipline-and-consistency-quotes/": {
     "lastmod": "2026-11-26",
@@ -2273,7 +2341,7 @@
   },
   "/zh-hant/blog/do-affirmations-work/": {
     "lastmod": "2026-11-26",
-    "sig": "0a3675496a73234f2e71b1a5bd5536fefafdd4bb62f1e44081adb020565b1d9a"
+    "sig": "0abf8082ac5685e706ae57e29a805fca7f4cfc740357048b01333745e2e6c666"
   },
   "/zh-hant/blog/feeling-trapped-quotes/": {
     "lastmod": "2026-11-26",
@@ -2325,7 +2393,7 @@
   },
   "/zh-hant/blog/quotes-about-starting-over/": {
     "lastmod": "2026-11-26",
-    "sig": "bc9568caec429176fbe3d8712c66c97b62aa2fdd2dc798fe25002a749bd20f41"
+    "sig": "cb3a300a43b74e403c0f7d74658133efda69708bb70b8e34b3b3b8176a38f7c3"
   },
   "/zh-hant/blog/quotes-about-strength-to-keep-going/": {
     "lastmod": "2026-11-26",
@@ -2338,6 +2406,10 @@
   "/zh-hant/blog/quotes-for-self-doubt/": {
     "lastmod": "2026-11-26",
     "sig": "8fcd6b11a76dbb868e98bc787f19c71695006ef625116f94ca02060a4880e22c"
+  },
+  "/zh-hant/blog/quotes-for-starting-over-after-losing-your-job/": {
+    "lastmod": "2026-11-26",
+    "sig": "0ee188ffc3f3e79912387ed3d24b30dfd22661c4ba7555bc0221b0959f8120c8"
   },
   "/zh-hant/blog/quotes-for-when-you-feel-stuck/": {
     "lastmod": "2026-11-26",
