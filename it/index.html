@@ -180,11 +180,6 @@ p{margin:0}
 .rating-stars svg{display:block; width:16px; height:16px}
 h1 em{font-style:italic; color:var(--accent)}
 .cta-row{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
-.qr{display:flex; align-items:center; gap:14px}
-/* Fixed light ground in both themes, since a QR needs dark-on-light to scan. */
-.qr-chip{width:120px; height:120px; padding:8px; border-radius:14px; background:#f4ecdc; flex:none}
-.qr-chip img{display:block; width:100%; height:100%}
-.qr-note{font-size:12.5px; line-height:1.35; color:var(--text-faint); max-width:15ch}
 
 /* ============ APP STORE BADGE ============ */
 /* Apple's official badge artwork (img/app-store-badge.svg, from Apple's
@@ -192,6 +187,11 @@ h1 em{font-style:italic; color:var(--accent)}
 .store-badge{display:inline-block; line-height:0; border-radius:9px; transition:transform .18s, box-shadow .18s}
 .store-badge:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.28)}
 .store-badge img{height:52px; width:auto}
+/* Both stores, side by side. A phone shows only its own store's badge
+   (html.is-ios / html.is-android, set by the script at the end of <head>);
+   a computer, or anything the script cannot place, shows both. */
+.store-badges{display:inline-flex; flex-wrap:wrap; align-items:center; gap:12px}
+.is-ios .play-badge, .is-android .apple-badge{display:none}
 
 /* ============ SECTION SHELL ============ */
 section{position:relative}
@@ -305,8 +305,6 @@ details p a{color:var(--accent); text-decoration:underline; text-underline-offse
 .final{text-align:center; padding:clamp(72px,8vw,108px) 0 0}
 .final-in{display:flex; flex-direction:column; align-items:center; gap:23px}
 .final .lede{text-align:center}
-.final .qr{flex-direction:column; text-align:center; gap:10px}
-.final .qr-note{max-width:22ch}
 .find-us .wrap{display:flex; flex-direction:column; gap:16px}
 .featured-badges{display:flex; flex-wrap:wrap; align-items:center; gap:14px}
 .featured-badges a{line-height:0}
@@ -408,8 +406,6 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
   .shots{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:64%; overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:-16px; padding-inline:16px; scroll-padding-inline:16px}
   .shots img{scroll-snap-align:start}
   .home-posts{grid-template-columns:1fr}
-  /* A phone cannot scan its own screen; the button is the way in there. */
-  .qr{display:none}
 }
 /* The first iPhone SE's 320px: Blog, Guides, Help and the language menu fit
    beside the brand once the gaps close up a little. */
@@ -422,7 +418,7 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - motivational quotes","description":"Dailies ti manda brevi frasi motivazionali sulla schermata di blocco e nel widget della schermata Home, in un momento diverso ogni giorno. Scegli i tuoi temi e i tuoi orari, e vai avanti con la tua giornata. Niente pubblicità, nessun accesso da fare.","url":"https://mydailies.app/it/","inLanguage":"it","operatingSystem":"iOS","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/it/lock-screen.jpg","https://mydailies.app/img/app/it/home-screen.jpg","https://mydailies.app/img/app/it/topics.jpg","https://mydailies.app/img/app/it/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
+{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - motivational quotes","description":"Dailies ti manda brevi frasi motivazionali sulla schermata di blocco e nel widget della schermata Home, in un momento diverso ogni giorno. Scegli i tuoi temi e i tuoi orari, e vai avanti con la tua giornata. Niente pubblicità, nessun accesso da fare.","url":"https://mydailies.app/it/","inLanguage":"it","operatingSystem":"iOS, Android","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://play.google.com/store/apps/details?id=com.ashabtay.dailies"],"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://play.google.com/store/apps/details?id=com.ashabtay.dailies"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/it/lock-screen.jpg","https://mydailies.app/img/app/it/home-screen.jpg","https://mydailies.app/img/app/it/topics.jpg","https://mydailies.app/img/app/it/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies mette brevi frasi motivazionali sulla schermata di blocco e sulla schermata Home.","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
@@ -440,9 +436,10 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
 {"@type":"Question","name":"Qual è una buona alternativa all'app Motivation?","acceptedAnswer":{"@type":"Answer","text":"Se Motivation ti piace ma vuoi temi più specifici, più modi per dare stile al widget, o frasi che arrivano in momenti scelti da Dailies nei tuoi orari invece che secondo un programma fisso, prova Dailies. Il confronto completo: Dailies vs Motivation."}},
 {"@type":"Question","name":"Posso salvare le frasi, o scriverne di mie?","acceptedAnswer":{"@type":"Answer","text":"Entrambe le cose. Tocca il cuore su quelle che ti colpiscono e restano in Frasi preferite, e puoi scrivere le tue frasi in Le mie frasi. Con Premium, Dailies ti ripropone le une e le altre insieme al resto. Quello che scrivi e le frasi a cui hai messo il cuore hanno un backup nel tuo account iCloud, così non le perdi se cambi telefono o lo inizializzi."}},
 {"@type":"Question","name":"Dailies è gratis?","acceptedAnswer":{"@type":"Answer","text":"Sì, c'è una versione gratuita con una selezione di temi, sfondi e font tra cui scegliere. Dailies Premium è un abbonamento annuale facoltativo che apre l'intera raccolta: tutti i temi, Frasi preferite e Le mie frasi come feed a sé, tutti gli sfondi, tutti i font e gli effetti, le tue foto e i tuoi colori dietro le frasi, e nessun marchio Dailies sulle immagini che condividi."}},
-{"@type":"Question","name":"Su quali dispositivi funziona Dailies?","acceptedAnswer":{"@type":"Answer","text":"iPhone e iPad, in verticale o in orizzontale. Non esiste una versione per Android. Inquadra il codice in questa pagina, o cerca Dailies su App Store."}}
+{"@type":"Question","name":"Su quali dispositivi funziona Dailies?","acceptedAnswer":{"@type":"Answer","text":"iPhone, iPad e Android, in verticale o in orizzontale. Cerca Dailies su App Store o su Google Play."}}
 ]}
 </script>
+<script>/* Store badges: a phone sees its own store's, anything else sees both. */(function(u,e){if(/Android/i.test(u))e.className+=' is-android';else if(/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1))e.className+=' is-ios'})(navigator.userAgent,document.documentElement)</script>
 </head>
 <body>
 <nav class="nav on-field">
@@ -480,7 +477,7 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
       <p class="rating"><span class="rating-stars" role="img" aria-label="4,7 su 5 stelle"><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><defs><linearGradient id="star-part"><stop offset=".7" stop-color="#f2b632"/><stop offset=".7" stop-color="rgba(243,236,220,.25)"/></linearGradient></defs><path fill="url(#star-part)" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg></span><span><b>4,7</b> su App Store</span></p>
       <h1>Motivazione quotidiana, dritta sulla tua <em>schermata di blocco.</em></h1>
       <p class="lede">Brevi frasi motivazionali sulla schermata di blocco e sulla schermata Home, in un momento diverso ogni giorno. Scegli i tuoi temi e i tuoi orari, e vai avanti con la tua giornata.</p>
-      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-it&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-it.svg" width="156" height="52" alt="Scarica su App Store"></a>
+      <span class="store-badges"><a class="store-badge apple-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-it&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-it.svg" width="156" height="52" alt="Scarica su App Store"></a><a class="store-badge play-badge" href="https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Dmydailies.app%26utm_medium%3Dweb%26utm_campaign%3Dweb-home-it" data-download="hero"><img src="/img/google-play-badge-it.png" width="175" height="52" alt="Disponibile su Google Play"></a></span>
     </div>
 <script>/* The field's cards: short lines (under 72 characters) from the 30 quotes the app's curated start dealt a new reader (kCuratedRandom30 in lib/data/curated_start_sets.dart, the dailies repo), shuffled on every visit. The markup carries the first twelve, for anyone without scripts. While the field is on screen the nav and the browser bar take its color. On a desktop the cards drift a little with the mouse, the near ones more. */
 (function(){
@@ -657,7 +654,7 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
         <details><summary>Dailies è gratis?</summary>
           <p>Sì, c'è una versione gratuita con una selezione di temi, sfondi e font tra cui scegliere. Dailies Premium è un abbonamento annuale facoltativo che apre l'intera raccolta: tutti i temi, Frasi preferite e Le mie frasi come feed a sé, tutti gli sfondi, tutti i font e gli effetti, le tue foto e i tuoi colori dietro le frasi, e nessun marchio Dailies sulle immagini che condividi.</p></details>
         <details><summary>Su quali dispositivi funziona Dailies?</summary>
-          <p>iPhone e iPad, in verticale o in orizzontale. Non esiste una versione per Android. Inquadra il codice in questa pagina, o cerca Dailies su App Store.</p></details>
+          <p>iPhone, iPad e Android, in verticale o in orizzontale. Cerca Dailies su App Store o su Google Play.</p></details>
       </div>
     </div>
   </section>
@@ -667,11 +664,7 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
     <div class="wrap final-in">
       <h2>Comincia oggi con qualcosa di buono.</h2>
       <p class="lede">Lo configuri una volta. Al resto pensa Dailies.</p>
-      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-it&amp;mt=8" data-download="final"><img src="/img/app-store-badge-it.svg" width="156" height="52" alt="Scarica su App Store"></a>
-      <div class="qr">
-        <div class="qr-chip"><img src="/img/home/qr-it.svg" alt="Codice QR che porta a Dailies su App Store"></div>
-        <p class="qr-note">Inquadralo con la fotocamera dell'iPhone per aprire App Store</p>
-      </div>
+      <span class="store-badges"><a class="store-badge apple-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-it&amp;mt=8" data-download="final"><img src="/img/app-store-badge-it.svg" width="156" height="52" alt="Scarica su App Store"></a><a class="store-badge play-badge" href="https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Dmydailies.app%26utm_medium%3Dweb%26utm_campaign%3Dweb-home-it" data-download="final"><img src="/img/google-play-badge-it.png" width="175" height="52" alt="Disponibile su Google Play"></a></span>
     </div>
     <div class="wrap"><footer>
       <span>&copy; 2026 Dailies</span>

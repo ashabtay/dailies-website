@@ -318,6 +318,11 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
 .store-badge{display:inline-block; line-height:0; border-radius:9px; transition:transform .18s, box-shadow .18s}
 .store-badge:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.28)}
 .store-badge img{height:52px; width:auto}
+/* Both stores, side by side. A phone shows only its own store's badge
+   (html.is-ios / html.is-android, set by the script at the end of <head>);
+   a computer, or anything the script cannot place, shows both. */
+.store-badges{display:inline-flex; flex-wrap:wrap; align-items:center; gap:12px}
+.is-ios .play-badge, .is-android .apple-badge{display:none}
 
 /* ============ BLOG ============ */
 .post-hero{margin:clamp(26px,3vw,40px) 0 0; border-radius:22px; overflow:hidden; background:var(--panel); aspect-ratio:21/9}

@@ -193,11 +193,6 @@ p{margin:0}
 .rating-stars svg{display:block; width:16px; height:16px}
 h1 em{font-style:italic; color:var(--accent)}
 .cta-row{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
-.qr{display:flex; align-items:center; gap:14px}
-/* Fixed light ground in both themes, since a QR needs dark-on-light to scan. */
-.qr-chip{width:120px; height:120px; padding:8px; border-radius:14px; background:#f4ecdc; flex:none}
-.qr-chip img{display:block; width:100%; height:100%}
-.qr-note{font-size:12.5px; line-height:1.35; color:var(--text-faint); max-width:15ch}
 
 /* ============ APP STORE BADGE ============ */
 /* Apple's official badge artwork (img/app-store-badge-zh-hant.svg, from Apple's
@@ -205,6 +200,11 @@ h1 em{font-style:italic; color:var(--accent)}
 .store-badge{display:inline-block; line-height:0; border-radius:9px; transition:transform .18s, box-shadow .18s}
 .store-badge:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.28)}
 .store-badge img{height:52px; width:auto}
+/* Both stores, side by side. A phone shows only its own store's badge
+   (html.is-ios / html.is-android, set by the script at the end of <head>);
+   a computer, or anything the script cannot place, shows both. */
+.store-badges{display:inline-flex; flex-wrap:wrap; align-items:center; gap:12px}
+.is-ios .play-badge, .is-android .apple-badge{display:none}
 
 /* ============ SECTION SHELL ============ */
 section{position:relative}
@@ -318,8 +318,6 @@ details p a{color:var(--accent); text-decoration:underline; text-underline-offse
 .final{text-align:center; padding:clamp(72px,8vw,108px) 0 0}
 .final-in{display:flex; flex-direction:column; align-items:center; gap:23px}
 .final .lede{text-align:center}
-.final .qr{flex-direction:column; text-align:center; gap:10px}
-.final .qr-note{max-width:22ch}
 .find-us .wrap{display:flex; flex-direction:column; gap:16px}
 .featured-badges{display:flex; flex-wrap:wrap; align-items:center; gap:14px}
 .featured-badges a{line-height:0}
@@ -421,8 +419,6 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
   .shots{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:64%; overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:-16px; padding-inline:16px; scroll-padding-inline:16px}
   .shots img{scroll-snap-align:start}
   .home-posts{grid-template-columns:1fr}
-  /* A phone cannot scan its own screen; the button is the way in there. */
-  .qr{display:none}
 }
 /* The first iPhone SE's 320px: Blog, Guides, Help and the language menu fit
    beside the brand once the gaps close up a little. */
@@ -438,15 +434,13 @@ html:lang(zh-Hant) #quoteText{letter-spacing:0; line-height:1.55}
 html:lang(zh-Hant) .post-card h3{line-height:1.45}
 html:lang(zh-Hant) .field h1{max-width:none; font-size:clamp(40px,5.6vw,80px); line-height:1.15}
 html:lang(zh-Hant) .fc span{line-height:1.45}
-html:lang(zh-Hant) .qr-note{max-width:9em}
-html:lang(zh-Hant) .final .qr-note{max-width:13em}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none !important; transition:none !important}
   html{scroll-behavior:auto}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - 勵志語錄・名言佳句","description":"Dailies 把簡短的勵志句子送到你的鎖定畫面和主畫面小工具，每天在不同的時刻。選好主題和時段，然後照常過你的一天。沒有廣告，也不用登入。","url":"https://mydailies.app/zh-hant/","inLanguage":"zh-Hant","operatingSystem":"iOS","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/zh-hant/lock-screen.jpg","https://mydailies.app/img/app/zh-hant/home-screen.jpg","https://mydailies.app/img/app/zh-hant/topics.jpg","https://mydailies.app/img/app/zh-hant/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
+{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - 勵志語錄・名言佳句","description":"Dailies 把簡短的勵志句子送到你的鎖定畫面和主畫面小工具，每天在不同的時刻。選好主題和時段，然後照常過你的一天。沒有廣告，也不用登入。","url":"https://mydailies.app/zh-hant/","inLanguage":"zh-Hant","operatingSystem":"iOS, Android","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://play.google.com/store/apps/details?id=com.ashabtay.dailies"],"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://play.google.com/store/apps/details?id=com.ashabtay.dailies"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/zh-hant/lock-screen.jpg","https://mydailies.app/img/app/zh-hant/home-screen.jpg","https://mydailies.app/img/app/zh-hant/topics.jpg","https://mydailies.app/img/app/zh-hant/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies 把簡短的勵志句子放到你的鎖定畫面和主畫面上。","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
@@ -464,9 +458,10 @@ html:lang(zh-Hant) .final .qr-note{max-width:13em}
 {"@type":"Question","name":"有什麼 App 可以取代 Motivation？","acceptedAnswer":{"@type":"Answer","text":"如果你喜歡 Motivation，但想要更細分的主題、更多設計小工具的方式，或希望句子在你的時段內、由 Dailies 挑選的時刻送達，而不是照固定的時間表，那就試試 Dailies。完整比較請看：Dailies vs Motivation。"}},
 {"@type":"Question","name":"可以儲存句子，或寫自己的句子嗎？","acceptedAnswer":{"@type":"Answer","text":"兩者都可以。為打動你的句子點愛心，它們就會留在「喜歡的句子」裡；你也可以在「我的句子」裡寫下自己的句子。有了 Premium，Dailies 會把這兩種句子和其他句子一起送給你。你自己寫的句子和點過愛心的句子都會備份到你的 iCloud 帳號，所以換手機或清除手機資料也不會遺失。"}},
 {"@type":"Question","name":"Dailies 是免費的嗎？","acceptedAnswer":{"@type":"Answer","text":"是的，免費版有一部分主題和背景可以選。Dailies Premium 是可自由選擇的年訂閱，會開放整個句子庫：所有主題、可以單獨追蹤的「喜歡的句子」和「我的句子」、所有背景和效果、在句子後面放上你自己的照片和顏色，而且分享的圖片上不會有字樣標誌。"}},
-{"@type":"Question","name":"Dailies 可以在哪些裝置上使用？","acceptedAnswer":{"@type":"Answer","text":"iPhone 和 iPad，直向或橫向都可以。沒有 Android 版本。掃描這個頁面上的 QR 碼，或在 App Store 搜尋 Dailies。"}}
+{"@type":"Question","name":"Dailies 可以在哪些裝置上使用？","acceptedAnswer":{"@type":"Answer","text":"iPhone、iPad 和 Android，直向或橫向都可以。在 App Store 或 Google Play 搜尋 Dailies。"}}
 ]}
 </script>
+<script>/* Store badges: a phone sees its own store's, anything else sees both. */(function(u,e){if(/Android/i.test(u))e.className+=' is-android';else if(/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1))e.className+=' is-ios'})(navigator.userAgent,document.documentElement)</script>
 </head>
 <body>
 <nav class="nav on-field">
@@ -504,7 +499,7 @@ html:lang(zh-Hant) .final .qr-note{max-width:13em}
       <p class="rating"><span class="rating-stars" role="img" aria-label="4.7 顆星（滿分 5 顆星）"><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><defs><linearGradient id="star-part"><stop offset=".7" stop-color="#f2b632"/><stop offset=".7" stop-color="rgba(243,236,220,.25)"/></linearGradient></defs><path fill="url(#star-part)" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg></span><span>App Store 評分 <b>4.7</b></span></p>
       <h1>每日動力，<br><em>直達鎖定畫面。</em></h1>
       <p class="lede">簡短的勵志句子，出現在你的鎖定畫面和主畫面上，每天在不同的時刻。選好主題和時段，然後照常過你的一天。</p>
-      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-zh-hant&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-zh-hant.svg" width="142" height="52" alt="在 App Store 下載"></a>
+      <span class="store-badges"><a class="store-badge apple-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-zh-hant&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-zh-hant.svg" width="142" height="52" alt="在 App Store 下載"></a><a class="store-badge play-badge" href="https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Dmydailies.app%26utm_medium%3Dweb%26utm_campaign%3Dweb-home-zh-hant" data-download="hero"><img src="/img/google-play-badge-zh-hant.png" width="175" height="52" alt="Google Play 立即下載"></a></span>
     </div>
 <script>/* The field's cards: short lines (under 34 characters) from the 30 quotes the app's curated start dealt a new reader (kCuratedRandom30 in lib/data/curated_start_sets.dart, the dailies repo), shuffled on every visit. The markup carries the first twelve, for anyone without scripts. While the field is on screen the nav and the browser bar take its color. On a desktop the cards drift a little with the mouse, the near ones more. */
 (function(){
@@ -681,7 +676,7 @@ html:lang(zh-Hant) .final .qr-note{max-width:13em}
         <details><summary>Dailies 是免費的嗎？</summary>
           <p>是的，免費版有一部分主題和背景可以選。Dailies Premium 是可自由選擇的年訂閱，會開放整個句子庫：所有主題、可以單獨追蹤的「喜歡的句子」和「我的句子」、所有背景和效果、在句子後面放上你自己的照片和顏色，而且分享的圖片上不會有字樣標誌。</p></details>
         <details><summary>Dailies 可以在哪些裝置上使用？</summary>
-          <p>iPhone 和 iPad，直向或橫向都可以。沒有 Android 版本。掃描這個頁面上的 QR 碼，或在 App Store 搜尋 Dailies。</p></details>
+          <p>iPhone、iPad 和 Android，直向或橫向都可以。在 App Store 或 Google Play 搜尋 Dailies。</p></details>
       </div>
     </div>
   </section>
@@ -691,11 +686,7 @@ html:lang(zh-Hant) .final .qr-note{max-width:13em}
     <div class="wrap final-in">
       <h2>今天，就從一句好話開始。</h2>
       <p class="lede">設定一次，接下來就交給 Dailies。</p>
-      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-zh-hant&amp;mt=8" data-download="final"><img src="/img/app-store-badge-zh-hant.svg" width="142" height="52" alt="在 App Store 下載"></a>
-      <div class="qr">
-        <div class="qr-chip"><img src="/img/home/qr-zh-hant.svg" alt="連到 App Store 上 Dailies 的 QR 碼"></div>
-        <p class="qr-note">用 iPhone 相機掃描，就能打開 App Store</p>
-      </div>
+      <span class="store-badges"><a class="store-badge apple-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-zh-hant&amp;mt=8" data-download="final"><img src="/img/app-store-badge-zh-hant.svg" width="142" height="52" alt="在 App Store 下載"></a><a class="store-badge play-badge" href="https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Dmydailies.app%26utm_medium%3Dweb%26utm_campaign%3Dweb-home-zh-hant" data-download="final"><img src="/img/google-play-badge-zh-hant.png" width="175" height="52" alt="Google Play 立即下載"></a></span>
     </div>
     <div class="wrap"><footer>
       <span>&copy; 2026 Dailies</span>

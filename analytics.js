@@ -90,7 +90,7 @@
 
   /* --------------------------------------------------------------- the CTA */
   /* The one event on this site that resembles a conversion. `location` says
-     which of the identical "Download for iPhone" buttons was pressed, which is
+     which of the identical download buttons was pressed, which is
      the question the page layout actually raises: does anybody reach the one
      at the bottom, or is the hero doing all the work.
 
@@ -99,10 +99,16 @@
      pages all report `location: page`; the page itself is already on the
      event's URL. */
 
+  /* `store` says which badge: every download spot carries both stores' badges
+     (a phone sees only its own, by the script in <head>), and both
+     share the spot's data-download, so the href is what tells them apart. */
+
   function onDownload(a) {
+    var href = a.getAttribute('href') || '';
     track('download_clicked', {
       location: a.getAttribute('data-download') || 'unknown',
-      href: a.getAttribute('href') || ''
+      store: /^https:\/\/play\.google\.com\//.test(href) ? 'google_play' : 'app_store',
+      href: href
     });
     // The same press is the conversion the ad platforms are buying. It goes to
     // consent.js, which owns every tag and reports it to whichever pixels the
@@ -316,7 +322,10 @@
                                handoff_app      ...and the app took over (iPhone)
                                handoff_web      ...or it did not, and the
                                                 page's own composer opened
-                               get_app          an App Store badge tapped
+                               get_app          the Get Dailies link tapped;
+                                                `store` app_store, google_play
+                                                or get_page (a computer, sent
+                                                to /get/)
                                composer_opened  the page's composer, `mode`
                                                 back (a reply) or new
                                change_line      the next house line
@@ -357,7 +366,7 @@
     invalid: 'app_envelope_invalid'
   };
   var APP_ENVELOPE_KEYS = ['own', 'has_author', 'text_length', 'quote_id', 'thread_n', 'open_when',
-    'ms_to_open', 'action', 'platform_guess', 'destination', 'reason', 'mode', 'how', 'step', 'progress', 'short', 'sent_short', 'photo', 'seal'];
+    'ms_to_open', 'action', 'platform_guess', 'destination', 'store', 'reason', 'mode', 'how', 'step', 'progress', 'short', 'sent_short', 'photo', 'seal'];
 
   function envelope(kind, props) {
     var event = APP_ENVELOPE_EVENTS[kind];
