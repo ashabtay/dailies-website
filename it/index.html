@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
+<meta name="p:domain_verify" content="801c54653c023cddcd5ceb462975cf7e">
+<title>Dailies: frasi motivazionali sulla tua schermata di blocco</title>
+<meta name="description" content="Dailies ti manda brevi frasi motivazionali sulla schermata di blocco e nel widget della schermata Home, in un momento diverso ogni giorno. Scegli i tuoi temi e i tuoi orari, e vai avanti con la tua giornata. Niente pubblicità, nessun accesso da fare.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dailies: frasi motivazionali sulla tua schermata di blocco">
+<meta property="og:description" content="Ci sono giorni in cui ti serve una spinta. E giorni in cui ti serve una risata, più concentrazione o il permesso di essere più gentile con te.">
+<meta property="og:url" content="https://mydailies.app/it/">
+<meta property="og:image" content="https://mydailies.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dailies: motivazione quotidiana, dritta sulla tua schermata di blocco">
+<meta property="og:site_name" content="Dailies">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mydailies.app/it/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/">
+<link rel="alternate" hreflang="it" href="https://mydailies.app/it/">
+<link rel="alternate" hreflang="ko" href="https://mydailies.app/ko/">
+<link rel="alternate" hreflang="zh-Hant" href="https://mydailies.app/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+
+<style>
+/* ============ TOKENS: dark-first (the app icon is a night scene) ============ */
+:root{
+  --ground:#191c1d; --ground-deep:#101314; --panel:#202523;
+  --rule:rgba(240,230,210,.13); --rule-soft:rgba(240,230,210,.07);
+  --text:#f0e6d2; --text-dim:#aeaa9c; --text-faint:#888c81;
+  --accent:#9db081; --accent-dim:#7d8f63; --hill:#4f5d3c; --hill-deep:#3b462d;
+  --cite:#bab9a6;
+  --card-shadow:0 24px 60px rgba(0,0,0,.45);
+  --chip:rgba(240,230,210,.05); --chip-on:rgba(157,176,129,.14);
+  --max:1100px;
+  --f-display:Fraunces,Georgia,"Times New Roman",serif;
+  --f-body:Figtree,ui-sans-serif,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"Courier Prime",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+/* Light = dawn over the same hills. Guarded so an explicit dark choice wins. */
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --ground:#f3ecdc; --ground-deep:#e9e0cb; --panel:#fbf7ec;
+    --rule:rgba(27,31,28,.16); --rule-soft:rgba(27,31,28,.08);
+    --text:#1b1f1c; --text-dim:#525749; --text-faint:#5f6457;
+    --accent:#47552f; --accent-dim:#5d6e45; --hill:#7b8b61; --hill-deep:#66754e;
+    --cite:#fff;
+    --card-shadow:0 20px 50px rgba(52,56,40,.16);
+    --chip:rgba(27,31,28,.045); --chip-on:rgba(71,85,47,.12);
+  }
+}
+:root[data-theme="light"]{
+  --ground:#f3ecdc; --ground-deep:#e9e0cb; --panel:#fbf7ec;
+  --rule:rgba(27,31,28,.16); --rule-soft:rgba(27,31,28,.08);
+  --text:#1b1f1c; --text-dim:#525749; --text-faint:#5f6457;
+  --accent:#47552f; --accent-dim:#5d6e45; --hill:#7b8b61; --hill-deep:#66754e;
+  --cite:#fff;
+  --card-shadow:0 20px 50px rgba(52,56,40,.16);
+  --chip:rgba(27,31,28,.045); --chip-on:rgba(71,85,47,.12);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--f-body); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{max-width:100%; display:block}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+.wrap{width:min(100% - 44px,var(--max)); margin-inline:auto}
+
+h1,h2,h3,blockquote{text-wrap:balance; margin:0}
+h1,h2{font-family:var(--f-display); font-optical-sizing:auto; font-weight:400; letter-spacing:-.014em}
+h1{font-size:clamp(35px,4vw,55px); line-height:1.08}
+h2{font-size:clamp(29px,3.3vw,42px); line-height:1.12}
+h3{font-family:var(--f-body); font-weight:600; font-size:18px; line-height:1.35; letter-spacing:-.01em}
+p{margin:0}
+.lede{color:var(--text-dim); font-size:clamp(16.5px,1.3vw,18.5px); max-width:56ch}
+
+.eyebrow{
+  font-family:var(--f-mono); font-size:12px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:11px;
+}
+.eyebrow::before{content:""; width:20px; height:1px; background:var(--accent-dim); flex:none}
+
+/* ============ NAV ============ */
+.nav{position:sticky; top:0; z-index:60; background:color-mix(in srgb,var(--ground) 88%,transparent); backdrop-filter:blur(14px); border-bottom:1px solid var(--rule-soft)}
+.nav-in{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:13px 0}
+.brand{display:flex; align-items:center; gap:11px; text-decoration:none; font-weight:600; letter-spacing:-.02em; font-size:18px}
+.brand img{width:33px; height:33px; border-radius:9px}
+.nav-links{display:flex; align-items:center; gap:28px}
+/* :not(.btn) matters: a bare `.nav-links a` outranks `.btn-primary` and
+   would repaint the pill's label in the muted link color. */
+.nav-links a:not(.btn){text-decoration:none; font-size:14.5px; color:var(--text-dim); transition:color .2s}
+.nav-links a:not(.btn):hover{color:var(--text)}
+.nav-links a.btn{text-decoration:none}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  font-family:var(--f-body); font-size:15px; font-weight:600; text-decoration:none;
+  padding:12px 21px; border-radius:999px; border:1px solid transparent; cursor:pointer;
+  transition:transform .18s;
+}
+.btn-primary{background:var(--text); color:var(--ground)}
+.btn-primary:hover{transform:translateY(-2px)}
+.nav .btn{padding:10px 17px; font-size:14px}
+/* The language menu, the same block as doc.css. The markup is written by
+   tools/languages.py. */
+.lang{position:relative}
+/* The FAQ's accordion styles reach every <details> and <summary> on the page:
+   a rule under it, padding, a weight and a chevron of its own. The menu has
+   its own chevron, so all of that is taken back off here. */
+.lang{border-bottom:0}
+.lang summary{list-style:none; cursor:pointer; padding:0; font-weight:inherit; font-size:inherit; border-radius:8px}
+.lang summary::-webkit-details-marker{display:none}
+.lang summary::marker{content:""}
+.lang summary::after,.lang[open] summary::after{content:none; display:none}
+/* The flex row lives on a span inside <summary>, not on <summary> itself:
+   Safari has a long history of ignoring display on summary. */
+.lang-btn{display:flex; align-items:center; gap:6px; padding:6px 2px; font-size:14.5px; line-height:1; color:var(--text-dim); transition:color .2s}
+.lang summary:hover .lang-btn,.lang[open] .lang-btn{color:var(--text)}
+.lang-btn svg{display:block; flex:none; width:16px; height:16px}
+.lang-btn .chev{width:11px; height:11px; margin-left:-1px; transition:transform .2s}
+.lang[open] .chev{transform:rotate(180deg)}
+.lang-menu{position:absolute; right:0; top:calc(100% + 12px); z-index:70; min-width:168px; display:flex; flex-direction:column; padding:6px; background:var(--panel); border:1px solid var(--rule); border-radius:14px; box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.nav-links .lang-menu a{padding:9px 12px; border-radius:9px; font-size:14.5px; color:var(--text-dim)}
+.nav-links .lang-menu a:hover{background:var(--chip); color:var(--text)}
+.nav-links .lang-menu a[aria-current="true"]{color:var(--text); background:var(--chip-on)}
+
+/* While the hero is on screen the nav takes the field's own night color in
+   both themes, so the top of the page is one dark piece. Redefining the
+   tokens here recolors the links, the language menu and the button too. The
+   script after the hero takes the class off once the field scrolls away. */
+.nav.on-field{
+  --ground:#0b0c0b; --panel:#1b1d1b; --text:#f3ecdc; --text-dim:#b4ad9c;
+  --rule:rgba(243,236,220,.13); --rule-soft:rgba(243,236,220,.07);
+  --chip:rgba(243,236,220,.06); --chip-on:rgba(157,176,129,.16);
+  background:#0b0c0b; border-bottom-color:transparent; color:var(--text)}
+.nav{transition:background-color .3s, border-color .3s}
+
+/* ============ HERO: a field of floating quotes ============ */
+/* Always night, in both themes: the cards are photographs, and the headline
+   reads on dark. Twelve cards (eight on a phone) hang at different depths;
+   the far ones are smaller, dimmer and blurred. A veil darkens the middle so
+   the headline stays legible over them. Each card's line sits where the app
+   puts it, a little above the middle, left-aligned. */
+.field{position:relative; overflow:hidden; height:calc(100svh - 72px); min-height:600px; max-height:980px; background:#0b0c0b; color:#f3ecdc}
+.field-cards{position:absolute; inset:0}
+.fc{position:absolute; left:var(--x); top:var(--y); width:var(--w); aspect-ratio:9/13; margin:0; border-radius:18px; overflow:hidden;
+  filter:blur(var(--b)) brightness(var(--br)); transform:translate(-50%,-50%) rotate(var(--r));
+  animation:float var(--t) ease-in-out infinite alternate; box-shadow:0 30px 60px rgba(0,0,0,.5); transition:margin .5s ease-out}
+.fc img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.fc::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.42) 36%,rgba(0,0,0,.42) 64%,rgba(0,0,0,.18))}
+.fc span{position:absolute; z-index:2; left:12%; right:10%; top:36%; font-family:var(--f-display); font-size:calc(var(--w) * .082); line-height:1.25; color:#f4ecdc; text-shadow:0 1px 10px rgba(0,0,0,.45)}
+@keyframes float{to{translate:0 -18px}}
+.field-veil{position:absolute; inset:0; pointer-events:none; background:radial-gradient(42% 46% at 50% 50%,rgba(11,12,11,.92),rgba(11,12,11,.55) 60%,rgba(11,12,11,.1))}
+.field-copy{position:relative; z-index:2; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:22px; padding:0 18px}
+.field h1{font-weight:300; font-size:clamp(44px,6.4vw,92px); line-height:1; letter-spacing:-.02em; max-width:12ch; color:#f3ecdc}
+.field h1 em{font-weight:400; color:#c9dca8}
+.field .lede{color:#bdb5a4; max-width:46ch}
+/* The App Store star rating. Typed in by hand: update it when the listing's
+   rating changes (see the README). Never a count of ratings. */
+.rating{display:flex; align-items:center; gap:10px; font-size:15px; color:#cfc7b5}
+.rating b{color:#f3ecdc; font-weight:600}
+.rating-stars{display:inline-flex; gap:2px}
+.rating-stars svg{display:block; width:16px; height:16px}
+h1 em{font-style:italic; color:var(--accent)}
+.cta-row{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
+.qr{display:flex; align-items:center; gap:14px}
+/* Fixed light ground in both themes, since a QR needs dark-on-light to scan. */
+.qr-chip{width:120px; height:120px; padding:8px; border-radius:14px; background:#f4ecdc; flex:none}
+.qr-chip img{display:block; width:100%; height:100%}
+.qr-note{font-size:12.5px; line-height:1.35; color:var(--text-faint); max-width:15ch}
+
+/* ============ APP STORE BADGE ============ */
+/* Apple's official badge artwork (img/app-store-badge.svg, from Apple's
+   marketing tools), unmodified. Apple asks for at least 40px of height. */
+.store-badge{display:inline-block; line-height:0; border-radius:9px; transition:transform .18s, box-shadow .18s}
+.store-badge:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.store-badge img{height:52px; width:auto}
+
+/* ============ SECTION SHELL ============ */
+section{position:relative}
+section[id]{scroll-margin-top:84px}
+.band{padding:clamp(66px,7.5vw,100px) 0}
+.band-panel{background:var(--ground-deep)}
+.head{display:flex; flex-direction:column; gap:15px; max-width:56ch; margin-bottom:clamp(34px,4vw,50px)}
+
+/* ============ PICKER ============ */
+.picker{display:grid; grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr); gap:clamp(26px,3.4vw,48px); align-items:start}
+.chips{display:flex; flex-direction:column; gap:9px}
+.chip{
+  font-family:var(--f-body); font-size:16px; text-align:left; cursor:pointer;
+  background:var(--chip); color:var(--text-dim); border:1px solid var(--rule-soft);
+  padding:14px 17px; border-radius:13px; display:flex; align-items:center; gap:12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.chip::before{content:""; width:5px; height:5px; border-radius:50%; background:var(--text-faint); flex:none; transition:background .2s, box-shadow .2s}
+.chip:hover{color:var(--text); border-color:var(--rule)}
+.chip[aria-pressed="true"]{background:var(--chip-on); color:var(--text); border-color:color-mix(in srgb,var(--accent) 42%,transparent)}
+.chip[aria-pressed="true"]::before{background:var(--accent); box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 20%,transparent)}
+
+.answer-card{
+  background:var(--panel); border:1px solid var(--rule-soft); border-radius:22px;
+  padding:clamp(24px,3vw,36px); display:flex; flex-direction:column; gap:20px; min-height:300px;
+}
+.answer-label{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--text-faint); padding-bottom:18px; border-bottom:1px solid var(--rule-soft)}
+.answer-body{flex:1; display:flex; align-items:center}
+#quoteText{
+  font-family:var(--f-display); font-optical-sizing:auto; font-size:clamp(22px,2.4vw,30px);
+  line-height:1.26; letter-spacing:-.01em; transition:opacity .3s ease, translate .3s ease;
+}
+#quoteText.swap{opacity:0; translate:0 7px}
+.answer-foot{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+#quoteAttr{font-family:var(--f-mono); font-size:12.5px; color:var(--text-faint)}
+.again{
+  font-family:var(--f-mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  background:none; border:1px solid var(--rule); color:var(--text-dim);
+  padding:9px 15px; border-radius:999px; cursor:pointer; transition:color .2s, border-color .2s;
+}
+.again:hover{color:var(--accent); border-color:var(--accent-dim)}
+
+/* ============ PULL QUOTE ============ */
+.pull{position:relative; overflow:hidden; background:var(--hill-deep); color:#f2e9d6; padding:clamp(66px,8vw,104px) 0}
+.pull blockquote{
+  font-family:var(--f-display); font-optical-sizing:auto; font-style:italic; font-weight:400;
+  font-size:clamp(26px,3.5vw,44px); line-height:1.18; letter-spacing:-.014em; max-width:17ch; position:relative; z-index:2;
+}
+/* Attribution is 12px, so it needs 4.5:1, and an opacity fade can't reach that on the
+   light hill (cream tops out at 4.12:1 there), hence a per-theme color instead. */
+.pull cite{display:block; margin-top:22px; font:400 12px/1.4 var(--f-mono); letter-spacing:.14em; text-transform:uppercase; font-style:normal; color:var(--cite)}
+.pull-mark{position:absolute; right:-2%; top:-16%; font-family:var(--f-display); font-size:min(42vw,400px); line-height:1; opacity:.09; z-index:1; user-select:none; pointer-events:none}
+
+/* ============ PHOTOS ============ */
+/* The pull quote sits over a photograph, darkened enough for cream text. */
+.pull-photo{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0}
+.pull::before{content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(100deg,rgba(14,17,15,.82) 20%,rgba(14,17,15,.45) 100%)}
+.pull .wrap{position:relative; z-index:2}
+.step img{width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; border-radius:16px; margin-bottom:8px}
+
+.home-posts{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,2.2vw,28px)}
+.post-card{display:flex; flex-direction:column; text-decoration:none; border-radius:20px; overflow:hidden; background:var(--panel); border:1px solid var(--rule-soft); transition:transform .2s, border-color .2s}
+.post-card:hover{transform:translateY(-3px); border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+.post-card-img{aspect-ratio:16/9; overflow:hidden; background:var(--ground-deep)}
+.post-card-img img{width:100%; height:100%; object-fit:cover; transition:transform .5s}
+.post-card:hover .post-card-img img{transform:scale(1.04)}
+.post-card-body{display:flex; flex-direction:column; gap:8px; padding:18px 20px 22px}
+.post-card-kicker{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--accent)}
+.post-card h3{font-family:var(--f-display); font-weight:400; font-size:21px; line-height:1.2; letter-spacing:-.01em}
+.post-card p{color:var(--text-dim); font-size:14.5px; line-height:1.5}
+.more-link{display:inline-block; margin-top:26px; color:var(--accent); font-size:15.5px; text-underline-offset:3px}
+
+/* ============ MOMENTS + FEATURES ============ */
+.moments{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule)}
+.moment{padding:24px 22px 0 0; border-right:1px solid var(--rule-soft); display:flex; flex-direction:column; gap:9px}
+.moment:last-child{border-right:0}
+.moment:not(:first-child){padding-left:22px}
+.moment-name{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent)}
+.moment p{color:var(--text-dim); font-size:15.5px; max-width:26ch}
+
+.feats{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:clamp(22px,2.6vw,36px); margin-top:clamp(46px,5vw,68px)}
+.feat{display:flex; flex-direction:column; gap:8px; padding-top:20px; border-top:1px solid var(--rule)}
+.feat p{color:var(--text-dim); font-size:15px}
+
+/* ============ STEPS ============ */
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(24px,3vw,42px); counter-reset:s}
+.step{display:flex; flex-direction:column; gap:9px; padding-top:22px; border-top:1px solid var(--rule); counter-increment:s}
+.step::before{content:counter(s,decimal-leading-zero); font-family:var(--f-mono); font-size:12.5px; letter-spacing:.13em; color:var(--accent)}
+.step p{color:var(--text-dim); font-size:15.5px}
+.shots{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,2vw,26px)}
+.shots img{width:100%; height:auto; border-radius:18px}
+
+/* ============ FAQ ============ */
+.faq{max-width:70ch}
+details{border-bottom:1px solid var(--rule-soft)}
+summary{cursor:pointer; list-style:none; padding:19px 40px 19px 0; position:relative; font-weight:500; font-size:17px; transition:color .2s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--accent)}
+summary::after{
+  content:""; position:absolute; right:8px; top:50%; width:9px; height:9px;
+  border-right:1.5px solid var(--text-faint); border-bottom:1.5px solid var(--text-faint);
+  translate:0 -60%; rotate:45deg; transition:rotate .22s, border-color .2s;
+}
+details[open] summary::after{rotate:225deg; translate:0 -30%; border-color:var(--accent)}
+details p{color:var(--text-dim); font-size:15.5px; padding:0 6ch 21px 0; max-width:62ch}
+/* The FAQ answers are the only place on this page that links out. Without
+   this they inherit body colour and read as ordinary text. */
+details p a{color:var(--accent); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px}
+
+/* ============ FINAL + FOOTER ============ */
+.final{text-align:center; padding:clamp(72px,8vw,108px) 0 0}
+.final-in{display:flex; flex-direction:column; align-items:center; gap:23px}
+.final .lede{text-align:center}
+.final .qr{flex-direction:column; text-align:center; gap:10px}
+.final .qr-note{max-width:22ch}
+.find-us .wrap{display:flex; flex-direction:column; gap:16px}
+.featured-badges{display:flex; flex-wrap:wrap; align-items:center; gap:14px}
+.featured-badges a{line-height:0}
+footer{
+  margin-top:clamp(56px,7vw,84px); padding:24px 0 28px; border-top:1px solid var(--rule-soft);
+  display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  font-family:var(--f-mono); font-size:12px; letter-spacing:.05em; color:var(--text-faint);
+}
+footer nav{display:flex; gap:22px; flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{color:var(--accent)}
+footer .social{display:flex; align-items:center; gap:6px; margin:-6px auto -6px -6px}
+footer .social a{display:flex; padding:6px}
+footer .social svg{width:16px; height:16px; fill:currentColor}
+
+/* ============ FREE TO TRY ============
+   The wallpaper makers and the envelope pages, between the hero and the
+   app's screenshots. Each card is a picture you can tap, a line of what you
+   get, the topics as their own links (each is its own page), and a button. */
+.free{padding-top:clamp(40px,5vw,64px)}
+.free-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(16px,2.4vw,28px); margin-top:clamp(22px,3vw,34px)}
+.free-card{display:flex; flex-direction:column; border:1px solid var(--rule-soft); border-radius:26px; overflow:hidden;
+  background:linear-gradient(var(--chip),var(--chip)),var(--ground); box-shadow:0 14px 40px rgba(0,0,0,.10)}
+.free-art{position:relative; display:block; height:clamp(210px,24vw,270px); overflow:hidden}
+.free-wall .free-art{background:radial-gradient(120% 120% at 50% 0%,#3b4a38,#141917)}
+.free-env .free-art{background:radial-gradient(120% 120% at 50% 0%,#c8b48d,#8f7550)}
+.free-phone{position:absolute; bottom:-26%; width:30%; aspect-ratio:9/19.5; border-radius:18px; overflow:hidden;
+  border:5px solid #0b0d0c; box-shadow:0 14px 34px rgba(0,0,0,.45); transition:transform .3s}
+.free-phone img{width:100%; height:100%; object-fit:cover; display:block}
+.free-phone:nth-child(1){left:8%; transform:rotate(-8deg) translateY(10px)}
+.free-phone:nth-child(2){left:35%; bottom:-14%; z-index:2}
+.free-phone:nth-child(3){left:62%; transform:rotate(8deg) translateY(10px)}
+.free-envelope{position:absolute; left:50%; top:54%; width:min(62%,280px); aspect-ratio:1.5; transform:translate(-50%,-50%) rotate(-4deg);
+  transition:transform .3s; filter:drop-shadow(0 18px 30px rgba(40,28,10,.35))}
+.free-envelope i{position:absolute; display:block}
+.free-envelope .fe-back{inset:0; border-radius:12px; background:#b99c6c}
+.free-envelope .fe-letter{left:8%; right:8%; top:-18%; height:70%; border-radius:6px; background:#fffaf0; padding:10% 9% 0;
+  font:400 13px/1.35 var(--f-display); color:#3e372d; text-align:center; font-style:normal; overflow:hidden}
+.free-envelope .fe-pocket{inset:0; border-radius:12px; background:linear-gradient(170deg,#efdfbf,#ddc59a); clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%)}
+.free-envelope .fe-seal{left:50%; top:57%; width:44px; height:44px; margin:-22px 0 0 -22px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#c0493f,#86251f 72%); color:#f6e2cf; display:grid; place-items:center;
+  font:500 19px/1 var(--f-display); font-style:normal; box-shadow:0 3px 8px rgba(0,0,0,.3)}
+.free-body{display:flex; flex-direction:column; gap:12px; padding:clamp(20px,2.4vw,28px)}
+.free-body h3{font-family:var(--f-display); font-weight:400; font-size:clamp(23px,2.2vw,28px); line-height:1.15; letter-spacing:-.01em}
+.free-body h3 a{color:inherit; text-decoration:none}
+.free-body p{color:var(--text-dim); font-size:16px; line-height:1.45}
+.free-pick{display:flex; flex-direction:column; gap:10px; margin-top:4px}
+.free-pick-label{font-size:15px; font-weight:600; color:var(--text)}
+.free-topics{display:flex; flex-wrap:wrap; gap:8px}
+.free-topics a{display:inline-flex; align-items:center; gap:4px; padding:8px 10px 8px 14px; border-radius:999px;
+  border:1.5px solid var(--accent-dim); background:var(--chip-on); color:var(--text); font-size:14.5px; font-weight:600;
+  text-decoration:none; transition:background .15s, border-color .15s, transform .15s}
+.free-topics a svg{width:15px; height:15px; color:var(--accent); flex:none}
+.free-topics a:hover{border-color:var(--accent); transform:translateY(-1px)}
+.free-cta{align-self:flex-start; display:inline-flex; align-items:center; gap:8px; margin-top:4px; padding:12px 20px; border-radius:999px;
+  background:var(--accent); color:var(--ground); font-weight:600; font-size:15.5px; text-decoration:none; transition:filter .15s, transform .15s}
+.free-cta:hover{filter:brightness(1.08); transform:translateX(2px)}
+.free-cta svg{width:18px; height:18px}
+@media (max-width:820px){ .free-grid{grid-template-columns:1fr} }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:940px){
+  .picker{grid-template-columns:1fr}
+  .chips{flex-direction:row; flex-wrap:wrap}
+  .chip{flex:1 1 auto; font-size:15px; padding:12px 15px}
+  .moments,.steps{grid-template-columns:repeat(2,1fr)}
+  .home-posts{grid-template-columns:1fr 1fr}
+  .moment{border-right:0; padding-left:0 !important; padding-right:20px; border-bottom:1px solid var(--rule-soft); padding-bottom:20px}
+  /* Small screens keep the blog, guides and help links up top (the class is
+     named for the first of them); the badge in the hero is the way to the
+     App Store. */
+  .nav-links > a:not(.btn):not(.nav-blog){display:none}
+  .nav-links .btn{display:none}
+  .nav-links a.nav-blog{font-size:16px; color:var(--text)}
+  .brand{flex-direction:column; gap:3px; font-size:12.5px; font-weight:500; letter-spacing:0}
+  .brand img{width:30px; height:30px; border-radius:8px}
+  .nav-in{padding:10px 0}
+  .store-badge img{height:58px}
+}
+/* On a phone the field keeps eight cards, moved out to the edges so the
+   headline has the middle to itself. */
+@media (max-width:700px){
+  .field{height:calc(100svh - 74px); min-height:640px}
+  .fc{left:var(--mx); top:var(--my); width:var(--mw)}
+  .fc span{font-size:calc(var(--mw) * .082)}
+  .fc.wide{display:none}
+  .field h1{font-size:clamp(40px,11vw,56px)}
+}
+@media (max-width:560px){
+  body{font-size:16.5px}
+  /* The language menu keeps its globe and chevron and drops the name, and its
+     list hangs from the nav's right gutter, as on the other pages. */
+  .lang-name{display:none}
+  .lang-btn{gap:3px}
+  .lang{position:static}
+  .lang-menu{right:16px; top:calc(100% - 4px)}
+  .wrap{width:min(100% - 32px,var(--max))}
+  .moments,.steps{grid-template-columns:1fr}
+  .shots{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:64%; overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:-16px; padding-inline:16px; scroll-padding-inline:16px}
+  .shots img{scroll-snap-align:start}
+  .home-posts{grid-template-columns:1fr}
+  /* A phone cannot scan its own screen; the button is the way in there. */
+  .qr{display:none}
+}
+/* The first iPhone SE's 320px: Blog, Guides, Help and the language menu fit
+   beside the brand once the gaps close up a little. */
+@media (max-width:359px){
+  .nav-links{gap:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important; transition:none !important}
+  html{scroll-behavior:auto}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - motivational quotes","description":"Dailies ti manda brevi frasi motivazionali sulla schermata di blocco e nel widget della schermata Home, in un momento diverso ogni giorno. Scegli i tuoi temi e i tuoi orari, e vai avanti con la tua giornata. Niente pubblicità, nessun accesso da fare.","url":"https://mydailies.app/it/","inLanguage":"it","operatingSystem":"iOS","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/it/lock-screen.jpg","https://mydailies.app/img/app/it/home-screen.jpg","https://mydailies.app/img/app/it/topics.jpg","https://mydailies.app/img/app/it/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies mette brevi frasi motivazionali sulla schermata di blocco e sulla schermata Home.","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Che cos'è Dailies?","acceptedAnswer":{"@type":"Answer","text":"Dailies è un'app di motivazione quotidiana. Ti manda brevi frasi motivazionali dai temi che segui, in un momento diverso ogni giorno negli orari che scegli, e ne mette una sulla schermata di blocco e sulla schermata Home. Niente pubblicità e nessun accesso da fare. Quando ne vuoi di più, c'è un feed da scorrere, e niente a cui stare dietro."}},
+{"@type":"Question","name":"Per chi è Dailies?","acceptedAnswer":{"@type":"Answer","text":"Per chiunque voglia una piccola spinta costante senza un'altra abitudine da gestire: una frase sulla schermata di blocco tra una riunione e l'altra, una pacata la sera, una divertente quando la giornata non passa mai."}},
+{"@type":"Question","name":"Devo aprire l'app per ricevere la mia motivazione quotidiana?","acceptedAnswer":{"@type":"Answer","text":"No. Le frasi arrivano come notifiche, e una nuova ti aspetta sulla schermata di blocco e nel widget della schermata Home. Apri l'app quando vuoi continuare a leggere, rivedere quelle che hai salvato o scriverne di tue."}},
+{"@type":"Question","name":"Posso scegliere quali frasi motivazionali ricevere?","acceptedAnswer":{"@type":"Answer","text":"Sì. Segui i temi che ti stanno a cuore (calma, fiducia in sé, umorismo, lavoro, salute, fede, creatività e altri), e Dailies sceglie tra quelli. Cambiali quando vuoi, insieme a quanto spesso ti scriviamo e agli orari in cui ti va bene sentirci."}},
+{"@type":"Question","name":"Dailies può mandare frasi a orari casuali durante la giornata?","acceptedAnswer":{"@type":"Answer","text":"Sì. Scegli quante frasi al giorno vuoi, e gli orari e i giorni in cui ti va bene sentirci, e Dailies le distribuisce in quella fascia, a orari diversi ogni giorno. Una frase che non ti aspettavi è una frase che leggi davvero. Maggiori dettagli in come ricevere frasi motivazionali a orari casuali."}},
+{"@type":"Question","name":"Posso avere versetti della Bibbia, filosofia o frasi divertenti nel widget?","acceptedAnswer":{"@type":"Answer","text":"Sì. Segui i temi di Fede per i versetti della Bibbia, quelli di Senso e Calma per le frasi di Marco Aurelio, Lao Tzu e Montaigne, o quelli di Umorismo per frasi asciutte e gentili. Il widget e le notifiche attingono da ciò che segui."}},
+{"@type":"Question","name":"Dailies funziona sulla schermata di blocco dell'iPhone?","acceptedAnswer":{"@type":"Answer","text":"Sì. Dailies ha un widget per la schermata di blocco e uno per la schermata Home, così una frase è lì appena prendi in mano il telefono, senza sbloccare né aprire niente. Passo per passo: come mettere frasi sulla schermata di blocco dell'iPhone e come aggiungere un widget alla schermata Home."}},
+{"@type":"Question","name":"In cosa Dailies è diversa dalle altre app di frasi?","acceptedAnswer":{"@type":"Answer","text":"Le frasi arrivano in momenti diversi negli orari che scegli, invece che una volta alla stessa ora ogni giorno, così continuano ad attirare la tua attenzione. Segui temi specifici, non categorie generiche, e ogni frase porta il nome di chi l'ha scritta. E puoi rendere tuo il widget, con fotografie, font ed effetti discreti dietro le parole, che si muovono nel widget della schermata Home. Niente pubblicità a nessun livello, e nessun account da creare. Non c'è niente a cui stare dietro: leggine una quando arriva, e basta."}},
+{"@type":"Question","name":"Qual è una buona alternativa all'app Motivation?","acceptedAnswer":{"@type":"Answer","text":"Se Motivation ti piace ma vuoi temi più specifici, più modi per dare stile al widget, o frasi che arrivano in momenti scelti da Dailies nei tuoi orari invece che secondo un programma fisso, prova Dailies. Il confronto completo: Dailies vs Motivation."}},
+{"@type":"Question","name":"Posso salvare le frasi, o scriverne di mie?","acceptedAnswer":{"@type":"Answer","text":"Entrambe le cose. Tocca il cuore su quelle che ti colpiscono e restano in Frasi preferite, e puoi scrivere le tue frasi in Le mie frasi. Con Premium, Dailies ti ripropone le une e le altre insieme al resto. Quello che scrivi e le frasi a cui hai messo il cuore hanno un backup nel tuo account iCloud, così non le perdi se cambi telefono o lo inizializzi."}},
+{"@type":"Question","name":"Dailies è gratis?","acceptedAnswer":{"@type":"Answer","text":"Sì, c'è una versione gratuita con una selezione di temi, sfondi e font tra cui scegliere. Dailies Premium è un abbonamento annuale facoltativo che apre l'intera raccolta: tutti i temi, Frasi preferite e Le mie frasi come feed a sé, tutti gli sfondi, tutti i font e gli effetti, le tue foto e i tuoi colori dietro le frasi, e nessun marchio Dailies sulle immagini che condividi."}},
+{"@type":"Question","name":"Su quali dispositivi funziona Dailies?","acceptedAnswer":{"@type":"Answer","text":"iPhone e iPad, in verticale o in orizzontale. Non esiste una versione per Android. Inquadra il codice in questa pagina, o cerca Dailies su App Store."}}
+]}
+</script>
+</head>
+<body>
+<nav class="nav on-field">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><img src="/icon.png" alt=""><span>Dailies</span></a>
+    <div class="nav-links">
+      <a class="nav-blog" href="/it/blog/">Blog</a>
+      <a class="nav-blog" href="/it/guide/">Guide</a>
+      <a class="nav-blog" href="/it/aiuto/">Aiuto</a>
+      <details class="lang"><summary aria-label="Lingua: Italiano"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">Italiano</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/" hreflang="en" lang="en">English</a><a href="/fr/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/" hreflang="de" lang="de-DE">Deutsch</a><a href="/it/" hreflang="it" lang="it" aria-current="true">Italiano</a><a href="/es/" hreflang="es" lang="es-MX">Español</a><a href="/pt/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant-TW">繁體中文</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="#get">Scarica Dailies</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="field">
+    <div class="field-cards" id="field-cards" aria-hidden="true">
+      <figure class="fc" style="--x:9%;--y:20%;--w:110px;--b:3.2px;--br:0.45;--r:-3deg;--t:6s;--mx:12%;--my:16%;--mw:70px" data-z="0.0"><img src="/img/home/field/night-lake.jpg" width="360" height="520" alt="" decoding="async"><span>Non rimpicciolirti perché qualcun altro possa restare a suo agio.</span></figure>
+      <figure class="fc" style="--x:24%;--y:74%;--w:194px;--b:1.0px;--br:0.8;--r:4deg;--t:7s;--mx:88%;--my:14%;--mw:112px" data-z="0.7"><img src="/img/home/field/mtn-peak-dawn.jpg" width="360" height="520" alt="" decoding="async"><span>Non tutto ha bisogno di una risposta oggi.</span></figure>
+      <figure class="fc" style="--x:38%;--y:12%;--w:158px;--b:1.9px;--br:0.65;--r:-5deg;--t:8s;--mx:8%;--my:52%;--mw:94px" data-z="0.4"><img src="/img/home/field/sea-sunset-surf.jpg" width="360" height="520" alt="" decoding="async"><span>Ogni piccolo obiettivo che raggiungi è un trampolino verso il prossimo.</span></figure>
+      <figure class="fc" style="--x:63%;--y:10%;--w:122px;--b:2.9px;--br:0.5;--r:6deg;--t:9s;--mx:92%;--my:50%;--mw:76px" data-z="0.1"><img src="/img/home/field/field-first-light.jpg" width="360" height="520" alt="" decoding="async"><span>La direzione conta più della velocità.</span></figure>
+      <figure class="fc" style="--x:78%;--y:26%;--w:206px;--b:0.6px;--br:0.85;--r:-7deg;--t:10s;--mx:18%;--my:88%;--mw:118px" data-z="0.8"><img src="/img/home/field/forest-fog-canopy.jpg" width="360" height="520" alt="" decoding="async"><span>Sii utile, non disponibile.</span></figure>
+      <figure class="fc" style="--x:91%;--y:62%;--w:170px;--b:1.6px;--br:0.7;--r:3deg;--t:6s;--mx:84%;--my:90%;--mw:100px" data-z="0.5"><img src="/img/home/field/sky-above-the-clouds.jpg" width="360" height="520" alt="" decoding="async"><span>La tua voglia di imparare è già una capacità.</span></figure>
+      <figure class="fc" style="--x:72%;--y:86%;--w:134px;--b:2.6px;--br:0.55;--r:-4deg;--t:7s;--mx:50%;--my:8%;--mw:82px" data-z="0.2"><img src="/img/home/field/zen-misty-pier.jpg" width="360" height="520" alt="" decoding="async"><span>I passi alle tue spalle dimostrano che quelli davanti sono possibili.</span></figure>
+      <figure class="fc" style="--x:6%;--y:58%;--w:218px;--b:0.3px;--br:0.9;--r:5deg;--t:8s;--mx:50%;--my:96%;--mw:124px" data-z="0.9"><img src="/img/home/field/desert-dusk.jpg" width="360" height="520" alt="" decoding="async"><span>Anche i passi incerti ti portano avanti.</span></figure>
+      <figure class="fc wide" style="--x:30%;--y:44%;--w:182px;--b:1.3px;--br:0.75;--r:-6deg;--t:9s" data-z="0.6"><img src="/img/home/field/mtn-blue-ridges.jpg" width="360" height="520" alt="" decoding="async"><span>Ogni capitolo che finisci rende il successivo più facile da scrivere.</span></figure>
+      <figure class="fc wide" style="--x:86%;--y:8%;--w:146px;--b:2.2px;--br:0.6;--r:7deg;--t:10s" data-z="0.3"><img src="/img/home/field/night-aurora.jpg" width="360" height="520" alt="" decoding="async"><span>Sai fare bene più cose di quante ne ricordi.</span></figure>
+      <figure class="fc wide" style="--x:50%;--y:92%;--w:110px;--b:3.2px;--br:0.45;--r:-3deg;--t:6s" data-z="0.0"><img src="/img/home/field/field-dandelions.jpg" width="360" height="520" alt="" decoding="async"><span>La natura ama la pazienza: ricordalo sempre.</span></figure>
+      <figure class="fc wide" style="--x:96%;--y:90%;--w:194px;--b:1.0px;--br:0.8;--r:4deg;--t:7s" data-z="0.7"><img src="/img/home/field/sky-cloud-line.jpg" width="360" height="520" alt="" decoding="async"><span>La forza che hai costruito in silenzio ti servirà ovunque.</span></figure>
+    </div>
+    <div class="field-veil"></div>
+    <div class="field-copy">
+      <p class="rating"><span class="rating-stars" role="img" aria-label="4,7 su 5 stelle"><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><defs><linearGradient id="star-part"><stop offset=".7" stop-color="#f2b632"/><stop offset=".7" stop-color="rgba(243,236,220,.25)"/></linearGradient></defs><path fill="url(#star-part)" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg></span><span><b>4,7</b> su App Store</span></p>
+      <h1>Motivazione quotidiana, dritta sulla tua <em>schermata di blocco.</em></h1>
+      <p class="lede">Brevi frasi motivazionali sulla schermata di blocco e sulla schermata Home, in un momento diverso ogni giorno. Scegli i tuoi temi e i tuoi orari, e vai avanti con la tua giornata.</p>
+      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-it&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-it.svg" width="156" height="52" alt="Scarica su App Store"></a>
+    </div>
+<script>/* The field's cards: short lines (under 72 characters) from the 30 quotes the app's curated start dealt a new reader (kCuratedRandom30 in lib/data/curated_start_sets.dart, the dailies repo), shuffled on every visit. The markup carries the first twelve, for anyone without scripts. While the field is on screen the nav and the browser bar take its color. On a desktop the cards drift a little with the mouse, the near ones more. */
+(function(){
+  var Q=[{"t":"Non rimpicciolirti perché qualcun altro possa restare a suo agio."},{"t":"Non tutto ha bisogno di una risposta oggi."},{"t":"Ogni piccolo obiettivo che raggiungi è un trampolino verso il prossimo."},{"t":"La direzione conta più della velocità."},{"t":"Sii utile, non disponibile."},{"t":"La tua voglia di imparare è già una capacità."},{"t":"Alcune delle cose facili di oggi un tempo erano le più difficili per te."},{"t":"I passi alle tue spalle dimostrano che quelli davanti sono possibili."},{"t":"Anche i passi incerti ti portano avanti."},{"t":"Ogni capitolo che finisci rende il successivo più facile da scrivere."},{"t":"Ciò che non ti è destinato la mano non può raggiungerlo, e ciò che ti è destinato ti troverà ovunque tu sia.","a":"Saadi"},{"t":"Sai fare bene più cose di quante ne ricordi."},{"t":"La natura ama la pazienza: ricordalo sempre.","a":"Nikolaj Gogol'"},{"t":"La forza che hai costruito in silenzio ti servirà ovunque."},{"t":"Bisogna fare il bene senza preoccuparsi che qualcuno lo sappia.","a":"Ernest Renan"},{"t":"La fama è l'ombra della passione che sta nella luce.","a":"Kahlil Gibran"},{"t":"Le persone della tua vita stanno meglio perché ti conoscono."},{"t":"Sbagliare è l'unico modo in cui qualcuno abbia mai imparato qualcosa."},{"t":"Dentro di te ci sono un cuore forte e una mente lucida."},{"t":"Tieni fermi i tuoi obiettivi, ma sii flessibile sui tuoi piani.","a":"Steve Pavlina"},{"t":"Le scelte coraggiose portano a vite più piene."},{"t":"La costanza è semplicemente dimostrare al tuo sogno che fai sul serio."},{"t":"Che cosa sono il genio o il coraggio senza un cuore?","a":"Oliver Goldsmith"},{"t":"La pazienza ti fa vedere ciò che sfuggirebbe alla fretta."},{"t":"Il valore di una persona non sta in ciò che ottiene, ma in ciò che anela a ottenere.","a":"Kahlil Gibran"},{"t":"Mantieni la rotta. La strada lunga fa per te."},{"t":"Così come ci vogliono muscoli per costruire muscoli, ci vuole autodisciplina per costruire autodisciplina.","a":"Steve Pavlina"},{"t":"Ogni sì a qualcosa di nuovo rende il tuo mondo un po' più grande."},{"t":"Ogni buona abitudine è iniziata con un solo giorno di coraggio."},{"t":"La crescita è possibile in ogni fase della vita."}];
+  var nav=document.querySelector('.nav'), field=document.querySelector('.field'),
+      tc=[].slice.call(document.querySelectorAll('meta[name="theme-color"]')),
+      tc0=tc.map(function(m){return m.content});
+  function onField(on){
+    nav.classList.toggle('on-field',on);
+    tc.forEach(function(m,i){m.content=on?'#0b0c0b':tc0[i]});
+  }
+  onField(true);
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){onField(e[0].isIntersecting)},{rootMargin:'-80px 0px 0px 0px'}).observe(field);
+  var q=Q.filter(function(x){return x.t.length<72});
+  for(var i=q.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=q[i];q[i]=q[j];q[j]=t}
+  var c=document.querySelectorAll('#field-cards .fc');
+  for(var k=0;k<c.length;k++) c[k].querySelector('span').textContent=q[k%q.length].t;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!matchMedia('(hover: hover)').matches) return;
+  addEventListener('mousemove',function(e){
+    var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+    for(var k=0;k<c.length;k++){var z=+c[k].dataset.z+.2;c[k].style.marginLeft=(-x*60*z)+'px';c[k].style.marginTop=(-y*40*z)+'px'}
+  });
+})();
+</script>
+  </section>
+
+  <!-- FREE TO TRY -->
+  <section class="band free" id="free">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Gratis, proprio qui</div>
+        <h2>Fanne uno per te. Mandane uno a qualcuno.</h2>
+      </div>
+      <div class="free-grid">
+        <div class="free-card free-wall">
+          <div class="free-art" aria-hidden="true"><span class="free-phone"><img src="/img/wallpapers/it/un-anno-di-piccoli-passi-puo-sorprenderti.jpg" width="540" height="1170" alt="" loading="lazy"></span><span class="free-phone"><img src="/img/wallpapers/it/tieni-viva-la-speranza-tieni-vivo-il-sogno.jpg" width="540" height="1170" alt="" loading="lazy"></span><span class="free-phone"><img src="/img/wallpapers/it/puoi-fare-di-oggi-una-delle-giornate-belle.jpg" width="540" height="1170" alt="" loading="lazy"></span></div>
+          <div class="free-body">
+            <h3>Sfondi con frasi per la schermata di blocco</h3>
+            <p>Scegli una frase e uno sfondo, e salvalo in pochi secondi.</p>
+            <div class="free-pick"><span class="free-pick-label">Crea uno sfondo</span><div class="free-topics"><a href="/it/sfondi-motivazionali/">Motivazionali<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/it/frasi-ispiranti-schermata-di-blocco/">Ispiranti<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/it/frasi-positive-schermata-di-blocco/">Positive<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a></div></div>
+          </div>
+        </div>
+        <div class="free-card free-env">
+          <div class="free-art" aria-hidden="true"><span class="free-envelope"><i class="fe-back"></i><i class="fe-letter">Guarda cosa hai attraversato, eppure speri ancora.</i><i class="fe-pocket"></i><i class="fe-seal">D</i></span></div>
+          <div class="free-body">
+            <h3>Manda a qualcuno qualche parola gentile</h3>
+            <p>Riceve una piccola busta che si apre sulla tua frase. Senza bisogno dell'app.</p>
+            <div class="free-pick"><span class="free-pick-label">Manda una busta</span><div class="free-topics"><a href="/it/parole-di-incoraggiamento/">Incoraggiamento<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/it/frasi-motivazionali-da-inviare/">Per una persona cara<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/it/frasi-d-amore-da-dedicare/">Amore<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/it/frasi-del-buongiorno/">Buongiorno<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE APP -->
+  <section class="band" id="app">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Nell'app</div>
+        <h2>Ecco come appare sul tuo iPhone.</h2>
+      </div>
+      <div class="shots">
+        <img src="/img/app/it/lock-screen.jpg" width="600" height="1298" alt="Dailies sulla schermata di blocco dell'iPhone: una frase sotto l'orologio e una notifica con una frase di Ralph Waldo Emerson" loading="lazy">
+        <img src="/img/app/it/home-screen.jpg" width="600" height="1298" alt="Il widget di Dailies in cima alla schermata Home dell'iPhone, con una frase su una foto di montagna" loading="lazy">
+        <img src="/img/app/it/topics.jpg" width="600" height="1298" alt="La scelta dei temi in Dailies, come Calma, Fiducia in sé e Senso" loading="lazy">
+        <img src="/img/app/it/notifications.jpg" width="600" height="1298" alt="Una frase di Dailies che arriva come notifica sulla schermata di blocco" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- PICKER -->
+  <section class="band band-panel" id="taste">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Un assaggio</div>
+        <h2>Scegli un tema. Guarda cosa ti arriva.</h2>
+        <p class="lede">Sono temi veri dell'app, e frasi vere della sua raccolta.</p>
+      </div>
+      <div class="picker">
+        <div class="chips" id="chips"></div>
+        <div class="answer-card">
+          <span class="answer-label">Riceveresti qualcosa del genere</span>
+          <div class="answer-body"><p id="quoteText"></p></div>
+          <div class="answer-foot">
+            <span id="quoteAttr"></span>
+            <button class="again" id="again" type="button">Un'altra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="pull">
+    <img class="pull-photo" src="/img/home/pull.jpg" width="1080" height="608" alt="" loading="lazy">
+    <span class="pull-mark" aria-hidden="true">&#8221;</span>
+    <div class="wrap">
+      <blockquote>Sei forte anche quanto il tuo anello più forte.</blockquote>
+      <cite>Kahlil Gibran, Il profeta</cite>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="band band-panel" id="how">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Come funziona</div>
+        <h2>Lo configuri una volta, e non ci pensi più.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><img src="/img/home/step-1.jpg" width="720" height="450" alt="Soffioni in un prato" loading="lazy"><h3>Scegli cosa ti interessa</h3><p>Indica alcune cose a cui tieni. Cambiale quando vuoi.</p></div>
+        <div class="step"><img src="/img/home/step-2.jpg" width="720" height="450" alt="Una passerella di legno tra l'erba delle dune, verso il mare" loading="lazy"><h3>Imposta il tuo ritmo</h3><p>Un paio al giorno, o qualcuna in più. Decidi tu.</p></div>
+        <div class="step"><img src="/img/home/step-3.jpg" width="720" height="450" alt="L'alba sulle montagne, sopra le nuvole" loading="lazy"><h3>Vai avanti con la tua giornata</h3><p>Arrivano belle parole. Leggile, salvale, condividile.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FROM THE BLOG -->
+  <section class="band" id="blog">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Dal blog</div>
+        <h2>Motivazione, senza urlare.</h2>
+        <p class="lede">Raccolte di frasi per i momenti in cui ne serve una, e risposte chiare su come funziona la motivazione.</p>
+      </div>
+      <div class="home-posts">
+        <a class="post-card" href="/it/blog/come-motivarsi/"><div class="post-card-img"><img src="/img/blog/how-to-motivate-yourself-thumb.jpg" width="640" height="360" alt="" loading="lazy"></div><div class="post-card-body"><div class="post-card-kicker">Le basi della motivazione</div><h3>Come motivarti quando non hai motivazione</h3><p>Perché di solito la motivazione arriva per seconda, e cosa fare prima che arrivi.</p></div></a>
+        <a class="post-card" href="/it/blog/frasi-motivazionali-per-i-momenti-difficili/"><div class="post-card-img"><img src="/img/blog/motivational-quotes-for-hard-times-thumb.jpg" width="640" height="360" alt="" loading="lazy"></div><div class="post-card-body"><div class="post-card-kicker">Frasi</div><h3>Frasi motivazionali per i momenti difficili</h3><p>Righe pacate per superare la giornata di oggi, e per il lungo tratto buio.</p></div></a>
+        <a class="post-card" href="/it/blog/frasi-motivazionali-del-mattino/"><div class="post-card-img"><img src="/img/blog/morning-motivation-quotes-thumb.jpg" width="640" height="360" alt="" loading="lazy"></div><div class="post-card-body"><div class="post-card-kicker">Frasi</div><h3>Frasi motivazionali del mattino</h3><p>Letture migliori della posta in arrivo per cominciare la giornata.</p></div></a>
+      </div>
+      <a class="more-link" href="/it/blog/">Tutti gli articoli del blog</a>
+    </div>
+  </section>
+
+  <!-- FIND US -->
+  <section class="find-us" aria-label="Ci trovi anche qui">
+    <div class="wrap">
+      <div class="eyebrow">Ci trovi anche qui</div>
+      <div class="featured-badges">
+        <a href="https://apptierlist.com/apps/dailies-motivational-quotes-6804210416/?from=badge"><img src="https://apptierlist.com/badge/dailies-motivational-quotes-6804210416.svg?k=atl-zlfcqm" alt="Dailies su AppTierList" width="129" height="40"></a>
+        <a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge2-dark.svg" alt="In evidenza su Twelve Tools" width="148" height="40"></a>
+        <a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&amp;theme=light" alt="Badge di Fazier" width="169" height="40"></a>
+        <a href="https://startupfa.me/s/dailies?utm_source=mydailies.app" target="_blank"><img src="https://startupfa.me/badges/featured-badge.webp" alt="Dailies in evidenza su Startup Fame" width="127" height="40"></a>
+        <a href="https://neeed.directory" target="_blank" rel="noopener"><img src="https://neeed.directory/badges/neeed-badge-light.svg" alt="In evidenza su neeed.directory" width="126" height="40"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band" id="faq">
+    <div class="wrap">
+      <div class="head"><h2>Domande.</h2></div>
+      <div class="faq">
+        <details open><summary>Che cos'è Dailies?</summary>
+          <p>Dailies è un'app di motivazione quotidiana. Ti manda brevi frasi motivazionali dai temi che segui, in un momento diverso ogni giorno negli orari che scegli, e ne mette una sulla schermata di blocco e sulla schermata Home. Niente pubblicità e nessun accesso da fare. Quando ne vuoi di più, c'è un feed da scorrere, e niente a cui stare dietro.</p></details>
+        <details><summary>Per chi è Dailies?</summary>
+          <p>Per chiunque voglia una piccola spinta costante senza un'altra abitudine da gestire: una frase sulla schermata di blocco tra una riunione e l'altra, una pacata la sera, una divertente quando la giornata non passa mai.</p></details>
+        <details><summary>Devo aprire l'app per ricevere la mia motivazione quotidiana?</summary>
+          <p>No. Le frasi arrivano come notifiche, e una nuova ti aspetta sulla schermata di blocco e nel widget della schermata Home. Apri l'app quando vuoi continuare a leggere, rivedere quelle che hai salvato o scriverne di tue.</p></details>
+        <details><summary>Posso scegliere quali frasi motivazionali ricevere?</summary>
+          <p>Sì. Segui i temi che ti stanno a cuore (calma, fiducia in sé, umorismo, lavoro, salute, fede, creatività e altri), e Dailies sceglie tra quelli. Cambiali quando vuoi, insieme a quanto spesso ti scriviamo e agli orari in cui ti va bene sentirci.</p></details>
+        <details><summary>Dailies può mandare frasi a orari casuali durante la giornata?</summary>
+          <p>Sì. Scegli quante frasi al giorno vuoi, e gli orari e i giorni in cui ti va bene sentirci, e Dailies le distribuisce in quella fascia, a orari diversi ogni giorno. Una frase che non ti aspettavi è una frase che leggi davvero. Maggiori dettagli in <a href="/it/guide/frasi-motivazionali-a-orari-casuali/">come ricevere frasi motivazionali a orari casuali</a>.</p></details>
+        <details><summary>Posso avere versetti della Bibbia, filosofia o frasi divertenti nel widget?</summary>
+          <p>Sì. Segui i temi di Fede per i versetti della Bibbia, quelli di Senso e Calma per le frasi di Marco Aurelio, Lao Tzu e Montaigne, o quelli di Umorismo per frasi asciutte e gentili. Il widget e le notifiche attingono da ciò che segui.</p></details>
+        <details><summary>Dailies funziona sulla schermata di blocco dell'iPhone?</summary>
+          <p>Sì. Dailies ha un widget per la schermata di blocco e uno per la schermata Home, così una frase è lì appena prendi in mano il telefono, senza sbloccare né aprire niente. Passo per passo: <a href="/it/guide/frasi-sulla-schermata-di-blocco-dell-iphone/">come mettere frasi sulla schermata di blocco dell'iPhone</a> e <a href="/it/guide/aggiungere-un-widget-alla-schermata-home/">come aggiungere un widget alla schermata Home</a>.</p></details>
+        <details><summary>In cosa Dailies è diversa dalle altre app di frasi?</summary>
+          <p>Le frasi arrivano in momenti diversi negli orari che scegli, invece che una volta alla stessa ora ogni giorno, così continuano ad attirare la tua attenzione. Segui temi specifici, non categorie generiche, e ogni frase porta il nome di chi l'ha scritta. E puoi rendere tuo il widget, con fotografie, font ed effetti discreti dietro le parole, che si muovono nel widget della schermata Home. Niente pubblicità a nessun livello, e nessun account da creare. Non c'è niente a cui stare dietro: leggine una quando arriva, e basta.</p></details>
+        <details><summary>Qual è una buona alternativa all'app Motivation?</summary>
+          <p>Se Motivation ti piace ma vuoi temi più specifici, più modi per dare stile al widget, o frasi che arrivano in momenti scelti da Dailies nei tuoi orari invece che secondo un programma fisso, prova Dailies. Il confronto completo: <a href="/it/confronto/dailies-vs-motivation/">Dailies vs Motivation</a>.</p></details>
+        <details><summary>Posso salvare le frasi, o scriverne di mie?</summary>
+          <p>Entrambe le cose. Tocca il cuore su quelle che ti colpiscono e restano in Frasi preferite, e puoi scrivere le tue frasi in Le mie frasi. Con Premium, Dailies ti ripropone le une e le altre insieme al resto. Quello che scrivi e le frasi a cui hai messo il cuore hanno un backup nel tuo account iCloud, così non le perdi se cambi telefono o lo inizializzi.</p></details>
+        <details><summary>Dailies è gratis?</summary>
+          <p>Sì, c'è una versione gratuita con una selezione di temi, sfondi e font tra cui scegliere. Dailies Premium è un abbonamento annuale facoltativo che apre l'intera raccolta: tutti i temi, Frasi preferite e Le mie frasi come feed a sé, tutti gli sfondi, tutti i font e gli effetti, le tue foto e i tuoi colori dietro le frasi, e nessun marchio Dailies sulle immagini che condividi.</p></details>
+        <details><summary>Su quali dispositivi funziona Dailies?</summary>
+          <p>iPhone e iPad, in verticale o in orizzontale. Non esiste una versione per Android. Inquadra il codice in questa pagina, o cerca Dailies su App Store.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="band final" id="get" style="padding-bottom:0">
+    <div class="wrap final-in">
+      <h2>Comincia oggi con qualcosa di buono.</h2>
+      <p class="lede">Lo configuri una volta. Al resto pensa Dailies.</p>
+      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-it&amp;mt=8" data-download="final"><img src="/img/app-store-badge-it.svg" width="156" height="52" alt="Scarica su App Store"></a>
+      <div class="qr">
+        <div class="qr-chip"><img src="/img/home/qr-it.svg" alt="Codice QR che porta a Dailies su App Store"></div>
+        <p class="qr-note">Inquadralo con la fotocamera dell'iPhone per aprire App Store</p>
+      </div>
+    </div>
+    <div class="wrap"><footer>
+      <span>&copy; 2026 Dailies</span>
+      <div class="social">
+        <a href="https://www.tiktok.com/@mydailies.app" aria-label="TikTok" title="TikTok" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#tiktok"/></svg></a>
+        <a href="https://www.instagram.com/mydailies.app/" aria-label="Instagram" title="Instagram" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#instagram"/></svg></a>
+        <a href="https://www.facebook.com/mydailiesapp" aria-label="Facebook" title="Facebook" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#facebook"/></svg></a>
+        <a href="https://www.youtube.com/@mydailiesapp" aria-label="YouTube" title="YouTube" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#youtube"/></svg></a>
+        <a href="https://www.pinterest.com/mydailiesapp/" aria-label="Pinterest" title="Pinterest" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#pinterest"/></svg></a>
+        <a href="https://www.linkedin.com/company/mydailiesapp/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#linkedin"/></svg></a>
+      </div>
+      <nav>
+        <a href="/it/confronto/">Confronti</a>
+        <a href="/it/chi-siamo/">Chi siamo</a>
+        <a href="/press/" hreflang="en">Stampa</a>
+        <a href="/terms/" hreflang="en">Termini</a>
+        <a href="/privacy/" hreflang="en">Privacy</a>
+        <a href="/cookies/" hreflang="en">Cookie</a>
+        <a href="#" data-cookie-settings>Impostazioni cookie</a>
+      </nav>
+    </footer></div>
+  </section>
+</main>
+
+<script>
+/* ---------- Taste picker: real quotes from the app's own library ---------- */
+(function(){
+  const SETS = [{"id": "believe", "label": "Fiducia in sé", "set": "confidence", "quotes": [{"t": "Nessuno è diventato bravo in qualcosa senza prima averlo fatto male davanti a tutti.", "a": null}, {"t": "Non è lentezza. Stai imparando qualcosa di davvero difficile.", "a": null}, {"t": "Non hai perso i progressi. Hai fatto una pausa.", "a": null}]}, {"id": "laugh", "label": "Umorismo", "set": "humor", "quotes": [{"t": "I tupperware e i coperchi vivono in edifici separati e si rifiutano di incontrarsi.", "a": null}, {"t": "Ho cominciato a fare «ahh» quando mi siedo e non si torna più indietro.", "a": null}, {"t": "Non ho mai lasciato un negozio con soltanto la cosa che mi serviva.", "a": null}]}, {"id": "direction", "label": "Direzione", "set": "direction", "quotes": [{"t": "Proteggi le tue ore migliori dalle richieste degli altri.", "a": null}, {"t": "Le cose importanti non arrivano quasi mai con la scritta «urgente».", "a": null}, {"t": "Non puoi arrivare a un'altra vita solo pensandoci.", "a": null}]}, {"id": "calm", "label": "Calma", "set": "calm", "quotes": [{"t": "Dai alla preoccupazione un appuntamento, non l'intera giornata.", "a": null}, {"t": "Siediti all'aperto per il tempo di una tazza di tè.", "a": null}, {"t": "Puoi avere una brutta settimana senza che significhi qualcosa.", "a": null}]}, {"id": "work", "label": "Lavoro", "set": "work", "quotes": [{"t": "Ogni sì costa una serata. Dagli il prezzo giusto.", "a": null}, {"t": "Avere tanto da fare non equivale a essere utili, eppure la sensazione è quasi identica.", "a": null}, {"t": "Il tuo lavoro non deve essere famoso per avere un senso.", "a": null}]}, {"id": "kind-to-self", "label": "Gentilezza verso di sé", "set": "self_kindness", "quotes": [{"t": "Hai fatto quello che potevi con la giornata che avevi.", "a": null}, {"t": "Muoviti perché ti fa bene, non perché devi a qualcuno una certa forma.", "a": null}, {"t": "Chi sembra non fare fatica di solito l'ha già fatto altrove.", "a": null}]}];
+  const chips = document.getElementById('chips');
+  const qText = document.getElementById('quoteText');
+  const qAttr = document.getElementById('quoteAttr');
+  const again = document.getElementById('again');
+  let active = 0, idx = 0;
+
+  function attr(q){ return q.a ? '\u2014 ' + q.a : ''; }
+
+  SETS.forEach((n,i)=>{
+    const b = document.createElement('button');
+    b.type='button'; b.className='chip'; b.textContent=n.label;
+    if(n.set) b.dataset.set=n.set;
+    b.setAttribute('aria-pressed', i===0 ? 'true':'false');
+    b.addEventListener('click', ()=>{ i===active ? cycle() : select(i); });
+    chips.appendChild(b);
+  });
+
+  function render(){
+    const n = SETS[active], q = n.quotes[idx % n.quotes.length];
+    qText.classList.add('swap');
+    setTimeout(()=>{
+      qText.textContent = '\u201C' + q.t + '\u201D';
+      qAttr.textContent = attr(q);
+      qText.classList.remove('swap');
+    }, 190);
+  }
+  function select(i){
+    active = i; idx = 0;
+    [...chips.children].forEach((c,j)=>c.setAttribute('aria-pressed', j===i ? 'true':'false'));
+    render();
+  }
+  function cycle(){ idx++; render(); }
+  again.addEventListener('click', cycle);
+
+  const q0 = SETS[0].quotes[0];
+  qText.textContent = '\u201C' + q0.t + '\u201D';
+  qAttr.textContent = attr(q0);
+})();
+</script>
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

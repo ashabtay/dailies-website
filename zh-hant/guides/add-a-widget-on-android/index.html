@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>如何在 Android 上加入小工具 | Dailies</title>
+<meta name="description" content="在 Samsung Galaxy、Google Pixel 或任何其他 Android 手機的主畫面加入小工具，接著調整大小、移動或移除它，並解決小工具找不到或卡住不動的問題。">
+<link rel="canonical" href="https://mydailies.app/zh-hant/guides/add-a-widget-on-android/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-a-widget-on-android/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-un-widget-en-android/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-um-widget-no-android/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/ajouter-un-widget-sur-android/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/widget-hinzufuegen-android/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/add-a-widget-on-android/">
+<link rel="alternate" hreflang="it" href="https://mydailies.app/it/guide/aggiungere-un-widget-su-android/">
+<link rel="alternate" hreflang="ko" href="https://mydailies.app/ko/guides/add-a-widget-on-android/">
+<link rel="alternate" hreflang="zh-Hant" href="https://mydailies.app/zh-hant/guides/add-a-widget-on-android/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-a-widget-on-android/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在 Android 上加入小工具">
+<meta property="og:description" content="按住、點一下「小工具」、拖動。接著是 Samsung 和 Pixel 的不同之處，以及小工具找不到或卡住不動時該怎麼辦。">
+<meta property="og:url" content="https://mydailies.app/zh-hant/guides/add-a-widget-on-android/">
+<meta property="og:image" content="https://mydailies.app/img/guides/add-a-widget-on-android-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="霧氣籠罩的山坡上，一條穿過松林的狹窄小徑">
+<meta property="og:site_name" content="Dailies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/zh-hant/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/zh-hant/blog/">部落格</a>
+      <a href="/zh-hant/guides/">指南</a>
+      <a href="/zh-hant/help/">說明</a>
+      <details class="lang"><summary aria-label="語言: 繁體中文"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">繁體中文</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/guides/add-a-widget-on-android/" hreflang="en" lang="en">English</a><a href="/fr/guides/ajouter-un-widget-sur-android/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/anleitungen/widget-hinzufuegen-android/" hreflang="de" lang="de-DE">Deutsch</a><a href="/it/guide/aggiungere-un-widget-su-android/" hreflang="it" lang="it">Italiano</a><a href="/es/guias/agregar-un-widget-en-android/" hreflang="es" lang="es-MX">Español</a><a href="/pt/guias/adicionar-um-widget-no-android/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/guides/add-a-widget-on-android/" hreflang="ja" lang="ja">日本語</a><a href="/ko/guides/add-a-widget-on-android/" hreflang="ko" lang="ko">한국어</a><a href="/zh-hant/guides/add-a-widget-on-android/" hreflang="zh-Hant" lang="zh-Hant-TW" aria-current="true">繁體中文</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/zh-hant/#get">取得 Dailies</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">指南</div>
+      <h1>如何在 Android 上加入小工具</h1>
+      <p class="lede">在大部分的 Android 手機上，都是同樣的三個動作：按住主畫面、打開「小工具」、把一個小工具拖到定位。各家手機廠商的用詞會有一點不同，這一頁就是幫你把這些整理清楚，也會說明你想要的小工具找不到或卡住不動時該怎麼辦。</p>
+      <p class="doc-meta"><span><a href="/zh-hant/about/">Amit Shabtay</a>（Dailies 開發者）</span> <span>2026年11月13日根據 Google 和 Samsung 的說明文件撰寫，未在手機上實際操作</span></p>
+    </div>
+  </header>
+
+  <div class="wrap"><figure class="post-hero"><img src="/img/guides/add-a-widget-on-android.jpg" width="1080" height="608" alt="霧氣籠罩的山坡上，一條穿過松林的狹窄小徑" fetchpriority="high"></figure></div>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">本頁內容</div>
+      <a href="#steps">加入小工具</a>
+      <a href="#samsung">在 Samsung Galaxy 上</a>
+      <a href="#pixel">在 Google Pixel 上</a>
+      <a href="#resize">調整大小、移動、移除</a>
+      <a href="#app">App 主動提議時</a>
+      <a href="#fix">出問題的時候</a>
+      <a href="#dailies">Dailies 小工具</a>
+      <a href="#faq">常見問題</a>
+    </aside>
+
+    <div class="prose">
+
+      <section id="steps">
+        <h2>加入小工具</h2>
+        <div class="callout plain">
+          <p>用的是 iPhone 嗎？步驟請見<a href="/zh-hant/guides/add-a-widget-to-your-home-screen/">如何在主畫面加入小工具</a>。</p>
+        </div>
+        <p>以下是 Google 在 Android 說明中提供的步驟，適用於大部分的 Android 手機。這裡以 Dailies 為例；任何有小工具的 App 都一樣。</p>
+        <ol>
+          <li><strong>按住主畫面上的空白處</strong>，也就是沒有圖示或小工具的地方。</li>
+          <li>點一下<strong>「小工具」</strong>。</li>
+          <li><strong>找到那個 App</strong>，也就是有你想要的小工具的 App，例如 Dailies，點一下它來查看它的小工具。</li>
+          <li><strong>按住那個小工具。</strong>你的主畫面各頁的縮圖會出現。</li>
+          <li><strong>把它滑到你想放的位置</strong>，然後放開手指。</li>
+        </ol>
+        <p>Google 註明，其中有些步驟只適用於 Android 14 以上版本。在比較舊的手機上，選單看起來可能不一樣，但基本的流程仍然是按住、<strong>「小工具」</strong>、拖動。</p>
+        <p>很多手機都有兩個捷徑。小工具列表的最上方通常有搜尋欄位，比在長長的列表中捲動快多了。而按住 App 本身的圖示，會打開一個小選單，在很多手機上可以從那裡直接前往那個 App 的小工具。</p>
+      </section>
+
+      <section id="samsung">
+        <h2>在 Samsung Galaxy 上</h2>
+        <p>Galaxy 手機執行的是 One UI，也就是 Samsung 自己的 Android 版本。Samsung 的說明是讓你選好小工具後點一下按鈕，而不是拖動它：</p>
+        <ol>
+          <li>按住主畫面上的空白處。</li>
+          <li>點一下畫面底部的<strong>小工具</strong>。建議的小工具會排在最前面；往下捲動可以看到其他的。</li>
+          <li>點一下那個 App，再點一下你想要的小工具。有些小工具有不只一種樣式或尺寸，你可以在這裡挑選。</li>
+          <li>點一下<strong>新增</strong>。小工具就會放到主畫面上。</li>
+        </ol>
+        <p>按住已經放好的小工具，會打開 Samsung 的選單。在那裡的<strong>設定</strong>中，可以更改背景顏色和透明度之類的項目（如果小工具允許的話），而<strong>移除</strong>會把它從主畫面上拿掉。Samsung 也可以把小工具堆疊在同一個位置，滑動切換。</p>
+      </section>
+
+      <section id="pixel">
+        <h2>在 Google Pixel 上</h2>
+        <p>Pixel 是 Google 自己的手機，所以這一頁最上面的步驟，就一字不差地是 Pixel 的步驟：按住空白處，點一下<strong>「小工具」</strong>，點一下那個 App，然後按住小工具，把它拖到定位。</p>
+        <ul>
+          <li><strong>列表依 App 分組。</strong>每個 App 只出現一次；點一下它就能打開它的小工具。最上方的搜尋欄位可以輸入 App 的名稱。</li>
+          <li><strong>有些版本可以省略拖動。</strong>在列表中點一下某個小工具，就會出現一個加入它的按鈕；點一下那個按鈕，Pixel 就會幫它找個位置。</li>
+        </ul>
+      </section>
+
+      <section id="resize">
+        <h2>調整大小、移動和移除</h2>
+        <h3>調整大小</h3>
+        <ul>
+          <li>按住小工具，然後放開手指。</li>
+          <li>如果小工具可以調整大小，它周圍會出現一個帶有圓點的外框。</li>
+          <li>拖動圓點，讓它變大或變小。</li>
+          <li>完成後，點一下小工具以外的地方。</li>
+        </ul>
+        <p>在 Samsung 上，外框的用法也一樣：按住一個圓點並拖動。你只能使用 App 允許的尺寸，所以小工具可能在螢幕還沒用完之前就無法再變大。</p>
+        <h3>移動</h3>
+        <p>按住小工具並拖動。你的主畫面各頁的縮圖會出現；把它滑到新的位置，或滑到螢幕邊緣前往另一頁，然後放開手指。</p>
+        <h3>移除</h3>
+        <p>按住小工具，把它往上拖到<strong>「移除」</strong>；在 Samsung 上，則是按住它再點一下<strong>移除</strong>。這只會把小工具從主畫面上拿掉，其他什麼都不會動：App 仍然安裝著，裡面的一切也都還在。有些手機在同一個位置會顯示<strong>「解除安裝」</strong>，那才是會刪除 App 的選項，所以放開之前，先看清楚你拖到的是哪個字。</p>
+      </section>
+
+      <section id="app">
+        <h2>App 主動提議幫你加入時</h2>
+        <p>從 Android 8 開始，App 可以請手機把它的小工具放到主畫面上。你在 App 裡點一下按鈕，名稱通常類似<strong>「加入主畫面」</strong>，Android 就會用它自己的視窗回應，顯示小工具的預覽。</p>
+        <ul>
+          <li><strong>你同意之前，什麼都不會加入。</strong>在那個視窗中確認，小工具就會出現在主畫面上。把視窗關掉，就什麼都不會改變。</li>
+          <li><strong>在有些手機上，你可以自己決定位置</strong>，方法是按住預覽，把它拖到你想放的地方。</li>
+          <li><strong>不是每個主畫面都支援這個功能。</strong>App 可以先檢查，所以在有些手機上，這個按鈕根本不會出現。這一頁最上面的步驟則永遠有效。</li>
+        </ul>
+      </section>
+
+      <section id="fix">
+        <h2>出問題的時候</h2>
+
+        <h3>列表中找不到小工具</h3>
+        <p>大致依照解決問題的常見程度排列：</p>
+        <ol>
+          <li><strong>打開 App 一次。</strong>在有些手機上，App 要打開過之後，它的小工具才會出現，試試看也沒有損失。</li>
+          <li><strong>用搜尋，而不是捲動</strong>，並在 App 的名稱下面找。列表是依 App 排序的，而不是依每個小工具的功能。</li>
+          <li><strong>確認那個 App 有小工具。</strong>不是每個 App 都有。</li>
+          <li><strong>重新安裝 App。</strong>解除安裝後再安裝一次，打開它一次，然後再找找看。</li>
+          <li><strong>檢查是否有工作設定檔。</strong>如果你的手機有工作設定檔，工作用的 App 會和個人的 App 分開，小工具列表通常會把它們放在另一個分頁。安裝在其中一邊的 App，只會在那一邊顯示它的小工具。</li>
+          <li><strong>在 Samsung 上，確認版面配置沒有被鎖定。</strong>如果你什麼都無法加入或移除，或選項是灰色的，可能是開啟了<strong>鎖定主畫面版面配置</strong>。到主畫面設定中把它關閉。</li>
+        </ol>
+
+        <h3>小工具沒有更新</h3>
+        <p>決定小工具什麼時候可以重新繪製的是 Android，而不是 App，而 Android 會為了省電而延後這件事。</p>
+        <ul>
+          <li><strong>關閉省電模式。</strong>Samsung 上同樣叫做<strong>省電模式</strong>。它會限制 App 在背景做的事，小工具也包括在內。</li>
+          <li><strong>檢查 App 自己的電池設定。</strong>在<strong>「設定」&rarr;「應用程式」</strong>中，打開那個 App 和它的電池頁面。如果它被禁止在背景執行，就允許它。</li>
+          <li><strong>在 Samsung 上，檢查休眠中的應用程式。</strong>在電池設定的<strong>背景使用限制</strong>下，把那個 App 從<strong>休眠應用程式</strong>和<strong>深度休眠應用程式</strong>中移出來。</li>
+          <li><strong>打開 App 一次。</strong>很多 App 在打開時會重新繪製它們的小工具。</li>
+          <li><strong>移除小工具，再重新加入。</strong></li>
+        </ul>
+
+        <h3>你的手機看起來不是這樣</h3>
+        <p>主畫面本身就是一個 App，叫做啟動器，每家手機廠商都有自己的版本：Google 手機上的 Pixel Launcher、Samsung 手機上的 One UI Home，Motorola、OnePlus、Xiaomi 等其他廠商也各有一套。它們都保留了按住和<strong>「小工具」</strong>選單，但周圍的用詞會變。如果你自己安裝了啟動器，它的小工具選單就在那個啟動器放的地方，通常也是在同樣的按住動作之後。當這裡的某個標籤和你的手機對不上時，就找「小工具」這幾個字。</p>
+      </section>
+
+      <section id="dailies">
+        <h2>Android 上的 Dailies 小工具</h2>
+        <p>Dailies 是一款每日激勵 App，在執行 Android 10 以上版本的手機上，它會把一句話放到你的主畫面。關於它，你需要知道的是：</p>
+        <ul>
+          <li><strong>只有主畫面。</strong>Android 上沒有鎖定畫面小工具。不過句子仍然可以透過通知來到你的鎖定畫面，或者存成圖片放進相簿，再設成桌布。</li>
+          <li><strong>箭頭和愛心可以直接使用。</strong>在主畫面上就能往前或往後切換句子，或替一句話按愛心。</li>
+          <li><strong>每到整點就換一句。</strong>每小時一句新的話，不用打開任何東西。</li>
+          <li><strong>App 可以幫你放上去。</strong>打開<strong>「個人化」&rarr;「主畫面小工具」</strong>，點一下<strong>「加入主畫面」</strong>。有幾種手機不提供這個功能，所以這個按鈕只會在可以使用的手機上出現。</li>
+          <li><strong>省電模式可能會讓它停下來。</strong>如果小工具不再更換，就關閉省電模式並打開 Dailies 一次；如果還是沒用，就移除小工具再重新加入。</li>
+        </ul>
+        <p>關於通知，打開<strong>「設定」&rarr;「應用程式」&rarr;「Dailies」&rarr;「通知」</strong>（路徑依手機而異），確認<em>「每日句子」</em>已開啟。其他的一切都在<a href="/zh-hant/help/#widget">說明頁面</a>上。</p>
+      </section>
+
+      <section id="faq">
+        <h2>常見問題</h2>
+        <div class="faq">
+          <details open><summary>為什麼按住時沒有「小工具」選項？</summary>
+            <div class="details-body">
+              <p>你可能按住的是 App 圖示或小工具，這會打開那個項目自己的選單。請按住一個什麼都沒有的地方。在有些手機上，用兩指在主畫面上捏合也能打開同一個選單。</p>
+            </div></details>
+
+          <details><summary>移除小工具會解除安裝 App 嗎？</summary>
+            <div class="details-body">
+              <p>不會。「移除」會把小工具從主畫面上拿掉，App 和裡面的一切都會留在原處。「解除安裝」才是會刪除 App 的選項。</p>
+            </div></details>
+
+          <details><summary>要怎麼讓小工具變大或變小？</summary>
+            <div class="details-body">
+              <p>按住它，放開手指，然後拖動外框上的圓點。如果沒有出現圓點，表示那個小工具只有一種尺寸。</p>
+            </div></details>
+
+          <details><summary>在 Android 上可以把 Dailies 小工具放到鎖定畫面嗎？</summary>
+            <div class="details-body">
+              <p>不行。在 Android 上，Dailies 只有主畫面小工具。不過句子仍然可以透過通知來到你的鎖定畫面，或者存成圖片放進相簿，再設成桌布。</p>
+            </div></details>
+
+          <details><summary>為什麼 Dailies 小工具不再更換了？</summary>
+            <div class="details-body">
+              <p>通常是手機在省電。關閉省電模式，打開 Dailies 一次，如果還是沒用，就移除小工具再重新加入。</p>
+            </div></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <div class="social">
+      <a href="https://www.tiktok.com/@mydailies.app" aria-label="TikTok" title="TikTok" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#tiktok"/></svg></a>
+      <a href="https://www.instagram.com/mydailies.app/" aria-label="Instagram" title="Instagram" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#instagram"/></svg></a>
+      <a href="https://www.facebook.com/mydailiesapp" aria-label="Facebook" title="Facebook" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#facebook"/></svg></a>
+      <a href="https://www.youtube.com/@mydailiesapp" aria-label="YouTube" title="YouTube" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#youtube"/></svg></a>
+      <a href="https://www.pinterest.com/mydailiesapp/" aria-label="Pinterest" title="Pinterest" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#pinterest"/></svg></a>
+      <a href="https://www.linkedin.com/company/mydailiesapp/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#linkedin"/></svg></a>
+    </div>
+    <nav>
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/compare/">比較</a>
+      <a href="/zh-hant/about/">關於</a>
+      <a href="/press/" hreflang="en">媒體資料</a>
+      <a href="/terms/" hreflang="en">使用條款</a>
+      <a href="/privacy/" hreflang="en">隱私權政策</a>
+      <a href="/cookies/" hreflang="en">Cookie 政策</a>
+      <a href="#" data-cookie-settings>Cookie 設定</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"如何在 Android 上加入小工具","description":"把 App 的小工具加入 Android 手機的主畫面。","totalTime":"PT1M","datePublished":"2026-11-13","dateModified":"2026-11-13","author":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/zh-hant/about/"},"supply":[{"@type":"HowToSupply","name":"一支 Android 手機"},{"@type":"HowToSupply","name":"一個已安裝、提供小工具的 App，例如 Dailies"}],"step":[
+{"@type":"HowToStep","name":"按住主畫面","text":"按住主畫面上的空白處，也就是沒有圖示或小工具的地方。"},
+{"@type":"HowToStep","name":"打開「小工具」","text":"點一下「小工具」。"},
+{"@type":"HowToStep","name":"找到那個 App","text":"找到有你想要的小工具的 App，例如 Dailies，點一下它來查看它的小工具。"},
+{"@type":"HowToStep","name":"拿起小工具","text":"按住那個小工具。你的主畫面各頁的縮圖會出現。"},
+{"@type":"HowToStep","name":"放到定位","text":"把它滑到你想放的位置，然後放開手指。"}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"為什麼按住時沒有「小工具」選項？","acceptedAnswer":{"@type":"Answer","text":"你可能按住的是 App 圖示或小工具，這會打開那個項目自己的選單。請按住一個什麼都沒有的地方。在有些手機上，用兩指在主畫面上捏合也能打開同一個選單。"}},
+{"@type":"Question","name":"移除小工具會解除安裝 App 嗎？","acceptedAnswer":{"@type":"Answer","text":"不會。「移除」會把小工具從主畫面上拿掉，App 和裡面的一切都會留在原處。「解除安裝」才是會刪除 App 的選項。"}},
+{"@type":"Question","name":"要怎麼讓小工具變大或變小？","acceptedAnswer":{"@type":"Answer","text":"按住它，放開手指，然後拖動外框上的圓點。如果沒有出現圓點，表示那個小工具只有一種尺寸。"}},
+{"@type":"Question","name":"在 Android 上可以把 Dailies 小工具放到鎖定畫面嗎？","acceptedAnswer":{"@type":"Answer","text":"不行。在 Android 上，Dailies 只有主畫面小工具。不過句子仍然可以透過通知來到你的鎖定畫面，或者存成圖片放進相簿，再設成桌布。"}},
+{"@type":"Question","name":"為什麼 Dailies 小工具不再更換了？","acceptedAnswer":{"@type":"Answer","text":"通常是手機在省電。關閉省電模式，打開 Dailies 一次，如果還是沒用，就移除小工具再重新加入。"}}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://mydailies.app/zh-hant/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://mydailies.app/zh-hant/guides/"},{"@type":"ListItem","position":3,"name":"如何在 Android 上加入小工具","item":"https://mydailies.app/zh-hant/guides/add-a-widget-on-android/"}]}
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@
    their name on it opens to the line. From there they can send one back,
    pass it on, make it a wallpaper, or read more lines like it, and every one
    of those ends on the App Store badge (campaign token web-envelope, with
-   -es, -pt, -fr, -de, -ja), so App Store Connect shows what envelopes send.
+   -es, -pt, -fr, -de, -ja, -it, -ko, -zh-hant), so App Store Connect shows what envelopes send.
 
    The lines live in play-lines.js (window.DailiesLines), written by
    tools/play_pages.py from the app's own quotes.db. This file needs it.
@@ -49,7 +49,7 @@
 
   var D = window.DailiesLines;
   if (!D) return;
-  var LANGS = ['en', 'es', 'pt', 'fr', 'de', 'ja'];
+  var LANGS = ['en', 'es', 'pt', 'fr', 'de', 'ja', 'it', 'ko', 'zh-hant'];
   var MAX_NAME = 40;
 
   function bgUrl(k) { return '/img/wallpapers/bg/' + D.bg[k]; }
@@ -196,11 +196,84 @@
       badBody: 'リンクの一部が欠けています。送ってくれた人に、もう一度送ってもらってください。',
       goHome: 'mydailies.app へ',
       badgeAlt: 'App Store からダウンロード', privacy: 'プライバシーポリシー', cookies: 'Cookie 設定'
+    },
+    it: {
+      getApp: 'Scarica Dailies',
+      holdToSeal: 'Tieni premuto per sigillare', sealHint: 'Tieni premuta la ceralacca per sigillare.',
+      msgRead: '{to}, ho pensato a te leggendo questa frase.', msgReadNone: 'Ho pensato a te leggendo questa frase.', msgOwn: '{to}, ho scritto una cosa per te.', msgOwnNone: 'Ho scritto una cosa per te.', subject: 'Ho pensato a te',
+      message: 'Messaggio', wrote: '{from} ha scritto questo per te.', wroteNoName: 'Qualcuno ha scritto questo per te.',
+      makeWall: 'Trasformala in uno sfondo',
+      close: 'Chiudi',
+      sealTitle: 'Sigillala per qualcuno',
+      sealed: 'Sigillata. Ora inviala.', share: 'Invia',
+      email: 'Email',
+      bridgeSent: 'Vuoi una frase così per te ogni mattina? Dailies la mette sulla tua schermata di blocco.',
+      eTitle: 'Una busta per te', forName: 'Per {to}', forYou: 'Per te',
+      fromName: 'da {from}', openIt: 'Aprila', openNote: 'Non serve l\'app.',
+      picked: '{from} ha scelto questa frase per te.', pickedNoName: 'Qualcuno ha scelto questa frase per te.',
+      sendBack: 'Mandane una a {from}', sendBackNoName: 'Mandane una in risposta',
+      readMore: 'Altre parole di incoraggiamento',
+      bridgeTitle: 'Una frase così, ogni mattina',
+      bridgeBody: 'Dailies ne mette una nuova sulla tua schermata di blocco ogni giorno, scelta in base a ciò che ti sta a cuore.',
+      badTitle: 'Questa busta non è arrivata intera.',
+      badBody: 'Al link manca qualcosa. Chiedi a chi te l\'ha mandato di inviarlo di nuovo.',
+      goHome: 'Vai su mydailies.app',
+      badgeAlt: 'Scarica su App Store', privacy: 'Privacy', cookies: 'Impostazioni cookie'
+    },
+    ko: {
+      getApp: 'Dailies 받기',
+      holdToSeal: '길게 눌러 봉하기', sealHint: '밀랍을 길게 눌러 봉하세요.',
+      msgRead: '{to}님, 이 글을 읽다가 생각이 났어요.', msgReadNone: '이 글을 읽다가 당신 생각이 났어요.', msgOwn: '{to}님께 쓴 글이 있어요.', msgOwnNone: '당신에게 쓴 글이 있어요.', subject: '생각이 나서요',
+      message: '메시지', wrote: '{from}님이 직접 쓴 글이에요.', wroteNoName: '누군가 직접 쓴 글이에요.',
+      makeWall: '배경화면으로 만들기',
+      close: '닫기',
+      sealTitle: '누군가를 위해 봉하기',
+      sealed: '봉했어요. 이제 보내세요.', share: '보내기',
+      email: '이메일',
+      bridgeSent: '이런 글귀를 매일 아침 나에게도 보내고 싶다면? Dailies가 잠금 화면에 보여 줘요.',
+      eTitle: '봉투가 도착했어요', forName: '{to}님께', forYou: '당신에게',
+      fromName: '보낸 사람: {from}님', openIt: '열기', openNote: '앱은 필요 없어요.',
+      picked: '{from}님이 이 글귀를 골랐어요.', pickedNoName: '누군가 이 글귀를 골랐어요.',
+      sendBack: '{from}님께 답장 보내기', sendBackNoName: '답장 보내기',
+      readMore: '격려의 말 더 보기',
+      bridgeTitle: '이런 글귀를 매일 아침',
+      bridgeBody: 'Dailies는 소중히 여기는 것에 맞춰 고른 새로운 글귀를 매일 잠금 화면에 보여 줘요.',
+      badTitle: '이 봉투가 제대로 도착하지 않았어요.',
+      badBody: '링크 일부가 빠져 있어요. 보낸 사람에게 다시 보내 달라고 해 주세요.',
+      goHome: 'mydailies.app으로 가기',
+      badgeAlt: 'App Store에서 다운로드하기', privacy: '개인정보 처리방침', cookies: '쿠키 설정'
+    },
+    'zh-hant': {
+      getApp: '下載 Dailies',
+      holdToSeal: '按住封口', sealHint: '按住火漆封口。',
+      msgRead: '{to}，讀到這句話時我想到了你。', msgReadNone: '讀到這句話時我想到了你。', msgOwn: '{to}，我寫了點東西給你。', msgOwnNone: '我寫了點東西給你。', subject: '我想到了你',
+      message: '訊息', wrote: '這是{from}為你寫的。', wroteNoName: '這是有人為你寫的。',
+      makeWall: '做成背景圖片',
+      close: '關閉',
+      sealTitle: '為某人封好',
+      sealed: '封好了。現在寄出吧。', share: '寄出',
+      email: '電子郵件',
+      bridgeSent: '想每天早上也給自己一句這樣的話嗎？Dailies 會放在你的鎖定畫面上。',
+      eTitle: '有一封給你的信', forName: '給{to}', forYou: '給你',
+      fromName: '來自{from}', openIt: '打開', openNote: '不需要 App。',
+      picked: '{from}為你選了這一句。', pickedNoName: '有人為你選了這一句。',
+      sendBack: '回寄一封給{from}', sendBackNoName: '回寄一封',
+      readMore: '更多鼓勵的話',
+      bridgeTitle: '這樣的一句話，每天早上',
+      bridgeBody: 'Dailies 會依照你在乎的事，每天在鎖定畫面放上新的一句。',
+      badTitle: '這封信沒有完整送達。',
+      badBody: '連結好像不完整。請寄給你的人再寄一次。',
+      goHome: '前往 mydailies.app',
+      badgeAlt: '在 App Store 下載', privacy: '隱私權政策', cookies: 'Cookie 設定'
     }
   };
   var lang = pickLang(document.documentElement.getAttribute('lang'));
+  /* A language tag (zh-Hant-TW, it-IT, ko) to one of LANGS. Chinese is
+     Traditional only when the tag says so (Hant, or Taiwan, Hong Kong or
+     Macau): the site has no Simplified pages, so Simplified falls to English. */
   function pickLang(tag) {
-    var c = String(tag || '').slice(0, 2).toLowerCase();
+    var t = String(tag || '').toLowerCase(), c = t.slice(0, 2);
+    if (c === 'zh') return /hant|-tw|-hk|-mo/.test(t) ? 'zh-hant' : 'en';
     return LANGS.indexOf(c) === -1 ? 'en' : c;
   }
   function S() { return STRINGS[lang] || STRINGS.en; }
@@ -273,7 +346,7 @@
     a.setAttribute('data-download', where);
     var img = document.createElement('img');
     img.src = '/img/app-store-badge' + (lang === 'en' ? '' : '-' + lang) + '.svg';
-    img.width = lang === 'fr' ? 164 : lang === 'ja' ? 142 : 156;
+    img.width = { fr: 164, ja: 142, ko: 169, 'zh-hant': 142 }[lang] || 156;
     img.height = 52;
     img.alt = S().badgeAlt;
     a.appendChild(img);

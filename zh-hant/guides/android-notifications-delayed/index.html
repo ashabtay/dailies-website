@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Android 通知延遲或收不到？解決方法 | Dailies</title>
+<meta name="description" content="Android 通知為什麼會延遲或完全收不到，以及依序嘗試的解決方法：通知設定、零打擾、省電模式、App 的電池用量、休眠模式（Doze），以及 Samsung 的休眠應用程式。">
+<link rel="canonical" href="https://mydailies.app/zh-hant/guides/android-notifications-delayed/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/guides/android-notifications-delayed/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/notificaciones-de-android-llegan-tarde/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/notificacoes-do-android-atrasadas/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/notifications-android-en-retard/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/android-benachrichtigungen-kommen-spaet/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/android-notifications-delayed/">
+<link rel="alternate" hreflang="it" href="https://mydailies.app/it/guide/notifiche-android-in-ritardo/">
+<link rel="alternate" hreflang="ko" href="https://mydailies.app/ko/guides/android-notifications-delayed/">
+<link rel="alternate" hreflang="zh-Hant" href="https://mydailies.app/zh-hant/guides/android-notifications-delayed/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/android-notifications-delayed/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 通知延遲或收不到？解決方法">
+<meta property="og:description" content="Android 上大多數遲到的通知，是手機在省電，而不是 App 壞了。通知卡在哪裡，以及怎麼讓它們通過。">
+<meta property="og:url" content="https://mydailies.app/zh-hant/guides/android-notifications-delayed/">
+<meta property="og:image" content="https://mydailies.app/img/guides/android-notifications-delayed-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="四個人的剪影站在深色樹林旁，頭頂是星空，地平線泛著橘色的光">
+<meta property="og:site_name" content="Dailies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/zh-hant/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/zh-hant/blog/">部落格</a>
+      <a href="/zh-hant/guides/">指南</a>
+      <a href="/zh-hant/help/">說明</a>
+      <details class="lang"><summary aria-label="語言: 繁體中文"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">繁體中文</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/guides/android-notifications-delayed/" hreflang="en" lang="en">English</a><a href="/fr/guides/notifications-android-en-retard/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/anleitungen/android-benachrichtigungen-kommen-spaet/" hreflang="de" lang="de-DE">Deutsch</a><a href="/it/guide/notifiche-android-in-ritardo/" hreflang="it" lang="it">Italiano</a><a href="/es/guias/notificaciones-de-android-llegan-tarde/" hreflang="es" lang="es-MX">Español</a><a href="/pt/guias/notificacoes-do-android-atrasadas/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/guides/android-notifications-delayed/" hreflang="ja" lang="ja">日本語</a><a href="/ko/guides/android-notifications-delayed/" hreflang="ko" lang="ko">한국어</a><a href="/zh-hant/guides/android-notifications-delayed/" hreflang="zh-Hant" lang="zh-Hant-TW" aria-current="true">繁體中文</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/zh-hant/#get">取得 Dailies</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">指南</div>
+      <h1>Android 通知延遲或收不到？解決方法</h1>
+      <p class="lede">在 Android 上，App 可以把一則通知排在早上八點，但什麼時候顯示仍由手機決定。Android 會為了省電而延後通知，手機製造商還會加上自己的電池管理工具，而一個被關掉的類別，就能讓一個看起來完全被允許的 App 安靜下來。幾乎每一則遲到或消失的通知都是其中一種原因，而不是 App 壞了。下面依序說明該看哪裡。</p>
+      <p class="doc-meta"><span><a href="/zh-hant/about/">Amit Shabtay</a>（Dailies 開發者）</span> <span>2026年11月13日根據 Google 和 Samsung 的說明文件撰寫步驟，未在手機上實際操作</span></p>
+    </div>
+  </header>
+
+  <div class="wrap"><figure class="post-hero"><img src="/img/guides/android-notifications-delayed.jpg" width="1080" height="608" alt="四個人的剪影站在深色樹林旁，頭頂是星空，地平線泛著橘色的光" fetchpriority="high"></figure></div>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">本頁內容</div>
+      <a href="#why">通知為什麼會遲到</a>
+      <a href="#fixes">依序嘗試的解決方法</a>
+      <a href="#symptoms">對照你的情況</a>
+      <a href="#dailies">Dailies 的通知</a>
+      <a href="#faq">常見問題</a>
+    </aside>
+
+    <div class="prose">
+
+      <section id="why">
+        <h2>通知為什麼會遲到</h2>
+        <p>從 App 到你的螢幕，每一則通知都要經過幾道關卡。任何一道都可能擋下它、把它留到之後，或是安靜到讓你根本沒注意到：</p>
+        <ul>
+          <li><strong>權限和類別。</strong>App 能不能通知你，以及它送出的每一種通知（Android 稱為類別）有沒有開啟、會不會發出聲音。</li>
+          <li><strong>零打擾和模式。</strong>它們會讓不在清單上的每個 App 安靜下來。在 Android 15 以上的 Pixel 手機上，零打擾是幾種模式之一，而像「就寢時間」這樣的模式可以依排程自動開啟。</li>
+          <li><strong>省電模式。</strong>它會減少整支手機的背景工作，Google 也說明開啟時 App 可能會出現延遲。</li>
+          <li><strong>App 的電池設定。</strong>Android 讓每個 App 可以在背景自由執行、以受管理的方式執行，或幾乎不執行。Samsung 在 Galaxy 手機上另有自己的清單：休眠應用程式、深度休眠應用程式和永不休眠應用程式。</li>
+          <li><strong>休眠模式（Doze）。</strong>當手機靜置、螢幕關閉而且沒在充電時，Android 會暫停大部分背景工作，只偶爾在短暫的維護時段醒來，讓 App 補上進度。在兩個時段之間該送達的通知，可能要等到下一個時段。</li>
+        </ul>
+        <div class="callout">
+          <div class="callout-label">快速檢查</div>
+          <p>從螢幕頂端往下滑。如果快速設定裡的零打擾、某個模式或省電模式亮著，就從那裡開始。如果什麼都沒亮，而通知確實會來，只是晚了，就直接跳到電池的步驟。</p>
+        </div>
+        <p>用的是 iPhone 嗎？那邊的設定不一樣：請看<a href="/zh-hant/guides/iphone-notifications-not-working/">iPhone 收不到 App 的通知？解決方法</a>。</p>
+      </section>
+
+      <section id="fixes">
+        <h2>依序嘗試的解決方法</h2>
+        <p>一次試一個。前四個能解決大多數情況。選單因手機而異：下面的路徑是 Google 為 Pixel 手機、Samsung 為 Galaxy 手機提供的，其他手機通常也有相同的設定，只是名稱相近。</p>
+        <ol>
+          <li><strong>檢查 App 的通知和類別。</strong>打開<strong>「設定」&rarr;「應用程式」</strong>，輕觸該 App（如果沒列出來，請看<strong>「查看所有應用程式」</strong>），再輕觸<strong>「通知」</strong>。確認<strong>所有「<em>App 名稱</em>」通知</strong>已開啟，然後檢查下方的每個類別。App 可能被允許了，但你在意的那個類別卻是關閉的，或被設成<strong>「靜音」</strong>，這會讓通知進入通知欄，卻沒有聲音也沒有橫幅。</li>
+          <li><strong>檢查零打擾和模式。</strong>往下滑到快速設定，關閉零打擾或任何已開啟的模式。如果想保留某個模式又讓這個 App 通過，打開<strong>「設定」&rarr;「模式」</strong>，輕觸該模式，在它的通知設定中選擇<strong>「應用程式」</strong>，再把 App 加進去。在較舊的 Android 版本上，零打擾位於<strong>「設定」&rarr;「通知」</strong>或<strong>「音效」</strong>底下。如果某個模式一直自己開回來，請檢查它的排程。</li>
+          <li><strong>關閉省電模式。</strong>打開<strong>「設定」&rarr;「電池」&rarr;「省電模式」</strong>，把它關掉，並檢查有沒有排程會讓它自動重新開啟。在 Galaxy 手機上，它同樣叫做<strong>省電模式</strong>，位於<strong>「設定」&rarr;「電池」</strong>底下。開啟時，Android 會減少背景工作，App 排好的通知就可能遲到。</li>
+          <li><strong>讓 App 在背景執行。</strong>在 Pixel 上，打開<strong>「設定」&rarr;「應用程式」</strong>，輕觸該 App，再輕觸<strong>「應用程式電池用量」</strong>。開啟<strong>「允許在背景使用」</strong>，輕觸它，然後選擇<strong>「不受限制」</strong>。<strong>「最佳化」</strong>是預設值，適合大多數 App，而<strong>「受限」</strong>就是會擋住通知的那一個。在 Galaxy 手機上，打開<strong>「設定」&rarr;「電池」&rarr;「背景使用限制」</strong>（部分機型在<strong>「電池與裝置維護」</strong>底下）。把 App 從<strong>休眠應用程式</strong>和<strong>深度休眠應用程式</strong>中移出，再用加號按鈕把它加到<strong>永不休眠應用程式</strong>。如果讓未使用的應用程式進入休眠的選項是開啟的，Samsung 會自動把你一段時間沒打開的 App 移進那些清單，所以 App 可能在你什麼都沒做的情況下就跑到那裡。</li>
+          <li><strong>檢查自動調整電池用量。</strong>在 Pixel 上，它位於<strong>「設定」&rarr;「電池」&rarr;「省電模式」&rarr;「自動調整電池用量」</strong>。它會學習你使用哪些 App，並限制其餘的 App，Google 也提到它可能讓通知延遲。Google 建議保持開啟。把它關掉一天，是檢驗它是不是原因的好方法；如果是，在上一步把那一個 App 設成「不受限制」是更好的解決方法。</li>
+          <li><strong>預期休眠模式會讓時間稍微移動。</strong>休眠模式沒有開關。手機靜置而螢幕關閉時，Android 會把一般的鬧鐘留到下一個維護時段，而手機靜置越久，時段之間就隔得越遠。必須準時響起的 App，例如鬧鐘，會向 Android 要求精確鬧鐘。許多其他 App 不會，所以它們的通知可能比預定時間晚一點才到。拿起手機或插上電源都會結束休眠模式，這就是為什麼遲到的通知常常在你一看手機時就出現。</li>
+          <li><strong>檢查 Samsung 的自動重新啟動。</strong>在 Galaxy 手機上，打開<strong>「設定」&rarr;「裝置維護」&rarr;「自動最佳化」&rarr;「自動重新啟動」</strong>。它會在你沒使用手機時重新啟動，關閉背景 App。重新啟動之後，在手機上排定通知的 App 要等你解鎖後才能把通知排回去，所以在那之前該送達的通知會等著。關閉依排程重新啟動，或把它設在你不會期待任何通知的時間。</li>
+          <li><strong>在 Xiaomi、Huawei、OnePlus 等手機上，讓 App 能自行啟動。</strong>有些手機製造商停止 App 的方式比 Android 更強硬。在「設定」裡該 App 的頁面，或手機的電池設定中，找一個叫做自動啟動或類似名稱的開關，把它打開，並把 App 的電池設定改為不受限制。在其中一些手機上，從最近使用的 App 中把 App 滑掉會讓它完全停止，而在手機有提供的情況下，把它鎖定在最近使用的 App 中就能避免這種情況。<a href="https://dontkillmyapp.com/" rel="noopener">Don't kill my app!</a> 依手機製造商整理了這些設定的清單。</li>
+          <li><strong>不要強制停止 App，並打開它一次。</strong>在<strong>「設定」&rarr;「應用程式」</strong>裡 App 頁面上的<strong>「強制停止」</strong>，會取消 App 排好的所有事情，直到你再次打開它為止，所以如果你用過它，請打開 App 一次。Android 也可能暫停你好幾個月沒打開的 App：在同一個頁面上，為你想收到通知的 App 關閉<strong>「暫停未使用應用程式的活動」</strong>。</li>
+          <li><strong>重新啟動手機，然後更新 Android 和 App。</strong>重新啟動能解決卡住的通知服務，次數多得出人意料，而通知的錯誤也會在雙方的更新中修正。</li>
+        </ol>
+      </section>
+
+      <section id="symptoms">
+        <h2>對照你的情況</h2>
+        <h3>通知會到，但遲到，大多是在手機靜置一段時間之後</h3>
+        <p>那是手機在省電：休眠模式、省電模式或 App 的電池設定。依序試試第三到第六個方法，並在 Pixel 上把 App 設成「不受限制」，在 Galaxy 手機上設成永不休眠。</p>
+
+        <h3>拿起手機時，好幾則通知一起出現</h3>
+        <p>它們在手機休眠時被留住，在手機醒來時一起放出來。同樣的方法都適用，先從 App 的電池設定開始。</p>
+
+        <h3>通知在通知欄裡，但沒有聲音也沒有橫幅</h3>
+        <p>App 的類別被設成<strong>「靜音」</strong>。在 App 的<strong>「通知」</strong>頁面上，輕觸該類別，選擇會提醒你的選項，如果手機有提供，也允許在螢幕上彈出。</p>
+
+        <h3>重新啟動、更新或幾週沒用 App 之後，通知就停了</h3>
+        <p>打開 App 一次，讓它重新排程。然後檢查手機有沒有讓它進入休眠：Samsung 的休眠應用程式清單，或 App 頁面上的<strong>「暫停未使用應用程式的活動」</strong>。</p>
+      </section>
+
+      <section id="dailies">
+        <h2>Dailies 的通知</h2>
+        <p>如果遲到的是我們的 App，以下是 Android 版 <a href="/zh-hant/">Dailies</a> 特有的幾點：</p>
+        <ul>
+          <li><strong>句子有自己的類別。</strong>在<strong>「設定」&rarr;「應用程式」&rarr;「Dailies」&rarr;「通知」</strong>（路徑依手機而異）中，確認已允許通知，而且<strong>「每日句子」</strong>類別已開啟；如果想聽到句子送達的聲音，也別把它設成靜音。</li>
+          <li><strong>句子只在你選的時段內送達。</strong>打開<strong>「個人化」&rarr;「每日一劑」</strong>，可以看到一天收到幾則、允許送達的時段，以及一週中的哪幾天。如果時段是上午9點到下午5點，而你在上午8點查看，那時還沒有句子要送達。在時段內，句子會在你沒有指定的時刻送達，這是刻意的。</li>
+          <li><strong>句子是在你的手機上排定的。</strong>Dailies 直接在手機上排定句子，不需要網路，所以數據節省模式和微弱的訊號都沒有影響。</li>
+          <li><strong>省電通常是句子遲到的原因。</strong>省電模式和 Samsung 的休眠應用程式清單，可能把句子留到你的時段結束之後，或讓它完全送不到。解決方法：在 Pixel 上，在<strong>「應用程式電池用量」</strong>中把 Dailies 設成<strong>「不受限制」</strong>。在 Galaxy 手機上，把 Dailies 加到<strong>永不休眠應用程式</strong>。</li>
+          <li><strong>打開 App 就會補上句子。</strong>每次你打開 Dailies，它都會更新排程。強制停止之後，或很久沒打開之後，打開它一次，接下來的句子就會排好。</li>
+        </ul>
+        <p>還是沒有？寫信到 <a href="mailto:help@mydailies.app">help@mydailies.app</a>，會有真人回覆你。<a href="/zh-hant/help/#notifications">說明頁面</a>上有簡短版。</p>
+      </section>
+
+      <section id="faq">
+        <h2>常見問題</h2>
+        <div class="faq">
+          <details open><summary>為什麼我的 Android 通知會延遲？</summary>
+            <div class="details-body">
+              <p>最常見的原因是手機在省電。省電模式、電池設定被設成「受限」的 App，或是 Galaxy 手機上 Samsung 的休眠應用程式清單，都可能把通知擋住。手機靜置而螢幕關閉時，休眠模式也會把通知留到下一個維護時段。</p>
+            </div></details>
+
+          <details><summary>Android 的休眠模式（Doze）是什麼？</summary>
+            <div class="details-body">
+              <p>一種省電狀態，當手機沒插電、靜置而且螢幕關閉時，Android 就會進入。它會暫停大部分背景工作，讓 App 在短暫的維護時段裡補上進度，而手機靜置越久，這些時段就越少出現。移動手機、打開螢幕或插上電源都會結束它。</p>
+            </div></details>
+
+          <details><summary>應該把 App 的電池用量設成「不受限制」嗎？</summary>
+            <div class="details-body">
+              <p>只限少數幾個時間對你來說很重要的 App。Google 建議大多數 App 使用「最佳化」，而「不受限制」可能會比較耗電。對於你希望準時收到通知的 App，「不受限制」就是讓通知通過的設定。</p>
+            </div></details>
+
+          <details><summary>數據節省模式會讓通知延遲嗎？</summary>
+            <div class="details-body">
+              <p>數據節省模式會限制 App 在背景使用多少行動數據。App 直接在手機上排定的通知不需要數據，所以數據節省模式不會擋住這類通知。</p>
+            </div></details>
+
+          <details><summary>為什麼把 App 滑掉之後，通知就停了？</summary>
+            <div class="details-body">
+              <p>在某些手機上，例如 Xiaomi、Huawei 和 OnePlus 的機型，從最近使用的 App 中清除一個 App，會讓它完全停止，連同它排好的所有事情。在手機的設定中允許 App 自行啟動，或把它鎖定在最近使用的 App 中，再打開它一次，讓它重新排程。</p>
+            </div></details>
+
+          <details><summary>我的 Pixel 上的零打擾跑到哪裡去了？</summary>
+            <div class="details-body">
+              <p>在 Android 15 以上，Pixel 手機把零打擾列在「設定」的「模式」底下，和「就寢時間」等其他模式放在一起。每個模式都有自己可以放行的 App 清單。</p>
+            </div></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <div class="social">
+      <a href="https://www.tiktok.com/@mydailies.app" aria-label="TikTok" title="TikTok" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#tiktok"/></svg></a>
+      <a href="https://www.instagram.com/mydailies.app/" aria-label="Instagram" title="Instagram" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#instagram"/></svg></a>
+      <a href="https://www.facebook.com/mydailiesapp" aria-label="Facebook" title="Facebook" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#facebook"/></svg></a>
+      <a href="https://www.youtube.com/@mydailiesapp" aria-label="YouTube" title="YouTube" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#youtube"/></svg></a>
+      <a href="https://www.pinterest.com/mydailiesapp/" aria-label="Pinterest" title="Pinterest" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#pinterest"/></svg></a>
+      <a href="https://www.linkedin.com/company/mydailiesapp/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#linkedin"/></svg></a>
+    </div>
+    <nav>
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/compare/">比較</a>
+      <a href="/zh-hant/about/">關於</a>
+      <a href="/press/" hreflang="en">媒體資料</a>
+      <a href="/terms/" hreflang="en">使用條款</a>
+      <a href="/privacy/" hreflang="en">隱私權政策</a>
+      <a href="/cookies/" hreflang="en">Cookie 政策</a>
+      <a href="#" data-cookie-settings>Cookie 設定</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","inLanguage":"zh-Hant","name":"如何解決 Android 通知遲到或收不到的問題","description":"Android 通知遲到或消失時的解決方法，依值得嘗試的順序排列。","totalTime":"PT15M","datePublished":"2026-11-13","dateModified":"2026-11-13","author":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/zh-hant/about/"},"supply":[{"@type":"HowToSupply","name":"一支 Android 手機"}],"step":[
+{"@type":"HowToStep","name":"檢查 App 的通知和類別","text":"打開「設定」→「應用程式」，輕觸該 App（如果沒列出來，請看「查看所有應用程式」），再輕觸「通知」。確認所有「App 名稱」通知已開啟，然後檢查下方的每個類別。App 可能被允許了，但你在意的那個類別卻是關閉的，或被設成「靜音」，這會讓通知進入通知欄，卻沒有聲音也沒有橫幅。"},
+{"@type":"HowToStep","name":"檢查零打擾和模式","text":"往下滑到快速設定，關閉零打擾或任何已開啟的模式。如果想保留某個模式又讓這個 App 通過，打開「設定」→「模式」，輕觸該模式，在它的通知設定中選擇「應用程式」，再把 App 加進去。在較舊的 Android 版本上，零打擾位於「設定」→「通知」或「音效」底下。如果某個模式一直自己開回來，請檢查它的排程。"},
+{"@type":"HowToStep","name":"關閉省電模式","text":"打開「設定」→「電池」→「省電模式」，把它關掉，並檢查有沒有排程會讓它自動重新開啟。在 Galaxy 手機上，它同樣叫做省電模式，位於「設定」→「電池」底下。開啟時，Android 會減少背景工作，App 排好的通知就可能遲到。"},
+{"@type":"HowToStep","name":"讓 App 在背景執行","text":"在 Pixel 上，打開「設定」→「應用程式」，輕觸該 App，再輕觸「應用程式電池用量」。開啟「允許在背景使用」，輕觸它，然後選擇「不受限制」。「最佳化」是預設值，適合大多數 App，而「受限」就是會擋住通知的那一個。在 Galaxy 手機上，打開「設定」→「電池」→「背景使用限制」（部分機型在「電池與裝置維護」底下）。把 App 從休眠應用程式和深度休眠應用程式中移出，再用加號按鈕把它加到永不休眠應用程式。如果讓未使用的應用程式進入休眠的選項是開啟的，Samsung 會自動把你一段時間沒打開的 App 移進那些清單，所以 App 可能在你什麼都沒做的情況下就跑到那裡。"},
+{"@type":"HowToStep","name":"檢查自動調整電池用量","text":"在 Pixel 上，它位於「設定」→「電池」→「省電模式」→「自動調整電池用量」。它會學習你使用哪些 App，並限制其餘的 App，Google 也提到它可能讓通知延遲。Google 建議保持開啟。把它關掉一天，是檢驗它是不是原因的好方法；如果是，在上一步把那一個 App 設成「不受限制」是更好的解決方法。"},
+{"@type":"HowToStep","name":"預期休眠模式會讓時間稍微移動","text":"休眠模式沒有開關。手機靜置而螢幕關閉時，Android 會把一般的鬧鐘留到下一個維護時段，而手機靜置越久，時段之間就隔得越遠。必須準時響起的 App，例如鬧鐘，會向 Android 要求精確鬧鐘。許多其他 App 不會，所以它們的通知可能比預定時間晚一點才到。拿起手機或插上電源都會結束休眠模式，這就是為什麼遲到的通知常常在你一看手機時就出現。"},
+{"@type":"HowToStep","name":"檢查 Samsung 的自動重新啟動","text":"在 Galaxy 手機上，打開「設定」→「裝置維護」→「自動最佳化」→「自動重新啟動」。它會在你沒使用手機時重新啟動，關閉背景 App。重新啟動之後，在手機上排定通知的 App 要等你解鎖後才能把通知排回去，所以在那之前該送達的通知會等著。關閉依排程重新啟動，或把它設在你不會期待任何通知的時間。"},
+{"@type":"HowToStep","name":"在 Xiaomi、Huawei、OnePlus 等手機上，讓 App 能自行啟動","text":"有些手機製造商停止 App 的方式比 Android 更強硬。在「設定」裡該 App 的頁面，或手機的電池設定中，找一個叫做自動啟動或類似名稱的開關，把它打開，並把 App 的電池設定改為不受限制。在其中一些手機上，從最近使用的 App 中把 App 滑掉會讓它完全停止，而在手機有提供的情況下，把它鎖定在最近使用的 App 中就能避免這種情況。Don't kill my app! 依手機製造商整理了這些設定的清單。"},
+{"@type":"HowToStep","name":"不要強制停止 App，並打開它一次","text":"在「設定」→「應用程式」裡 App 頁面上的「強制停止」，會取消 App 排好的所有事情，直到你再次打開它為止，所以如果你用過它，請打開 App 一次。Android 也可能暫停你好幾個月沒打開的 App：在同一個頁面上，為你想收到通知的 App 關閉「暫停未使用應用程式的活動」。"},
+{"@type":"HowToStep","name":"重新啟動手機，然後更新 Android 和 App","text":"重新啟動能解決卡住的通知服務，次數多得出人意料，而通知的錯誤也會在雙方的更新中修正。"}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"zh-Hant","mainEntity":[
+{"@type":"Question","name":"為什麼我的 Android 通知會延遲？","acceptedAnswer":{"@type":"Answer","text":"最常見的原因是手機在省電。省電模式、電池設定被設成「受限」的 App，或是 Galaxy 手機上 Samsung 的休眠應用程式清單，都可能把通知擋住。手機靜置而螢幕關閉時，休眠模式也會把通知留到下一個維護時段。"}},
+{"@type":"Question","name":"Android 的休眠模式（Doze）是什麼？","acceptedAnswer":{"@type":"Answer","text":"一種省電狀態，當手機沒插電、靜置而且螢幕關閉時，Android 就會進入。它會暫停大部分背景工作，讓 App 在短暫的維護時段裡補上進度，而手機靜置越久，這些時段就越少出現。移動手機、打開螢幕或插上電源都會結束它。"}},
+{"@type":"Question","name":"應該把 App 的電池用量設成「不受限制」嗎？","acceptedAnswer":{"@type":"Answer","text":"只限少數幾個時間對你來說很重要的 App。Google 建議大多數 App 使用「最佳化」，而「不受限制」可能會比較耗電。對於你希望準時收到通知的 App，「不受限制」就是讓通知通過的設定。"}},
+{"@type":"Question","name":"數據節省模式會讓通知延遲嗎？","acceptedAnswer":{"@type":"Answer","text":"數據節省模式會限制 App 在背景使用多少行動數據。App 直接在手機上排定的通知不需要數據，所以數據節省模式不會擋住這類通知。"}},
+{"@type":"Question","name":"為什麼把 App 滑掉之後，通知就停了？","acceptedAnswer":{"@type":"Answer","text":"在某些手機上，例如 Xiaomi、Huawei 和 OnePlus 的機型，從最近使用的 App 中清除一個 App，會讓它完全停止，連同它排好的所有事情。在手機的設定中允許 App 自行啟動，或把它鎖定在最近使用的 App 中，再打開它一次，讓它重新排程。"}},
+{"@type":"Question","name":"我的 Pixel 上的零打擾跑到哪裡去了？","acceptedAnswer":{"@type":"Answer","text":"在 Android 15 以上，Pixel 手機把零打擾列在「設定」的「模式」底下，和「就寢時間」等其他模式放在一起。每個模式都有自己可以放行的 App 清單。"}}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://mydailies.app/zh-hant/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://mydailies.app/zh-hant/guides/"},{"@type":"ListItem","position":3,"name":"Android 通知延遲或收不到？解決方法","item":"https://mydailies.app/zh-hant/guides/android-notifications-delayed/"}]}
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

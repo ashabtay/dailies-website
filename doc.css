@@ -57,6 +57,28 @@ html:lang(ja) h1{line-height:1.3}
 html:lang(ja) h2{line-height:1.4}
 html:lang(ja) .lede{max-width:34em}
 
+/* Korean (/ko/) and Traditional Chinese (/zh-hant/), the same way: the
+   system's Myeongjo or Song for the display face, its Gothic or Hei for body
+   text, never slanted or tracked tighter, more leading, lines in em. Korean
+   breaks between words, as Korean is written, not between syllables. */
+html:lang(ko){
+  --f-display:Fraunces,AppleMyungjo,"Nanum Myeongjo","Noto Serif KR",Batang,serif;
+  --f-body:Figtree,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+  --f-mono:"Courier Prime","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",monospace;
+  word-break:keep-all;
+}
+html:lang(zh-Hant){
+  --f-display:Fraunces,"Songti TC","Noto Serif TC",PMingLiU,serif;
+  --f-body:Figtree,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  --f-mono:"Courier Prime","PingFang TC","Noto Sans TC","Microsoft JhengHei",monospace;
+  line-break:strict;
+}
+html:is(:lang(ko),:lang(zh-Hant)) body{line-height:1.85}
+html:is(:lang(ko),:lang(zh-Hant)) :is(h1,h2,h3,em,i,blockquote,blockquote p,.pull,.pull *){letter-spacing:0; font-style:normal}
+html:is(:lang(ko),:lang(zh-Hant)) h1{line-height:1.3}
+html:is(:lang(ko),:lang(zh-Hant)) h2{line-height:1.4}
+html:is(:lang(ko),:lang(zh-Hant)) .lede{max-width:34em}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{

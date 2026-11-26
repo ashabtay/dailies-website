@@ -13,7 +13,7 @@
      everything else  a download
 
    then shows the steps for setting it, and the App Store badge
-   (web-wallpaper and -es, -pt, -fr, -de, -ja).
+   (web-wallpaper and -es, -pt, -fr, -de, -ja, -it, -ko, -zh-hant).
 
    The picture is drawn here on a canvas, to the same layout as
    tools/play_pages.py draws the gallery's ready-made ones with Pillow (its
@@ -46,7 +46,17 @@
   var W = 1080, H = 2340;
   var L = { center: 0.58, topMin: 0.40, maxW: 864, lineH: 1.32, authorScale: 0.52, authorGap: 0.62, markY: 0.885, markSize: 30 };
   var SHADE = [[0, .16], [.30, .10], [.50, .34], [.80, .34], [1, .20]];
-  var FAMILY = 'Lora, "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif';
+  /* Lora has no kana, hangul or hanzi: each CJK language names the system's
+     own serif after it, so the line is drawn in that language's forms. */
+  var FAMILY = 'Lora, ' + ({
+    ko: '"AppleMyungjo", "Nanum Myeongjo", "Noto Serif KR", "Batang", serif',
+    'zh-hant': '"Songti TC", "Noto Serif TC", "PMingLiU", serif'
+  }[lang] || '"Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif');
+  /* Japanese and Chinese break between characters (never before 、。 or
+     after 「); Korean breaks at spaces like the Latin languages, but its
+     glyphs are as wide as kanji, so it takes the CJK sizes. */
+  var CJK = lang === 'ja' || lang === 'ko' || lang === 'zh-hant';
+  var BY_CHAR = lang === 'ja' || lang === 'zh-hant';
 
   function textSize(text, ja) {
     var n = Array.from(text).length;
@@ -60,7 +70,7 @@
   function wrap(ctx, text, maxW, ja) {
     var lines = [], cur = '';
     if (ja) {
-      var phrases = text.match(/[^、。]+[、。]?/g) || [text];
+      var phrases = text.match(/[^、。，；]+[、。，；]?/g) || [text];
       phrases.forEach(function (ph) {
         if (!cur || ctx.measureText(cur + ph).width <= maxW) { cur += ph; return; }
         lines.push(cur);
@@ -92,7 +102,6 @@
   /* Draws the wallpaper into ctx at scale sc (1 for the full picture, less
      for the preview). The background image must already be loaded. */
   function draw(ctx, sc, img, text, author) {
-    var ja = lang === 'ja';
     ctx.save();
     ctx.clearRect(0, 0, W * sc, H * sc);
     var s = H / img.naturalHeight, bw = img.naturalWidth * s;
@@ -102,9 +111,9 @@
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, W * sc, H * sc);
 
-    var size = textSize(text, ja);
+    var size = textSize(text, CJK);
     ctx.font = (size * sc) + 'px ' + FAMILY;
-    var lines = wrap(ctx, text, L.maxW * sc, ja);
+    var lines = wrap(ctx, text, L.maxW * sc, BY_CHAR);
     var lh = size * L.lineH;
     var asize = Math.round(size * L.authorScale);
     var block = lines.length * lh + (author ? size * L.authorGap + asize * 1.3 : 0);
@@ -238,7 +247,8 @@
   /* The clock: today's date and the time now, in the page's language, the
      way a Lock Screen shows them (no AM or PM). */
   var dateEl = root.querySelector('.wp-date'), timeEl = root.querySelector('.wp-time');
-  var LOCALE = { en: 'en-US', es: 'es-MX', pt: 'pt-BR', fr: 'fr-FR', de: 'de-DE', ja: 'ja-JP' }[lang];
+  var LOCALE = { en: 'en-US', es: 'es-MX', pt: 'pt-BR', fr: 'fr-FR', de: 'de-DE', ja: 'ja-JP',
+                 it: 'it-IT', ko: 'ko-KR', 'zh-hant': 'zh-TW' }[lang];
   function tick() {
     var now = new Date();
     try {

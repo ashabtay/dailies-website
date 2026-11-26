@@ -23,13 +23,17 @@
 <link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/aide/">
 <link rel="alternate" hreflang="de" href="https://mydailies.app/de/hilfe/">
 <link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/help/">
+<link rel="alternate" hreflang="it" href="https://mydailies.app/it/aiuto/">
+<link rel="alternate" hreflang="ko" href="https://mydailies.app/ko/help/">
+<link rel="alternate" hreflang="zh-Hant" href="https://mydailies.app/zh-hant/help/">
 <link rel="alternate" hreflang="x-default" href="https://mydailies.app/help/">
 <script>/* Written by tools/languages.py: send a visitor whose browser asks for another of the site's languages before English to this page in that language. */
 (function(){try{
   var r=document.referrer; if(r&&r.indexOf(location.origin+'/')===0) return;
   var l=navigator.languages||[navigator.language||''];
   for(var i=0;i<l.length;i++){
-    var c=String(l[i]).slice(0,2).toLowerCase(); if(c==='en') return;
+    var t=String(l[i]).toLowerCase(), c=t.slice(0,2); if(c==='en') return;
+    if(c==='zh'){ if(!/hant|-tw|-hk|-mo/.test(t)) continue; c='zh-Hant'; }
     var a=document.querySelector('link[rel="alternate"][hreflang="'+c+'"]');
     if(a){location.replace(new URL(a.href).pathname+location.search+location.hash); return;}
   }
@@ -51,7 +55,7 @@
       <a href="/blog/">Blog</a>
       <a href="/guides/">Guides</a>
       <a href="/help/" aria-current="page">Help</a>
-      <details class="lang"><summary aria-label="Language: English"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">English</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/help/" hreflang="en" lang="en" aria-current="true">English</a><a href="/fr/aide/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/hilfe/" hreflang="de" lang="de-DE">Deutsch</a><a href="/es/ayuda/" hreflang="es" lang="es-MX">Español</a><a href="/pt/ajuda/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/help/" hreflang="ja" lang="ja">日本語</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <details class="lang"><summary aria-label="Language: English"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">English</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/help/" hreflang="en" lang="en" aria-current="true">English</a><a href="/fr/aide/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/hilfe/" hreflang="de" lang="de-DE">Deutsch</a><a href="/it/aiuto/" hreflang="it" lang="it">Italiano</a><a href="/es/ayuda/" hreflang="es" lang="es-MX">Español</a><a href="/pt/ajuda/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/help/" hreflang="ja" lang="ja">日本語</a><a href="/ko/help/" hreflang="ko" lang="ko">한국어</a><a href="/zh-hant/help/" hreflang="zh-Hant" lang="zh-Hant-TW">繁體中文</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
       <a class="btn btn-primary" href="/#get">Get Dailies</a>
     </div>
   </div>
@@ -120,7 +124,7 @@
 
           <details><summary>Which devices does it run on?</summary>
             <div class="details-body">
-              <p>iPhone and iPad, and Android phones running Android 10 or later, in portrait or landscape. It speaks English, Spanish, Portuguese, French, German, Simplified Chinese and Japanese. It follows the language your device is set to, and you can choose any of them under <strong>Profile → Language</strong>.</p>
+              <p>iPhone and iPad, and Android phones running Android 10 or later, in portrait or landscape. It speaks English, Spanish, Portuguese, French, German, Italian, Japanese, Korean, Simplified Chinese and Traditional Chinese. It follows the language your device is set to, and you can choose any of them under <strong>Profile → Language</strong>.</p>
               <p>Setting up the widgets on an iPad, where the Lock Screen keeps portrait and landscape apart: <a href="/guides/add-widgets-on-ipad/">how to add widgets on iPad</a>.</p>
             </div></details>
         </div>
@@ -521,7 +525,7 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type": "Question", "name": "What happens when I first open Dailies?", "acceptedAnswer": {"@type": "Answer", "text": "A short setup that lets Dailies personalize the quotes to you, and then you are done. You pick the topics you want to hear about, how often you want to hear from us, and the look you want your quotes to sit in."}},
 {"@type": "Question", "name": "Do I need an account?", "acceptedAnswer": {"@type": "Answer", "text": "No. There is no sign-up, no email address and no password. Dailies has no accounts at all."}},
-{"@type": "Question", "name": "Which devices does it run on?", "acceptedAnswer": {"@type": "Answer", "text": "iPhone and iPad, and Android phones running Android 10 or later, in portrait or landscape. It speaks English, Spanish, Portuguese, French, German, Simplified Chinese and Japanese. It follows the language your device is set to, and you can choose any of them under Profile → Language.\nSetting up the widgets on an iPad, where the Lock Screen keeps portrait and landscape apart: how to add widgets on iPad."}},
+{"@type": "Question", "name": "Which devices does it run on?", "acceptedAnswer": {"@type": "Answer", "text": "iPhone and iPad, and Android phones running Android 10 or later, in portrait or landscape. It speaks English, Spanish, Portuguese, French, German, Italian, Japanese, Korean, Simplified Chinese and Traditional Chinese. It follows the language your device is set to, and you can choose any of them under Profile → Language.\nSetting up the widgets on an iPad, where the Lock Screen keeps portrait and landscape apart: how to add widgets on iPad."}},
 {"@type": "Question", "name": "My quotes have stopped arriving", "acceptedAnswer": {"@type": "Answer", "text": "Almost always one of these, in this order:\n1. Permission. Go to iOS Settings → Dailies → Notifications and check Allow Notifications is on, with Lock Screen ticked. On Android, go to Settings → Apps → Dailies → Notifications (the path varies by phone) and check notifications are allowed, with Daily quotes on.\n2. A Focus mode. Sleep, Work and Do Not Disturb silence apps that are not on their allow-list. Add Dailies to the Focus you use, or check Settings → Focus. On Android, Do Not Disturb does the same: switch it off, or let Dailies through in its settings.\n3. Your delivery hours. Open Personalize → Daily dose and look at the window you set. If it runs 9am to 5pm and you are checking at 8am, nothing is due yet.\nOne more, easily missed: Low Power Mode makes iOS deprioritize background work, which can delay delivery. On Android, Battery saver can do the same. If quotes arrive late on Android, see Android notifications arriving late.\nIf all of that looks right, open the app once. Opening it prompts Dailies to rebuild its schedule.\nThe long version, with every place iOS can hold a notification back: not getting notifications from an app on iPhone."}},
 {"@type": "Question", "name": "How many can I get a day?", "acceptedAnswer": {"@type": "Answer", "text": "As few or as many as you like. Set it in Personalize → Daily dose, along with the earliest and latest hour you want to hear from the app. Dailies spreads them evenly through that window rather than bunching them together.\nHow the moments are picked, and how to keep evenings and weekends quiet: how to get motivational quotes at random times of day."}},
 {"@type": "Question", "name": "It is too much / not enough", "acceptedAnswer": {"@type": "Answer", "text": "Personalize → Daily dose, and move the number. Turning it down to one a day is a perfectly good way to use Dailies, and the change takes effect immediately."}},

@@ -320,10 +320,10 @@
 
   /* ------------------------------------------------------------- the words */
   /* The banner speaks the page's language, read off <html lang>: es-MX on
-     /es/, pt-BR on /pt/, fr-FR on /fr/, de-DE on /de/, ja on /ja/, English everywhere
-     else. The Cookie Policy itself is English only (see tools/languages.py),
+     /es/, pt-BR on /pt/, fr-FR on /fr/, de-DE on /de/, ja on /ja/, it on /it/,
+     ko on /ko/, zh-Hant-TW on /zh-hant/, English everywhere else. The Cookie Policy itself is English only (see tools/languages.py),
      and the translated banners say so where they link to it. Same meaning in
-     all six; change one, change the others. */
+     all nine; change one, change the others. */
 
   var WORDS = {
     en: {
@@ -451,6 +451,71 @@
       mktLabel: '広告',
       mktBody: 'Google、Meta、TikTok のピクセル。どの広告がダウンロードにつながったかを計測し、各プラットフォームが広告を表示できるようにします。',
       save: '選択を保存'
+    },
+    it: {
+      askTitle: 'Due parole sui cookie',
+      askBody: 'Questo sito vorrebbe misurare come viene usato e quale annuncio ti ha portato qui. ' +
+        'Non viene salvato nulla se non dici di sì, e l’app è una questione a parte. Trovi tutto ' +
+        'nella <a href="/cookies/" hreflang="en">Cookie Policy</a> (in inglese).',
+      all: 'Accetta tutto', none: 'Rifiuta tutto', choose: 'Scegli',
+      chooseTitle: 'Scegli cosa permettere',
+      chooseBody: 'Puoi cambiare idea quando vuoi dal link <strong>Impostazioni cookie</strong> in fondo alla pagina.',
+      signal: function (name) {
+        return '<strong>Il tuo browser chiede ai siti di non tracciarti.</strong> ' + name +
+          ' è attivo e viene rispettato: tutto qui sotto è spento e non è stato caricato nulla.' +
+          ' Spuntare una casella lo scavalca, solo per questo sito.';
+      },
+      necLabel: 'Strettamente necessari',
+      necBody: 'Solo la tua risposta a questa domanda. Non si può disattivare ed è l’unica cosa salvata senza consenso.',
+      anaLabel: 'Statistiche',
+      anaBody: 'PostHog. Quali pagine vengono lette e come ci si muove nel sito, per poterlo migliorare.',
+      mktLabel: 'Pubblicità',
+      mktBody: 'Pixel di Google, Meta e TikTok. Misurano quale annuncio ha portato a un download e permettono a queste piattaforme di mostrarti pubblicità.',
+      save: 'Salva le scelte'
+    },
+    ko: {
+      askTitle: '쿠키에 관한 짧은 안내',
+      askBody: '이 사이트는 어떻게 이용되는지, 어떤 광고를 보고 오셨는지 측정하고 싶어요. ' +
+        '동의하지 않으면 아무것도 저장하지 않으며, 앱은 별개의 문제예요. 두 가지 모두 ' +
+        '<a href="/cookies/" hreflang="en">쿠키 정책</a>(영어)에 설명되어 있어요.',
+      all: '모두 허용', none: '모두 거부', choose: '선택하기',
+      chooseTitle: '허용할 항목을 선택하세요',
+      chooseBody: '페이지 하단의 <strong>쿠키 설정</strong> 링크에서 언제든지 바꿀 수 있어요.',
+      signal: function (name) {
+        return '<strong>사용 중인 브라우저가 사이트에 추적하지 말라고 요청하고 있어요.</strong> ' + name +
+          ' 설정이 켜져 있고 이를 존중해요. 아래 항목은 모두 꺼져 있으며 아무것도 불러오지 않았어요.' +
+          ' 항목을 체크하면 이 사이트에서만 그 설정보다 우선해요.';
+      },
+      necLabel: '필수',
+      necBody: '이 질문에 대한 답변만 저장해요. 끌 수 없으며, 동의 없이 저장되는 유일한 항목이에요.',
+      anaLabel: '분석',
+      anaBody: 'PostHog. 어떤 페이지를 읽고 사이트 안에서 어떻게 이동하는지 파악해 사이트를 개선해요.',
+      mktLabel: '광고',
+      mktBody: 'Google, Meta, TikTok 픽셀. 어떤 광고가 다운로드로 이어졌는지 측정하고, 이 플랫폼들이 광고를 보여 줄 수 있게 해요.',
+      save: '선택 저장'
+    },
+    /* Traditional Chinese (zh-Hant-TW). The site has no Simplified pages, so
+       every zh page is this one. */
+    zh: {
+      askTitle: '關於 Cookie 的簡短說明',
+      askBody: '本網站想了解大家如何使用網站，以及你是從哪則廣告來到這裡的。' +
+        '除非你同意，否則不會儲存任何資料；App 則是另一回事。兩者都在' +
+        '<a href="/cookies/" hreflang="en">Cookie 政策</a>（英文）中說明。',
+      all: '全部接受', none: '全部拒絕', choose: '自行選擇',
+      chooseTitle: '選擇你要允許的項目',
+      chooseBody: '你隨時可以從頁面底部的<strong>Cookie 設定</strong>連結更改。',
+      signal: function (name) {
+        return '<strong>你的瀏覽器要求網站不要追蹤你。</strong>' + name +
+          ' 已開啟，我們會遵守：下方所有項目都已關閉，也沒有載入任何內容。' +
+          '勾選任一項目，只會在本網站覆蓋這項設定。';
+      },
+      necLabel: '絕對必要',
+      necBody: '只有你對這個問題的回答。無法關閉，也是唯一在未經同意下儲存的資料。',
+      anaLabel: '分析',
+      anaBody: 'PostHog。了解哪些頁面被閱讀、大家如何瀏覽網站，以便改進網站。',
+      mktLabel: '廣告',
+      mktBody: 'Google、Meta 和 TikTok 的像素。用來衡量哪則廣告帶來了下載，並讓這些平台向你顯示廣告。',
+      save: '儲存選擇'
     }
   };
   var T = WORDS[(document.documentElement.lang || 'en').slice(0, 2)] || WORDS.en;

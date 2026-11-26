@@ -65,7 +65,8 @@ PAGES = [(row[i], languages.file_for(row[i])[len(ROOT) + 1:])
 # page's <head>; Google reads either, and the sitemap is the copy Bing uses.
 ALTERNATES = {}
 for _row in languages.PAGES:
-    _present = [(languages.LANGS[i][0], u) for i, u in enumerate(_row) if u]
+    _present = [(languages.HREFLANG.get(languages.LANGS[i][0], languages.LANGS[i][0]), u)
+                for i, u in enumerate(_row) if u]
     if len(_present) > 1:
         for _code, _u in _present:
             ALTERNATES[_u] = _present + [("x-default", _row[0])]
@@ -83,6 +84,9 @@ def signature(path):
     s = open(os.path.join(ROOT, path), encoding="utf-8").read()
     s = re.sub(r"<head\b.*?</head>", "", s, flags=re.S | re.I)
     s = re.sub(r"<!--.*?-->", "", s, flags=re.S)
+    # The language menu is chrome, not content: adding a language to the site
+    # rewrites it on every page and must not move every page's date.
+    s = re.sub(r'<details class="lang">.*?</details>(?:<script>.*?</script>)?', "", s, flags=re.S)
     s = re.sub(r"\s+", " ", s).strip()
     return hashlib.sha256(s.encode("utf-8")).hexdigest()
 

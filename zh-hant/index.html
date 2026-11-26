@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
+<meta name="p:domain_verify" content="801c54653c023cddcd5ceb462975cf7e">
+<title>Dailies：每日勵志句子，直達你的鎖定畫面</title>
+<meta name="description" content="Dailies 把簡短的勵志句子送到你的鎖定畫面和主畫面小工具，每天在不同的時刻。選好主題和時段，然後照常過你的一天。沒有廣告，也不用登入。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dailies：每日勵志句子，直達你的鎖定畫面">
+<meta property="og:description" content="有些日子，你需要有人推你一把。有些日子，你需要笑一笑、更專注一點，或允許自己對自己好一點。">
+<meta property="og:url" content="https://mydailies.app/zh-hant/">
+<meta property="og:image" content="https://mydailies.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dailies：每日動力，直達你的鎖定畫面">
+<meta property="og:site_name" content="Dailies">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mydailies.app/zh-hant/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/">
+<link rel="alternate" hreflang="it" href="https://mydailies.app/it/">
+<link rel="alternate" hreflang="ko" href="https://mydailies.app/ko/">
+<link rel="alternate" hreflang="zh-Hant" href="https://mydailies.app/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+
+<style>
+/* ============ TOKENS: dark-first (the app icon is a night scene) ============ */
+:root{
+  --ground:#191c1d; --ground-deep:#101314; --panel:#202523;
+  --rule:rgba(240,230,210,.13); --rule-soft:rgba(240,230,210,.07);
+  --text:#f0e6d2; --text-dim:#aeaa9c; --text-faint:#888c81;
+  --accent:#9db081; --accent-dim:#7d8f63; --hill:#4f5d3c; --hill-deep:#3b462d;
+  --cite:#bab9a6;
+  --card-shadow:0 24px 60px rgba(0,0,0,.45);
+  --chip:rgba(240,230,210,.05); --chip-on:rgba(157,176,129,.14);
+  --max:1100px;
+  --f-display:Fraunces,Georgia,"Times New Roman",serif;
+  --f-body:Figtree,ui-sans-serif,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"Courier Prime",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+/* Light = dawn over the same hills. Guarded so an explicit dark choice wins. */
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --ground:#f3ecdc; --ground-deep:#e9e0cb; --panel:#fbf7ec;
+    --rule:rgba(27,31,28,.16); --rule-soft:rgba(27,31,28,.08);
+    --text:#1b1f1c; --text-dim:#525749; --text-faint:#5f6457;
+    --accent:#47552f; --accent-dim:#5d6e45; --hill:#7b8b61; --hill-deep:#66754e;
+    --cite:#fff;
+    --card-shadow:0 20px 50px rgba(52,56,40,.16);
+    --chip:rgba(27,31,28,.045); --chip-on:rgba(71,85,47,.12);
+  }
+}
+:root[data-theme="light"]{
+  --ground:#f3ecdc; --ground-deep:#e9e0cb; --panel:#fbf7ec;
+  --rule:rgba(27,31,28,.16); --rule-soft:rgba(27,31,28,.08);
+  --text:#1b1f1c; --text-dim:#525749; --text-faint:#5f6457;
+  --accent:#47552f; --accent-dim:#5d6e45; --hill:#7b8b61; --hill-deep:#66754e;
+  --cite:#fff;
+  --card-shadow:0 20px 50px rgba(52,56,40,.16);
+  --chip:rgba(27,31,28,.045); --chip-on:rgba(71,85,47,.12);
+}
+
+/* Traditional Chinese: see the same block in doc.css. */
+html:lang(zh-Hant){
+  --f-display:Fraunces,"Songti TC","Noto Serif TC",PMingLiU,serif;
+  --f-body:Figtree,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  --f-mono:"Courier Prime","PingFang TC","Noto Sans TC","Microsoft JhengHei",monospace;
+  line-break:strict;
+}
+html:lang(zh-Hant) body{line-height:1.85}
+html:lang(zh-Hant) :is(h1,h2,h3,em,i,blockquote,blockquote p,.pull,.pull *){letter-spacing:0; font-style:normal}
+html:lang(zh-Hant) h1{line-height:1.3}
+html:lang(zh-Hant) h2{line-height:1.4}
+html:lang(zh-Hant) .lede{max-width:34em}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--f-body); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{max-width:100%; display:block}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+.wrap{width:min(100% - 44px,var(--max)); margin-inline:auto}
+
+h1,h2,h3,blockquote{text-wrap:balance; margin:0}
+h1,h2{font-family:var(--f-display); font-optical-sizing:auto; font-weight:400; letter-spacing:-.014em}
+h1{font-size:clamp(35px,4vw,55px); line-height:1.08}
+h2{font-size:clamp(29px,3.3vw,42px); line-height:1.12}
+h3{font-family:var(--f-body); font-weight:600; font-size:18px; line-height:1.35; letter-spacing:-.01em}
+p{margin:0}
+.lede{color:var(--text-dim); font-size:clamp(16.5px,1.3vw,18.5px); max-width:56ch}
+
+.eyebrow{
+  font-family:var(--f-mono); font-size:12px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:11px;
+}
+.eyebrow::before{content:""; width:20px; height:1px; background:var(--accent-dim); flex:none}
+
+/* ============ NAV ============ */
+.nav{position:sticky; top:0; z-index:60; background:color-mix(in srgb,var(--ground) 88%,transparent); backdrop-filter:blur(14px); border-bottom:1px solid var(--rule-soft)}
+.nav-in{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:13px 0}
+.brand{display:flex; align-items:center; gap:11px; text-decoration:none; font-weight:600; letter-spacing:-.02em; font-size:18px}
+.brand img{width:33px; height:33px; border-radius:9px}
+.nav-links{display:flex; align-items:center; gap:28px}
+/* :not(.btn) matters: a bare `.nav-links a` outranks `.btn-primary` and
+   would repaint the pill's label in the muted link color. */
+.nav-links a:not(.btn){text-decoration:none; font-size:14.5px; color:var(--text-dim); transition:color .2s}
+.nav-links a:not(.btn):hover{color:var(--text)}
+.nav-links a.btn{text-decoration:none}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  font-family:var(--f-body); font-size:15px; font-weight:600; text-decoration:none;
+  padding:12px 21px; border-radius:999px; border:1px solid transparent; cursor:pointer;
+  transition:transform .18s;
+}
+.btn-primary{background:var(--text); color:var(--ground)}
+.btn-primary:hover{transform:translateY(-2px)}
+.nav .btn{padding:10px 17px; font-size:14px}
+/* The language menu, the same block as doc.css. The markup is written by
+   tools/languages.py. */
+.lang{position:relative}
+/* The FAQ's accordion styles reach every <details> and <summary> on the page:
+   a rule under it, padding, a weight and a chevron of its own. The menu has
+   its own chevron, so all of that is taken back off here. */
+.lang{border-bottom:0}
+.lang summary{list-style:none; cursor:pointer; padding:0; font-weight:inherit; font-size:inherit; border-radius:8px}
+.lang summary::-webkit-details-marker{display:none}
+.lang summary::marker{content:""}
+.lang summary::after,.lang[open] summary::after{content:none; display:none}
+/* The flex row lives on a span inside <summary>, not on <summary> itself:
+   Safari has a long history of ignoring display on summary. */
+.lang-btn{display:flex; align-items:center; gap:6px; padding:6px 2px; font-size:14.5px; line-height:1; color:var(--text-dim); transition:color .2s}
+.lang summary:hover .lang-btn,.lang[open] .lang-btn{color:var(--text)}
+.lang-btn svg{display:block; flex:none; width:16px; height:16px}
+.lang-btn .chev{width:11px; height:11px; margin-left:-1px; transition:transform .2s}
+.lang[open] .chev{transform:rotate(180deg)}
+.lang-menu{position:absolute; right:0; top:calc(100% + 12px); z-index:70; min-width:168px; display:flex; flex-direction:column; padding:6px; background:var(--panel); border:1px solid var(--rule); border-radius:14px; box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.nav-links .lang-menu a{padding:9px 12px; border-radius:9px; font-size:14.5px; color:var(--text-dim)}
+.nav-links .lang-menu a:hover{background:var(--chip); color:var(--text)}
+.nav-links .lang-menu a[aria-current="true"]{color:var(--text); background:var(--chip-on)}
+
+/* While the hero is on screen the nav takes the field's own night color in
+   both themes, so the top of the page is one dark piece. Redefining the
+   tokens here recolors the links, the language menu and the button too. The
+   script after the hero takes the class off once the field scrolls away. */
+.nav.on-field{
+  --ground:#0b0c0b; --panel:#1b1d1b; --text:#f3ecdc; --text-dim:#b4ad9c;
+  --rule:rgba(243,236,220,.13); --rule-soft:rgba(243,236,220,.07);
+  --chip:rgba(243,236,220,.06); --chip-on:rgba(157,176,129,.16);
+  background:#0b0c0b; border-bottom-color:transparent; color:var(--text)}
+.nav{transition:background-color .3s, border-color .3s}
+
+/* ============ HERO: a field of floating quotes ============ */
+/* Always night, in both themes: the cards are photographs, and the headline
+   reads on dark. Twelve cards (eight on a phone) hang at different depths;
+   the far ones are smaller, dimmer and blurred. A veil darkens the middle so
+   the headline stays legible over them. Each card's line sits where the app
+   puts it, a little above the middle, left-aligned. */
+.field{position:relative; overflow:hidden; height:calc(100svh - 72px); min-height:600px; max-height:980px; background:#0b0c0b; color:#f3ecdc}
+.field-cards{position:absolute; inset:0}
+.fc{position:absolute; left:var(--x); top:var(--y); width:var(--w); aspect-ratio:9/13; margin:0; border-radius:18px; overflow:hidden;
+  filter:blur(var(--b)) brightness(var(--br)); transform:translate(-50%,-50%) rotate(var(--r));
+  animation:float var(--t) ease-in-out infinite alternate; box-shadow:0 30px 60px rgba(0,0,0,.5); transition:margin .5s ease-out}
+.fc img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.fc::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.42) 36%,rgba(0,0,0,.42) 64%,rgba(0,0,0,.18))}
+.fc span{position:absolute; z-index:2; left:12%; right:10%; top:36%; font-family:var(--f-display); font-size:calc(var(--w) * .075); line-height:1.25; color:#f4ecdc; text-shadow:0 1px 10px rgba(0,0,0,.45)}
+@keyframes float{to{translate:0 -18px}}
+.field-veil{position:absolute; inset:0; pointer-events:none; background:radial-gradient(42% 46% at 50% 50%,rgba(11,12,11,.92),rgba(11,12,11,.55) 60%,rgba(11,12,11,.1))}
+.field-copy{position:relative; z-index:2; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:22px; padding:0 18px}
+.field h1{font-weight:300; font-size:clamp(44px,6.4vw,92px); line-height:1; letter-spacing:-.02em; max-width:12ch; color:#f3ecdc}
+.field h1 em{font-weight:400; color:#c9dca8}
+.field .lede{color:#bdb5a4; max-width:46ch}
+/* The App Store star rating. Typed in by hand: update it when the listing's
+   rating changes (see the README). Never a count of ratings. */
+.rating{display:flex; align-items:center; gap:10px; font-size:15px; color:#cfc7b5}
+.rating b{color:#f3ecdc; font-weight:600}
+.rating-stars{display:inline-flex; gap:2px}
+.rating-stars svg{display:block; width:16px; height:16px}
+h1 em{font-style:italic; color:var(--accent)}
+.cta-row{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
+.qr{display:flex; align-items:center; gap:14px}
+/* Fixed light ground in both themes, since a QR needs dark-on-light to scan. */
+.qr-chip{width:120px; height:120px; padding:8px; border-radius:14px; background:#f4ecdc; flex:none}
+.qr-chip img{display:block; width:100%; height:100%}
+.qr-note{font-size:12.5px; line-height:1.35; color:var(--text-faint); max-width:15ch}
+
+/* ============ APP STORE BADGE ============ */
+/* Apple's official badge artwork (img/app-store-badge-zh-hant.svg, from Apple's
+   marketing tools), unmodified. Apple asks for at least 40px of height. */
+.store-badge{display:inline-block; line-height:0; border-radius:9px; transition:transform .18s, box-shadow .18s}
+.store-badge:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.store-badge img{height:52px; width:auto}
+
+/* ============ SECTION SHELL ============ */
+section{position:relative}
+section[id]{scroll-margin-top:84px}
+.band{padding:clamp(66px,7.5vw,100px) 0}
+.band-panel{background:var(--ground-deep)}
+.head{display:flex; flex-direction:column; gap:15px; max-width:56ch; margin-bottom:clamp(34px,4vw,50px)}
+
+/* ============ PICKER ============ */
+.picker{display:grid; grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr); gap:clamp(26px,3.4vw,48px); align-items:start}
+.chips{display:flex; flex-direction:column; gap:9px}
+.chip{
+  font-family:var(--f-body); font-size:16px; text-align:left; cursor:pointer;
+  background:var(--chip); color:var(--text-dim); border:1px solid var(--rule-soft);
+  padding:14px 17px; border-radius:13px; display:flex; align-items:center; gap:12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.chip::before{content:""; width:5px; height:5px; border-radius:50%; background:var(--text-faint); flex:none; transition:background .2s, box-shadow .2s}
+.chip:hover{color:var(--text); border-color:var(--rule)}
+.chip[aria-pressed="true"]{background:var(--chip-on); color:var(--text); border-color:color-mix(in srgb,var(--accent) 42%,transparent)}
+.chip[aria-pressed="true"]::before{background:var(--accent); box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 20%,transparent)}
+
+.answer-card{
+  background:var(--panel); border:1px solid var(--rule-soft); border-radius:22px;
+  padding:clamp(24px,3vw,36px); display:flex; flex-direction:column; gap:20px; min-height:300px;
+}
+.answer-label{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--text-faint); padding-bottom:18px; border-bottom:1px solid var(--rule-soft)}
+.answer-body{flex:1; display:flex; align-items:center}
+#quoteText{
+  font-family:var(--f-display); font-optical-sizing:auto; font-size:clamp(22px,2.4vw,30px);
+  line-height:1.26; letter-spacing:-.01em; transition:opacity .3s ease, translate .3s ease;
+}
+#quoteText.swap{opacity:0; translate:0 7px}
+.answer-foot{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+#quoteAttr{font-family:var(--f-mono); font-size:12.5px; color:var(--text-faint)}
+.again{
+  font-family:var(--f-mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  background:none; border:1px solid var(--rule); color:var(--text-dim);
+  padding:9px 15px; border-radius:999px; cursor:pointer; transition:color .2s, border-color .2s;
+}
+.again:hover{color:var(--accent); border-color:var(--accent-dim)}
+
+/* ============ PULL QUOTE ============ */
+.pull{position:relative; overflow:hidden; background:var(--hill-deep); color:#f2e9d6; padding:clamp(66px,8vw,104px) 0}
+.pull blockquote{
+  font-family:var(--f-display); font-optical-sizing:auto; font-style:italic; font-weight:400;
+  font-size:clamp(26px,3.5vw,44px); line-height:1.18; letter-spacing:-.014em; max-width:17ch; position:relative; z-index:2;
+}
+/* Attribution is 12px, so it needs 4.5:1, and an opacity fade can't reach that on the
+   light hill (cream tops out at 4.12:1 there), hence a per-theme color instead. */
+.pull cite{display:block; margin-top:22px; font:400 12px/1.4 var(--f-mono); letter-spacing:.14em; text-transform:uppercase; font-style:normal; color:var(--cite)}
+.pull-mark{position:absolute; right:-2%; top:-16%; font-family:var(--f-display); font-size:min(42vw,400px); line-height:1; opacity:.09; z-index:1; user-select:none; pointer-events:none}
+
+/* ============ PHOTOS ============ */
+/* The pull quote sits over a photograph, darkened enough for cream text. */
+.pull-photo{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0}
+.pull::before{content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(100deg,rgba(14,17,15,.82) 20%,rgba(14,17,15,.45) 100%)}
+.pull .wrap{position:relative; z-index:2}
+.step img{width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; border-radius:16px; margin-bottom:8px}
+
+.home-posts{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,2.2vw,28px)}
+.post-card{display:flex; flex-direction:column; text-decoration:none; border-radius:20px; overflow:hidden; background:var(--panel); border:1px solid var(--rule-soft); transition:transform .2s, border-color .2s}
+.post-card:hover{transform:translateY(-3px); border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+.post-card-img{aspect-ratio:16/9; overflow:hidden; background:var(--ground-deep)}
+.post-card-img img{width:100%; height:100%; object-fit:cover; transition:transform .5s}
+.post-card:hover .post-card-img img{transform:scale(1.04)}
+.post-card-body{display:flex; flex-direction:column; gap:8px; padding:18px 20px 22px}
+.post-card-kicker{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--accent)}
+.post-card h3{font-family:var(--f-display); font-weight:400; font-size:21px; line-height:1.2; letter-spacing:-.01em}
+.post-card p{color:var(--text-dim); font-size:14.5px; line-height:1.5}
+.more-link{display:inline-block; margin-top:26px; color:var(--accent); font-size:15.5px; text-underline-offset:3px}
+
+/* ============ MOMENTS + FEATURES ============ */
+.moments{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule)}
+.moment{padding:24px 22px 0 0; border-right:1px solid var(--rule-soft); display:flex; flex-direction:column; gap:9px}
+.moment:last-child{border-right:0}
+.moment:not(:first-child){padding-left:22px}
+.moment-name{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent)}
+.moment p{color:var(--text-dim); font-size:15.5px; max-width:26ch}
+
+.feats{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:clamp(22px,2.6vw,36px); margin-top:clamp(46px,5vw,68px)}
+.feat{display:flex; flex-direction:column; gap:8px; padding-top:20px; border-top:1px solid var(--rule)}
+.feat p{color:var(--text-dim); font-size:15px}
+
+/* ============ STEPS ============ */
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(24px,3vw,42px); counter-reset:s}
+.step{display:flex; flex-direction:column; gap:9px; padding-top:22px; border-top:1px solid var(--rule); counter-increment:s}
+.step::before{content:counter(s,decimal-leading-zero); font-family:var(--f-mono); font-size:12.5px; letter-spacing:.13em; color:var(--accent)}
+.step p{color:var(--text-dim); font-size:15.5px}
+.shots{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,2vw,26px)}
+.shots img{width:100%; height:auto; border-radius:18px}
+
+/* ============ FAQ ============ */
+.faq{max-width:70ch}
+details{border-bottom:1px solid var(--rule-soft)}
+summary{cursor:pointer; list-style:none; padding:19px 40px 19px 0; position:relative; font-weight:500; font-size:17px; transition:color .2s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--accent)}
+summary::after{
+  content:""; position:absolute; right:8px; top:50%; width:9px; height:9px;
+  border-right:1.5px solid var(--text-faint); border-bottom:1.5px solid var(--text-faint);
+  translate:0 -60%; rotate:45deg; transition:rotate .22s, border-color .2s;
+}
+details[open] summary::after{rotate:225deg; translate:0 -30%; border-color:var(--accent)}
+details p{color:var(--text-dim); font-size:15.5px; padding:0 6ch 21px 0; max-width:62ch}
+/* The FAQ answers are the only place on this page that links out. Without
+   this they inherit body colour and read as ordinary text. */
+details p a{color:var(--accent); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px}
+
+/* ============ FINAL + FOOTER ============ */
+.final{text-align:center; padding:clamp(72px,8vw,108px) 0 0}
+.final-in{display:flex; flex-direction:column; align-items:center; gap:23px}
+.final .lede{text-align:center}
+.final .qr{flex-direction:column; text-align:center; gap:10px}
+.final .qr-note{max-width:22ch}
+.find-us .wrap{display:flex; flex-direction:column; gap:16px}
+.featured-badges{display:flex; flex-wrap:wrap; align-items:center; gap:14px}
+.featured-badges a{line-height:0}
+footer{
+  margin-top:clamp(56px,7vw,84px); padding:24px 0 28px; border-top:1px solid var(--rule-soft);
+  display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  font-family:var(--f-mono); font-size:12px; letter-spacing:.05em; color:var(--text-faint);
+}
+footer nav{display:flex; gap:22px; flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{color:var(--accent)}
+footer .social{display:flex; align-items:center; gap:6px; margin:-6px auto -6px -6px}
+footer .social a{display:flex; padding:6px}
+footer .social svg{width:16px; height:16px; fill:currentColor}
+
+/* ============ FREE TO TRY ============
+   The wallpaper makers and the envelope pages, between the hero and the
+   app's screenshots. Each card is a picture you can tap, a line of what you
+   get, the topics as their own links (each is its own page), and a button. */
+.free{padding-top:clamp(40px,5vw,64px)}
+.free-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(16px,2.4vw,28px); margin-top:clamp(22px,3vw,34px)}
+.free-card{display:flex; flex-direction:column; border:1px solid var(--rule-soft); border-radius:26px; overflow:hidden;
+  background:linear-gradient(var(--chip),var(--chip)),var(--ground); box-shadow:0 14px 40px rgba(0,0,0,.10)}
+.free-art{position:relative; display:block; height:clamp(210px,24vw,270px); overflow:hidden}
+.free-wall .free-art{background:radial-gradient(120% 120% at 50% 0%,#3b4a38,#141917)}
+.free-env .free-art{background:radial-gradient(120% 120% at 50% 0%,#c8b48d,#8f7550)}
+.free-phone{position:absolute; bottom:-26%; width:30%; aspect-ratio:9/19.5; border-radius:18px; overflow:hidden;
+  border:5px solid #0b0d0c; box-shadow:0 14px 34px rgba(0,0,0,.45); transition:transform .3s}
+.free-phone img{width:100%; height:100%; object-fit:cover; display:block}
+.free-phone:nth-child(1){left:8%; transform:rotate(-8deg) translateY(10px)}
+.free-phone:nth-child(2){left:35%; bottom:-14%; z-index:2}
+.free-phone:nth-child(3){left:62%; transform:rotate(8deg) translateY(10px)}
+.free-envelope{position:absolute; left:50%; top:54%; width:min(62%,280px); aspect-ratio:1.5; transform:translate(-50%,-50%) rotate(-4deg);
+  transition:transform .3s; filter:drop-shadow(0 18px 30px rgba(40,28,10,.35))}
+.free-envelope i{position:absolute; display:block}
+.free-envelope .fe-back{inset:0; border-radius:12px; background:#b99c6c}
+.free-envelope .fe-letter{left:8%; right:8%; top:-18%; height:70%; border-radius:6px; background:#fffaf0; padding:10% 9% 0;
+  font:400 13px/1.35 var(--f-display); color:#3e372d; text-align:center; font-style:normal; overflow:hidden}
+.free-envelope .fe-pocket{inset:0; border-radius:12px; background:linear-gradient(170deg,#efdfbf,#ddc59a); clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%)}
+.free-envelope .fe-seal{left:50%; top:57%; width:44px; height:44px; margin:-22px 0 0 -22px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#c0493f,#86251f 72%); color:#f6e2cf; display:grid; place-items:center;
+  font:500 19px/1 var(--f-display); font-style:normal; box-shadow:0 3px 8px rgba(0,0,0,.3)}
+.free-body{display:flex; flex-direction:column; gap:12px; padding:clamp(20px,2.4vw,28px)}
+.free-body h3{font-family:var(--f-display); font-weight:400; font-size:clamp(23px,2.2vw,28px); line-height:1.15; letter-spacing:-.01em}
+.free-body h3 a{color:inherit; text-decoration:none}
+.free-body p{color:var(--text-dim); font-size:16px; line-height:1.45}
+.free-pick{display:flex; flex-direction:column; gap:10px; margin-top:4px}
+.free-pick-label{font-size:15px; font-weight:600; color:var(--text)}
+.free-topics{display:flex; flex-wrap:wrap; gap:8px}
+.free-topics a{display:inline-flex; align-items:center; gap:4px; padding:8px 10px 8px 14px; border-radius:999px;
+  border:1.5px solid var(--accent-dim); background:var(--chip-on); color:var(--text); font-size:14.5px; font-weight:600;
+  text-decoration:none; transition:background .15s, border-color .15s, transform .15s}
+.free-topics a svg{width:15px; height:15px; color:var(--accent); flex:none}
+.free-topics a:hover{border-color:var(--accent); transform:translateY(-1px)}
+.free-cta{align-self:flex-start; display:inline-flex; align-items:center; gap:8px; margin-top:4px; padding:12px 20px; border-radius:999px;
+  background:var(--accent); color:var(--ground); font-weight:600; font-size:15.5px; text-decoration:none; transition:filter .15s, transform .15s}
+.free-cta:hover{filter:brightness(1.08); transform:translateX(2px)}
+.free-cta svg{width:18px; height:18px}
+@media (max-width:820px){ .free-grid{grid-template-columns:1fr} }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:940px){
+  .picker{grid-template-columns:1fr}
+  .chips{flex-direction:row; flex-wrap:wrap}
+  .chip{flex:1 1 auto; font-size:15px; padding:12px 15px}
+  .moments,.steps{grid-template-columns:repeat(2,1fr)}
+  .home-posts{grid-template-columns:1fr 1fr}
+  .moment{border-right:0; padding-left:0 !important; padding-right:20px; border-bottom:1px solid var(--rule-soft); padding-bottom:20px}
+  /* Small screens keep the blog, guides and help links up top (the class is
+     named for the first of them); the badge in the hero is the way to the
+     App Store. */
+  .nav-links > a:not(.btn):not(.nav-blog){display:none}
+  .nav-links .btn{display:none}
+  .nav-links a.nav-blog{font-size:16px; color:var(--text)}
+  .brand{flex-direction:column; gap:3px; font-size:12.5px; font-weight:500; letter-spacing:0}
+  .brand img{width:30px; height:30px; border-radius:8px}
+  .nav-in{padding:10px 0}
+  .store-badge img{height:58px}
+}
+/* On a phone the field keeps eight cards, moved out to the edges so the
+   headline has the middle to itself. */
+@media (max-width:700px){
+  .field{height:calc(100svh - 74px); min-height:640px}
+  .fc{left:var(--mx); top:var(--my); width:var(--mw)}
+  .fc span{font-size:calc(var(--mw) * .075)}
+  .fc.wide{display:none}
+  .field h1{font-size:clamp(40px,11vw,56px)}
+}
+@media (max-width:560px){
+  body{font-size:16.5px}
+  /* The language menu keeps its globe and chevron and drops the name, and its
+     list hangs from the nav's right gutter, as on the other pages. */
+  .lang-name{display:none}
+  .lang-btn{gap:3px}
+  .lang{position:static}
+  .lang-menu{right:16px; top:calc(100% - 4px)}
+  .wrap{width:min(100% - 32px,var(--max))}
+  .moments,.steps{grid-template-columns:1fr}
+  .shots{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:64%; overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:-16px; padding-inline:16px; scroll-padding-inline:16px}
+  .shots img{scroll-snap-align:start}
+  .home-posts{grid-template-columns:1fr}
+  /* A phone cannot scan its own screen; the button is the way in there. */
+  .qr{display:none}
+}
+/* The first iPhone SE's 320px: Blog, Guides, Help and the language menu fit
+   beside the brand once the gaps close up a little. */
+@media (max-width:359px){
+  .nav-links{gap:18px}
+}
+/* Traditional Chinese, the home page's own: lines measured in em, since a
+   Han character is two ch wide (17ch is eight characters); more leading; the
+   mono labels' wide tracking taken in, as it only gaps Chinese out. */
+html:lang(zh-Hant) .pull blockquote{max-width:13em; line-height:1.45}
+html:lang(zh-Hant) :is(.eyebrow,.answer-label,.post-card-kicker,.again,.pull cite){letter-spacing:.06em}
+html:lang(zh-Hant) #quoteText{letter-spacing:0; line-height:1.55}
+html:lang(zh-Hant) .post-card h3{line-height:1.45}
+html:lang(zh-Hant) .field h1{max-width:none; font-size:clamp(40px,5.6vw,80px); line-height:1.15}
+html:lang(zh-Hant) .fc span{line-height:1.45}
+html:lang(zh-Hant) .qr-note{max-width:9em}
+html:lang(zh-Hant) .final .qr-note{max-width:13em}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important; transition:none !important}
+  html{scroll-behavior:auto}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - 勵志語錄・名言佳句","description":"Dailies 把簡短的勵志句子送到你的鎖定畫面和主畫面小工具，每天在不同的時刻。選好主題和時段，然後照常過你的一天。沒有廣告，也不用登入。","url":"https://mydailies.app/zh-hant/","inLanguage":"zh-Hant","operatingSystem":"iOS","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/zh-hant/lock-screen.jpg","https://mydailies.app/img/app/zh-hant/home-screen.jpg","https://mydailies.app/img/app/zh-hant/topics.jpg","https://mydailies.app/img/app/zh-hant/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies 把簡短的勵志句子放到你的鎖定畫面和主畫面上。","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Dailies 是什麼？","acceptedAnswer":{"@type":"Answer","text":"Dailies 是一款每日動力 App。它會從你追蹤的主題中挑選簡短的勵志句子，每天在你選的時段內、不同的時刻送給你，也會在你的鎖定畫面和主畫面上放一句。沒有廣告，也不用登入。想多讀的時候，有可以一直滑下去的首頁，也沒有什麼進度需要追。"}},
+{"@type":"Question","name":"Dailies 適合誰？","acceptedAnswer":{"@type":"Answer","text":"適合想要一點小小的、穩定的推力，又不想再多管理一個習慣的人：開會空檔在鎖定畫面上看到一句，晚上來一句讓人平靜的，日子過得特別慢時來一句好笑的。"}},
+{"@type":"Question","name":"要打開 App 才能收到每天的動力嗎？","acceptedAnswer":{"@type":"Answer","text":"不用。句子會以通知送達，鎖定畫面和主畫面小工具上也會有新的一句等著你。想繼續讀、回頭看存下的句子，或寫下自己的句子時，再打開 App 就好。"}},
+{"@type":"Question","name":"可以選擇收到哪些勵志句子嗎？","acceptedAnswer":{"@type":"Answer","text":"可以。追蹤你在乎的主題（平靜、自信、幽默、工作、身體與健康、信仰、點燃創造力等等），Dailies 就會從中挑選。主題隨時都能更改，收到句子的頻率和你願意收到通知的時段也一樣。"}},
+{"@type":"Question","name":"Dailies 可以在一天中不定時送來句子嗎？","acceptedAnswer":{"@type":"Answer","text":"可以。選好一天想收到幾句，以及你願意收到通知的時段和日子，Dailies 就會把句子分散在這段時間裡，每天的時間都不一樣。意料之外的句子，才是你真的會讀的句子。詳情請看如何在一天中不定時收到勵志句子。"}},
+{"@type":"Question","name":"小工具上可以顯示聖經經文、哲學或好笑的句子嗎？","acceptedAnswer":{"@type":"Answer","text":"可以。想看聖經經文，就追蹤「信仰」的主題；想看馬可·奧理略、老子和蒙田的句子，就追蹤「意義」和「平靜」的主題；想看冷面又善意的句子，就追蹤「幽默」的主題。你的小工具和通知都會從你追蹤的主題中挑選。"}},
+{"@type":"Question","name":"Dailies 能用在 iPhone 鎖定畫面上嗎？","acceptedAnswer":{"@type":"Answer","text":"可以。Dailies 有鎖定畫面小工具和主畫面小工具，拿起手機的那一刻，句子就在那裡，不用解鎖，也不用打開任何東西。步驟請看：如何在 iPhone 鎖定畫面上顯示句子，以及如何在主畫面加入小工具。"}},
+{"@type":"Question","name":"Dailies 和其他名言 App 有什麼不同？","acceptedAnswer":{"@type":"Answer","text":"句子會在你選的時段內、不同的時刻送達，而不是每天同一時間送一次，所以依然能吸引你的目光。你追蹤的是細分的主題，而不是籠統的分類，每一句都附上作者的名字。你還可以把小工具變成自己的樣子，在文字後面放上照片和低調的效果，這些效果在主畫面小工具上會動起來。任何方案都沒有廣告，也不需要建立帳號。沒有什麼需要跟上的：句子來了就讀一讀，這樣就好。"}},
+{"@type":"Question","name":"有什麼 App 可以取代 Motivation？","acceptedAnswer":{"@type":"Answer","text":"如果你喜歡 Motivation，但想要更細分的主題、更多設計小工具的方式，或希望句子在你的時段內、由 Dailies 挑選的時刻送達，而不是照固定的時間表，那就試試 Dailies。完整比較請看：Dailies vs Motivation。"}},
+{"@type":"Question","name":"可以儲存句子，或寫自己的句子嗎？","acceptedAnswer":{"@type":"Answer","text":"兩者都可以。為打動你的句子點愛心，它們就會留在「喜歡的句子」裡；你也可以在「我的句子」裡寫下自己的句子。有了 Premium，Dailies 會把這兩種句子和其他句子一起送給你。你自己寫的句子和點過愛心的句子都會備份到你的 iCloud 帳號，所以換手機或清除手機資料也不會遺失。"}},
+{"@type":"Question","name":"Dailies 是免費的嗎？","acceptedAnswer":{"@type":"Answer","text":"是的，免費版有一部分主題和背景可以選。Dailies Premium 是可自由選擇的年訂閱，會開放整個句子庫：所有主題、可以單獨追蹤的「喜歡的句子」和「我的句子」、所有背景和效果、在句子後面放上你自己的照片和顏色，而且分享的圖片上不會有字樣標誌。"}},
+{"@type":"Question","name":"Dailies 可以在哪些裝置上使用？","acceptedAnswer":{"@type":"Answer","text":"iPhone 和 iPad，直向或橫向都可以。沒有 Android 版本。掃描這個頁面上的 QR 碼，或在 App Store 搜尋 Dailies。"}}
+]}
+</script>
+</head>
+<body>
+<nav class="nav on-field">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><img src="/icon.png" alt=""><span>Dailies</span></a>
+    <div class="nav-links">
+      <a class="nav-blog" href="/zh-hant/blog/">部落格</a>
+      <a class="nav-blog" href="/zh-hant/guides/">指南</a>
+      <a class="nav-blog" href="/zh-hant/help/">說明</a>
+      <details class="lang"><summary aria-label="語言: 繁體中文"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">繁體中文</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/" hreflang="en" lang="en">English</a><a href="/fr/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/" hreflang="de" lang="de-DE">Deutsch</a><a href="/it/" hreflang="it" lang="it">Italiano</a><a href="/es/" hreflang="es" lang="es-MX">Español</a><a href="/pt/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant-TW" aria-current="true">繁體中文</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/zh-hant/#get">取得 Dailies</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="field">
+    <div class="field-cards" id="field-cards" aria-hidden="true">
+      <figure class="fc" style="--x:9%;--y:20%;--w:110px;--b:3.2px;--br:0.45;--r:-3deg;--t:6s;--mx:12%;--my:16%;--mw:70px" data-z="0.0"><img src="/img/home/field/night-lake.jpg" width="360" height="520" alt="" decoding="async"><span>別為了讓別人舒服，就讓自己一直縮著。</span></figure>
+      <figure class="fc" style="--x:24%;--y:74%;--w:194px;--b:1.0px;--br:0.8;--r:4deg;--t:7s;--mx:88%;--my:14%;--mw:112px" data-z="0.7"><img src="/img/home/field/mtn-peak-dawn.jpg" width="360" height="520" alt="" decoding="async"><span>不是每件事都得今天有答案。</span></figure>
+      <figure class="fc" style="--x:38%;--y:12%;--w:158px;--b:1.9px;--br:0.65;--r:-5deg;--t:8s;--mx:8%;--my:52%;--mw:94px" data-z="0.4"><img src="/img/home/field/sea-sunset-surf.jpg" width="360" height="520" alt="" decoding="async"><span>達成的每個小目標，都是通往下一個的墊腳石。</span></figure>
+      <figure class="fc" style="--x:63%;--y:10%;--w:122px;--b:2.9px;--br:0.5;--r:6deg;--t:9s;--mx:92%;--my:50%;--mw:76px" data-z="0.1"><img src="/img/home/field/field-first-light.jpg" width="360" height="520" alt="" decoding="async"><span>方向比速度重要。</span></figure>
+      <figure class="fc" style="--x:78%;--y:26%;--w:206px;--b:0.6px;--br:0.85;--r:-7deg;--t:10s;--mx:18%;--my:88%;--mw:118px" data-z="0.8"><img src="/img/home/field/forest-fog-canopy.jpg" width="360" height="520" alt="" decoding="async"><span>要有用，不要隨叫隨到。</span></figure>
+      <figure class="fc" style="--x:91%;--y:62%;--w:170px;--b:1.6px;--br:0.7;--r:3deg;--t:6s;--mx:84%;--my:90%;--mw:100px" data-z="0.5"><img src="/img/home/field/sky-above-the-clouds.jpg" width="360" height="520" alt="" decoding="async"><span>願意學習，本身就已經是一種本事。</span></figure>
+      <figure class="fc" style="--x:72%;--y:86%;--w:134px;--b:2.6px;--br:0.55;--r:-4deg;--t:7s;--mx:50%;--my:8%;--mw:82px" data-z="0.2"><img src="/img/home/field/zen-misty-pier.jpg" width="360" height="520" alt="" decoding="async"><span>有些今天看來很簡單的事，曾經是你覺得最難的。</span></figure>
+      <figure class="fc" style="--x:6%;--y:58%;--w:218px;--b:0.3px;--br:0.9;--r:5deg;--t:8s;--mx:50%;--my:96%;--mw:124px" data-z="0.9"><img src="/img/home/field/desert-dusk.jpg" width="360" height="520" alt="" decoding="async"><span>身後走過的路，證明前面的路走得通。</span></figure>
+      <figure class="fc wide" style="--x:30%;--y:44%;--w:182px;--b:1.3px;--br:0.75;--r:-6deg;--t:9s" data-z="0.6"><img src="/img/home/field/mtn-blue-ridges.jpg" width="360" height="520" alt="" decoding="async"><span>腳步發抖，也是在往前走。</span></figure>
+      <figure class="fc wide" style="--x:86%;--y:8%;--w:146px;--b:2.2px;--br:0.6;--r:7deg;--t:10s" data-z="0.3"><img src="/img/home/field/night-aurora.jpg" width="360" height="520" alt="" decoding="async"><span>每寫完一章，下一章就更好寫。</span></figure>
+      <figure class="fc wide" style="--x:50%;--y:92%;--w:110px;--b:3.2px;--br:0.45;--r:-3deg;--t:6s" data-z="0.0"><img src="/img/home/field/field-dandelions.jpg" width="360" height="520" alt="" decoding="async"><span>不是分給你的，手夠不著；分給你的，無論你在哪裡，都會找到你。</span></figure>
+      <figure class="fc wide" style="--x:96%;--y:90%;--w:194px;--b:1.0px;--br:0.8;--r:4deg;--t:7s" data-z="0.7"><img src="/img/home/field/sky-cloud-line.jpg" width="360" height="520" alt="" decoding="async"><span>你擅長的事，比你記得的要多。</span></figure>
+    </div>
+    <div class="field-veil"></div>
+    <div class="field-copy">
+      <p class="rating"><span class="rating-stars" role="img" aria-label="4.7 顆星（滿分 5 顆星）"><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><defs><linearGradient id="star-part"><stop offset=".7" stop-color="#f2b632"/><stop offset=".7" stop-color="rgba(243,236,220,.25)"/></linearGradient></defs><path fill="url(#star-part)" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg></span><span>App Store 評分 <b>4.7</b></span></p>
+      <h1>每日動力，<br><em>直達鎖定畫面。</em></h1>
+      <p class="lede">簡短的勵志句子，出現在你的鎖定畫面和主畫面上，每天在不同的時刻。選好主題和時段，然後照常過你的一天。</p>
+      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-zh-hant&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-zh-hant.svg" width="142" height="52" alt="在 App Store 下載"></a>
+    </div>
+<script>/* The field's cards: short lines (under 34 characters) from the 30 quotes the app's curated start dealt a new reader (kCuratedRandom30 in lib/data/curated_start_sets.dart, the dailies repo), shuffled on every visit. The markup carries the first twelve, for anyone without scripts. While the field is on screen the nav and the browser bar take its color. On a desktop the cards drift a little with the mouse, the near ones more. */
+(function(){
+  var Q=[{"t":"別為了讓別人舒服，就讓自己一直縮著。"},{"t":"不是每件事都得今天有答案。"},{"t":"達成的每個小目標，都是通往下一個的墊腳石。"},{"t":"方向比速度重要。"},{"t":"要有用，不要隨叫隨到。"},{"t":"願意學習，本身就已經是一種本事。"},{"t":"有些今天看來很簡單的事，曾經是你覺得最難的。"},{"t":"身後走過的路，證明前面的路走得通。"},{"t":"腳步發抖，也是在往前走。"},{"t":"每寫完一章，下一章就更好寫。"},{"t":"不是分給你的，手夠不著；分給你的，無論你在哪裡，都會找到你。","a":"薩迪"},{"t":"你擅長的事，比你記得的要多。"},{"t":"大自然喜愛耐心：這一點要永遠記住。","a":"尼古萊·果戈里"},{"t":"你私下練出的力量，在哪裡都用得上。"},{"t":"行善時，不要去擔心有沒有人會知道。","a":"歐內斯特·勒南"},{"t":"名聲是站在光裡的激情投下的影子。","a":"哈利勒·紀伯倫"},{"t":"你生活裡的人，因為認識你而過得更好。"},{"t":"犯錯，是任何人學會任何東西的唯一途徑。"},{"t":"你有一顆堅強的心，和一個清醒的頭腦。"},{"t":"目標要堅定，計畫要靈活。","a":"史蒂夫·帕夫利納"},{"t":"勇敢的選擇，通向更廣闊的人生。"},{"t":"堅持，就是讓你的夢想知道你是認真的。"},{"t":"沒有一顆心，天才或勇氣又算什麼？","a":"奧利佛·哥德史密斯"},{"t":"耐心讓你看見匆忙時會錯過的東西。"},{"t":"人的意義，不在於得到了什麼，而在於渴望得到什麼。","a":"哈利勒·紀伯倫"},{"t":"堅持走下去。你天生就是走長路的人。"},{"t":"正如練肌肉需要肌肉，養成自律也需要自律。","a":"史蒂夫·帕夫利納"},{"t":"每對新事物說一次「好」，你的世界就寬一點。"},{"t":"每個好習慣，都始於勇敢的某一天。"},{"t":"人生每個階段，都可以成長。"}];
+  var nav=document.querySelector('.nav'), field=document.querySelector('.field'),
+      tc=[].slice.call(document.querySelectorAll('meta[name="theme-color"]')),
+      tc0=tc.map(function(m){return m.content});
+  function onField(on){
+    nav.classList.toggle('on-field',on);
+    tc.forEach(function(m,i){m.content=on?'#0b0c0b':tc0[i]});
+  }
+  onField(true);
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){onField(e[0].isIntersecting)},{rootMargin:'-80px 0px 0px 0px'}).observe(field);
+  var q=Q.filter(function(x){return x.t.length<34});
+  for(var i=q.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=q[i];q[i]=q[j];q[j]=t}
+  var c=document.querySelectorAll('#field-cards .fc');
+  for(var k=0;k<c.length;k++) c[k].querySelector('span').textContent=q[k%q.length].t;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!matchMedia('(hover: hover)').matches) return;
+  addEventListener('mousemove',function(e){
+    var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+    for(var k=0;k<c.length;k++){var z=+c[k].dataset.z+.2;c[k].style.marginLeft=(-x*60*z)+'px';c[k].style.marginTop=(-y*40*z)+'px'}
+  });
+})();
+</script>
+  </section>
+
+  <!-- FREE TO TRY -->
+  <section class="band free" id="free">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">在這裡免費試用</div>
+        <h2>做一張給自己。送一份給別人。</h2>
+      </div>
+      <div class="free-grid">
+        <div class="free-card free-wall">
+          <div class="free-art" aria-hidden="true"><span class="free-phone"><img src="/img/wallpapers/zh-hant/a-year-of-small-steps-can-surprise-you.jpg" width="540" height="1170" alt="" loading="lazy"></span><span class="free-phone"><img src="/img/wallpapers/zh-hant/keep-the-hope-keep-the-dream-keep-going.jpg" width="540" height="1170" alt="" loading="lazy"></span><span class="free-phone"><img src="/img/wallpapers/zh-hant/you-can-make-today-one-of-the-good.jpg" width="540" height="1170" alt="" loading="lazy"></span></div>
+          <div class="free-body">
+            <h3>鎖定畫面的句子背景圖片</h3>
+            <p>選一句話和一張背景，幾秒鐘就能存好。</p>
+            <div class="free-pick"><span class="free-pick-label">製作背景圖片</span><div class="free-topics"><a href="/zh-hant/motivational-wallpapers/">勵志<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/zh-hant/inspirational-quotes-lock-screen/">啟發<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/zh-hant/positive-quotes-lock-screen/">正向<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a></div></div>
+          </div>
+        </div>
+        <div class="free-card free-env">
+          <div class="free-art" aria-hidden="true"><span class="free-envelope"><i class="fe-back"></i><i class="fe-letter">看看你經歷過的一切，你依然懷抱希望。</i><i class="fe-pocket"></i><i class="fe-seal">D</i></span></div>
+          <div class="free-body">
+            <h3>傳幾句暖心話給別人</h3>
+            <p>對方會收到一個小信封，打開就是你選的那句話。不需要安裝 App。</p>
+            <div class="free-pick"><span class="free-pick-label">寄一個信封</span><div class="free-topics"><a href="/zh-hant/words-of-encouragement/">鼓勵<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/zh-hant/motivational-quotes-for-a-friend/">給朋友<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/zh-hant/love-quotes-for-your-partner/">愛<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/zh-hant/good-morning-quotes/">早安<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE APP -->
+  <section class="band" id="app">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">App 畫面</div>
+        <h2>在你的 iPhone 上，看起來是這樣。</h2>
+      </div>
+      <div class="shots">
+        <img src="/img/app/zh-hant/lock-screen.jpg" width="600" height="1298" alt="iPhone 鎖定畫面上的 Dailies：時鐘下方有一句話，通知也送來一句" loading="lazy">
+        <img src="/img/app/zh-hant/home-screen.jpg" width="600" height="1298" alt="iPhone 主畫面上的 Dailies 小工具" loading="lazy">
+        <img src="/img/app/zh-hant/topics.jpg" width="600" height="1298" alt="在 Dailies 選擇主題，例如平靜和自信" loading="lazy">
+        <img src="/img/app/zh-hant/notifications.jpg" width="600" height="1298" alt="一句 Dailies 的句子以通知送達" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- PICKER -->
+  <section class="band band-panel" id="taste">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">試試看</div>
+        <h2>選一個主題，看看哪一句打動你。</h2>
+        <p class="lede">這些都是 App 裡真正的主題，句子也都來自它的句子庫。</p>
+      </div>
+      <div class="picker">
+        <div class="chips" id="chips"></div>
+        <div class="answer-card">
+          <span class="answer-label">你會收到像這樣的句子</span>
+          <div class="answer-body"><p id="quoteText"></p></div>
+          <div class="answer-foot">
+            <span id="quoteAttr"></span>
+            <button class="again" id="again" type="button">再來一句</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="pull">
+    <img class="pull-photo" src="/img/home/pull.jpg" width="1080" height="608" alt="" loading="lazy">
+    <span class="pull-mark" aria-hidden="true">&#8221;</span>
+    <div class="wrap">
+      <blockquote>你也和你最強的那一環一樣強。</blockquote>
+      <cite>哈利勒·紀伯倫《先知》</cite>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="band band-panel" id="how">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">使用方式</div>
+        <h2>設定一次，之後就不用再管了。</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><img src="/img/home/step-1.jpg" width="720" height="450" alt="草地上的蒲公英絨球" loading="lazy"><h3>選你感興趣的</h3><p>選幾個你在乎的主題。隨時都能更改。</p></div>
+        <div class="step"><img src="/img/home/step-2.jpg" width="720" height="450" alt="穿過沙丘草叢、通往大海的木棧道" loading="lazy"><h3>決定你的步調</h3><p>一天兩三句，或再多一些。由你決定。</p></div>
+        <div class="step"><img src="/img/home/step-3.jpg" width="720" height="450" alt="雲海之上、群山後方升起的太陽" loading="lazy"><h3>照常過你的一天</h3><p>好句子會自己出現。讀一讀、存起來、傳出去。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FROM THE BLOG -->
+  <section class="band" id="blog">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">來自部落格</div>
+        <h2>談動力，不用喊口號。</h2>
+        <p class="lede">在需要的時刻可以讀的名言集，以及關於動力如何運作的直白解答。</p>
+      </div>
+      <div class="home-posts">
+        <a class="post-card" href="/zh-hant/blog/how-to-motivate-yourself/"><div class="post-card-img"><img src="/img/blog/how-to-motivate-yourself-thumb.jpg" width="640" height="360" alt="" loading="lazy"></div><div class="post-card-body"><div class="post-card-kicker">動力入門</div><h3>沒有動力的時候，如何激勵自己</h3><p>為什麼動力通常晚一步才出現，以及在它出現之前可以做什麼。</p></div></a>
+        <a class="post-card" href="/zh-hant/blog/motivational-quotes-for-hard-times/"><div class="post-card-img"><img src="/img/blog/motivational-quotes-for-hard-times-thumb.jpg" width="640" height="360" alt="" loading="lazy"></div><div class="post-card-body"><div class="post-card-kicker">名言集</div><h3>艱難時刻的勵志名言</h3><p>安靜的句子，陪你撐過今天，也陪你走過漫長的黑暗。</p></div></a>
+        <a class="post-card" href="/zh-hant/blog/morning-motivation-quotes/"><div class="post-card-img"><img src="/img/blog/morning-motivation-quotes-thumb.jpg" width="640" height="360" alt="" loading="lazy"></div><div class="post-card-body"><div class="post-card-kicker">名言集</div><h3>早晨的動力：開啟一天的句子</h3><p>一早醒來，有比收件匣更值得讀的東西。</p></div></a>
+      </div>
+      <a class="more-link" href="/zh-hant/blog/">部落格的所有文章</a>
+    </div>
+  </section>
+
+  <!-- FIND US -->
+  <section class="find-us" aria-label="介紹過 Dailies 的網站">
+    <div class="wrap">
+      <div class="eyebrow">介紹過 Dailies 的網站</div>
+      <div class="featured-badges">
+        <a href="https://apptierlist.com/apps/dailies-motivational-quotes-6804210416/?from=badge"><img src="https://apptierlist.com/badge/dailies-motivational-quotes-6804210416.svg?k=atl-zlfcqm" alt="AppTierList 上的 Dailies" width="129" height="40"></a>
+        <a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge2-dark.svg" alt="登上 Twelve Tools 精選" width="148" height="40"></a>
+        <a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&amp;theme=light" alt="Fazier 徽章" width="169" height="40"></a>
+        <a href="https://startupfa.me/s/dailies?utm_source=mydailies.app" target="_blank"><img src="https://startupfa.me/badges/featured-badge.webp" alt="Dailies 登上 Startup Fame 精選" width="127" height="40"></a>
+        <a href="https://neeed.directory" target="_blank" rel="noopener"><img src="https://neeed.directory/badges/neeed-badge-light.svg" alt="登上 neeed.directory 精選" width="126" height="40"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band" id="faq">
+    <div class="wrap">
+      <div class="head"><h2>常見問題</h2></div>
+      <div class="faq">
+        <details open><summary>Dailies 是什麼？</summary>
+          <p>Dailies 是一款每日動力 App。它會從你追蹤的主題中挑選簡短的勵志句子，每天在你選的時段內、不同的時刻送給你，也會在你的鎖定畫面和主畫面上放一句。沒有廣告，也不用登入。想多讀的時候，有可以一直滑下去的首頁，也沒有什麼進度需要追。</p></details>
+        <details><summary>Dailies 適合誰？</summary>
+          <p>適合想要一點小小的、穩定的推力，又不想再多管理一個習慣的人：開會空檔在鎖定畫面上看到一句，晚上來一句讓人平靜的，日子過得特別慢時來一句好笑的。</p></details>
+        <details><summary>要打開 App 才能收到每天的動力嗎？</summary>
+          <p>不用。句子會以通知送達，鎖定畫面和主畫面小工具上也會有新的一句等著你。想繼續讀、回頭看存下的句子，或寫下自己的句子時，再打開 App 就好。</p></details>
+        <details><summary>可以選擇收到哪些勵志句子嗎？</summary>
+          <p>可以。追蹤你在乎的主題（平靜、自信、幽默、工作、身體與健康、信仰、點燃創造力等等），Dailies 就會從中挑選。主題隨時都能更改，收到句子的頻率和你願意收到通知的時段也一樣。</p></details>
+        <details><summary>Dailies 可以在一天中不定時送來句子嗎？</summary>
+          <p>可以。選好一天想收到幾句，以及你願意收到通知的時段和日子，Dailies 就會把句子分散在這段時間裡，每天的時間都不一樣。意料之外的句子，才是你真的會讀的句子。詳情請看<a href="/zh-hant/guides/motivational-quotes-at-random-times/">如何在一天中不定時收到勵志句子</a>。</p></details>
+        <details><summary>小工具上可以顯示聖經經文、哲學或好笑的句子嗎？</summary>
+          <p>可以。想看聖經經文，就追蹤「信仰」的主題；想看馬可·奧理略、老子和蒙田的句子，就追蹤「意義」和「平靜」的主題；想看冷面又善意的句子，就追蹤「幽默」的主題。你的小工具和通知都會從你追蹤的主題中挑選。</p></details>
+        <details><summary>Dailies 能用在 iPhone 鎖定畫面上嗎？</summary>
+          <p>可以。Dailies 有鎖定畫面小工具和主畫面小工具，拿起手機的那一刻，句子就在那裡，不用解鎖，也不用打開任何東西。步驟請看：<a href="/zh-hant/guides/quotes-on-your-iphone-lock-screen/">如何在 iPhone 鎖定畫面上顯示句子</a>，以及<a href="/zh-hant/guides/add-a-widget-to-your-home-screen/">如何在主畫面加入小工具</a>。</p></details>
+        <details><summary>Dailies 和其他名言 App 有什麼不同？</summary>
+          <p>句子會在你選的時段內、不同的時刻送達，而不是每天同一時間送一次，所以依然能吸引你的目光。你追蹤的是細分的主題，而不是籠統的分類，每一句都附上作者的名字。你還可以把小工具變成自己的樣子，在文字後面放上照片和低調的效果，這些效果在主畫面小工具上會動起來。任何方案都沒有廣告，也不需要建立帳號。沒有什麼需要跟上的：句子來了就讀一讀，這樣就好。</p></details>
+        <details><summary>有什麼 App 可以取代 Motivation？</summary>
+          <p>如果你喜歡 Motivation，但想要更細分的主題、更多設計小工具的方式，或希望句子在你的時段內、由 Dailies 挑選的時刻送達，而不是照固定的時間表，那就試試 Dailies。完整比較請看：<a href="/zh-hant/compare/dailies-vs-motivation/">Dailies vs Motivation</a>。</p></details>
+        <details><summary>可以儲存句子，或寫自己的句子嗎？</summary>
+          <p>兩者都可以。為打動你的句子點愛心，它們就會留在「喜歡的句子」裡；你也可以在「我的句子」裡寫下自己的句子。有了 Premium，Dailies 會把這兩種句子和其他句子一起送給你。你自己寫的句子和點過愛心的句子都會備份到你的 iCloud 帳號，所以換手機或清除手機資料也不會遺失。</p></details>
+        <details><summary>Dailies 是免費的嗎？</summary>
+          <p>是的，免費版有一部分主題和背景可以選。Dailies Premium 是可自由選擇的年訂閱，會開放整個句子庫：所有主題、可以單獨追蹤的「喜歡的句子」和「我的句子」、所有背景和效果、在句子後面放上你自己的照片和顏色，而且分享的圖片上不會有字樣標誌。</p></details>
+        <details><summary>Dailies 可以在哪些裝置上使用？</summary>
+          <p>iPhone 和 iPad，直向或橫向都可以。沒有 Android 版本。掃描這個頁面上的 QR 碼，或在 App Store 搜尋 Dailies。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="band final" id="get" style="padding-bottom:0">
+    <div class="wrap final-in">
+      <h2>今天，就從一句好話開始。</h2>
+      <p class="lede">設定一次，接下來就交給 Dailies。</p>
+      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-zh-hant&amp;mt=8" data-download="final"><img src="/img/app-store-badge-zh-hant.svg" width="142" height="52" alt="在 App Store 下載"></a>
+      <div class="qr">
+        <div class="qr-chip"><img src="/img/home/qr-zh-hant.svg" alt="連到 App Store 上 Dailies 的 QR 碼"></div>
+        <p class="qr-note">用 iPhone 相機掃描，就能打開 App Store</p>
+      </div>
+    </div>
+    <div class="wrap"><footer>
+      <span>&copy; 2026 Dailies</span>
+      <div class="social">
+        <a href="https://www.tiktok.com/@mydailies.app" aria-label="TikTok" title="TikTok" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#tiktok"/></svg></a>
+        <a href="https://www.instagram.com/mydailies.app/" aria-label="Instagram" title="Instagram" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#instagram"/></svg></a>
+        <a href="https://www.facebook.com/mydailiesapp" aria-label="Facebook" title="Facebook" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#facebook"/></svg></a>
+        <a href="https://www.youtube.com/@mydailiesapp" aria-label="YouTube" title="YouTube" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#youtube"/></svg></a>
+        <a href="https://www.pinterest.com/mydailiesapp/" aria-label="Pinterest" title="Pinterest" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#pinterest"/></svg></a>
+        <a href="https://www.linkedin.com/company/mydailiesapp/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#linkedin"/></svg></a>
+      </div>
+      <nav>
+        <a href="/zh-hant/compare/">比較</a>
+        <a href="/zh-hant/about/">關於</a>
+        <a href="/press/" hreflang="en">媒體資料</a>
+        <a href="/terms/" hreflang="en">使用條款</a>
+        <a href="/privacy/" hreflang="en">隱私權政策</a>
+        <a href="/cookies/" hreflang="en">Cookie 政策</a>
+        <a href="#" data-cookie-settings>Cookie 設定</a>
+      </nav>
+    </footer></div>
+  </section>
+</main>
+
+<script>
+/* ---------- Taste picker: real quotes from the app's own library ---------- */
+(function(){
+  const SETS = [{"id": "believe", "label": "自信", "set": "confidence", "quotes": [{"t": "誰都是先當眾做得很爛，後來才做得好。", "a": null}, {"t": "你不是慢。你在學的東西是真的難。", "a": null}, {"t": "你的進步沒丟。你只是暫停了。", "a": null}]}, {"id": "laugh", "label": "幽默", "set": "humor", "quotes": [{"t": "保鮮盒和蓋子住在不同的樓裡，死活不肯見面。", "a": null}, {"t": "我坐下時開始「哎喲」一聲了，再也回不去了。", "a": null}, {"t": "進店買一樣東西，我從來沒有只拿著那一樣出來過。", "a": null}]}, {"id": "direction", "label": "方向", "set": "direction", "quotes": [{"t": "別讓別人的請求佔掉你狀態最好的時段。", "a": null}, {"t": "真正重要的事，幾乎從不標著「緊急」送來。", "a": null}, {"t": "光靠想，想不出另一種人生。", "a": null}]}, {"id": "calm", "label": "平靜", "set": "calm", "quotes": [{"t": "給擔心約個時間，別把一整天都給它。", "a": null}, {"t": "到外面坐一杯茶的工夫。", "a": null}, {"t": "你可以過糟糕的一週，它不必代表什麼。", "a": null}]}, {"id": "work", "label": "工作", "set": "work", "quotes": [{"t": "每個「好」都要花掉一個晚上。好好算算價錢。", "a": null}, {"t": "忙碌不等於有用，可感覺起來幾乎一模一樣。", "a": null}, {"t": "你做的事不必出名，也一樣有意義。", "a": null}]}, {"id": "kind-to-self", "label": "善待自己", "set": "self_kindness", "quotes": [{"t": "在這樣的一天裡，你做了你能做的。", "a": null}, {"t": "動起來，是因為對你好，不是因為你欠誰一副身材。", "a": null}, {"t": "看起來毫不費力的人，通常早在別處做過這件事了。", "a": null}]}];
+  const chips = document.getElementById('chips');
+  const qText = document.getElementById('quoteText');
+  const qAttr = document.getElementById('quoteAttr');
+  const again = document.getElementById('again');
+  let active = 0, idx = 0;
+
+  function attr(q){ return q.a || ''; }
+
+  SETS.forEach((n,i)=>{
+    const b = document.createElement('button');
+    b.type='button'; b.className='chip'; b.textContent=n.label;
+    if(n.set) b.dataset.set=n.set;
+    b.setAttribute('aria-pressed', i===0 ? 'true':'false');
+    b.addEventListener('click', ()=>{ i===active ? cycle() : select(i); });
+    chips.appendChild(b);
+  });
+
+  function render(){
+    const n = SETS[active], q = n.quotes[idx % n.quotes.length];
+    qText.classList.add('swap');
+    setTimeout(()=>{
+      qText.textContent = '\u300C' + q.t + '\u300D';
+      qAttr.textContent = attr(q);
+      qText.classList.remove('swap');
+    }, 190);
+  }
+  function select(i){
+    active = i; idx = 0;
+    [...chips.children].forEach((c,j)=>c.setAttribute('aria-pressed', j===i ? 'true':'false'));
+    render();
+  }
+  function cycle(){ idx++; render(); }
+  again.addEventListener('click', cycle);
+
+  const q0 = SETS[0].quotes[0];
+  qText.textContent = '\u300C' + q0.t + '\u300D';
+  qAttr.textContent = attr(q0);
+})();
+</script>
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>
