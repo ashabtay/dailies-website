@@ -72,7 +72,7 @@ PLAY_ALT = {
     "de": "Jetzt bei Google Play",
     "ja": "Google Play で手に入れよう",
     "it": "Disponibile su Google Play",
-    "ko": "다운로드하기 Google Play",
+    "ko": "Google Play에서 다운로드",
     "zh-hant": "Google Play 立即下載",
 }
 

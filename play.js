@@ -348,7 +348,7 @@
   var PLAY_ALT = {
     en: 'Get it on Google Play', es: 'Disponible en Google Play', pt: 'Disponível no Google Play',
     fr: 'Disponible sur Google Play', de: 'Jetzt bei Google Play', ja: 'Google Play で手に入れよう',
-    it: 'Disponibile su Google Play', ko: '다운로드하기 Google Play', 'zh-hant': 'Google Play 立即下載'
+    it: 'Disponibile su Google Play', ko: 'Google Play에서 다운로드', 'zh-hant': 'Google Play 立即下載'
   };
 
   /* Both stores' badges in the page's language, the same artwork and sizes
