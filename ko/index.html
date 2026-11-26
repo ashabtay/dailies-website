@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
+<meta name="p:domain_verify" content="801c54653c023cddcd5ceb462975cf7e">
+<title>Dailies: 매일의 명언과 동기부여를 잠금 화면에</title>
+<meta name="description" content="Dailies는 짧은 동기부여 글귀를 잠금 화면과 홈 화면 위젯에, 매일 다른 순간에 보내 드려요. 주제와 시간대를 고르고 나면, 평소처럼 하루를 보내면 돼요. 광고도 로그인도 없어요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dailies: 매일의 명언과 동기부여를 잠금 화면에">
+<meta property="og:description" content="등을 떠밀어 줄 한마디가 필요한 날이 있어요. 웃음이, 더 나은 집중이, 나에게 조금 더 다정해도 된다는 허락이 필요한 날도 있고요.">
+<meta property="og:url" content="https://mydailies.app/ko/">
+<meta property="og:image" content="https://mydailies.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dailies: 매일의 동기부여를 잠금 화면에 바로">
+<meta property="og:site_name" content="Dailies">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mydailies.app/ko/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/">
+<link rel="alternate" hreflang="it" href="https://mydailies.app/it/">
+<link rel="alternate" hreflang="ko" href="https://mydailies.app/ko/">
+<link rel="alternate" hreflang="zh-Hant" href="https://mydailies.app/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+
+<style>
+/* ============ TOKENS: dark-first (the app icon is a night scene) ============ */
+:root{
+  --ground:#191c1d; --ground-deep:#101314; --panel:#202523;
+  --rule:rgba(240,230,210,.13); --rule-soft:rgba(240,230,210,.07);
+  --text:#f0e6d2; --text-dim:#aeaa9c; --text-faint:#888c81;
+  --accent:#9db081; --accent-dim:#7d8f63; --hill:#4f5d3c; --hill-deep:#3b462d;
+  --cite:#bab9a6;
+  --card-shadow:0 24px 60px rgba(0,0,0,.45);
+  --chip:rgba(240,230,210,.05); --chip-on:rgba(157,176,129,.14);
+  --max:1100px;
+  --f-display:Fraunces,Georgia,"Times New Roman",serif;
+  --f-body:Figtree,ui-sans-serif,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"Courier Prime",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+/* Light = dawn over the same hills. Guarded so an explicit dark choice wins. */
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --ground:#f3ecdc; --ground-deep:#e9e0cb; --panel:#fbf7ec;
+    --rule:rgba(27,31,28,.16); --rule-soft:rgba(27,31,28,.08);
+    --text:#1b1f1c; --text-dim:#525749; --text-faint:#5f6457;
+    --accent:#47552f; --accent-dim:#5d6e45; --hill:#7b8b61; --hill-deep:#66754e;
+    --cite:#fff;
+    --card-shadow:0 20px 50px rgba(52,56,40,.16);
+    --chip:rgba(27,31,28,.045); --chip-on:rgba(71,85,47,.12);
+  }
+}
+:root[data-theme="light"]{
+  --ground:#f3ecdc; --ground-deep:#e9e0cb; --panel:#fbf7ec;
+  --rule:rgba(27,31,28,.16); --rule-soft:rgba(27,31,28,.08);
+  --text:#1b1f1c; --text-dim:#525749; --text-faint:#5f6457;
+  --accent:#47552f; --accent-dim:#5d6e45; --hill:#7b8b61; --hill-deep:#66754e;
+  --cite:#fff;
+  --card-shadow:0 20px 50px rgba(52,56,40,.16);
+  --chip:rgba(27,31,28,.045); --chip-on:rgba(71,85,47,.12);
+}
+/* Korean: see the same block in doc.css. */
+html:lang(ko){
+  --f-display:Fraunces,AppleMyungjo,"Nanum Myeongjo","Noto Serif KR",Batang,serif;
+  --f-body:Figtree,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+  --f-mono:"Courier Prime","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",monospace;
+  word-break:keep-all;
+}
+html:lang(ko) body{line-height:1.85}
+html:lang(ko) :is(h1,h2,h3,em,i,blockquote,blockquote p,.pull,.pull *){letter-spacing:0; font-style:normal}
+html:lang(ko) h1{line-height:1.3}
+html:lang(ko) h2{line-height:1.4}
+html:lang(ko) .lede{max-width:34em}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:var(--f-body); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{max-width:100%; display:block}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+.wrap{width:min(100% - 44px,var(--max)); margin-inline:auto}
+
+h1,h2,h3,blockquote{text-wrap:balance; margin:0}
+h1,h2{font-family:var(--f-display); font-optical-sizing:auto; font-weight:400; letter-spacing:-.014em}
+h1{font-size:clamp(35px,4vw,55px); line-height:1.08}
+h2{font-size:clamp(29px,3.3vw,42px); line-height:1.12}
+h3{font-family:var(--f-body); font-weight:600; font-size:18px; line-height:1.35; letter-spacing:-.01em}
+p{margin:0}
+.lede{color:var(--text-dim); font-size:clamp(16.5px,1.3vw,18.5px); max-width:56ch}
+
+.eyebrow{
+  font-family:var(--f-mono); font-size:12px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:11px;
+}
+.eyebrow::before{content:""; width:20px; height:1px; background:var(--accent-dim); flex:none}
+
+/* ============ NAV ============ */
+.nav{position:sticky; top:0; z-index:60; background:color-mix(in srgb,var(--ground) 88%,transparent); backdrop-filter:blur(14px); border-bottom:1px solid var(--rule-soft)}
+.nav-in{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:13px 0}
+.brand{display:flex; align-items:center; gap:11px; text-decoration:none; font-weight:600; letter-spacing:-.02em; font-size:18px}
+.brand img{width:33px; height:33px; border-radius:9px}
+.nav-links{display:flex; align-items:center; gap:28px}
+/* :not(.btn) matters: a bare `.nav-links a` outranks `.btn-primary` and
+   would repaint the pill's label in the muted link color. */
+.nav-links a:not(.btn){text-decoration:none; font-size:14.5px; color:var(--text-dim); transition:color .2s}
+.nav-links a:not(.btn):hover{color:var(--text)}
+.nav-links a.btn{text-decoration:none}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  font-family:var(--f-body); font-size:15px; font-weight:600; text-decoration:none;
+  padding:12px 21px; border-radius:999px; border:1px solid transparent; cursor:pointer;
+  transition:transform .18s;
+}
+.btn-primary{background:var(--text); color:var(--ground)}
+.btn-primary:hover{transform:translateY(-2px)}
+.nav .btn{padding:10px 17px; font-size:14px}
+/* The language menu, the same block as doc.css. The markup is written by
+   tools/languages.py. */
+.lang{position:relative}
+/* The FAQ's accordion styles reach every <details> and <summary> on the page:
+   a rule under it, padding, a weight and a chevron of its own. The menu has
+   its own chevron, so all of that is taken back off here. */
+.lang{border-bottom:0}
+.lang summary{list-style:none; cursor:pointer; padding:0; font-weight:inherit; font-size:inherit; border-radius:8px}
+.lang summary::-webkit-details-marker{display:none}
+.lang summary::marker{content:""}
+.lang summary::after,.lang[open] summary::after{content:none; display:none}
+/* The flex row lives on a span inside <summary>, not on <summary> itself:
+   Safari has a long history of ignoring display on summary. */
+.lang-btn{display:flex; align-items:center; gap:6px; padding:6px 2px; font-size:14.5px; line-height:1; color:var(--text-dim); transition:color .2s}
+.lang summary:hover .lang-btn,.lang[open] .lang-btn{color:var(--text)}
+.lang-btn svg{display:block; flex:none; width:16px; height:16px}
+.lang-btn .chev{width:11px; height:11px; margin-left:-1px; transition:transform .2s}
+.lang[open] .chev{transform:rotate(180deg)}
+.lang-menu{position:absolute; right:0; top:calc(100% + 12px); z-index:70; min-width:168px; display:flex; flex-direction:column; padding:6px; background:var(--panel); border:1px solid var(--rule); border-radius:14px; box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.nav-links .lang-menu a{padding:9px 12px; border-radius:9px; font-size:14.5px; color:var(--text-dim)}
+.nav-links .lang-menu a:hover{background:var(--chip); color:var(--text)}
+.nav-links .lang-menu a[aria-current="true"]{color:var(--text); background:var(--chip-on)}
+
+/* While the hero is on screen the nav takes the field's own night color in
+   both themes, so the top of the page is one dark piece. Redefining the
+   tokens here recolors the links, the language menu and the button too. The
+   script after the hero takes the class off once the field scrolls away. */
+.nav.on-field{
+  --ground:#0b0c0b; --panel:#1b1d1b; --text:#f3ecdc; --text-dim:#b4ad9c;
+  --rule:rgba(243,236,220,.13); --rule-soft:rgba(243,236,220,.07);
+  --chip:rgba(243,236,220,.06); --chip-on:rgba(157,176,129,.16);
+  background:#0b0c0b; border-bottom-color:transparent; color:var(--text)}
+.nav{transition:background-color .3s, border-color .3s}
+
+/* ============ HERO: a field of floating quotes ============ */
+/* Always night, in both themes: the cards are photographs, and the headline
+   reads on dark. Twelve cards (eight on a phone) hang at different depths;
+   the far ones are smaller, dimmer and blurred. A veil darkens the middle so
+   the headline stays legible over them. Each card's line sits where the app
+   puts it, a little above the middle, left-aligned. */
+.field{position:relative; overflow:hidden; height:calc(100svh - 72px); min-height:600px; max-height:980px; background:#0b0c0b; color:#f3ecdc}
+.field-cards{position:absolute; inset:0}
+.fc{position:absolute; left:var(--x); top:var(--y); width:var(--w); aspect-ratio:9/13; margin:0; border-radius:18px; overflow:hidden;
+  filter:blur(var(--b)) brightness(var(--br)); transform:translate(-50%,-50%) rotate(var(--r));
+  animation:float var(--t) ease-in-out infinite alternate; box-shadow:0 30px 60px rgba(0,0,0,.5); transition:margin .5s ease-out}
+.fc img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.fc::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.42) 36%,rgba(0,0,0,.42) 64%,rgba(0,0,0,.18))}
+.fc span{position:absolute; z-index:2; left:12%; right:10%; top:36%; font-family:var(--f-display); font-size:calc(var(--w) * .075); line-height:1.25; color:#f4ecdc; text-shadow:0 1px 10px rgba(0,0,0,.45)}
+@keyframes float{to{translate:0 -18px}}
+.field-veil{position:absolute; inset:0; pointer-events:none; background:radial-gradient(42% 46% at 50% 50%,rgba(11,12,11,.92),rgba(11,12,11,.55) 60%,rgba(11,12,11,.1))}
+.field-copy{position:relative; z-index:2; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:22px; padding:0 18px}
+.field h1{font-weight:300; font-size:clamp(44px,6.4vw,92px); line-height:1; letter-spacing:-.02em; max-width:12ch; color:#f3ecdc}
+.field h1 em{font-weight:400; color:#c9dca8}
+.field .lede{color:#bdb5a4; max-width:46ch}
+/* The App Store star rating. Typed in by hand: update it when the listing's
+   rating changes (see the README). Never a count of ratings. */
+.rating{display:flex; align-items:center; gap:10px; font-size:15px; color:#cfc7b5}
+.rating b{color:#f3ecdc; font-weight:600}
+.rating-stars{display:inline-flex; gap:2px}
+.rating-stars svg{display:block; width:16px; height:16px}
+h1 em{font-style:italic; color:var(--accent)}
+.cta-row{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
+.qr{display:flex; align-items:center; gap:14px}
+/* Fixed light ground in both themes, since a QR needs dark-on-light to scan. */
+.qr-chip{width:120px; height:120px; padding:8px; border-radius:14px; background:#f4ecdc; flex:none}
+.qr-chip img{display:block; width:100%; height:100%}
+.qr-note{font-size:12.5px; line-height:1.35; color:var(--text-faint); max-width:15ch}
+
+/* ============ APP STORE BADGE ============ */
+/* Apple's official badge artwork (img/app-store-badge-ko.svg, from Apple's
+   marketing tools), unmodified. Apple asks for at least 40px of height. */
+.store-badge{display:inline-block; line-height:0; border-radius:9px; transition:transform .18s, box-shadow .18s}
+.store-badge:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.store-badge img{height:52px; width:auto}
+
+/* ============ SECTION SHELL ============ */
+section{position:relative}
+section[id]{scroll-margin-top:84px}
+.band{padding:clamp(66px,7.5vw,100px) 0}
+.band-panel{background:var(--ground-deep)}
+.head{display:flex; flex-direction:column; gap:15px; max-width:56ch; margin-bottom:clamp(34px,4vw,50px)}
+
+/* ============ PICKER ============ */
+.picker{display:grid; grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr); gap:clamp(26px,3.4vw,48px); align-items:start}
+.chips{display:flex; flex-direction:column; gap:9px}
+.chip{
+  font-family:var(--f-body); font-size:16px; text-align:left; cursor:pointer;
+  background:var(--chip); color:var(--text-dim); border:1px solid var(--rule-soft);
+  padding:14px 17px; border-radius:13px; display:flex; align-items:center; gap:12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.chip::before{content:""; width:5px; height:5px; border-radius:50%; background:var(--text-faint); flex:none; transition:background .2s, box-shadow .2s}
+.chip:hover{color:var(--text); border-color:var(--rule)}
+.chip[aria-pressed="true"]{background:var(--chip-on); color:var(--text); border-color:color-mix(in srgb,var(--accent) 42%,transparent)}
+.chip[aria-pressed="true"]::before{background:var(--accent); box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 20%,transparent)}
+
+.answer-card{
+  background:var(--panel); border:1px solid var(--rule-soft); border-radius:22px;
+  padding:clamp(24px,3vw,36px); display:flex; flex-direction:column; gap:20px; min-height:300px;
+}
+.answer-label{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--text-faint); padding-bottom:18px; border-bottom:1px solid var(--rule-soft)}
+.answer-body{flex:1; display:flex; align-items:center}
+#quoteText{
+  font-family:var(--f-display); font-optical-sizing:auto; font-size:clamp(22px,2.4vw,30px);
+  line-height:1.26; letter-spacing:-.01em; transition:opacity .3s ease, translate .3s ease;
+}
+#quoteText.swap{opacity:0; translate:0 7px}
+.answer-foot{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+#quoteAttr{font-family:var(--f-mono); font-size:12.5px; color:var(--text-faint)}
+.again{
+  font-family:var(--f-mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  background:none; border:1px solid var(--rule); color:var(--text-dim);
+  padding:9px 15px; border-radius:999px; cursor:pointer; transition:color .2s, border-color .2s;
+}
+.again:hover{color:var(--accent); border-color:var(--accent-dim)}
+
+/* ============ PULL QUOTE ============ */
+.pull{position:relative; overflow:hidden; background:var(--hill-deep); color:#f2e9d6; padding:clamp(66px,8vw,104px) 0}
+.pull blockquote{
+  font-family:var(--f-display); font-optical-sizing:auto; font-style:italic; font-weight:400;
+  font-size:clamp(26px,3.5vw,44px); line-height:1.18; letter-spacing:-.014em; max-width:17ch; position:relative; z-index:2;
+}
+/* Attribution is 12px, so it needs 4.5:1, and an opacity fade can't reach that on the
+   light hill (cream tops out at 4.12:1 there), hence a per-theme color instead. */
+.pull cite{display:block; margin-top:22px; font:400 12px/1.4 var(--f-mono); letter-spacing:.14em; text-transform:uppercase; font-style:normal; color:var(--cite)}
+.pull-mark{position:absolute; right:-2%; top:-16%; font-family:var(--f-display); font-size:min(42vw,400px); line-height:1; opacity:.09; z-index:1; user-select:none; pointer-events:none}
+
+/* ============ PHOTOS ============ */
+/* The pull quote sits over a photograph, darkened enough for cream text. */
+.pull-photo{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0}
+.pull::before{content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(100deg,rgba(14,17,15,.82) 20%,rgba(14,17,15,.45) 100%)}
+.pull .wrap{position:relative; z-index:2}
+.step img{width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; border-radius:16px; margin-bottom:8px}
+
+.home-posts{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,2.2vw,28px)}
+.post-card{display:flex; flex-direction:column; text-decoration:none; border-radius:20px; overflow:hidden; background:var(--panel); border:1px solid var(--rule-soft); transition:transform .2s, border-color .2s}
+.post-card:hover{transform:translateY(-3px); border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+.post-card-img{aspect-ratio:16/9; overflow:hidden; background:var(--ground-deep)}
+.post-card-img img{width:100%; height:100%; object-fit:cover; transition:transform .5s}
+.post-card:hover .post-card-img img{transform:scale(1.04)}
+.post-card-body{display:flex; flex-direction:column; gap:8px; padding:18px 20px 22px}
+.post-card-kicker{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--accent)}
+.post-card h3{font-family:var(--f-display); font-weight:400; font-size:21px; line-height:1.2; letter-spacing:-.01em}
+.post-card p{color:var(--text-dim); font-size:14.5px; line-height:1.5}
+.more-link{display:inline-block; margin-top:26px; color:var(--accent); font-size:15.5px; text-underline-offset:3px}
+
+/* ============ MOMENTS + FEATURES ============ */
+.moments{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule)}
+.moment{padding:24px 22px 0 0; border-right:1px solid var(--rule-soft); display:flex; flex-direction:column; gap:9px}
+.moment:last-child{border-right:0}
+.moment:not(:first-child){padding-left:22px}
+.moment-name{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent)}
+.moment p{color:var(--text-dim); font-size:15.5px; max-width:26ch}
+
+.feats{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:clamp(22px,2.6vw,36px); margin-top:clamp(46px,5vw,68px)}
+.feat{display:flex; flex-direction:column; gap:8px; padding-top:20px; border-top:1px solid var(--rule)}
+.feat p{color:var(--text-dim); font-size:15px}
+
+/* ============ STEPS ============ */
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(24px,3vw,42px); counter-reset:s}
+.step{display:flex; flex-direction:column; gap:9px; padding-top:22px; border-top:1px solid var(--rule); counter-increment:s}
+.step::before{content:counter(s,decimal-leading-zero); font-family:var(--f-mono); font-size:12.5px; letter-spacing:.13em; color:var(--accent)}
+.step p{color:var(--text-dim); font-size:15.5px}
+.shots{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,2vw,26px)}
+.shots img{width:100%; height:auto; border-radius:18px}
+
+/* ============ FAQ ============ */
+.faq{max-width:70ch}
+details{border-bottom:1px solid var(--rule-soft)}
+summary{cursor:pointer; list-style:none; padding:19px 40px 19px 0; position:relative; font-weight:500; font-size:17px; transition:color .2s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--accent)}
+summary::after{
+  content:""; position:absolute; right:8px; top:50%; width:9px; height:9px;
+  border-right:1.5px solid var(--text-faint); border-bottom:1.5px solid var(--text-faint);
+  translate:0 -60%; rotate:45deg; transition:rotate .22s, border-color .2s;
+}
+details[open] summary::after{rotate:225deg; translate:0 -30%; border-color:var(--accent)}
+details p{color:var(--text-dim); font-size:15.5px; padding:0 6ch 21px 0; max-width:62ch}
+/* The FAQ answers are the only place on this page that links out. Without
+   this they inherit body colour and read as ordinary text. */
+details p a{color:var(--accent); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px}
+
+/* ============ FINAL + FOOTER ============ */
+.final{text-align:center; padding:clamp(72px,8vw,108px) 0 0}
+.final-in{display:flex; flex-direction:column; align-items:center; gap:23px}
+.final .lede{text-align:center}
+.final .qr{flex-direction:column; text-align:center; gap:10px}
+.final .qr-note{max-width:22ch}
+.find-us .wrap{display:flex; flex-direction:column; gap:16px}
+.featured-badges{display:flex; flex-wrap:wrap; align-items:center; gap:14px}
+.featured-badges a{line-height:0}
+footer{
+  margin-top:clamp(56px,7vw,84px); padding:24px 0 28px; border-top:1px solid var(--rule-soft);
+  display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  font-family:var(--f-mono); font-size:12px; letter-spacing:.05em; color:var(--text-faint);
+}
+footer nav{display:flex; gap:22px; flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{color:var(--accent)}
+footer .social{display:flex; align-items:center; gap:6px; margin:-6px auto -6px -6px}
+footer .social a{display:flex; padding:6px}
+footer .social svg{width:16px; height:16px; fill:currentColor}
+
+/* ============ FREE TO TRY ============
+   The wallpaper makers and the envelope pages, between the hero and the
+   app's screenshots. Each card is a picture you can tap, a line of what you
+   get, the topics as their own links (each is its own page), and a button. */
+.free{padding-top:clamp(40px,5vw,64px)}
+.free-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(16px,2.4vw,28px); margin-top:clamp(22px,3vw,34px)}
+.free-card{display:flex; flex-direction:column; border:1px solid var(--rule-soft); border-radius:26px; overflow:hidden;
+  background:linear-gradient(var(--chip),var(--chip)),var(--ground); box-shadow:0 14px 40px rgba(0,0,0,.10)}
+.free-art{position:relative; display:block; height:clamp(210px,24vw,270px); overflow:hidden}
+.free-wall .free-art{background:radial-gradient(120% 120% at 50% 0%,#3b4a38,#141917)}
+.free-env .free-art{background:radial-gradient(120% 120% at 50% 0%,#c8b48d,#8f7550)}
+.free-phone{position:absolute; bottom:-26%; width:30%; aspect-ratio:9/19.5; border-radius:18px; overflow:hidden;
+  border:5px solid #0b0d0c; box-shadow:0 14px 34px rgba(0,0,0,.45); transition:transform .3s}
+.free-phone img{width:100%; height:100%; object-fit:cover; display:block}
+.free-phone:nth-child(1){left:8%; transform:rotate(-8deg) translateY(10px)}
+.free-phone:nth-child(2){left:35%; bottom:-14%; z-index:2}
+.free-phone:nth-child(3){left:62%; transform:rotate(8deg) translateY(10px)}
+.free-envelope{position:absolute; left:50%; top:54%; width:min(62%,280px); aspect-ratio:1.5; transform:translate(-50%,-50%) rotate(-4deg);
+  transition:transform .3s; filter:drop-shadow(0 18px 30px rgba(40,28,10,.35))}
+.free-envelope i{position:absolute; display:block}
+.free-envelope .fe-back{inset:0; border-radius:12px; background:#b99c6c}
+.free-envelope .fe-letter{left:8%; right:8%; top:-18%; height:70%; border-radius:6px; background:#fffaf0; padding:10% 9% 0;
+  font:400 13px/1.35 var(--f-display); color:#3e372d; text-align:center; font-style:normal; overflow:hidden}
+.free-envelope .fe-pocket{inset:0; border-radius:12px; background:linear-gradient(170deg,#efdfbf,#ddc59a); clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%)}
+.free-envelope .fe-seal{left:50%; top:57%; width:44px; height:44px; margin:-22px 0 0 -22px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#c0493f,#86251f 72%); color:#f6e2cf; display:grid; place-items:center;
+  font:500 19px/1 var(--f-display); font-style:normal; box-shadow:0 3px 8px rgba(0,0,0,.3)}
+.free-body{display:flex; flex-direction:column; gap:12px; padding:clamp(20px,2.4vw,28px)}
+.free-body h3{font-family:var(--f-display); font-weight:400; font-size:clamp(23px,2.2vw,28px); line-height:1.15; letter-spacing:-.01em}
+.free-body h3 a{color:inherit; text-decoration:none}
+.free-body p{color:var(--text-dim); font-size:16px; line-height:1.45}
+.free-pick{display:flex; flex-direction:column; gap:10px; margin-top:4px}
+.free-pick-label{font-size:15px; font-weight:600; color:var(--text)}
+.free-topics{display:flex; flex-wrap:wrap; gap:8px}
+.free-topics a{display:inline-flex; align-items:center; gap:4px; padding:8px 10px 8px 14px; border-radius:999px;
+  border:1.5px solid var(--accent-dim); background:var(--chip-on); color:var(--text); font-size:14.5px; font-weight:600;
+  text-decoration:none; transition:background .15s, border-color .15s, transform .15s}
+.free-topics a svg{width:15px; height:15px; color:var(--accent); flex:none}
+.free-topics a:hover{border-color:var(--accent); transform:translateY(-1px)}
+.free-cta{align-self:flex-start; display:inline-flex; align-items:center; gap:8px; margin-top:4px; padding:12px 20px; border-radius:999px;
+  background:var(--accent); color:var(--ground); font-weight:600; font-size:15.5px; text-decoration:none; transition:filter .15s, transform .15s}
+.free-cta:hover{filter:brightness(1.08); transform:translateX(2px)}
+.free-cta svg{width:18px; height:18px}
+@media (max-width:820px){ .free-grid{grid-template-columns:1fr} }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:940px){
+  .picker{grid-template-columns:1fr}
+  .chips{flex-direction:row; flex-wrap:wrap}
+  .chip{flex:1 1 auto; font-size:15px; padding:12px 15px}
+  .moments,.steps{grid-template-columns:repeat(2,1fr)}
+  .home-posts{grid-template-columns:1fr 1fr}
+  .moment{border-right:0; padding-left:0 !important; padding-right:20px; border-bottom:1px solid var(--rule-soft); padding-bottom:20px}
+  /* Small screens keep the blog, guides and help links up top (the class is
+     named for the first of them); the badge in the hero is the way to the
+     App Store. */
+  .nav-links > a:not(.btn):not(.nav-blog){display:none}
+  .nav-links .btn{display:none}
+  .nav-links a.nav-blog{font-size:16px; color:var(--text)}
+  .brand{flex-direction:column; gap:3px; font-size:12.5px; font-weight:500; letter-spacing:0}
+  .brand img{width:30px; height:30px; border-radius:8px}
+  .nav-in{padding:10px 0}
+  .store-badge img{height:58px}
+}
+/* On a phone the field keeps eight cards, moved out to the edges so the
+   headline has the middle to itself. */
+@media (max-width:700px){
+  .field{height:calc(100svh - 74px); min-height:640px}
+  .fc{left:var(--mx); top:var(--my); width:var(--mw)}
+  .fc span{font-size:calc(var(--mw) * .075)}
+  .fc.wide{display:none}
+  .field h1{font-size:clamp(40px,11vw,56px)}
+}
+@media (max-width:560px){
+  body{font-size:16.5px}
+  /* The language menu keeps its globe and chevron and drops the name, and its
+     list hangs from the nav's right gutter, as on the other pages. */
+  .lang-name{display:none}
+  .lang-btn{gap:3px}
+  .lang{position:static}
+  .lang-menu{right:16px; top:calc(100% - 4px)}
+  .wrap{width:min(100% - 32px,var(--max))}
+  .moments,.steps{grid-template-columns:1fr}
+  .shots{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:64%; overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:-16px; padding-inline:16px; scroll-padding-inline:16px}
+  .shots img{scroll-snap-align:start}
+  .home-posts{grid-template-columns:1fr}
+  /* A phone cannot scan its own screen; the button is the way in there. */
+  .qr{display:none}
+}
+/* The first iPhone SE's 320px: Blog, Guides, Help and the language menu fit
+   beside the brand once the gaps close up a little. */
+@media (max-width:359px){
+  .nav-links{gap:18px}
+}
+/* Korean, the home page's own: lines measured in em, since a Hangul syllable
+   is two ch wide; more leading; the mono labels' wide tracking taken in, as it
+   only gaps Hangul out. Korean breaks between words (keep-all, above). */
+html:lang(ko) .pull blockquote{max-width:13em; line-height:1.45}
+html:lang(ko) :is(.eyebrow,.answer-label,.post-card-kicker,.again,.pull cite){letter-spacing:.06em}
+html:lang(ko) #quoteText{letter-spacing:0; line-height:1.55}
+html:lang(ko) .post-card h3{line-height:1.45}
+html:lang(ko) .field h1{max-width:none; font-size:clamp(40px,5.6vw,80px); line-height:1.15}
+html:lang(ko) .fc span{line-height:1.45}
+html:lang(ko) .qr-note{max-width:10em}
+html:lang(ko) .final .qr-note{max-width:14em}
+/* A phone's hero headline at the Latin size would split the second line;
+   this keeps it whole down to 320px. */
+@media (max-width:940px){
+  html:lang(ko) .field h1{font-size:clamp(30px,8.6vw,48px); line-height:1.3}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important; transition:none !important}
+  html{scroll-behavior:auto}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - 동기부여 명언·좋은 글귀","description":"Dailies는 짧은 동기부여 글귀를 잠금 화면과 홈 화면 위젯에, 매일 다른 순간에 보내 드려요. 주제와 시간대를 고르고 나면, 평소처럼 하루를 보내면 돼요. 광고도 로그인도 없어요.","url":"https://mydailies.app/ko/","inLanguage":"ko","operatingSystem":"iOS","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/ko/lock-screen.jpg","https://mydailies.app/img/app/ko/home-screen.jpg","https://mydailies.app/img/app/ko/topics.jpg","https://mydailies.app/img/app/ko/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies는 짧은 동기부여 글귀를 잠금 화면과 홈 화면에 띄워 줘요.","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Dailies는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"Dailies는 매일의 동기부여를 위한 앱이에요. 팔로우하는 주제에서 고른 짧은 동기부여 글귀를 내가 정한 시간대 안에서 매일 다른 순간에 보내 주고, 잠금 화면과 홈 화면에도 하나를 띄워 줘요. 광고도 로그인도 없어요. 더 읽고 싶을 때는 넘겨 볼 수 있는 피드가 있고, 밀린 것을 따라잡아야 할 일도 없어요."}},
+{"@type":"Question","name":"Dailies는 누구를 위한 앱인가요?","acceptedAnswer":{"@type":"Answer","text":"또 하나의 습관을 관리하지 않고도 작고 꾸준한 응원을 받고 싶은 모든 분을 위한 앱이에요. 회의 사이에 잠금 화면에서 만나는 한 줄, 밤에는 차분한 한 줄, 하루가 길게 늘어질 때는 웃음이 나는 한 줄."}},
+{"@type":"Question","name":"매일의 동기부여를 받으려면 앱을 열어야 하나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 글귀는 알림으로 도착하고, 잠금 화면과 홈 화면 위젯에는 새 글귀가 기다리고 있어요. 앱은 더 읽고 싶을 때, 저장한 글귀를 다시 보고 싶을 때, 직접 글귀를 쓰고 싶을 때 열면 돼요."}},
+{"@type":"Question","name":"어떤 동기부여 글귀를 받을지 고를 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 평온, 자신감, 유머, 일, 몸과 건강, 신앙, 창의력 깨우기 등 관심 있는 주제를 팔로우하면 Dailies가 그 안에서 글귀를 골라요. 주제는 언제든 바꿀 수 있고, 얼마나 자주 받을지와 알림을 받아도 괜찮은 시간대도 마찬가지예요."}},
+{"@type":"Question","name":"Dailies가 하루 중 무작위 시간에 글귀를 보내 줄 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 하루에 받고 싶은 글귀 수와 알림을 받아도 괜찮은 시간대와 요일을 고르면, Dailies가 그 범위 안에서 매일 다른 시각에 나눠 보내요. 예상하지 못한 순간에 온 글귀가 정말로 읽히는 글귀예요. 자세한 내용은 하루 중 무작위 시간에 동기부여 명언을 받는 방법에서 볼 수 있어요."}},
+{"@type":"Question","name":"성경 구절이나 철학 글귀, 재미있는 글귀를 위젯에 띄울 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 성경 구절을 원하면 ‘신앙’ 주제를, 마르쿠스 아우렐리우스, 노자, 몽테뉴의 글귀를 원하면 ‘의미’와 ‘평온’ 주제를, 담백하고 다정한 글귀를 원하면 ‘유머’ 주제를 팔로우하세요. 위젯과 알림은 팔로우한 주제에서 글귀를 가져와요."}},
+{"@type":"Question","name":"iPhone 잠금 화면에서도 Dailies를 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. Dailies에는 잠금 화면 위젯과 홈 화면 위젯이 있어서, 잠금을 해제하거나 아무것도 열지 않아도 휴대전화를 드는 순간 글귀가 거기 있어요. 단계별 방법은 iPhone 잠금 화면에 명언을 띄우는 방법과 iPhone 홈 화면에 위젯을 추가하는 방법에 있어요."}},
+{"@type":"Question","name":"Dailies는 다른 명언 앱과 무엇이 다른가요?","acceptedAnswer":{"@type":"Answer","text":"글귀가 매일 같은 시각에 한 번 오는 대신 내가 정한 시간대 안의 여러 순간에 도착해서, 계속 눈길을 끌어요. 넓은 카테고리가 아니라 세밀한 주제를 팔로우하고, 모든 글귀에는 지은이의 이름이 붙어 있어요. 사진과 글귀 뒤의 은은한 효과로 위젯을 내 것으로 꾸밀 수도 있고, 그 효과는 홈 화면 위젯에서 움직여요. 어느 요금제에도 광고가 없고, 만들어야 할 계정도 없어요. 따라잡아야 할 것도 없어요. 도착하면 하나 읽고, 그걸로 끝이에요."}},
+{"@type":"Question","name":"Motivation 앱 대신 쓸 만한 앱이 있나요?","acceptedAnswer":{"@type":"Answer","text":"Motivation이 마음에 들지만 더 세밀한 주제, 위젯을 꾸미는 더 많은 방법, 정해진 일정이 아니라 내가 정한 시간대 안에서 Dailies가 고른 순간에 도착하는 글귀를 원한다면 Dailies를 써 보세요. 자세한 비교는 Dailies vs Motivation에서 볼 수 있어요."}},
+{"@type":"Question","name":"글귀를 저장하거나 직접 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"둘 다 돼요. 마음에 와닿은 글귀에 하트를 누르면 ‘좋아요한 글귀’에 모이고, ‘내 글귀’에서는 직접 글을 쓸 수 있어요. 프리미엄에서는 Dailies가 두 가지 모두를 다른 글귀와 함께 다시 보여 줘요. 직접 쓴 글과 하트를 누른 글귀는 iCloud 계정에 백업되므로, 휴대전화를 바꾸거나 초기화해도 사라지지 않아요."}},
+{"@type":"Question","name":"Dailies는 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네. 몇 가지 주제와 배경 중에서 고를 수 있는 무료 버전이 있어요. Dailies Premium은 선택 사항인 연간 구독으로, 라이브러리 전체를 열어 줘요. 모든 주제, 각각 하나의 피드가 되는 ‘좋아요한 글귀’와 ‘내 글귀’, 모든 배경과 효과, 글귀 뒤에 놓는 내 사진과 색, 그리고 로고 없이 공유되는 이미지까지요."}},
+{"@type":"Question","name":"Dailies는 어떤 기기에서 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"iPhone과 iPad에서 세로로도 가로로도 쓸 수 있어요. Android 버전은 없어요. 이 페이지의 코드를 스캔하거나 App Store에서 Dailies를 검색하세요."}}
+]}
+</script>
+</head>
+<body>
+<nav class="nav on-field">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><img src="/icon.png" alt=""><span>Dailies</span></a>
+    <div class="nav-links">
+      <a class="nav-blog" href="/ko/blog/">블로그</a>
+      <a class="nav-blog" href="/ko/guides/">가이드</a>
+      <a class="nav-blog" href="/ko/help/">도움말</a>
+      <details class="lang"><summary aria-label="언어: 한국어"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">한국어</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/" hreflang="en" lang="en">English</a><a href="/fr/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/" hreflang="de" lang="de-DE">Deutsch</a><a href="/it/" hreflang="it" lang="it">Italiano</a><a href="/es/" hreflang="es" lang="es-MX">Español</a><a href="/pt/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko" aria-current="true">한국어</a><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant-TW">繁體中文</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/ko/#get">Dailies 받기</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="field">
+    <div class="field-cards" id="field-cards" aria-hidden="true">
+      <figure class="fc" style="--x:9%;--y:20%;--w:110px;--b:3.2px;--br:0.45;--r:-3deg;--t:6s;--mx:12%;--my:16%;--mw:70px" data-z="0.0"><img src="/img/home/field/night-lake.jpg" width="360" height="520" alt="" decoding="async"><span>다른 누군가가 편하도록 작게 머물지 말자.</span></figure>
+      <figure class="fc" style="--x:24%;--y:74%;--w:194px;--b:1.0px;--br:0.8;--r:4deg;--t:7s;--mx:88%;--my:14%;--mw:112px" data-z="0.7"><img src="/img/home/field/mtn-peak-dawn.jpg" width="360" height="520" alt="" decoding="async"><span>모든 일에 오늘 답할 필요는 없다.</span></figure>
+      <figure class="fc" style="--x:38%;--y:12%;--w:158px;--b:1.9px;--br:0.65;--r:-5deg;--t:8s;--mx:8%;--my:52%;--mw:94px" data-z="0.4"><img src="/img/home/field/sea-sunset-surf.jpg" width="360" height="520" alt="" decoding="async"><span>이루어 낸 작은 목표 하나하나가 다음 목표로 가는 디딤돌이다.</span></figure>
+      <figure class="fc" style="--x:63%;--y:10%;--w:122px;--b:2.9px;--br:0.5;--r:6deg;--t:9s;--mx:92%;--my:50%;--mw:76px" data-z="0.1"><img src="/img/home/field/field-first-light.jpg" width="360" height="520" alt="" decoding="async"><span>속도보다 방향이 중요하다.</span></figure>
+      <figure class="fc" style="--x:78%;--y:26%;--w:206px;--b:0.6px;--br:0.85;--r:-7deg;--t:10s;--mx:18%;--my:88%;--mw:118px" data-z="0.8"><img src="/img/home/field/forest-fog-canopy.jpg" width="360" height="520" alt="" decoding="async"><span>언제나 대기하는 사람이 아니라 쓸모 있는 사람이 되라.</span></figure>
+      <figure class="fc" style="--x:91%;--y:62%;--w:170px;--b:1.6px;--br:0.7;--r:3deg;--t:6s;--mx:84%;--my:90%;--mw:100px" data-z="0.5"><img src="/img/home/field/sky-above-the-clouds.jpg" width="360" height="520" alt="" decoding="async"><span>배우려는 마음은 그 자체로 이미 하나의 재능이다.</span></figure>
+      <figure class="fc" style="--x:72%;--y:86%;--w:134px;--b:2.6px;--br:0.55;--r:-4deg;--t:7s;--mx:50%;--my:8%;--mw:82px" data-z="0.2"><img src="/img/home/field/zen-misty-pier.jpg" width="360" height="520" alt="" decoding="async"><span>오늘 쉽게 하는 일 중 몇몇은 한때 가장 어려운 일이었다.</span></figure>
+      <figure class="fc" style="--x:6%;--y:58%;--w:218px;--b:0.3px;--br:0.9;--r:5deg;--t:8s;--mx:50%;--my:96%;--mw:124px" data-z="0.9"><img src="/img/home/field/desert-dusk.jpg" width="360" height="520" alt="" decoding="async"><span>지나온 걸음이 앞으로의 걸음도 가능하다는 것을 보여 준다.</span></figure>
+      <figure class="fc wide" style="--x:30%;--y:44%;--w:182px;--b:1.3px;--br:0.75;--r:-6deg;--t:9s" data-z="0.6"><img src="/img/home/field/mtn-blue-ridges.jpg" width="360" height="520" alt="" decoding="async"><span>흔들리는 걸음도 앞으로 나아가게 한다.</span></figure>
+      <figure class="fc wide" style="--x:86%;--y:8%;--w:146px;--b:2.2px;--br:0.6;--r:7deg;--t:10s" data-z="0.3"><img src="/img/home/field/night-aurora.jpg" width="360" height="520" alt="" decoding="async"><span>한 장을 끝낼 때마다 다음 장은 더 쓰기 쉬워진다.</span></figure>
+      <figure class="fc wide" style="--x:50%;--y:92%;--w:110px;--b:3.2px;--br:0.45;--r:-3deg;--t:6s" data-z="0.0"><img src="/img/home/field/field-dandelions.jpg" width="360" height="520" alt="" decoding="async"><span>기억하는 것보다 잘하는 일이 더 많다.</span></figure>
+      <figure class="fc wide" style="--x:96%;--y:90%;--w:194px;--b:1.0px;--br:0.8;--r:4deg;--t:7s" data-z="0.7"><img src="/img/home/field/sky-cloud-line.jpg" width="360" height="520" alt="" decoding="async"><span>자연은 인내를 사랑한다. 늘 그것을 기억하라.</span></figure>
+    </div>
+    <div class="field-veil"></div>
+    <div class="field-copy">
+      <p class="rating"><span class="rating-stars" role="img" aria-label="별 5개 중 4.7개"><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><defs><linearGradient id="star-part"><stop offset=".7" stop-color="#f2b632"/><stop offset=".7" stop-color="rgba(243,236,220,.25)"/></linearGradient></defs><path fill="url(#star-part)" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg></span><span>App Store 평점 <b>4.7</b></span></p>
+      <h1>매일의 동기부여,<br><em>잠금 화면으로 바로.</em></h1>
+      <p class="lede">짧은 동기부여 글귀를 잠금 화면과 홈 화면에, 매일 다른 순간에. 주제와 시간대를 고르고 나면, 평소처럼 하루를 보내면 돼요.</p>
+      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-ko&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-ko.svg" width="169" height="52" alt="App Store에서 다운로드하기"></a>
+    </div>
+<script>/* The field's cards: short lines (under 36 characters) from the 30 quotes the app's curated start dealt a new reader (kCuratedRandom30 in lib/data/curated_start_sets.dart, the dailies repo), shuffled on every visit. The markup carries the first twelve, for anyone without scripts. While the field is on screen the nav and the browser bar take its color. On a desktop the cards drift a little with the mouse, the near ones more. */
+(function(){
+  var Q=[{"t":"다른 누군가가 편하도록 작게 머물지 말자."},{"t":"모든 일에 오늘 답할 필요는 없다."},{"t":"이루어 낸 작은 목표 하나하나가 다음 목표로 가는 디딤돌이다."},{"t":"속도보다 방향이 중요하다."},{"t":"언제나 대기하는 사람이 아니라 쓸모 있는 사람이 되라."},{"t":"배우려는 마음은 그 자체로 이미 하나의 재능이다."},{"t":"오늘 쉽게 하는 일 중 몇몇은 한때 가장 어려운 일이었다."},{"t":"지나온 걸음이 앞으로의 걸음도 가능하다는 것을 보여 준다."},{"t":"흔들리는 걸음도 앞으로 나아가게 한다."},{"t":"한 장을 끝낼 때마다 다음 장은 더 쓰기 쉬워진다."},{"t":"몫으로 정해지지 않은 것은 손에 닿지 않고, 몫으로 정해진 것은 어디에 있든 찾아온다.","a":"사디"},{"t":"기억하는 것보다 잘하는 일이 더 많다."},{"t":"자연은 인내를 사랑한다. 늘 그것을 기억하라.","a":"니콜라이 고골"},{"t":"남몰래 길러 온 힘은 어디서든 당신을 도울 것이다."},{"t":"누가 알아줄지는 마음 쓰지 말고 선을 행해야 한다.","a":"에르네스트 르낭"},{"t":"명성은 빛 속에 서 있는 열정의 그림자다.","a":"칼릴 지브란"},{"t":"당신 곁의 사람들은 당신을 알게 되어 더 나아졌다."},{"t":"누구든 무언가를 배운 방법은 오직 틀리는 것뿐이었다."},{"t":"당신 안에는 강한 마음과 맑은 정신이 있다."},{"t":"목표에는 엄격하되 계획에는 유연하라.","a":"스티브 파블리나"},{"t":"용감한 선택은 더 넓은 삶으로 이어진다."},{"t":"꾸준함이란 꿈에게 진심이라는 것을 보여 주는 일이다."},{"t":"마음이 없다면 천재성이나 용기가 무슨 소용인가?","a":"올리버 골드스미스"},{"t":"인내심이 있으면 서두를 때 놓쳤을 것이 보인다."},{"t":"사람의 의미는 그가 이룬 것이 아니라, 이루기를 갈망하는 것에 있다.","a":"칼릴 지브란"},{"t":"가던 길을 계속 가자. 당신은 먼 길을 위해 태어났다."},{"t":"근육을 키우려면 근육이 필요하듯, 자기 규율을 키우려면 자기 규율이 필요하다.","a":"스티브 파블리나"},{"t":"새로운 것에 “좋아”라고 할 때마다 당신의 세상은 조금 더 넓어진다."},{"t":"모든 좋은 습관은 용감한 하루에서 시작되었다."},{"t":"성장은 삶의 어느 단계에서나 가능하다."}];
+  var nav=document.querySelector('.nav'), field=document.querySelector('.field'),
+      tc=[].slice.call(document.querySelectorAll('meta[name="theme-color"]')),
+      tc0=tc.map(function(m){return m.content});
+  function onField(on){
+    nav.classList.toggle('on-field',on);
+    tc.forEach(function(m,i){m.content=on?'#0b0c0b':tc0[i]});
+  }
+  onField(true);
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){onField(e[0].isIntersecting)},{rootMargin:'-80px 0px 0px 0px'}).observe(field);
+  var q=Q.filter(function(x){return x.t.length<36});
+  for(var i=q.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=q[i];q[i]=q[j];q[j]=t}
+  var c=document.querySelectorAll('#field-cards .fc');
+  for(var k=0;k<c.length;k++) c[k].querySelector('span').textContent=q[k%q.length].t;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!matchMedia('(hover: hover)').matches) return;
+  addEventListener('mousemove',function(e){
+    var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+    for(var k=0;k<c.length;k++){var z=+c[k].dataset.z+.2;c[k].style.marginLeft=(-x*60*z)+'px';c[k].style.marginTop=(-y*40*z)+'px'}
+  });
+})();
+</script>
+  </section>
+
+  <!-- FREE TO TRY -->
+  <section class="band free" id="free">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">여기서 무료로 해 보세요</div>
+        <h2>나를 위해 만들고, 누군가에게 보내 보세요.</h2>
+      </div>
+      <div class="free-grid">
+        <div class="free-card free-wall">
+          <div class="free-art" aria-hidden="true"><span class="free-phone"><img src="/img/wallpapers/ko/a-year-of-small-steps-can-surprise-you.jpg" width="540" height="1170" alt="" loading="lazy"></span><span class="free-phone"><img src="/img/wallpapers/ko/keep-the-hope-keep-the-dream-keep-going.jpg" width="540" height="1170" alt="" loading="lazy"></span><span class="free-phone"><img src="/img/wallpapers/ko/you-can-make-today-one-of-the-good.jpg" width="540" height="1170" alt="" loading="lazy"></span></div>
+          <div class="free-body">
+            <h3>잠금 화면용 명언 배경화면</h3>
+            <p>글귀와 배경을 고르면 몇 초 만에 저장할 수 있어요.</p>
+            <div class="free-pick"><span class="free-pick-label">배경화면 만들기</span><div class="free-topics"><a href="/ko/motivational-wallpapers/">동기부여<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/ko/inspirational-quotes-lock-screen/">영감<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/ko/positive-quotes-lock-screen/">긍정<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a></div></div>
+          </div>
+        </div>
+        <div class="free-card free-env">
+          <div class="free-art" aria-hidden="true"><span class="free-envelope"><i class="fe-back"></i><i class="fe-letter">그 모든 일을 겪고도 여전히 희망을 품고 있다는 것을 보라.</i><i class="fe-pocket"></i><i class="fe-seal">D</i></span></div>
+          <div class="free-body">
+            <h3>누군가에게 다정한 말을 보내 보세요</h3>
+            <p>열면 내가 고른 한 줄이 나오는 작은 봉투가 도착해요. 앱은 필요 없어요.</p>
+            <div class="free-pick"><span class="free-pick-label">봉투 보내기</span><div class="free-topics"><a href="/ko/words-of-encouragement/">격려<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/ko/motivational-quotes-for-a-friend/">친구에게<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/ko/love-quotes-for-your-partner/">사랑<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a><a href="/ko/good-morning-quotes/">좋은 아침<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE APP -->
+  <section class="band" id="app">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">앱 화면</div>
+        <h2>iPhone에서는 이렇게 보여요.</h2>
+      </div>
+      <div class="shots">
+        <img src="/img/app/ko/lock-screen.jpg" width="600" height="1298" alt="iPhone 잠금 화면의 Dailies. 시계 아래에 글귀가 놓여 있고, 알림으로도 글귀가 도착해 있어요" loading="lazy">
+        <img src="/img/app/ko/home-screen.jpg" width="600" height="1298" alt="iPhone 홈 화면에 놓인 Dailies 위젯" loading="lazy">
+        <img src="/img/app/ko/topics.jpg" width="600" height="1298" alt="Dailies에서 주제를 고르는 화면. 평온, 자신감 등을 골랐어요" loading="lazy">
+        <img src="/img/app/ko/notifications.jpg" width="600" height="1298" alt="알림으로 도착한 Dailies 글귀" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- PICKER -->
+  <section class="band band-panel" id="taste">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">맛보기</div>
+        <h2>주제를 골라, 마음에 와닿는 글귀를 찾아보세요.</h2>
+        <p class="lede">모두 앱에 있는 실제 주제와, 앱 라이브러리에 있는 실제 글귀예요.</p>
+      </div>
+      <div class="picker">
+        <div class="chips" id="chips"></div>
+        <div class="answer-card">
+          <span class="answer-label">이런 글귀를 받게 돼요</span>
+          <div class="answer-body"><p id="quoteText"></p></div>
+          <div class="answer-foot">
+            <span id="quoteAttr"></span>
+            <button class="again" id="again" type="button">하나 더</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="pull">
+    <img class="pull-photo" src="/img/home/pull.jpg" width="1080" height="608" alt="" loading="lazy">
+    <span class="pull-mark" aria-hidden="true">&#8221;</span>
+    <div class="wrap">
+      <blockquote>당신은 가장 강한 고리만큼 강하기도 하다.</blockquote>
+      <cite>칼릴 지브란, 『예언자』</cite>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="band band-panel" id="how">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">사용 방법</div>
+        <h2>한 번 설정하면, 그다음은 잊어도 돼요.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><img src="/img/home/step-1.jpg" width="720" height="450" alt="초원에 핀 민들레 홀씨" loading="lazy"><h3>관심 있는 것을 고르세요</h3><p>마음이 가는 것을 몇 가지 골라 보세요. 언제든 바꿀 수 있어요.</p></div>
+        <div class="step"><img src="/img/home/step-2.jpg" width="720" height="450" alt="모래 언덕의 풀 사이로 바다를 향해 이어지는 나무 산책로" loading="lazy"><h3>속도를 정하세요</h3><p>하루에 두어 개, 아니면 조금 더. 원하는 대로 하면 돼요.</p></div>
+        <div class="step"><img src="/img/home/step-3.jpg" width="720" height="450" alt="구름 위로 솟은 산 너머의 해돋이" loading="lazy"><h3>평소처럼 하루를 보내세요</h3><p>좋은 글귀가 찾아와요. 읽고, 저장하고, 다른 사람에게 전해 보세요.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FROM THE BLOG -->
+  <section class="band" id="blog">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">블로그에서</div>
+        <h2>소리치지 않는 동기부여.</h2>
+        <p class="lede">글귀가 필요한 순간을 위한 명언 모음과, 동기부여가 어떻게 작동하는지에 대한 솔직한 답을 모았어요.</p>
+      </div>
+      <div class="home-posts">
+        <a class="post-card" href="/ko/blog/how-to-motivate-yourself/"><div class="post-card-img"><img src="/img/blog/how-to-motivate-yourself-thumb.jpg" width="640" height="360" alt="" loading="lazy"></div><div class="post-card-body"><div class="post-card-kicker">동기부여 기초</div><h3>의욕이 없을 때 스스로 동기를 부여하는 방법</h3><p>의욕은 왜 대개 나중에 찾아오는지, 그리고 그 전에 할 수 있는 일.</p></div></a>
+        <a class="post-card" href="/ko/blog/motivational-quotes-for-hard-times/"><div class="post-card-img"><img src="/img/blog/motivational-quotes-for-hard-times-thumb.jpg" width="640" height="360" alt="" loading="lazy"></div><div class="post-card-body"><div class="post-card-kicker">글귀</div><h3>힘든 시기와 지친 날에 힘이 되는 글귀</h3><p>오늘을 버티기 위한, 그리고 길고 어두운 시기를 위한 조용한 글귀.</p></div></a>
+        <a class="post-card" href="/ko/blog/morning-motivation-quotes/"><div class="post-card-img"><img src="/img/blog/morning-motivation-quotes-thumb.jpg" width="640" height="360" alt="" loading="lazy"></div><div class="post-card-body"><div class="post-card-kicker">글귀</div><h3>아침의 동기부여: 하루를 시작하는 글귀</h3><p>아침에 눈뜨자마자 읽기에는 받은 편지함보다 좋은 것이 있어요.</p></div></a>
+      </div>
+      <a class="more-link" href="/ko/blog/">블로그의 모든 글 보기</a>
+    </div>
+  </section>
+
+  <!-- FIND US -->
+  <section class="find-us" aria-label="Dailies가 소개된 곳">
+    <div class="wrap">
+      <div class="eyebrow">Dailies가 소개된 곳</div>
+      <div class="featured-badges">
+        <a href="https://apptierlist.com/apps/dailies-motivational-quotes-6804210416/?from=badge"><img src="https://apptierlist.com/badge/dailies-motivational-quotes-6804210416.svg?k=atl-zlfcqm" alt="AppTierList에 소개된 Dailies" width="129" height="40"></a>
+        <a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge2-dark.svg" alt="Twelve Tools에 소개됨" width="148" height="40"></a>
+        <a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&amp;theme=light" alt="Fazier 배지" width="169" height="40"></a>
+        <a href="https://startupfa.me/s/dailies?utm_source=mydailies.app" target="_blank"><img src="https://startupfa.me/badges/featured-badge.webp" alt="Startup Fame에 소개된 Dailies" width="127" height="40"></a>
+        <a href="https://neeed.directory" target="_blank" rel="noopener"><img src="https://neeed.directory/badges/neeed-badge-light.svg" alt="neeed.directory에 소개됨" width="126" height="40"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band" id="faq">
+    <div class="wrap">
+      <div class="head"><h2>자주 묻는 질문</h2></div>
+      <div class="faq">
+        <details open><summary>Dailies는 무엇인가요?</summary>
+          <p>Dailies는 매일의 동기부여를 위한 앱이에요. 팔로우하는 주제에서 고른 짧은 동기부여 글귀를 내가 정한 시간대 안에서 매일 다른 순간에 보내 주고, 잠금 화면과 홈 화면에도 하나를 띄워 줘요. 광고도 로그인도 없어요. 더 읽고 싶을 때는 넘겨 볼 수 있는 피드가 있고, 밀린 것을 따라잡아야 할 일도 없어요.</p></details>
+        <details><summary>Dailies는 누구를 위한 앱인가요?</summary>
+          <p>또 하나의 습관을 관리하지 않고도 작고 꾸준한 응원을 받고 싶은 모든 분을 위한 앱이에요. 회의 사이에 잠금 화면에서 만나는 한 줄, 밤에는 차분한 한 줄, 하루가 길게 늘어질 때는 웃음이 나는 한 줄.</p></details>
+        <details><summary>매일의 동기부여를 받으려면 앱을 열어야 하나요?</summary>
+          <p>아니요. 글귀는 알림으로 도착하고, 잠금 화면과 홈 화면 위젯에는 새 글귀가 기다리고 있어요. 앱은 더 읽고 싶을 때, 저장한 글귀를 다시 보고 싶을 때, 직접 글귀를 쓰고 싶을 때 열면 돼요.</p></details>
+        <details><summary>어떤 동기부여 글귀를 받을지 고를 수 있나요?</summary>
+          <p>네. 평온, 자신감, 유머, 일, 몸과 건강, 신앙, 창의력 깨우기 등 관심 있는 주제를 팔로우하면 Dailies가 그 안에서 글귀를 골라요. 주제는 언제든 바꿀 수 있고, 얼마나 자주 받을지와 알림을 받아도 괜찮은 시간대도 마찬가지예요.</p></details>
+        <details><summary>Dailies가 하루 중 무작위 시간에 글귀를 보내 줄 수 있나요?</summary>
+          <p>네. 하루에 받고 싶은 글귀 수와 알림을 받아도 괜찮은 시간대와 요일을 고르면, Dailies가 그 범위 안에서 매일 다른 시각에 나눠 보내요. 예상하지 못한 순간에 온 글귀가 정말로 읽히는 글귀예요. 자세한 내용은 <a href="/ko/guides/motivational-quotes-at-random-times/">하루 중 무작위 시간에 동기부여 명언을 받는 방법</a>에서 볼 수 있어요.</p></details>
+        <details><summary>성경 구절이나 철학 글귀, 재미있는 글귀를 위젯에 띄울 수 있나요?</summary>
+          <p>네. 성경 구절을 원하면 ‘신앙’ 주제를, 마르쿠스 아우렐리우스, 노자, 몽테뉴의 글귀를 원하면 ‘의미’와 ‘평온’ 주제를, 담백하고 다정한 글귀를 원하면 ‘유머’ 주제를 팔로우하세요. 위젯과 알림은 팔로우한 주제에서 글귀를 가져와요.</p></details>
+        <details><summary>iPhone 잠금 화면에서도 Dailies를 쓸 수 있나요?</summary>
+          <p>네. Dailies에는 잠금 화면 위젯과 홈 화면 위젯이 있어서, 잠금을 해제하거나 아무것도 열지 않아도 휴대전화를 드는 순간 글귀가 거기 있어요. 단계별 방법은 <a href="/ko/guides/quotes-on-your-iphone-lock-screen/">iPhone 잠금 화면에 명언을 띄우는 방법</a>과 <a href="/ko/guides/add-a-widget-to-your-home-screen/">iPhone 홈 화면에 위젯을 추가하는 방법</a>에 있어요.</p></details>
+        <details><summary>Dailies는 다른 명언 앱과 무엇이 다른가요?</summary>
+          <p>글귀가 매일 같은 시각에 한 번 오는 대신 내가 정한 시간대 안의 여러 순간에 도착해서, 계속 눈길을 끌어요. 넓은 카테고리가 아니라 세밀한 주제를 팔로우하고, 모든 글귀에는 지은이의 이름이 붙어 있어요. 사진과 글귀 뒤의 은은한 효과로 위젯을 내 것으로 꾸밀 수도 있고, 그 효과는 홈 화면 위젯에서 움직여요. 어느 요금제에도 광고가 없고, 만들어야 할 계정도 없어요. 따라잡아야 할 것도 없어요. 도착하면 하나 읽고, 그걸로 끝이에요.</p></details>
+        <details><summary>Motivation 앱 대신 쓸 만한 앱이 있나요?</summary>
+          <p>Motivation이 마음에 들지만 더 세밀한 주제, 위젯을 꾸미는 더 많은 방법, 정해진 일정이 아니라 내가 정한 시간대 안에서 Dailies가 고른 순간에 도착하는 글귀를 원한다면 Dailies를 써 보세요. 자세한 비교는 <a href="/ko/compare/dailies-vs-motivation/">Dailies vs Motivation</a>에서 볼 수 있어요.</p></details>
+        <details><summary>글귀를 저장하거나 직접 쓸 수 있나요?</summary>
+          <p>둘 다 돼요. 마음에 와닿은 글귀에 하트를 누르면 ‘좋아요한 글귀’에 모이고, ‘내 글귀’에서는 직접 글을 쓸 수 있어요. 프리미엄에서는 Dailies가 두 가지 모두를 다른 글귀와 함께 다시 보여 줘요. 직접 쓴 글과 하트를 누른 글귀는 iCloud 계정에 백업되므로, 휴대전화를 바꾸거나 초기화해도 사라지지 않아요.</p></details>
+        <details><summary>Dailies는 무료인가요?</summary>
+          <p>네. 몇 가지 주제와 배경 중에서 고를 수 있는 무료 버전이 있어요. Dailies Premium은 선택 사항인 연간 구독으로, 라이브러리 전체를 열어 줘요. 모든 주제, 각각 하나의 피드가 되는 ‘좋아요한 글귀’와 ‘내 글귀’, 모든 배경과 효과, 글귀 뒤에 놓는 내 사진과 색, 그리고 로고 없이 공유되는 이미지까지요.</p></details>
+        <details><summary>Dailies는 어떤 기기에서 쓸 수 있나요?</summary>
+          <p>iPhone과 iPad에서 세로로도 가로로도 쓸 수 있어요. Android 버전은 없어요. 이 페이지의 코드를 스캔하거나 App Store에서 Dailies를 검색하세요.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="band final" id="get" style="padding-bottom:0">
+    <div class="wrap final-in">
+      <h2>좋은 글귀로 오늘을 시작하세요.</h2>
+      <p class="lede">설정은 한 번이면 돼요. 그다음은 Dailies가 알아서 할게요.</p>
+      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-ko&amp;mt=8" data-download="final"><img src="/img/app-store-badge-ko.svg" width="169" height="52" alt="App Store에서 다운로드하기"></a>
+      <div class="qr">
+        <div class="qr-chip"><img src="/img/home/qr-ko.svg" alt="App Store의 Dailies로 연결되는 QR 코드"></div>
+        <p class="qr-note">iPhone 카메라로 스캔하면 App Store가 열려요</p>
+      </div>
+    </div>
+    <div class="wrap"><footer>
+      <span>&copy; 2026 Dailies</span>
+      <div class="social">
+        <a href="https://www.tiktok.com/@mydailies.app" aria-label="TikTok" title="TikTok" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#tiktok"/></svg></a>
+        <a href="https://www.instagram.com/mydailies.app/" aria-label="Instagram" title="Instagram" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#instagram"/></svg></a>
+        <a href="https://www.facebook.com/mydailiesapp" aria-label="Facebook" title="Facebook" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#facebook"/></svg></a>
+        <a href="https://www.youtube.com/@mydailiesapp" aria-label="YouTube" title="YouTube" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#youtube"/></svg></a>
+        <a href="https://www.pinterest.com/mydailiesapp/" aria-label="Pinterest" title="Pinterest" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#pinterest"/></svg></a>
+        <a href="https://www.linkedin.com/company/mydailiesapp/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#linkedin"/></svg></a>
+      </div>
+      <nav>
+        <a href="/ko/compare/">비교</a>
+        <a href="/ko/about/">소개</a>
+        <a href="/press/" hreflang="en">보도 자료</a>
+        <a href="/terms/" hreflang="en">이용 약관</a>
+        <a href="/privacy/" hreflang="en">개인정보 처리방침</a>
+        <a href="/cookies/" hreflang="en">쿠키 정책</a>
+        <a href="#" data-cookie-settings>쿠키 설정</a>
+      </nav>
+    </footer></div>
+  </section>
+</main>
+
+<script>
+/* ---------- Taste picker: real quotes from the app's own library ---------- */
+(function(){
+  const SETS = [{"id": "believe", "label": "자신감", "set": "confidence", "quotes": [{"t": "누구도 사람들 앞에서 서툴러 보기 전에 잘했던 적은 없다.", "a": null}, {"t": "느린 게 아니다. 정말로 어려운 것을 배우고 있는 것이다.", "a": null}, {"t": "그동안의 진전을 잃은 게 아니다. 잠시 멈춘 것이다.", "a": null}]}, {"id": "laugh", "label": "유머", "set": "humor", "quotes": [{"t": "밀폐 용기와 뚜껑은 서로 다른 건물에 살며 만나기를 거부한다.", "a": null}, {"t": "앉을 때 “아이고” 소리를 내기 시작했다. 이제 돌이킬 수 없다.", "a": null}, {"t": "가게에 들어가서 사려던 것만 사서 나온 적이 한 번도 없다.", "a": null}]}, {"id": "direction", "label": "방향", "set": "direction", "quotes": [{"t": "가장 좋은 시간을 남의 부탁으로부터 지키라.", "a": null}, {"t": "중요한 일이 급하다는 표시를 달고 오는 경우는 거의 없다.", "a": null}, {"t": "생각만으로 다른 삶에 들어설 수는 없다.", "a": null}]}, {"id": "calm", "label": "평온", "set": "calm", "quotes": [{"t": "걱정에게 하루를 통째로 내주지 말고, 약속 시간을 정해 주자.", "a": null}, {"t": "차 한 잔 마실 동안만 밖에 앉아 있자.", "a": null}, {"t": "나쁜 한 주를 보내도 된다. 그게 꼭 무언가를 뜻하지는 않는다.", "a": null}]}, {"id": "work", "label": "일", "set": "work", "quotes": [{"t": "수락할 때마다 저녁 하나가 든다. 값을 제대로 매기자.", "a": null}, {"t": "바쁜 것과 쓸모 있는 것은 같지 않지만, 느낌은 거의 똑같다.", "a": null}, {"t": "당신의 일은 유명하지 않아도 의미가 있다.", "a": null}]}, {"id": "kind-to-self", "label": "나에게 다정하기", "set": "self_kindness", "quotes": [{"t": "주어진 하루로 할 수 있는 만큼 했다.", "a": null}, {"t": "누군가에게 어떤 몸매를 보여 줘야 해서가 아니라, 나에게 좋기 때문에 움직이자.", "a": null}, {"t": "힘들이지 않는 것처럼 보이는 사람은 대개 다른 곳에서 이미 해 본 적이 있다.", "a": null}]}];
+  const chips = document.getElementById('chips');
+  const qText = document.getElementById('quoteText');
+  const qAttr = document.getElementById('quoteAttr');
+  const again = document.getElementById('again');
+  let active = 0, idx = 0;
+
+  function attr(q){ return q.a || ''; }
+
+  SETS.forEach((n,i)=>{
+    const b = document.createElement('button');
+    b.type='button'; b.className='chip'; b.textContent=n.label;
+    if(n.set) b.dataset.set=n.set;
+    b.setAttribute('aria-pressed', i===0 ? 'true':'false');
+    b.addEventListener('click', ()=>{ i===active ? cycle() : select(i); });
+    chips.appendChild(b);
+  });
+
+  function render(){
+    const n = SETS[active], q = n.quotes[idx % n.quotes.length];
+    qText.classList.add('swap');
+    setTimeout(()=>{
+      qText.textContent = '\u201C' + q.t + '\u201D';
+      qAttr.textContent = attr(q);
+      qText.classList.remove('swap');
+    }, 190);
+  }
+  function select(i){
+    active = i; idx = 0;
+    [...chips.children].forEach((c,j)=>c.setAttribute('aria-pressed', j===i ? 'true':'false'));
+    render();
+  }
+  function cycle(){ idx++; render(); }
+  again.addEventListener('click', cycle);
+
+  const q0 = SETS[0].quotes[0];
+  qText.textContent = '\u201C' + q0.t + '\u201D';
+  qAttr.textContent = attr(q0);
+})();
+</script>
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

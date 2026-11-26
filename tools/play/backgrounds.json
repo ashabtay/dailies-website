@@ -8,7 +8,10 @@
    "pt": "Via Láctea",
    "fr": "Voie lactée",
    "de": "Milchstraße",
-   "ja": "天の川"
+   "ja": "天の川",
+   "it": "Via Lattea",
+   "ko": "은하수",
+   "zh-hant": "銀河"
   },
   "photographer": "Greg Rakozy",
   "source": "https://unsplash.com/photos/oMpAz-DN-9I"
@@ -22,7 +25,10 @@
    "pt": "Aurora boreal",
    "fr": "Aurore boréale",
    "de": "Polarlicht",
-   "ja": "オーロラ"
+   "ja": "オーロラ",
+   "it": "Aurora boreale",
+   "ko": "오로라",
+   "zh-hant": "極光"
   },
   "photographer": "Marcelo Quinan",
   "source": "https://unsplash.com/photos/R3pUGn5YiTg"
@@ -36,7 +42,10 @@
    "pt": "Montanhas azuis",
    "fr": "Crêtes bleues",
    "de": "Blaue Bergketten",
-   "ja": "青い山なみ"
+   "ja": "青い山なみ",
+   "it": "Creste blu",
+   "ko": "푸른 산등성이",
+   "zh-hant": "藍色山巒"
   },
   "photographer": "Luca Zanon",
   "source": "https://unsplash.com/photos/X0OoHrPvgXE"
@@ -50,7 +59,10 @@
    "pt": "Neblina sobre os pinheiros",
    "fr": "Brume sur les pins",
    "de": "Nebel über den Kiefern",
-   "ja": "霧の松林"
+   "ja": "霧の松林",
+   "it": "Nebbia sui pini",
+   "ko": "안개 낀 소나무 숲",
+   "zh-hant": "霧中松林"
   },
   "photographer": "Jay Mantri",
   "source": "https://unsplash.com/photos/TFyi0QOx08c"
@@ -64,7 +76,10 @@
    "pt": "Ondas ao pôr do sol",
    "fr": "Vagues au couchant",
    "de": "Brandung im Abendrot",
-   "ja": "夕日の波"
+   "ja": "夕日の波",
+   "it": "Onde al tramonto",
+   "ko": "노을 진 파도",
+   "zh-hant": "日落浪花"
   },
   "photographer": "Sebastien Gabriel",
   "source": "https://unsplash.com/photos/6p6WDodvR2Y"
@@ -78,7 +93,10 @@
    "pt": "Entardecer no deserto",
    "fr": "Crépuscule dans le désert",
    "de": "Wüste in der Dämmerung",
-   "ja": "砂漠の夕暮れ"
+   "ja": "砂漠の夕暮れ",
+   "it": "Crepuscolo nel deserto",
+   "ko": "사막의 해 질 녘",
+   "zh-hant": "沙漠黃昏"
   },
   "photographer": "Tim de Groot",
   "source": "https://unsplash.com/photos/yNGQ830uFB4"
@@ -92,7 +110,10 @@
    "pt": "Fiorde",
    "fr": "Fjord",
    "de": "Fjord",
-   "ja": "フィヨルド"
+   "ja": "フィヨルド",
+   "it": "Fiordo",
+   "ko": "피오르",
+   "zh-hant": "峽灣"
   },
   "photographer": "Jeff Sheldon",
   "source": "https://unsplash.com/photos/oOFrXiz8-0A"
@@ -106,7 +127,10 @@
    "pt": "Lago à noite",
    "fr": "Lac de nuit",
    "de": "See bei Nacht",
-   "ja": "夜の湖"
+   "ja": "夜の湖",
+   "it": "Lago di notte",
+   "ko": "밤의 호수",
+   "zh-hant": "夜湖"
   },
   "photographer": "kazuend",
   "source": "https://unsplash.com/photos/2KXEb_8G5vo"
@@ -120,7 +144,10 @@
    "pt": "Píer na neblina",
    "fr": "Ponton dans la brume",
    "de": "Steg im Nebel",
-   "ja": "霧の桟橋"
+   "ja": "霧の桟橋",
+   "it": "Pontile nella nebbia",
+   "ko": "안개 낀 부두",
+   "zh-hant": "霧中棧橋"
   },
   "photographer": "Joe Beck",
   "source": "https://unsplash.com/photos/NbUokuw0BQI"
@@ -134,7 +161,10 @@
    "pt": "Linha de nuvens",
    "fr": "Ligne de nuages",
    "de": "Wolkenband",
-   "ja": "雲の帯"
+   "ja": "雲の帯",
+   "it": "Linea di nuvole",
+   "ko": "구름 띠",
+   "zh-hant": "雲帶"
   },
   "photographer": "Nitish Meena",
   "source": "https://unsplash.com/photos/RbbdzZBKRDY"
@@ -148,7 +178,10 @@
    "pt": "Amanhecer no vale",
    "fr": "Aube sur la vallée",
    "de": "Tal im Morgengrauen",
-   "ja": "谷の夜明け"
+   "ja": "谷の夜明け",
+   "it": "Alba nella valle",
+   "ko": "골짜기의 새벽",
+   "zh-hant": "山谷黎明"
   },
   "photographer": "Daniel Genser",
   "source": "https://unsplash.com/photos/PzPbh-faPgU"
@@ -162,7 +195,10 @@
    "pt": "Picos estrelados",
    "fr": "Sommets étoilés",
    "de": "Gipfel unter Sternen",
-   "ja": "星明かりの峰"
+   "ja": "星明かりの峰",
+   "it": "Vette sotto le stelle",
+   "ko": "별빛 봉우리",
+   "zh-hant": "星光群峰"
   },
   "photographer": "Caleb Ralston",
   "source": "https://unsplash.com/photos/6hxvm0NzYP8"
@@ -176,7 +212,10 @@
    "pt": "A travessia",
    "fr": "La traversée",
    "de": "Der Übergang",
-   "ja": "森の吊り橋"
+   "ja": "森の吊り橋",
+   "it": "Il guado",
+   "ko": "숲속 다리",
+   "zh-hant": "林中吊橋"
   },
   "photographer": "Nick Scheerbart",
   "source": "https://unsplash.com/photos/xFjAftU8lMY"
@@ -190,7 +229,10 @@
    "pt": "Frente de tempestade",
    "fr": "Front orageux",
    "de": "Sturmfront",
-   "ja": "迫る嵐"
+   "ja": "迫る嵐",
+   "it": "Fronte del temporale",
+   "ko": "다가오는 폭풍",
+   "zh-hant": "風暴將至"
   },
   "photographer": "Patrick Fore",
   "source": "https://unsplash.com/photos/V6s1cmE39XM"
@@ -204,7 +246,10 @@
    "pt": "Pico ao amanhecer",
    "fr": "Sommet à l'aube",
    "de": "Gipfel im Morgengrauen",
-   "ja": "夜明けの山頂"
+   "ja": "夜明けの山頂",
+   "it": "Vetta all\\",
+   "ko": "새벽의 봉우리",
+   "zh-hant": "黎明山峰"
   },
   "photographer": "David Marcu",
   "source": "https://unsplash.com/photos/CaQ_KITtnVY"
@@ -218,7 +263,10 @@
    "pt": "Estrelas sobre os pinheiros",
    "fr": "Étoiles sur les pins",
    "de": "Sterne über den Kiefern",
-   "ja": "松林の星空"
+   "ja": "松林の星空",
+   "it": "Stelle sui pini",
+   "ko": "소나무 위 별",
+   "zh-hant": "松林星空"
   },
   "photographer": "Josh Felise",
   "source": "https://unsplash.com/photos/trvELSvNZoY"

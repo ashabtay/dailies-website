@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Builds the wallpaper pages and the words-of-encouragement pages, in all six
+Builds the wallpaper pages and the words-of-encouragement pages, in all nine
 languages, and everything they need:
 
     /motivational-wallpapers/        and its five translations (see play_copy.WALL)
@@ -56,12 +56,25 @@ BADGE = {
     "fr": ("/img/app-store-badge-fr.svg", 164, "Télécharger dans l’App Store"),
     "de": ("/img/app-store-badge-de.svg", 156, "Laden im App Store"),
     "ja": ("/img/app-store-badge-ja.svg", 142, "App Store からダウンロード"),
+    "it": ("/img/app-store-badge-it.svg", 156, "Scarica su App Store"),
+    "ko": ("/img/app-store-badge-ko.svg", 169, "App Store에서 다운로드하기"),
+    "zh-hant": ("/img/app-store-badge-zh-hant.svg", 142, "在 App Store 下載"),
 }
-HTML_LANG = {"en": "en", "es": "es-MX", "pt": "pt-BR", "fr": "fr-FR", "de": "de-DE", "ja": "ja"}
-HUB = {"en": "guides", "es": "es/guias", "pt": "pt/guias", "fr": "fr/guides", "de": "de/anleitungen", "ja": "ja/guides"}
+HTML_LANG = {"en": "en", "es": "es-MX", "pt": "pt-BR", "fr": "fr-FR", "de": "de-DE", "ja": "ja",
+             "it": "it", "ko": "ko", "zh-hant": "zh-Hant-TW"}
+HUB = {"en": "guides", "es": "es/guias", "pt": "pt/guias", "fr": "fr/guides", "de": "de/anleitungen", "ja": "ja/guides",
+       "it": "it/guide", "ko": "ko/guides", "zh-hant": "zh-hant/guides"}
 
 FONT_LATIN = os.path.join(ROOT, "tools/play/Lora-Regular.ttf")
 FONT_JA = "/System/Library/Fonts/ヒラギノ明朝 ProN.ttc"
+FONT_KO = "/System/Library/Fonts/Supplemental/AppleMyungjo.ttf"
+FONT_HANT = ("/System/Library/Fonts/Supplemental/Songti.ttc", 7)  # Songti TC Regular
+
+# Japanese and Chinese break between characters; Korean breaks at spaces but
+# its glyphs are as wide as kanji, so it takes the CJK sizes. wallpaper.js
+# makes the same two choices.
+CJK = {"ja", "ko", "zh-hant"}
+BY_CHAR = {"ja", "zh-hant"}
 
 # ------------------------------------------------------------------ layout
 # The one layout both renderers follow. A 1080 x 2340 picture (the 9:19.5 of
@@ -93,7 +106,7 @@ def wrap(text, font, max_w, ja):
     if ja:
         # Japanese has no spaces: pack whole phrases (split after 、 and 。)
         # and only break inside one that is wider than a line by itself.
-        phrases = re.findall(r"[^、。]+[、。]?", text)
+        phrases = re.findall(r"[^、。，；]+[、。，；]?", text)
         cur = ""
         for ph in phrases:
             if not cur or measure(cur + ph) <= max_w:
@@ -128,12 +141,15 @@ def wrap(text, font, max_w, ja):
     return lines
 
 
-def font_for(ja, size):
-    return ImageFont.truetype(FONT_JA if ja else FONT_LATIN, size)
+def font_for(lang, size):
+    if lang == "ko":
+        return ImageFont.truetype(FONT_KO, size)
+    if lang == "zh-hant":
+        return ImageFont.truetype(FONT_HANT[0], size, index=FONT_HANT[1])
+    return ImageFont.truetype(FONT_JA if lang == "ja" else FONT_LATIN, size)
 
 
 def render(text, author, bg_file, lang):
-    ja = lang == "ja"
     bg = Image.open(os.path.join(ROOT, "img/wallpapers/bg", bg_file)).convert("RGB")
     s = H / bg.height
     bw = round(bg.width * s)
@@ -152,12 +168,12 @@ def render(text, author, bg_file, lang):
     shade = shade.resize((W, H))
     bg = Image.composite(Image.new("RGB", (W, H), (0, 0, 0)), bg, shade)
 
-    size = text_size(text, ja)
-    font = font_for(ja, size)
-    lines = wrap(text, font, LAYOUT["max_w"], ja)
+    size = text_size(text, lang in CJK)
+    font = font_for(lang, size)
+    lines = wrap(text, font, LAYOUT["max_w"], lang in BY_CHAR)
     lh = size * LAYOUT["line_h"]
     asize = round(size * LAYOUT["author_scale"])
-    afont = font_for(ja, asize)
+    afont = font_for(lang, asize)
     block = len(lines) * lh + ((size * LAYOUT["author_gap"] + asize * 1.3) if author else 0)
     top = max(H * LAYOUT["top_min"], H * LAYOUT["center"] - block / 2)
 
@@ -222,6 +238,13 @@ def items(page):
     return out
 
 
+def items_in(page, lang):
+    """The page's lines that exist in `lang`. A few lines have no
+    translation in some language (the app withdrew a doubtful one); that
+    language's page leaves them out, and /e/ falls back to the English."""
+    return [it for it in items(page) if lang in it["text"]]
+
+
 def page_by_key(key):
     return next(p for p in C.PAGES if p["key"] == key)
 
@@ -266,7 +289,7 @@ def write_lines_js():
 # ----------------------------------------------------------------- images
 
 def gallery_file(it, lang):
-    base = slugify(it["text"]["en"] if lang == "ja" else it["text"][lang])
+    base = slugify(it["text"]["en"] if lang in CJK else it["text"][lang])
     return "/img/wallpapers/%s/%s.jpg" % (lang, base)
 
 
@@ -275,7 +298,7 @@ def write_images():
         os.makedirs(os.path.join(ROOT, "img/wallpapers", lang), exist_ok=True)
         for page in C.PAGES:
             if page["kind"] == "wall":
-                for it in items(page):
+                for it in items_in(page, lang):
                     if not gallery_pick(it, page):
                         continue
                     im = render(it["text"][lang], author_of(it, lang), BGS[it["k"]]["file"], lang)
@@ -308,7 +331,7 @@ def og_wall(page, lang):
     ground = Image.new("RGB", (1200, 630), (25, 28, 29))
     its = items(page)
     n = len(LINES[page["key"]][page["groups"][0]])
-    picks = [its[0], its[2 * n], its[n]]
+    picks = [next(x for x in its[i:] if lang in x["text"]) for i in (0, 2 * n, n)]
     ph, pw = 560, round(560 * W / H)
     gap = 44
     x0 = (1200 - 3 * pw - 2 * gap) // 2
@@ -319,7 +342,7 @@ def og_wall(page, lang):
 
 
 def og_enc(page, lang):
-    ja = lang == "ja"
+    cjk = lang in CJK
     bg = Image.open(os.path.join(ROOT, "img/wallpapers/bg/sky-cloud-line.jpg")).convert("RGB")
     bg = bg.resize((1200, round(1200 * bg.height / bg.width))).crop((0, 520, 1200, 1150))
     bg = bg.filter(ImageFilter.GaussianBlur(6))
@@ -335,9 +358,9 @@ def og_enc(page, lang):
     sf = ImageFont.truetype(FONT_LATIN, 44)
     d.text((cx - sf.getlength("D") / 2, cy - 30), "D", font=sf, fill=(250, 238, 222))
     title = page["copy"][lang]["og_title"]
-    size = 58 if not ja else 54
-    f = font_for(ja, size)
-    lines = wrap(title, f, 560, ja)
+    size = 58 if not cjk else 54
+    f = font_for(lang, size)
+    lines = wrap(title, f, 560, lang in BY_CHAR)
     y = 315 - len(lines) * size * 1.25 / 2
     for ln in lines:
         d.text((580, y), ln, font=f, fill=(255, 255, 255))
@@ -450,7 +473,7 @@ def page_wall(page, lang):
     c = page["copy"][lang]
     url = page["url"][lang]
     nav, foot = chrome(lang)
-    its = items(page)
+    its = items_in(page, lang)
     first = its[0]
     links = {"guide": (C.GUIDE[lang], c["guide_text"]), "other": (C.ENC[lang], c["other_text"])}
     h = head(lang, c["title"], c["desc"], url, c["og_title"], c["og_desc"],
@@ -615,7 +638,7 @@ def page_enc(page, lang):
     c = page["copy"][lang]
     url = page["url"][lang]
     nav, foot = chrome(lang)
-    its = items(page)
+    its = items_in(page, lang)
     first = its[0]
     # The composer's envelope: the app's own (envelope-art.css/.js), with
     # the name written on it in Caveat, as on /sealed/.

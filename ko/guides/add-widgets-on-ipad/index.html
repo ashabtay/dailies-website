@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
+<title>iPad의 홈 화면과 잠금 화면에 위젯을 추가하는 방법 | Dailies</title>
+<meta name="description" content="iPad 홈 화면이나 잠금 화면에 위젯을 추가하고, 크기를 고르고, 스택을 만들고, iPadOS가 따로 관리하는 세로 모드와 가로 모드의 잠금 화면을 설정하는 방법.">
+<link rel="canonical" href="https://mydailies.app/ko/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-widgets-en-el-ipad/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-widgets-no-ipad/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/ajouter-des-widgets-sur-l-ipad/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/widgets-auf-dem-ipad-hinzufuegen/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="it" href="https://mydailies.app/it/guide/aggiungere-widget-su-ipad/">
+<link rel="alternate" hreflang="ko" href="https://mydailies.app/ko/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="zh-Hant" href="https://mydailies.app/zh-hant/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iPad의 홈 화면과 잠금 화면에 위젯을 추가하는 방법">
+<meta property="og:description" content="iPad의 위젯은 iPhone과 거의 같아요. 다른 점은 크기, 그리고 세로 모드와 가로 모드에 위젯을 따로 두는 잠금 화면이에요.">
+<meta property="og:url" content="https://mydailies.app/ko/guides/add-widgets-on-ipad/">
+<meta property="og:image" content="https://mydailies.app/img/guides/add-widgets-on-ipad-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="밝은 창가에서 iPad를 들어 올린 손, 잠금 화면에 파란색과 노란색 배경화면 위로 시간이 보여요">
+<meta property="og:site_name" content="Dailies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/ko/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/ko/blog/">블로그</a>
+      <a href="/ko/guides/">가이드</a>
+      <a href="/ko/help/">도움말</a>
+      <details class="lang"><summary aria-label="언어: 한국어"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">한국어</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/guides/add-widgets-on-ipad/" hreflang="en" lang="en">English</a><a href="/fr/guides/ajouter-des-widgets-sur-l-ipad/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/anleitungen/widgets-auf-dem-ipad-hinzufuegen/" hreflang="de" lang="de-DE">Deutsch</a><a href="/it/guide/aggiungere-widget-su-ipad/" hreflang="it" lang="it">Italiano</a><a href="/es/guias/agregar-widgets-en-el-ipad/" hreflang="es" lang="es-MX">Español</a><a href="/pt/guias/adicionar-widgets-no-ipad/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/guides/add-widgets-on-ipad/" hreflang="ja" lang="ja">日本語</a><a href="/ko/guides/add-widgets-on-ipad/" hreflang="ko" lang="ko" aria-current="true">한국어</a><a href="/zh-hant/guides/add-widgets-on-ipad/" hreflang="zh-Hant" lang="zh-Hant-TW">繁體中文</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/ko/#get">Dailies 받기</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">가이드</div>
+      <h1>iPad의 홈 화면과 잠금 화면에 위젯을 추가하는 방법</h1>
+      <p class="lede">iPad의 위젯은 iPhone과 거의 똑같이 작동해요. 그래도 시작하기 전에 알아 두면 좋은 차이가 있어요. 크기가 하나 더 있고, 기기를 돌리면 홈 화면이 저절로 다시 배치되고, 잠금 화면은 세로 모드와 가로 모드에 위젯을 따로따로 둬요.</p>
+      <p class="doc-meta"><span><a href="/ko/about/">Amit Shabtay</a>(Dailies 개발자)</span> <span>단계 작성일: 2026년 10월 22일</span></p>
+    </div>
+  </header>
+
+  <div class="wrap"><figure class="post-hero"><img src="/img/guides/add-widgets-on-ipad.jpg" width="1080" height="608" alt="밝은 창가에서 iPad를 들어 올린 손, 잠금 화면에 파란색과 노란색 배경화면 위로 시간이 보여요" fetchpriority="high"></figure></div>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">이 페이지의 내용</div>
+      <a href="#steps">홈 화면에 추가하기</a>
+      <a href="#size">iPad의 위젯 크기</a>
+      <a href="#arrange">회전, 스택, 오늘 보기</a>
+      <a href="#lock">잠금 화면에 추가하기</a>
+      <a href="#landscape">세로 모드와 가로 모드</a>
+      <a href="#remove">위젯 제거하기</a>
+      <a href="#dailies">iPad의 Dailies</a>
+      <a href="#fix">문제가 생겼을 때</a>
+      <a href="#faq">자주 묻는 질문</a>
+    </aside>
+
+    <div class="prose">
+
+      <section id="steps">
+        <h2>iPad 홈 화면에 위젯 추가하기</h2>
+        <p>어떤 앱이든 단계는 같아요. 여기서는 Dailies를 예로 들지만, 원하는 앱으로 해 보세요.</p>
+        <ol>
+          <li><strong>위젯을 둘 홈 화면 페이지로 가세요.</strong></li>
+          <li><strong>배경의 빈 곳을 길게 터치하세요.</strong> 앱들이 흔들리기 시작할 때까지요.</li>
+          <li>화면 위쪽의 <strong>편집</strong>을 탭한 다음 <strong>위젯 추가</strong>를 탭하세요.</li>
+          <li><strong>Dailies</strong>를 검색하거나 스크롤해서 찾은 다음 탭하세요.</li>
+          <li>왼쪽과 오른쪽으로 쓸어 넘기며 크기를 살펴보세요. 원하는 크기가 보이면 <strong>위젯 추가</strong>를 탭하세요.</li>
+          <li>앱들이 아직 흔들리는 동안 위젯을 원하는 곳으로 드래그한 다음 <strong>완료</strong>를 탭하세요.</li>
+        </ol>
+        <p>최근 iPadOS에는 지름길도 있어요. 앱 아이콘이 이미 홈 화면에 있다면 아이콘을 길게 터치하세요. 열리는 메뉴 위쪽에 앱의 위젯 크기들이 보여요. 하나를 탭하면 아이콘이 그 위젯으로 바뀌어요. 나중에 위젯을 길게 터치하면 다시 아이콘으로 되돌릴 수 있어요.</p>
+      </section>
+
+      <section id="size">
+        <h2>iPad의 위젯 크기</h2>
+        <p>iPhone은 앱에 소형, 중형, 대형 위젯을 제공해요. iPad에는 네 번째 크기인 <strong>특대형</strong>이 더 있어요. 대형의 두 배 너비로, 이만한 화면에서만 의미가 있는 크기예요. 어떤 크기를 만들지는 앱마다 정하기 때문에, 모든 앱이 네 가지를 다 보여 주지는 않아요.</p>
+        <p>Dailies는 iPhone과 마찬가지로 iPad에서도 <strong>중형</strong>과 <strong>대형</strong>을 제공해요. 소형이 없는 이유는 그 상자에 글귀를 넣으면 잘리거나 읽을 수 없을 만큼 작아지기 때문이에요. 특대형이 없는 이유는 한 줄의 글이 iPad 화면 절반에 걸쳐 늘어나면 넉넉해 보이기보다 허전해 보이기 때문이에요.</p>
+        <p>이미 놓아 둔 위젯의 크기를 바꾸려면 위젯을 길게 터치하고 열리는 메뉴에서 다른 크기를 고르세요. 앱이 제공하는 크기만 나와요.</p>
+      </section>
+
+      <section id="arrange">
+        <h2>회전, 스택, 오늘 보기</h2>
+        <h3>iPad 돌리기</h3>
+        <p>홈 화면의 격자는 세로 모드와 가로 모드에서 모양이 달라서, iPad를 돌리면 iPadOS가 앱과 위젯을 다시 배치해요. 가장 자주 드는 방향에서 위젯을 원하는 곳에 둔 다음, 한 번 돌려 보고 어디로 갔는지 확인하세요.</p>
+        <h3>스택</h3>
+        <p>스택은 <strong>같은 크기</strong>의 위젯 여러 개를 한자리에 모아 쓸어 넘기며 보는 거예요. 두 위젯을 모두 추가한 다음, 하나를 다른 하나 위로 바로 드래그해서 놓으세요. 스택을 바꾸려면 길게 터치하고 <strong>스택 편집</strong>을 탭하세요. 순서를 바꾸거나, 위젯을 없애거나, <strong>스마트 회전</strong>과 <strong>위젯 제안</strong>을 끌 수 있어요.</p>
+        <p>스마트 회전은 스택이 어떤 위젯을 보여 줄지 iPadOS가 고르게 해요. 캘린더와 날씨라면 편리하지만, 읽으려고 둔 글귀라면 거슬려요. 볼 때마다 글귀가 거기 있기를 원한다면 꺼 두세요.</p>
+        <h3>오늘 보기</h3>
+        <p>홈 화면의 왼쪽 가장자리에서 오른쪽으로 쓸어 넘기면 옆쪽에 위젯이 세로로 늘어선 오늘 보기가 나와요. 이곳에도 같은 방법으로 위젯을 추가해요. 모든 것이 흔들릴 때까지 빈 곳을 길게 터치하고, <strong>편집</strong>을 탭한 다음 <strong>위젯 추가</strong>를 탭하세요. 홈 화면은 앱을 위해 비워 두고 싶다면 글귀를 두기에 좋은 곳이에요.</p>
+        <p>iPad가 잠겨 있을 때도 오늘 보기를 보려면 <strong>설정 &rarr; Face ID 및 암호</strong>(또는 <strong>Touch ID 및 암호</strong>)를 열고, 잠겨 있을 때 접근 허용 아래의 <strong>오늘 보기 및 검색</strong>이 켜져 있는지 확인하세요.</p>
+      </section>
+
+      <section id="lock">
+        <h2>iPad 잠금 화면에 위젯 추가하기</h2>
+        <p>잠금 화면 위젯은 iPhone보다 늦게, iPadOS 17과 함께 iPad에 들어왔어요. Dailies를 실행할 수 있는 iPad라면 모두 잠금 화면 위젯을 보여 줄 수 있으니, 앱이 설치되었다면 이 방법도 돼요.</p>
+        <ol>
+          <li><strong>위쪽 버튼으로 iPad를 깨우고</strong> 잠금 화면을 길게 터치하세요. 아무 일도 없다면 다시 길게 터치하고 암호를 입력하세요.</li>
+          <li>바꾸고 싶은 잠금 화면으로 쓸어 넘긴 다음 <strong>사용자화</strong>를 탭하세요. iPadOS가 물어보면 홈 화면이 아니라 잠금 화면을 고르세요.</li>
+          <li>이미 있는 위젯을 탭하거나, <strong>위젯 추가</strong>를 탭하세요.</li>
+          <li>목록에서 <strong>Dailies</strong>를 고르고 위젯을 탭해 추가하세요.</li>
+          <li>위젯 패널 바깥을 탭해 닫은 다음 <strong>완료</strong>를 탭하세요.</li>
+        </ol>
+        <p>잠금 화면 위젯은 iPhone에서처럼 iPad에서도 iPadOS가 한 가지 톤으로 그려요. 배경도, 색도, 앱만의 꾸밈도 없어요. 운영 체제의 규칙이라 모든 앱이 똑같이 따라요.</p>
+      </section>
+
+      <section id="landscape">
+        <h2>세로 모드와 가로 모드는 따로 설정해요</h2>
+        <p>많은 사람이 여기서 헷갈려요. iPad 잠금 화면에는 <strong>위젯이 두 세트</strong> 있어요. 세로 모드에서는 시계 아래에 한 줄로, 가로 모드에서는 왼쪽에 세로로 늘어서요. iPadOS는 두 세트를 따로 관리하기 때문에, iPad를 세워 들고 추가한 위젯은 옆으로 돌리면 보이지 않아요.</p>
+        <div class="callout">
+          <div class="callout-label">그러니 두 번 하세요</div>
+          <p>가장 자주 쓰는 방향에서 위젯을 추가한 다음, iPad를 돌려 잠금 화면을 다시 길게 터치하고 <strong>사용자화</strong>를 탭해 다른 방향에서도 추가하세요. iPad를 늘 키보드 케이스에 끼워 쓴다면 중요한 건 가로 모드예요.</p>
+        </div>
+        <p>시계 위의 자리는 또 따로예요. 날짜나 날씨에 관한 글 한 줄이 들어가고, 두 방향 모두에 있어요. Dailies는 그곳에 위젯을 제공하지 않아요. 네 단어 만에 잘리는 글귀는 글귀가 아니니까요.</p>
+      </section>
+
+      <section id="remove">
+        <h2>위젯 제거하기</h2>
+        <ul>
+          <li><strong>홈 화면에서:</strong> 위젯을 길게 터치하고 <strong>위젯 제거</strong>를 탭한 다음 <strong>제거</strong>를 탭하세요. 스택이라면 메뉴에 대신 <strong>스택 제거</strong>가 나와요.</li>
+          <li><strong>잠금 화면에서:</strong> 잠금 화면을 길게 터치하고 <strong>사용자화</strong>를 탭한 다음, 위젯을 탭하고 없애고 싶은 위젯의 <strong>&minus;</strong>를 탭하세요. 다른 방향도 잊지 말고 확인하세요.</li>
+        </ul>
+        <p>위젯을 제거해도 앱이나 앱 안의 내용은 절대 지워지지 않아요.</p>
+      </section>
+
+      <section id="dailies">
+        <h2>iPad의 Dailies</h2>
+        <p><a href="/ko/">Dailies</a>는 iPad에서 세로 모드와 가로 모드 모두로 작동하고, 위젯도 iPhone에서와 똑같이 작동해요.</p>
+        <ul>
+          <li><strong>홈 화면 위젯</strong>은 중형이나 대형으로, 앱에서 고른 배경을 그대로 담고, <strong>화살표</strong>로 아무것도 열지 않고 다음 글귀로 넘어가거나 이전 글귀로 돌아갈 수 있어요.</li>
+          <li><strong>잠금 화면 위젯</strong>은 iPadOS가 그곳에 허용하는 한 가지 톤으로 짧은 글귀를 보여 줘요. 탭하면 그 글귀가 열린 상태로 앱이 열려요.</li>
+          <li>두 위젯 모두 <strong>대략 한 시간에 한 번</strong> 바뀌고 같은 글귀를 따라가요. 그래서 두 위젯이 서로 다른 글귀를 보여 주지 않고 늘 일치해요.</li>
+          <li>글귀는 iPad에서도 알림으로 도착할 수 있어요. <strong>맞춤 설정 &rarr; 하루 글귀</strong>에서 정한 시간대 안에서요.</li>
+        </ul>
+        <p>앱 안의 <strong>맞춤 설정 &rarr; 홈 화면 위젯</strong>과 <strong>맞춤 설정 &rarr; 잠금 화면 위젯</strong>에서 그림과 함께 두 위젯을 추가하는 방법을 안내해 줘요.</p>
+        <p>iPhone에서도 Dailies를 쓴다면 기기마다 위젯이 따로 있어요. iPad에서 위젯을 추가해도 iPhone에는 아무 변화가 없고, 반대도 마찬가지예요.</p>
+      </section>
+
+      <section id="fix">
+        <h2>문제가 생겼을 때</h2>
+        <h3>위젯 목록에 앱이 없어요</h3>
+        <ol>
+          <li><strong>이 iPad에서 앱을 한 번 여세요.</strong> iPadOS는 그 기기에서 앱이 한 번 이상 실행되기 전까지 앱의 위젯을 보여 주지 않아요. iPhone에서 매일 쓰고 있더라도요.</li>
+          <li><strong>목록을 스크롤하지 말고 검색하세요.</strong></li>
+          <li><strong>iPad를 재시동하세요.</strong> 위젯 목록이 다시 만들어져요.</li>
+          <li><strong>앱이 정리되지 않았는지 확인하세요.</strong> 정리된 앱은 아이콘이 남아 있고 이름 옆에 작은 구름이 보여요. 다시 탭해서 다운로드하기 전까지는 위젯도 함께 사라져요.</li>
+        </ol>
+        <h3>iPad를 돌렸더니 잠금 화면 위젯이 사라졌어요</h3>
+        <p>사라진 게 아니에요. 다른 방향의 세트에 있는 거예요. 새로운 방향으로 iPad를 든 채로 다시 추가하세요. <a href="#landscape">세로 모드와 가로 모드</a>를 보세요.</p>
+        <h3>위젯이 같은 글귀에서 멈춰 있어요</h3>
+        <p>대개 iPad가 배터리를 아끼고 있어서 그래요. <strong>저전력 모드</strong>를 끄고 앱을 한 번 여세요. 그러면 두 위젯 모두에 새 글귀가 전달돼요. 해결 방법 전체는 <a href="/ko/guides/iphone-widget-not-updating/">위젯이 업데이트되지 않는 이유</a>에 있고, 그곳의 내용은 모두 iPad에도 해당돼요.</p>
+        <p>그래도 해결되지 않나요? <a href="mailto:help@mydailies.app">help@mydailies.app</a>로 연락하면 사람이 직접 답해 드려요. <a href="/ko/help/#widget">도움말 페이지</a>에 짧게 정리한 내용이 있어요.</p>
+      </section>
+
+      <section id="faq">
+        <h2>자주 묻는 질문</h2>
+        <div class="faq">
+          <details open><summary>iPad 잠금 화면에 위젯을 둘 수 있나요?</summary>
+            <div class="details-body">
+              <p>네, iPadOS 17부터 가능해요. 잠금 화면을 길게 터치하고 사용자화를 탭한 다음 위젯 추가를 탭하세요. iPadOS는 세로 모드와 가로 모드에 세트를 따로 두니, iPad를 돌려 쓴다면 두 방향 모두에 위젯을 추가하세요.</p>
+            </div></details>
+
+          <details><summary>iPad를 돌리면 잠금 화면 위젯이 사라지는 이유는 무엇인가요?</summary>
+            <div class="details-body">
+              <p>iPad 잠금 화면에는 시계 아래에 한 줄로 놓이는 세로 모드용 위젯 세트와, 왼쪽에 세로로 놓이는 가로 모드용 위젯 세트가 따로 있기 때문이에요. 다른 방향에서 잠금 화면을 다시 사용자화하고 그곳에도 위젯을 추가하세요.</p>
+            </div></details>
+
+          <details><summary>특대형 위젯이란 무엇인가요?</summary>
+            <div class="details-body">
+              <p>iPad에만 있는 크기로, 대형 위젯의 두 배 너비예요. 만들지 말지는 앱마다 정해요. Dailies는 iPad에서 중형과 대형을 제공해요.</p>
+            </div></details>
+
+          <details><summary>iPad의 위젯 목록에 앱이 없는 이유는 무엇인가요?</summary>
+            <div class="details-body">
+              <p>대부분 그 iPad에서 아직 앱을 열지 않았기 때문이에요. iPadOS는 그 기기에서 앱이 한 번 이상 실행된 뒤에야 앱의 위젯을 보여 줘요. 앱을 연 다음 다시 시도하고, 그래도 없다면 iPad를 재시동하세요.</p>
+            </div></details>
+
+          <details><summary>iPad와 iPhone의 위젯은 동기화되나요?</summary>
+            <div class="details-body">
+              <p>아니요. 기기마다 홈 화면과 잠금 화면이 따로 있어서, iPad에 추가한 위젯은 iPhone에 따로 추가해야 해요. 반대도 마찬가지예요.</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="more">
+        <h2>더 읽어 보기</h2>
+        <ul>
+          <li><a href="/ko/guides/add-a-widget-to-your-home-screen/">iPhone 홈 화면에 위젯을 추가하는 방법</a></li>
+          <li><a href="/ko/guides/quotes-on-your-iphone-lock-screen/">iPhone 잠금 화면에 글귀를 표시하는 방법</a></li>
+          <li><a href="/ko/guides/iphone-widget-not-updating/">iPhone 위젯이 업데이트되지 않나요? 이유와 해결 방법</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <section class="strip">
+    <div class="wrap strip-in">
+      <h2>좋은 글귀로 오늘을 시작하세요.</h2>
+      <p class="lede">한 번만 설정하면 나머지는 Dailies가 알아서 해요.</p>
+      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-guides-ko&amp;mt=8" data-download="page"><img src="/img/app-store-badge-ko.svg" width="169" height="52" alt="App Store에서 다운로드하기"></a>
+    </div>
+  </section>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <div class="social">
+      <a href="https://www.tiktok.com/@mydailies.app" aria-label="TikTok" title="TikTok" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#tiktok"/></svg></a>
+      <a href="https://www.instagram.com/mydailies.app/" aria-label="Instagram" title="Instagram" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#instagram"/></svg></a>
+      <a href="https://www.facebook.com/mydailiesapp" aria-label="Facebook" title="Facebook" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#facebook"/></svg></a>
+      <a href="https://www.youtube.com/@mydailiesapp" aria-label="YouTube" title="YouTube" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#youtube"/></svg></a>
+      <a href="https://www.pinterest.com/mydailiesapp/" aria-label="Pinterest" title="Pinterest" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#pinterest"/></svg></a>
+      <a href="https://www.linkedin.com/company/mydailiesapp/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#linkedin"/></svg></a>
+    </div>
+    <nav>
+      <a href="/ko/">홈</a>
+      <a href="/ko/compare/">비교</a>
+      <a href="/ko/about/">소개</a>
+      <a href="/press/" hreflang="en">보도 자료</a>
+      <a href="/terms/" hreflang="en">이용 약관</a>
+      <a href="/privacy/" hreflang="en">개인정보 처리방침</a>
+      <a href="/cookies/" hreflang="en">쿠키 정책</a>
+      <a href="#" data-cookie-settings>쿠키 설정</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"iPad 홈 화면에 위젯을 추가하는 방법","description":"원하는 크기로 iPad 홈 화면에 앱의 위젯을 추가해요.","totalTime":"PT1M","datePublished":"2026-10-22","dateModified":"2026-10-22","author":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"supply":[{"@type":"HowToSupply","name":"iPad"},{"@type":"HowToSupply","name":"위젯을 제공하는 설치된 앱(예: Dailies)"}],"step":[
+{"@type":"HowToStep","name":"홈 화면 페이지로 가세요","text":"위젯을 둘 홈 화면 페이지로 가세요."},
+{"@type":"HowToStep","name":"편집 상태로 들어가세요","text":"앱들이 흔들리기 시작할 때까지 배경의 빈 곳을 길게 터치하세요."},
+{"@type":"HowToStep","name":"위젯 갤러리를 여세요","text":"화면 위쪽의 편집을 탭한 다음 위젯 추가를 탭하세요."},
+{"@type":"HowToStep","name":"앱을 찾으세요","text":"앱을 검색하거나 스크롤해서 찾은 다음 탭하세요."},
+{"@type":"HowToStep","name":"크기를 고르세요","text":"왼쪽과 오른쪽으로 쓸어 넘기며 크기를 살펴보세요. 원하는 크기가 보이면 위젯 추가를 탭하세요."},
+{"@type":"HowToStep","name":"자리를 잡으세요","text":"앱들이 아직 흔들리는 동안 위젯을 원하는 곳으로 드래그한 다음 완료를 탭하세요."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"iPad 잠금 화면에 위젯을 둘 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네, iPadOS 17부터 가능해요. 잠금 화면을 길게 터치하고 사용자화를 탭한 다음 위젯 추가를 탭하세요. iPadOS는 세로 모드와 가로 모드에 세트를 따로 두니, iPad를 돌려 쓴다면 두 방향 모두에 위젯을 추가하세요."}},
+{"@type":"Question","name":"iPad를 돌리면 잠금 화면 위젯이 사라지는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"iPad 잠금 화면에는 시계 아래에 한 줄로 놓이는 세로 모드용 위젯 세트와, 왼쪽에 세로로 놓이는 가로 모드용 위젯 세트가 따로 있기 때문이에요. 다른 방향에서 잠금 화면을 다시 사용자화하고 그곳에도 위젯을 추가하세요."}},
+{"@type":"Question","name":"특대형 위젯이란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"iPad에만 있는 크기로, 대형 위젯의 두 배 너비예요. 만들지 말지는 앱마다 정해요. Dailies는 iPad에서 중형과 대형을 제공해요."}},
+{"@type":"Question","name":"iPad의 위젯 목록에 앱이 없는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"대부분 그 iPad에서 아직 앱을 열지 않았기 때문이에요. iPadOS는 그 기기에서 앱이 한 번 이상 실행된 뒤에야 앱의 위젯을 보여 줘요. 앱을 연 다음 다시 시도하고, 그래도 없다면 iPad를 재시동하세요."}},
+{"@type":"Question","name":"iPad와 iPhone의 위젯은 동기화되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 기기마다 홈 화면과 잠금 화면이 따로 있어서, iPad에 추가한 위젯은 iPhone에 따로 추가해야 해요. 반대도 마찬가지예요."}}
+]}
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

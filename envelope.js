@@ -28,7 +28,8 @@
   if (!P || !A || !root) return;
   var h = P.h;
 
-  var HOMES = { en: '/', es: '/es/', pt: '/pt/', fr: '/fr/', de: '/de/', ja: '/ja/' };
+  var HOMES = { en: '/', es: '/es/', pt: '/pt/', fr: '/fr/', de: '/de/', ja: '/ja/',
+                it: '/it/', ko: '/ko/', 'zh-hant': '/zh-hant/' };
   var res = P.decode(location.hash);
   var env = res.env;
   var lang = env ? env.l : P.pickLang(navigator.language);
