@@ -192,11 +192,6 @@ p{margin:0}
 .rating-stars svg{display:block; width:16px; height:16px}
 h1 em{font-style:italic; color:var(--accent)}
 .cta-row{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
-.qr{display:flex; align-items:center; gap:14px}
-/* Fixed light ground in both themes, since a QR needs dark-on-light to scan. */
-.qr-chip{width:120px; height:120px; padding:8px; border-radius:14px; background:#f4ecdc; flex:none}
-.qr-chip img{display:block; width:100%; height:100%}
-.qr-note{font-size:12.5px; line-height:1.35; color:var(--text-faint); max-width:15ch}
 
 /* ============ APP STORE BADGE ============ */
 /* Apple's official badge artwork (img/app-store-badge-ko.svg, from Apple's
@@ -204,6 +199,11 @@ h1 em{font-style:italic; color:var(--accent)}
 .store-badge{display:inline-block; line-height:0; border-radius:9px; transition:transform .18s, box-shadow .18s}
 .store-badge:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.28)}
 .store-badge img{height:52px; width:auto}
+/* Both stores, side by side. A phone shows only its own store's badge
+   (html.is-ios / html.is-android, set by the script at the end of <head>);
+   a computer, or anything the script cannot place, shows both. */
+.store-badges{display:inline-flex; flex-wrap:wrap; align-items:center; gap:12px}
+.is-ios .play-badge, .is-android .apple-badge{display:none}
 
 /* ============ SECTION SHELL ============ */
 section{position:relative}
@@ -317,8 +317,6 @@ details p a{color:var(--accent); text-decoration:underline; text-underline-offse
 .final{text-align:center; padding:clamp(72px,8vw,108px) 0 0}
 .final-in{display:flex; flex-direction:column; align-items:center; gap:23px}
 .final .lede{text-align:center}
-.final .qr{flex-direction:column; text-align:center; gap:10px}
-.final .qr-note{max-width:22ch}
 .find-us .wrap{display:flex; flex-direction:column; gap:16px}
 .featured-badges{display:flex; flex-wrap:wrap; align-items:center; gap:14px}
 .featured-badges a{line-height:0}
@@ -420,8 +418,6 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
   .shots{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:64%; overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:-16px; padding-inline:16px; scroll-padding-inline:16px}
   .shots img{scroll-snap-align:start}
   .home-posts{grid-template-columns:1fr}
-  /* A phone cannot scan its own screen; the button is the way in there. */
-  .qr{display:none}
 }
 /* The first iPhone SE's 320px: Blog, Guides, Help and the language menu fit
    beside the brand once the gaps close up a little. */
@@ -437,8 +433,6 @@ html:lang(ko) #quoteText{letter-spacing:0; line-height:1.55}
 html:lang(ko) .post-card h3{line-height:1.45}
 html:lang(ko) .field h1{max-width:none; font-size:clamp(40px,5.6vw,80px); line-height:1.15}
 html:lang(ko) .fc span{line-height:1.45}
-html:lang(ko) .qr-note{max-width:10em}
-html:lang(ko) .final .qr-note{max-width:14em}
 /* A phone's hero headline at the Latin size would split the second line;
    this keeps it whole down to 320px. */
 @media (max-width:940px){
@@ -450,7 +444,7 @@ html:lang(ko) .final .qr-note{max-width:14em}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - 동기부여 명언·좋은 글귀","description":"Dailies는 짧은 동기부여 글귀를 잠금 화면과 홈 화면 위젯에, 매일 다른 순간에 보내 드려요. 주제와 시간대를 고르고 나면, 평소처럼 하루를 보내면 돼요. 광고도 로그인도 없어요.","url":"https://mydailies.app/ko/","inLanguage":"ko","operatingSystem":"iOS","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/ko/lock-screen.jpg","https://mydailies.app/img/app/ko/home-screen.jpg","https://mydailies.app/img/app/ko/topics.jpg","https://mydailies.app/img/app/ko/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
+{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - 동기부여 명언·좋은 글귀","description":"Dailies는 짧은 동기부여 글귀를 잠금 화면과 홈 화면 위젯에, 매일 다른 순간에 보내 드려요. 주제와 시간대를 고르고 나면, 평소처럼 하루를 보내면 돼요. 광고도 로그인도 없어요.","url":"https://mydailies.app/ko/","inLanguage":"ko","operatingSystem":"iOS, Android","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://play.google.com/store/apps/details?id=com.ashabtay.dailies"],"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://play.google.com/store/apps/details?id=com.ashabtay.dailies"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/ko/lock-screen.jpg","https://mydailies.app/img/app/ko/home-screen.jpg","https://mydailies.app/img/app/ko/topics.jpg","https://mydailies.app/img/app/ko/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies는 짧은 동기부여 글귀를 잠금 화면과 홈 화면에 띄워 줘요.","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
@@ -468,9 +462,10 @@ html:lang(ko) .final .qr-note{max-width:14em}
 {"@type":"Question","name":"Motivation 앱 대신 쓸 만한 앱이 있나요?","acceptedAnswer":{"@type":"Answer","text":"Motivation이 마음에 들지만 더 세밀한 주제, 위젯을 꾸미는 더 많은 방법, 정해진 일정이 아니라 내가 정한 시간대 안에서 Dailies가 고른 순간에 도착하는 글귀를 원한다면 Dailies를 써 보세요. 자세한 비교는 Dailies vs Motivation에서 볼 수 있어요."}},
 {"@type":"Question","name":"글귀를 저장하거나 직접 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"둘 다 돼요. 마음에 와닿은 글귀에 하트를 누르면 ‘좋아요한 글귀’에 모이고, ‘내 글귀’에서는 직접 글을 쓸 수 있어요. 프리미엄에서는 Dailies가 두 가지 모두를 다른 글귀와 함께 다시 보여 줘요. 직접 쓴 글과 하트를 누른 글귀는 iCloud 계정에 백업되므로, 휴대전화를 바꾸거나 초기화해도 사라지지 않아요."}},
 {"@type":"Question","name":"Dailies는 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네. 몇 가지 주제와 배경 중에서 고를 수 있는 무료 버전이 있어요. Dailies Premium은 선택 사항인 연간 구독으로, 라이브러리 전체를 열어 줘요. 모든 주제, 각각 하나의 피드가 되는 ‘좋아요한 글귀’와 ‘내 글귀’, 모든 배경과 효과, 글귀 뒤에 놓는 내 사진과 색, 그리고 로고 없이 공유되는 이미지까지요."}},
-{"@type":"Question","name":"Dailies는 어떤 기기에서 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"iPhone과 iPad에서 세로로도 가로로도 쓸 수 있어요. Android 버전은 없어요. 이 페이지의 코드를 스캔하거나 App Store에서 Dailies를 검색하세요."}}
+{"@type":"Question","name":"Dailies는 어떤 기기에서 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"iPhone, iPad, Android에서 세로로도 가로로도 쓸 수 있어요. App Store나 Google Play에서 Dailies를 검색하세요."}}
 ]}
 </script>
+<script>/* Store badges: a phone sees its own store's, anything else sees both. */(function(u,e){if(/Android/i.test(u))e.className+=' is-android';else if(/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1))e.className+=' is-ios'})(navigator.userAgent,document.documentElement)</script>
 </head>
 <body>
 <nav class="nav on-field">
@@ -508,7 +503,7 @@ html:lang(ko) .final .qr-note{max-width:14em}
       <p class="rating"><span class="rating-stars" role="img" aria-label="별 5개 중 4.7개"><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><defs><linearGradient id="star-part"><stop offset=".7" stop-color="#f2b632"/><stop offset=".7" stop-color="rgba(243,236,220,.25)"/></linearGradient></defs><path fill="url(#star-part)" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg></span><span>App Store 평점 <b>4.7</b></span></p>
       <h1>매일의 동기부여,<br><em>잠금 화면으로 바로.</em></h1>
       <p class="lede">짧은 동기부여 글귀를 잠금 화면과 홈 화면에, 매일 다른 순간에. 주제와 시간대를 고르고 나면, 평소처럼 하루를 보내면 돼요.</p>
-      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-ko&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-ko.svg" width="169" height="52" alt="App Store에서 다운로드하기"></a>
+      <span class="store-badges"><a class="store-badge apple-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-ko&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-ko.svg" width="169" height="52" alt="App Store에서 다운로드하기"></a><a class="store-badge play-badge" href="https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Dmydailies.app%26utm_medium%3Dweb%26utm_campaign%3Dweb-home-ko" data-download="hero"><img src="/img/google-play-badge-ko.png" width="175" height="52" alt="Google Play에서 다운로드"></a></span>
     </div>
 <script>/* The field's cards: short lines (under 36 characters) from the 30 quotes the app's curated start dealt a new reader (kCuratedRandom30 in lib/data/curated_start_sets.dart, the dailies repo), shuffled on every visit. The markup carries the first twelve, for anyone without scripts. While the field is on screen the nav and the browser bar take its color. On a desktop the cards drift a little with the mouse, the near ones more. */
 (function(){
@@ -685,7 +680,7 @@ html:lang(ko) .final .qr-note{max-width:14em}
         <details><summary>Dailies는 무료인가요?</summary>
           <p>네. 몇 가지 주제와 배경 중에서 고를 수 있는 무료 버전이 있어요. Dailies Premium은 선택 사항인 연간 구독으로, 라이브러리 전체를 열어 줘요. 모든 주제, 각각 하나의 피드가 되는 ‘좋아요한 글귀’와 ‘내 글귀’, 모든 배경과 효과, 글귀 뒤에 놓는 내 사진과 색, 그리고 로고 없이 공유되는 이미지까지요.</p></details>
         <details><summary>Dailies는 어떤 기기에서 쓸 수 있나요?</summary>
-          <p>iPhone과 iPad에서 세로로도 가로로도 쓸 수 있어요. Android 버전은 없어요. 이 페이지의 코드를 스캔하거나 App Store에서 Dailies를 검색하세요.</p></details>
+          <p>iPhone, iPad, Android에서 세로로도 가로로도 쓸 수 있어요. App Store나 Google Play에서 Dailies를 검색하세요.</p></details>
       </div>
     </div>
   </section>
@@ -695,11 +690,7 @@ html:lang(ko) .final .qr-note{max-width:14em}
     <div class="wrap final-in">
       <h2>좋은 글귀로 오늘을 시작하세요.</h2>
       <p class="lede">설정은 한 번이면 돼요. 그다음은 Dailies가 알아서 할게요.</p>
-      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-ko&amp;mt=8" data-download="final"><img src="/img/app-store-badge-ko.svg" width="169" height="52" alt="App Store에서 다운로드하기"></a>
-      <div class="qr">
-        <div class="qr-chip"><img src="/img/home/qr-ko.svg" alt="App Store의 Dailies로 연결되는 QR 코드"></div>
-        <p class="qr-note">iPhone 카메라로 스캔하면 App Store가 열려요</p>
-      </div>
+      <span class="store-badges"><a class="store-badge apple-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-ko&amp;mt=8" data-download="final"><img src="/img/app-store-badge-ko.svg" width="169" height="52" alt="App Store에서 다운로드하기"></a><a class="store-badge play-badge" href="https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Dmydailies.app%26utm_medium%3Dweb%26utm_campaign%3Dweb-home-ko" data-download="final"><img src="/img/google-play-badge-ko.png" width="175" height="52" alt="Google Play에서 다운로드"></a></span>
     </div>
     <div class="wrap"><footer>
       <span>&copy; 2026 Dailies</span>

@@ -193,11 +193,6 @@ p{margin:0}
 .rating-stars svg{display:block; width:16px; height:16px}
 h1 em{font-style:italic; color:var(--accent)}
 .cta-row{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
-.qr{display:flex; align-items:center; gap:14px}
-/* Fixed light ground in both themes, since a QR needs dark-on-light to scan. */
-.qr-chip{width:120px; height:120px; padding:8px; border-radius:14px; background:#f4ecdc; flex:none}
-.qr-chip img{display:block; width:100%; height:100%}
-.qr-note{font-size:12.5px; line-height:1.35; color:var(--text-faint); max-width:15ch}
 
 /* ============ APP STORE BADGE ============ */
 /* Apple's official badge artwork (img/app-store-badge-ja.svg, from Apple's
@@ -205,6 +200,11 @@ h1 em{font-style:italic; color:var(--accent)}
 .store-badge{display:inline-block; line-height:0; border-radius:9px; transition:transform .18s, box-shadow .18s}
 .store-badge:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.28)}
 .store-badge img{height:52px; width:auto}
+/* Both stores, side by side. A phone shows only its own store's badge
+   (html.is-ios / html.is-android, set by the script at the end of <head>);
+   a computer, or anything the script cannot place, shows both. */
+.store-badges{display:inline-flex; flex-wrap:wrap; align-items:center; gap:12px}
+.is-ios .play-badge, .is-android .apple-badge{display:none}
 
 /* ============ SECTION SHELL ============ */
 section{position:relative}
@@ -318,8 +318,6 @@ details p a{color:var(--accent); text-decoration:underline; text-underline-offse
 .final{text-align:center; padding:clamp(72px,8vw,108px) 0 0}
 .final-in{display:flex; flex-direction:column; align-items:center; gap:23px}
 .final .lede{text-align:center}
-.final .qr{flex-direction:column; text-align:center; gap:10px}
-.final .qr-note{max-width:22ch}
 .find-us .wrap{display:flex; flex-direction:column; gap:16px}
 .featured-badges{display:flex; flex-wrap:wrap; align-items:center; gap:14px}
 .featured-badges a{line-height:0}
@@ -421,8 +419,6 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
   .shots{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:64%; overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:-16px; padding-inline:16px; scroll-padding-inline:16px}
   .shots img{scroll-snap-align:start}
   .home-posts{grid-template-columns:1fr}
-  /* A phone cannot scan its own screen; the button is the way in there. */
-  .qr{display:none}
 }
 /* The first iPhone SE's 320px: Blog, Guides, Help and the language menu fit
    beside the brand once the gaps close up a little. */
@@ -440,8 +436,6 @@ html:lang(ja) #quoteText{letter-spacing:0; line-height:1.55}
 html:lang(ja) .post-card h3{line-height:1.45}
 html:lang(ja) .field h1{max-width:none; font-size:clamp(40px,5.6vw,80px); line-height:1.15}
 html:lang(ja) .fc span{line-height:1.45}
-html:lang(ja) .qr-note{max-width:9em}
-html:lang(ja) .final .qr-note{max-width:13em}
 /* A phone's hero headline at the Latin size (11.5vw) fits seven kanji to a
    line, one short of the first line; this fits eight down to 320px. */
 @media (max-width:940px){
@@ -453,7 +447,7 @@ html:lang(ja) .final .qr-note{max-width:13em}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - 名言・ポジティブな言葉","description":"Dailies は、前向きになれる短い名言をロック画面とホーム画面のウィジェットに、毎日ちがうタイミングで届けます。テーマと時間帯を選んだら、あとはいつもどおりの一日を。広告もサインインもありません。","url":"https://mydailies.app/ja/","inLanguage":"ja","operatingSystem":"iOS","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/ja/lock-screen.jpg","https://mydailies.app/img/app/ja/home-screen.jpg","https://mydailies.app/img/app/ja/topics.jpg","https://mydailies.app/img/app/ja/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
+{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - 名言・ポジティブな言葉","description":"Dailies は、前向きになれる短い名言をロック画面とホーム画面のウィジェットに、毎日ちがうタイミングで届けます。テーマと時間帯を選んだら、あとはいつもどおりの一日を。広告もサインインもありません。","url":"https://mydailies.app/ja/","inLanguage":"ja","operatingSystem":"iOS, Android","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://play.google.com/store/apps/details?id=com.ashabtay.dailies"],"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://play.google.com/store/apps/details?id=com.ashabtay.dailies"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/ja/lock-screen.jpg","https://mydailies.app/img/app/ja/home-screen.jpg","https://mydailies.app/img/app/ja/topics.jpg","https://mydailies.app/img/app/ja/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://mydailies.app/#organization","name":"Dailies","alternateName":"Dailies - motivational quotes","url":"https://mydailies.app/","logo":"https://mydailies.app/icon.png","description":"Dailies は、前向きになれる短い名言をロック画面とホーム画面に届けます。","founder":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://www.tiktok.com/@mydailies.app","https://www.instagram.com/mydailies.app/","https://www.facebook.com/mydailiesapp","https://www.youtube.com/@mydailiesapp","https://www.pinterest.com/mydailiesapp/","https://www.linkedin.com/company/mydailiesapp/"]}
@@ -471,9 +465,10 @@ html:lang(ja) .final .qr-note{max-width:13em}
 {"@type":"Question","name":"Motivation アプリの代わりになるアプリはありますか？","acceptedAnswer":{"@type":"Answer","text":"Motivation が好きでも、もっと細かなテーマや、ウィジェットのデザインの幅、決まった時刻ではなく選んだ時間帯の中で Dailies が選ぶ瞬間に届く言葉がほしいなら、Dailies を試してみてください。詳しい比較はDailies vs Motivationをどうぞ。"}},
 {"@type":"Question","name":"言葉を保存したり、自分で書いたりできますか？","acceptedAnswer":{"@type":"Answer","text":"どちらもできます。心に響いた言葉にハートをつけると「いいねした言葉」に残り、自分の言葉は「自分の言葉」に書けます。Dailies Premium なら、どちらもほかの言葉と一緒に届きます。自分で書いた言葉といいねした言葉は iCloud アカウントにバックアップされるので、iPhone を買い替えたり初期化したりしても消えません。"}},
 {"@type":"Question","name":"Dailies は無料ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。いくつかのテーマと背景から選べる無料版があります。Dailies Premium は任意の年額サブスクリプションで、ライブラリのすべてが使えるようになります。すべてのテーマ、「いいねした言葉」と「自分の言葉」それぞれのフィード、すべての背景とエフェクト、言葉の背景に使える自分の写真や好きな色、そしてロゴの入らないシェア画像です。"}},
-{"@type":"Question","name":"Dailies はどのデバイスで使えますか？","acceptedAnswer":{"@type":"Answer","text":"iPhone と iPad で、縦向きでも横向きでも使えます。Android 版はありません。このページのコードを読み取るか、App Store で Dailies を検索してください。"}}
+{"@type":"Question","name":"Dailies はどのデバイスで使えますか？","acceptedAnswer":{"@type":"Answer","text":"iPhone、iPad、Android で、縦向きでも横向きでも使えます。App Store か Google Play で Dailies を検索してください。"}}
 ]}
 </script>
+<script>/* Store badges: a phone sees its own store's, anything else sees both. */(function(u,e){if(/Android/i.test(u))e.className+=' is-android';else if(/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1))e.className+=' is-ios'})(navigator.userAgent,document.documentElement)</script>
 </head>
 <body>
 <nav class="nav on-field">
@@ -511,7 +506,7 @@ html:lang(ja) .final .qr-note{max-width:13em}
       <p class="rating"><span class="rating-stars" role="img" aria-label="5つ星のうち4.7"><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="#f2b632" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><defs><linearGradient id="star-part"><stop offset=".7" stop-color="#f2b632"/><stop offset=".7" stop-color="rgba(243,236,220,.25)"/></linearGradient></defs><path fill="url(#star-part)" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.1 5.9L10 14.8l-5.3 2.9 1.1-5.9L1.4 7.7l6-.7z"/></svg></span><span>App Store で <b>4.7</b></span></p>
       <h1>毎日のやる気を、<br><em>ロック画面に。</em></h1>
       <p class="lede">前向きになれる短い名言を、ロック画面とホーム画面のウィジェットに、毎日ちがうタイミングで。テーマと時間帯を選んだら、あとはいつもどおりの一日を。</p>
-      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-ja&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-ja.svg" width="142" height="52" alt="App Store からダウンロード"></a>
+      <span class="store-badges"><a class="store-badge apple-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-ja&amp;mt=8" data-download="hero"><img src="/img/app-store-badge-ja.svg" width="142" height="52" alt="App Store からダウンロード"></a><a class="store-badge play-badge" href="https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Dmydailies.app%26utm_medium%3Dweb%26utm_campaign%3Dweb-home-ja" data-download="hero"><img src="/img/google-play-badge-ja.png" width="175" height="52" alt="Google Play で手に入れよう"></a></span>
     </div>
 <script>/* The field's cards: short lines (under 34 characters) from the 30 quotes the app's curated start dealt a new reader (kCuratedRandom30 in lib/data/curated_start_sets.dart, the dailies repo), shuffled on every visit. The markup carries the first twelve, for anyone without scripts. While the field is on screen the nav and the browser bar take its color. On a desktop the cards drift a little with the mouse, the near ones more. */
 (function(){
@@ -688,7 +683,7 @@ html:lang(ja) .final .qr-note{max-width:13em}
         <details><summary>Dailies は無料ですか？</summary>
           <p>はい。いくつかのテーマと背景から選べる無料版があります。Dailies Premium は任意の年額サブスクリプションで、ライブラリのすべてが使えるようになります。すべてのテーマ、「いいねした言葉」と「自分の言葉」それぞれのフィード、すべての背景とエフェクト、言葉の背景に使える自分の写真や好きな色、そしてロゴの入らないシェア画像です。</p></details>
         <details><summary>Dailies はどのデバイスで使えますか？</summary>
-          <p>iPhone と iPad で、縦向きでも横向きでも使えます。Android 版はありません。このページのコードを読み取るか、App Store で Dailies を検索してください。</p></details>
+          <p>iPhone、iPad、Android で、縦向きでも横向きでも使えます。App Store か Google Play で Dailies を検索してください。</p></details>
       </div>
     </div>
   </section>
@@ -698,11 +693,7 @@ html:lang(ja) .final .qr-note{max-width:13em}
     <div class="wrap final-in">
       <h2>いい言葉で、今日を始めましょう。</h2>
       <p class="lede">設定は一度だけ。あとは Dailies におまかせください。</p>
-      <a class="store-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-ja&amp;mt=8" data-download="final"><img src="/img/app-store-badge-ja.svg" width="142" height="52" alt="App Store からダウンロード"></a>
-      <div class="qr">
-        <div class="qr-chip"><img src="/img/home/qr-ja.svg" alt="App Store の Dailies につながる QR コード"></div>
-        <p class="qr-note">iPhone のカメラで読み取ると、App Store が開きます</p>
-      </div>
+      <span class="store-badges"><a class="store-badge apple-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-home-ja&amp;mt=8" data-download="final"><img src="/img/app-store-badge-ja.svg" width="142" height="52" alt="App Store からダウンロード"></a><a class="store-badge play-badge" href="https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Dmydailies.app%26utm_medium%3Dweb%26utm_campaign%3Dweb-home-ja" data-download="final"><img src="/img/google-play-badge-ja.png" width="175" height="52" alt="Google Play で手に入れよう"></a></span>
     </div>
     <div class="wrap"><footer>
       <span>&copy; 2026 Dailies</span>

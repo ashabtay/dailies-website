@@ -71,9 +71,14 @@
 (function () {
   'use strict';
 
-  // Where every App Store badge goes, with this page's own campaign token
-  // so its installs read apart from /e/'s `web-envelope`.
+  // Where the Get Dailies link goes, with this page's own campaign token so its
+  // installs read apart from /e/'s `web-envelope`. On Google Play the token
+  // rides in the install referrer, as utm_campaign. A computer gets /get/,
+  // which shows both badges and passes the same token on to either store.
   var APP_URL = 'https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&ct=web-app-envelope&mt=8';
+  var PLAY_URL = 'https://play.google.com/store/apps/details?id=com.ashabtay.dailies&referrer=' +
+    encodeURIComponent('utm_source=mydailies.app&utm_medium=web&utm_campaign=web-app-envelope');
+  var GET_URL = '/get/?c=web-app-envelope';
 
   var MAX_NAME = 40;
   var MAX_TEXT = 600;
@@ -670,11 +675,14 @@
   $all('[data-s-aria]').forEach(function (el) { el.setAttribute('aria-label', S[el.getAttribute('data-s-aria')]); });
   $all('[data-s-placeholder]').forEach(function (el) { el.setAttribute('placeholder', S[el.getAttribute('data-s-placeholder')]); });
 
-  // A quiet "Get Dailies" link, so it never competes with Send one back.
+  // A quiet "Get Dailies" link, so it never competes with Send one back. It
+  // goes to the reader's own store: the App Store on an iPhone or iPad, Google
+  // Play on Android. A computer goes to /get/, which offers both badges.
   function wireGetApp(a) {
-    a.href = APP_URL;
+    var store = PLATFORM === 'android' ? 'google_play' : PLATFORM === 'ios' ? 'app_store' : 'get_page';
+    a.href = store === 'google_play' ? PLAY_URL : store === 'app_store' ? APP_URL : GET_URL;
     a.addEventListener('click', function () {
-      cta('get_app');
+      cta('get_app', { store: store });
       $all('.get-note').forEach(function (n) { n.hidden = false; });
     });
   }

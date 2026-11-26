@@ -101,12 +101,7 @@ p{color:var(--text-dim); font-size:17px; line-height:1.5; margin:0 0 28px}
 /* An iPhone or iPad gets the App Store badge alone, a little larger: it is
    the one thing on the page to tap. */
 .is-ios #play{display:none}
-.is-ios .stores img{height:60px}
-.play{
-  padding:0 22px; border:1px solid var(--rule); border-radius:10px;
-  color:var(--text); text-decoration:none; font-size:17px; font-weight:600;
-}
-.play:hover,.play:focus-visible{border-color:var(--text)}
+.is-ios .stores a, .is-ios .stores img{height:60px}
 </style>
 </head>
 <body>
@@ -116,7 +111,7 @@ p{color:var(--text-dim); font-size:17px; line-height:1.5; margin:0 0 28px}
   <p id="line">Some days you need a push. Some days you need a laugh, better focus or permission to be kinder to yourself.</p>
   <div class="stores" id="stores">
     <a id="appStore" href="https://apps.apple.com/app/id6804210416?pt=129347926&amp;ct=web-get&amp;mt=8"><img id="badge" src="/img/app-store-badge.svg" width="156" height="52" alt="Download on the App Store"></a>
-    <a id="play" class="play" href="https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Ddailies%26utm_campaign%3Dweb-get">Google Play</a>
+    <a id="play" href="https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Ddailies%26utm_campaign%3Dweb-get"><img id="playBadge" src="/img/google-play-badge.png" width="175" height="52" alt="Get it on Google Play"></a>
   </div>
 </main>
 <script>
@@ -125,19 +120,19 @@ p{color:var(--text-dim); font-size:17px; line-height:1.5; margin:0 0 28px}
   var G = window.DailiesGet;
   if (!G) return;
 
-  /* The line and the badge in the reader's language: each is the home
-     page's own text for that language (og:description and the badge's alt),
+  /* The line and both badges in the reader's language: each is the home
+     page's own text for that language (og:description and the badges' alts),
      so nothing here is translated afresh. */
   var STRINGS = {
-    en: { line: 'Some days you need a push. Some days you need a laugh, better focus or permission to be kinder to yourself.', alt: 'Download on the App Store', w: 156 },
-    es: { line: 'Hay días en que necesitas un empujón. Hay días en que necesitas reírte, concentrarte mejor o darte permiso de ser más amable contigo.', alt: 'Descárgalo en el App Store', w: 156 },
-    pt: { line: 'Tem dias em que você precisa de um empurrão. Tem dias em que precisa dar risada, ganhar foco ou se permitir ser mais gentil consigo.', alt: 'Baixar na App Store', w: 156 },
-    fr: { line: 'Certains jours, il te faut un coup de pouce. D’autres, il te faut rire, mieux te concentrer, ou t’accorder un peu plus de douceur.', alt: 'Télécharger dans l’App Store', w: 164 },
-    de: { line: 'An manchen Tagen brauchst du einen Schubs. An anderen ein Lachen, mehr Fokus oder die Erlaubnis, freundlicher zu dir selbst zu sein.', alt: 'Laden im App Store', w: 156 },
-    ja: { line: '背中を押してほしい日があります。笑いたい日、集中したい日、自分にもう少しやさしくしていいと思いたい日もあります。', alt: 'App Store からダウンロード', w: 142 },
-    it: { line: 'Ci sono giorni in cui ti serve una spinta. E giorni in cui ti serve una risata, più concentrazione o il permesso di essere più gentile con te.', alt: 'Scarica su App Store', w: 156 },
-    ko: { line: '등을 떠밀어 줄 한마디가 필요한 날이 있어요. 웃음이, 더 나은 집중이, 나에게 조금 더 다정해도 된다는 허락이 필요한 날도 있고요.', alt: 'App Store에서 다운로드하기', w: 169 },
-    'zh-hant': { line: '有些日子，你需要有人推你一把。有些日子，你需要笑一笑、更專注一點，或允許自己對自己好一點。', alt: '在 App Store 下載', w: 142 }
+    en: { line: 'Some days you need a push. Some days you need a laugh, better focus or permission to be kinder to yourself.', alt: 'Download on the App Store', w: 156, play: 'Get it on Google Play' },
+    es: { line: 'Hay días en que necesitas un empujón. Hay días en que necesitas reírte, concentrarte mejor o darte permiso de ser más amable contigo.', alt: 'Descárgalo en el App Store', w: 156, play: 'Disponible en Google Play' },
+    pt: { line: 'Tem dias em que você precisa de um empurrão. Tem dias em que precisa dar risada, ganhar foco ou se permitir ser mais gentil consigo.', alt: 'Baixar na App Store', w: 156, play: 'Disponível no Google Play' },
+    fr: { line: 'Certains jours, il te faut un coup de pouce. D’autres, il te faut rire, mieux te concentrer, ou t’accorder un peu plus de douceur.', alt: 'Télécharger dans l’App Store', w: 164, play: 'Disponible sur Google Play' },
+    de: { line: 'An manchen Tagen brauchst du einen Schubs. An anderen ein Lachen, mehr Fokus oder die Erlaubnis, freundlicher zu dir selbst zu sein.', alt: 'Laden im App Store', w: 156, play: 'Jetzt bei Google Play' },
+    ja: { line: '背中を押してほしい日があります。笑いたい日、集中したい日、自分にもう少しやさしくしていいと思いたい日もあります。', alt: 'App Store からダウンロード', w: 142, play: 'Google Play で手に入れよう' },
+    it: { line: 'Ci sono giorni in cui ti serve una spinta. E giorni in cui ti serve una risata, più concentrazione o il permesso di essere più gentile con te.', alt: 'Scarica su App Store', w: 156, play: 'Disponibile su Google Play' },
+    ko: { line: '등을 떠밀어 줄 한마디가 필요한 날이 있어요. 웃음이, 더 나은 집중이, 나에게 조금 더 다정해도 된다는 허락이 필요한 날도 있고요.', alt: 'App Store에서 다운로드하기', w: 169, play: 'Google Play에서 다운로드' },
+    'zh-hant': { line: '有些日子，你需要有人推你一把。有些日子，你需要笑一笑、更專注一點，或允許自己對自己好一點。', alt: '在 App Store 下載', w: 142, play: 'Google Play 立即下載' }
   };
   /* Chinese is Traditional only when the browser says so (Hant, or Taiwan,
      Hong Kong or Macau); Simplified has no page of its own and stays English. */
@@ -153,6 +148,9 @@ p{color:var(--text-dim); font-size:17px; line-height:1.5; margin:0 0 28px}
   badge.src = '/img/app-store-badge' + (lang === 'en' ? '' : '-' + lang) + '.svg';
   badge.alt = S.alt;
   badge.width = S.w;
+  var playBadge = document.getElementById('playBadge');
+  playBadge.src = '/img/google-play-badge' + (lang === 'en' ? '' : '-' + lang) + '.png';
+  playBadge.alt = S.play;
 
   document.getElementById('appStore').href = G.ios;
   var play = document.getElementById('play');
