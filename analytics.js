@@ -73,10 +73,11 @@
       // Accents off first, so "¿Cómo...?" on /es/ slugs to `como` and not `c_mo`.
       // Then composed again, so the kana keep their voicing marks (が stays が).
       .normalize('NFD').replace(/[\u0300-\u036f]/g, '').normalize('NFC')
-      // Kana, hanzi/kanji and Hangul are kept: a /ja/, /zh-hant/ or /ko/
-      // question has no Latin letters, and without them every one of them
-      // would be `unnamed`.
-      .replace(/[^a-z0-9\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uac00-\ud7af]+/g, '_')
+      // Kana, hanzi/kanji, Hangul and Arabic letters are kept: a /ja/,
+      // /zh-hant/, /ko/ or /ar/ question has no Latin letters, and without
+      // them every one of them would be `unnamed`. (Dutch and Swedish lose
+      // only their accents, like the other Latin languages: ä to a.)
+      .replace(/[^a-z0-9\u0621-\u0669\u066e-\u06d3\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uac00-\ud7af]+/g, '_')
       .replace(/^_+|_+$/g, '');
     if (!s) return 'unnamed';
     // Long enough for any question on the site, short enough that a stray

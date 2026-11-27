@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
+<title>طريقة إضافة أدوات على iPad، في الشاشة الرئيسية وشاشة القفل | Dailies</title>
+<meta name="description" content="إضافة أداة إلى الشاشة الرئيسية أو شاشة القفل في iPad، واختيار حجمها، وإنشاء حزمة مكدسة، وإعداد شاشة القفل في الوضعين الرأسي والأفقي، اللذين يفصل بينهما iPadOS.">
+<link rel="canonical" href="https://mydailies.app/ar/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/guias/agregar-widgets-en-el-ipad/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/guias/adicionar-widgets-no-ipad/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/guides/ajouter-des-widgets-sur-l-ipad/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/anleitungen/widgets-auf-dem-ipad-hinzufuegen/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="it" href="https://mydailies.app/it/guide/aggiungere-widget-su-ipad/">
+<link rel="alternate" hreflang="ko" href="https://mydailies.app/ko/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="zh-Hant" href="https://mydailies.app/zh-hant/guides/add-widgets-on-ipad/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/guides/add-widgets-on-ipad/">
+<script>/* Written by tools/languages.py: send a visitor whose browser asks for another of the site's languages before English to this page in that language. */
+(function(){try{
+  var r=document.referrer; if(r&&r.indexOf(location.origin+'/')===0) return;
+  var l=navigator.languages||[navigator.language||''];
+  for(var i=0;i<l.length;i++){
+    var t=String(l[i]).toLowerCase(), c=t.slice(0,2); if(c==='en') return;
+    if(c==='zh'){ if(!/hant|-tw|-hk|-mo/.test(t)) continue; c='zh-Hant'; }
+    var a=document.querySelector('link[rel="alternate"][hreflang="'+c+'"]');
+    if(a){location.replace(new URL(a.href).pathname+location.search+location.hash); return;}
+  }
+}catch(e){}})();</script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="طريقة إضافة أدوات على iPad، في الشاشة الرئيسية وشاشة القفل">
+<meta property="og:description" content="تعمل الأدوات على iPad كما تعمل على iPhone تقريبًا. الفرق في الأحجام، وفي شاشة قفل تحتفظ بمجموعة أدوات للوضع الرأسي وأخرى للوضع الأفقي.">
+<meta property="og:url" content="https://mydailies.app/ar/guides/add-widgets-on-ipad/">
+<meta property="og:image" content="https://mydailies.app/img/guides/add-widgets-on-ipad-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="يد ترفع iPad قرب نافذة مضيئة، وتظهر على شاشة قفله الساعة فوق خلفية زرقاء وصفراء">
+<meta property="og:site_name" content="Dailies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+<script>/* Store badges: a phone sees its own store's, anything else sees both. */(function(u,e){if(/Android/i.test(u))e.className+=' is-android';else if(/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1))e.className+=' is-ios'})(navigator.userAgent,document.documentElement)</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/ar/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/ar/blog/">المدونة</a>
+      <a href="/ar/guides/">الأدلة</a>
+      <a href="/ar/help/">المساعدة</a>
+      <details class="lang"><summary aria-label="Language: English"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">English</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/guides/add-widgets-on-ipad/" hreflang="en" lang="en" aria-current="true">English</a><a href="/fr/guides/ajouter-des-widgets-sur-l-ipad/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/anleitungen/widgets-auf-dem-ipad-hinzufuegen/" hreflang="de" lang="de-DE">Deutsch</a><a href="/it/guide/aggiungere-widget-su-ipad/" hreflang="it" lang="it">Italiano</a><a href="/es/guias/agregar-widgets-en-el-ipad/" hreflang="es" lang="es-MX">Español</a><a href="/pt/guias/adicionar-widgets-no-ipad/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/guides/add-widgets-on-ipad/" hreflang="ja" lang="ja">日本語</a><a href="/ko/guides/add-widgets-on-ipad/" hreflang="ko" lang="ko">한국어</a><a href="/zh-hant/guides/add-widgets-on-ipad/" hreflang="zh-Hant" lang="zh-Hant-TW">繁體中文</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/ar/#get">تنزيل Dailies</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">دليل</div>
+      <h1>طريقة إضافة أدوات على iPad، في الشاشة الرئيسية وشاشة القفل</h1>
+      <p class="lede">تعمل الأدوات على iPad كما تعمل على iPhone تقريبًا تمامًا. والفروق تستحق المعرفة قبل البدء: حجم إضافي، وشاشة رئيسية تعيد ترتيب نفسها عند تدوير iPad، وشاشة قفل تحتفظ بمجموعة أدوات للوضع الرأسي وأخرى منفصلة للوضع الأفقي.</p>
+      <p class="doc-meta"><span>بقلم <a href="/ar/about/">Amit Shabtay</a>، صانع Dailies</span> <span>كُتبت الخطوات في 22 أكتوبر 2026</span></p>
+    </div>
+  </header>
+
+  <div class="wrap"><figure class="post-hero"><img src="/img/guides/add-widgets-on-ipad.jpg" width="1080" height="608" alt="يد ترفع iPad قرب نافذة مضيئة، وتظهر على شاشة قفله الساعة فوق خلفية زرقاء وصفراء" fetchpriority="high"></figure></div>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">في هذه الصفحة</div>
+      <a href="#steps">على الشاشة الرئيسية</a>
+      <a href="#size">الأحجام على iPad</a>
+      <a href="#arrange">التدوير والحزم وعرض اليوم</a>
+      <a href="#lock">على شاشة القفل</a>
+      <a href="#landscape">الرأسي والأفقي</a>
+      <a href="#remove">إزالة أداة</a>
+      <a href="#dailies">Dailies على iPad</a>
+      <a href="#fix">عندما لا يسير شيء كما ينبغي</a>
+      <a href="#faq">أسئلة</a>
+    </aside>
+
+    <div class="prose">
+
+      <section id="steps">
+        <h2>إضافة أداة إلى الشاشة الرئيسية في iPad</h2>
+        <p>الخطوات نفسها لكل تطبيق. المثال هنا Dailies، ويصلح الأمر مع أي تطبيق آخر.</p>
+        <ol>
+          <li><strong>الانتقال إلى صفحة الشاشة الرئيسية</strong> المراد وضع الأداة فيها.</li>
+          <li><strong>لمس مكان فارغ من الخلفية مطولًا</strong> حتى تبدأ التطبيقات في الاهتزاز.</li>
+          <li>الضغط على <strong>«تعديل»</strong> في أعلى الشاشة، ثم على <strong>«إضافة أداة»</strong>.</li>
+          <li>البحث عن <strong>Dailies</strong>، أو التمرير حتى العثور عليه، ثم الضغط عليه.</li>
+          <li>السحب أفقيًا بين الأحجام. وعند ظهور الحجم المناسب، الضغط على <strong>«إضافة أداة»</strong>.</li>
+          <li>والتطبيقات ما زالت تهتز، سحب الأداة إلى المكان المناسب، ثم الضغط على <strong>«تم»</strong>.</li>
+        </ol>
+        <p>وفي إصدارات iPadOS الحديثة اختصار، إن كانت أيقونة التطبيق على الشاشة الرئيسية أصلًا: لمس الأيقونة مطولًا يفتح قائمة تعرض في أعلاها أحجام أدوات التطبيق. الضغط على أحدها يحوّل الأيقونة إلى تلك الأداة. ولاحقًا، لمس الأداة مطولًا يعيدها أيقونة.</p>
+      </section>
+
+      <section id="size">
+        <h2>الأحجام على iPad</h2>
+        <p>يتيح iPhone للتطبيقات أداة صغيرة ومتوسطة وكبيرة. ويضيف iPad رابعة، <strong>كبيرة جدًا</strong>، بضعف عرض الكبيرة، ولا معنى لها إلا على شاشة بهذا الحجم. كل تطبيق يقرر ما يصنعه منها، لذا لا تعرض كل التطبيقات الأحجام الأربعة.</p>
+        <p>على iPad يقدّم Dailies الأداة <strong>المتوسطة</strong> و<strong>الكبيرة</strong>، كما على iPhone. لا توجد الصغيرة، لأن الاقتباس في ذلك المربع يُقطع أو يصغر حتى تتعذر قراءته، ولا الكبيرة جدًا، لأن سطرًا واحدًا من النص ممتدًا على نصف iPad يبدو ضائعًا لا سخيًا.</p>
+        <p>لتغيير حجم أداة موضوعة، يكفي لمسها مطولًا واختيار حجم آخر من القائمة التي تظهر. ولا تظهر إلا الأحجام التي يقدمها التطبيق.</p>
+      </section>
+
+      <section id="arrange">
+        <h2>التدوير والحزم المكدسة وعرض اليوم</h2>
+        <h3>تدوير iPad</h3>
+        <p>شبكة الشاشة الرئيسية تختلف شكلًا بين الوضعين الرأسي والأفقي، لذا عند تدوير iPad يعيد iPadOS ترتيب التطبيقات والأدوات. الأفضل وضع الأداة في مكانها في الوضع الذي يُمسك فيه iPad أكثر، ثم تدويره مرة والتحقق من موضعها الجديد.</p>
+        <h3>الحزم المكدسة</h3>
+        <p>الحزمة المكدسة مجموعة أدوات <strong>من الحجم نفسه</strong> في المكان نفسه، يُمرَّر بينها واحدة بعد الأخرى. تُضاف الأداتان، ثم تُسحب إحداهما فوق الأخرى مباشرة وتُفلت. ولتغيير حزمة، تُلمس مطولًا ويُضغط على <strong>«تحرير الحزم المكدسة»</strong>: يمكن إعادة ترتيبها، وإزالة أداة منها، وإيقاف <strong>«التدوير الذكي»</strong> و<strong>«اقتراحات الأدوات»</strong>.</p>
+        <p>التدوير الذكي يترك لـ iPadOS اختيار الأداة الظاهرة في الحزمة. هذا لطيف مع التقويم والطقس، ومزعج مع اقتباس أردت قراءته. وللعثور على الاقتباس هناك في كل نظرة، يُستحسن إيقافه.</p>
+        <h3>عرض اليوم</h3>
+        <p>السحب من الصفحة الأولى للشاشة الرئيسية إلى ما قبلها يفتح عرض اليوم، وهو عمود من الأدوات على الجانب. تُضاف الأدوات هناك بالطريقة نفسها: لمس مكان فارغ مطولًا حتى يهتز كل شيء، ثم الضغط على <strong>«تعديل»</strong>، ثم <strong>«إضافة أداة»</strong>. إنه مكان مناسب لاقتباس عند تفضيل ترك الشاشة الرئيسية للتطبيقات.</p>
+        <p>ولرؤية عرض اليوم وiPad مقفل، يُفتح <strong>الإعدادات &larr; بصمة الوجه ورمز الدخول</strong> (أو <strong>بصمة الإصبع ورمز الدخول</strong>) ويُتأكد من تشغيل <strong>«موجز اليوم والبحث»</strong> تحت «السماح بالوصول أثناء الإقفال».</p>
+      </section>
+
+      <section id="lock">
+        <h2>إضافة أداة إلى شاشة القفل في iPad</h2>
+        <p>وصلت أدوات شاشة القفل إلى iPad بعد iPhone، مع iPadOS 17. وكل iPad يستطيع تشغيل Dailies يستطيع عرض واحدة، فإن ثُبّت التطبيق فستعمل.</p>
+        <ol>
+          <li><strong>تنبيه iPad</strong> بالزر العلوي ولمس شاشة القفل مطولًا. إن لم يحدث شيء، يُعاد اللمس المطول ويُدخل رمز الدخول.</li>
+          <li>السحب إلى شاشة القفل المراد تغييرها والضغط على <strong>«تخصيص»</strong>. وإن سأل iPadOS، يُختار «شاشة القفل» لا الشاشة الرئيسية.</li>
+          <li>الضغط على الأدوات الموجودة، أو على <strong>«إضافة أدوات»</strong>.</li>
+          <li>اختيار <strong>Dailies</strong> من القائمة والضغط على الأداة لإضافتها.</li>
+          <li>الضغط خارج لوحة الأدوات لإغلاقها، ثم الضغط على <strong>«تم»</strong>.</li>
+        </ol>
+        <p>يرسم iPadOS أدوات شاشة القفل بلون واحد، على iPad كما على iPhone: بلا خلفية، ولا ألوان، ولا خط خاص بالتطبيق. هذه قاعدة نظام التشغيل، وتسري على كل تطبيق.</p>
+      </section>
+
+      <section id="landscape">
+        <h2>الرأسي والأفقي يُعدّان كلٌّ على حدة</h2>
+        <p>هذا هو الجزء الذي يفاجئ الجميع تقريبًا. شاشة القفل في iPad تضم <strong>مجموعتين من الأدوات</strong>: في الوضع الرأسي تقع في صف تحت الساعة، وفي الوضع الأفقي في عمود على أحد جانبي الشاشة. يفصل iPadOS بينهما، لذا فالأداة المضافة وiPad قائم لا تظهر عند إمالته على جانبه.</p>
+        <div class="callout">
+          <div class="callout-label">إذن مرتين</div>
+          <p>تُضاف الأداة في الوضع الأكثر استخدامًا، ثم يُدار iPad، وتُلمس شاشة القفل مطولًا من جديد، ويُضغط على <strong>«تخصيص»</strong> وتُضاف في الوضع الآخر أيضًا. وإن كان iPad يعيش في غلاف بلوحة مفاتيح، فالوضع الأفقي هو المهم.</p>
+        </div>
+        <p>والمساحة فوق الساعة شأن آخر. تتسع لسطر نصي واحد، عن التاريخ أو الطقس، في الوضعين. لا يقدّم Dailies أداة هناك، لأن اقتباسًا مقطوعًا بعد أربع كلمات ليس اقتباسًا.</p>
+      </section>
+
+      <section id="remove">
+        <h2>إزالة أداة</h2>
+        <ul>
+          <li><strong>من الشاشة الرئيسية:</strong> لمس الأداة مطولًا، واختيار إزالة الأداة من القائمة، ثم تأكيد الإزالة. وللحزمة المكدسة، تعرض القائمة إزالة الحزمة بدلًا من ذلك.</li>
+          <li><strong>من شاشة القفل:</strong> لمس شاشة القفل مطولًا، والضغط على <strong>«تخصيص»</strong>، ثم على الأدوات، ثم على علامة <strong>&minus;</strong> في الأداة المراد إزالتها. ولا ينبغي نسيان الوضع الآخر.</li>
+        </ul>
+        <p>إزالة أداة لا تزيل التطبيق أبدًا، ولا أي شيء فيه.</p>
+      </section>
+
+      <section id="dailies">
+        <h2>Dailies على iPad</h2>
+        <p>يعمل <a href="/ar/">Dailies</a> على iPad في الوضعين الرأسي والأفقي، وتتصرف أدواته كما على iPhone:</p>
+        <ul>
+          <li><strong>أداة الشاشة الرئيسية</strong>، متوسطة أو كبيرة، تأخذ الخلفية التي اخترتها في التطبيق، مع <strong>أسهم</strong> للانتقال إلى الاقتباس التالي أو العودة إلى السابق دون فتح أي شيء.</li>
+          <li><strong>أداة شاشة القفل</strong> تعرض اقتباسًا قصيرًا باللون الواحد الذي يسمح به iPadOS هناك. والضغط عليها يفتح التطبيق على ذلك الاقتباس.</li>
+          <li>كلتاهما تتغير <strong>مرة في الساعة تقريبًا</strong> وتتبعان الاقتباس نفسه، فتتفقان بدلًا من عرض سطرين مختلفين.</li>
+          <li>وعلى iPad أيضًا يمكن أن تصل الاقتباسات في إشعارات، في الساعات المضبوطة في <strong>تخصيص &larr; الجرعة اليومية</strong>.</li>
+        </ul>
+        <p>يرشد التطبيق خطوة بخطوة لإضافة الأداتين، مع رسوم للشاشات، في <strong>تخصيص &larr; أداة الشاشة الرئيسية</strong> و<strong>تخصيص &larr; أداة شاشة القفل</strong>.</p>
+        <p>وعند استخدام Dailies على iPhone أيضًا، لكل جهاز أدواته. إضافة واحدة على iPad لا تغيّر شيئًا على iPhone، والعكس صحيح.</p>
+      </section>
+
+      <section id="fix">
+        <h2>عندما لا يسير شيء كما ينبغي</h2>
+        <h3>التطبيق غير موجود في قائمة الأدوات</h3>
+        <ol>
+          <li><strong>فتح التطبيق مرة على هذا iPad.</strong> لا يعرض iPadOS أدوات تطبيق قبل تشغيله مرة على الأقل على ذلك الجهاز، حتى إن كان يُستخدم كل يوم على iPhone.</li>
+          <li><strong>البحث في القائمة</strong> بدلًا من التمرير فيها.</li>
+          <li><strong>إعادة تشغيل iPad.</strong> فهذا يعيد بناء قائمة الأدوات.</li>
+          <li><strong>التأكد من أن التطبيق لم يُلغَ تحميله.</strong> التطبيق الملغى تحميله يحتفظ بأيقونته، مع سحابة صغيرة بجانب اسمه، وتختفي أدواته معه حتى الضغط عليه لتنزيله من جديد.</li>
+        </ol>
+        <h3>اختفت أداة شاشة القفل عند تدوير iPad</h3>
+        <p>لم تختفِ. إنها في مجموعة الوضع الآخر. تكفي إضافتها من جديد وiPad في وضعه الجديد؛ والتفاصيل في <a href="#landscape">الرأسي والأفقي</a>.</p>
+        <h3>الأداة عالقة على الاقتباس نفسه</h3>
+        <p>غالبًا ما يكون iPad يوفّر البطارية. الحل إيقاف <strong>نمط الطاقة المنخفضة</strong>، ثم فتح التطبيق مرة، فيصل اقتباس جديد إلى الأداتين. والقائمة الكاملة للحلول في <a href="/ar/guides/iphone-widget-not-updating/">لماذا لا تتحدّث الأداة</a>؛ وكل ما فيها يسري على iPad أيضًا.</p>
+        <p>لم ينفع أي من ذلك؟ الرسائل إلى <a href="mailto:help@mydailies.app">help@mydailies.app</a> يقرؤها شخص حقيقي، و<a href="/ar/help/#widget">صفحة المساعدة</a> فيها النسخة المختصرة.</p>
+      </section>
+
+      <section id="faq">
+        <h2>أسئلة</h2>
+        <div class="faq">
+          <details open><summary>هل يمكن وضع أدوات على شاشة القفل في iPad؟</summary>
+            <div class="details-body">
+              <p>نعم، منذ iPadOS 17. بلمس شاشة القفل مطولًا، والضغط على «تخصيص»، ثم على «إضافة أدوات». يحتفظ iPadOS بمجموعة منفصلة للوضع الرأسي وأخرى للأفقي، لذا تُضاف الأداة في الاثنين عند تدوير iPad.</p>
+            </div></details>
+
+          <details><summary>لماذا تختفي أدوات شاشة القفل عند تدوير iPad؟</summary>
+            <div class="details-body">
+              <p>لأن شاشة القفل في iPad تضم مجموعة أدوات للوضع الرأسي، في صف تحت الساعة، وأخرى للأفقي، في عمود على أحد جانبي الشاشة. يكفي تخصيص شاشة القفل من جديد في الوضع الآخر وإضافة الأدوات هناك.</p>
+            </div></details>
+
+          <details><summary>ما الأداة الكبيرة جدًا؟</summary>
+            <div class="details-body">
+              <p>حجم لا يقدمه إلا iPad، بضعف عرض الأداة الكبيرة. وكل تطبيق يقرر إن كان سيصنع واحدة. على iPad يقدّم Dailies الأداة المتوسطة والكبيرة.</p>
+            </div></details>
+
+          <details><summary>لماذا يغيب تطبيق عن قائمة الأدوات في iPad؟</summary>
+            <div class="details-body">
+              <p>في الغالب لأن التطبيق لم يُفتح بعد على ذلك الـ iPad. لا يعرض iPadOS أدوات تطبيق إلا بعد تشغيله مرة على الأقل على الجهاز. الحل فتحه ثم المحاولة من جديد، وإعادة تشغيل iPad إن بقي غائبًا.</p>
+            </div></details>
+
+          <details><summary>هل تتزامن أدوات iPad وiPhone؟</summary>
+            <div class="details-body">
+              <p>لا. لكل جهاز شاشته الرئيسية وشاشة قفله، لذا فالأداة المضافة على iPad تُضاف على iPhone على حدة، والعكس صحيح.</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="more">
+        <h2>مواصلة القراءة</h2>
+        <ul>
+          <li><a href="/ar/guides/add-a-widget-to-your-home-screen/">طريقة إضافة أداة إلى الشاشة الرئيسية في iPhone</a></li>
+          <li><a href="/ar/guides/quotes-on-your-iphone-lock-screen/">طريقة وضع اقتباسات على شاشة القفل في iPhone</a></li>
+          <li><a href="/ar/guides/iphone-widget-not-updating/">أداة iPhone لا تتحدّث؟ السبب وطريقة الحل</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <section class="strip">
+    <div class="wrap strip-in">
+      <h2>لنبدأ اليوم بشيء جميل.</h2>
+      <p class="lede">يُضبط مرة واحدة، ويتولى Dailies الباقي.</p>
+      <span class="store-badges"><a class="store-badge apple-badge" href="https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&amp;ct=web-guides-ar&amp;mt=8" data-download="page"><img src="/img/app-store-badge-ar.svg" width="156" height="52" alt="تنزيل من App Store"></a><a class="store-badge play-badge" href="https://play.google.com/store/apps/details?id=com.ashabtay.dailies&amp;referrer=utm_source%3Dmydailies.app%26utm_medium%3Dweb%26utm_campaign%3Dweb-guides-ar" data-download="page"><img src="/img/google-play-badge-ar.png" width="175" height="52" alt="احصل عليه من Google Play"></a></span>
+    </div>
+  </section>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <div class="social">
+      <a href="https://www.tiktok.com/@mydailies.app" aria-label="TikTok" title="TikTok" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#tiktok"/></svg></a>
+      <a href="https://www.instagram.com/mydailies.app/" aria-label="Instagram" title="Instagram" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#instagram"/></svg></a>
+      <a href="https://www.facebook.com/mydailiesapp" aria-label="Facebook" title="Facebook" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#facebook"/></svg></a>
+      <a href="https://www.youtube.com/@mydailiesapp" aria-label="YouTube" title="YouTube" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#youtube"/></svg></a>
+      <a href="https://www.pinterest.com/mydailiesapp/" aria-label="Pinterest" title="Pinterest" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#pinterest"/></svg></a>
+      <a href="https://www.linkedin.com/company/mydailiesapp/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#linkedin"/></svg></a>
+    </div>
+    <nav>
+      <a href="/ar/">الرئيسية</a>
+      <a href="/ar/compare/">المقارنات</a>
+      <a href="/ar/about/">من نحن</a>
+      <a href="/press/" hreflang="en">الصحافة</a>
+      <a href="/terms/" hreflang="en">الشروط</a>
+      <a href="/privacy/" hreflang="en">الخصوصية</a>
+      <a href="/cookies/" hreflang="en">ملفات تعريف الارتباط</a>
+      <a href="#" data-cookie-settings>إعدادات ملفات تعريف الارتباط</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"طريقة إضافة أداة إلى الشاشة الرئيسية في iPad","description":"إضافة أداة تطبيق إلى الشاشة الرئيسية في iPad، بالحجم المناسب.","totalTime":"PT1M","datePublished":"2026-10-22","dateModified":"2026-10-22","author":{"@type":"Person","name":"Amit Shabtay","url":"https://mydailies.app/about/"},"supply":[{"@type":"HowToSupply","name":"iPad"},{"@type":"HowToSupply","name":"تطبيق مثبّت يقدّم أداة، مثل Dailies"}],"step":[
+{"@type":"HowToStep","name":"الانتقال إلى صفحة الشاشة الرئيسية","text":"الانتقال إلى صفحة الشاشة الرئيسية المراد وضع الأداة فيها."},
+{"@type":"HowToStep","name":"جعل التطبيقات تهتز","text":"لمس مكان فارغ من الخلفية مطولًا حتى تبدأ التطبيقات في الاهتزاز."},
+{"@type":"HowToStep","name":"فتح معرض الأدوات","text":"الضغط على «تعديل» في أعلى الشاشة، ثم على «إضافة أداة»."},
+{"@type":"HowToStep","name":"العثور على التطبيق","text":"البحث عن التطبيق، أو التمرير حتى العثور عليه، ثم الضغط عليه."},
+{"@type":"HowToStep","name":"اختيار الحجم","text":"السحب أفقيًا بين الأحجام. وعند ظهور الحجم المناسب، الضغط على «إضافة أداة»."},
+{"@type":"HowToStep","name":"وضعها في مكانها","text":"والتطبيقات ما زالت تهتز، سحب الأداة إلى المكان المناسب، ثم الضغط على «تم»."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"هل يمكن وضع أدوات على شاشة القفل في iPad؟","acceptedAnswer":{"@type":"Answer","text":"نعم، منذ iPadOS 17. بلمس شاشة القفل مطولًا، والضغط على «تخصيص»، ثم على «إضافة أدوات». يحتفظ iPadOS بمجموعة منفصلة للوضع الرأسي وأخرى للأفقي، لذا تُضاف الأداة في الاثنين عند تدوير iPad."}},
+{"@type":"Question","name":"لماذا تختفي أدوات شاشة القفل عند تدوير iPad؟","acceptedAnswer":{"@type":"Answer","text":"لأن شاشة القفل في iPad تضم مجموعة أدوات للوضع الرأسي، في صف تحت الساعة، وأخرى للأفقي، في عمود على أحد جانبي الشاشة. يكفي تخصيص شاشة القفل من جديد في الوضع الآخر وإضافة الأدوات هناك."}},
+{"@type":"Question","name":"ما الأداة الكبيرة جدًا؟","acceptedAnswer":{"@type":"Answer","text":"حجم لا يقدمه إلا iPad، بضعف عرض الأداة الكبيرة. وكل تطبيق يقرر إن كان سيصنع واحدة. على iPad يقدّم Dailies الأداة المتوسطة والكبيرة."}},
+{"@type":"Question","name":"لماذا يغيب تطبيق عن قائمة الأدوات في iPad؟","acceptedAnswer":{"@type":"Answer","text":"في الغالب لأن التطبيق لم يُفتح بعد على ذلك الـ iPad. لا يعرض iPadOS أدوات تطبيق إلا بعد تشغيله مرة على الأقل على الجهاز. الحل فتحه ثم المحاولة من جديد، وإعادة تشغيل iPad إن بقي غائبًا."}},
+{"@type":"Question","name":"هل تتزامن أدوات iPad وiPhone؟","acceptedAnswer":{"@type":"Answer","text":"لا. لكل جهاز شاشته الرئيسية وشاشة قفله، لذا فالأداة المضافة على iPad تُضاف على iPhone على حدة، والعكس صحيح."}}
+]}
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

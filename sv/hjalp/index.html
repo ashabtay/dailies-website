@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6804210416">
+<title>Hjälp | Dailies</title>
+<meta name="description" content="Så ställer du in Dailies, fixar notiser som har slutat komma, lägger till widgeten på hemskärmen, ändrar vad du får och når en människa.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hjälp | Dailies">
+<meta property="og:description" content="Inställning, notiser, widgeten och hur du når en människa.">
+<meta property="og:url" content="https://mydailies.app/sv/hjalp/">
+<meta property="og:image" content="https://mydailies.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dailies: daglig motivation, direkt till din låsskärm">
+<meta property="og:site_name" content="Dailies">
+<meta property="og:locale" content="sv_SE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mydailies.app/sv/hjalp/">
+<link rel="alternate" hreflang="en" href="https://mydailies.app/help/">
+<link rel="alternate" hreflang="es" href="https://mydailies.app/es/ayuda/">
+<link rel="alternate" hreflang="pt" href="https://mydailies.app/pt/ajuda/">
+<link rel="alternate" hreflang="fr" href="https://mydailies.app/fr/aide/">
+<link rel="alternate" hreflang="de" href="https://mydailies.app/de/hilfe/">
+<link rel="alternate" hreflang="ja" href="https://mydailies.app/ja/help/">
+<link rel="alternate" hreflang="x-default" href="https://mydailies.app/help/">
+<script>/* Written by tools/languages.py: send a visitor whose browser asks for another of the site's languages before English to this page in that language. */
+(function(){try{
+  var r=document.referrer; if(r&&r.indexOf(location.origin+'/')===0) return;
+  var l=navigator.languages||[navigator.language||''];
+  for(var i=0;i<l.length;i++){
+    var c=String(l[i]).slice(0,2).toLowerCase(); if(c==='en') return;
+    var a=document.querySelector('link[rel="alternate"][hreflang="'+c+'"]');
+    if(a){location.replace(new URL(a.href).pathname+location.search+location.hash); return;}
+  }
+}catch(e){}})();</script>
+<meta name="theme-color" content="#191c1d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3ecdc" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&display=swap">
+<link rel="stylesheet" href="/doc.css">
+<script>/* Store badges: a phone sees its own store's, anything else sees both. */(function(u,e){if(/Android/i.test(u))e.className+=' is-android';else if(/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1))e.className+=' is-ios'})(navigator.userAgent,document.documentElement)</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/sv/"><img src="/icon.png" alt=""> Dailies</a>
+    <div class="nav-links">
+      <a href="/sv/blog/">Blogg</a>
+      <a href="/sv/guider/">Guider</a>
+      <a href="/sv/hjalp/" aria-current="page">Hjälp</a>
+      <details class="lang"><summary aria-label="Language: English"><span class="lang-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-name">English</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></summary><div class="lang-menu"><a href="/help/" hreflang="en" lang="en" aria-current="true">English</a><a href="/fr/aide/" hreflang="fr" lang="fr-FR">Français</a><a href="/de/hilfe/" hreflang="de" lang="de-DE">Deutsch</a><a href="/es/ayuda/" hreflang="es" lang="es-MX">Español</a><a href="/pt/ajuda/" hreflang="pt" lang="pt-BR">Português</a><a href="/ja/help/" hreflang="ja" lang="ja">日本語</a></div></details><script>(function(d){var l=d.currentScript.previousElementSibling;d.addEventListener('click',function(e){if(l.open&&!l.contains(e.target))l.open=false});d.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.open){l.open=false;l.querySelector('summary').focus()}})})(document);</script>
+      <a class="btn btn-primary" href="/sv/#get">Hämta Dailies</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="doc-head">
+    <div class="wrap">
+      <div class="eyebrow">Hjälp</div>
+      <h1>Hur kan vi hjälpa till?</h1>
+      <p class="lede">Allt som är värt att veta om Dailies, på ett ställe. Om dina citat har slutat komma, börja med <a href="#notifications" style="color:var(--accent)">Notiser</a>. Det är nästan alltid där svaret finns.</p>
+      <div class="help-search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="q" placeholder="Sök i hjälpen, prova &rdquo;widget&rdquo; eller &rdquo;för många&rdquo;" aria-label="Sök i hjälpen">
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap doc">
+    <aside class="toc">
+      <div class="toc-label">Ämnen</div>
+      <a href="#start">Komma igång</a>
+      <a href="#notifications">Notiser</a>
+      <a href="#widget">Widgetar</a>
+      <a href="#quotes">Spara och egna citat</a>
+      <a href="#looks">Gör den till din</a>
+      <a href="#voice">Läs upp</a>
+      <a href="#assistants">I ChatGPT och Claude</a>
+      <a href="#privacy">Integritet och data</a>
+      <a href="#premium">Premium och betalning</a>
+      <a href="#contact">Kontakt</a>
+    </aside>
+
+    <div class="prose">
+
+      <div class="cards">
+        <a class="card" href="#notifications">
+          <div class="card-icon">🔔</div>
+          <h3>Inget kommer fram</h3>
+          <p>Inställningarna som hindrar citaten från att nå din låsskärm.</p>
+        </a>
+        <a class="card" href="#widget">
+          <div class="card-icon">▦</div>
+          <h3>Lägg till widgeten</h3>
+          <p>Steg för steg, på iPhone, iPad och Android.</p>
+        </a>
+        <a class="card" href="#looks">
+          <div class="card-icon">✦</div>
+          <h3>Gör den till din</h3>
+          <p>Bakgrunder, typsnitt, effekter och dina egna bilder.</p>
+        </a>
+      </div>
+
+      <section id="start">
+        <h2>Komma igång</h2>
+        <div class="faq">
+          <details open><summary>Vad händer när jag öppnar Dailies första gången?</summary>
+            <div class="details-body">
+              <p>En kort inställning som låter Dailies anpassa citaten efter dig, och sedan är du klar. Du väljer vilka ämnen du vill höra om, hur ofta du vill höra av oss och vilken stil du vill att dina citat ska visas i.</p>
+            </div></details>
+
+          <details><summary>Behöver jag ett konto?</summary>
+            <div class="details-body">
+              <p>Nej. Det finns ingen registrering, ingen e-postadress och inget lösenord. Dailies har inga konton alls.</p>
+            </div></details>
+
+          <details><summary>Vilka enheter fungerar den på?</summary>
+            <div class="details-body">
+              <p>iPhone och iPad, och Android-telefoner med Android 10 eller senare, i stående eller liggande läge. Den talar engelska, spanska, portugisiska, franska, tyska, italienska, nederländska, svenska, japanska, koreanska, arabiska, förenklad kinesiska och traditionell kinesiska. Den följer språket som din enhet är inställd på, och du kan välja vilket som helst av dem under <strong>Profil → Språk</strong>.</p>
+              <p>Att ställa in widgetarna på en iPad, där låsskärmen håller isär stående och liggande läge: <a href="/sv/guider/lagga-till-widgets-pa-ipad/">så lägger du till widgetar på iPad</a>.</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="notifications">
+        <h2>Notiser</h2>
+        <div class="faq">
+          <details open><summary>Mina citat har slutat komma</summary>
+            <div class="details-body">
+              <p>Nästan alltid något av det här, i den här ordningen:</p>
+              <ol>
+                <li><strong>Behörighet.</strong> Gå till <strong>Inställningar i iOS → Dailies → Notiser</strong> och kontrollera att <em>Tillåt notiser</em> är på, med <em>Låsskärm</em> markerad. På Android går du till <strong>Inställningar → Appar → Dailies → Aviseringar</strong> (vägen varierar mellan telefoner) och kontrollerar att aviseringar är tillåtna, med <em>Dagliga citat</em> påslaget.</li>
+                <li><strong>Ett fokusläge.</strong> Sömn, Arbete och Stör ej tystar appar som inte finns på deras lista över tillåtna. Lägg till Dailies i det fokus du använder, eller titta under Inställningar → Fokus. På Android gör <strong>Stör ej</strong> samma sak: stäng av det, eller släpp igenom Dailies i dess inställningar.</li>
+                <li><strong>Dina leveranstider.</strong> Öppna <strong>Personanpassa → Daglig dos</strong> och titta på tidsfönstret du har ställt in. Om det är 9.00 till 17.00 och du tittar klockan 8.00 är inget på väg än.</li>
+              </ol>
+              <p>En till, som är lätt att missa: <strong>Strömsparläge</strong> gör att iOS nedprioriterar arbete i bakgrunden, vilket kan fördröja leveransen. På Android kan <strong>batterisparläget</strong> göra samma sak. Om citaten kommer sent på Android, se <a href="/sv/guider/android-aviseringar-forsenade/">aviseringar som kommer sent på Android</a>.</p>
+              <p>Om allt det ser rätt ut, öppna appen en gång. När du öppnar den bygger Dailies om sitt schema.</p>
+              <p>Den långa versionen, med alla ställen där iOS kan hålla tillbaka en notis: <a href="/sv/guider/iphone-notiser-fungerar-inte/">när du inte får notiser från en app på iPhone</a>.</p>
+            </div></details>
+
+          <details><summary>Hur många kan jag få per dag?</summary>
+            <div class="details-body">
+              <p>Så få eller så många du vill. Ställ in det under <strong>Personanpassa → Daglig dos</strong>, tillsammans med den tidigaste och senaste tiden du vill höra av appen. Dailies sprider ut dem jämnt över tidsfönstret i stället för att klumpa ihop dem.</p>
+              <p>Hur stunderna väljs, och hur du håller kvällar och helger lugna: <a href="/sv/guider/motiverande-citat-pa-slumpmassiga-tider/">så får du motiverande citat på slumpmässiga tider under dagen</a>.</p>
+            </div></details>
+
+          <details><summary>Det är för många / för få</summary>
+            <div class="details-body">
+              <p><strong>Personanpassa → Daglig dos</strong>, och ändra antalet. Att dra ned det till ett om dagen är ett alldeles utmärkt sätt att använda Dailies, och ändringen gäller direkt.</p>
+            </div></details>
+
+          <details><summary>Kan jag stänga av notiserna men behålla appen?</summary>
+            <div class="details-body">
+              <p>Ja. Stäng av dem under <strong>Inställningar i iOS → Dailies → Notiser</strong>.</p>
+              <p>För att slå på dem igen senare använder du samma reglage: <a href="/sv/guider/sla-pa-notiser-for-en-app-iphone/">så slår du på notiser för en app på iPhone</a>.</p>
+              <p><strong>På Android:</strong> stäng av dem under <strong>Inställningar → Appar → Dailies → Aviseringar</strong> (vägen varierar mellan telefoner), och slå på dem igen på samma ställe.</p>
+            </div></details>
+
+        </div>
+      </section>
+
+      <section id="widget">
+        <h2>Widgetar</h2>
+        <div class="faq">
+          <details open><summary>Hur lägger jag till widgeten på hemskärmen?</summary>
+            <div class="details-body">
+              <p><strong>På iPhone och iPad:</strong></p>
+              <ol>
+                <li>Håll fingret på en tom yta på hemskärmen tills symbolerna börjar vicka.</li>
+                <li>Tryck på <strong>+</strong> i det övre hörnet.</li>
+                <li>Sök efter <strong>Dailies</strong> och välj den.</li>
+                <li>Svep till den storlek du vill ha, tryck på <strong>Lägg till widget</strong> och sedan på <strong>Klar</strong>.</li>
+              </ol>
+              <p>Dailies erbjuder en <strong>mellanstor</strong> och en <strong>stor</strong> widget. Det finns ingen liten storlek; ett citat behöver utrymmet för att gå att läsa.</p>
+              <p>Det finns en animerad genomgång av precis det här inne i appen, under <strong>Personanpassa → Widget på hemskärmen</strong>.</p>
+              <p>Den längre versionen, med widgetstorlekar, travar och vad du gör när Dailies saknas i listan: <a href="/sv/guider/lagga-till-widget-pa-hemskarmen/">så lägger du till en widget på hemskärmen</a>.</p>
+              <p><strong>På Android:</strong></p>
+              <ol>
+                <li>Håll fingret på en tom yta på startskärmen.</li>
+                <li>Tryck på <strong>Widgetar</strong>.</li>
+                <li>Hitta <strong>Dailies</strong> i listan.</li>
+                <li>Håll fingret på widgeten och dra den på plats.</li>
+              </ol>
+              <p>Eller låt appen placera den: öppna <strong>Personanpassa → Widget på startskärmen</strong> och tryck på <strong>Lägg till på startskärmen</strong>. Vissa telefoner erbjuder inte det här, så knappen visas bara där det fungerar.</p>
+              <p>När den väl ligger på startskärmen kan du hålla fingret på den och dra i kanterna för att ändra storleken.</p>
+            </div></details>
+
+          <details><summary>Hur lägger jag till widgeten på låsskärmen?</summary>
+            <div class="details-body">
+              <p><strong>På iPhone och iPad:</strong></p>
+              <ol>
+                <li>Håll fingret på låsskärmen.</li>
+                <li>Tryck på <strong>Anpassa</strong> och sedan på <strong>Låsskärm</strong>.</li>
+                <li>Tryck på den tomma rutan under klockan.</li>
+                <li>Välj <strong>Dailies</strong> i listan.</li>
+                <li>Tryck på <strong>Klar</strong>.</li>
+              </ol>
+              <p>iOS ger en widget på låsskärmen en liten ruta och ritar den i en enda ton, så Dailies lägger ett kort citat där i stället för ett långt. Tryck på den för att öppna appen på just det citatet.</p>
+              <p>Du kan också ställa in den inifrån appen, under <strong>Personanpassa → Widget på låsskärmen</strong>.</p>
+              <p>Det finns två andra sätt att få ett citat på låsskärmen: notiser, och ett citat sparat som bakgrundsbild. Alla tre finns i <a href="/sv/guider/citat-pa-iphone-laskarmen/">så lägger du citat på låsskärmen på din iPhone</a>, och hela vägen via bakgrundsbilden finns i <a href="/sv/guider/bakgrundsbild-med-citat-iphone/">så gör du en bakgrundsbild med ett citat på iPhone</a>.</p>
+              <p><strong>På Android:</strong> Dailies har bara en widget för startskärmen, ingen för låsskärmen. Ett citat kan ändå nå din låsskärm som en avisering, eller som en bild du sparar i galleriet och ställer in som bakgrundsbild. Mer i <a href="/sv/guider/citat-pa-android-startskarmen/">så får du citat på startskärmen och låsskärmen på Android</a>.</p>
+            </div></details>
+
+          <details><summary>Hur ofta byts widgeten?</summary>
+            <div class="details-body">
+              <p>Ungefär en gång i timmen. Widgeten på hemskärmen har också pilar, så att du kan gå till nästa citat eller tillbaka till det förra när du vill utan att öppna appen. Widgeten på låsskärmen följer samma citat.</p>
+              <p><strong>På Android:</strong> detsamma gäller widgeten på startskärmen, pilarna inräknade.</p>
+            </div></details>
+
+          <details><summary>Min widget har fastnat på samma citat</summary>
+            <div class="details-body">
+              <p>Oftast är det iOS som sparar batteri. Prova, i den här ordningen:</p>
+              <ul>
+                <li>Stäng av <strong>Strömsparläge</strong>; det stryper uppdateringen av widgetar kraftigt.</li>
+                <li>Öppna Dailies en gång, vilket skickar ett nytt citat till widgeten direkt.</li>
+                <li>Ta bort widgeten och lägg till den igen.</li>
+              </ul>
+              <p>Den längre versionen, med alla lösningar i ordning och vad varje symptom brukar betyda: <a href="/sv/guider/iphone-widget-uppdateras-inte/">varför din widget på iPhone inte uppdateras</a>.</p>
+              <p><strong>På Android:</strong> oftast sparar telefonen batteri även där. Stäng av <strong>batterisparläget</strong>, öppna Dailies en gång, och om det inte hjälper, ta bort widgeten och lägg till den igen. Steg för steg: <a href="/sv/guider/lagga-till-widget-android/">så lägger du till en widget på Android</a>.</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="quotes">
+        <h2>Spara och egna citat</h2>
+        <div class="faq">
+          <details open><summary>Hur sparar jag ett citat jag gillar?</summary>
+            <div class="details-body">
+              <p>Tryck på hjärtat vid ett citat. Allt du ger ett hjärta samlas under <strong>Gillade citat</strong>. Med Premium kan du också följa <strong>Gillade citat</strong> som ett eget ämne på skärmen Ämnen, så att ditt flöde spelar upp dem för dig i stället för att visa nya.</p>
+            </div></details>
+
+          <details><summary>Kan jag skriva egna citat?</summary>
+            <div class="details-body">
+              <p>Ja. Skriv dina egna rader under <strong>Mina citat</strong>: något någon har sagt till dig, något ur en bok, eller en påminnelse till dig själv för de dagar den behövs. De sparas där oavsett vilken plan du har.</p>
+              <p>Med Premium följer du <strong>Mina citat</strong> på skärmen Ämnen, så visar Dailies dem för dig tillsammans med resten, i notiser, i flödet och på widgetarna. Följ bara det, så består ditt flöde enbart av dina egna rader.</p>
+            </div></details>
+
+          <details><summary>Vad händer med dem om jag skaffar en ny telefon?</summary>
+            <div class="details-body">
+              <p>De följer med dig. På iPhone och iPad speglas citaten du skriver och citaten du ger ett hjärta till <strong>ditt eget iCloud-konto</strong>, så när du installerar Dailies på en ny iPhone kommer de tillbaka. Det finns inget konto att logga in på och inget att återställa för hand.</p>
+              <p>Det kräver att iCloud är på för din enhet. Inget annat synkas: ditt namn, dina ämnen och din valda stil är snabba att ställa in igen, och en egen bakgrundsbild ligger kvar i ditt bildbibliotek i stället för att äta upp ditt iCloud-utrymme.</p>
+              <p><strong>På Android:</strong> det finns ingen iCloud, så de följer med via telefonens egen säkerhetskopiering i stället. Om säkerhetskopiering till ditt Google-konto är på för telefonen kopierar Android appens data till den säkerhetskopian: dina inställningar, ditt namn, citaten du har skrivit, dem du har gett ett hjärta och en bakgrundsbild du har valt. Allt kommer tillbaka när du ställer in en ny telefon, och samma data flyttas över om du överför direkt från en telefon till en annan.</p>
+              <p>Android har inget reglage för en enskild app: säkerhetskopieringen är på eller av för hela telefonen, oftast under <strong>Inställningar → Google → Säkerhetskopiering</strong>, men vägen varierar mellan telefoner. Med säkerhetskopieringen avstängd blir de kvar på den gamla telefonen, om du inte överför direkt.</p>
+            </div></details>
+
+          <details><summary>Är mina egna citat privata?</summary>
+            <div class="details-body">
+              <p>Ja. På iPhone och iPad finns de på din enhet och i ditt eget iCloud-konto, som bara du kan läsa. Vi ser dem aldrig, och de skickas aldrig till oss eller till någon annan.</p>
+              <p><strong>På Android:</strong> de finns på din telefon och, om säkerhetskopieringen är på, i telefonens säkerhetskopia i ditt eget Google-konto. Vi kan inte läsa den kopian, vi får ingen, och den används aldrig för statistik eller reklam.</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="looks">
+        <h2>Gör den till din</h2>
+        <div class="faq">
+          <details open><summary>Vad kan jag ändra?</summary>
+            <div class="details-body">
+              <ul>
+                <li><strong>Bakgrunder</strong>: en stor samling fotografier, ett urval av färgtoningar, en egen bild, eller en enfärgad bakgrund du blandar själv.</li>
+                <li><strong>Typsnitt</strong>: ett brett urval, och du ställer in textstorleken.</li>
+                <li><strong>Effekter</strong>: svävande damm, fallande snö, dimma, eldflugor, meteorer, linsreflexer, glöd och mer.</li>
+              </ul>
+              <p>Allt finns under <strong>Stil</strong>, i fältet längst ned i flödet.</p>
+              <p>För att ta med stilen till hemskärmen, med rörlig effekt och allt: <a href="/sv/guider/aesthetic-citat-widget-iphone/">så gör du en aesthetic citatwidget</a>.</p>
+            </div></details>
+
+          <details><summary>Kan jag använda en egen bild?</summary>
+            <div class="details-body">
+              <p>Ja. Välj en från ditt bibliotek så hamnar den bakom dina citat. Det är en funktion i <strong>Dailies Premium</strong>, precis som att blanda din egen enfärgade bakgrund.</p>
+            </div></details>
+
+          <details><summary>Följer appen telefonens mörka läge?</summary>
+            <div class="details-body">
+              <p>Ja! Appen har stöd för mörkt läge.</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="voice">
+        <h2>Läs upp</h2>
+        <div class="faq">
+          <details open><summary>Kan Dailies läsa upp ett citat för mig?</summary>
+            <div class="details-body">
+              <p>Ja. Tryck på högtalaren under citatet så läser Dailies upp det, med en egen röst i stället för telefonens. Rösten är en engångsnedladdning på ungefär 145 MB, som Dailies oftast hämtar av sig själv medan du ställer in appen; om den inte finns på din telefon än frågar det första trycket innan den hämtas. Efter det fungerar den offline, och inget du hör skickas någonstans: citatet görs om till tal på din telefon.</p>
+              <p>Tryck på högtalaren igen, eller svep till nästa citat, för att stoppa.</p>
+            </div></details>
+
+          <details><summary>Kan jag byta röst?</summary>
+            <div class="details-body">
+              <p>Öppna <strong>Profil → Läs upp</strong>. Det finns tio röster, fem kvinnor och fem män, var och en med en uppspelningsknapp så att du kan lyssna innan du väljer. Ditt val gäller för varje citat från och med då.</p>
+            </div></details>
+
+          <details><summary>Hur tar jag bort högtalaren från flödet?</summary>
+            <div class="details-body">
+              <p>Öppna <strong>Profil → Läs upp</strong> och stäng av <strong>Uppspelningsknapp i flödet</strong>. Högtalaren försvinner från flödet; raden i Profil finns kvar, så du kan ta tillbaka den på samma sätt.</p>
+            </div></details>
+
+          <details><summary>Nedladdningen avbröts, eller så avbröt jag den</summary>
+            <div class="details-body">
+              <p>Tryck på högtalaren igen och tryck på <strong>Ladda ned</strong>. Delarna som blev klara sparas, så bara det som saknas hämtas. Om det fortsätter att misslyckas, kontrollera anslutningen och att telefonen har några hundra megabyte ledigt.</p>
+            </div></details>
+
+          <details><summary>Varför ser jag inte högtalaren?</summary>
+            <div class="details-body">
+              <p>Antingen är <strong>Uppspelningsknapp i flödet</strong> avstängd under Profil → Läs upp, eller så är appen på kinesiska: rösten talar inte kinesiska än, så funktionen är dold där. Alla andra språk i appen läses upp.</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="assistants">
+        <h2>I ChatGPT och Claude</h2>
+        <div class="faq">
+          <details open><summary>Kan jag använda Dailies i ChatGPT eller Claude?</summary>
+            <div class="details-body">
+              <p>Ja. Be om ett motiverande citat så väljer Dailies ett utifrån hur du mår och visar det på ett lugnt fotografi med upphovspersonen under. Tryck på <strong>Another one</strong> för ett nytt citat, så ofta du vill.</p>
+              <p>Det är gratis, och det finns inget att logga in på. Det svarar på engelska, spanska, portugisiska, franska, tyska eller förenklad kinesiska, beroende på vilket av dem du skriver på.</p>
+              <p>Raden under kortet öppnar Dailies i App Store, ifall du också vill ha ett citat på låsskärmen varje dag.</p>
+            </div></details>
+          <details><summary>Hur lägger jag till Dailies i Claude?</summary>
+            <div class="details-body">
+              <ol>
+                <li>Öppna dina kopplingar i Claude, via menyn för att anpassa.</li>
+                <li>Hitta Dailies i katalogen och välj att ansluta. Det finns inget att logga in på.</li>
+                <li>Slå på det i en chatt via plusknappen och kopplingarna, och be sedan om ett citat. Första gången frågar Claude innan kortet visas; välj att alltid tillåta om du hellre vill slippa frågan.</li>
+              </ol>
+            </div></details>
+          <details><summary>Hur lägger jag till Dailies i ChatGPT?</summary>
+            <div class="details-body">
+              <p>Hitta Dailies i ChatGPT:s appkatalog och anslut den. Be sedan om ett citat från Dailies i vilken chatt som helst.</p>
+            </div></details>
+          <details><summary>Vad kan jag be om?</summary>
+            <div class="details-body">
+              <p>Vad du än behöver, med dina egna ord: ”Jag känner mig nere”, ”Jag behöver en skjuts inför min anställningsintervju”, ”Motivera mig att börja dagen”. Dailies väljer det ämne som ligger närmast det du sa. Om assistenten svarar med ett eget citat, be om ett från Dailies med namn.</p>
+              <p>Dailies ger bara citat. Det slår inte upp vem som sa något, skriver inga meddelanden åt dig och ger inga råd.</p>
+            </div></details>
+          <details><summary>Vad ser Dailies av mitt samtal?</summary>
+            <div class="details-body">
+              <p>Ingenting. Assistenten skickar bara ämnet och språket den valde till vår server, och vilka citat den redan har visat, så att inget kommer upp två gånger. Aldrig dina meddelanden, ditt namn eller ditt konto. Mer i <a href="/privacy/#assistants" hreflang="en">integritetspolicyn</a> (på engelska).</p>
+            </div></details>
+          <details><summary>Hur stänger jag av det?</summary>
+            <div class="details-body">
+              <p>I Claude stänger du av det för en chatt via plusknappen och kopplingarna, eller tar bort det bland dina kopplingar i menyn för att anpassa. I ChatGPT kopplar du från det i inställningarna, under Appar.</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="privacy">
+        <h2>Integritet och dina data</h2>
+        <div class="faq">
+          <details open><summary>Vad vet Dailies om mig?</summary>
+            <div class="details-body">
+              <p>Namnet du bad att bli kallad, ämnena du följer, dina inställningar för påminnelser, språket du valde, citaten du har gett ett hjärta, citaten du har skrivit själv och stilen du valde.</p>
+              <p>På iPhone och iPad speglas dina egna citat och dina hjärtmarkerade citat också till <strong>ditt eget iCloud-konto</strong> så att de klarar ett byte av telefon. Inget annat lämnar enheten, förutom de anonyma användningsmätningar som beskrivs i policyn.</p>
+              <p><strong>På Android:</strong> det finns ingen iCloud. Om säkerhetskopiering är på för telefonen kopierar Android appens data till ditt eget Google-konto, inklusive ditt namn och en bakgrundsbild du har valt. Vi kan inte läsa den kopian. Inget annat lämnar enheten, förutom de anonyma användningsmätningar som beskrivs i policyn.</p>
+              <p>Se <a href="/privacy/" hreflang="en">integritetspolicyn</a> (på engelska) för fler detaljer.</p>
+            </div></details>
+
+          <details><summary>Kan jag stänga av användningsmätningarna?</summary>
+            <div class="details-body">
+              <p>Ja. Öppna <strong>Profil → Mer information</strong> och stäng av <strong>Dela användningsstatistik</strong>. Från och med då skickas inget mer från din telefon, och inget i appen ändras.</p>
+              <p>Det finns inget annat att stänga av. Dailies visar ingen fråga om spårning, läser ingen annonsidentifierare och gör ingen annonsspårning av något slag i appen.</p>
+            </div></details>
+        </div>
+      </section>
+
+      <section id="premium">
+        <h2>Premium och betalning</h2>
+        <div class="faq">
+          <details open><summary>Vad får jag med Dailies Premium?</summary>
+            <div class="details-body">
+              <p><strong>Hela ämnesbiblioteket.</strong> En gratisinstallation följer en handfull ämnen som valts utifrån dina svar vid inställningen; Premium öppnar alla, i alla avsnitt, så att ditt flöde kan bestå av precis det du vill höra. Du kan också följa <strong>Gillade citat</strong> och <strong>Mina citat</strong> som egna ämnen, så att dina favoriter och dina egna rader kommer tillbaka i flödet, i notiser och på widgetarna.</p>
+              <p>Premium öppnar också <strong>alla bakgrunder, typsnitt och effekter</strong> i appen, plus de två saker du gör själv: <strong>dina egna bilder</strong> och <strong>din egen färg</strong> bakom citaten. Och det tar bort den lilla Dailies-logotypen från bilder du exporterar.</p>
+            </div></details>
+
+          <details><summary>Vad kostar det, och finns det en provperiod?</summary>
+            <div class="details-body">
+              <p>Premium är en <strong>årsprenumeration</strong>, som oftast erbjuds med en <strong>gratis provperiod</strong>. Priset finns på prenumerationsskärmen i appen.</p>
+            </div></details>
+
+          <details><summary>Hur avslutar jag provperioden innan jag debiteras?</summary>
+            <div class="details-body">
+              <p><strong>På iPhone och iPad:</strong> avsluta minst <strong>24 timmar innan provperioden tar slut</strong>, under <strong>Inställningar → ditt namn → Prenumerationer → Dailies → Avsluta prenumeration</strong>. Du behåller Premium till provperiodens sista dag.</p>
+              <p><strong>På Android:</strong> avsluta när som helst innan provperioden tar slut, så debiteras du inte. I Google Play-appen går du till <strong>din profilbild → Betalningar och prenumerationer → Prenumerationer → Dailies → Avsluta prenumeration</strong>.</p>
+            </div></details>
+
+          <details><summary>Hur avslutar jag prenumerationen?</summary>
+            <div class="details-body">
+              <p><strong>På iPhone och iPad:</strong> under <strong>Inställningar → ditt namn → Prenumerationer → Dailies → Avsluta prenumeration</strong>. Apple hanterar prenumerationerna, så det måste göras där och inte i appen.</p>
+              <p><strong>På Android:</strong> i Google Play-appen, under <strong>din profilbild → Betalningar och prenumerationer → Prenumerationer → Dailies → Avsluta prenumeration</strong>. Google Play hanterar prenumerationerna, så det måste göras där och inte i appen.</p>
+              <p><strong>Att radera appen avslutar inte en prenumeration.</strong> Det är många som går i den fällan, med alla appar i butiken.</p>
+              <p>Du behåller Premium till slutet av perioden du redan har betalat för. Efter det går appen tillbaka till gratisutbudet. Inget du har skapat raderas, och en bakgrund eller ett typsnitt du inte längre kan använda byts helt enkelt mot ett gratis.</p>
+            </div></details>
+
+          <details><summary>Kan jag få pengarna tillbaka?</summary>
+            <div class="details-body">
+              <p><strong>På iPhone och iPad:</strong> återbetalningar sköts av Apple; begär en på <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>. Vi har ingen möjlighet att göra dem, eftersom betalningen aldrig når oss direkt.</p>
+              <p><strong>På Android:</strong> återbetalningar går via Google Play, enligt <a href="https://support.google.com/googleplay/answer/2479637" rel="noopener">Google Plays regler för återbetalning</a>. Om Google inte kan hjälpa till, mejla <a href="mailto:help@mydailies.app">help@mydailies.app</a>, eftersom Google Play också låter oss återbetala ett köp.</p>
+              <p>Om något i appen inte fungerade som utlovat, mejla oss gärna. Det är bra att veta, och vi kan ofta rätta till det.</p>
+            </div></details>
+
+          <details><summary>Jag har betalat men funktionerna har inte låsts upp</summary>
+            <div class="details-body">
+              <p>Prova <strong>Återställ</strong> på Premium-skärmen först; det är det den är till för, och den löser de flesta fall. Kontrollera att du är inloggad med samma Apple-konto som du köpte med. På Android, kontrollera att du är inloggad i Google Play med samma Google-konto som du köpte med.</p>
+              <p>Har det fortfarande fastnat? Mejla <a href="mailto:help@mydailies.app">help@mydailies.app</a>.</p>
+            </div></details>
+        </div>
+      </section>
+
+      <p class="no-results" id="noResults">Inget här matchar det. Prova ett annat ord, eller mejla bara <a href="mailto:help@mydailies.app" style="color:var(--accent)">help@mydailies.app</a> och fråga.</p>
+
+      <section id="contact">
+        <h2>Vill du komma i kontakt?</h2>
+        <ul>
+          <li><strong>Något är trasigt, eller du har en fråga:</strong> <a href="mailto:help@mydailies.app">help@mydailies.app</a></li>
+          <li><strong>Du har en idé till appen:</strong> <a href="mailto:feature.suggestion@mydailies.app">feature.suggestion@mydailies.app</a></li>
+        </ul>
+        <p>Båda läses av samma person: <a href="/sv/om-oss/">den som gör Dailies</a>. Svaren kommer inte direkt, och de följer inget manus heller.</p>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="wrap"><footer>
+    <span>&copy; 2026 Dailies</span>
+    <div class="social">
+      <a href="https://www.tiktok.com/@mydailies.app" aria-label="TikTok" title="TikTok" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#tiktok"/></svg></a>
+      <a href="https://www.instagram.com/mydailies.app/" aria-label="Instagram" title="Instagram" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#instagram"/></svg></a>
+      <a href="https://www.facebook.com/mydailiesapp" aria-label="Facebook" title="Facebook" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#facebook"/></svg></a>
+      <a href="https://www.youtube.com/@mydailiesapp" aria-label="YouTube" title="YouTube" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#youtube"/></svg></a>
+      <a href="https://www.pinterest.com/mydailiesapp/" aria-label="Pinterest" title="Pinterest" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#pinterest"/></svg></a>
+      <a href="https://www.linkedin.com/company/mydailiesapp/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="/img/social.svg#linkedin"/></svg></a>
+    </div>
+    <nav>
+      <a href="/sv/">Hem</a>
+      <a href="/sv/jamfor/">Jämför</a>
+      <a href="/sv/om-oss/">Om oss</a>
+      <a href="/press/" hreflang="en">Press</a>
+      <a href="/terms/" hreflang="en">Villkor</a>
+      <a href="/privacy/" hreflang="en">Integritet</a>
+      <a href="/cookies/" hreflang="en">Cookies</a>
+      <a href="#" data-cookie-settings>Cookieinställningar</a>
+    </nav>
+  </footer></div>
+</main>
+
+<script>
+/* Filter the accordions as you type. Plain substring matching over the visible
+   text: the corpus is a few dozen entries, so anything cleverer would cost more
+   than it returns. An empty box restores the page exactly as it loaded. */
+(function () {
+  var box = document.getElementById('q');
+  if (!box) return;
+
+  var noResults = document.getElementById('noResults');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('.prose section'));
+  var cards = document.querySelector('.cards');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.faq details')).map(function (d) {
+    return { el: d, text: (d.textContent || '').toLowerCase(), wasOpen: d.hasAttribute('open') };
+  });
+
+  function reset() {
+    items.forEach(function (i) {
+      i.el.style.display = '';
+      if (i.wasOpen) i.el.setAttribute('open', ''); else i.el.removeAttribute('open');
+    });
+    sections.forEach(function (s) { s.style.display = ''; });
+    if (cards) cards.style.display = '';
+    noResults.style.display = 'none';
+  }
+
+  function apply(term) {
+    var hits = 0;
+    items.forEach(function (i) {
+      var match = i.text.indexOf(term) !== -1;
+      i.el.style.display = match ? '' : 'none';
+      // Open the matches so the answer is on screen rather than one tap away.
+      if (match) { i.el.setAttribute('open', ''); hits++; }
+      else { i.el.removeAttribute('open'); }
+    });
+    // Hide a heading whose every entry was filtered out, so the page does not
+    // read as a list of empty topics. #contact has no details and always stays.
+    sections.forEach(function (s) {
+      if (s.id === 'contact') return;
+      var visible = s.querySelectorAll('.faq details:not([style*="none"])').length;
+      s.style.display = visible ? '' : 'none';
+    });
+    if (cards) cards.style.display = 'none';
+    noResults.style.display = hits ? 'none' : 'block';
+  }
+
+  box.addEventListener('input', function () {
+    var term = box.value.trim().toLowerCase();
+    if (term.length < 2) reset(); else apply(term);
+  });
+})();
+
+/* Open the right accordion when someone arrives on a #hash link. */
+(function () {
+  function openTarget() {
+    if (!location.hash) return;
+    // By id, not as a selector: the hash is whatever the link said, and a
+    // stray bracket or comma in it must open nothing rather than throw.
+    var id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+    var target = document.getElementById(id);
+    if (!target) return;
+    var first = target.querySelector('.faq details');
+    if (first) first.setAttribute('open', '');
+  }
+  window.addEventListener('hashchange', openTarget);
+  openTarget();
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type": "Question", "name": "Vad händer när jag öppnar Dailies första gången?", "acceptedAnswer": {"@type": "Answer", "text": "En kort inställning som låter Dailies anpassa citaten efter dig, och sedan är du klar. Du väljer vilka ämnen du vill höra om, hur ofta du vill höra av oss och vilken stil du vill att dina citat ska visas i."}},
+{"@type": "Question", "name": "Behöver jag ett konto?", "acceptedAnswer": {"@type": "Answer", "text": "Nej. Det finns ingen registrering, ingen e-postadress och inget lösenord. Dailies har inga konton alls."}},
+{"@type": "Question", "name": "Vilka enheter fungerar den på?", "acceptedAnswer": {"@type": "Answer", "text": "iPhone och iPad, och Android-telefoner med Android 10 eller senare, i stående eller liggande läge. Den talar engelska, spanska, portugisiska, franska, tyska, italienska, nederländska, svenska, japanska, koreanska, arabiska, förenklad kinesiska och traditionell kinesiska. Den följer språket som din enhet är inställd på, och du kan välja vilket som helst av dem under Profil → Språk.\nAtt ställa in widgetarna på en iPad, där låsskärmen håller isär stående och liggande läge: så lägger du till widgetar på iPad."}},
+{"@type": "Question", "name": "Mina citat har slutat komma", "acceptedAnswer": {"@type": "Answer", "text": "Nästan alltid något av det här, i den här ordningen:\n1. Behörighet. Gå till Inställningar i iOS → Dailies → Notiser och kontrollera att Tillåt notiser är på, med Låsskärm markerad. På Android går du till Inställningar → Appar → Dailies → Aviseringar (vägen varierar mellan telefoner) och kontrollerar att aviseringar är tillåtna, med Dagliga citat påslaget.\n2. Ett fokusläge. Sömn, Arbete och Stör ej tystar appar som inte finns på deras lista över tillåtna. Lägg till Dailies i det fokus du använder, eller titta under Inställningar → Fokus. På Android gör Stör ej samma sak: stäng av det, eller släpp igenom Dailies i dess inställningar.\n3. Dina leveranstider. Öppna Personanpassa → Daglig dos och titta på tidsfönstret du har ställt in. Om det är 9.00 till 17.00 och du tittar klockan 8.00 är inget på väg än.\nEn till, som är lätt att missa: Strömsparläge gör att iOS nedprioriterar arbete i bakgrunden, vilket kan fördröja leveransen. På Android kan batterisparläget göra samma sak. Om citaten kommer sent på Android, se aviseringar som kommer sent på Android.\nOm allt det ser rätt ut, öppna appen en gång. När du öppnar den bygger Dailies om sitt schema.\nDen långa versionen, med alla ställen där iOS kan hålla tillbaka en notis: när du inte får notiser från en app på iPhone."}},
+{"@type": "Question", "name": "Hur många kan jag få per dag?", "acceptedAnswer": {"@type": "Answer", "text": "Så få eller så många du vill. Ställ in det under Personanpassa → Daglig dos, tillsammans med den tidigaste och senaste tiden du vill höra av appen. Dailies sprider ut dem jämnt över tidsfönstret i stället för att klumpa ihop dem.\nHur stunderna väljs, och hur du håller kvällar och helger lugna: så får du motiverande citat på slumpmässiga tider under dagen."}},
+{"@type": "Question", "name": "Det är för många / för få", "acceptedAnswer": {"@type": "Answer", "text": "Personanpassa → Daglig dos, och ändra antalet. Att dra ned det till ett om dagen är ett alldeles utmärkt sätt att använda Dailies, och ändringen gäller direkt."}},
+{"@type": "Question", "name": "Kan jag stänga av notiserna men behålla appen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Stäng av dem under Inställningar i iOS → Dailies → Notiser.\nFör att slå på dem igen senare använder du samma reglage: så slår du på notiser för en app på iPhone.\nPå Android: stäng av dem under Inställningar → Appar → Dailies → Aviseringar (vägen varierar mellan telefoner), och slå på dem igen på samma ställe."}},
+{"@type": "Question", "name": "Hur lägger jag till widgeten på hemskärmen?", "acceptedAnswer": {"@type": "Answer", "text": "På iPhone och iPad:\n1. Håll fingret på en tom yta på hemskärmen tills symbolerna börjar vicka.\n2. Tryck på + i det övre hörnet.\n3. Sök efter Dailies och välj den.\n4. Svep till den storlek du vill ha, tryck på Lägg till widget och sedan på Klar.\nDailies erbjuder en mellanstor och en stor widget. Det finns ingen liten storlek; ett citat behöver utrymmet för att gå att läsa.\nDet finns en animerad genomgång av precis det här inne i appen, under Personanpassa → Widget på hemskärmen.\nDen längre versionen, med widgetstorlekar, travar och vad du gör när Dailies saknas i listan: så lägger du till en widget på hemskärmen.\nPå Android:\n1. Håll fingret på en tom yta på startskärmen.\n2. Tryck på Widgetar.\n3. Hitta Dailies i listan.\n4. Håll fingret på widgeten och dra den på plats.\nEller låt appen placera den: öppna Personanpassa → Widget på startskärmen och tryck på Lägg till på startskärmen. Vissa telefoner erbjuder inte det här, så knappen visas bara där det fungerar.\nNär den väl ligger på startskärmen kan du hålla fingret på den och dra i kanterna för att ändra storleken."}},
+{"@type": "Question", "name": "Hur lägger jag till widgeten på låsskärmen?", "acceptedAnswer": {"@type": "Answer", "text": "På iPhone och iPad:\n1. Håll fingret på låsskärmen.\n2. Tryck på Anpassa och sedan på Låsskärm.\n3. Tryck på den tomma rutan under klockan.\n4. Välj Dailies i listan.\n5. Tryck på Klar.\niOS ger en widget på låsskärmen en liten ruta och ritar den i en enda ton, så Dailies lägger ett kort citat där i stället för ett långt. Tryck på den för att öppna appen på just det citatet.\nDu kan också ställa in den inifrån appen, under Personanpassa → Widget på låsskärmen.\nDet finns två andra sätt att få ett citat på låsskärmen: notiser, och ett citat sparat som bakgrundsbild. Alla tre finns i så lägger du citat på låsskärmen på din iPhone, och hela vägen via bakgrundsbilden finns i så gör du en bakgrundsbild med ett citat på iPhone.\nPå Android: Dailies har bara en widget för startskärmen, ingen för låsskärmen. Ett citat kan ändå nå din låsskärm som en avisering, eller som en bild du sparar i galleriet och ställer in som bakgrundsbild. Mer i så får du citat på startskärmen och låsskärmen på Android."}},
+{"@type": "Question", "name": "Hur ofta byts widgeten?", "acceptedAnswer": {"@type": "Answer", "text": "Ungefär en gång i timmen. Widgeten på hemskärmen har också pilar, så att du kan gå till nästa citat eller tillbaka till det förra när du vill utan att öppna appen. Widgeten på låsskärmen följer samma citat.\nPå Android: detsamma gäller widgeten på startskärmen, pilarna inräknade."}},
+{"@type": "Question", "name": "Min widget har fastnat på samma citat", "acceptedAnswer": {"@type": "Answer", "text": "Oftast är det iOS som sparar batteri. Prova, i den här ordningen:\n- Stäng av Strömsparläge; det stryper uppdateringen av widgetar kraftigt.\n- Öppna Dailies en gång, vilket skickar ett nytt citat till widgeten direkt.\n- Ta bort widgeten och lägg till den igen.\nDen längre versionen, med alla lösningar i ordning och vad varje symptom brukar betyda: varför din widget på iPhone inte uppdateras.\nPå Android: oftast sparar telefonen batteri även där. Stäng av batterisparläget, öppna Dailies en gång, och om det inte hjälper, ta bort widgeten och lägg till den igen. Steg för steg: så lägger du till en widget på Android."}},
+{"@type": "Question", "name": "Hur sparar jag ett citat jag gillar?", "acceptedAnswer": {"@type": "Answer", "text": "Tryck på hjärtat vid ett citat. Allt du ger ett hjärta samlas under Gillade citat. Med Premium kan du också följa Gillade citat som ett eget ämne på skärmen Ämnen, så att ditt flöde spelar upp dem för dig i stället för att visa nya."}},
+{"@type": "Question", "name": "Kan jag skriva egna citat?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Skriv dina egna rader under Mina citat: något någon har sagt till dig, något ur en bok, eller en påminnelse till dig själv för de dagar den behövs. De sparas där oavsett vilken plan du har.\nMed Premium följer du Mina citat på skärmen Ämnen, så visar Dailies dem för dig tillsammans med resten, i notiser, i flödet och på widgetarna. Följ bara det, så består ditt flöde enbart av dina egna rader."}},
+{"@type": "Question", "name": "Vad händer med dem om jag skaffar en ny telefon?", "acceptedAnswer": {"@type": "Answer", "text": "De följer med dig. På iPhone och iPad speglas citaten du skriver och citaten du ger ett hjärta till ditt eget iCloud-konto, så när du installerar Dailies på en ny iPhone kommer de tillbaka. Det finns inget konto att logga in på och inget att återställa för hand.\nDet kräver att iCloud är på för din enhet. Inget annat synkas: ditt namn, dina ämnen och din valda stil är snabba att ställa in igen, och en egen bakgrundsbild ligger kvar i ditt bildbibliotek i stället för att äta upp ditt iCloud-utrymme.\nPå Android: det finns ingen iCloud, så de följer med via telefonens egen säkerhetskopiering i stället. Om säkerhetskopiering till ditt Google-konto är på för telefonen kopierar Android appens data till den säkerhetskopian: dina inställningar, ditt namn, citaten du har skrivit, dem du har gett ett hjärta och en bakgrundsbild du har valt. Allt kommer tillbaka när du ställer in en ny telefon, och samma data flyttas över om du överför direkt från en telefon till en annan.\nAndroid har inget reglage för en enskild app: säkerhetskopieringen är på eller av för hela telefonen, oftast under Inställningar → Google → Säkerhetskopiering, men vägen varierar mellan telefoner. Med säkerhetskopieringen avstängd blir de kvar på den gamla telefonen, om du inte överför direkt."}},
+{"@type": "Question", "name": "Är mina egna citat privata?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. På iPhone och iPad finns de på din enhet och i ditt eget iCloud-konto, som bara du kan läsa. Vi ser dem aldrig, och de skickas aldrig till oss eller till någon annan.\nPå Android: de finns på din telefon och, om säkerhetskopieringen är på, i telefonens säkerhetskopia i ditt eget Google-konto. Vi kan inte läsa den kopian, vi får ingen, och den används aldrig för statistik eller reklam."}},
+{"@type": "Question", "name": "Vad kan jag ändra?", "acceptedAnswer": {"@type": "Answer", "text": "- Bakgrunder: en stor samling fotografier, ett urval av färgtoningar, en egen bild, eller en enfärgad bakgrund du blandar själv.\n- Typsnitt: ett brett urval, och du ställer in textstorleken.\n- Effekter: svävande damm, fallande snö, dimma, eldflugor, meteorer, linsreflexer, glöd och mer.\nAllt finns under Stil, i fältet längst ned i flödet.\nFör att ta med stilen till hemskärmen, med rörlig effekt och allt: så gör du en aesthetic citatwidget."}},
+{"@type": "Question", "name": "Kan jag använda en egen bild?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Välj en från ditt bibliotek så hamnar den bakom dina citat. Det är en funktion i Dailies Premium, precis som att blanda din egen enfärgade bakgrund."}},
+{"@type": "Question", "name": "Följer appen telefonens mörka läge?", "acceptedAnswer": {"@type": "Answer", "text": "Ja! Appen har stöd för mörkt läge."}},
+{"@type": "Question", "name": "Kan Dailies läsa upp ett citat för mig?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Tryck på högtalaren under citatet så läser Dailies upp det, med en egen röst i stället för telefonens. Rösten är en engångsnedladdning på ungefär 145 MB, som Dailies oftast hämtar av sig själv medan du ställer in appen; om den inte finns på din telefon än frågar det första trycket innan den hämtas. Efter det fungerar den offline, och inget du hör skickas någonstans: citatet görs om till tal på din telefon.\nTryck på högtalaren igen, eller svep till nästa citat, för att stoppa."}},
+{"@type": "Question", "name": "Kan jag byta röst?", "acceptedAnswer": {"@type": "Answer", "text": "Öppna Profil → Läs upp. Det finns tio röster, fem kvinnor och fem män, var och en med en uppspelningsknapp så att du kan lyssna innan du väljer. Ditt val gäller för varje citat från och med då."}},
+{"@type": "Question", "name": "Hur tar jag bort högtalaren från flödet?", "acceptedAnswer": {"@type": "Answer", "text": "Öppna Profil → Läs upp och stäng av Uppspelningsknapp i flödet. Högtalaren försvinner från flödet; raden i Profil finns kvar, så du kan ta tillbaka den på samma sätt."}},
+{"@type": "Question", "name": "Nedladdningen avbröts, eller så avbröt jag den", "acceptedAnswer": {"@type": "Answer", "text": "Tryck på högtalaren igen och tryck på Ladda ned. Delarna som blev klara sparas, så bara det som saknas hämtas. Om det fortsätter att misslyckas, kontrollera anslutningen och att telefonen har några hundra megabyte ledigt."}},
+{"@type": "Question", "name": "Varför ser jag inte högtalaren?", "acceptedAnswer": {"@type": "Answer", "text": "Antingen är Uppspelningsknapp i flödet avstängd under Profil → Läs upp, eller så är appen på kinesiska: rösten talar inte kinesiska än, så funktionen är dold där. Alla andra språk i appen läses upp."}},
+{"@type": "Question", "name": "Kan jag använda Dailies i ChatGPT eller Claude?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Be om ett motiverande citat så väljer Dailies ett utifrån hur du mår och visar det på ett lugnt fotografi med upphovspersonen under. Tryck på Another one för ett nytt citat, så ofta du vill.\nDet är gratis, och det finns inget att logga in på. Det svarar på engelska, spanska, portugisiska, franska, tyska eller förenklad kinesiska, beroende på vilket av dem du skriver på.\nRaden under kortet öppnar Dailies i App Store, ifall du också vill ha ett citat på låsskärmen varje dag."}},
+{"@type": "Question", "name": "Hur lägger jag till Dailies i Claude?", "acceptedAnswer": {"@type": "Answer", "text": "1. Öppna dina kopplingar i Claude, via menyn för att anpassa.\n2. Hitta Dailies i katalogen och välj att ansluta. Det finns inget att logga in på.\n3. Slå på det i en chatt via plusknappen och kopplingarna, och be sedan om ett citat. Första gången frågar Claude innan kortet visas; välj att alltid tillåta om du hellre vill slippa frågan."}},
+{"@type": "Question", "name": "Hur lägger jag till Dailies i ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "Hitta Dailies i ChatGPT:s appkatalog och anslut den. Be sedan om ett citat från Dailies i vilken chatt som helst."}},
+{"@type": "Question", "name": "Vad kan jag be om?", "acceptedAnswer": {"@type": "Answer", "text": "Vad du än behöver, med dina egna ord: ”Jag känner mig nere”, ”Jag behöver en skjuts inför min anställningsintervju”, ”Motivera mig att börja dagen”. Dailies väljer det ämne som ligger närmast det du sa. Om assistenten svarar med ett eget citat, be om ett från Dailies med namn.\nDailies ger bara citat. Det slår inte upp vem som sa något, skriver inga meddelanden åt dig och ger inga råd."}},
+{"@type": "Question", "name": "Vad ser Dailies av mitt samtal?", "acceptedAnswer": {"@type": "Answer", "text": "Ingenting. Assistenten skickar bara ämnet och språket den valde till vår server, och vilka citat den redan har visat, så att inget kommer upp två gånger. Aldrig dina meddelanden, ditt namn eller ditt konto. Mer i integritetspolicyn (på engelska)."}},
+{"@type": "Question", "name": "Hur stänger jag av det?", "acceptedAnswer": {"@type": "Answer", "text": "I Claude stänger du av det för en chatt via plusknappen och kopplingarna, eller tar bort det bland dina kopplingar i menyn för att anpassa. I ChatGPT kopplar du från det i inställningarna, under Appar."}},
+{"@type": "Question", "name": "Vad vet Dailies om mig?", "acceptedAnswer": {"@type": "Answer", "text": "Namnet du bad att bli kallad, ämnena du följer, dina inställningar för påminnelser, språket du valde, citaten du har gett ett hjärta, citaten du har skrivit själv och stilen du valde.\nPå iPhone och iPad speglas dina egna citat och dina hjärtmarkerade citat också till ditt eget iCloud-konto så att de klarar ett byte av telefon. Inget annat lämnar enheten, förutom de anonyma användningsmätningar som beskrivs i policyn.\nPå Android: det finns ingen iCloud. Om säkerhetskopiering är på för telefonen kopierar Android appens data till ditt eget Google-konto, inklusive ditt namn och en bakgrundsbild du har valt. Vi kan inte läsa den kopian. Inget annat lämnar enheten, förutom de anonyma användningsmätningar som beskrivs i policyn.\nSe integritetspolicyn (på engelska) för fler detaljer."}},
+{"@type": "Question", "name": "Kan jag stänga av användningsmätningarna?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Öppna Profil → Mer information och stäng av Dela användningsstatistik. Från och med då skickas inget mer från din telefon, och inget i appen ändras.\nDet finns inget annat att stänga av. Dailies visar ingen fråga om spårning, läser ingen annonsidentifierare och gör ingen annonsspårning av något slag i appen."}},
+{"@type": "Question", "name": "Vad får jag med Dailies Premium?", "acceptedAnswer": {"@type": "Answer", "text": "Hela ämnesbiblioteket. En gratisinstallation följer en handfull ämnen som valts utifrån dina svar vid inställningen; Premium öppnar alla, i alla avsnitt, så att ditt flöde kan bestå av precis det du vill höra. Du kan också följa Gillade citat och Mina citat som egna ämnen, så att dina favoriter och dina egna rader kommer tillbaka i flödet, i notiser och på widgetarna.\nPremium öppnar också alla bakgrunder, typsnitt och effekter i appen, plus de två saker du gör själv: dina egna bilder och din egen färg bakom citaten. Och det tar bort den lilla Dailies-logotypen från bilder du exporterar."}},
+{"@type": "Question", "name": "Vad kostar det, och finns det en provperiod?", "acceptedAnswer": {"@type": "Answer", "text": "Premium är en årsprenumeration, som oftast erbjuds med en gratis provperiod. Priset finns på prenumerationsskärmen i appen."}},
+{"@type": "Question", "name": "Hur avslutar jag provperioden innan jag debiteras?", "acceptedAnswer": {"@type": "Answer", "text": "På iPhone och iPad: avsluta minst 24 timmar innan provperioden tar slut, under Inställningar → ditt namn → Prenumerationer → Dailies → Avsluta prenumeration. Du behåller Premium till provperiodens sista dag.\nPå Android: avsluta när som helst innan provperioden tar slut, så debiteras du inte. I Google Play-appen går du till din profilbild → Betalningar och prenumerationer → Prenumerationer → Dailies → Avsluta prenumeration."}},
+{"@type": "Question", "name": "Hur avslutar jag prenumerationen?", "acceptedAnswer": {"@type": "Answer", "text": "På iPhone och iPad: under Inställningar → ditt namn → Prenumerationer → Dailies → Avsluta prenumeration. Apple hanterar prenumerationerna, så det måste göras där och inte i appen.\nPå Android: i Google Play-appen, under din profilbild → Betalningar och prenumerationer → Prenumerationer → Dailies → Avsluta prenumeration. Google Play hanterar prenumerationerna, så det måste göras där och inte i appen.\nAtt radera appen avslutar inte en prenumeration. Det är många som går i den fällan, med alla appar i butiken.\nDu behåller Premium till slutet av perioden du redan har betalat för. Efter det går appen tillbaka till gratisutbudet. Inget du har skapat raderas, och en bakgrund eller ett typsnitt du inte längre kan använda byts helt enkelt mot ett gratis."}},
+{"@type": "Question", "name": "Kan jag få pengarna tillbaka?", "acceptedAnswer": {"@type": "Answer", "text": "På iPhone och iPad: återbetalningar sköts av Apple; begär en på reportaproblem.apple.com. Vi har ingen möjlighet att göra dem, eftersom betalningen aldrig når oss direkt.\nPå Android: återbetalningar går via Google Play, enligt Google Plays regler för återbetalning. Om Google inte kan hjälpa till, mejla help@mydailies.app, eftersom Google Play också låter oss återbetala ett köp.\nOm något i appen inte fungerade som utlovat, mejla oss gärna. Det är bra att veta, och vi kan ofta rätta till det."}},
+{"@type": "Question", "name": "Jag har betalat men funktionerna har inte låsts upp", "acceptedAnswer": {"@type": "Answer", "text": "Prova Återställ på Premium-skärmen först; det är det den är till för, och den löser de flesta fall. Kontrollera att du är inloggad med samma Apple-konto som du köpte med. På Android, kontrollera att du är inloggad i Google Play med samma Google-konto som du köpte med.\nHar det fortfarande fastnat? Mejla help@mydailies.app."}}
+]}
+</script>
+
+<script src="/analytics.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

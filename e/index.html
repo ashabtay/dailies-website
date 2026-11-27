@@ -20,7 +20,7 @@
      else reads <html lang>: play.js picks its words from it, and consent.js
      asks its question in it. Nothing from the link is written anywhere else
      here; envelope.js decodes it properly. -->
-<script>(function(){try{var h=location.hash.slice(1).replace(/-/g,'+').replace(/_/g,'/');while(h.length%4)h+='=';var b=atob(h),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);var o=JSON.parse(new TextDecoder().decode(u));var m={es:'es-MX',pt:'pt-BR',fr:'fr-FR',de:'de-DE',ja:'ja',it:'it',ko:'ko','zh-hant':'zh-Hant-TW'};if(o&&m[o.l])document.documentElement.lang=m[o.l];}catch(e){}})();</script>
+<script>(function(){try{var h=location.hash.slice(1).replace(/-/g,'+').replace(/_/g,'/');while(h.length%4)h+='=';var b=atob(h),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);var o=JSON.parse(new TextDecoder().decode(u));var m={es:'es-MX',pt:'pt-BR',fr:'fr-FR',de:'de-DE',ja:'ja',it:'it',ko:'ko','zh-hant':'zh-Hant-TW',nl:'nl',sv:'sv',ar:'ar'};if(o&&m[o.l])document.documentElement.lang=m[o.l];if(o&&o.l==='ar')document.documentElement.dir='rtl';}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@300;400;500;600;700&family=Courier+Prime:wght@400&family=Caveat:wght@400&family=Yeseva+One&display=swap">

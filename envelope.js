@@ -29,11 +29,15 @@
   var h = P.h;
 
   var HOMES = { en: '/', es: '/es/', pt: '/pt/', fr: '/fr/', de: '/de/', ja: '/ja/',
-                it: '/it/', ko: '/ko/', 'zh-hant': '/zh-hant/' };
+                it: '/it/', ko: '/ko/', 'zh-hant': '/zh-hant/', nl: '/nl/', sv: '/sv/', ar: '/ar/' };
   var res = P.decode(location.hash);
   var env = res.env;
   var lang = env ? env.l : P.pickLang(navigator.language);
   P.setLang(lang);
+  // An Arabic envelope reads right to left (doc.css mirrors the rest).
+  // e/index.html already set this for a sealed one; this covers a broken
+  // link opened on an Arabic phone, which falls back to that language.
+  if (lang === 'ar') document.documentElement.dir = 'rtl';
   var s = P.strings();
 
   document.title = s.eTitle + ' | Dailies';

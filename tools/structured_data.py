@@ -8,7 +8,7 @@ Run it from the root of this repo after editing a Help page or a guide:
     python3 tools/structured_data.py           # rewrite what is out of step
     python3 tools/structured_data.py --check   # say what is, change nothing
 
-1. The Help pages (all nine languages) get a FAQPage block built from their
+1. The Help pages (all twelve languages) get a FAQPage block built from their
    <details> entries: the <summary> is the question and the text of the
    <div class="details-body"> is the answer. The block is rebuilt every run,
    so adding, rewording or deleting an entry is just an edit to the HTML.
@@ -18,7 +18,7 @@ Run it from the root of this repo after editing a Help page or a guide:
 2. The guides (every page with a HowTo block) get dateModified on their
    HowTo, taken from the date in the page's .doc-meta line ("Steps checked on
    iOS on 21 September 2026", "Pasos escritos el 8 de octubre de 2026",
-   "手順の作成：2026年11月3日"...), in whichever of the nine languages the page
+   "手順の作成：2026年11月3日"...), in whichever of the twelve languages the page
    is in. Move the visible date and the next run moves this one. They also
    get datePublished, the day git first saw the file, written once and then
    left alone.
@@ -46,6 +46,9 @@ HELP_PAGES = [
     "it/aiuto/index.html",
     "ko/help/index.html",
     "zh-hant/help/index.html",
+    "nl/help/index.html",
+    "sv/hjalp/index.html",
+    "ar/help/index.html",
 ]
 
 MONTHS = {}
@@ -56,9 +59,13 @@ for names in (
     "janvier février mars avril mai juin juillet août septembre octobre novembre décembre",
     "januar februar märz april mai juni juli august september oktober november dezember",
     "gennaio febbraio marzo aprile maggio giugno luglio agosto settembre ottobre novembre dicembre",
+    "januari februari maart april mei juni juli augustus september oktober november december",
+    "januari februari mars april maj juni juli augusti september oktober november december",
+    "يناير فبراير مارس أبريل مايو يونيو يوليو أغسطس سبتمبر أكتوبر نوفمبر ديسمبر",
 ):
     for i, name in enumerate(names.split(), 1):
         MONTHS[name] = i
+MONTHS["إبريل"] = 4  # the other common Arabic spelling of April
 
 LD_RE = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
 

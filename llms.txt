@@ -10,7 +10,7 @@ Key facts:
 - Styling: backgrounds, typefaces and effects behind each quote, including quiet moving effects on the widget, and your own photos and colors with Premium.
 - Price: free to download, with a free set of topics, backgrounds and typefaces. Dailies Premium is an optional subscription that opens every topic, background, typeface and effect.
 - No account needed to start.
-- Languages: English, Spanish, Brazilian Portuguese, French, German, Italian, Japanese, Korean, and Simplified and Traditional Chinese.
+- Languages: English, Spanish, Brazilian Portuguese, French, German, Italian, Dutch, Swedish, Japanese, Korean, Arabic, and Simplified and Traditional Chinese.
 - Devices: iPhone, iPad and Android, in portrait or landscape.
 - Made by Amit Shabtay with his son Itamar, with editorial rules for which quotes get in (see About).
 - Download: [Dailies - motivational quotes on the App Store](https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416?pt=129347926&ct=web-llms&mt=8) (iPhone and iPad), [Dailies on Google Play](https://play.google.com/store/apps/details?id=com.ashabtay.dailies&referrer=utm_source%3Dmydailies.app%26utm_medium%3Dweb%26utm_campaign%3Dweb-llms) (Android)
@@ -59,7 +59,7 @@ Dated, sourced side-by-side comparisons of Dailies and other quote and affirmati
 
 ## Other languages
 
-The site is also in [Spanish](https://mydailies.app/es/), [Brazilian Portuguese](https://mydailies.app/pt/), [French](https://mydailies.app/fr/), [German](https://mydailies.app/de/), [Japanese](https://mydailies.app/ja/), [Italian](https://mydailies.app/it/), [Korean](https://mydailies.app/ko/) and [Traditional Chinese](https://mydailies.app/zh-hant/).
+The site is also in [Spanish](https://mydailies.app/es/), [Brazilian Portuguese](https://mydailies.app/pt/), [French](https://mydailies.app/fr/), [German](https://mydailies.app/de/), [Japanese](https://mydailies.app/ja/), [Italian](https://mydailies.app/it/), [Korean](https://mydailies.app/ko/), [Traditional Chinese](https://mydailies.app/zh-hant/), [Dutch](https://mydailies.app/nl/), [Swedish](https://mydailies.app/sv/) and [Arabic](https://mydailies.app/ar/).
 
 ## Optional
 
