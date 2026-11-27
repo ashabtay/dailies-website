@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="apple-itunes-app" content="app-id=6804210416">
 <title>Press kit | Dailies</title>
-<meta name="description" content="Everything you need to write about Dailies, the motivational quotes app: the facts, ready-to-use descriptions, the founders, the app icon, screenshots, the moving widget and Asides.">
+<meta name="description" content="Everything you need to write about Dailies, the motivational quotes app: the facts, ready-to-use descriptions, the founders, the app icon, screenshots, the moving widget, envelopes and Asides.">
 <link rel="canonical" href="https://mydailies.app/press/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Press kit | Dailies">
-<meta property="og:description" content="The facts, descriptions, founder bio, icon, screenshots and moving widget, ready to use.">
+<meta property="og:description" content="The facts, descriptions, founder bio, icon, screenshots, moving widget and envelopes, ready to use.">
 <meta property="og:url" content="https://mydailies.app/press/">
 <meta property="og:image" content="https://mydailies.app/og.png">
 <meta property="og:image:width" content="1200">
@@ -34,7 +34,8 @@
 .kit-icon{display:flex; gap:18px; align-items:center; margin:0 0 18px}
 .kit-icon img{width:96px; height:96px; border-radius:22px; border:1px solid var(--rule-soft)}
 .kit-widget{margin:0 0 18px; max-width:480px; display:flex; flex-direction:column; gap:9px}
-.kit-widget img{width:100%; height:auto; border-radius:18px; border:1px solid var(--rule-soft); background:var(--ground-deep)}
+.kit-widget img,.kit-widget video{width:100%; height:auto; border-radius:18px; border:1px solid var(--rule-soft); background:var(--ground-deep)}
+.kit-widget.tall{max-width:300px}
 .kit-widget figcaption{font-size:13.5px; line-height:1.45; color:var(--text-faint)}
 .copy-block{border:1px solid var(--rule-soft); border-radius:14px; padding:16px 18px; margin:0 0 18px}
 .copy-block p:last-child{margin-bottom:0}
@@ -78,8 +79,8 @@
     <div class="wrap">
       <div class="eyebrow">Press</div>
       <h1>Press kit</h1>
-      <p class="lede">Everything you need to write about Dailies: the facts, a description at three lengths, who makes it, and the images. Use any of it in coverage of Dailies, no need to ask.</p>
-      <p class="doc-meta"><span>Last updated 17 November 2026</span></p>
+      <p class="lede">Everything you need to write about Dailies: the facts, a description at three lengths, who makes it, and the images. Use any of it in coverage of Dailies, no need to ask. Just want the videos? <a href="/press/if-7k2q/">See them all on one page</a>.</p>
+      <p class="doc-meta"><span>Last updated 27 November 2026</span></p>
     </div>
   </header>
 
@@ -92,6 +93,7 @@
       <a href="#founders">Who makes it</a>
       <a href="#images">Icon and screenshots</a>
       <a href="#widget">The moving widget</a>
+      <a href="#envelopes">Envelopes</a>
       <a href="#asides">Asides</a>
       <a href="#contact">Get in touch</a>
     </aside>
@@ -185,6 +187,15 @@
         </figure>
       </section>
 
+      <section id="envelopes">
+        <h2>Envelopes: seal a line for someone</h2>
+        <p>Pick a quote, write a friend's name on the envelope and hold the wax to seal it. Dailies turns it into a link. Your friend opens the envelope in any browser, with no app needed, and can send one back.</p>
+        <figure class="kit-widget tall">
+          <video src="/press/envelope.mp4" width="884" height="1920" autoplay muted loop playsinline aria-label="A quote sealed in an envelope in the Dailies app, then opened in a web browser"></video>
+          <figcaption>Sealed in the app, opened in the browser. Download the <a href="/press/envelope.mp4" download>video (MP4)</a>.</figcaption>
+        </figure>
+      </section>
+
       <section id="asides">
         <h2>Asides: the app notices you</h2>
         <p>Now and then, instead of a quote, Dailies shows an Aside: a short line about your moment right now. It knows when your battery is almost empty, when it is Monday before 9am, or when you come back after three weeks away. All of it is worked out on the phone itself. Asides need no permissions, no account and no server, and nothing about your moment leaves the phone.</p>
@@ -235,7 +246,7 @@
 </main>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","url":"https://mydailies.app/press/","name":"Dailies press kit","description":"Facts, descriptions, founder bio, app icon, screenshots and the moving widget for writing about Dailies.","about":{"@id":"https://mydailies.app/#app"},"publisher":{"@type":"Person","name":"Amit Shabtay","email":"help@mydailies.app","sameAs":["https://www.linkedin.com/in/amit-shabtay"]}}
+{"@context":"https://schema.org","@type":"WebPage","url":"https://mydailies.app/press/","name":"Dailies press kit","description":"Facts, descriptions, founder bio, app icon, screenshots, the moving widget and envelopes for writing about Dailies.","about":{"@id":"https://mydailies.app/#app"},"publisher":{"@type":"Person","name":"Amit Shabtay","email":"help@mydailies.app","sameAs":["https://www.linkedin.com/in/amit-shabtay"]}}
 </script>
 
 <script src="/analytics.js"></script>
