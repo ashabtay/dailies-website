@@ -461,6 +461,19 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
 @media (max-width:560px){
   [dir="rtl"] .lang-menu{right:auto; left:16px}
 }
+
+/* Arabic (/ar/), right to left. Fraunces, Figtree and Courier Prime have no
+   Arabic, so the system's Arabic faces follow them for every role, the mono
+   labels included (a monospace fallback draws Arabic letters unjoined).
+   Arabic is never slanted, never tracked (spacing pulls a cursive script
+   apart) and wants more leading. */
+html:lang(ar){
+  --f-display:Fraunces,"Geeza Pro","SF Arabic","Noto Naskh Arabic","Segoe UI",Tahoma,serif;
+  --f-body:Figtree,"Geeza Pro","SF Arabic","Noto Sans Arabic","Segoe UI",Tahoma,sans-serif;
+  --f-mono:"Geeza Pro","SF Arabic","Noto Sans Arabic","Segoe UI",Tahoma,sans-serif;
+}
+html:lang(ar) body{line-height:1.8}
+html:lang(ar) *{letter-spacing:0 !important; font-style:normal}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MobileApplication","@id":"https://mydailies.app/#app","name":"Dailies","alternateName":"Dailies - motivational quotes","description":"يرسل Dailies اقتباسات تحفيزية قصيرة إلى شاشة القفل وأداة الشاشة الرئيسية، في لحظة مختلفة كل يوم. يكفي اختيار المواضيع والساعات، ثم المضي في اليوم. بلا إعلانات، وبلا تسجيل دخول.","url":"https://mydailies.app/ar/","inLanguage":"ar","operatingSystem":"iOS, Android","applicationCategory":"LifestyleApplication","installUrl":"https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","downloadUrl":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://play.google.com/store/apps/details?id=com.ashabtay.dailies"],"sameAs":["https://apps.apple.com/us/app/dailies-motivational-quotes/id6804210416","https://play.google.com/store/apps/details?id=com.ashabtay.dailies"],"image":"https://mydailies.app/icon.png","screenshot":["https://mydailies.app/img/app/ar/lock-screen.jpg","https://mydailies.app/img/app/ar/home-screen.jpg","https://mydailies.app/img/app/ar/topics.jpg","https://mydailies.app/img/app/ar/notifications.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://mydailies.app/#organization"}}
