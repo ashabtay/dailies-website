@@ -14,9 +14,17 @@
 
    An opened envelope's "Send one back" arrives here as #to=<name>&from=<name>
    (the names swapped round), fills them in, and clears them from the address.
+   "Send it in an envelope" under a quote on a blog post arrives as
+   #q=b-<id> (see play.js) and opens the composer on that quote.
    ========================================================================= */
 (function () {
   'use strict';
+
+  // A blog line named in the address loads first (play.js, ready()); the
+  // rest of this file runs once it is in.
+  if (window.DailiesPlay) window.DailiesPlay.ready(start);
+
+  function start() {
 
   var P = window.DailiesPlay;
   var A = window.DailiesEnvelopeArt;
@@ -82,6 +90,14 @@
       try { v = P.clean(decodeURIComponent(kv.slice(i + 1)), P.MAX_NAME); } catch (e) {}
       if (kv.slice(0, i) === 'to') to.value = v;
       if (kv.slice(0, i) === 'from') from.value = v;
+      if (kv.slice(0, i) === 'q' && P.line(v) && !P.isNamed(v)) {
+        // A line from elsewhere on the site: no occasion is picked until
+        // the visitor picks one.
+        state.q = v;
+        state.away = true;
+        locate(v);
+        P.ev('envelope_picked', { from: P.isBlog(v) ? 'blog' : 'link' });
+      }
     });
     try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
   }
@@ -122,7 +138,7 @@
       if (!cite) { cite = P.h('cite'); cardQ.appendChild(cite); }
       cite.textContent = a;
     } else if (cite) cite.remove();
-    chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.getAttribute('data-occ') === state.occ)); });
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', String(!state.away && c.getAttribute('data-occ') === state.occ)); });
     var ok = mine ? !!ownText() : (!P.isNamed(state.q) || !!name);
     env.setReady(ok);
     hint.textContent = ok ? PS.sealHint : mine ? '' : S.need;
@@ -143,6 +159,7 @@
     c.addEventListener('click', function () {
       state.occ = c.getAttribute('data-occ');
       state.i = 0;
+      state.away = false;
       if (!isOwn()) set(G[state.occ][0]);
       if (++counts <= 3) P.ev('envelope_picked', { from: isOwn() ? 'own' : 'occasion' });
       redraw();
@@ -153,7 +170,9 @@
   Array.prototype.forEach.call(form.querySelectorAll('[data-step]'), function (b) {
     b.addEventListener('click', function () {
       var list = G[state.occ];
-      state.i = (state.i + (+b.getAttribute('data-step')) + list.length) % list.length;
+      var step = +b.getAttribute('data-step');
+      if (state.away) { state.away = false; state.i = step > 0 ? 0 : list.length - 1; }
+      else state.i = (state.i + step + list.length) % list.length;
       set(list[state.i]);
       redraw();
     });
@@ -171,6 +190,7 @@
     b.addEventListener('click', function () {
       state.q = b.getAttribute('data-q');
       state.k = +b.getAttribute('data-k');
+      state.away = false;
       locate(state.q);
       P.ev('envelope_picked', { from: 'list' });
       draw();
@@ -199,9 +219,10 @@
   function send() {
     var e = { to: P.clean(to.value, P.MAX_NAME), f: P.clean(from.value, P.MAX_NAME), l: lang, k: state.k, p: pageKey };
     if (isOwn()) e.t = ownText(); else e.q = state.q;
-    P.ev('envelope_sealed', { mode: isOwn() ? 'own' : 'page', has_to: !!e.to, has_from: !!e.f });
+    P.ev('envelope_sealed', { mode: isOwn() ? 'own' : P.isBlog(state.q) ? 'blog' : 'page', has_to: !!e.to, has_from: !!e.f });
     P.sent(null, e, isOwn() ? 'own' : 'page', function () { env.unseal(); });
   }
 
   draw();
+  }
 })();

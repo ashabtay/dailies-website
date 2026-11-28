@@ -352,6 +352,27 @@ footer .social svg{width:16px; height:16px; fill:currentColor}
 .prose .qfig blockquote p{color:#f4ecdc; font-size:clamp(22px,2.3vw,27px); line-height:1.28; text-shadow:0 1px 16px rgba(0,0,0,.5)}
 .prose .qfig blockquote cite{color:rgba(244,236,220,.82)}
 
+/* Under each quote on the blog and the author pages: two quiet ways to use
+   it, the wallpaper maker and the envelope, opened on that quote. Written by
+   tools/blog_actions.py; the icons are masks, so they take the text color. */
+.prose .qa{display:flex; flex-wrap:wrap; gap:8px; margin:-8px 0 28px 22px}
+.prose .qa-fig{margin:-14px 0 34px}
+.prose .qa a{display:inline-flex; align-items:center; gap:7px; padding:6px 13px 6px 10px; border:1px solid var(--rule-soft);
+  border-radius:999px; background:var(--chip); font-family:var(--f-body); font-size:13px; font-weight:500; line-height:1.25;
+  color:var(--text-faint); text-decoration:none; transition:color .18s, border-color .18s, background-color .18s}
+.prose .qa a::before{content:""; flex:none; width:15px; height:15px; background:currentColor;
+  -webkit-mask:var(--qa-ico) center/contain no-repeat; mask:var(--qa-ico) center/contain no-repeat}
+.prose .qa-wall{--qa-ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='6.5' y='2.5' width='11' height='19' rx='2.6'/%3E%3Cpath d='M9.6 10.6h4.8M9.6 13.6h3.2'/%3E%3C/svg%3E")}
+.prose .qa-env{--qa-ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5.5' width='18' height='13' rx='2.2'/%3E%3Cpath d='m3.9 7.2 8.1 5.9 8.1-5.9'/%3E%3C/svg%3E")}
+.prose .qa a:hover{color:var(--accent); border-color:var(--accent-dim); background:var(--chip-on)}
+.prose .qa a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; color:var(--accent)}
+@media (prefers-reduced-motion: reduce){.prose .qa a{transition:none}}
+@media (max-width:480px){
+  .prose .qa{gap:6px; margin-left:22px}
+  .prose .qa a{gap:5px; padding:5px 10px 5px 8px; font-size:12px}
+  .prose .qa a::before{width:13px; height:13px}
+}
+
 .blog-hub{padding:clamp(40px,5vw,64px) 0 clamp(64px,7vw,96px)}
 .blog-hub section + section{margin-top:clamp(52px,6vw,80px)}
 .hub-head{display:flex; flex-direction:column; gap:10px; max-width:62ch; margin-bottom:26px}
@@ -694,6 +715,8 @@ html.pl-locked, html.pl-locked body{overflow:hidden}
 [dir="rtl"] .prose ul, [dir="rtl"] details .details-body ul, [dir="rtl"] details .details-body ol{padding-left:0; padding-right:20px}
 [dir="rtl"] .prose ol, [dir="rtl"] .wp-step ol, [dir="rtl"] .en-how ol, [dir="rtl"] .wp-sheet-steps{padding-left:0; padding-right:22px}
 [dir="rtl"] .prose blockquote{padding:2px 20px 2px 0; border-left:0; border-right:2px solid var(--accent-dim)}
+[dir="rtl"] .prose .qa{margin:-8px 22px 28px 0}
+[dir="rtl"] .prose .qa-fig{margin:-14px 0 34px}
 [dir="rtl"] .callout.plain{border-left:0; border-right:2px solid var(--accent-dim); padding:2px 20px 2px 0}
 [dir="rtl"] th, [dir="rtl"] td{text-align:right}
 [dir="rtl"] .help-search svg{left:auto; right:16px}

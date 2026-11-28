@@ -352,6 +352,45 @@
 
   /* --------------------------------------------------------------- lines */
 
+  /* ---------------------------------------------------------- blog lines */
+  /* A quote on a blog post or an author page opens the maker or the composer
+     as #q=b-<id>, and an envelope sealed on one carries q: "b-<id>". Those
+     lines are not in play-lines.js: each language's are in
+     /lines/blog-<lang>.json, written by tools/blog_actions.py from the app's
+     quotes.db, word for word, and fetched only when an address names one.
+     ready() runs a page's script once they are in, or straight away. */
+  var BLOG_ID = /^b-[0-9a-f]{8}$/;
+  function blogLang() {
+    var raw = location.hash.slice(1);
+    if (!raw) return null;
+    if (/(?:^|&)q=b-[0-9a-f]{8}(?:&|$)/.test(raw)) return lang;
+    if (raw.indexOf('=') !== -1) return null;
+    try {
+      var o = JSON.parse(fromB64Url(raw));
+      if (o && typeof o.q === 'string' && BLOG_ID.test(o.q)) return LANGS.indexOf(o.l) === -1 ? 'en' : o.l;
+    } catch (e) {}
+    return null;
+  }
+  function ready(cb) {
+    var l = blogLang();
+    if (!l || !window.fetch) { cb(); return; }
+    var done = false;
+    function go() { if (!done) { done = true; cb(); } }
+    fetch('/lines/blog-' + l + '.json').then(function (r) { return r.ok ? r.json() : {}; }).then(function (j) {
+      Object.keys(j || {}).forEach(function (id) {
+        var v = j[id];
+        if (!/^[0-9a-f]{8}$/.test(id) || !v || typeof v[0] !== 'string') return;
+        var o = { t: {}, a: null };
+        o.t[l] = v[0];
+        if (typeof v[1] === 'string' && v[1]) { o.a = {}; o.a[l] = v[1]; }
+        D.lines['b-' + id] = o;
+      });
+    }).catch(function () {}).then(go);
+    // A slow network still gets the page, on its own lines.
+    setTimeout(go, 5000);
+  }
+  function isBlog(q) { return BLOG_ID.test(String(q || '')); }
+
   function line(q) { return D.lines[q] || null; }
   function isNamed(q) { var o = line(q); return !!(o && o.n); }
 
@@ -359,12 +398,12 @@
   function lineText(q, l, name) {
     var o = line(q);
     if (!o) return '';
-    var t = o.t[l] || o.t.en;
+    var t = o.t[l] || o.t.en || o.t[Object.keys(o.t)[0]] || '';
     return o.n ? t.replace('{name}', name || '') : t;
   }
   function lineAuthor(q, l) {
     var o = line(q);
-    return o && o.a ? (o.a[l] || o.a.en || '') : '';
+    return o && o.a ? (o.a[l] || o.a.en || o.a[Object.keys(o.a)[0]] || '') : '';
   }
 
   /* ------------------------------------------------------------- helpers */
@@ -708,6 +747,7 @@
     sent: sent, IOS: IOS, ANDROID: ANDROID, MAX_OWN: MAX_OWN,
     decode: decode, encode: encode, wallLink: wallLink, replyLink: replyLink,
     envText: envText, envAuthor: envAuthor, moreLink: moreLink,
+    ready: ready, isBlog: isBlog,
     line: line, isNamed: isNamed, lineText: lineText, lineAuthor: lineAuthor, bgUrl: bgUrl,
     data: D
   };

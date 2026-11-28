@@ -21,13 +21,19 @@
    made on the device, and there is no server to send it to.
 
    The address can open the maker on a line: #q=<id>&k=<background>&n=<name>,
-   which is how "Make it a wallpaper" on an opened envelope (/e/) arrives
-   here. The id must be one of the site's lines (play-lines.js), so the
+   which is how "Make it a wallpaper" on an opened envelope (/e/) and under
+   a quote on a blog post (#q=b-<id>, see play.js) arrive here. The id must be one of the site's lines (play-lines.js), so the
    address cannot put anybody's own words on the picture; n only fills the
    {name} of a line that has one.
    ========================================================================= */
 (function () {
   'use strict';
+
+  // A blog line named in the address loads first (play.js, ready()); the
+  // rest of this file runs once it is in.
+  if (window.DailiesPlay) window.DailiesPlay.ready(start);
+
+  function start() {
 
   var P = window.DailiesPlay;
   var root = document.getElementById('maker');
@@ -198,7 +204,7 @@
     state.name = name;
     var k = parseInt(p.k, 10);
     if (k >= 0 && k < D.bg.length) state.k = k;
-    state.from = 'envelope';
+    state.from = P.isBlog(p.q) ? 'blog' : 'envelope';
     moodOf(state.q);
     // The line came in the address; the address does not keep it.
     try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
@@ -474,4 +480,5 @@
   }
 
   render();
+  }
 })();
