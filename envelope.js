@@ -22,6 +22,12 @@
 (function () {
   'use strict';
 
+  // A blog line named in the address loads first (play.js, ready()); the
+  // rest of this file runs once it is in.
+  if (window.DailiesPlay) window.DailiesPlay.ready(start);
+
+  function start() {
+
   var P = window.DailiesPlay;
   var A = window.DailiesEnvelopeArt;
   var root = document.getElementById('env');
@@ -202,5 +208,6 @@
     var a = f.querySelectorAll('a');
     if (a[0]) { a[0].textContent = s.privacy; if (lang !== 'en') a[0].setAttribute('hreflang', 'en'); }
     if (a[1]) a[1].textContent = s.cookies;
+  }
   }
 })();

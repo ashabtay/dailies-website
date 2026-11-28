@@ -1,0 +1,229 @@
+{
+ "rumi": {
+  "author": "Rumi",
+  "published": "2026-11-28",
+  "image": {
+   "from": "desert_dusk.jpg",
+   "name": "rumi-quotes",
+   "hero_y": 0.47,
+   "quote_y": 0.3
+  },
+  "urls": {
+   "en": "/blog/rumi-quotes/",
+   "es": "/es/blog/frases-de-rumi/",
+   "pt": "/pt/blog/frases-de-rumi/",
+   "fr": "/fr/blog/citations-de-rumi/",
+   "de": "/de/blog/rumi-zitate/",
+   "ja": "/ja/blog/rumi-quotes/",
+   "it": "/it/blog/frasi-di-rumi/",
+   "ko": "/ko/blog/rumi-quotes/",
+   "zh-hant": "/zh-hant/blog/rumi-quotes/",
+   "nl": "/nl/blog/rumi-quotes/",
+   "sv": "/sv/blog/rumi-citat/",
+   "ar": "/ar/blog/rumi-quotes/"
+  },
+  "related": [
+   "/blog/marcus-aurelius-quotes/",
+   "/blog/quotes-for-anxiety-and-overthinking/",
+   "/blog/quotes-about-strength-to-keep-going/"
+  ],
+  "person": {
+   "name": "Rumi",
+   "alternateName": "Jalal al-Din Rumi",
+   "birthDate": "1207",
+   "deathDate": "1273",
+   "sameAs": "https://en.wikipedia.org/wiki/Rumi"
+  },
+  "sections": [
+   {
+    "topic": "love-your-people",
+    "ids": [
+     "acdef368-ec5c-44b4-a98e-b03828d5b316",
+     "d974bd0d-3329-430c-a9bd-674bbdd0ed83",
+     "8b3c2154-e8a7-40ae-be31-e2bf30856923",
+     "e98f0885-f2d9-47b3-b52c-1f3908c66e15",
+     "0cdb3d4b-79aa-4ad0-af7f-2ca553e06a15",
+     "068439ad-ed85-46e4-bb4c-9aab7a463f99"
+    ]
+   },
+   {
+    "topic": "something-bigger-than-this",
+    "ids": [
+     "05961bc6-81cd-40e7-8231-a30e6e05afa3",
+     "72959730-b2bf-4343-9ac0-28dfa961e13c",
+     "933a5d7b-9504-4e8d-af08-da85738a5a09",
+     "6fdf2ffc-56ee-4bfd-9881-b97bcc93651a",
+     "888a707b-8c72-4909-9dba-892a6468df25",
+     "6f8b9d58-57cc-40cd-9710-69dc2a1d09fa"
+    ]
+   },
+   {
+    "topic": "youve-done-harder-things",
+    "ids": [
+     "7f5fb516-fc71-4b95-b5f2-ca37c5b63664",
+     "bf9ed2fe-e628-42a6-9d16-36bd68469bd4",
+     "3f6e0724-3973-496d-8c75-6e054e2e08d5",
+     "7f208219-56b1-4519-9c83-f6a8557b2605",
+     "1be75451-e1a4-44da-a187-9a439c690cb3",
+     "9dbb5e4f-02b1-4ab7-b360-de0ab4710a32"
+    ]
+   },
+   {
+    "topic": "like-yourself-today",
+    "ids": [
+     "3e28b33d-407b-44a3-8281-2a1ae5c86ae1",
+     "8736fca8-f7a8-4262-bbef-c4cd4d07c4a0",
+     "d5590379-05b9-4ee9-aa75-8ba384c60bd3",
+     "d18f1ffe-e347-43fe-a5e8-4fc4decaf198",
+     "eb4548f2-65ba-4896-9399-1c71393dd491",
+     "4cd21793-2bf5-49e0-aa66-42e0fca1b57f"
+    ]
+   },
+   {
+    "topic": "when-the-worry-wont-sit-down",
+    "ids": [
+     "7cd49142-f0bc-4f0a-9b3a-91a2313023f3",
+     "b0a82d2e-39e3-4a5b-bab8-79b6bc2c92dc",
+     "fba5af35-0bc9-4e4b-bf4c-462b82d44e9e",
+     "74c65bef-b707-4b03-a39a-ac6900bc47dc",
+     "7dc4c8f2-0cff-4219-8010-8ccddcdfe6de",
+     "9e2e3028-08cb-43c3-81e4-3f5593bba538"
+    ]
+   },
+   {
+    "topic": "let-a-little-go",
+    "ids": [
+     "98b652f1-3010-4074-9345-02fe93de8f6d",
+     "acf06dfc-7d61-4941-8ba4-71efa47779f9",
+     "836423c1-8e52-4e62-a3a9-3a5bb1a416d2",
+     "b3226325-c79b-4b19-a830-6b561d3828ec",
+     "55882558-461f-4394-a9ea-4b110d4d682d",
+     "426ab6c5-cf5c-4a2e-ac9c-a4527ae7e877"
+    ]
+   },
+   {
+    "topic": "the-long-view",
+    "ids": [
+     "602cc6f1-01a8-4227-9cfd-9bacdd7572cb",
+     "820ad184-1721-4d5c-b815-c91a1a7cb5c4",
+     "d7c62d1c-1156-4e1a-a4ae-fc6bf18f5224",
+     "651641d3-fbf1-4e7e-8f68-bf35e0b5f468",
+     "9cb4c7a0-5a7e-4262-842f-cc389e68df55",
+     "d14e66da-53b7-4613-bd28-4a2e7d3e0163"
+    ]
+   }
+  ]
+ },
+ "marcus-aurelius": {
+  "author": "Marcus Aurelius",
+  "published": "2026-11-28",
+  "image": {
+   "reuse": "marcus-aurelius-quotes"
+  },
+  "urls": {
+   "en": null,
+   "es": "/es/blog/frases-de-marco-aurelio/",
+   "pt": "/pt/blog/frases-de-marco-aurelio/",
+   "fr": "/fr/blog/citations-de-marc-aurele/",
+   "de": "/de/blog/mark-aurel-zitate/",
+   "ja": "/ja/blog/marcus-aurelius-quotes/",
+   "it": "/it/blog/frasi-di-marco-aurelio/",
+   "ko": "/ko/blog/marcus-aurelius-quotes/",
+   "zh-hant": "/zh-hant/blog/marcus-aurelius-quotes/",
+   "nl": "/nl/blog/marcus-aurelius-quotes/",
+   "sv": "/sv/blog/marcus-aurelius-citat/",
+   "ar": "/ar/blog/marcus-aurelius-quotes/"
+  },
+  "english_page": "/blog/marcus-aurelius-quotes/",
+  "related": [
+   "/blog/rumi-quotes/",
+   "/blog/quotes-for-anxiety-and-overthinking/",
+   "/blog/motivational-quotes-for-work/"
+  ],
+  "person": {
+   "name": "Marcus Aurelius",
+   "birthDate": "0121",
+   "deathDate": "0180",
+   "sameAs": "https://en.wikipedia.org/wiki/Marcus_Aurelius"
+  },
+  "sections": [
+   {
+    "topic": "let-a-little-go",
+    "ids": [
+     "4d1c94f4-663f-4600-8a84-4d8fdfe19dc1",
+     "d5fd81fa-ca3a-4607-ac31-2f08d3e6af2d",
+     "fe1cf580-deb6-4b75-a773-eb6e1e40a06b",
+     "e466539a-7bd0-43c1-8732-967982a6f3b5",
+     "138cf69b-9264-4ac7-822a-c07c9cde89ca",
+     "10e087ef-bb91-459d-9c6e-10cd50edfe0b"
+    ]
+   },
+   {
+    "topic": "trust-your-own-judgment",
+    "ids": [
+     "d53b2718-7390-4f86-91f7-90639a5e9b57",
+     "732f29d7-dd04-45d6-aae5-78607bb4535d",
+     "a926049e-bbcf-4f64-b256-320976da78d8",
+     "22889f02-8939-4e29-82bf-aa1d3d651b3d",
+     "613b56b5-97ee-4355-9c6a-6f1adad8d40a",
+     "651dd9e1-a6ba-4c49-9c11-66ea1314f496"
+    ]
+   },
+   {
+    "topic": "be-easier-to-be-around",
+    "ids": [
+     "01935fb5-b15a-4337-b197-9cbf297a21e1",
+     "4d549ea4-201b-4629-aab4-f13f231cadff",
+     "d066e050-b46b-4f84-8c82-738d9a9081f1",
+     "7c3870de-4149-4a1b-b529-b12b0fe9fbc9",
+     "8ad5b1f3-974b-44b3-a606-ce2ed9d71578",
+     "2e83aada-7854-4120-a1fc-c7bbd145af8f"
+    ]
+   },
+   {
+    "topic": "when-the-worry-wont-sit-down",
+    "ids": [
+     "0af35b07-5a75-4b6b-8f73-35f9ae12679d",
+     "e63306ba-b990-4d50-a460-ca4da0465e68",
+     "8bc49c06-7a78-4c71-810a-7c5000117fd6",
+     "f1716a29-e95e-456e-aa47-9970faec8a94",
+     "ef118e23-4ca2-44f6-bbe7-47b0f94d6b74",
+     "c00d7020-8c29-47c1-84e3-ba75b0e02681"
+    ]
+   },
+   {
+    "topic": "feel-better-about-work",
+    "ids": [
+     "e09dee63-29b7-4a55-a811-80030b201dca",
+     "c0930912-06dd-4787-ad57-cec770441220",
+     "d8a8b3ec-7453-4101-b218-54ad124ad508",
+     "9525bb49-1d18-4ee7-a36b-4a62585f21b1",
+     "43a7ce5d-d99e-4423-9953-73b6fde522a8",
+     "7cbdb6ad-bc68-4bb7-b527-e1393600bdcf"
+    ]
+   },
+   {
+    "topic": "come-back-to-right-now",
+    "ids": [
+     "7df27f4b-781a-4ddd-98e7-1d511521f860",
+     "7ba728c7-a86f-4e3b-85c1-4d7d74355b8a",
+     "c42fd5f6-46a7-4ffe-9564-9bdc73603012",
+     "06f4cc79-5aca-4247-870f-0f832e75fad1",
+     "01a4817c-3e42-47d5-af62-58660836590b",
+     "2d3ae0e3-8dff-4e8a-bde5-f918095a9b2c"
+    ]
+   },
+   {
+    "topic": "meaning-quietly",
+    "ids": [
+     "d297df3a-322e-43f6-b51a-dc7a60f11d1e",
+     "34627b65-c63d-4b7a-b29b-035b37d9c4fb",
+     "9864bd73-0c29-479f-bd21-429b7db07562",
+     "428606e9-5424-4dd5-8132-5795a4ddc06d",
+     "c035939c-3c3b-4419-8b40-45be15095068",
+     "a945dda3-c47b-415e-8314-7f3c95d556bf"
+    ]
+   }
+  ]
+ }
+}

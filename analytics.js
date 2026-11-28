@@ -256,10 +256,12 @@
      the site:
 
        envelope_picked   a line chosen on the words-of-encouragement page;
-                         `from` is occasion (a chip), own (Write your own) or
-                         list (Send this one)
+                         `from` is occasion (a chip), own (Write your own),
+                         list (Send this one) or blog (Send it in an envelope
+                         under a quote on a blog post or author page)
        envelope_sealed   somebody sealed a line; `mode` is page (a line
-                         from the encouragement page) or own (their own words)
+                         from the encouragement page), blog (a quote from a
+                         blog post or author page) or own (their own words)
        envelope_shared   ...and sent it; `method` is share, message, whatsapp or email
        envelope_viewed   /e/ showed a sealed envelope
        envelope_opened   ...and it was opened; `ms_to_open` is how long they looked first
@@ -272,7 +274,8 @@
                          maker; `from` is gallery or list
        wallpaper_saved   the picture was handed over: `method` is share, download
                          or hold (pressed and held on an iPhone), `mood` the mood it came from (or none),
-                         `from` maker, gallery, list or envelope
+                         `from` maker, gallery, list, envelope or blog (Make it
+                         a wallpaper under a quote on a blog post or author page)
 
      An envelope carries two names, and the composer shows them on screen.
      They are never sent: only the keys below get through, and a string value
