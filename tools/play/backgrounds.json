@@ -11,7 +11,10 @@
    "ja": "天の川",
    "it": "Via Lattea",
    "ko": "은하수",
-   "zh-hant": "銀河"
+   "zh-hant": "銀河",
+   "nl": "Melkweg",
+   "sv": "Vintergatan",
+   "ar": "درب التبانة"
   },
   "photographer": "Greg Rakozy",
   "source": "https://unsplash.com/photos/oMpAz-DN-9I"
@@ -28,7 +31,10 @@
    "ja": "オーロラ",
    "it": "Aurora boreale",
    "ko": "오로라",
-   "zh-hant": "極光"
+   "zh-hant": "極光",
+   "nl": "Noorderlicht",
+   "sv": "Norrsken",
+   "ar": "الشفق القطبي"
   },
   "photographer": "Marcelo Quinan",
   "source": "https://unsplash.com/photos/R3pUGn5YiTg"
@@ -45,7 +51,10 @@
    "ja": "青い山なみ",
    "it": "Creste blu",
    "ko": "푸른 산등성이",
-   "zh-hant": "藍色山巒"
+   "zh-hant": "藍色山巒",
+   "nl": "Blauwe bergruggen",
+   "sv": "Blå bergskedjor",
+   "ar": "سلاسل زرقاء"
   },
   "photographer": "Luca Zanon",
   "source": "https://unsplash.com/photos/X0OoHrPvgXE"
@@ -62,7 +71,10 @@
    "ja": "霧の松林",
    "it": "Nebbia sui pini",
    "ko": "안개 낀 소나무 숲",
-   "zh-hant": "霧中松林"
+   "zh-hant": "霧中松林",
+   "nl": "Mist boven de dennen",
+   "sv": "Dimma över tallarna",
+   "ar": "ضباب فوق الصنوبر"
   },
   "photographer": "Jay Mantri",
   "source": "https://unsplash.com/photos/TFyi0QOx08c"
@@ -79,7 +91,10 @@
    "ja": "夕日の波",
    "it": "Onde al tramonto",
    "ko": "노을 진 파도",
-   "zh-hant": "日落浪花"
+   "zh-hant": "日落浪花",
+   "nl": "Branding bij zonsondergang",
+   "sv": "Bränning i solnedgången",
+   "ar": "أمواج الغروب"
   },
   "photographer": "Sebastien Gabriel",
   "source": "https://unsplash.com/photos/6p6WDodvR2Y"
@@ -96,7 +111,10 @@
    "ja": "砂漠の夕暮れ",
    "it": "Crepuscolo nel deserto",
    "ko": "사막의 해 질 녘",
-   "zh-hant": "沙漠黃昏"
+   "zh-hant": "沙漠黃昏",
+   "nl": "Woestijn in de schemering",
+   "sv": "Öken i skymningen",
+   "ar": "غسق الصحراء"
   },
   "photographer": "Tim de Groot",
   "source": "https://unsplash.com/photos/yNGQ830uFB4"
@@ -113,7 +131,10 @@
    "ja": "フィヨルド",
    "it": "Fiordo",
    "ko": "피오르",
-   "zh-hant": "峽灣"
+   "zh-hant": "峽灣",
+   "nl": "Fjord",
+   "sv": "Fjord",
+   "ar": "فيورد"
   },
   "photographer": "Jeff Sheldon",
   "source": "https://unsplash.com/photos/oOFrXiz8-0A"
@@ -130,7 +151,10 @@
    "ja": "夜の湖",
    "it": "Lago di notte",
    "ko": "밤의 호수",
-   "zh-hant": "夜湖"
+   "zh-hant": "夜湖",
+   "nl": "Meer bij nacht",
+   "sv": "Sjö om natten",
+   "ar": "بحيرة في الليل"
   },
   "photographer": "kazuend",
   "source": "https://unsplash.com/photos/2KXEb_8G5vo"
@@ -147,7 +171,10 @@
    "ja": "霧の桟橋",
    "it": "Pontile nella nebbia",
    "ko": "안개 낀 부두",
-   "zh-hant": "霧中棧橋"
+   "zh-hant": "霧中棧橋",
+   "nl": "Steiger in de mist",
+   "sv": "Brygga i dimma",
+   "ar": "رصيف في الضباب"
   },
   "photographer": "Joe Beck",
   "source": "https://unsplash.com/photos/NbUokuw0BQI"
@@ -164,7 +191,10 @@
    "ja": "雲の帯",
    "it": "Linea di nuvole",
    "ko": "구름 띠",
-   "zh-hant": "雲帶"
+   "zh-hant": "雲帶",
+   "nl": "Wolkenband",
+   "sv": "Molnband",
+   "ar": "خط الغيوم"
   },
   "photographer": "Nitish Meena",
   "source": "https://unsplash.com/photos/RbbdzZBKRDY"
@@ -181,7 +211,10 @@
    "ja": "谷の夜明け",
    "it": "Alba nella valle",
    "ko": "골짜기의 새벽",
-   "zh-hant": "山谷黎明"
+   "zh-hant": "山谷黎明",
+   "nl": "Dal bij dageraad",
+   "sv": "Dal i gryningen",
+   "ar": "فجر الوادي"
   },
   "photographer": "Daniel Genser",
   "source": "https://unsplash.com/photos/PzPbh-faPgU"
@@ -198,7 +231,10 @@
    "ja": "星明かりの峰",
    "it": "Vette sotto le stelle",
    "ko": "별빛 봉우리",
-   "zh-hant": "星光群峰"
+   "zh-hant": "星光群峰",
+   "nl": "Toppen onder de sterren",
+   "sv": "Toppar under stjärnorna",
+   "ar": "قمم تحت النجوم"
   },
   "photographer": "Caleb Ralston",
   "source": "https://unsplash.com/photos/6hxvm0NzYP8"
@@ -215,7 +251,10 @@
    "ja": "森の吊り橋",
    "it": "Il guado",
    "ko": "숲속 다리",
-   "zh-hant": "林中吊橋"
+   "zh-hant": "林中吊橋",
+   "nl": "De oversteek",
+   "sv": "Övergången",
+   "ar": "المعبر"
   },
   "photographer": "Nick Scheerbart",
   "source": "https://unsplash.com/photos/xFjAftU8lMY"
@@ -232,7 +271,10 @@
    "ja": "迫る嵐",
    "it": "Fronte del temporale",
    "ko": "다가오는 폭풍",
-   "zh-hant": "風暴將至"
+   "zh-hant": "風暴將至",
+   "nl": "Stormfront",
+   "sv": "Stormfront",
+   "ar": "جبهة عاصفة"
   },
   "photographer": "Patrick Fore",
   "source": "https://unsplash.com/photos/V6s1cmE39XM"
@@ -249,7 +291,10 @@
    "ja": "夜明けの山頂",
    "it": "Vetta all\\",
    "ko": "새벽의 봉우리",
-   "zh-hant": "黎明山峰"
+   "zh-hant": "黎明山峰",
+   "nl": "Top bij dageraad",
+   "sv": "Topp i gryningen",
+   "ar": "قمة عند الفجر"
   },
   "photographer": "David Marcu",
   "source": "https://unsplash.com/photos/CaQ_KITtnVY"
@@ -266,7 +311,10 @@
    "ja": "松林の星空",
    "it": "Stelle sui pini",
    "ko": "소나무 위 별",
-   "zh-hant": "松林星空"
+   "zh-hant": "松林星空",
+   "nl": "Sterren boven de dennen",
+   "sv": "Stjärnor över tallarna",
+   "ar": "نجوم فوق الصنوبر"
   },
   "photographer": "Josh Felise",
   "source": "https://unsplash.com/photos/trvELSvNZoY"

@@ -321,9 +321,10 @@
   /* ------------------------------------------------------------- the words */
   /* The banner speaks the page's language, read off <html lang>: es-MX on
      /es/, pt-BR on /pt/, fr-FR on /fr/, de-DE on /de/, ja on /ja/, it on /it/,
-     ko on /ko/, zh-Hant-TW on /zh-hant/, English everywhere else. The Cookie Policy itself is English only (see tools/languages.py),
+     ko on /ko/, zh-Hant-TW on /zh-hant/, nl on /nl/, sv on /sv/, ar on /ar/,
+     English everywhere else. The Cookie Policy itself is English only (see tools/languages.py),
      and the translated banners say so where they link to it. Same meaning in
-     all nine; change one, change the others. */
+     all twelve; change one, change the others. */
 
   var WORDS = {
     en: {
@@ -516,6 +517,71 @@
       mktLabel: '廣告',
       mktBody: 'Google、Meta 和 TikTok 的像素。用來衡量哪則廣告帶來了下載，並讓這些平台向你顯示廣告。',
       save: '儲存選擇'
+    },
+    nl: {
+      askTitle: 'Even over cookies',
+      askBody: 'Deze site wil graag meten hoe hij wordt gebruikt, en via welke advertentie je hier bent gekomen. ' +
+        'Er wordt niets opgeslagen tenzij je ja zegt, en de app is een aparte kwestie. Allebei staat het ' +
+        'uitgelegd in het <a href="/cookies/" hreflang="en">cookiebeleid</a> (in het Engels).',
+      all: 'Alles accepteren', none: 'Alles weigeren', choose: 'Zelf kiezen',
+      chooseTitle: 'Kies wat je toestaat',
+      chooseBody: 'Je kunt dit altijd wijzigen via de link <strong>Cookie-instellingen</strong> onderaan de pagina.',
+      signal: function (name) {
+        return '<strong>Je browser vraagt sites om je niet te volgen.</strong> ' + name +
+          ' staat aan en wordt gerespecteerd: alles hieronder staat uit, en er is niets geladen.' +
+          ' Een vinkje zetten gaat daar alleen voor deze site overheen.';
+      },
+      necLabel: 'Strikt noodzakelijk',
+      necBody: 'Alleen je antwoord op deze vraag. Dit kan niet uit, en het is het enige dat zonder toestemming wordt opgeslagen.',
+      anaLabel: 'Statistieken',
+      anaBody: 'PostHog. Welke pagina’s worden gelezen en hoe mensen door de site gaan, zodat hij beter kan worden.',
+      mktLabel: 'Advertenties',
+      mktBody: 'Pixels van Google, Meta en TikTok. Ze meten welke advertentie tot een download heeft geleid, en laten die platforms je advertenties tonen.',
+      save: 'Keuzes opslaan'
+    },
+    sv: {
+      askTitle: 'Kort om cookies',
+      askBody: 'Den här webbplatsen vill gärna mäta hur den används och vilken annons som fick dig hit. ' +
+        'Inget sparas om du inte säger ja, och appen är en fråga för sig. Båda förklaras i ' +
+        '<a href="/cookies/" hreflang="en">cookiepolicyn</a> (på engelska).',
+      all: 'Godkänn alla', none: 'Avvisa alla', choose: 'Välj själv',
+      chooseTitle: 'Välj vad du tillåter',
+      chooseBody: 'Du kan ändra det när du vill via länken <strong>Cookieinställningar</strong> längst ned på sidan.',
+      signal: function (name) {
+        return '<strong>Din webbläsare ber webbplatser att inte spåra dig.</strong> ' + name +
+          ' är påslaget och respekteras: allt nedan är avstängt, och inget har laddats.' +
+          ' En bock i en ruta går före det, bara på den här webbplatsen.';
+      },
+      necLabel: 'Strikt nödvändiga',
+      necBody: 'Bara ditt svar på den här frågan. Det går inte att stänga av, och det är det enda som sparas utan samtycke.',
+      anaLabel: 'Statistik',
+      anaBody: 'PostHog. Vilka sidor som läses och hur man rör sig på webbplatsen, så att den kan bli bättre.',
+      mktLabel: 'Annonser',
+      mktBody: 'Pixlar från Google, Meta och TikTok. De mäter vilken annons som ledde till en nedladdning och låter de plattformarna visa annonser för dig.',
+      save: 'Spara val'
+    },
+    /* Arabic: the reader's gender is never decided, so the buttons are
+       verbal nouns and the rest is impersonal or uses the neutral ـك. */
+    ar: {
+      askTitle: 'كلمة سريعة عن ملفات تعريف الارتباط',
+      askBody: 'يودّ هذا الموقع قياس طريقة استخدامه، ومعرفة الإعلان الذي أوصلك إلى هنا. ' +
+        'لا يُحفظ شيء إلا بموافقتك، أما التطبيق فمسألة منفصلة. وكلاهما موضّح في ' +
+        '<a href="/cookies/" hreflang="en">سياسة ملفات تعريف الارتباط</a> (بالإنجليزية).',
+      all: 'قبول الكل', none: 'رفض الكل', choose: 'اختيار',
+      chooseTitle: 'اختيار ما يُسمح به',
+      chooseBody: 'يمكن تغيير ذلك في أي وقت من رابط <strong>إعدادات ملفات تعريف الارتباط</strong> أسفل الصفحة.',
+      signal: function (name) {
+        return '<strong>متصفحك يطلب من المواقع عدم تتبعك.</strong> الإعداد ' + name +
+          ' مفعّل ونحترمه: كل ما يلي متوقف، ولم يُحمَّل أي شيء.' +
+          ' ووضع علامة في أي خانة يتجاوز ذلك لهذا الموقع فقط.';
+      },
+      necLabel: 'ضرورية تمامًا',
+      necBody: 'إجابتك عن هذا السؤال فقط. لا يمكن إيقافها، وهي الشيء الوحيد الذي يُحفظ دون موافقة.',
+      anaLabel: 'التحليلات',
+      anaBody: 'PostHog. أي الصفحات تُقرأ وكيف يتنقل الناس في الموقع، من أجل تحسينه.',
+      mktLabel: 'الإعلانات',
+      mktBody: 'وحدات بكسل من Google وMeta وTikTok. تقيس أي إعلان أدى إلى تنزيل، وتتيح لهذه المنصات عرض الإعلانات لك.',
+      save: 'حفظ الاختيارات'
     }
   };
   var T = WORDS[(document.documentElement.lang || 'en').slice(0, 2)] || WORDS.en;

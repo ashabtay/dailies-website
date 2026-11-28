@@ -7,7 +7,7 @@
    their name on it opens to the line. From there they can send one back,
    pass it on, make it a wallpaper, or read more lines like it, and every one
    of those ends on the App Store badge (campaign token web-envelope, with
-   -es, -pt, -fr, -de, -ja, -it, -ko, -zh-hant), so App Store Connect shows what envelopes send.
+   -es, -pt, -fr, -de, -ja, -it, -ko, -zh-hant, -nl, -sv, -ar), so App Store Connect shows what envelopes send.
 
    The lines live in play-lines.js (window.DailiesLines), written by
    tools/play_pages.py from the app's own quotes.db. This file needs it.
@@ -29,7 +29,7 @@
          back and the More link lead back to the same kind of lines
      to  the friend's name, 0-40 characters (needed for a line with {name})
      f   the sender's name, 0-40 characters
-     l   the language it was sealed in: en es pt fr de ja
+     l   the language it was sealed in: en es pt fr de ja it ko zh-hant nl sv ar
      k   which background the card wears (an index into DailiesLines.bg)
 
    ---------------------------------------------------------------------------
@@ -49,7 +49,7 @@
 
   var D = window.DailiesLines;
   if (!D) return;
-  var LANGS = ['en', 'es', 'pt', 'fr', 'de', 'ja', 'it', 'ko', 'zh-hant'];
+  var LANGS = ['en', 'es', 'pt', 'fr', 'de', 'ja', 'it', 'ko', 'zh-hant', 'nl', 'sv', 'ar'];
   var MAX_NAME = 40;
 
   function bgUrl(k) { return '/img/wallpapers/bg/' + D.bg[k]; }
@@ -265,6 +265,78 @@
       badBody: '連結好像不完整。請寄給你的人再寄一次。',
       goHome: '前往 mydailies.app',
       badgeAlt: '在 App Store 下載', privacy: '隱私權政策', cookies: 'Cookie 設定'
+    },
+    nl: {
+      getApp: 'Download Dailies',
+      holdToSeal: 'Vasthouden om te verzegelen', sealHint: 'Houd je vinger op het lakzegel om te verzegelen.',
+      msgRead: '{to}, ik dacht aan je toen ik dit las.', msgReadNone: 'Ik dacht aan je toen ik dit las.', msgOwn: '{to}, ik heb iets voor je geschreven.', msgOwnNone: 'Ik heb iets voor je geschreven.', subject: 'Ik dacht aan je',
+      message: 'Bericht', wrote: '{from} heeft dit voor je geschreven.', wroteNoName: 'Iemand heeft dit voor je geschreven.',
+      makeWall: 'Maak er een achtergrond van',
+      close: 'Sluit',
+      sealTitle: 'Verzegel hem voor iemand',
+      sealed: 'Verzegeld. Nu nog versturen.', share: 'Verstuur',
+      email: 'E-mail',
+      bridgeSent: 'Zelf ook elke ochtend zo’n zin? Dailies zet er een op je toegangsscherm.',
+      eTitle: 'Een envelop voor jou', forName: 'Voor {to}', forYou: 'Voor jou',
+      fromName: 'van {from}', openIt: 'Open hem', openNote: 'Geen app nodig.',
+      picked: '{from} heeft deze zin voor je uitgekozen.', pickedNoName: 'Iemand heeft deze zin voor je uitgekozen.',
+      sendBack: 'Stuur {from} er een terug', sendBackNoName: 'Stuur er een terug',
+      readMore: 'Meer bemoedigende woorden',
+      bridgeTitle: 'Zo’n zin, elke ochtend',
+      bridgeBody: 'Dailies zet er elke dag een nieuwe op je toegangsscherm, gekozen op basis van wat jij belangrijk vindt.',
+      badTitle: 'Deze envelop is niet helemaal aangekomen.',
+      badBody: 'Er ontbreekt iets aan de link. Vraag degene die hem stuurde om hem opnieuw te versturen.',
+      goHome: 'Naar mydailies.app',
+      badgeAlt: 'Download in de App Store', privacy: 'Privacy', cookies: 'Cookie-instellingen'
+    },
+    sv: {
+      getApp: 'Hämta Dailies',
+      holdToSeal: 'Håll för att försegla', sealHint: 'Håll fingret på vaxet för att försegla.',
+      msgRead: '{to}, jag tänkte på dig när jag läste det här.', msgReadNone: 'Jag tänkte på dig när jag läste det här.', msgOwn: '{to}, jag skrev något till dig.', msgOwnNone: 'Jag skrev något till dig.', subject: 'Jag tänkte på dig',
+      message: 'Meddelande', wrote: '{from} skrev det här till dig.', wroteNoName: 'Någon skrev det här till dig.',
+      makeWall: 'Gör den till bakgrundsbild',
+      close: 'Stäng',
+      sealTitle: 'Försegla den till någon',
+      sealed: 'Förseglat. Skicka det nu.', share: 'Skicka',
+      email: 'E-post',
+      bridgeSent: 'Vill du ha en sådan rad till dig själv varje morgon? Dailies lägger en på din låsskärm.',
+      eTitle: 'Ett kuvert till dig', forName: 'Till {to}', forYou: 'Till dig',
+      fromName: 'från {from}', openIt: 'Öppna det', openNote: 'Ingen app behövs.',
+      picked: '{from} valde den här raden åt dig.', pickedNoName: 'Någon valde den här raden åt dig.',
+      sendBack: 'Skicka ett tillbaka till {from}', sendBackNoName: 'Skicka ett tillbaka',
+      readMore: 'Fler uppmuntrande ord',
+      bridgeTitle: 'En sådan rad, varje morgon',
+      bridgeBody: 'Dailies lägger en ny på din låsskärm varje dag, vald efter det som är viktigt för dig.',
+      badTitle: 'Det här kuvertet kom inte fram helt.',
+      badBody: 'Länken verkar ofullständig. Be den som skickade den att skicka den igen.',
+      goHome: 'Till mydailies.app',
+      badgeAlt: 'Hämta i App Store', privacy: 'Integritet', cookies: 'Cookieinställningar'
+    },
+    /* Arabic never decides anyone's gender, the reader's or the sender's:
+       verbal nouns for the buttons, nominal or passive sentences for what
+       {from} did, and the neutral ـك for "you". */
+    ar: {
+      getApp: 'تنزيل Dailies',
+      holdToSeal: 'لمسة مطوّلة للختم', sealHint: 'لمسة مطوّلة على الشمع لختمه.',
+      msgRead: '{to}، تذكّرتك حين قرأت هذا.', msgReadNone: 'تذكّرتك حين قرأت هذا.', msgOwn: '{to}، كتبت لك شيئًا.', msgOwnNone: 'كتبت لك شيئًا.', subject: 'تذكّرتك',
+      message: 'رسالة', wrote: 'كلمات من {from} إليك.', wroteNoName: 'كلمات كُتبت لك.',
+      makeWall: 'تحويلها إلى خلفية',
+      close: 'إغلاق',
+      sealTitle: 'ختم السطر لشخص عزيز',
+      sealed: 'خُتم الظرف. حان وقت إرساله.', share: 'إرسال',
+      email: 'البريد الإلكتروني',
+      bridgeSent: 'ما رأيك في سطر كهذا لك كل صباح؟ يضع Dailies واحدًا على شاشة القفل.',
+      eTitle: 'ظرف لك', forName: 'إلى {to}', forYou: 'إليك',
+      fromName: 'من {from}', openIt: 'فتح الظرف', openNote: 'دون الحاجة إلى أي تطبيق.',
+      picked: 'هذا السطر اختيار {from} لك.', pickedNoName: 'هذا السطر اختير لك.',
+      sendBack: 'إرسال ظرف ردًّا إلى {from}', sendBackNoName: 'إرسال ظرف ردًّا',
+      readMore: 'المزيد من كلمات التشجيع',
+      bridgeTitle: 'سطر كهذا، كل صباح',
+      bridgeBody: 'يضع Dailies سطرًا جديدًا على شاشة القفل كل يوم، يُختار وفق ما يهمك.',
+      badTitle: 'لم يصل هذا الظرف كاملًا.',
+      badBody: 'يبدو الرابط ناقصًا. يمكن طلب إرساله مرة أخرى ممن أرسله.',
+      goHome: 'الانتقال إلى mydailies.app',
+      badgeAlt: 'تنزيل من App Store', privacy: 'الخصوصية', cookies: 'إعدادات ملفات تعريف الارتباط'
     }
   };
   var lang = pickLang(document.documentElement.getAttribute('lang'));
@@ -348,7 +420,8 @@
   var PLAY_ALT = {
     en: 'Get it on Google Play', es: 'Disponible en Google Play', pt: 'Disponível no Google Play',
     fr: 'Disponible sur Google Play', de: 'Jetzt bei Google Play', ja: 'Google Play で手に入れよう',
-    it: 'Disponibile su Google Play', ko: 'Google Play에서 다운로드', 'zh-hant': 'Google Play 立即下載'
+    it: 'Disponibile su Google Play', ko: 'Google Play에서 다운로드', 'zh-hant': 'Google Play 立即下載',
+    nl: 'Ontdek het op Google Play', sv: 'Ladda ned på Google Play', ar: 'احصل عليه من Google Play'
   };
 
   /* Both stores' badges in the page's language, the same artwork and sizes

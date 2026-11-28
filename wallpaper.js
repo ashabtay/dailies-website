@@ -13,7 +13,7 @@
      everything else  a download
 
    then shows the steps for setting it, and the App Store badge
-   (web-wallpaper and -es, -pt, -fr, -de, -ja, -it, -ko, -zh-hant).
+   (web-wallpaper and -es, -pt, -fr, -de, -ja, -it, -ko, -zh-hant, -nl, -sv, -ar).
 
    The picture is drawn here on a canvas, to the same layout as
    tools/play_pages.py draws the gallery's ready-made ones with Pillow (its
@@ -47,11 +47,18 @@
   var L = { center: 0.58, topMin: 0.40, maxW: 864, lineH: 1.32, authorScale: 0.52, authorGap: 0.62, markY: 0.885, markSize: 30 };
   var SHADE = [[0, .16], [.30, .10], [.50, .34], [.80, .34], [1, .20]];
   /* Lora has no kana, hangul or hanzi: each CJK language names the system's
-     own serif after it, so the line is drawn in that language's forms. */
-  var FAMILY = 'Lora, ' + ({
-    ko: '"AppleMyungjo", "Nanum Myeongjo", "Noto Serif KR", "Batang", serif',
-    'zh-hant': '"Songti TC", "Noto Serif TC", "PMingLiU", serif'
-  }[lang] || '"Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif');
+     own serif after it, so the line is drawn in that language's forms.
+     Dutch and Swedish are all Lora (it has every letter they use). Lora has
+     no Arabic at all, so Arabic does not start with it: the line is drawn
+     whole in the system's Arabic face, never Lora's punctuation and digits
+     between Arabic words. */
+  var RTL = lang === 'ar';
+  var FAMILY = RTL
+    ? '"Geeza Pro", "SF Arabic", "Noto Naskh Arabic", "Segoe UI", sans-serif'
+    : 'Lora, ' + ({
+      ko: '"AppleMyungjo", "Nanum Myeongjo", "Noto Serif KR", "Batang", serif',
+      'zh-hant': '"Songti TC", "Noto Serif TC", "PMingLiU", serif'
+    }[lang] || '"Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif');
   /* Japanese and Chinese break between characters (never before 、。 or
      after 「); Korean breaks at spaces like the Latin languages, but its
      glyphs are as wide as kanji, so it takes the CJK sizes. */
@@ -121,6 +128,11 @@
 
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
+    // Arabic is laid out right to left: the words of each line run from the
+    // right, still centred on the same x (and wrap() still breaks at spaces,
+    // first word first). No letter-spacing anywhere, which Arabic, being
+    // joined, cannot take. The mark below goes back to left to right.
+    ctx.direction = RTL ? 'rtl' : 'ltr';
     ctx.shadowColor = 'rgba(0,0,0,.43)';
     ctx.shadowBlur = 18 * sc;
     ctx.shadowOffsetY = 3 * sc;
@@ -136,6 +148,7 @@
       ctx.fillStyle = 'rgba(255,255,255,.84)';
       ctx.fillText(author, (W / 2) * sc, y * sc);
     }
+    ctx.direction = 'ltr';
     ctx.font = (L.markSize * sc) + 'px Lora, Georgia, serif';
     ctx.fillStyle = 'rgba(255,255,255,.59)';
     ctx.fillText('mydailies.app', (W / 2) * sc, H * L.markY * sc);
@@ -248,7 +261,9 @@
      way a Lock Screen shows them (no AM or PM). */
   var dateEl = root.querySelector('.wp-date'), timeEl = root.querySelector('.wp-time');
   var LOCALE = { en: 'en-US', es: 'es-MX', pt: 'pt-BR', fr: 'fr-FR', de: 'de-DE', ja: 'ja-JP',
-                 it: 'it-IT', ko: 'ko-KR', 'zh-hant': 'zh-TW' }[lang];
+                 it: 'it-IT', ko: 'ko-KR', 'zh-hant': 'zh-TW', nl: 'nl-NL', sv: 'sv-SE',
+                 // Western digits, as the app and the site write Arabic.
+                 ar: 'ar-u-nu-latn' }[lang];
   function tick() {
     var now = new Date();
     try {
