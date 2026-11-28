@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Builds the wallpaper pages and the words-of-encouragement pages, in all nine
+Builds the wallpaper pages and the words-of-encouragement pages, in all twelve
 languages, and everything they need:
 
-    /motivational-wallpapers/        and its five translations (see play_copy.WALL)
-    /words-of-encouragement/         and its five translations (play_copy.ENC)
+    /motivational-wallpapers/        and its translations (see play_copy.WALL)
+    /words-of-encouragement/         and its translations (play_copy.ENC)
     /play-lines.js                   the lines, by id, for the browser
     /img/wallpapers/<lang>/*.jpg     the ready-made wallpapers in each gallery
     /img/wallpapers/og-*.jpg         the share images
@@ -13,9 +13,14 @@ Run it from the root of the repo after changing a line, a word of copy or the
 layout, then run tools/languages.py (it writes each page's hreflang block and
 language menu) and tools/sitemap.py:
 
-    python3 tools/play_pages.py
+    DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib python3 tools/play_pages.py
     python3 tools/languages.py
     python3 tools/sitemap.py
+
+(The fallback path lets Pillow's libraqm find Homebrew's fribidi, which
+shapes the Arabic; the script stops for Arabic without it. Not
+DYLD_LIBRARY_PATH: that also swaps in Homebrew's FreeType for Pillow's own,
+which redraws every other language's pictures a few pixels differently.)
 
 The pages are ordinary static HTML once written: everything a search engine
 reads (the headings, every line as text, the steps, the questions) is in the
@@ -39,7 +44,7 @@ import re
 import sys
 import unicodedata
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, features
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import play_copy as C  # noqa: E402
@@ -59,6 +64,9 @@ BADGE = {
     "it": ("/img/app-store-badge-it.svg", 156, "Scarica su App Store"),
     "ko": ("/img/app-store-badge-ko.svg", 169, "App Store에서 다운로드하기"),
     "zh-hant": ("/img/app-store-badge-zh-hant.svg", 142, "在 App Store 下載"),
+    "nl": ("/img/app-store-badge-nl.svg", 156, "Download in de App Store"),
+    "sv": ("/img/app-store-badge-sv.svg", 156, "Hämta i App Store"),
+    "ar": ("/img/app-store-badge-ar.svg", 156, "تنزيل من App Store"),
 }
 # Google's badge, in each language (img/google-play-badge*.png, Google's own
 # artwork with its clear space trimmed so it stands as tall as Apple's). The
@@ -74,6 +82,9 @@ PLAY_ALT = {
     "it": "Disponibile su Google Play",
     "ko": "Google Play에서 다운로드",
     "zh-hant": "Google Play 立即下載",
+    "nl": "Ontdek het op Google Play",
+    "sv": "Ladda ned på Google Play",
+    "ar": "احصل عليه من Google Play",
 }
 
 
@@ -96,20 +107,34 @@ DEVICE_SCRIPT = ("<script>/* Store badges: a phone sees its own store's, anythin
                  "else if(/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1))"
                  "e.className+=' is-ios'})(navigator.userAgent,document.documentElement)</script>")
 HTML_LANG = {"en": "en", "es": "es-MX", "pt": "pt-BR", "fr": "fr-FR", "de": "de-DE", "ja": "ja",
-             "it": "it", "ko": "ko", "zh-hant": "zh-Hant-TW"}
+             "it": "it", "ko": "ko", "zh-hant": "zh-Hant-TW", "nl": "nl", "sv": "sv", "ar": "ar"}
+# Written right to left. languages.py gives <html> the same dir="rtl", so a
+# page this script writes is already what languages.py would leave.
+RTL = {"ar"}
 HUB = {"en": "guides", "es": "es/guias", "pt": "pt/guias", "fr": "fr/guides", "de": "de/anleitungen", "ja": "ja/guides",
-       "it": "it/guide", "ko": "ko/guides", "zh-hant": "zh-hant/guides"}
+       "it": "it/guide", "ko": "ko/guides", "zh-hant": "zh-hant/guides",
+       "nl": "nl/handleidingen", "sv": "sv/guider", "ar": "ar/guides"}
 
 FONT_LATIN = os.path.join(ROOT, "tools/play/Lora-Regular.ttf")
 FONT_JA = "/System/Library/Fonts/ヒラギノ明朝 ProN.ttc"
 FONT_KO = "/System/Library/Fonts/Supplemental/AppleMyungjo.ttf"
 FONT_HANT = ("/System/Library/Fonts/Supplemental/Songti.ttc", 7)  # Songti TC Regular
+# Lora has no Arabic: the Arabic line and its author are drawn whole in the
+# Mac's Geeza Pro (wallpaper.js names the same face first), shaped and laid
+# out right to left by libraqm. Pillow's libraqm works only when it can load
+# fribidi, hence DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib (see above).
+# Every other language keeps Pillow's basic layout, which is what its
+# pictures were always drawn with.
+FONT_AR = ("/System/Library/Fonts/GeezaPro.ttc", 0)  # Geeza Pro Regular
 
 # Japanese and Chinese break between characters; Korean breaks at spaces but
 # its glyphs are as wide as kanji, so it takes the CJK sizes. wallpaper.js
 # makes the same two choices.
 CJK = {"ja", "ko", "zh-hant"}
 BY_CHAR = {"ja", "zh-hant"}
+# Gallery file names come from the English line where the language's own
+# letters would not make a readable slug.
+EN_SLUG = CJK | RTL
 
 # ------------------------------------------------------------------ layout
 # The one layout both renderers follow. A 1080 x 2340 picture (the 9:19.5 of
@@ -135,8 +160,8 @@ NO_START = set("、。，．・：；？！」』）】〉》ー…")
 NO_END = set("「『（【〈《")
 
 
-def wrap(text, font, max_w, ja):
-    measure = lambda s: font.getlength(s)
+def wrap(text, font, max_w, ja, rtl=False):
+    measure = lambda s: font.getlength(s, direction="rtl" if rtl else None)
     lines = []
     if ja:
         # Japanese has no spaces: pack whole phrases (split after 、 and 。)
@@ -176,12 +201,19 @@ def wrap(text, font, max_w, ja):
     return lines
 
 
+BASIC = ImageFont.Layout.BASIC
+
+
 def font_for(lang, size):
+    if lang in RTL:
+        if not features.check("raqm"):
+            sys.exit("Arabic needs libraqm: run with DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib")
+        return ImageFont.truetype(FONT_AR[0], size, index=FONT_AR[1], layout_engine=ImageFont.Layout.RAQM)
     if lang == "ko":
-        return ImageFont.truetype(FONT_KO, size)
+        return ImageFont.truetype(FONT_KO, size, layout_engine=BASIC)
     if lang == "zh-hant":
-        return ImageFont.truetype(FONT_HANT[0], size, index=FONT_HANT[1])
-    return ImageFont.truetype(FONT_JA if lang == "ja" else FONT_LATIN, size)
+        return ImageFont.truetype(FONT_HANT[0], size, index=FONT_HANT[1], layout_engine=BASIC)
+    return ImageFont.truetype(FONT_JA if lang == "ja" else FONT_LATIN, size, layout_engine=BASIC)
 
 
 def render(text, author, bg_file, lang):
@@ -205,7 +237,8 @@ def render(text, author, bg_file, lang):
 
     size = text_size(text, lang in CJK)
     font = font_for(lang, size)
-    lines = wrap(text, font, LAYOUT["max_w"], lang in BY_CHAR)
+    rtl = lang in RTL
+    lines = wrap(text, font, LAYOUT["max_w"], lang in BY_CHAR, rtl)
     lh = size * LAYOUT["line_h"]
     asize = round(size * LAYOUT["author_scale"])
     afont = font_for(lang, asize)
@@ -216,19 +249,22 @@ def render(text, author, bg_file, lang):
     ink = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     ds, di = ImageDraw.Draw(shadow), ImageDraw.Draw(ink)
 
-    def put(y, s, f, fill):
-        x = (W - f.getlength(s)) / 2
-        ds.text((x, y + 3), s, font=f, fill=(0, 0, 0, 110))
-        di.text((x, y), s, font=f, fill=fill)
+    def put(y, s, f, fill, rtl=False):
+        # Arabic runs right to left, centred on the same x; no letter-spacing
+        # anywhere. The mark is always left to right.
+        d = "rtl" if rtl else None
+        x = (W - f.getlength(s, direction=d)) / 2
+        ds.text((x, y + 3), s, font=f, fill=(0, 0, 0, 110), direction=d)
+        di.text((x, y), s, font=f, fill=fill, direction=d)
 
     y = top
     for ln in lines:
-        put(y + (lh - size) / 2, ln, font, (255, 255, 255, 255))
+        put(y + (lh - size) / 2, ln, font, (255, 255, 255, 255), rtl)
         y += lh
     if author:
         y += size * LAYOUT["author_gap"]
-        put(y, author, afont, (255, 255, 255, 214))
-    mfont = ImageFont.truetype(FONT_LATIN, LAYOUT["mark_size"])
+        put(y, author, afont, (255, 255, 255, 214), rtl)
+    mfont = ImageFont.truetype(FONT_LATIN, LAYOUT["mark_size"], layout_engine=BASIC)
     put(H * LAYOUT["mark_y"], "mydailies.app", mfont, (255, 255, 255, 150))
 
     shadow = shadow.filter(ImageFilter.GaussianBlur(9))
@@ -324,7 +360,7 @@ def write_lines_js():
 # ----------------------------------------------------------------- images
 
 def gallery_file(it, lang):
-    base = slugify(it["text"]["en"] if lang in CJK else it["text"][lang])
+    base = slugify(it["text"]["en"] if lang in EN_SLUG else it["text"][lang])
     return "/img/wallpapers/%s/%s.jpg" % (lang, base)
 
 
@@ -390,18 +426,23 @@ def og_enc(page, lang):
     d.line([(ex + 4, ey + eh - 6), (ex + ew // 2, ey + eh * 0.5), (ex + ew - 4, ey + eh - 6)], fill=(214, 202, 178), width=3)
     cx, cy = ex + ew // 2, int(ey + eh * 0.56)
     d.ellipse((cx - 38, cy - 38, cx + 38, cy + 38), fill=(196, 92, 62))
-    sf = ImageFont.truetype(FONT_LATIN, 44)
+    sf = ImageFont.truetype(FONT_LATIN, 44, layout_engine=BASIC)
     d.text((cx - sf.getlength("D") / 2, cy - 30), "D", font=sf, fill=(250, 238, 222))
     title = page["copy"][lang]["og_title"]
     size = 58 if not cjk else 54
     f = font_for(lang, size)
-    lines = wrap(title, f, 560, lang in BY_CHAR)
+    rtl = lang in RTL
+    lines = wrap(title, f, 560, lang in BY_CHAR, rtl)
     y = 315 - len(lines) * size * 1.25 / 2
+    # The title column runs from x 580 to 1140; Arabic sets it flush right.
     for ln in lines:
-        d.text((580, y), ln, font=f, fill=(255, 255, 255))
+        if rtl:
+            d.text((1140 - f.getlength(ln, direction="rtl"), y), ln, font=f, fill=(255, 255, 255), direction="rtl")
+        else:
+            d.text((580, y), ln, font=f, fill=(255, 255, 255))
         y += size * 1.25
-    mf = ImageFont.truetype(FONT_LATIN, 26)
-    d.text((580, y + 24), "mydailies.app", font=mf, fill=(220, 214, 200))
+    mf = ImageFont.truetype(FONT_LATIN, 26, layout_engine=BASIC)
+    d.text((1140 - mf.getlength("mydailies.app") if rtl else 580, y + 24), "mydailies.app", font=mf, fill=(220, 214, 200))
     bg.save(ROOT + og_file(page, lang), "JPEG", quality=84, optimize=True)
 
 
@@ -430,7 +471,7 @@ def badge(lang, ct, where):
 
 def head(lang, title, desc, url, og_title, og_desc, og_img, og_alt, extra_fonts="", extra_css=""):
     return f"""<!DOCTYPE html>
-<html lang="{HTML_LANG[lang]}">
+<html lang="{HTML_LANG[lang]}"{' dir="rtl"' if lang in RTL else ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
