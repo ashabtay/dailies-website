@@ -398,7 +398,7 @@ PAGES = [
      "/it/guide/centro-notifiche-iphone/",
      "/ko/guides/iphone-notification-center/",
      "/zh-hant/guides/iphone-notification-center/",
-     "/nl/handleidingen/berichtgevingscentrum-iphone/",
+     "/nl/handleidingen/meldingencentrum-iphone/",
      "/sv/guider/notiscenter-iphone/",
      "/ar/guides/iphone-notification-center/"),
     ("/guides/add-a-widget-on-android/",
